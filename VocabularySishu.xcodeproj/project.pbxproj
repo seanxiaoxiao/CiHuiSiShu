@@ -1,0 +1,451 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00701E301553CBCE00D30018 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00701E2F1553CBCE00D30018 /* UIKit.framework */; };
+		00701E321553CBCE00D30018 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00701E311553CBCE00D30018 /* Foundation.framework */; };
+		00701E341553CBCE00D30018 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00701E331553CBCE00D30018 /* CoreGraphics.framework */; };
+		00701E361553CBCE00D30018 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00701E351553CBCE00D30018 /* CoreData.framework */; };
+		00701E3C1553CBCE00D30018 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00701E3A1553CBCE00D30018 /* InfoPlist.strings */; };
+		00701E3E1553CBCE00D30018 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00701E3D1553CBCE00D30018 /* main.m */; };
+		00701E421553CBCE00D30018 /* VSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00701E411553CBCE00D30018 /* VSAppDelegate.m */; };
+		00701E451553CBCE00D30018 /* VocabularySishu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00701E431553CBCE00D30018 /* VocabularySishu.xcdatamodeld */; };
+		00701E4D1553CBCE00D30018 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00701E4C1553CBCE00D30018 /* SenTestingKit.framework */; };
+		00701E4E1553CBCE00D30018 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00701E2F1553CBCE00D30018 /* UIKit.framework */; };
+		00701E4F1553CBCE00D30018 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00701E311553CBCE00D30018 /* Foundation.framework */; };
+		00701E501553CBCE00D30018 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00701E351553CBCE00D30018 /* CoreData.framework */; };
+		00701E581553CBCE00D30018 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00701E561553CBCE00D30018 /* InfoPlist.strings */; };
+		00701E5B1553CBCE00D30018 /* VocabularySishuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00701E5A1553CBCE00D30018 /* VocabularySishuTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		00701E511553CBCE00D30018 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00701E221553CBCE00D30018 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00701E2A1553CBCE00D30018;
+			remoteInfo = VocabularySishu;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00701E2B1553CBCE00D30018 /* VocabularySishu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VocabularySishu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		00701E2F1553CBCE00D30018 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		00701E311553CBCE00D30018 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		00701E331553CBCE00D30018 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		00701E351553CBCE00D30018 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		00701E391553CBCE00D30018 /* VocabularySishu-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VocabularySishu-Info.plist"; sourceTree = "<group>"; };
+		00701E3B1553CBCE00D30018 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		00701E3D1553CBCE00D30018 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		00701E3F1553CBCE00D30018 /* VocabularySishu-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VocabularySishu-Prefix.pch"; sourceTree = "<group>"; };
+		00701E401553CBCE00D30018 /* VSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSAppDelegate.h; sourceTree = "<group>"; };
+		00701E411553CBCE00D30018 /* VSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSAppDelegate.m; sourceTree = "<group>"; };
+		00701E441553CBCE00D30018 /* VocabularySishu.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VocabularySishu.xcdatamodel; sourceTree = "<group>"; };
+		00701E4B1553CBCE00D30018 /* VocabularySishuTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VocabularySishuTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00701E4C1553CBCE00D30018 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		00701E551553CBCE00D30018 /* VocabularySishuTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VocabularySishuTests-Info.plist"; sourceTree = "<group>"; };
+		00701E571553CBCE00D30018 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		00701E591553CBCE00D30018 /* VocabularySishuTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VocabularySishuTests.h; sourceTree = "<group>"; };
+		00701E5A1553CBCE00D30018 /* VocabularySishuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VocabularySishuTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		00701E281553CBCE00D30018 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00701E301553CBCE00D30018 /* UIKit.framework in Frameworks */,
+				00701E321553CBCE00D30018 /* Foundation.framework in Frameworks */,
+				00701E341553CBCE00D30018 /* CoreGraphics.framework in Frameworks */,
+				00701E361553CBCE00D30018 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00701E471553CBCE00D30018 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00701E4D1553CBCE00D30018 /* SenTestingKit.framework in Frameworks */,
+				00701E4E1553CBCE00D30018 /* UIKit.framework in Frameworks */,
+				00701E4F1553CBCE00D30018 /* Foundation.framework in Frameworks */,
+				00701E501553CBCE00D30018 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00701E201553CBCE00D30018 = {
+			isa = PBXGroup;
+			children = (
+				00701E371553CBCE00D30018 /* VocabularySishu */,
+				00701E531553CBCE00D30018 /* VocabularySishuTests */,
+				00701E2E1553CBCE00D30018 /* Frameworks */,
+				00701E2C1553CBCE00D30018 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		00701E2C1553CBCE00D30018 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				00701E2B1553CBCE00D30018 /* VocabularySishu.app */,
+				00701E4B1553CBCE00D30018 /* VocabularySishuTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		00701E2E1553CBCE00D30018 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00701E2F1553CBCE00D30018 /* UIKit.framework */,
+				00701E311553CBCE00D30018 /* Foundation.framework */,
+				00701E331553CBCE00D30018 /* CoreGraphics.framework */,
+				00701E351553CBCE00D30018 /* CoreData.framework */,
+				00701E4C1553CBCE00D30018 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		00701E371553CBCE00D30018 /* VocabularySishu */ = {
+			isa = PBXGroup;
+			children = (
+				00701E401553CBCE00D30018 /* VSAppDelegate.h */,
+				00701E411553CBCE00D30018 /* VSAppDelegate.m */,
+				00701E431553CBCE00D30018 /* VocabularySishu.xcdatamodeld */,
+				00701E381553CBCE00D30018 /* Supporting Files */,
+			);
+			path = VocabularySishu;
+			sourceTree = "<group>";
+		};
+		00701E381553CBCE00D30018 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				00701E391553CBCE00D30018 /* VocabularySishu-Info.plist */,
+				00701E3A1553CBCE00D30018 /* InfoPlist.strings */,
+				00701E3D1553CBCE00D30018 /* main.m */,
+				00701E3F1553CBCE00D30018 /* VocabularySishu-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		00701E531553CBCE00D30018 /* VocabularySishuTests */ = {
+			isa = PBXGroup;
+			children = (
+				00701E591553CBCE00D30018 /* VocabularySishuTests.h */,
+				00701E5A1553CBCE00D30018 /* VocabularySishuTests.m */,
+				00701E541553CBCE00D30018 /* Supporting Files */,
+			);
+			path = VocabularySishuTests;
+			sourceTree = "<group>";
+		};
+		00701E541553CBCE00D30018 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				00701E551553CBCE00D30018 /* VocabularySishuTests-Info.plist */,
+				00701E561553CBCE00D30018 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		00701E2A1553CBCE00D30018 /* VocabularySishu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00701E5E1553CBCE00D30018 /* Build configuration list for PBXNativeTarget "VocabularySishu" */;
+			buildPhases = (
+				00701E271553CBCE00D30018 /* Sources */,
+				00701E281553CBCE00D30018 /* Frameworks */,
+				00701E291553CBCE00D30018 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VocabularySishu;
+			productName = VocabularySishu;
+			productReference = 00701E2B1553CBCE00D30018 /* VocabularySishu.app */;
+			productType = "com.apple.product-type.application";
+		};
+		00701E4A1553CBCE00D30018 /* VocabularySishuTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00701E611553CBCE00D30018 /* Build configuration list for PBXNativeTarget "VocabularySishuTests" */;
+			buildPhases = (
+				00701E461553CBCE00D30018 /* Sources */,
+				00701E471553CBCE00D30018 /* Frameworks */,
+				00701E481553CBCE00D30018 /* Resources */,
+				00701E491553CBCE00D30018 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00701E521553CBCE00D30018 /* PBXTargetDependency */,
+			);
+			name = VocabularySishuTests;
+			productName = VocabularySishuTests;
+			productReference = 00701E4B1553CBCE00D30018 /* VocabularySishuTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		00701E221553CBCE00D30018 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = VS;
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = baidu;
+			};
+			buildConfigurationList = 00701E251553CBCE00D30018 /* Build configuration list for PBXProject "VocabularySishu" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 00701E201553CBCE00D30018;
+			productRefGroup = 00701E2C1553CBCE00D30018 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				00701E2A1553CBCE00D30018 /* VocabularySishu */,
+				00701E4A1553CBCE00D30018 /* VocabularySishuTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		00701E291553CBCE00D30018 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00701E3C1553CBCE00D30018 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00701E481553CBCE00D30018 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00701E581553CBCE00D30018 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00701E491553CBCE00D30018 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		00701E271553CBCE00D30018 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00701E3E1553CBCE00D30018 /* main.m in Sources */,
+				00701E421553CBCE00D30018 /* VSAppDelegate.m in Sources */,
+				00701E451553CBCE00D30018 /* VocabularySishu.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00701E461553CBCE00D30018 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00701E5B1553CBCE00D30018 /* VocabularySishuTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		00701E521553CBCE00D30018 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 00701E2A1553CBCE00D30018 /* VocabularySishu */;
+			targetProxy = 00701E511553CBCE00D30018 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		00701E3A1553CBCE00D30018 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				00701E3B1553CBCE00D30018 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		00701E561553CBCE00D30018 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				00701E571553CBCE00D30018 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		00701E5C1553CBCE00D30018 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		00701E5D1553CBCE00D30018 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		00701E5F1553CBCE00D30018 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
+				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		00701E601553CBCE00D30018 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
+				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		00701E621553CBCE00D30018 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/VocabularySishu.app/VocabularySishu";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
+				INFOPLIST_FILE = "VocabularySishuTests/VocabularySishuTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		00701E631553CBCE00D30018 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/VocabularySishu.app/VocabularySishu";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
+				INFOPLIST_FILE = "VocabularySishuTests/VocabularySishuTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		00701E251553CBCE00D30018 /* Build configuration list for PBXProject "VocabularySishu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00701E5C1553CBCE00D30018 /* Debug */,
+				00701E5D1553CBCE00D30018 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00701E5E1553CBCE00D30018 /* Build configuration list for PBXNativeTarget "VocabularySishu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00701E5F1553CBCE00D30018 /* Debug */,
+				00701E601553CBCE00D30018 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		00701E611553CBCE00D30018 /* Build configuration list for PBXNativeTarget "VocabularySishuTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00701E621553CBCE00D30018 /* Debug */,
+				00701E631553CBCE00D30018 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		00701E431553CBCE00D30018 /* VocabularySishu.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				00701E441553CBCE00D30018 /* VocabularySishu.xcdatamodel */,
+			);
+			currentVersion = 00701E441553CBCE00D30018 /* VocabularySishu.xcdatamodel */;
+			path = VocabularySishu.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 00701E221553CBCE00D30018 /* Project object */;
+}
