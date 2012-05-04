@@ -21,6 +21,7 @@
 		00701E501553CBCE00D30018 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00701E351553CBCE00D30018 /* CoreData.framework */; };
 		00701E581553CBCE00D30018 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00701E561553CBCE00D30018 /* InfoPlist.strings */; };
 		00701E5B1553CBCE00D30018 /* VocabularySishuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00701E5A1553CBCE00D30018 /* VocabularySishuTests.m */; };
+		00701E6A1553CC9E00D30018 /* Vocabulary.m in Sources */ = {isa = PBXBuildFile; fileRef = 00701E691553CC9E00D30018 /* Vocabulary.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,8 @@
 		00701E571553CBCE00D30018 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		00701E591553CBCE00D30018 /* VocabularySishuTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VocabularySishuTests.h; sourceTree = "<group>"; };
 		00701E5A1553CBCE00D30018 /* VocabularySishuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VocabularySishuTests.m; sourceTree = "<group>"; };
+		00701E681553CC9E00D30018 /* Vocabulary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vocabulary.h; path = Model/Vocabulary.h; sourceTree = "<group>"; };
+		00701E691553CC9E00D30018 /* Vocabulary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Vocabulary.m; path = Model/Vocabulary.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +117,7 @@
 		00701E371553CBCE00D30018 /* VocabularySishu */ = {
 			isa = PBXGroup;
 			children = (
+				00701E641553CC1700D30018 /* Model */,
 				00701E401553CBCE00D30018 /* VSAppDelegate.h */,
 				00701E411553CBCE00D30018 /* VSAppDelegate.m */,
 				00701E431553CBCE00D30018 /* VocabularySishu.xcdatamodeld */,
@@ -150,6 +154,15 @@
 				00701E561553CBCE00D30018 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		00701E641553CC1700D30018 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				00701E681553CC9E00D30018 /* Vocabulary.h */,
+				00701E691553CC9E00D30018 /* Vocabulary.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +275,7 @@
 				00701E3E1553CBCE00D30018 /* main.m in Sources */,
 				00701E421553CBCE00D30018 /* VSAppDelegate.m in Sources */,
 				00701E451553CBCE00D30018 /* VocabularySishu.xcdatamodeld in Sources */,
+				00701E6A1553CC9E00D30018 /* Vocabulary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
