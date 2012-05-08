@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VSMainViewController.h"
 
 @interface VSAppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -15,6 +16,7 @@
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (nonatomic, strong) VSMainViewController *viewController;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;

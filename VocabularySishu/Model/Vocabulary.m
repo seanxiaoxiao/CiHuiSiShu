@@ -11,8 +11,13 @@
 
 @implementation Vocabulary
 
-@dynamic id;
 @dynamic spell;
 @dynamic meet;
+@dynamic phonetic;
+
+- (NSString *) description
+{
+    return [NSString stringWithFormat:@"Vocabulary %@ sounds %@ and meet %@ times", self.spell, self.phonetic, self.meet];
+}
 
 @end

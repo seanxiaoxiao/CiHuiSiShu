@@ -12,8 +12,8 @@
 
 @interface Vocabulary : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * id;
 @property (nonatomic, retain) NSString * spell;
-@property (nonatomic, retain) UNKNOWN_TYPE meet;
+@property (nonatomic, retain) NSString * phonetic;
+@property (nonatomic, retain) NSNumber * meet;
 
 @end
