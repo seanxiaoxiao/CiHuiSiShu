@@ -18,7 +18,6 @@
 
 @synthesize vocabularyLabel;
 @synthesize phoneticLabel;
-@synthesize navigationController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,7 +32,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationController.navigationItem.title = @"GRE顺序List 1";
+    self.title = @"GRE顺序 List 1";
 }
 
 - (void)viewWillAppear:(BOOL)animated
