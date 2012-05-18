@@ -61,6 +61,7 @@
 {
     VSVocabularyViewController *vocabularyViewController = [[VSVocabularyViewController alloc] initWithNibName:@"VSVocabularyViewController" bundle:nil];
     [self.navigationController pushViewController:vocabularyViewController animated:YES];
+    vocabularyViewController.navigationController = self.navigationController;
 }
 
 @end

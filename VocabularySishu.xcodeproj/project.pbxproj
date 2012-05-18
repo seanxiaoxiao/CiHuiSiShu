@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		001CAEB615649EE500047C5E /* List.m in Sources */ = {isa = PBXBuildFile; fileRef = 001CAEB515649EE500047C5E /* List.m */; };
 		0046407C15590DBB007E5FA9 /* VSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046407A15590DBB007E5FA9 /* VSMainViewController.m */; };
 		0046407D15590DBB007E5FA9 /* VSMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046407B15590DBB007E5FA9 /* VSMainViewController.xib */; };
 		0046408215590E0B007E5FA9 /* VSVocabularyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046408015590E0B007E5FA9 /* VSVocabularyViewController.m */; };
@@ -45,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		001CAEB415649EE500047C5E /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = List.h; path = Model/List.h; sourceTree = "<group>"; };
+		001CAEB515649EE500047C5E /* List.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = List.m; path = Model/List.m; sourceTree = "<group>"; };
 		0046407915590DBB007E5FA9 /* VSMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSMainViewController.h; path = ViewController/MainView/VSMainViewController.h; sourceTree = "<group>"; };
 		0046407A15590DBB007E5FA9 /* VSMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSMainViewController.m; path = ViewController/MainView/VSMainViewController.m; sourceTree = "<group>"; };
 		0046407B15590DBB007E5FA9 /* VSMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSMainViewController.xib; path = ViewController/MainView/VSMainViewController.xib; sourceTree = "<group>"; };
@@ -214,6 +217,8 @@
 		00701E641553CC1700D30018 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				001CAEB415649EE500047C5E /* List.h */,
+				001CAEB515649EE500047C5E /* List.m */,
 				00701E681553CC9E00D30018 /* Vocabulary.h */,
 				00701E691553CC9E00D30018 /* Vocabulary.m */,
 			);
@@ -348,6 +353,7 @@
 				0046407C15590DBB007E5FA9 /* VSMainViewController.m in Sources */,
 				0046408D155916FA007E5FA9 /* VSMainMenuViewController.m in Sources */,
 				0046409115591DBD007E5FA9 /* VSUtils.m in Sources */,
+				001CAEB615649EE500047C5E /* List.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

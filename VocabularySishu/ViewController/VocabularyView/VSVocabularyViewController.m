@@ -18,6 +18,7 @@
 
 @synthesize vocabularyLabel;
 @synthesize phoneticLabel;
+@synthesize navigationController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,6 +33,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.navigationController.navigationItem.title = @"GRE顺序List 1";
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -53,7 +55,17 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-
+- (IBAction)randomClick:(id)sender
+{
+    Vocabulary *newVocabulary = [NSEntityDescription insertNewObjectForEntityForName:@"Vocabulary" inManagedObjectContext:[VSUtils currentMOContext]];
+    newVocabulary.spell = @"apple";
+    newVocabulary.meet = [NSNumber numberWithInt:0];
+    __autoreleasing NSError *error = nil;
+    if (![[VSUtils currentMOContext] save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    }
+    NSLog(@"No problem?");
+}
 
 
 
