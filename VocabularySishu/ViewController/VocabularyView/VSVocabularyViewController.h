@@ -15,7 +15,6 @@
 
 @property (nonatomic, strong) UILabel *vocabularyLabel;
 @property (nonatomic, strong) UILabel *phoneticLabel;
-@property (nonatomic, strong) UINavigationController *navigationController;
 
 - (IBAction)randomClick:(id)sender;
 

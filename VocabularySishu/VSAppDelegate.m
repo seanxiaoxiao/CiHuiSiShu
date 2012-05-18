@@ -20,9 +20,10 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[VSMainViewController alloc] initWithNibName:@"VSMainViewController" bundle:nil];
+    self.viewController = [[VSMainMenuViewController alloc] initWithNibName:@"VSMainMenuViewController" bundle:nil];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
     self.window.backgroundColor = [UIColor whiteColor];
-    self.window.rootViewController = self.viewController;
+    self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
     return YES;
 }

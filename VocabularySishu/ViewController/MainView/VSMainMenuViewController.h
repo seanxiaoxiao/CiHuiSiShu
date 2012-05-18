@@ -10,8 +10,6 @@
 
 @interface VSMainMenuViewController : UIViewController
 
-@property (nonatomic, strong) UINavigationController *navigationController;
-
 - (IBAction)recite:(id)sender;
 
 @end
