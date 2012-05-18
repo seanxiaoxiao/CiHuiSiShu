@@ -273,7 +273,7 @@
 			attributes = {
 				CLASSPREFIX = VS;
 				LastUpgradeCheck = 0430;
-				ORGANIZATIONNAME = baidu;
+				ORGANIZATIONNAME = douban;
 			};
 			buildConfigurationList = 00701E251553CBCE00D30018 /* Build configuration list for PBXProject "VocabularySishu" */;
 			compatibilityVersion = "Xcode 3.2";
