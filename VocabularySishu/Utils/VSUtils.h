@@ -12,4 +12,6 @@
 
 + (NSManagedObjectContext *)currentMOContext;
 
++ (UIImage *)fetchImg:(NSString *)imageName;
+
 @end

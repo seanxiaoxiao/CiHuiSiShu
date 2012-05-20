@@ -20,8 +20,10 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    UIImage *navigationBackground = [VSUtils fetchImg:@"navigationbar.png"];
     self.viewController = [[VSMainMenuViewController alloc] initWithNibName:@"VSMainMenuViewController" bundle:nil];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
+    [navigationController.navigationBar setBackgroundImage:navigationBackground forBarMetrics:UIBarMetricsDefault];
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VSUtils.h"
 #import "VSMainMenuViewController.h"
 
 @interface VSAppDelegate : UIResponder <UIApplicationDelegate>
