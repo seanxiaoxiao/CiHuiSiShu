@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		001CAEB615649EE500047C5E /* List.m in Sources */ = {isa = PBXBuildFile; fileRef = 001CAEB515649EE500047C5E /* List.m */; };
 		0046408215590E0B007E5FA9 /* VSVocabularyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046408015590E0B007E5FA9 /* VSVocabularyViewController.m */; };
 		0046408315590E0B007E5FA9 /* VSVocabularyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408115590E0B007E5FA9 /* VSVocabularyViewController.xib */; };
 		0046408415591251007E5FA9 /* VSVocabularyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046408015590E0B007E5FA9 /* VSVocabularyViewController.m */; };
@@ -30,8 +29,18 @@
 		00701E501553CBCE00D30018 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00701E351553CBCE00D30018 /* CoreData.framework */; };
 		00701E581553CBCE00D30018 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00701E561553CBCE00D30018 /* InfoPlist.strings */; };
 		00701E5B1553CBCE00D30018 /* VocabularySishuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00701E5A1553CBCE00D30018 /* VocabularySishuTests.m */; };
-		00701E6A1553CC9E00D30018 /* Vocabulary.m in Sources */ = {isa = PBXBuildFile; fileRef = 00701E691553CC9E00D30018 /* Vocabulary.m */; };
 		0073A67615688B5100B80422 /* navigationbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 0073A67515688B5100B80422 /* navigationbar.png */; };
+		0073A67915688F2800B80422 /* VSDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A67815688F2800B80422 /* VSDataUtil.m */; };
+		0073A68515689E2200B80422 /* Repos.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0073A68415689E2200B80422 /* Repos.txt */; };
+		0073A6961568A0B200B80422 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A68B1568A0B200B80422 /* NSObject+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0073A6971568A0B200B80422 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A68D1568A0B200B80422 /* NSString+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0073A6981568A0B200B80422 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A68F1568A0B200B80422 /* SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0073A6991568A0B200B80422 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6911568A0B200B80422 /* SBJsonBase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0073A69A1568A0B200B80422 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6931568A0B200B80422 /* SBJsonParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0073A69B1568A0B200B80422 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6951568A0B200B80422 /* SBJsonWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0073A69E1568A30900B80422 /* Repository.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A69D1568A30900B80422 /* Repository.m */; };
+		0073A6A21568D02100B80422 /* List.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6A11568D02100B80422 /* List.m */; };
+		0073A6A51568D03B00B80422 /* Vocabulary.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6A41568D03B00B80422 /* Vocabulary.m */; };
 		00B5A8C01566889B00D20EB6 /* retina-navigationbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B5A8BF1566889B00D20EB6 /* retina-navigationbar.png */; };
 /* End PBXBuildFile section */
 
@@ -46,8 +55,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		001CAEB415649EE500047C5E /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = List.h; path = Model/List.h; sourceTree = "<group>"; };
-		001CAEB515649EE500047C5E /* List.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = List.m; path = Model/List.m; sourceTree = "<group>"; };
 		0046407F15590E0B007E5FA9 /* VSVocabularyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSVocabularyViewController.h; path = ViewController/VocabularyView/VSVocabularyViewController.h; sourceTree = "<group>"; };
 		0046408015590E0B007E5FA9 /* VSVocabularyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSVocabularyViewController.m; path = ViewController/VocabularyView/VSVocabularyViewController.m; sourceTree = "<group>"; };
 		0046408115590E0B007E5FA9 /* VSVocabularyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSVocabularyViewController.xib; path = ViewController/VocabularyView/VSVocabularyViewController.xib; sourceTree = "<group>"; };
@@ -74,9 +81,29 @@
 		00701E571553CBCE00D30018 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		00701E591553CBCE00D30018 /* VocabularySishuTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VocabularySishuTests.h; sourceTree = "<group>"; };
 		00701E5A1553CBCE00D30018 /* VocabularySishuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VocabularySishuTests.m; sourceTree = "<group>"; };
-		00701E681553CC9E00D30018 /* Vocabulary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vocabulary.h; path = Model/Vocabulary.h; sourceTree = "<group>"; };
-		00701E691553CC9E00D30018 /* Vocabulary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Vocabulary.m; path = Model/Vocabulary.m; sourceTree = "<group>"; };
 		0073A67515688B5100B80422 /* navigationbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = navigationbar.png; path = Resources/Img/navigationbar.png; sourceTree = "<group>"; };
+		0073A67715688F2800B80422 /* VSDataUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSDataUtil.h; sourceTree = "<group>"; };
+		0073A67815688F2800B80422 /* VSDataUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSDataUtil.m; sourceTree = "<group>"; };
+		0073A68415689E2200B80422 /* Repos.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Repos.txt; path = Resources/Data/Repos.txt; sourceTree = "<group>"; };
+		0073A6891568A0B200B80422 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		0073A68A1568A0B200B80422 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		0073A68B1568A0B200B80422 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		0073A68C1568A0B200B80422 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		0073A68D1568A0B200B80422 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		0073A68E1568A0B200B80422 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		0073A68F1568A0B200B80422 /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
+		0073A6901568A0B200B80422 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		0073A6911568A0B200B80422 /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
+		0073A6921568A0B200B80422 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		0073A6931568A0B200B80422 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		0073A6941568A0B200B80422 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		0073A6951568A0B200B80422 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		0073A69C1568A30900B80422 /* Repository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Repository.h; path = Model/Repository.h; sourceTree = "<group>"; };
+		0073A69D1568A30900B80422 /* Repository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Repository.m; path = Model/Repository.m; sourceTree = "<group>"; };
+		0073A6A01568D02100B80422 /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = List.h; path = Model/List.h; sourceTree = "<group>"; };
+		0073A6A11568D02100B80422 /* List.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = List.m; path = Model/List.m; sourceTree = "<group>"; };
+		0073A6A31568D03B00B80422 /* Vocabulary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vocabulary.h; path = Model/Vocabulary.h; sourceTree = "<group>"; };
+		0073A6A41568D03B00B80422 /* Vocabulary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Vocabulary.m; path = Model/Vocabulary.m; sourceTree = "<group>"; };
 		00B5A8BF1566889B00D20EB6 /* retina-navigationbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-navigationbar.png"; path = "Resources/Img/retina-navigationbar.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,6 +138,8 @@
 			children = (
 				0046408F15591DBD007E5FA9 /* VSUtils.h */,
 				0046409015591DBD007E5FA9 /* VSUtils.m */,
+				0073A67715688F2800B80422 /* VSDataUtil.h */,
+				0073A67815688F2800B80422 /* VSDataUtil.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -169,6 +198,8 @@
 		00701E371553CBCE00D30018 /* VocabularySishu */ = {
 			isa = PBXGroup;
 			children = (
+				0073A68715689FB400B80422 /* Libs */,
+				0073A68115689DA900B80422 /* Data */,
 				00B5A8BE1566886E00D20EB6 /* Img */,
 				000B08961553D58E00E7A850 /* Utils */,
 				00701E6B1553CE8C00D30018 /* ViewController */,
@@ -214,10 +245,12 @@
 		00701E641553CC1700D30018 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				001CAEB415649EE500047C5E /* List.h */,
-				001CAEB515649EE500047C5E /* List.m */,
-				00701E681553CC9E00D30018 /* Vocabulary.h */,
-				00701E691553CC9E00D30018 /* Vocabulary.m */,
+				0073A6A31568D03B00B80422 /* Vocabulary.h */,
+				0073A6A41568D03B00B80422 /* Vocabulary.m */,
+				0073A6A01568D02100B80422 /* List.h */,
+				0073A6A11568D02100B80422 /* List.m */,
+				0073A69C1568A30900B80422 /* Repository.h */,
+				0073A69D1568A30900B80422 /* Repository.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -229,6 +262,43 @@
 				0046407715590CC8007E5FA9 /* MainView */,
 			);
 			name = ViewController;
+			sourceTree = "<group>";
+		};
+		0073A68115689DA900B80422 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				0073A68415689E2200B80422 /* Repos.txt */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		0073A68715689FB400B80422 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				0073A6881568A0B200B80422 /* SBJSON */,
+			);
+			name = Libs;
+			sourceTree = "<group>";
+		};
+		0073A6881568A0B200B80422 /* SBJSON */ = {
+			isa = PBXGroup;
+			children = (
+				0073A6891568A0B200B80422 /* JSON.h */,
+				0073A68A1568A0B200B80422 /* NSObject+SBJSON.h */,
+				0073A68B1568A0B200B80422 /* NSObject+SBJSON.m */,
+				0073A68C1568A0B200B80422 /* NSString+SBJSON.h */,
+				0073A68D1568A0B200B80422 /* NSString+SBJSON.m */,
+				0073A68E1568A0B200B80422 /* SBJSON.h */,
+				0073A68F1568A0B200B80422 /* SBJSON.m */,
+				0073A6901568A0B200B80422 /* SBJsonBase.h */,
+				0073A6911568A0B200B80422 /* SBJsonBase.m */,
+				0073A6921568A0B200B80422 /* SBJsonParser.h */,
+				0073A6931568A0B200B80422 /* SBJsonParser.m */,
+				0073A6941568A0B200B80422 /* SBJsonWriter.h */,
+				0073A6951568A0B200B80422 /* SBJsonWriter.m */,
+			);
+			name = SBJSON;
+			path = Libs/SBJSON;
 			sourceTree = "<group>";
 		};
 		00B5A8BE1566886E00D20EB6 /* Img */ = {
@@ -317,6 +387,7 @@
 				0046409315591FD1007E5FA9 /* VSVocabularyViewController.xib in Resources */,
 				00B5A8C01566889B00D20EB6 /* retina-navigationbar.png in Resources */,
 				0073A67615688B5100B80422 /* navigationbar.png in Resources */,
+				0073A68515689E2200B80422 /* Repos.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,11 +426,19 @@
 				00701E3E1553CBCE00D30018 /* main.m in Sources */,
 				00701E421553CBCE00D30018 /* VSAppDelegate.m in Sources */,
 				00701E451553CBCE00D30018 /* VocabularySishu.xcdatamodeld in Sources */,
-				00701E6A1553CC9E00D30018 /* Vocabulary.m in Sources */,
 				0046408415591251007E5FA9 /* VSVocabularyViewController.m in Sources */,
 				0046408D155916FA007E5FA9 /* VSMainMenuViewController.m in Sources */,
 				0046409115591DBD007E5FA9 /* VSUtils.m in Sources */,
-				001CAEB615649EE500047C5E /* List.m in Sources */,
+				0073A67915688F2800B80422 /* VSDataUtil.m in Sources */,
+				0073A6961568A0B200B80422 /* NSObject+SBJSON.m in Sources */,
+				0073A6971568A0B200B80422 /* NSString+SBJSON.m in Sources */,
+				0073A6981568A0B200B80422 /* SBJSON.m in Sources */,
+				0073A6991568A0B200B80422 /* SBJsonBase.m in Sources */,
+				0073A69A1568A0B200B80422 /* SBJsonParser.m in Sources */,
+				0073A69B1568A0B200B80422 /* SBJsonWriter.m in Sources */,
+				0073A69E1568A30900B80422 /* Repository.m in Sources */,
+				0073A6A21568D02100B80422 /* List.m in Sources */,
+				0073A6A51568D03B00B80422 /* Vocabulary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

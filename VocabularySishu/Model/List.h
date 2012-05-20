@@ -2,20 +2,21 @@
 //  List.h
 //  VocabularySishu
 //
-//  Created by xiao xiao on 5/17/12.
-//  Copyright (c) 2012 baidu. All rights reserved.
+//  Created by xiao xiao on 5/20/12.
+//  Copyright (c) 2012 douban. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class Repository;
 
 @interface List : NSManagedObject
 
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * order;
-@property (nonatomic, retain) NSManagedObject *repository;
 @property (nonatomic, retain) NSSet *listVocabularies;
+@property (nonatomic, retain) Repository *repository;
 @end
 
 @interface List (CoreDataGeneratedAccessors)

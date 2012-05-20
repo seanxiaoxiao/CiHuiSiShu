@@ -1,20 +1,19 @@
 //
-//  List.m
+//  Repository.m
 //  VocabularySishu
 //
 //  Created by xiao xiao on 5/20/12.
 //  Copyright (c) 2012 douban. All rights reserved.
 //
 
-#import "List.h"
 #import "Repository.h"
+#import "List.h"
 
 
-@implementation List
+@implementation Repository
 
 @dynamic name;
 @dynamic order;
-@dynamic listVocabularies;
-@dynamic repository;
+@dynamic lists;
 
 @end

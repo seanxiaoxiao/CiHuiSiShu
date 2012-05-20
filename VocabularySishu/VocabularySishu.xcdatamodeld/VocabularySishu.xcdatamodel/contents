@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1171" systemVersion="11E53" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Context" syncable="YES">
+        <relationship name="currentList" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="List" syncable="YES"/>
+        <relationship name="currentListVocabulary" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="ListVocabulary" syncable="YES"/>
+        <relationship name="currentRepository" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Repository" syncable="YES"/>
+    </entity>
     <entity name="List" representedClassName="List" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -15,7 +20,7 @@
         <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="vocabulary" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Vocabulary" inverseName="meanings" inverseEntity="Vocabulary" syncable="YES"/>
     </entity>
-    <entity name="Repository" syncable="YES">
+    <entity name="Repository" representedClassName="Repository" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="lists" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="List" inverseName="repository" inverseEntity="List" syncable="YES"/>
@@ -30,8 +35,9 @@
     <elements>
         <element name="List" positionX="160" positionY="192" width="128" height="45"/>
         <element name="ListVocabulary" positionX="160" positionY="192" width="128" height="45"/>
+        <element name="Meaning" positionX="160" positionY="192" width="128" height="90"/>
         <element name="Repository" positionX="160" positionY="192" width="128" height="75"/>
         <element name="Vocabulary" positionX="160" positionY="192" width="128" height="120"/>
-        <element name="Meaning" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="Context" positionX="160" positionY="192" width="128" height="90"/>
     </elements>
 </model>
