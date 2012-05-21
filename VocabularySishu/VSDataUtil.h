@@ -12,6 +12,8 @@
 #import "VSUtils.h"
 #import "Repository.h"
 #import "List.h"
+#import "Vocabulary.h"
+#import "ListVocabulary.h"
 
 @interface VSDataUtil : NSObject
 

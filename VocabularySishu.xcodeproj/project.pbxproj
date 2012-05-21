@@ -42,6 +42,9 @@
 		0073A6A21568D02100B80422 /* List.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6A11568D02100B80422 /* List.m */; };
 		0073A6A51568D03B00B80422 /* Vocabulary.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6A41568D03B00B80422 /* Vocabulary.m */; };
 		0073A6A71569F0D200B80422 /* Lists.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6A61569F0D200B80422 /* Lists.txt */; };
+		0073A6A9156A1E3E00B80422 /* ListVocabularies.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6A8156A1E3E00B80422 /* ListVocabularies.txt */; };
+		0073A6AB156A223200B80422 /* Vocabularies.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6AA156A223200B80422 /* Vocabularies.txt */; };
+		0073A6AE156A291E00B80422 /* ListVocabulary.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6AD156A291E00B80422 /* ListVocabulary.m */; };
 		00B5A8C01566889B00D20EB6 /* retina-navigationbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B5A8BF1566889B00D20EB6 /* retina-navigationbar.png */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +109,10 @@
 		0073A6A31568D03B00B80422 /* Vocabulary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vocabulary.h; path = Model/Vocabulary.h; sourceTree = "<group>"; };
 		0073A6A41568D03B00B80422 /* Vocabulary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Vocabulary.m; path = Model/Vocabulary.m; sourceTree = "<group>"; };
 		0073A6A61569F0D200B80422 /* Lists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Lists.txt; path = Resources/Data/Lists.txt; sourceTree = "<group>"; };
+		0073A6A8156A1E3E00B80422 /* ListVocabularies.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ListVocabularies.txt; path = Resources/Data/ListVocabularies.txt; sourceTree = "<group>"; };
+		0073A6AA156A223200B80422 /* Vocabularies.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Vocabularies.txt; path = Resources/Data/Vocabularies.txt; sourceTree = "<group>"; };
+		0073A6AC156A291E00B80422 /* ListVocabulary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListVocabulary.h; path = Model/ListVocabulary.h; sourceTree = "<group>"; };
+		0073A6AD156A291E00B80422 /* ListVocabulary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListVocabulary.m; path = Model/ListVocabulary.m; sourceTree = "<group>"; };
 		00B5A8BF1566889B00D20EB6 /* retina-navigationbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-navigationbar.png"; path = "Resources/Img/retina-navigationbar.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -247,6 +254,8 @@
 		00701E641553CC1700D30018 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0073A6AC156A291E00B80422 /* ListVocabulary.h */,
+				0073A6AD156A291E00B80422 /* ListVocabulary.m */,
 				0073A6A31568D03B00B80422 /* Vocabulary.h */,
 				0073A6A41568D03B00B80422 /* Vocabulary.m */,
 				0073A6A01568D02100B80422 /* List.h */,
@@ -269,6 +278,8 @@
 		0073A68115689DA900B80422 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				0073A6AA156A223200B80422 /* Vocabularies.txt */,
+				0073A6A8156A1E3E00B80422 /* ListVocabularies.txt */,
 				0073A6A61569F0D200B80422 /* Lists.txt */,
 				0073A68415689E2200B80422 /* Repos.txt */,
 			);
@@ -392,6 +403,8 @@
 				0073A67615688B5100B80422 /* navigationbar.png in Resources */,
 				0073A68515689E2200B80422 /* Repos.txt in Resources */,
 				0073A6A71569F0D200B80422 /* Lists.txt in Resources */,
+				0073A6A9156A1E3E00B80422 /* ListVocabularies.txt in Resources */,
+				0073A6AB156A223200B80422 /* Vocabularies.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +456,7 @@
 				0073A69E1568A30900B80422 /* Repository.m in Sources */,
 				0073A6A21568D02100B80422 /* List.m in Sources */,
 				0073A6A51568D03B00B80422 /* Vocabulary.m in Sources */,
+				0073A6AE156A291E00B80422 /* ListVocabulary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

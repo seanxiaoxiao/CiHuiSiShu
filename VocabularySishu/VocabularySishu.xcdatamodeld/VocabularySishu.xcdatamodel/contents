@@ -11,7 +11,7 @@
         <relationship name="listVocabularies" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ListVocabulary" inverseName="list" inverseEntity="ListVocabulary" syncable="YES"/>
         <relationship name="repository" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Repository" inverseName="lists" inverseEntity="Repository" syncable="YES"/>
     </entity>
-    <entity name="ListVocabulary" syncable="YES">
+    <entity name="ListVocabulary" representedClassName="ListVocabulary" syncable="YES">
         <relationship name="list" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="List" inverseName="listVocabularies" inverseEntity="List" syncable="YES"/>
         <relationship name="vocabulary" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Vocabulary" syncable="YES"/>
     </entity>
