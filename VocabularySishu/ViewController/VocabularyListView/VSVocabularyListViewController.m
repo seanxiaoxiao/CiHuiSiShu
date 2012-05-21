@@ -19,7 +19,7 @@
 
 @implementation VSVocabularyListViewController
 
-@synthesize listVocabularies;
+@synthesize vocabulariesToRecite;
 @synthesize finishProgress;
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -35,9 +35,18 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        Context *context = [VSUtils fetchContext];
-        self.listVocabularies = [context.currentList.listVocabularies allObjects];
-        self.title = context.currentList.name;
+        NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"List" inManagedObjectContext:[VSUtils currentMOContext]];
+        NSFetchRequest *request = [[NSFetchRequest alloc] init];
+        [request setEntity:entityDescription];
+        NSString *predicateContent = [NSString stringWithFormat:@"(name=='GRE顺序List1')"];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat: predicateContent];
+        [request setPredicate:predicate];
+        NSError *error = nil;
+        NSArray *array = [[VSUtils currentMOContext] executeFetchRequest:request error:&error];
+        List *list = [array objectAtIndex:0];
+
+        self.vocabulariesToRecite = [list.listVocabularies allObjects];
+        self.title = list.name;
         NSLog(@"xxxx%@", self.title);
     }
     return self;
@@ -78,9 +87,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 7;
+    return 7 < [self.vocabulariesToRecite count] ? 7 : [self.vocabulariesToRecite count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -90,8 +97,8 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Cell"];
     }
-    //ListVocabulary *listVocabulary = [listVocabularies objectAtIndex:indexPath.row];
-    //cell.textLabel.text = listVocabulary.vocabulary.spell;
+    ListVocabulary *listVocabulary = [vocabulariesToRecite objectAtIndex:indexPath.row];
+    cell.textLabel.text = listVocabulary.vocabulary.spell;
     // Configure the cell...
     
     return cell;
@@ -142,7 +149,7 @@
 {
     // Navigation logic may go here. Create and push another view controller.
     /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+     DetailViewController *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
      // ...
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];

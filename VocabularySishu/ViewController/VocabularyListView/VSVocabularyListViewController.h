@@ -11,7 +11,7 @@
 
 @interface VSVocabularyListViewController : UITableViewController
 
-@property (nonatomic, retain) NSArray *listVocabularies;
+@property (nonatomic, retain) NSArray *vocabulariesToRecite;
 @property (nonatomic, strong) UIProgressView *finishProgress;
 
 @end
