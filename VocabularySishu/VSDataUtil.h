@@ -11,6 +11,7 @@
 #import "SBJsonParser.h"
 #import "VSUtils.h"
 #import "Repository.h"
+#import "List.h"
 
 @interface VSDataUtil : NSObject
 
