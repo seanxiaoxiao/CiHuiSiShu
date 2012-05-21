@@ -32,4 +32,23 @@
     }
 }
 
++ (Context *)fetchContext
+{
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Context" inManagedObjectContext:[VSUtils currentMOContext]];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDescription];
+    __autoreleasing NSError *error = nil;
+    NSArray *results = [[VSUtils currentMOContext] executeFetchRequest:request error:&error];
+    if ([results count] == 1) {
+        return [results objectAtIndex:0];
+    }
+    else {
+        Context *context = [NSEntityDescription insertNewObjectForEntityForName:@"Context" inManagedObjectContext:[VSUtils currentMOContext]];
+        if (![[VSUtils currentMOContext] save:&error]) {
+            NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+        }
+        return context;
+    }
+}
+
 @end

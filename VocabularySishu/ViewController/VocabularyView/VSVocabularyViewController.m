@@ -8,7 +8,7 @@
 
 #import "VSVocabularyViewController.h"
 #import "Vocabulary.h"
-#import "VSUtils.h"
+
 
 @interface VSVocabularyViewController ()
 
@@ -32,7 +32,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.title = @"GRE顺序 List 1";
+    Context *context = [VSUtils fetchContext];
+    self.title = [context fetchCurrentList].name;
 }
 
 - (void)viewWillAppear:(BOOL)animated

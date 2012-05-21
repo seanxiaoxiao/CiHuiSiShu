@@ -60,6 +60,7 @@
     NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSDictionary *repoListDict = [parser objectWithString:jsonString];
     NSArray *repoListKeys = [repoListDict allKeys];
+    __autoreleasing NSError *error = nil;
     for (NSString *key in repoListKeys) {
         NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Repository" inManagedObjectContext:[VSUtils currentMOContext]];
         NSFetchRequest *request = [[NSFetchRequest alloc] init];
@@ -67,7 +68,6 @@
         NSString *predicateContent = [NSString stringWithFormat:@"(name=='%@')", key];
         NSPredicate *predicate = [NSPredicate predicateWithFormat: predicateContent];
         [request setPredicate:predicate];
-        __autoreleasing NSError *error = nil;
         NSArray *array = [[VSUtils currentMOContext] executeFetchRequest:request error:&error];
         Repository *repository = [array objectAtIndex:0];
         NSArray *repoLists = [repoListDict objectForKey:key];

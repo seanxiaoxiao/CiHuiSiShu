@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VSUtils.h"
+#import "List.h"
 
 @interface VSVocabularyViewController : UIViewController {
     IBOutlet UILabel *vocabularyLabel;

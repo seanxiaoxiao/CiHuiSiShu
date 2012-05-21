@@ -16,4 +16,7 @@
 @property (nonatomic, retain) List *list;
 @property (nonatomic, retain) Vocabulary *vocabulary;
 
+- (BOOL)isFirstVocabulary;
+- (BOOL)isLastVocabulary;
+
 @end

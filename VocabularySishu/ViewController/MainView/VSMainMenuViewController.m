@@ -7,7 +7,7 @@
 //
 
 #import "VSMainMenuViewController.h"
-#import "VSVocabularyViewController.h"
+#import "VSVocabularyListViewController.h"
 
 @interface VSMainMenuViewController ()
 
@@ -53,8 +53,8 @@
 
 - (IBAction)recite:(id)sender
 {
-    VSVocabularyViewController *vocabularyViewController = [[VSVocabularyViewController alloc] initWithNibName:@"VSVocabularyViewController" bundle:nil];
-    [self.navigationController pushViewController:vocabularyViewController animated:YES];
+    VSVocabularyListViewController *vocabularyListViewController = [[VSVocabularyListViewController alloc] initWithNibName:@"VSVocabularyListViewController" bundle:nil];
+    [self.navigationController pushViewController:vocabularyListViewController animated:YES];
 }
 
 @end

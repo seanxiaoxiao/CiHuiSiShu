@@ -45,6 +45,9 @@
 		0073A6A9156A1E3E00B80422 /* ListVocabularies.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6A8156A1E3E00B80422 /* ListVocabularies.txt */; };
 		0073A6AB156A223200B80422 /* Vocabularies.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6AA156A223200B80422 /* Vocabularies.txt */; };
 		0073A6AE156A291E00B80422 /* ListVocabulary.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6AD156A291E00B80422 /* ListVocabulary.m */; };
+		0073A6B1156A317600B80422 /* Context.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6B0156A317600B80422 /* Context.m */; };
+		0073A6BE156A5FF700B80422 /* VSVocabularyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6BC156A5FF700B80422 /* VSVocabularyListViewController.m */; };
+		0073A6BF156A5FF700B80422 /* VSVocabularyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */; };
 		00B5A8C01566889B00D20EB6 /* retina-navigationbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B5A8BF1566889B00D20EB6 /* retina-navigationbar.png */; };
 /* End PBXBuildFile section */
 
@@ -113,6 +116,11 @@
 		0073A6AA156A223200B80422 /* Vocabularies.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Vocabularies.txt; path = Resources/Data/Vocabularies.txt; sourceTree = "<group>"; };
 		0073A6AC156A291E00B80422 /* ListVocabulary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListVocabulary.h; path = Model/ListVocabulary.h; sourceTree = "<group>"; };
 		0073A6AD156A291E00B80422 /* ListVocabulary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListVocabulary.m; path = Model/ListVocabulary.m; sourceTree = "<group>"; };
+		0073A6AF156A317600B80422 /* Context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Context.h; path = Model/Context.h; sourceTree = "<group>"; };
+		0073A6B0156A317600B80422 /* Context.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Context.m; path = Model/Context.m; sourceTree = "<group>"; };
+		0073A6BB156A5FF700B80422 /* VSVocabularyListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSVocabularyListViewController.h; path = ViewController/VocabularyListView/VSVocabularyListViewController.h; sourceTree = "<group>"; };
+		0073A6BC156A5FF700B80422 /* VSVocabularyListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSVocabularyListViewController.m; path = ViewController/VocabularyListView/VSVocabularyListViewController.m; sourceTree = "<group>"; };
+		0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSVocabularyListViewController.xib; path = ViewController/VocabularyListView/VSVocabularyListViewController.xib; sourceTree = "<group>"; };
 		00B5A8BF1566889B00D20EB6 /* retina-navigationbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-navigationbar.png"; path = "Resources/Img/retina-navigationbar.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -254,6 +262,8 @@
 		00701E641553CC1700D30018 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0073A6AF156A317600B80422 /* Context.h */,
+				0073A6B0156A317600B80422 /* Context.m */,
 				0073A6AC156A291E00B80422 /* ListVocabulary.h */,
 				0073A6AD156A291E00B80422 /* ListVocabulary.m */,
 				0073A6A31568D03B00B80422 /* Vocabulary.h */,
@@ -269,6 +279,7 @@
 		00701E6B1553CE8C00D30018 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0073A6B2156A47C100B80422 /* VocabularyListView */,
 				0046407E15590DD2007E5FA9 /* VocabularyView */,
 				0046407715590CC8007E5FA9 /* MainView */,
 			);
@@ -313,6 +324,16 @@
 			);
 			name = SBJSON;
 			path = Libs/SBJSON;
+			sourceTree = "<group>";
+		};
+		0073A6B2156A47C100B80422 /* VocabularyListView */ = {
+			isa = PBXGroup;
+			children = (
+				0073A6BB156A5FF700B80422 /* VSVocabularyListViewController.h */,
+				0073A6BC156A5FF700B80422 /* VSVocabularyListViewController.m */,
+				0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */,
+			);
+			name = VocabularyListView;
 			sourceTree = "<group>";
 		};
 		00B5A8BE1566886E00D20EB6 /* Img */ = {
@@ -405,6 +426,7 @@
 				0073A6A71569F0D200B80422 /* Lists.txt in Resources */,
 				0073A6A9156A1E3E00B80422 /* ListVocabularies.txt in Resources */,
 				0073A6AB156A223200B80422 /* Vocabularies.txt in Resources */,
+				0073A6BF156A5FF700B80422 /* VSVocabularyListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +479,8 @@
 				0073A6A21568D02100B80422 /* List.m in Sources */,
 				0073A6A51568D03B00B80422 /* Vocabulary.m in Sources */,
 				0073A6AE156A291E00B80422 /* ListVocabulary.m in Sources */,
+				0073A6B1156A317600B80422 /* Context.m in Sources */,
+				0073A6BE156A5FF700B80422 /* VSVocabularyListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,7 +544,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -538,7 +562,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -548,10 +572,13 @@
 		00701E5F1553CBCE00D30018 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
 				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos5.1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -559,10 +586,13 @@
 		00701E601553CBCE00D30018 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
 				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos5.1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
