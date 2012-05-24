@@ -15,7 +15,8 @@
         <relationship name="list" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="List" inverseName="listVocabularies" inverseEntity="List" syncable="YES"/>
         <relationship name="vocabulary" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Vocabulary" syncable="YES"/>
     </entity>
-    <entity name="Meaning" syncable="YES">
+    <entity name="Meaning" representedClassName="Meaning" syncable="YES">
+        <attribute name="attribute" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="meaning" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="vocabulary" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Vocabulary" inverseName="meanings" inverseEntity="Vocabulary" syncable="YES"/>
@@ -33,11 +34,11 @@
         <relationship name="meanings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Meaning" inverseName="vocabulary" inverseEntity="Meaning" syncable="YES"/>
     </entity>
     <elements>
+        <element name="Context" positionX="160" positionY="192" width="128" height="90"/>
         <element name="List" positionX="160" positionY="192" width="128" height="45"/>
         <element name="ListVocabulary" positionX="160" positionY="192" width="128" height="45"/>
         <element name="Meaning" positionX="160" positionY="192" width="128" height="90"/>
         <element name="Repository" positionX="160" positionY="192" width="128" height="75"/>
         <element name="Vocabulary" positionX="160" positionY="192" width="128" height="120"/>
-        <element name="Context" positionX="160" positionY="192" width="128" height="90"/>
     </elements>
 </model>

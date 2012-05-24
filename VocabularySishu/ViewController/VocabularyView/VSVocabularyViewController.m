@@ -18,6 +18,7 @@
 
 @synthesize vocabularyLabel;
 @synthesize phoneticLabel;
+@synthesize vocabulary;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -55,17 +56,6 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (IBAction)randomClick:(id)sender
-{
-    Vocabulary *newVocabulary = [NSEntityDescription insertNewObjectForEntityForName:@"Vocabulary" inManagedObjectContext:[VSUtils currentMOContext]];
-    newVocabulary.spell = @"apple";
-    newVocabulary.meet = [NSNumber numberWithInt:0];
-    __autoreleasing NSError *error = nil;
-    if (![[VSUtils currentMOContext] save:&error]) {
-        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-    }
-    NSLog(@"No problem?");
-}
 
 
 

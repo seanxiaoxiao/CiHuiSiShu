@@ -48,6 +48,14 @@
 		0073A6B1156A317600B80422 /* Context.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6B0156A317600B80422 /* Context.m */; };
 		0073A6BE156A5FF700B80422 /* VSVocabularyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6BC156A5FF700B80422 /* VSVocabularyListViewController.m */; };
 		0073A6BF156A5FF700B80422 /* VSVocabularyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */; };
+		00994A71156A760C00D522F4 /* Meaning.m in Sources */ = {isa = PBXBuildFile; fileRef = 00994A70156A760C00D522F4 /* Meaning.m */; };
+		00994A73156A767F00D522F4 /* Meaning.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00994A72156A767F00D522F4 /* Meaning.txt */; };
+		00994A79156A806200D522F4 /* VSMeaningCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00994A78156A806200D522F4 /* VSMeaningCell.m */; };
+		00A006F9156B3BDF00D24418 /* Meaning.html in Resources */ = {isa = PBXBuildFile; fileRef = 00A006F8156B3BDF00D24418 /* Meaning.html */; };
+		00A006FC156B3D6D00D24418 /* VSConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A006FB156B3D6D00D24418 /* VSConstant.m */; };
+		00A00703156D15F200D24418 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A00702156D15F200D24418 /* QuartzCore.framework */; };
+		00A00706156D361E00D24418 /* back-buttom.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A00704156D361E00D24418 /* back-buttom.png */; };
+		00A00707156D361E00D24418 /* retina-back-buttom.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A00705156D361E00D24418 /* retina-back-buttom.png */; };
 		00B5A8C01566889B00D20EB6 /* retina-navigationbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B5A8BF1566889B00D20EB6 /* retina-navigationbar.png */; };
 /* End PBXBuildFile section */
 
@@ -121,6 +129,17 @@
 		0073A6BB156A5FF700B80422 /* VSVocabularyListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSVocabularyListViewController.h; path = ViewController/VocabularyListView/VSVocabularyListViewController.h; sourceTree = "<group>"; };
 		0073A6BC156A5FF700B80422 /* VSVocabularyListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSVocabularyListViewController.m; path = ViewController/VocabularyListView/VSVocabularyListViewController.m; sourceTree = "<group>"; };
 		0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSVocabularyListViewController.xib; path = ViewController/VocabularyListView/VSVocabularyListViewController.xib; sourceTree = "<group>"; };
+		00994A6F156A760C00D522F4 /* Meaning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Meaning.h; path = Model/Meaning.h; sourceTree = "<group>"; };
+		00994A70156A760C00D522F4 /* Meaning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Meaning.m; path = Model/Meaning.m; sourceTree = "<group>"; };
+		00994A72156A767F00D522F4 /* Meaning.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Meaning.txt; path = Resources/Data/Meaning.txt; sourceTree = "<group>"; };
+		00994A77156A806200D522F4 /* VSMeaningCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSMeaningCell.h; sourceTree = "<group>"; };
+		00994A78156A806200D522F4 /* VSMeaningCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSMeaningCell.m; sourceTree = "<group>"; };
+		00A006F8156B3BDF00D24418 /* Meaning.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = Meaning.html; path = Resources/Template/Meaning.html; sourceTree = "<group>"; };
+		00A006FA156B3D6D00D24418 /* VSConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSConstant.h; path = Utils/VSConstant.h; sourceTree = "<group>"; };
+		00A006FB156B3D6D00D24418 /* VSConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSConstant.m; path = Utils/VSConstant.m; sourceTree = "<group>"; };
+		00A00702156D15F200D24418 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		00A00704156D361E00D24418 /* back-buttom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "back-buttom.png"; path = "Resources/Img/back-buttom.png"; sourceTree = "<group>"; };
+		00A00705156D361E00D24418 /* retina-back-buttom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-back-buttom.png"; path = "Resources/Img/retina-back-buttom.png"; sourceTree = "<group>"; };
 		00B5A8BF1566889B00D20EB6 /* retina-navigationbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-navigationbar.png"; path = "Resources/Img/retina-navigationbar.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00A00703156D15F200D24418 /* QuartzCore.framework in Frameworks */,
 				00701E301553CBCE00D30018 /* UIKit.framework in Frameworks */,
 				00701E321553CBCE00D30018 /* Foundation.framework in Frameworks */,
 				00701E341553CBCE00D30018 /* CoreGraphics.framework in Frameworks */,
@@ -157,6 +177,8 @@
 				0046409015591DBD007E5FA9 /* VSUtils.m */,
 				0073A67715688F2800B80422 /* VSDataUtil.h */,
 				0073A67815688F2800B80422 /* VSDataUtil.m */,
+				00A006FA156B3D6D00D24418 /* VSConstant.h */,
+				00A006FB156B3D6D00D24418 /* VSConstant.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -184,6 +206,7 @@
 		00701E201553CBCE00D30018 = {
 			isa = PBXGroup;
 			children = (
+				00A00702156D15F200D24418 /* QuartzCore.framework */,
 				00701E371553CBCE00D30018 /* VocabularySishu */,
 				00701E531553CBCE00D30018 /* VocabularySishuTests */,
 				00701E2E1553CBCE00D30018 /* Frameworks */,
@@ -215,6 +238,7 @@
 		00701E371553CBCE00D30018 /* VocabularySishu */ = {
 			isa = PBXGroup;
 			children = (
+				00A006F6156B3B8800D24418 /* Template */,
 				0073A68715689FB400B80422 /* Libs */,
 				0073A68115689DA900B80422 /* Data */,
 				00B5A8BE1566886E00D20EB6 /* Img */,
@@ -262,6 +286,8 @@
 		00701E641553CC1700D30018 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				00994A6F156A760C00D522F4 /* Meaning.h */,
+				00994A70156A760C00D522F4 /* Meaning.m */,
 				0073A6AF156A317600B80422 /* Context.h */,
 				0073A6B0156A317600B80422 /* Context.m */,
 				0073A6AC156A291E00B80422 /* ListVocabulary.h */,
@@ -289,6 +315,7 @@
 		0073A68115689DA900B80422 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				00994A72156A767F00D522F4 /* Meaning.txt */,
 				0073A6AA156A223200B80422 /* Vocabularies.txt */,
 				0073A6A8156A1E3E00B80422 /* ListVocabularies.txt */,
 				0073A6A61569F0D200B80422 /* Lists.txt */,
@@ -332,13 +359,25 @@
 				0073A6BB156A5FF700B80422 /* VSVocabularyListViewController.h */,
 				0073A6BC156A5FF700B80422 /* VSVocabularyListViewController.m */,
 				0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */,
+				00994A77156A806200D522F4 /* VSMeaningCell.h */,
+				00994A78156A806200D522F4 /* VSMeaningCell.m */,
 			);
 			name = VocabularyListView;
+			sourceTree = "<group>";
+		};
+		00A006F6156B3B8800D24418 /* Template */ = {
+			isa = PBXGroup;
+			children = (
+				00A006F8156B3BDF00D24418 /* Meaning.html */,
+			);
+			name = Template;
 			sourceTree = "<group>";
 		};
 		00B5A8BE1566886E00D20EB6 /* Img */ = {
 			isa = PBXGroup;
 			children = (
+				00A00704156D361E00D24418 /* back-buttom.png */,
+				00A00705156D361E00D24418 /* retina-back-buttom.png */,
 				0073A67515688B5100B80422 /* navigationbar.png */,
 				00B5A8BF1566889B00D20EB6 /* retina-navigationbar.png */,
 			);
@@ -427,6 +466,10 @@
 				0073A6A9156A1E3E00B80422 /* ListVocabularies.txt in Resources */,
 				0073A6AB156A223200B80422 /* Vocabularies.txt in Resources */,
 				0073A6BF156A5FF700B80422 /* VSVocabularyListViewController.xib in Resources */,
+				00994A73156A767F00D522F4 /* Meaning.txt in Resources */,
+				00A006F9156B3BDF00D24418 /* Meaning.html in Resources */,
+				00A00706156D361E00D24418 /* back-buttom.png in Resources */,
+				00A00707156D361E00D24418 /* retina-back-buttom.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +524,9 @@
 				0073A6AE156A291E00B80422 /* ListVocabulary.m in Sources */,
 				0073A6B1156A317600B80422 /* Context.m in Sources */,
 				0073A6BE156A5FF700B80422 /* VSVocabularyListViewController.m in Sources */,
+				00994A71156A760C00D522F4 /* Meaning.m in Sources */,
+				00994A79156A806200D522F4 /* VSMeaningCell.m in Sources */,
+				00A006FC156B3D6D00D24418 /* VSConstant.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

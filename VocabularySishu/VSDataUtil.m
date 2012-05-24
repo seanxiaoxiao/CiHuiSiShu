@@ -155,12 +155,51 @@
     }
 }
 
++ (void)initMeanings
+{
+    [VSDataUtil clearEntities:@"Meaning"];
+
+    NSBundle *bundle = [NSBundle mainBundle];
+    NSString *repoData = [bundle pathForResource:@"Meaning" ofType:@"txt"];
+    NSFileHandle* file = [NSFileHandle fileHandleForReadingAtPath:repoData];
+    NSData* data = [file readDataToEndOfFile];
+    [file closeFile];
+    __autoreleasing NSError *error = nil;
+    SBJsonParser *parser = [[SBJsonParser alloc] init];
+    NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSDictionary *meaningDict = [parser objectWithString:jsonString];
+    NSArray *meaningKeys = [meaningDict allKeys];
+    for (NSString *key in meaningKeys) {
+        NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Vocabulary" inManagedObjectContext:[VSUtils currentMOContext]];
+        NSFetchRequest *request = [[NSFetchRequest alloc] init];
+        [request setEntity:entityDescription];
+        NSString *predicateContent = [NSString stringWithFormat:@"(spell=='%@')", key];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat: predicateContent];
+        [request setPredicate:predicate];
+        NSArray *array = [[VSUtils currentMOContext] executeFetchRequest:request error:&error];
+        Vocabulary *vocabulary = [array objectAtIndex:0];
+        
+        NSArray *meanings = [meaningDict objectForKey:key];
+        for (int i = 0; i < [meanings count]; i++) {
+            NSDictionary *meaningInfo = [meanings objectAtIndex:i];
+            Meaning *meaning = [NSEntityDescription insertNewObjectForEntityForName:@"Meaning" inManagedObjectContext:[VSUtils currentMOContext]];
+            meaning.vocabulary = vocabulary;
+            meaning.attribute = [meaningInfo objectForKey:@"attribute"];
+            meaning.meaning = [meaningInfo objectForKey:@"meaning"];
+            if (![[VSUtils currentMOContext] save:&error]) {
+                NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+            }
+        }
+    }
+}
+
 + (void)initData
 {
     //[VSDataUtil initRepoData];
     //[VSDataUtil initRepoList];
     //[VSDataUtil initVocabularies];
     //[VSDataUtil initListVocabularies];
+    //[VSDataUtil initMeanings];
 }
 
 

@@ -55,6 +55,7 @@
 {
     VSVocabularyListViewController *vocabularyListViewController = [[VSVocabularyListViewController alloc] initWithNibName:@"VSVocabularyListViewController" bundle:nil];
     [self.navigationController pushViewController:vocabularyListViewController animated:YES];
+    self.navigationItem.backBarButtonItem.title = @"xsss";
 }
 
 @end

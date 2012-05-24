@@ -14,6 +14,7 @@
 #import "List.h"
 #import "Vocabulary.h"
 #import "ListVocabulary.h"
+#import "Meaning.h"
 
 @interface VSDataUtil : NSObject
 

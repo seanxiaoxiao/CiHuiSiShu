@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Vocabulary.h"
+#import "VSMeaningCell.h"
 
 @interface VSVocabularyListViewController : UITableViewController
 
-@property (nonatomic, retain) NSArray *vocabulariesToRecite;
+@property (nonatomic, retain) NSMutableArray *vocabulariesToRecite;
+@property (nonatomic, retain) Vocabulary *selectedVocabulary;
+@property (nonatomic, assign) CGFloat meaningCellHeight;
 @property (nonatomic, strong) UIProgressView *finishProgress;
+@property (nonatomic, strong) UIView *draggedView;
 
 @end

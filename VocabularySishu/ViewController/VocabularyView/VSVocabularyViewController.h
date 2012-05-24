@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "VSUtils.h"
 #import "List.h"
+#import "Vocabulary.h"
 
 @interface VSVocabularyViewController : UIViewController {
     IBOutlet UILabel *vocabularyLabel;
@@ -17,9 +18,7 @@
 
 @property (nonatomic, strong) UILabel *vocabularyLabel;
 @property (nonatomic, strong) UILabel *phoneticLabel;
+@property (nonatomic, retain) Vocabulary *vocabulary;
 
-- (IBAction)randomClick:(id)sender;
-
-- (IBAction)clickShow:(id)sender;
 
 @end
