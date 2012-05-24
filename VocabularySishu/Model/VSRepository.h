@@ -1,28 +1,27 @@
 //
-//  Repository.h
+//  VSRepository.h
 //  VocabularySishu
 //
-//  Created by xiao xiao on 5/20/12.
+//  Created by xiao xiao on 5/24/12.
 //  Copyright (c) 2012 douban. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class List;
+@class VSList;
 
-@interface Repository : NSManagedObject
+@interface VSRepository : NSManagedObject
 
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * order;
 @property (nonatomic, retain) NSSet *lists;
 @end
 
-@interface Repository (CoreDataGeneratedAccessors)
+@interface VSRepository (CoreDataGeneratedAccessors)
 
-- (void)addListsObject:(List *)value;
-- (void)removeListsObject:(List *)value;
+- (void)addListsObject:(VSList *)value;
+- (void)removeListsObject:(VSList *)value;
 - (void)addLists:(NSSet *)values;
 - (void)removeLists:(NSSet *)values;
-
 @end

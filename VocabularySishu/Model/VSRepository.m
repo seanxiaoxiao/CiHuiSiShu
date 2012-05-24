@@ -1,16 +1,16 @@
 //
-//  Repository.m
+//  VSRepository.m
 //  VocabularySishu
 //
-//  Created by xiao xiao on 5/20/12.
+//  Created by xiao xiao on 5/24/12.
 //  Copyright (c) 2012 douban. All rights reserved.
 //
 
-#import "Repository.h"
-#import "List.h"
+#import "VSRepository.h"
+#import "VSList.h"
 
 
-@implementation Repository
+@implementation VSRepository
 
 @dynamic name;
 @dynamic order;

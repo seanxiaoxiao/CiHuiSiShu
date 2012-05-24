@@ -12,6 +12,10 @@
 
 #define MEANINGLINETEMPLATE @"<li><div>%@</div><div>%@</div></li>"
 
+#define VOCABULARY_LIST_STATUS_REMEMBERED 1
+#define VOCABULARY_LIST_STATUS_NEW 0
+#define VOCABULARY_LIST_STATUS_FORGOT 2
+
 @interface VSConstant : NSObject
 
 @end

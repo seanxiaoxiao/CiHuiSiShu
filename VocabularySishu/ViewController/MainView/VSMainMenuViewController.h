@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VSDataUtil.h"
 
 @interface VSMainMenuViewController : UIViewController
 
 - (IBAction)recite:(id)sender;
+
+- (IBAction)initData:(id)sender;
 
 @end

@@ -10,11 +10,12 @@
 #import "NSObject+SBJSON.h"
 #import "SBJsonParser.h"
 #import "VSUtils.h"
-#import "Repository.h"
-#import "List.h"
-#import "Vocabulary.h"
-#import "ListVocabulary.h"
-#import "Meaning.h"
+#import "VSRepository.h"
+#import "VSList.h"
+#import "VSVocabulary.h"
+#import "VSListVocabulary.h"
+#import "VSMeaning.h"
+#import "VSConstant.h"
 
 @interface VSDataUtil : NSObject
 

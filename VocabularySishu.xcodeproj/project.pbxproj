@@ -38,24 +38,25 @@
 		0073A6991568A0B200B80422 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6911568A0B200B80422 /* SBJsonBase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0073A69A1568A0B200B80422 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6931568A0B200B80422 /* SBJsonParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0073A69B1568A0B200B80422 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6951568A0B200B80422 /* SBJsonWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		0073A69E1568A30900B80422 /* Repository.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A69D1568A30900B80422 /* Repository.m */; };
-		0073A6A21568D02100B80422 /* List.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6A11568D02100B80422 /* List.m */; };
-		0073A6A51568D03B00B80422 /* Vocabulary.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6A41568D03B00B80422 /* Vocabulary.m */; };
 		0073A6A71569F0D200B80422 /* Lists.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6A61569F0D200B80422 /* Lists.txt */; };
 		0073A6A9156A1E3E00B80422 /* ListVocabularies.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6A8156A1E3E00B80422 /* ListVocabularies.txt */; };
 		0073A6AB156A223200B80422 /* Vocabularies.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6AA156A223200B80422 /* Vocabularies.txt */; };
-		0073A6AE156A291E00B80422 /* ListVocabulary.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6AD156A291E00B80422 /* ListVocabulary.m */; };
-		0073A6B1156A317600B80422 /* Context.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6B0156A317600B80422 /* Context.m */; };
 		0073A6BE156A5FF700B80422 /* VSVocabularyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6BC156A5FF700B80422 /* VSVocabularyListViewController.m */; };
 		0073A6BF156A5FF700B80422 /* VSVocabularyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */; };
-		00994A71156A760C00D522F4 /* Meaning.m in Sources */ = {isa = PBXBuildFile; fileRef = 00994A70156A760C00D522F4 /* Meaning.m */; };
 		00994A73156A767F00D522F4 /* Meaning.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00994A72156A767F00D522F4 /* Meaning.txt */; };
 		00994A79156A806200D522F4 /* VSMeaningCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00994A78156A806200D522F4 /* VSMeaningCell.m */; };
 		00A006F9156B3BDF00D24418 /* Meaning.html in Resources */ = {isa = PBXBuildFile; fileRef = 00A006F8156B3BDF00D24418 /* Meaning.html */; };
 		00A006FC156B3D6D00D24418 /* VSConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A006FB156B3D6D00D24418 /* VSConstant.m */; };
 		00A00703156D15F200D24418 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A00702156D15F200D24418 /* QuartzCore.framework */; };
-		00A00706156D361E00D24418 /* back-buttom.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A00704156D361E00D24418 /* back-buttom.png */; };
-		00A00707156D361E00D24418 /* retina-back-buttom.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A00705156D361E00D24418 /* retina-back-buttom.png */; };
+		00A00706156D361E00D24418 /* back-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A00704156D361E00D24418 /* back-button.png */; };
+		00A00707156D361E00D24418 /* retina-back-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A00705156D361E00D24418 /* retina-back-button.png */; };
+		00A0071D156E3A7B00D24418 /* VSContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A0071C156E3A7B00D24418 /* VSContext.m */; };
+		00A00720156E3A8F00D24418 /* VSList.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A0071F156E3A8F00D24418 /* VSList.m */; };
+		00A00723156E3AF400D24418 /* VSListVocabulary.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A00722156E3AF400D24418 /* VSListVocabulary.m */; };
+		00A00726156E3B0500D24418 /* VSMeaning.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A00725156E3B0500D24418 /* VSMeaning.m */; };
+		00A00729156E3B9E00D24418 /* VSRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A00728156E3B9E00D24418 /* VSRepository.m */; };
+		00A0072C156E3BF600D24418 /* VSVocabulary.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A0072B156E3BF500D24418 /* VSVocabulary.m */; };
+		00A0072F156E3C4800D24418 /* VSWebsterMeaning.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A0072E156E3C4800D24418 /* VSWebsterMeaning.m */; };
 		00B5A8C01566889B00D20EB6 /* retina-navigationbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B5A8BF1566889B00D20EB6 /* retina-navigationbar.png */; };
 /* End PBXBuildFile section */
 
@@ -113,24 +114,12 @@
 		0073A6931568A0B200B80422 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
 		0073A6941568A0B200B80422 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		0073A6951568A0B200B80422 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
-		0073A69C1568A30900B80422 /* Repository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Repository.h; path = Model/Repository.h; sourceTree = "<group>"; };
-		0073A69D1568A30900B80422 /* Repository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Repository.m; path = Model/Repository.m; sourceTree = "<group>"; };
-		0073A6A01568D02100B80422 /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = List.h; path = Model/List.h; sourceTree = "<group>"; };
-		0073A6A11568D02100B80422 /* List.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = List.m; path = Model/List.m; sourceTree = "<group>"; };
-		0073A6A31568D03B00B80422 /* Vocabulary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vocabulary.h; path = Model/Vocabulary.h; sourceTree = "<group>"; };
-		0073A6A41568D03B00B80422 /* Vocabulary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Vocabulary.m; path = Model/Vocabulary.m; sourceTree = "<group>"; };
 		0073A6A61569F0D200B80422 /* Lists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Lists.txt; path = Resources/Data/Lists.txt; sourceTree = "<group>"; };
 		0073A6A8156A1E3E00B80422 /* ListVocabularies.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ListVocabularies.txt; path = Resources/Data/ListVocabularies.txt; sourceTree = "<group>"; };
 		0073A6AA156A223200B80422 /* Vocabularies.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Vocabularies.txt; path = Resources/Data/Vocabularies.txt; sourceTree = "<group>"; };
-		0073A6AC156A291E00B80422 /* ListVocabulary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListVocabulary.h; path = Model/ListVocabulary.h; sourceTree = "<group>"; };
-		0073A6AD156A291E00B80422 /* ListVocabulary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListVocabulary.m; path = Model/ListVocabulary.m; sourceTree = "<group>"; };
-		0073A6AF156A317600B80422 /* Context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Context.h; path = Model/Context.h; sourceTree = "<group>"; };
-		0073A6B0156A317600B80422 /* Context.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Context.m; path = Model/Context.m; sourceTree = "<group>"; };
 		0073A6BB156A5FF700B80422 /* VSVocabularyListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSVocabularyListViewController.h; path = ViewController/VocabularyListView/VSVocabularyListViewController.h; sourceTree = "<group>"; };
 		0073A6BC156A5FF700B80422 /* VSVocabularyListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSVocabularyListViewController.m; path = ViewController/VocabularyListView/VSVocabularyListViewController.m; sourceTree = "<group>"; };
 		0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSVocabularyListViewController.xib; path = ViewController/VocabularyListView/VSVocabularyListViewController.xib; sourceTree = "<group>"; };
-		00994A6F156A760C00D522F4 /* Meaning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Meaning.h; path = Model/Meaning.h; sourceTree = "<group>"; };
-		00994A70156A760C00D522F4 /* Meaning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Meaning.m; path = Model/Meaning.m; sourceTree = "<group>"; };
 		00994A72156A767F00D522F4 /* Meaning.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Meaning.txt; path = Resources/Data/Meaning.txt; sourceTree = "<group>"; };
 		00994A77156A806200D522F4 /* VSMeaningCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSMeaningCell.h; sourceTree = "<group>"; };
 		00994A78156A806200D522F4 /* VSMeaningCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSMeaningCell.m; sourceTree = "<group>"; };
@@ -138,8 +127,22 @@
 		00A006FA156B3D6D00D24418 /* VSConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSConstant.h; path = Utils/VSConstant.h; sourceTree = "<group>"; };
 		00A006FB156B3D6D00D24418 /* VSConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSConstant.m; path = Utils/VSConstant.m; sourceTree = "<group>"; };
 		00A00702156D15F200D24418 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		00A00704156D361E00D24418 /* back-buttom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "back-buttom.png"; path = "Resources/Img/back-buttom.png"; sourceTree = "<group>"; };
-		00A00705156D361E00D24418 /* retina-back-buttom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-back-buttom.png"; path = "Resources/Img/retina-back-buttom.png"; sourceTree = "<group>"; };
+		00A00704156D361E00D24418 /* back-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "back-button.png"; path = "Resources/Img/back-button.png"; sourceTree = "<group>"; };
+		00A00705156D361E00D24418 /* retina-back-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-back-button.png"; path = "Resources/Img/retina-back-button.png"; sourceTree = "<group>"; };
+		00A0071B156E3A7B00D24418 /* VSContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSContext.h; path = Model/VSContext.h; sourceTree = "<group>"; };
+		00A0071C156E3A7B00D24418 /* VSContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSContext.m; path = Model/VSContext.m; sourceTree = "<group>"; };
+		00A0071E156E3A8F00D24418 /* VSList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSList.h; path = Model/VSList.h; sourceTree = "<group>"; };
+		00A0071F156E3A8F00D24418 /* VSList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSList.m; path = Model/VSList.m; sourceTree = "<group>"; };
+		00A00721156E3AF400D24418 /* VSListVocabulary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSListVocabulary.h; path = Model/VSListVocabulary.h; sourceTree = "<group>"; };
+		00A00722156E3AF400D24418 /* VSListVocabulary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSListVocabulary.m; path = Model/VSListVocabulary.m; sourceTree = "<group>"; };
+		00A00724156E3B0500D24418 /* VSMeaning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSMeaning.h; path = Model/VSMeaning.h; sourceTree = "<group>"; };
+		00A00725156E3B0500D24418 /* VSMeaning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSMeaning.m; path = Model/VSMeaning.m; sourceTree = "<group>"; };
+		00A00727156E3B9E00D24418 /* VSRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSRepository.h; path = Model/VSRepository.h; sourceTree = "<group>"; };
+		00A00728156E3B9E00D24418 /* VSRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSRepository.m; path = Model/VSRepository.m; sourceTree = "<group>"; };
+		00A0072A156E3BF500D24418 /* VSVocabulary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSVocabulary.h; path = Model/VSVocabulary.h; sourceTree = "<group>"; };
+		00A0072B156E3BF500D24418 /* VSVocabulary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSVocabulary.m; path = Model/VSVocabulary.m; sourceTree = "<group>"; };
+		00A0072D156E3C4800D24418 /* VSWebsterMeaning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSWebsterMeaning.h; path = Model/VSWebsterMeaning.h; sourceTree = "<group>"; };
+		00A0072E156E3C4800D24418 /* VSWebsterMeaning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSWebsterMeaning.m; path = Model/VSWebsterMeaning.m; sourceTree = "<group>"; };
 		00B5A8BF1566889B00D20EB6 /* retina-navigationbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-navigationbar.png"; path = "Resources/Img/retina-navigationbar.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -206,7 +209,6 @@
 		00701E201553CBCE00D30018 = {
 			isa = PBXGroup;
 			children = (
-				00A00702156D15F200D24418 /* QuartzCore.framework */,
 				00701E371553CBCE00D30018 /* VocabularySishu */,
 				00701E531553CBCE00D30018 /* VocabularySishuTests */,
 				00701E2E1553CBCE00D30018 /* Frameworks */,
@@ -226,6 +228,7 @@
 		00701E2E1553CBCE00D30018 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				00A00702156D15F200D24418 /* QuartzCore.framework */,
 				00701E2F1553CBCE00D30018 /* UIKit.framework */,
 				00701E311553CBCE00D30018 /* Foundation.framework */,
 				00701E331553CBCE00D30018 /* CoreGraphics.framework */,
@@ -286,18 +289,20 @@
 		00701E641553CC1700D30018 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				00994A6F156A760C00D522F4 /* Meaning.h */,
-				00994A70156A760C00D522F4 /* Meaning.m */,
-				0073A6AF156A317600B80422 /* Context.h */,
-				0073A6B0156A317600B80422 /* Context.m */,
-				0073A6AC156A291E00B80422 /* ListVocabulary.h */,
-				0073A6AD156A291E00B80422 /* ListVocabulary.m */,
-				0073A6A31568D03B00B80422 /* Vocabulary.h */,
-				0073A6A41568D03B00B80422 /* Vocabulary.m */,
-				0073A6A01568D02100B80422 /* List.h */,
-				0073A6A11568D02100B80422 /* List.m */,
-				0073A69C1568A30900B80422 /* Repository.h */,
-				0073A69D1568A30900B80422 /* Repository.m */,
+				00A0072D156E3C4800D24418 /* VSWebsterMeaning.h */,
+				00A0072E156E3C4800D24418 /* VSWebsterMeaning.m */,
+				00A0072A156E3BF500D24418 /* VSVocabulary.h */,
+				00A0072B156E3BF500D24418 /* VSVocabulary.m */,
+				00A00727156E3B9E00D24418 /* VSRepository.h */,
+				00A00728156E3B9E00D24418 /* VSRepository.m */,
+				00A00724156E3B0500D24418 /* VSMeaning.h */,
+				00A00725156E3B0500D24418 /* VSMeaning.m */,
+				00A00721156E3AF400D24418 /* VSListVocabulary.h */,
+				00A00722156E3AF400D24418 /* VSListVocabulary.m */,
+				00A0071E156E3A8F00D24418 /* VSList.h */,
+				00A0071F156E3A8F00D24418 /* VSList.m */,
+				00A0071B156E3A7B00D24418 /* VSContext.h */,
+				00A0071C156E3A7B00D24418 /* VSContext.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -376,8 +381,8 @@
 		00B5A8BE1566886E00D20EB6 /* Img */ = {
 			isa = PBXGroup;
 			children = (
-				00A00704156D361E00D24418 /* back-buttom.png */,
-				00A00705156D361E00D24418 /* retina-back-buttom.png */,
+				00A00704156D361E00D24418 /* back-button.png */,
+				00A00705156D361E00D24418 /* retina-back-button.png */,
 				0073A67515688B5100B80422 /* navigationbar.png */,
 				00B5A8BF1566889B00D20EB6 /* retina-navigationbar.png */,
 			);
@@ -468,8 +473,8 @@
 				0073A6BF156A5FF700B80422 /* VSVocabularyListViewController.xib in Resources */,
 				00994A73156A767F00D522F4 /* Meaning.txt in Resources */,
 				00A006F9156B3BDF00D24418 /* Meaning.html in Resources */,
-				00A00706156D361E00D24418 /* back-buttom.png in Resources */,
-				00A00707156D361E00D24418 /* retina-back-buttom.png in Resources */,
+				00A00706156D361E00D24418 /* back-button.png in Resources */,
+				00A00707156D361E00D24418 /* retina-back-button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,15 +523,16 @@
 				0073A6991568A0B200B80422 /* SBJsonBase.m in Sources */,
 				0073A69A1568A0B200B80422 /* SBJsonParser.m in Sources */,
 				0073A69B1568A0B200B80422 /* SBJsonWriter.m in Sources */,
-				0073A69E1568A30900B80422 /* Repository.m in Sources */,
-				0073A6A21568D02100B80422 /* List.m in Sources */,
-				0073A6A51568D03B00B80422 /* Vocabulary.m in Sources */,
-				0073A6AE156A291E00B80422 /* ListVocabulary.m in Sources */,
-				0073A6B1156A317600B80422 /* Context.m in Sources */,
 				0073A6BE156A5FF700B80422 /* VSVocabularyListViewController.m in Sources */,
-				00994A71156A760C00D522F4 /* Meaning.m in Sources */,
 				00994A79156A806200D522F4 /* VSMeaningCell.m in Sources */,
 				00A006FC156B3D6D00D24418 /* VSConstant.m in Sources */,
+				00A0071D156E3A7B00D24418 /* VSContext.m in Sources */,
+				00A00720156E3A8F00D24418 /* VSList.m in Sources */,
+				00A00723156E3AF400D24418 /* VSListVocabulary.m in Sources */,
+				00A00726156E3B0500D24418 /* VSMeaning.m in Sources */,
+				00A00729156E3B9E00D24418 /* VSRepository.m in Sources */,
+				00A0072C156E3BF600D24418 /* VSVocabulary.m in Sources */,
+				00A0072F156E3C4800D24418 /* VSWebsterMeaning.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

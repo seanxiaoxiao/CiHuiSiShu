@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "VSUtils.h"
-#import "List.h"
-#import "Vocabulary.h"
+#import "VSList.h"
+#import "VSVocabulary.h"
 
 @class Vocabulary;
 

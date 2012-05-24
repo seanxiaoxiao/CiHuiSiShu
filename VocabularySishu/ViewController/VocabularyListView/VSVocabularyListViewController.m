@@ -9,10 +9,10 @@
 #import "VSVocabularyListViewController.h"
 #import "VSVocabularyViewController.h"
 #import "VSUtils.h"
-#import "Context.h"
-#import "List.h"
-#import "ListVocabulary.h"
-#import "Meaning.h"
+#import "VSContext.h"
+#import "VSList.h"
+#import "VSListVocabulary.h"
+#import "VSMeaning.h"
 
 @interface VSVocabularyListViewController ()
 
@@ -39,7 +39,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"List" inManagedObjectContext:[VSUtils currentMOContext]];
+        NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"VSList" inManagedObjectContext:[VSUtils currentMOContext]];
         NSFetchRequest *request = [[NSFetchRequest alloc] init];
         [request setEntity:entityDescription];
         NSString *predicateContent = [NSString stringWithFormat:@"(name=='GRE顺序List1')"];
@@ -47,7 +47,7 @@
         [request setPredicate:predicate];
         NSError *error = nil;
         NSArray *array = [[VSUtils currentMOContext] executeFetchRequest:request error:&error];
-        List *list = [array objectAtIndex:0];
+        VSList *list = [array objectAtIndex:0];
         self.vocabulariesToRecite = [NSMutableArray arrayWithArray:[list.listVocabularies allObjects]];
         self.title = list.name;
         
@@ -66,6 +66,19 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     //self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    UIImage* image= [VSUtils fetchImg:@"back-button"];
+    CGRect frame= CGRectMake(0, 0, image.size.width, image.size.height); 
+    UIButton* backButton= [[UIButton alloc] initWithFrame:frame]; 
+    [backButton setBackgroundImage:image forState:UIControlStateNormal]; 
+    [backButton setTitle:@" 词汇私塾" forState:UIControlStateNormal]; 
+    [backButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal]; 
+    backButton.titleLabel.font=[UIFont boldSystemFontOfSize:10];
+    backButton.titleLabel.shadowOffset = CGSizeMake(0, -1);
+    [backButton addTarget:self action:@selector(backToMain) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem* backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton]; 
+    [self.navigationItem setLeftBarButtonItem:backButtonItem]; 
+
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -114,7 +127,7 @@
     static NSString *CellIdentifier = @"Cell";
     if (indexPath.row == 1 && selectedVocabulary != nil) {
         NSArray *meanings = [selectedVocabulary.meanings allObjects];
-        __autoreleasing VSMeaningCell *meaningCell = [[VSMeaningCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Meaning"];
+        __autoreleasing VSMeaningCell *meaningCell = [[VSMeaningCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"VSMeaning"];
         [meaningCell setMeaningContent:meanings];
         return meaningCell;
     }
@@ -123,7 +136,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     }
     
-    ListVocabulary *listVocabulary = [vocabulariesToRecite objectAtIndex:indexPath.row];
+    VSListVocabulary *listVocabulary = [vocabulariesToRecite objectAtIndex:indexPath.row];
     cell.textLabel.text = listVocabulary.vocabulary.spell;
     [cell.textLabel setTextAlignment:UITextAlignmentCenter];
     cell.textLabel.backgroundColor = [UIColor clearColor];
@@ -185,7 +198,7 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
     if (selectedVocabulary == nil) {
-        ListVocabulary *listVocabulary = [vocabulariesToRecite objectAtIndex:indexPath.row];
+        VSListVocabulary *listVocabulary = [vocabulariesToRecite objectAtIndex:indexPath.row];
         self.selectedVocabulary = listVocabulary.vocabulary;
         [self.vocabulariesToRecite insertObject:self.selectedVocabulary atIndex:1];
         NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:1 inSection:0];
@@ -208,6 +221,12 @@
     VSVocabularyViewController *detailViewController = [[VSVocabularyViewController alloc] initWithNibName:@"VSVocabularyViewController" bundle:nil];
     detailViewController.vocabulary = [vocabulariesToRecite objectAtIndex:indexPath.row];
     [self.navigationController pushViewController:detailViewController animated:YES];
+}
+
+#pragma <#arguments#>
+- (void)backToMain
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - Gesture Related

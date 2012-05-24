@@ -58,4 +58,9 @@
     self.navigationItem.backBarButtonItem.title = @"xsss";
 }
 
+- (IBAction)initData:(id)sender
+{
+    [VSDataUtil initData];
+}
+
 @end

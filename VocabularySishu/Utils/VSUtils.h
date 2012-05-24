@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Context.h"
+#import "VSContext.h"
 
-@class Context;
+@class VSContext;
 
 @interface VSUtils : NSObject
 
@@ -17,6 +17,6 @@
 
 + (UIImage *)fetchImg:(NSString *)imageName;
 
-+ (Context *)fetchContext;
++ (VSContext *)fetchContext;
 
 @end

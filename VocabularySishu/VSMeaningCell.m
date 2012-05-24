@@ -24,7 +24,7 @@
     NSURL *baseURL = [NSURL fileURLWithPath:path];
     NSString *lines = @"";
     for (int i = 0; i < [self._meanings count]; i++) {
-        Meaning *meaning = [self._meanings objectAtIndex:i];
+        VSMeaning *meaning = [self._meanings objectAtIndex:i];
         NSString *newLine = [NSString stringWithFormat:MEANINGLINETEMPLATE, meaning.attribute, meaning.meaning];
         lines = [lines stringByAppendingString:newLine];
     }

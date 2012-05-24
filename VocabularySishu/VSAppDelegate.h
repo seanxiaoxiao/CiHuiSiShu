@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "VSUtils.h"
 #import "VSMainMenuViewController.h"
-#import "VSDataUtil.h"
 
 @interface VSAppDelegate : UIResponder <UIApplicationDelegate>
 

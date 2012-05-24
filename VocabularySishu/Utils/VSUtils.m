@@ -32,9 +32,9 @@
     }
 }
 
-+ (Context *)fetchContext
++ (VSContext *)fetchContext
 {
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Context" inManagedObjectContext:[VSUtils currentMOContext]];
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"VSContext" inManagedObjectContext:[VSUtils currentMOContext]];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:entityDescription];
     __autoreleasing NSError *error = nil;
@@ -43,7 +43,7 @@
         return [results objectAtIndex:0];
     }
     else {
-        Context *context = [NSEntityDescription insertNewObjectForEntityForName:@"Context" inManagedObjectContext:[VSUtils currentMOContext]];
+        VSContext *context = [NSEntityDescription insertNewObjectForEntityForName:@"VSContext" inManagedObjectContext:[VSUtils currentMOContext]];
         if (![[VSUtils currentMOContext] save:&error]) {
             NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
         }

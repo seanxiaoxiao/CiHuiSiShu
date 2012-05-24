@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Meaning.h"
+#import "VSMeaning.h"
 
 @interface VSMeaningCell : UITableViewCell<UIWebViewDelegate>
 
