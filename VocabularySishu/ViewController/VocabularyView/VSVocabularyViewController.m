@@ -19,6 +19,7 @@
 @synthesize vocabularyLabel;
 @synthesize phoneticLabel;
 @synthesize vocabulary;
+@synthesize etymologyLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

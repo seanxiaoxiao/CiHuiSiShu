@@ -11,13 +11,17 @@
 #import "List.h"
 #import "Vocabulary.h"
 
+@class Vocabulary;
+
 @interface VSVocabularyViewController : UIViewController {
     IBOutlet UILabel *vocabularyLabel;
     IBOutlet UILabel *phoneticLabel;
+    IBOutlet UILabel *etymologyLabel;
 }
 
 @property (nonatomic, strong) UILabel *vocabularyLabel;
 @property (nonatomic, strong) UILabel *phoneticLabel;
+@property (nonatomic, strong) UILabel *etymologyLabel;
 @property (nonatomic, retain) Vocabulary *vocabulary;
 
 
