@@ -10,4 +10,6 @@
 
 @interface VSVocabularyListHeaderView : UIView
 
+@property (nonatomic, strong) UIProgressView *finishRateBar;
+
 @end

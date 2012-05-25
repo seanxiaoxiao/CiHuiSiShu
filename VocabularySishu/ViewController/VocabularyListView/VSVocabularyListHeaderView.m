@@ -10,11 +10,15 @@
 
 @implementation VSVocabularyListHeaderView
 
+@synthesize finishRateBar;
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        self.finishRateBar = [[UIProgressView alloc] initWithFrame:CGRectMake(0, 0, 320, 10)];
+        [self addSubview:self.finishRateBar];
+        self.finishRateBar.progress = 0.1;
     }
     return self;
 }

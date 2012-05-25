@@ -21,7 +21,7 @@
 @implementation VSVocabularyListViewController
 
 @synthesize vocabulariesToRecite;
-@synthesize finishProgress;
+@synthesize headerView;
 @synthesize selectedVocabulary;
 @synthesize meaningCellHeight;
 @synthesize draggedView;
@@ -48,8 +48,11 @@
         NSError *error = nil;
         NSArray *array = [[VSUtils currentMOContext] executeFetchRequest:request error:&error];
         VSList *list = [array objectAtIndex:0];
-        self.vocabulariesToRecite = [NSMutableArray arrayWithArray:[list.listVocabularies allObjects]];
+        self.vocabulariesToRecite = [NSMutableArray arrayWithArray:[list vocabulariesToRecite]];
         self.title = list.name;
+
+        self.headerView = [[VSVocabularyListHeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 10)];
+        self.tableView.tableHeaderView = headerView;
         
         __autoreleasing UIGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanning:)];
         [self.view addGestureRecognizer:panGesture];
@@ -91,7 +94,7 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
-    self.finishProgress = nil;
+    self.headerView = nil;
     self.draggedView = nil;
 }
 

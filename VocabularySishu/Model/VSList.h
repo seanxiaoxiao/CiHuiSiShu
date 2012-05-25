@@ -28,11 +28,13 @@
 
 + (void)recitedVocabulary:(VSVocabulary *)vocabulary;
 
-- (float)finishRate;
+- (float)finishProgress;
 
 - (int)rememberedCount;
 
 - (int)forgotCount;
+
+- (NSArray *)vocabulariesToRecite;
 
 @end
 

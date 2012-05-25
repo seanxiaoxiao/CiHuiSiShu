@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "VSUtils.h"
 
 @class VSMeaning;
 
@@ -21,6 +22,10 @@
 @property (nonatomic, retain) NSString * spell;
 @property (nonatomic, retain) NSSet *meanings;
 @property (nonatomic, retain) NSManagedObject *websterMeanings;
+
+- (void)remembered;
+
+- (void)forgot;
 
 @end
 

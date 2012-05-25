@@ -21,20 +21,24 @@
 @dynamic meanings;
 @dynamic websterMeanings;
 
-- (BOOL)isEqual:(id)other
+- (void)remembered
 {
-    if (other == self) {
-        return YES;
+    self.remember = [NSNumber numberWithInt:[self.remember intValue] + 1];
+    self.meet = [NSNumber numberWithInt:[self.meet intValue] + 1];
+    __autoreleasing NSError *error = nil;
+    if (![[VSUtils currentMOContext] save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
     }
-    if (!other || ![other isKindOfClass:[self class]]) {
-        return NO;
-    }
-    return [self.spell isEqualToString:((VSVocabulary *)other).spell];
 }
 
-- (unsigned int)hash  
-{  
-    return self.spell.hash;
-} 
+- (void)forgot
+{
+    self.forget = [NSNumber numberWithInt:[self.forget intValue] + 1];
+    self.meet = [NSNumber numberWithInt:[self.meet intValue] + 1];
+    __autoreleasing NSError *error = nil;
+    if (![[VSUtils currentMOContext] save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    }
+}
 
 @end

@@ -77,14 +77,14 @@
 - (BOOL)hasVocabulary:(VSVocabulary *)theVocabulary
 {
     for (VSListVocabulary *listVocabualry in self.listVocabularies) {
-        if ([theVocabulary isEqual:listVocabualry.vocabulary]) {
+        if ([theVocabulary.spell isEqualToString:listVocabualry.vocabulary.spell]) {
             return YES;
         }
     }
     return NO;
 }
 
-- (float)finishRate
+- (float)finishProgress
 {
     int rememberedCount = 0;
     for (VSListVocabulary *listVocabulay in self.listVocabularies) {
@@ -116,5 +116,25 @@
     }
     return forgotCount;    
 }
+
+- (NSArray *)vocabulariesToRecite
+{
+    if (self.isHistory) {
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(lastStatus!='2')"];
+        NSSortDescriptor *sortOrderDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
+        NSSortDescriptor *sortStatusDescriptor = [[NSSortDescriptor alloc] initWithKey:@"lastStatus" ascending:YES];
+        NSArray *sortDescriptors = [NSArray arrayWithObjects:sortOrderDescriptor, sortStatusDescriptor, nil];
+        return [[self.listVocabularies filteredSetUsingPredicate:predicate] sortedArrayUsingDescriptors:sortDescriptors];
+    }
+    else {
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(lastStatus!='2')"];
+        NSSortDescriptor *sortSpellDescriptor = [[NSSortDescriptor alloc] initWithKey:@"vocabulary.spell" ascending:YES];
+        NSSortDescriptor *sortStatusDescriptor = [[NSSortDescriptor alloc] initWithKey:@"lastStatus" ascending:YES];
+        NSArray *sortDescriptors = [NSArray arrayWithObjects:sortSpellDescriptor, sortStatusDescriptor, nil];
+        return [[self.listVocabularies filteredSetUsingPredicate:predicate] sortedArrayUsingDescriptors:sortDescriptors];
+    }
+}
+
+
 
 @end
