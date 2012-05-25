@@ -44,7 +44,6 @@
 		0073A6BE156A5FF700B80422 /* VSVocabularyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6BC156A5FF700B80422 /* VSVocabularyListViewController.m */; };
 		0073A6BF156A5FF700B80422 /* VSVocabularyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */; };
 		00994A73156A767F00D522F4 /* Meaning.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00994A72156A767F00D522F4 /* Meaning.txt */; };
-		00994A79156A806200D522F4 /* VSMeaningCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00994A78156A806200D522F4 /* VSMeaningCell.m */; };
 		00A006F9156B3BDF00D24418 /* Meaning.html in Resources */ = {isa = PBXBuildFile; fileRef = 00A006F8156B3BDF00D24418 /* Meaning.html */; };
 		00A006FC156B3D6D00D24418 /* VSConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A006FB156B3D6D00D24418 /* VSConstant.m */; };
 		00A00703156D15F200D24418 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A00702156D15F200D24418 /* QuartzCore.framework */; };
@@ -57,6 +56,8 @@
 		00A00729156E3B9E00D24418 /* VSRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A00728156E3B9E00D24418 /* VSRepository.m */; };
 		00A0072C156E3BF600D24418 /* VSVocabulary.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A0072B156E3BF500D24418 /* VSVocabulary.m */; };
 		00A0072F156E3C4800D24418 /* VSWebsterMeaning.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A0072E156E3C4800D24418 /* VSWebsterMeaning.m */; };
+		00A00732156F7FEF00D24418 /* VSVocabularyListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A00731156F7FEE00D24418 /* VSVocabularyListHeaderView.m */; };
+		00A00735156F807B00D24418 /* VSMeaningCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A00734156F807B00D24418 /* VSMeaningCell.m */; };
 		00B5A8C01566889B00D20EB6 /* retina-navigationbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B5A8BF1566889B00D20EB6 /* retina-navigationbar.png */; };
 /* End PBXBuildFile section */
 
@@ -121,8 +122,6 @@
 		0073A6BC156A5FF700B80422 /* VSVocabularyListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSVocabularyListViewController.m; path = ViewController/VocabularyListView/VSVocabularyListViewController.m; sourceTree = "<group>"; };
 		0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSVocabularyListViewController.xib; path = ViewController/VocabularyListView/VSVocabularyListViewController.xib; sourceTree = "<group>"; };
 		00994A72156A767F00D522F4 /* Meaning.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Meaning.txt; path = Resources/Data/Meaning.txt; sourceTree = "<group>"; };
-		00994A77156A806200D522F4 /* VSMeaningCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSMeaningCell.h; sourceTree = "<group>"; };
-		00994A78156A806200D522F4 /* VSMeaningCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSMeaningCell.m; sourceTree = "<group>"; };
 		00A006F8156B3BDF00D24418 /* Meaning.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = Meaning.html; path = Resources/Template/Meaning.html; sourceTree = "<group>"; };
 		00A006FA156B3D6D00D24418 /* VSConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSConstant.h; path = Utils/VSConstant.h; sourceTree = "<group>"; };
 		00A006FB156B3D6D00D24418 /* VSConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSConstant.m; path = Utils/VSConstant.m; sourceTree = "<group>"; };
@@ -143,6 +142,10 @@
 		00A0072B156E3BF500D24418 /* VSVocabulary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSVocabulary.m; path = Model/VSVocabulary.m; sourceTree = "<group>"; };
 		00A0072D156E3C4800D24418 /* VSWebsterMeaning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSWebsterMeaning.h; path = Model/VSWebsterMeaning.h; sourceTree = "<group>"; };
 		00A0072E156E3C4800D24418 /* VSWebsterMeaning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSWebsterMeaning.m; path = Model/VSWebsterMeaning.m; sourceTree = "<group>"; };
+		00A00730156F7FEE00D24418 /* VSVocabularyListHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSVocabularyListHeaderView.h; path = ViewController/VocabularyListView/VSVocabularyListHeaderView.h; sourceTree = "<group>"; };
+		00A00731156F7FEE00D24418 /* VSVocabularyListHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSVocabularyListHeaderView.m; path = ViewController/VocabularyListView/VSVocabularyListHeaderView.m; sourceTree = "<group>"; };
+		00A00733156F807B00D24418 /* VSMeaningCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSMeaningCell.h; path = ViewController/VocabularyListView/VSMeaningCell.h; sourceTree = "<group>"; };
+		00A00734156F807B00D24418 /* VSMeaningCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSMeaningCell.m; path = ViewController/VocabularyListView/VSMeaningCell.m; sourceTree = "<group>"; };
 		00B5A8BF1566889B00D20EB6 /* retina-navigationbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-navigationbar.png"; path = "Resources/Img/retina-navigationbar.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -361,11 +364,13 @@
 		0073A6B2156A47C100B80422 /* VocabularyListView */ = {
 			isa = PBXGroup;
 			children = (
+				00A00733156F807B00D24418 /* VSMeaningCell.h */,
+				00A00734156F807B00D24418 /* VSMeaningCell.m */,
 				0073A6BB156A5FF700B80422 /* VSVocabularyListViewController.h */,
 				0073A6BC156A5FF700B80422 /* VSVocabularyListViewController.m */,
 				0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */,
-				00994A77156A806200D522F4 /* VSMeaningCell.h */,
-				00994A78156A806200D522F4 /* VSMeaningCell.m */,
+				00A00730156F7FEE00D24418 /* VSVocabularyListHeaderView.h */,
+				00A00731156F7FEE00D24418 /* VSVocabularyListHeaderView.m */,
 			);
 			name = VocabularyListView;
 			sourceTree = "<group>";
@@ -524,7 +529,6 @@
 				0073A69A1568A0B200B80422 /* SBJsonParser.m in Sources */,
 				0073A69B1568A0B200B80422 /* SBJsonWriter.m in Sources */,
 				0073A6BE156A5FF700B80422 /* VSVocabularyListViewController.m in Sources */,
-				00994A79156A806200D522F4 /* VSMeaningCell.m in Sources */,
 				00A006FC156B3D6D00D24418 /* VSConstant.m in Sources */,
 				00A0071D156E3A7B00D24418 /* VSContext.m in Sources */,
 				00A00720156E3A8F00D24418 /* VSList.m in Sources */,
@@ -533,6 +537,8 @@
 				00A00729156E3B9E00D24418 /* VSRepository.m in Sources */,
 				00A0072C156E3BF600D24418 /* VSVocabulary.m in Sources */,
 				00A0072F156E3C4800D24418 /* VSWebsterMeaning.m in Sources */,
+				00A00732156F7FEF00D24418 /* VSVocabularyListHeaderView.m in Sources */,
+				00A00735156F807B00D24418 /* VSMeaningCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

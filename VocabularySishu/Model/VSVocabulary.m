@@ -21,4 +21,20 @@
 @dynamic meanings;
 @dynamic websterMeanings;
 
+- (BOOL)isEqual:(id)other
+{
+    if (other == self) {
+        return YES;
+    }
+    if (!other || ![other isKindOfClass:[self class]]) {
+        return NO;
+    }
+    return [self.spell isEqualToString:((VSVocabulary *)other).spell];
+}
+
+- (unsigned int)hash  
+{  
+    return self.spell.hash;
+} 
+
 @end

@@ -21,6 +21,7 @@
 @property (nonatomic, retain) NSString * spell;
 @property (nonatomic, retain) NSSet *meanings;
 @property (nonatomic, retain) NSManagedObject *websterMeanings;
+
 @end
 
 @interface VSVocabulary (CoreDataGeneratedAccessors)

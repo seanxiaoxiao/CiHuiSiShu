@@ -19,4 +19,6 @@
 
 + (VSContext *)fetchContext;
 
++ (NSDate *)getToday;
+
 @end

@@ -51,4 +51,15 @@
     }
 }
 
++ (NSDate *)getToday
+{
+    NSCalendar *cal = [NSCalendar currentCalendar];
+    NSDateComponents *components = [cal components:( NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit ) fromDate:[[NSDate alloc] init]];
+    
+    [components setHour:-[components hour]];
+    [components setMinute:-[components minute]];
+    [components setSecond:-[components second]];
+    return [cal dateByAddingComponents:components toDate:[[NSDate alloc] init] options:0]; 
+}
+
 @end
