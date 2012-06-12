@@ -12,4 +12,6 @@
 
 @property (nonatomic, strong) UIProgressView *finishRateBar;
 
+- (void)setProgress:(CGFloat)progress;
+
 @end

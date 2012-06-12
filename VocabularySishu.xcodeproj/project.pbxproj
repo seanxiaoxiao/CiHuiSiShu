@@ -58,6 +58,10 @@
 		00A0072F156E3C4800D24418 /* VSWebsterMeaning.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A0072E156E3C4800D24418 /* VSWebsterMeaning.m */; };
 		00A00732156F7FEF00D24418 /* VSVocabularyListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A00731156F7FEE00D24418 /* VSVocabularyListHeaderView.m */; };
 		00A00735156F807B00D24418 /* VSMeaningCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A00734156F807B00D24418 /* VSMeaningCell.m */; };
+		00A1AFA71585FD4700310669 /* abacus.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 00A1AFA61585FD4700310669 /* abacus.mp3 */; };
+		00A1AFAD1586192400310669 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A1AFAC1586192400310669 /* AVFoundation.framework */; };
+		00A353821587575E0063DCAE /* abacus.bin in Resources */ = {isa = PBXBuildFile; fileRef = 00A353811587575E0063DCAE /* abacus.bin */; };
+		00A353831587575E0063DCAE /* abacus.bin in Resources */ = {isa = PBXBuildFile; fileRef = 00A353811587575E0063DCAE /* abacus.bin */; };
 		00B5A8C01566889B00D20EB6 /* retina-navigationbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B5A8BF1566889B00D20EB6 /* retina-navigationbar.png */; };
 /* End PBXBuildFile section */
 
@@ -146,6 +150,9 @@
 		00A00731156F7FEE00D24418 /* VSVocabularyListHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSVocabularyListHeaderView.m; path = ViewController/VocabularyListView/VSVocabularyListHeaderView.m; sourceTree = "<group>"; };
 		00A00733156F807B00D24418 /* VSMeaningCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSMeaningCell.h; path = ViewController/VocabularyListView/VSMeaningCell.h; sourceTree = "<group>"; };
 		00A00734156F807B00D24418 /* VSMeaningCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSMeaningCell.m; path = ViewController/VocabularyListView/VSMeaningCell.m; sourceTree = "<group>"; };
+		00A1AFA61585FD4700310669 /* abacus.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = abacus.mp3; path = Resources/Audio/abacus.mp3; sourceTree = "<group>"; };
+		00A1AFAC1586192400310669 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		00A353811587575E0063DCAE /* abacus.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = abacus.bin; path = Resources/Audio/abacus.bin; sourceTree = "<group>"; };
 		00B5A8BF1566889B00D20EB6 /* retina-navigationbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-navigationbar.png"; path = "Resources/Img/retina-navigationbar.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,6 +161,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00A1AFAD1586192400310669 /* AVFoundation.framework in Frameworks */,
 				00A00703156D15F200D24418 /* QuartzCore.framework in Frameworks */,
 				00701E301553CBCE00D30018 /* UIKit.framework in Frameworks */,
 				00701E321553CBCE00D30018 /* Foundation.framework in Frameworks */,
@@ -231,6 +239,7 @@
 		00701E2E1553CBCE00D30018 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				00A1AFAC1586192400310669 /* AVFoundation.framework */,
 				00A00702156D15F200D24418 /* QuartzCore.framework */,
 				00701E2F1553CBCE00D30018 /* UIKit.framework */,
 				00701E311553CBCE00D30018 /* Foundation.framework */,
@@ -244,6 +253,7 @@
 		00701E371553CBCE00D30018 /* VocabularySishu */ = {
 			isa = PBXGroup;
 			children = (
+				00A1AFA41585FD2400310669 /* Audio */,
 				00A006F6156B3B8800D24418 /* Template */,
 				0073A68715689FB400B80422 /* Libs */,
 				0073A68115689DA900B80422 /* Data */,
@@ -383,6 +393,15 @@
 			name = Template;
 			sourceTree = "<group>";
 		};
+		00A1AFA41585FD2400310669 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				00A353811587575E0063DCAE /* abacus.bin */,
+				00A1AFA61585FD4700310669 /* abacus.mp3 */,
+			);
+			name = Audio;
+			sourceTree = "<group>";
+		};
 		00B5A8BE1566886E00D20EB6 /* Img */ = {
 			isa = PBXGroup;
 			children = (
@@ -480,6 +499,8 @@
 				00A006F9156B3BDF00D24418 /* Meaning.html in Resources */,
 				00A00706156D361E00D24418 /* back-button.png in Resources */,
 				00A00707156D361E00D24418 /* retina-back-button.png in Resources */,
+				00A1AFA71585FD4700310669 /* abacus.mp3 in Resources */,
+				00A353821587575E0063DCAE /* abacus.bin in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +510,7 @@
 			files = (
 				00701E581553CBCE00D30018 /* InfoPlist.strings in Resources */,
 				0046408315590E0B007E5FA9 /* VSVocabularyViewController.xib in Resources */,
+				00A353831587575E0063DCAE /* abacus.bin in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

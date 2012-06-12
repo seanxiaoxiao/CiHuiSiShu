@@ -36,6 +36,8 @@
 
 - (NSArray *)vocabulariesToRecite;
 
+- (void)addVocabulary:(VSVocabulary *)vocabulary;
+
 @end
 
 @interface VSList (CoreDataGeneratedAccessors)

@@ -7,8 +7,8 @@
 //
 
 #import "VSVocabularyViewController.h"
-#import "VSVocabulary.h"
 
+@class VSVocabulary;
 
 @interface VSVocabularyViewController ()
 
@@ -20,6 +20,8 @@
 @synthesize phoneticLabel;
 @synthesize vocabulary;
 @synthesize etymologyLabel;
+@synthesize playButton;
+@synthesize player;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,8 +36,19 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    VSContext *context = [VSUtils fetchContext];
-    self.title = @"GRE顺序List1"; //[context fetchCurrentList].name;
+    self.title = self.vocabulary.spell; //[context fetchCurrentList].name;
+    self.vocabularyLabel.text = self.vocabulary.spell;
+    self.phoneticLabel.text = self.vocabulary.phonetic;
+    self.etymologyLabel.text = self.vocabulary.etymology;
+    [self.vocabularyLabel sizeToFit];
+    [self.phoneticLabel sizeToFit];
+    [self.etymologyLabel sizeToFit];
+    if (![self audioExist]) {
+        [self.playButton setHidden:YES];
+    }
+    else {
+        [self.playButton setHidden:NO];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -50,6 +63,10 @@
     // e.g. self.myOutlet = nil;
     self.vocabularyLabel = nil;
     self.phoneticLabel = nil;
+    self.etymologyLabel = nil;
+    self.playButton = nil;
+    self.vocabulary = nil;
+    self.player = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -57,7 +74,27 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (IBAction)play:(id)sender
+{
+    NSURL *pathURL = [self audioPath:self.vocabulary.spell];
+    NSData *objectData = [NSData dataWithContentsOfURL:pathURL];
+    NSLog(@"%@", objectData);
+    NSError *error;
+    self.player = [[AVAudioPlayer alloc] initWithData:objectData error:&error];
+    [self.player prepareToPlay];
+    [self.player play];
+}
 
+- (BOOL)audioExist
+{
+    NSURL *url = [[NSBundle mainBundle] URLForResource:self.vocabulary.spell withExtension: @"mp3"];
+    return url != nil;
+}
+
+- (NSURL *)audioPath:(NSString *)spell
+{
+    return [[NSBundle mainBundle] URLForResource:self.vocabulary.spell withExtension: @"bin"];
+}
 
 
 @end

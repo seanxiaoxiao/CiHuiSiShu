@@ -135,6 +135,10 @@
     }
 }
 
+- (void)addVocabulary:(VSVocabulary *)vocabulary
+{
+    [VSListVocabulary createAndGet:self withVocabulary:vocabulary];
+}
 
 
 @end

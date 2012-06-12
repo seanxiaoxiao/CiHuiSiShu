@@ -10,13 +10,20 @@
 #import "VSVocabulary.h"
 #import "VSMeaningCell.h"
 #import "VSVocabularyListHeaderView.h"
+#import "VSConstant.h"
 
 @interface VSVocabularyListViewController : UITableViewController
 
 @property (nonatomic, retain) NSMutableArray *vocabulariesToRecite;
 @property (nonatomic, retain) VSVocabulary *selectedVocabulary;
-@property (nonatomic, assign) CGFloat meaningCellHeight;
 @property (nonatomic, strong) VSVocabularyListHeaderView *headerView;
-@property (nonatomic, strong) UIView *draggedView;
+@property (nonatomic, assign) CGFloat meaningCellHeight;
+@property (nonatomic, assign) CGPoint touchPoint;
+@property (nonatomic, assign) int draggedIndex;
+@property (nonatomic, assign) int countInList;
+@property (nonatomic, assign) int rememberCount;
+@property (nonatomic, strong) UITableViewCell *draggedCell;
+@property (nonatomic, strong) UIView *rememberView;
+@property (nonatomic, strong) UIView *forgetView;
 
 @end

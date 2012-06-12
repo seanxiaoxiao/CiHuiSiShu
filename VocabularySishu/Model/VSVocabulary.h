@@ -27,6 +27,8 @@
 
 - (void)forgot;
 
+- (void)play;
+
 @end
 
 @interface VSVocabulary (CoreDataGeneratedAccessors)
