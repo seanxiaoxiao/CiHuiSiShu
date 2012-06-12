@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "VSContext.h"
+#import "VSVocabulary.h"
 
-@class VSContext;
+@class VSVocabulary;
 
 @interface VSUtils : NSObject
 
@@ -20,5 +21,7 @@
 + (VSContext *)fetchContext;
 
 + (NSDate *)getToday;
+
++ (BOOL) vocabularySame:(VSVocabulary *)first with:(VSVocabulary *)second;
 
 @end

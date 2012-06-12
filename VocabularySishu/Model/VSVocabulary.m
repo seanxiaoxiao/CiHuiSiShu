@@ -41,5 +41,29 @@
     }
 }
 
+- (NSString *)meetTimes
+{
+    return [self.meet description];
+}
+
+- (NSString *)rememberedTimes
+{
+    return [self.remember description];
+}
+
+- (NSString *)forgotTimes
+{
+    return [self.forget description];
+}
+
+- (NSDecimalNumber *)rememberRate
+{
+    if ([self.meet intValue] == 0) {
+        return [[NSDecimalNumber alloc] initWithFloat:0];
+    }
+    else {
+        return [[NSDecimalNumber alloc] initWithFloat:([self.remember floatValue]/ [self.meet floatValue])];
+    }
+}
 
 @end

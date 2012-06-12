@@ -29,6 +29,14 @@
 
 - (void)play;
 
+- (NSString *)meetTimes;
+
+- (NSString *)rememberedTimes;
+
+- (NSString *)forgotTimes;
+
+- (NSDecimalNumber *)rememberRate;
+
 @end
 
 @interface VSVocabulary (CoreDataGeneratedAccessors)

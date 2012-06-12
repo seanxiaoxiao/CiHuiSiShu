@@ -10,6 +10,7 @@
 #import <CoreData/CoreData.h>
 #import "VSUtils.h"
 #import "VSVocabulary.h"
+#import "VSUtils.h"
 
 @class VSListVocabulary, VSRepository, VSVocabulary;
 
@@ -37,6 +38,8 @@
 - (NSArray *)vocabulariesToRecite;
 
 - (void)addVocabulary:(VSVocabulary *)vocabulary;
+
+- (BOOL)isHistoryList;
 
 @end
 

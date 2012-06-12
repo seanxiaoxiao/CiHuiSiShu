@@ -19,6 +19,7 @@
 @property (nonatomic, retain) VSVocabulary *selectedVocabulary;
 @property (nonatomic, strong) VSVocabularyListHeaderView *headerView;
 @property (nonatomic, retain) VSList *listToday;
+@property (nonatomic, retain) VSList *currentList;
 @property (nonatomic, assign) CGFloat meaningCellHeight;
 @property (nonatomic, assign) CGPoint touchPoint;
 @property (nonatomic, assign) int draggedIndex;

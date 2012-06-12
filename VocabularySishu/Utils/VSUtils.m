@@ -62,4 +62,9 @@
     return [cal dateByAddingComponents:components toDate:[[NSDate alloc] init] options:0]; 
 }
 
++ (BOOL) vocabularySame:(VSVocabulary *)first with:(VSVocabulary *)second
+{
+    return [first.spell isEqualToString:second.spell];
+}
+
 @end

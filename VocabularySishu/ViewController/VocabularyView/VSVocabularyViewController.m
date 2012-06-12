@@ -22,6 +22,9 @@
 @synthesize etymologyLabel;
 @synthesize playButton;
 @synthesize player;
+@synthesize meetLabel;
+@synthesize rememberedLabel;
+@synthesize forgotLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -40,6 +43,9 @@
     self.vocabularyLabel.text = self.vocabulary.spell;
     self.phoneticLabel.text = self.vocabulary.phonetic;
     self.etymologyLabel.text = self.vocabulary.etymology;
+    self.meetLabel.text = [self.vocabulary meetTimes];
+    self.rememberedLabel.text = [self.vocabulary rememberedTimes];
+    self.forgotLabel.text = [self.vocabulary forgotTimes];
     [self.vocabularyLabel sizeToFit];
     [self.phoneticLabel sizeToFit];
     [self.etymologyLabel sizeToFit];
@@ -67,6 +73,9 @@
     self.playButton = nil;
     self.vocabulary = nil;
     self.player = nil;
+    self.meetLabel = nil;
+    self.rememberedLabel = nil;
+    self.forgotLabel = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

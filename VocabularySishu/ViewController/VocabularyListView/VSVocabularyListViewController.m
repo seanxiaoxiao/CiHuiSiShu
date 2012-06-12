@@ -32,6 +32,7 @@
 @synthesize countInList;
 @synthesize rememberCount;
 @synthesize draggedIndex;
+@synthesize currentList;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -46,24 +47,15 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"VSList" inManagedObjectContext:[VSUtils currentMOContext]];
-        NSFetchRequest *request = [[NSFetchRequest alloc] init];
-        [request setEntity:entityDescription];
-        NSString *predicateContent = [NSString stringWithFormat:@"(name=='GRE顺序List1')"];
-        NSPredicate *predicate = [NSPredicate predicateWithFormat: predicateContent];
-        [request setPredicate:predicate];
-        NSError *error = nil;
-        NSArray *array = [[VSUtils currentMOContext] executeFetchRequest:request error:&error];
-        VSList *list = [array objectAtIndex:0];
-        self.vocabulariesToRecite = [NSMutableArray arrayWithArray:[list vocabulariesToRecite]];
-        self.countInList = [list.listVocabularies count];
-        self.rememberCount = [list rememberedCount];
-
-        self.title = list.name;
-
         self.headerView = [[VSVocabularyListHeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 10)];
         self.tableView.tableHeaderView = headerView;
-        self.listToday = [VSList createAndGetHistoryList];
+        if (![currentList isHistoryList]) {
+            self.listToday = [VSList createAndGetHistoryList];
+        }
+        self.vocabulariesToRecite = [NSMutableArray arrayWithArray:[self.currentList vocabulariesToRecite]];
+        self.countInList = [self.currentList.listVocabularies count];
+        self.rememberCount = [self.currentList rememberedCount];
+        self.title = self.currentList.name;
         
         __autoreleasing UIGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanning:)];
         [self.view addGestureRecognizer:panGesture];
@@ -80,6 +72,7 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     //self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
     UIImage* image= [VSUtils fetchImg:@"back-button"];
     CGRect frame= CGRectMake(0, 0, image.size.width, image.size.height); 
     UIButton* backButton= [[UIButton alloc] initWithFrame:frame]; 
@@ -363,10 +356,10 @@
                     if (finished == YES) {
                         if (targetX != 0) {  //The cell had been swipped.
                             if (margin < 0) {
-                                [self forget];
+                                [self remember];
                             }
                             else {
-                                [self remember];
+                                [self forget];
                             }
                             [self updateAfterSwipe];
                         }
@@ -379,8 +372,8 @@
 - (void)forget
 {
     VSListVocabulary *forgotVocabulary = [vocabulariesToRecite objectAtIndex:draggedIndex];
-    forgotVocabulary.lastStatus = [NSNumber numberWithInt:VOCABULARY_LIST_STATUS_FORGOT];
-    [forgotVocabulary.vocabulary forget];
+    [forgotVocabulary forgot];
+    [forgotVocabulary.vocabulary forgot];
     [vocabulariesToRecite removeObjectAtIndex:draggedIndex];
     [vocabulariesToRecite addObject:forgotVocabulary];
 }
@@ -388,9 +381,12 @@
 - (void)remember
 {
     VSListVocabulary *rememberedVocabulary = [vocabulariesToRecite objectAtIndex:draggedIndex];
-    rememberedVocabulary.lastStatus = [NSNumber numberWithInt:VOCABULARY_LIST_STATUS_REMEMBERED];
-    [rememberedVocabulary.vocabulary remember];
-    [self.listToday addVocabulary:rememberedVocabulary.vocabulary];
+    NSLog(@"Abacus status is %@", rememberedVocabulary.lastStatus);
+    [rememberedVocabulary remembered];
+    [rememberedVocabulary.vocabulary remembered];
+    if (![self.currentList isHistoryList]) {
+        [self.listToday addVocabulary:rememberedVocabulary.vocabulary];
+    }
     self.rememberCount++;
     [self upgradeProgress];
     [vocabulariesToRecite removeObjectAtIndex:draggedIndex];

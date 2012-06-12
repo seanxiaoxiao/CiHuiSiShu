@@ -9,7 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "VSDataUtil.h"
 
-@interface VSMainMenuViewController : UIViewController
+@interface VSMainMenuViewController : UIViewController<UITableViewDelegate, UITableViewDataSource> {
+    IBOutlet UITableView *historyTable;
+}
+
+@property (nonatomic, retain) NSArray *historyLists;
+@property (nonatomic, strong) UITableView *historyTable;
+
 
 - (IBAction)recite:(id)sender;
 
