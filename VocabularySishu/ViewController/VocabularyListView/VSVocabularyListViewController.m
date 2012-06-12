@@ -10,7 +10,6 @@
 #import "VSVocabularyViewController.h"
 #import "VSUtils.h"
 #import "VSContext.h"
-#import "VSList.h"
 #import "VSListVocabulary.h"
 #import "VSMeaning.h"
 
@@ -24,6 +23,7 @@
 @synthesize vocabulariesToRecite;
 @synthesize headerView;
 @synthesize selectedVocabulary;
+@synthesize listToday;
 @synthesize meaningCellHeight;
 @synthesize rememberView;
 @synthesize forgetView;
@@ -63,6 +63,7 @@
 
         self.headerView = [[VSVocabularyListHeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 10)];
         self.tableView.tableHeaderView = headerView;
+        self.listToday = [VSList createAndGetHistoryList];
         
         __autoreleasing UIGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanning:)];
         [self.view addGestureRecognizer:panGesture];
@@ -389,6 +390,7 @@
     VSListVocabulary *rememberedVocabulary = [vocabulariesToRecite objectAtIndex:draggedIndex];
     rememberedVocabulary.lastStatus = [NSNumber numberWithInt:VOCABULARY_LIST_STATUS_REMEMBERED];
     [rememberedVocabulary.vocabulary remember];
+    [self.listToday addVocabulary:rememberedVocabulary.vocabulary];
     self.rememberCount++;
     [self upgradeProgress];
     [vocabulariesToRecite removeObjectAtIndex:draggedIndex];

@@ -137,7 +137,7 @@
 
 - (void)addVocabulary:(VSVocabulary *)vocabulary
 {
-    [VSListVocabulary createAndGet:self withVocabulary:vocabulary];
+    [VSListVocabulary create:self withVocabulary:vocabulary];
 }
 
 

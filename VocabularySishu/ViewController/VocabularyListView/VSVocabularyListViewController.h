@@ -11,12 +11,14 @@
 #import "VSMeaningCell.h"
 #import "VSVocabularyListHeaderView.h"
 #import "VSConstant.h"
+#import "VSList.h"
 
 @interface VSVocabularyListViewController : UITableViewController
 
 @property (nonatomic, retain) NSMutableArray *vocabulariesToRecite;
 @property (nonatomic, retain) VSVocabulary *selectedVocabulary;
 @property (nonatomic, strong) VSVocabularyListHeaderView *headerView;
+@property (nonatomic, retain) VSList *listToday;
 @property (nonatomic, assign) CGFloat meaningCellHeight;
 @property (nonatomic, assign) CGPoint touchPoint;
 @property (nonatomic, assign) int draggedIndex;
