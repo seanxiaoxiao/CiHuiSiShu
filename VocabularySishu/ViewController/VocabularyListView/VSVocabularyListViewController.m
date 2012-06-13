@@ -381,7 +381,6 @@
 - (void)remember
 {
     VSListVocabulary *rememberedVocabulary = [vocabulariesToRecite objectAtIndex:draggedIndex];
-    NSLog(@"Abacus status is %@", rememberedVocabulary.lastStatus);
     [rememberedVocabulary remembered];
     [rememberedVocabulary.vocabulary remembered];
     if (![self.currentList isHistoryList]) {
@@ -406,6 +405,11 @@
     [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
     [self.tableView endUpdates];
+}
+
+- (void)nextList
+{
+    
 }
 
 @end

@@ -41,6 +41,8 @@
 
 - (BOOL)isHistoryList;
 
+- (VSList *)nextList;
+
 @end
 
 @interface VSList (CoreDataGeneratedAccessors)

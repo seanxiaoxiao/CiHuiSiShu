@@ -31,13 +31,15 @@
     NSString *datePredicateContent = [NSString stringWithFormat:@"(createdDate=='%@')", today];
     NSPredicate *datePredicate = [NSPredicate predicateWithFormat:datePredicateContent];
     [listRequest setPredicate:datePredicate];
-    NSPredicate *isHistoryPredicate = [NSPredicate predicateWithFormat:@"(isHistory='1')"];
+    NSPredicate *isHistoryPredicate = [NSPredicate predicateWithFormat:@"(isHistory=1)"];
     [listRequest setPredicate:isHistoryPredicate];
     NSArray *results = [[VSUtils currentMOContext] executeFetchRequest:listRequest error:&error];
     if ([results count] > 0) {
+        NSLog(@"Existed history list");
         return [results objectAtIndex:0];
     }
     else {
+        NSLog(@"New history list");
         VSList *listForToday = [NSEntityDescription insertNewObjectForEntityForName:@"VSList" inManagedObjectContext:[VSUtils currentMOContext]];
         NSCalendar *nowCalendar = [NSCalendar currentCalendar];
         NSDateComponents *nowComponents = [nowCalendar components:(NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:today];
@@ -61,7 +63,7 @@
     [listRequest setEntity:listDescription];
     [listRequest setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"createdDate" ascending:NO]]];
     listRequest.fetchLimit = 7;
-    NSPredicate *isHistoryPredicate = [NSPredicate predicateWithFormat:@"(isHistory='1')"];
+    NSPredicate *isHistoryPredicate = [NSPredicate predicateWithFormat:@"(isHistory=1)"];
     [listRequest setPredicate:isHistoryPredicate];
     return [[VSUtils currentMOContext] executeFetchRequest:listRequest error:&error];
 }
@@ -150,5 +152,23 @@
     [VSListVocabulary create:self withVocabulary:vocabulary];
 }
 
+- (VSList *)nextList
+{
+    NSNumber *nextOrder = [NSNumber numberWithInt:([self.order intValue] + 1)];
+    NSEntityDescription *listDescription = [NSEntityDescription entityForName:@"VSList" inManagedObjectContext:[VSUtils currentMOContext]];
+    NSFetchRequest *listRequest = [[NSFetchRequest alloc] init];
+    [listRequest setEntity:listDescription];
+    NSString *repoPredicateContent = [NSString stringWithFormat:@"(repository==%@)", self.repository];
+    NSPredicate *repoPredicate = [NSPredicate predicateWithFormat:repoPredicateContent];
+    NSString *orderPredicateContent = [NSString stringWithFormat:@"(order=%@)", nextOrder];
+    NSPredicate *orderPredicate = [NSPredicate predicateWithFormat:orderPredicateContent];
+    NSPredicate *historyPredicate = [NSPredicate predicateWithFormat:@"(isHistory!=1)"];
+    [listRequest setPredicate:repoPredicate];
+    [listRequest setPredicate:orderPredicate];
+    [listRequest setPredicate:historyPredicate];
+    __autoreleasing NSError *error = nil;
+    NSArray *results = [[VSUtils currentMOContext] executeFetchRequest:listRequest error:&error];
+    return [results count] > 0 ? [results objectAtIndex:0] : nil;
+}
 
 @end

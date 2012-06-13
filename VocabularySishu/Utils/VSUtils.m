@@ -53,13 +53,17 @@
 
 + (NSDate *)getToday
 {
+    NSTimeZone *timezone = [NSTimeZone defaultTimeZone];
+    NSDate *now = [[NSDate alloc] init];
+    NSInteger seconds = [timezone secondsFromGMTForDate: now];
+    NSDate *localNow = [NSDate dateWithTimeInterval: seconds sinceDate: now];
+
     NSCalendar *cal = [NSCalendar currentCalendar];
-    NSDateComponents *components = [cal components:( NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit ) fromDate:[[NSDate alloc] init]];
-    
+    NSDateComponents *components = [cal components:( NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit ) fromDate:now];
     [components setHour:-[components hour]];
     [components setMinute:-[components minute]];
     [components setSecond:-[components second]];
-    return [cal dateByAddingComponents:components toDate:[[NSDate alloc] init] options:0]; 
+    return [cal dateByAddingComponents:components toDate:localNow options:0];
 }
 
 + (BOOL) vocabularySame:(VSVocabulary *)first with:(VSVocabulary *)second

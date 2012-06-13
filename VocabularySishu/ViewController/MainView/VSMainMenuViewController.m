@@ -101,7 +101,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"The count is %d", [self.historyLists count]);
     return 7 < [self.historyLists count] ? 7 : [self.historyLists count];
 }
 
