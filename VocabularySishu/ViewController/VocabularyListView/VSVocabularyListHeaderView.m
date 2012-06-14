@@ -18,7 +18,6 @@
     if (self) {
         self.finishRateBar = [[UIProgressView alloc] initWithFrame:CGRectMake(0, 0, 320, 10)];
         [self addSubview:self.finishRateBar];
-        self.finishRateBar.progress = 0.001;
     }
     return self;
 }

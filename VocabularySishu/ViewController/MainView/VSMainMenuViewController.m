@@ -32,6 +32,7 @@
     [super viewDidLoad];
     self.title = @"词汇私塾";
     self.historyLists = [VSList lastestHistoryList];
+    [self.historyTable reloadData];
 }
 
 - (void)viewDidUnload

@@ -33,6 +33,8 @@
 @synthesize rememberCount;
 @synthesize draggedIndex;
 @synthesize currentList;
+@synthesize alertWhenFinish;
+@synthesize alertDelegate;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -45,6 +47,7 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
+    NSLog(@"Init with new list");
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.headerView = [[VSVocabularyListHeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 10)];
@@ -52,6 +55,7 @@
         if (![currentList isHistoryList]) {
             self.listToday = [VSList createAndGetHistoryList];
         }
+        [self.headerView setProgress:[self.currentList finishProgress]];
         self.vocabulariesToRecite = [NSMutableArray arrayWithArray:[self.currentList vocabulariesToRecite]];
         self.countInList = [self.currentList.listVocabularies count];
         self.rememberCount = [self.currentList rememberedCount];
@@ -84,8 +88,9 @@
     [backButton addTarget:self action:@selector(backToMain) forControlEvents:UIControlEventTouchUpInside];
     
     UIBarButtonItem* backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton]; 
-    [self.navigationItem setLeftBarButtonItem:backButtonItem]; 
-
+    [self.navigationItem setLeftBarButtonItem:backButtonItem];
+    self.alertDelegate = [[VSAlertDelegate alloc] init];
+    self.alertDelegate.currentList = currentList;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -102,6 +107,8 @@
     self.rememberView = nil;
     self.forgetView = nil;
     self.draggedCell = nil;
+    self.alertWhenFinish = nil;
+    self.alertDelegate = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -357,11 +364,13 @@
                         if (targetX != 0) {  //The cell had been swipped.
                             if (margin < 0) {
                                 [self remember];
+                                [self updateVocabularyTable:YES];
                             }
                             else {
                                 [self forget];
+                                [self updateVocabularyTable:NO];
                             }
-                            [self updateAfterSwipe];
+                            [self processAfterSwipe];
                         }
                     }
                 }
@@ -380,6 +389,7 @@
 
 - (void)remember
 {
+    NSLog(@"Remembered");
     VSListVocabulary *rememberedVocabulary = [vocabulariesToRecite objectAtIndex:draggedIndex];
     [rememberedVocabulary remembered];
     [rememberedVocabulary.vocabulary remembered];
@@ -397,19 +407,38 @@
     [self.headerView setProgress:progress];
 }
 
-- (void)updateAfterSwipe
+- (void)updateVocabularyTable:(BOOL)remember
 {
     [self.tableView beginUpdates];
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:touchPoint];
-    NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:6 inSection:0];
     [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+    if (remember && [self.vocabulariesToRecite count] > 6) {
+        NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:6 inSection:0];
+        [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];    
+    }
+    else if (!remember) {
+        int newIndex = [self.vocabulariesToRecite count] > 6 ? 6 : [self.vocabulariesToRecite count] - 1;
+        NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:newIndex inSection:0];
+        [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];    
+        
+    }
     [self.tableView endUpdates];
 }
 
-- (void)nextList
+- (void)processAfterSwipe
 {
-    
+    if ([self.vocabulariesToRecite count] == 0) {
+        alertWhenFinish = nil;
+        if ([self.currentList isHistoryList]) {
+            alertWhenFinish = [[UIAlertView alloc] initWithTitle:@"" message:@"复习完毕" delegate:self cancelButtonTitle:@"嗯，好的" otherButtonTitles:nil,nil];
+        }
+        else {
+            alertWhenFinish = [[UIAlertView alloc] initWithTitle:@"" message:@"当前List已经背诵完毕\n将进入下一个List的背诵" delegate:self cancelButtonTitle:@"嗯，好的" otherButtonTitles:nil,nil];
+        }
+        [alertWhenFinish setDelegate:self.alertDelegate];
+        [alertWhenFinish show];
+    }
 }
+
 
 @end

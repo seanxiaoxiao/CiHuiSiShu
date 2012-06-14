@@ -12,6 +12,9 @@
 #import "VSVocabularyListHeaderView.h"
 #import "VSConstant.h"
 #import "VSList.h"
+#import "VSAlertDelegate.h"
+
+@class VSAlertDelegate;
 
 @interface VSVocabularyListViewController : UITableViewController
 
@@ -28,5 +31,7 @@
 @property (nonatomic, strong) UITableViewCell *draggedCell;
 @property (nonatomic, strong) UIView *rememberView;
 @property (nonatomic, strong) UIView *forgetView;
+@property (nonatomic, strong) UIAlertView *alertWhenFinish;
+@property (nonatomic, retain) VSAlertDelegate *alertDelegate;
 
 @end
