@@ -32,15 +32,6 @@
 {
     [super viewDidLoad];
     self.title = @"词汇私塾";
-    CGRect frame= CGRectMake(0, 0, 20, 20); 
-    UIButton* configurationButton = [[UIButton alloc] initWithFrame:frame]; 
-    [configurationButton setTitle:@"设置" forState:UIControlStateNormal]; 
-    [configurationButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal]; 
-    configurationButton.titleLabel.font=[UIFont boldSystemFontOfSize:10];
-    configurationButton.titleLabel.shadowOffset = CGSizeMake(0, -1);
-    [configurationButton addTarget:self action:@selector(toConfigurationView) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem* configurationButtonItem = [[UIBarButtonItem alloc] initWithCustomView:configurationButton]; 
-    [self.navigationItem setRightBarButtonItem:configurationButtonItem];
 }
 
 - (void)viewDidUnload
@@ -53,6 +44,16 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    CGRect frame= CGRectMake(0, 0, 20, 20); 
+    UIButton* configurationButton = [[UIButton alloc] initWithFrame:frame]; 
+    [configurationButton setTitle:@"设置" forState:UIControlStateNormal]; 
+    [configurationButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal]; 
+    configurationButton.titleLabel.font=[UIFont boldSystemFontOfSize:10];
+    configurationButton.titleLabel.shadowOffset = CGSizeMake(0, -1);
+    [configurationButton addTarget:self action:@selector(toConfigurationView) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem* configurationButtonItem = [[UIBarButtonItem alloc] initWithCustomView:configurationButton]; 
+    [self.navigationItem setRightBarButtonItem:configurationButtonItem];
+
     self.historyLists = [VSList lastestHistoryList];
     [self.historyTable reloadData];
 }
