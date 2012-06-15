@@ -186,11 +186,13 @@
 
 - (VSList *)nextList
 {
-    NSNumber *nextOrder = [NSNumber numberWithInt:([self.order intValue] + 1)];
+    int allListsCount = [self.repository.lists count];
+    NSNumber *nextOrder = [NSNumber numberWithInt:([self.order intValue] + 1) % allListsCount];
     
     NSPredicate *orderPredicate = [NSPredicate predicateWithFormat:@"(order = %@)", nextOrder];
     NSPredicate *historyPredicate = [NSPredicate predicateWithFormat:@"(isHistory != 1)"];
-    NSArray *results = [[[self.repository.lists allObjects] filteredArrayUsingPredicate:orderPredicate] filteredArrayUsingPredicate:historyPredicate];
+    NSPredicate *statusPredicate = [NSPredicate predicateWithFormat:@"NOT (status = 2)"];
+    NSArray *results = [[[[self.repository.lists allObjects] filteredArrayUsingPredicate:orderPredicate] filteredArrayUsingPredicate:historyPredicate] filteredArrayUsingPredicate:statusPredicate];
     return [results count] > 0 ? [results objectAtIndex:0] : nil;
 }
 
