@@ -159,6 +159,37 @@
     }
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 40;
+}
+
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    NSString *sectionTitle = @"选择背诵列表";
+    if (sectionTitle == nil) {
+        return nil;
+    }
+    
+    // Create label with section title
+    UILabel *label = [[UILabel alloc] init];
+    label.frame = CGRectMake(20, 6, 300, 30);
+    label.backgroundColor = [UIColor clearColor];
+    label.textColor = [UIColor colorWithHue:(136.0/360.0)  // Slightly bluish green
+                                 saturation:1.0
+                                 brightness:0.60
+                                      alpha:1.0];
+    label.shadowColor = [UIColor whiteColor];
+    label.shadowOffset = CGSizeMake(0.0, 1.0);
+    label.font = [UIFont boldSystemFontOfSize:16];
+    label.text = sectionTitle;
+    
+    // Create header view and add label as a subview
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 40)];
+    [view addSubview:label];
+    
+    return view;
+}
+
 #pragma mark - Private methods
 
 - (void)initListSelectRecords
