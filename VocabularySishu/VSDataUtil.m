@@ -40,6 +40,7 @@
         VSRepository *repo = [NSEntityDescription insertNewObjectForEntityForName:@"VSRepository" inManagedObjectContext:[VSUtils currentMOContext]];
         repo.name = [repoArray objectAtIndex:i];
         repo.order = [NSNumber numberWithInt:i];
+        repo.finishedRound = [NSNumber numberWithInt:0];
         __autoreleasing NSError *error = nil;
         if (![[VSUtils currentMOContext] save:&error]) {
             NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
@@ -77,6 +78,7 @@
             list.order = [NSNumber numberWithInt:i];
             list.repository = repository;
             list.isHistory = NO;
+            list.status = [VSConstant LIST_STATUS_NEW];
             __autoreleasing NSError *error = nil;
             if (![[VSUtils currentMOContext] save:&error]) {
                 NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);

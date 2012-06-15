@@ -14,11 +14,13 @@
 
 @implementation VSConfigurationViewController
 
+@synthesize listSelectRecords;
+@synthesize selectedListIndex;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -26,7 +28,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    [self initListSelectRecords];
+    self.title = @"设置";
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -52,23 +55,49 @@
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.listSelectRecords count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    // Configure the cell...
-    
+    NSObject *record = [self.listSelectRecords objectAtIndex:indexPath.row];
+    UITableViewCell *cell = nil;
+    VSContext *context = [VSContext getContext];
+    if ([record class] == [VSRepository class]) {
+        VSRepository *repository = (VSRepository *)record;
+        NSString *cellIdentifier = repository.name;
+        cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        }
+        cell.textLabel.text = repository.name;
+        [cell.textLabel setTextAlignment:UITextAlignmentLeft];
+        cell.textLabel.backgroundColor = [UIColor clearColor];
+        cell.textLabel.textColor = [UIColor blackColor];
+    }
+    else {
+        VSList *list  = (VSList *)record;
+        NSString *cellIdentifier = list.name;
+        cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        }
+        cell.textLabel.text = list.name;
+        [cell.textLabel setTextAlignment:UITextAlignmentCenter];
+        cell.textLabel.backgroundColor = [UIColor clearColor];
+        cell.textLabel.textColor = [UIColor blackColor];
+        if ([context.currentList.name isEqualToString:list.name]) {
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            selectedListIndex = indexPath.row;
+        }
+    }
     return cell;
 }
 
@@ -115,13 +144,34 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    NSObject *selectedRecord = [listSelectRecords objectAtIndex:indexPath.row];
+    if ([selectedRecord class] == [VSList class]) {
+        VSContext *context = [VSContext getContext];
+        VSList *selectedList = (VSList *)selectedRecord;
+        [context fixCurrentList:selectedList];
+        [context fixRepository:selectedList.repository];
+        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+        NSIndexPath *lastSelectedIndexPath = [NSIndexPath indexPathForRow:self.selectedListIndex inSection:indexPath.section];
+        UITableViewCell *lastSelectedCell = [self.tableView cellForRowAtIndexPath:lastSelectedIndexPath];
+        lastSelectedCell.accessoryType = UITableViewCellAccessoryNone;
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        self.selectedListIndex = indexPath.row;
+    }
+}
+
+#pragma mark - Private methods
+
+- (void)initListSelectRecords
+{
+    self.listSelectRecords = [[NSMutableArray alloc] init];
+    NSArray *rawRepos = [VSRepository allRepos];
+    for (VSRepository *repo in rawRepos) {
+        [self.listSelectRecords addObject:repo];
+        NSArray *listsInRepo = [repo.lists allObjects];
+        for (VSList *list in listsInRepo) {
+            [self.listSelectRecords addObject:list];
+        }
+    }
 }
 
 @end

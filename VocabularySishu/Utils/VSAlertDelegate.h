@@ -10,6 +10,7 @@
 #import "VSList.h"
 #import "VSContext.h"
 #import "VSVocabularyListViewController.h"
+#import "VSRepository.h"
 
 @interface VSAlertDelegate : NSObject<UIAlertViewDelegate>
 

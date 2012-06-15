@@ -16,6 +16,7 @@
 {
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     UINavigationController *navigationController = (UINavigationController *)window.rootViewController;
+    [currentList finish];
     if ([self.currentList isHistoryList]) {
         [navigationController popViewControllerAnimated:YES];
     }
@@ -29,6 +30,10 @@
             vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];          
             [navigationController popViewControllerAnimated:NO];
             [navigationController pushViewController:vocabularyListViewController animated:NO]; 
+        }
+        else {
+            [currentList.repository finishThisRound];
+            //TODO Jump to the configuration page?
         }
     }
 }

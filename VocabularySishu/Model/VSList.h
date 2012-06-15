@@ -20,6 +20,7 @@
 @property (nonatomic, retain) NSNumber * isHistory;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * order;
+@property (nonatomic, retain) NSNumber * status;
 @property (nonatomic, retain) NSSet *listVocabularies;
 @property (nonatomic, retain) VSRepository *repository;
 
@@ -44,6 +45,10 @@
 - (BOOL)isHistoryList;
 
 - (VSList *)nextList;
+
+- (void)process;
+
+- (void)finish;
 
 @end
 

@@ -9,13 +9,22 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+#import "VSList.h"
+#import "VSConstant.h"
+
 @class VSList;
 
 @interface VSRepository : NSManagedObject
 
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * order;
+@property (nonatomic, retain) NSNumber * finishedRound;
 @property (nonatomic, retain) NSSet *lists;
+
++ (NSArray *)allRepos;
+
+- (void)finishThisRound;
+
 @end
 
 @interface VSRepository (CoreDataGeneratedAccessors)
@@ -25,3 +34,4 @@
 - (void)addLists:(NSSet *)values;
 - (void)removeLists:(NSSet *)values;
 @end
+

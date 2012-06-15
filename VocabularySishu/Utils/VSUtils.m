@@ -17,6 +17,14 @@
     return appDelegate.managedObjectContext;
 }
 
++ (void)saveEntity
+{
+    __autoreleasing NSError *error = nil;
+    if (![[VSUtils currentMOContext] save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    }
+}
+
 + (UIImage *)fetchImg:(NSString *)imageName
 {
     if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)] && [[UIScreen mainScreen] scale] == 2) {

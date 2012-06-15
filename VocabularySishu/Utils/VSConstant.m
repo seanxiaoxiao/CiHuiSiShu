@@ -10,4 +10,20 @@
 
 @implementation VSConstant
 
++ (NSNumber *)LIST_STATUS_NEW
+{
+    return [NSNumber numberWithInt:0];
+}
+
++ (NSNumber *)LIST_STATUS_PROCESSING
+{
+    return [NSNumber numberWithInt:1];
+}
+
++ (NSNumber *)LIST_STATUS_FINISH
+{
+    return [NSNumber numberWithInt:2];
+}
+
+
 @end

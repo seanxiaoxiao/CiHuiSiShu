@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VSRepository.h"
+#import "VSList.h"
+#import "VSContext.h"
 
 @interface VSConfigurationViewController : UITableViewController
+
+@property (nonatomic, assign)int selectedListIndex;
+@property (nonatomic, retain)NSMutableArray *listSelectRecords;
 
 @end

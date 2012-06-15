@@ -19,6 +19,7 @@
 @dynamic order;
 @dynamic listVocabularies;
 @dynamic repository;
+@dynamic status;
 
 
 + (VSList *)createAndGetHistoryList
@@ -47,6 +48,7 @@
         listForToday.isHistory = [NSNumber numberWithInt:1];
         listForToday.repository = nil;
         listForToday.createdDate = today;
+        listForToday.status = [VSConstant LIST_STATUS_NEW];
         if (![[VSUtils currentMOContext] save:&error]) {
             NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
         }
@@ -134,6 +136,24 @@
         }
     }
     return forgotCount;    
+}
+
+- (void)process
+{
+    __autoreleasing NSError *error = nil;
+    self.status = [VSConstant LIST_STATUS_PROCESSING];
+    if (![[VSUtils currentMOContext] save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    }
+}
+
+- (void)finish
+{
+    __autoreleasing NSError *error = nil;
+    self.status = [VSConstant LIST_STATUS_FINISH];
+    if (![[VSUtils currentMOContext] save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    }
 }
 
 - (NSArray *)vocabulariesToRecite

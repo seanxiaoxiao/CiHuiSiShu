@@ -55,6 +55,7 @@
         if (![currentList isHistoryList]) {
             self.listToday = [VSList createAndGetHistoryList];
         }
+        [currentList process];
         [self.headerView setProgress:[self.currentList finishProgress]];
         self.vocabulariesToRecite = [NSMutableArray arrayWithArray:[self.currentList vocabulariesToRecite]];
         self.countInList = [self.currentList.listVocabularies count];

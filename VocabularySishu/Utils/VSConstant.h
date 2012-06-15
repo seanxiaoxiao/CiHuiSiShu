@@ -16,6 +16,13 @@
 #define VOCABULARY_LIST_STATUS_NEW 0
 #define VOCABULARY_LIST_STATUS_FORGOT 2
 
+
 @interface VSConstant : NSObject
+
++ (NSNumber *)LIST_STATUS_NEW;
+
++ (NSNumber *)LIST_STATUS_PROCESSING;
+
++ (NSNumber *)LIST_STATUS_FINISH;
 
 @end

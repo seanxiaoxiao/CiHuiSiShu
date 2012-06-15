@@ -16,6 +16,8 @@
 
 + (NSManagedObjectContext *)currentMOContext;
 
++ (void)saveEntity;
+
 + (UIImage *)fetchImg:(NSString *)imageName;
 
 + (NSDate *)getToday;
