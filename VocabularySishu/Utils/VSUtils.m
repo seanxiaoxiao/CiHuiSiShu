@@ -32,24 +32,6 @@
     }
 }
 
-+ (VSContext *)fetchContext
-{
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"VSContext" inManagedObjectContext:[VSUtils currentMOContext]];
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    [request setEntity:entityDescription];
-    __autoreleasing NSError *error = nil;
-    NSArray *results = [[VSUtils currentMOContext] executeFetchRequest:request error:&error];
-    if ([results count] == 1) {
-        return [results objectAtIndex:0];
-    }
-    else {
-        VSContext *context = [NSEntityDescription insertNewObjectForEntityForName:@"VSContext" inManagedObjectContext:[VSUtils currentMOContext]];
-        if (![[VSUtils currentMOContext] save:&error]) {
-            NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-        }
-        return context;
-    }
-}
 
 + (NSDate *)getToday
 {
@@ -69,6 +51,12 @@
 + (BOOL) vocabularySame:(VSVocabulary *)first with:(VSVocabulary *)second
 {
     return [first.spell isEqualToString:second.spell];
+}
+
++ (NSString *)normalizeString:(NSString *)source
+{
+    return [NSString stringWithCString:[source cStringUsingEncoding:NSUTF8StringEncoding] encoding:NSUTF8StringEncoding];
+
 }
 
 @end

@@ -54,6 +54,19 @@
     }
 }
 
++ (VSList *)firstList
+{
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"VSList" inManagedObjectContext:[VSUtils currentMOContext]];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDescription];
+    NSString *predicateContent = [NSString stringWithFormat:@"(name=='GRE顺序List1')"];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat: predicateContent];
+    [request setPredicate:predicate];
+    NSError *error = nil;
+    NSArray *array = [[VSUtils currentMOContext] executeFetchRequest:request error:&error];
+    return [array objectAtIndex:0];
+}
+
 + (NSArray *)lastestHistoryList
 {
     __autoreleasing NSError *error = nil;
@@ -154,18 +167,10 @@
 - (VSList *)nextList
 {
     NSNumber *nextOrder = [NSNumber numberWithInt:([self.order intValue] + 1)];
-    NSLog(@"xxx%@", nextOrder);
-    NSEntityDescription *listDescription = [NSEntityDescription entityForName:@"VSList" inManagedObjectContext:[VSUtils currentMOContext]];
-    NSFetchRequest *listRequest = [[NSFetchRequest alloc] init];
-    [listRequest setEntity:listDescription];
-    NSPredicate *repoPredicate = [NSPredicate predicateWithFormat:@"(repository == %@)", self.repository];
-    NSPredicate *orderPredicate = [NSPredicate predicateWithFormat:@"(order=%@)", nextOrder];
-//    NSPredicate *historyPredicate = [NSPredicate predicateWithFormat:@"(isHistory!=1)"];
-    [listRequest setPredicate:repoPredicate];
-    [listRequest setPredicate:orderPredicate];
-//    [listRequest setPredicate:historyPredicate];
-    __autoreleasing NSError *error = nil;
-    NSArray *results = [[VSUtils currentMOContext] executeFetchRequest:listRequest error:&error];
+    
+    NSPredicate *orderPredicate = [NSPredicate predicateWithFormat:@"(order = %@)", nextOrder];
+    NSPredicate *historyPredicate = [NSPredicate predicateWithFormat:@"(isHistory != 1)"];
+    NSArray *results = [[[self.repository.lists allObjects] filteredArrayUsingPredicate:orderPredicate] filteredArrayUsingPredicate:historyPredicate];
     return [results count] > 0 ? [results objectAtIndex:0] : nil;
 }
 

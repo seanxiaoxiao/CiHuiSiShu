@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "VSUtils.h"
 
 @class VSList, VSListVocabulary, VSRepository;
 
@@ -17,5 +18,12 @@
 @property (nonatomic, retain) VSListVocabulary *currentListVocabulary;
 @property (nonatomic, retain) VSRepository *currentRepository;
 
++ (VSContext *)getContext;
+
++ (BOOL)isFirstTime;
+
+- (void)fixCurrentList:(VSList *)list;
+
+- (void)fixRepository:(VSRepository *)repo;
 
 @end

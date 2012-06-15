@@ -18,10 +18,10 @@
 
 + (UIImage *)fetchImg:(NSString *)imageName;
 
-+ (VSContext *)fetchContext;
-
 + (NSDate *)getToday;
 
 + (BOOL) vocabularySame:(VSVocabulary *)first with:(VSVocabulary *)second;
+
++ (NSString *)normalizeString:(NSString *)source;
 
 @end

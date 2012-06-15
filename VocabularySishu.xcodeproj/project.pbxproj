@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0046408215590E0B007E5FA9 /* VSVocabularyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046408015590E0B007E5FA9 /* VSVocabularyViewController.m */; };
 		0046408315590E0B007E5FA9 /* VSVocabularyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408115590E0B007E5FA9 /* VSVocabularyViewController.xib */; };
 		0046408415591251007E5FA9 /* VSVocabularyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046408015590E0B007E5FA9 /* VSVocabularyViewController.m */; };
 		0046408D155916FA007E5FA9 /* VSMainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046408B155916FA007E5FA9 /* VSMainMenuViewController.m */; };
@@ -63,6 +62,8 @@
 		00A1AFAD1586192400310669 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A1AFAC1586192400310669 /* AVFoundation.framework */; };
 		00A353821587575E0063DCAE /* abacus.bin in Resources */ = {isa = PBXBuildFile; fileRef = 00A353811587575E0063DCAE /* abacus.bin */; };
 		00A353831587575E0063DCAE /* abacus.bin in Resources */ = {isa = PBXBuildFile; fileRef = 00A353811587575E0063DCAE /* abacus.bin */; };
+		00AE80F1158B1318000CE7EA /* VSConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AE80EF158B1318000CE7EA /* VSConfigurationViewController.m */; };
+		00AE80F2158B1318000CE7EA /* VSConfigurationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */; };
 		00B5A8C01566889B00D20EB6 /* retina-navigationbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B5A8BF1566889B00D20EB6 /* retina-navigationbar.png */; };
 /* End PBXBuildFile section */
 
@@ -156,6 +157,9 @@
 		00A1AFA61585FD4700310669 /* abacus.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = abacus.mp3; path = Resources/Audio/abacus.mp3; sourceTree = "<group>"; };
 		00A1AFAC1586192400310669 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		00A353811587575E0063DCAE /* abacus.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = abacus.bin; path = Resources/Audio/abacus.bin; sourceTree = "<group>"; };
+		00AE80EE158B1318000CE7EA /* VSConfigurationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSConfigurationViewController.h; path = ViewController/ConfigurationView/VSConfigurationViewController.h; sourceTree = "<group>"; };
+		00AE80EF158B1318000CE7EA /* VSConfigurationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSConfigurationViewController.m; path = ViewController/ConfigurationView/VSConfigurationViewController.m; sourceTree = "<group>"; };
+		00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSConfigurationViewController.xib; path = ViewController/ConfigurationView/VSConfigurationViewController.xib; sourceTree = "<group>"; };
 		00B5A8BF1566889B00D20EB6 /* retina-navigationbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-navigationbar.png"; path = "Resources/Img/retina-navigationbar.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -328,6 +332,7 @@
 		00701E6B1553CE8C00D30018 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				00AE80EC158B12A9000CE7EA /* ConfigurationView */,
 				0073A6B2156A47C100B80422 /* VocabularyListView */,
 				0046407E15590DD2007E5FA9 /* VocabularyView */,
 				0046407715590CC8007E5FA9 /* MainView */,
@@ -405,6 +410,16 @@
 				00A1AFA61585FD4700310669 /* abacus.mp3 */,
 			);
 			name = Audio;
+			sourceTree = "<group>";
+		};
+		00AE80EC158B12A9000CE7EA /* ConfigurationView */ = {
+			isa = PBXGroup;
+			children = (
+				00AE80EE158B1318000CE7EA /* VSConfigurationViewController.h */,
+				00AE80EF158B1318000CE7EA /* VSConfigurationViewController.m */,
+				00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */,
+			);
+			name = ConfigurationView;
 			sourceTree = "<group>";
 		};
 		00B5A8BE1566886E00D20EB6 /* Img */ = {
@@ -506,6 +521,7 @@
 				00A00707156D361E00D24418 /* retina-back-button.png in Resources */,
 				00A1AFA71585FD4700310669 /* abacus.mp3 in Resources */,
 				00A353821587575E0063DCAE /* abacus.bin in Resources */,
+				00AE80F2158B1318000CE7EA /* VSConfigurationViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,6 +583,7 @@
 				00A00732156F7FEF00D24418 /* VSVocabularyListHeaderView.m in Sources */,
 				00A00735156F807B00D24418 /* VSMeaningCell.m in Sources */,
 				009AFBFB1588982300293F6A /* VSAlertDelegate.m in Sources */,
+				00AE80F1158B1318000CE7EA /* VSConfigurationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,7 +592,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				00701E5B1553CBCE00D30018 /* VocabularySishuTests.m in Sources */,
-				0046408215590E0B007E5FA9 /* VSVocabularyViewController.m in Sources */,
 				0046409215591DBD007E5FA9 /* VSUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -693,6 +709,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "VocabularySishuTests/VocabularySishuTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -710,6 +727,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "VocabularySishuTests/VocabularySishuTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";

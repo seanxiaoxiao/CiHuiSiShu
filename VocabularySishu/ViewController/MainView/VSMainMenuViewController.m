@@ -7,6 +7,7 @@
 //
 
 #import "VSMainMenuViewController.h"
+#import "VSConfigurationViewController.h"
 #import "VSVocabularyListViewController.h"
 
 @interface VSMainMenuViewController ()
@@ -31,8 +32,15 @@
 {
     [super viewDidLoad];
     self.title = @"词汇私塾";
-    self.historyLists = [VSList lastestHistoryList];
-    [self.historyTable reloadData];
+    CGRect frame= CGRectMake(0, 0, 20, 20); 
+    UIButton* configurationButton = [[UIButton alloc] initWithFrame:frame]; 
+    [configurationButton setTitle:@"设置" forState:UIControlStateNormal]; 
+    [configurationButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal]; 
+    configurationButton.titleLabel.font=[UIFont boldSystemFontOfSize:10];
+    configurationButton.titleLabel.shadowOffset = CGSizeMake(0, -1);
+    [configurationButton addTarget:self action:@selector(toConfigurationView) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem* configurationButtonItem = [[UIBarButtonItem alloc] initWithCustomView:configurationButton]; 
+    [self.navigationItem setRightBarButtonItem:configurationButtonItem];
 }
 
 - (void)viewDidUnload
@@ -45,6 +53,8 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    self.historyLists = [VSList lastestHistoryList];
+    [self.historyTable reloadData];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -59,15 +69,8 @@
 - (IBAction)recite:(id)sender
 {
     VSVocabularyListViewController *vocabularyListViewController = [VSVocabularyListViewController alloc];
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"VSList" inManagedObjectContext:[VSUtils currentMOContext]];
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    [request setEntity:entityDescription];
-    NSString *predicateContent = [NSString stringWithFormat:@"(name=='GRE顺序List1')"];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat: predicateContent];
-    [request setPredicate:predicate];
-    NSError *error = nil;
-    NSArray *array = [[VSUtils currentMOContext] executeFetchRequest:request error:&error];
-    VSList *list = [array objectAtIndex:0];
+    VSContext *context = [VSContext getContext];
+    VSList *list = context.currentList;
     vocabularyListViewController.currentList = list;
     vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
     [self.navigationController pushViewController:vocabularyListViewController animated:YES];
@@ -118,6 +121,14 @@
     cell.textLabel.backgroundColor = [UIColor clearColor];
     cell.textLabel.textColor = [UIColor blackColor];
     return cell;
+}
+
+#pragma mark - setup 
+
+- (void)toConfigurationView
+{
+    VSConfigurationViewController *configurationViewController = [[VSConfigurationViewController alloc] initWithNibName:@"VSConfigurationViewController" bundle:nil];
+    [self.navigationController pushViewController:configurationViewController animated:YES];
 }
 
 @end

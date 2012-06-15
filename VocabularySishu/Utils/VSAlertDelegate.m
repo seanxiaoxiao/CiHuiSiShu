@@ -15,21 +15,19 @@
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    UINavigationController *navigationController = window.rootViewController.navigationController;
+    UINavigationController *navigationController = (UINavigationController *)window.rootViewController;
     if ([self.currentList isHistoryList]) {
         [navigationController popViewControllerAnimated:YES];
     }
     else {
         VSList *nextList = [self.currentList nextList];
+        VSContext *context = [VSContext getContext];
         if (nextList != nil) {
+            [context fixCurrentList:nextList];
             VSVocabularyListViewController *vocabularyListViewController = [VSVocabularyListViewController alloc];
             vocabularyListViewController.currentList = nextList;
-            NSLog(@"%@", nextList.order);
-            NSLog(@"%@", nextList.name);
             vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];          
-            NSLog(@"Navigation, %@", navigationController);
             [navigationController popViewControllerAnimated:NO];
-            NSLog(@"Navigation, %@", navigationController);            
             [navigationController pushViewController:vocabularyListViewController animated:NO]; 
         }
     }

@@ -29,6 +29,8 @@
 
 + (void)recitedVocabulary:(VSVocabulary *)vocabulary;
 
++ (VSList *)firstList;
+
 - (float)finishProgress;
 
 - (int)rememberedCount;

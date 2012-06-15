@@ -199,6 +199,7 @@
 
 + (void)initData
 {
+    [VSDataUtil clearEntities:@"VSContext"];
     [VSDataUtil initRepoData];
     [VSDataUtil initRepoList];
     [VSDataUtil initVocabularies];

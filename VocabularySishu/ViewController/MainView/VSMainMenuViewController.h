@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "VSDataUtil.h"
+#import "VSContext.h"
 
 @interface VSMainMenuViewController : UIViewController<UITableViewDelegate, UITableViewDataSource> {
     IBOutlet UITableView *historyTable;
