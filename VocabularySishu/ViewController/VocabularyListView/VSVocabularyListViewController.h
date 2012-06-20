@@ -16,7 +16,7 @@
 
 @class VSAlertDelegate;
 
-@interface VSVocabularyListViewController : UITableViewController
+@interface VSVocabularyListViewController : UITableViewController<UIGestureRecognizerDelegate>
 
 @property (nonatomic, retain) NSMutableArray *vocabulariesToRecite;
 @property (nonatomic, strong) VSVocabularyListHeaderView *headerView;

@@ -69,6 +69,7 @@
                                                      name:FINISH_LOADING_MEANING_NOTIFICATION object:nil];
 
         __autoreleasing UIGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanning:)];
+        panGesture.delegate = self;
         [self.view addGestureRecognizer:panGesture];
     }
     return self;
@@ -244,7 +245,7 @@
                             }
                             meaningView = [[VSMeaningView alloc] initWithFrame:CGRectMake(0, 69, 320, 0)];
                             [meaningView setMeaningContent:meanings];
-                            [self.tableView addSubview:meaningView];
+                            [self.view addSubview:meaningView];
                             meaningView.hidden = YES;
                         }
                     }
@@ -287,6 +288,22 @@
 }
 
 #pragma mark - Gesture Related
+
+
+- (BOOL)gestureRecognizerShouldBegin:(UIPanGestureRecognizer *)gestureRecognizer
+{
+    NSLog(@"Recongnizer");
+    UIView *cell = [gestureRecognizer view];
+    CGPoint translation = [gestureRecognizer translationInView:[cell superview]];
+    
+    // Check for horizontal gesture
+    if (fabsf(translation.x) > fabsf(translation.y))
+    {
+        return YES;
+    }
+    
+    return NO;
+}
 
 - (void)handlePanning:(UIPanGestureRecognizer *)gestureRecognizer
 {
@@ -413,6 +430,7 @@
 - (void)postLoadingMeaningView:(id)object
 {
     meaningView.hidden = NO;
+    [self.view bringSubviewToFront:meaningView];
 }
 
 - (void)forget

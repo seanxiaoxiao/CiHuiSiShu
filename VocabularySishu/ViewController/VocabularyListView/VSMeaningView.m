@@ -13,7 +13,9 @@
 
 @synthesize _meanings;
 @synthesize meaningView;
+@synthesize detailButton;
 @synthesize viewHeight;
+@synthesize meaningFor;
 
 - (void)setMeaningContent:(NSArray *)meanings {
     self._meanings = meanings;
@@ -50,12 +52,20 @@
 }
 */
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
+    UIView *viewForButton = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 30)];
+    viewForButton.backgroundColor = [UIColor whiteColor];
+    UIButton *but = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    but.frame= CGRectMake(200, 0, 30, 30);
+    [but setTitle:@"Ok" forState:UIControlStateNormal];
+    [but addTarget:self action:@selector(showDetail) forControlEvents:UIControlEventTouchUpInside];
+    [viewForButton addSubview:but];
+    [self addSubview:viewForButton];
     [self addSubview:meaningView];
     NSLog ( @"Client height: %@", [webView stringByEvaluatingJavaScriptFromString: @"document.body.clientHeight"] );
 
     viewHeight = [[webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('meaning').offsetHeight;"] floatValue];
     NSLog(@"%f", viewHeight);
-    [meaningView setFrame:CGRectMake(0, 0, 320, viewHeight + 5)];
+    [meaningView setFrame:CGRectMake(0, 30, 320, viewHeight + 5)];
 
     NSNotification *notification = [NSNotification notificationWithName:FINISH_LOADING_MEANING_NOTIFICATION object:self];
 	[[NSNotificationCenter defaultCenter] postNotification:notification];
@@ -64,6 +74,11 @@
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     return YES;
+}
+
+- (void)showDetail
+{
+    NSLog(@"xxxxx");
 }
 
 @end
