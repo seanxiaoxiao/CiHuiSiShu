@@ -22,15 +22,16 @@
 
 @synthesize vocabulariesToRecite;
 @synthesize headerView;
-@synthesize selectedVocabulary;
 @synthesize listToday;
 @synthesize meaningCellHeight;
 @synthesize rememberView;
 @synthesize forgetView;
+@synthesize meaningView;
 @synthesize touchPoint;
 @synthesize draggedCell;
 @synthesize countInList;
 @synthesize rememberCount;
+@synthesize selectedIndex;
 @synthesize draggedIndex;
 @synthesize currentList;
 @synthesize alertWhenFinish;
@@ -60,8 +61,13 @@
         self.vocabulariesToRecite = [NSMutableArray arrayWithArray:[self.currentList vocabulariesToRecite]];
         self.countInList = [self.currentList.listVocabularies count];
         self.rememberCount = [self.currentList rememberedCount];
+        self.selectedIndex = -1;
         self.title = self.currentList.name;
         
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(postLoadingMeaningView:)
+                                                     name:FINISH_LOADING_MEANING_NOTIFICATION object:nil];
+
         __autoreleasing UIGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanning:)];
         [self.view addGestureRecognizer:panGesture];
     }
@@ -110,6 +116,7 @@
     self.draggedCell = nil;
     self.alertWhenFinish = nil;
     self.alertDelegate = nil;
+    self.meaningView = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -128,9 +135,6 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 1 && self.selectedVocabulary != nil) {
-        return 416 - 59;
-    }
     return 59;
 }
 
@@ -141,12 +145,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    if (indexPath.row == 1 && selectedVocabulary != nil) {
-//        NSArray *meanings = [selectedVocabulary.meanings allObjects];
-//        __autoreleasing VSMeaningCell *meaningCell = [[VSMeaningCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"VSMeaning"];
-//        [meaningCell setMeaningContent:meanings];
-//        return meaningCell;
-//    }
     VSListVocabulary *listVocabulary = [vocabulariesToRecite objectAtIndex:indexPath.row];
     NSString *CellIdentifier = listVocabulary.vocabulary.spell;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -157,7 +155,6 @@
     [cell.textLabel setTextAlignment:UITextAlignmentCenter];
     cell.textLabel.backgroundColor = [UIColor clearColor];
     cell.textLabel.textColor = [UIColor blackColor];
-    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     return cell;
 }
 
@@ -211,33 +208,59 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
-    NSLog(@"Selected");
-    
-    
-//    UITableViewCell *firstCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-    UITableViewCell *selectedCell = [self.tableView cellForRowAtIndexPath:indexPath];
-//    UITableViewCell *cellOnTop = [[UITableViewCell alloc]initWithFrame:selectedCell.frame];
-//    cellOnTop.center = selectedCell.center;
-//    [cellOnTop.textLabel setTextAlignment:UITextAlignmentCenter];
-//    cellOnTop.textLabel.text = selectedCell.textLabel.text;
-//    cellOnTop.textLabel.backgroundColor = [UIColor clearColor];
-//    cellOnTop.textLabel.textColor = [UIColor blackColor];
-//    selectedVocabulary = [vocabulariesToRecite objectAtIndex:indexPath.row];
-//    [self.tableView addSubview:cellOnTop];
-//    [UIView animateWithDuration:0.5f 
-//            delay:0.0f 
-//            options:UIViewAnimationCurveLinear 
-//            animations:^{
-//                [cellOnTop setFrame:CGRectMake(0, 10, 320, 59)];
-//            }
-//            completion:^(BOOL finished) {
-//                if (finished == YES) {
-//                    firstCell.textLabel.text = cellOnTop.textLabel.text;
-//                    [cellOnTop removeFromSuperview];
-//                }
-//            }
-//         ];
+    if (selectedIndex != indexPath.row && (selectedIndex == -1 || indexPath.row != 0)) {
+        if (meaningView != nil) {
+            [meaningView removeFromSuperview];
+            meaningView = nil;
+        }
+        selectedIndex = indexPath.row;
+        UITableViewCell *firstCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+        UITableViewCell *selectedCell = [self.tableView cellForRowAtIndexPath:indexPath];
+        UITableViewCell *cellOnTop = [[UITableViewCell alloc]initWithFrame:selectedCell.frame];
+        cellOnTop.center = selectedCell.center;
+        [cellOnTop.textLabel setTextAlignment:UITextAlignmentCenter];
+        cellOnTop.textLabel.text = selectedCell.textLabel.text;
+        cellOnTop.textLabel.backgroundColor = [UIColor redColor];
+        cellOnTop.textLabel.textColor = [UIColor blackColor];
+        [UIView beginAnimations:nil context:NULL];
+        [self.tableView addSubview:cellOnTop];
+        [UIView commitAnimations];
 
+        [UIView animateWithDuration:0.0f delay:0.0f options:UIViewAnimationOptionTransitionNone animations:^{
+                [cellOnTop setFrame:selectedCell.frame];
+            }
+            completion:^(BOOL finished) {
+                [UIView animateWithDuration:0.5f delay:0.0f options:UIViewAnimationOptionTransitionNone animations:^{
+                        [cellOnTop setFrame:firstCell.frame];
+                    }
+                    completion:^(BOOL finished) {
+                        if (finished == YES) {
+                            firstCell.textLabel.text = cellOnTop.textLabel.text;
+                            [cellOnTop removeFromSuperview];
+                            VSVocabulary *selectedVocabulary = ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:selectedIndex]).vocabulary;
+                            NSArray *meanings = [selectedVocabulary.meanings allObjects];
+                            for (NSString* meaning in meanings) {
+                                NSLog(@"%@", meaning);
+                            }
+                            meaningView = [[VSMeaningView alloc] initWithFrame:CGRectMake(0, 69, 320, 0)];
+                            [meaningView setMeaningContent:meanings];
+                            [self.tableView addSubview:meaningView];
+                            meaningView.hidden = YES;
+                        }
+                    }
+                ];
+            }
+        ];
+    }
+    else {
+        [meaningView removeFromSuperview];
+        meaningView = nil;
+        UITableViewCell *firstCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+        UITableViewCell *selectedCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:selectedIndex inSection:0]];
+        firstCell.textLabel.text = ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:0]).vocabulary.spell;
+        selectedCell.textLabel.text = ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:selectedIndex]).vocabulary.spell;
+        selectedIndex = -1;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
@@ -252,6 +275,15 @@
 - (void)backToMain
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark - View Control
+- (void)removeMeaningView
+{
+    if (self.meaningView != nil) {
+        [self.meaningView removeFromSuperview];
+        self.meaningView = nil;
+    }
 }
 
 #pragma mark - Gesture Related
@@ -291,7 +323,6 @@
             [self initAssistView];
             cell.highlighted = NO;
         }
-
     }
 }
 
@@ -379,6 +410,11 @@
     }
 }
 
+- (void)postLoadingMeaningView:(id)object
+{
+    meaningView.hidden = NO;
+}
+
 - (void)forget
 {
     VSListVocabulary *forgotVocabulary = [vocabulariesToRecite objectAtIndex:draggedIndex];
@@ -440,6 +476,7 @@
         [alertWhenFinish show];
     }
 }
+
 
 #pragma mark - alert view
 

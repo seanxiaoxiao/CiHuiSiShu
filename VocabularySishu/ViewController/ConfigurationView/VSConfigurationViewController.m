@@ -169,15 +169,11 @@
     if (sectionTitle == nil) {
         return nil;
     }
-    
     // Create label with section title
     UILabel *label = [[UILabel alloc] init];
     label.frame = CGRectMake(20, 6, 300, 30);
     label.backgroundColor = [UIColor clearColor];
-    label.textColor = [UIColor colorWithHue:(136.0/360.0)  // Slightly bluish green
-                                 saturation:1.0
-                                 brightness:0.60
-                                      alpha:1.0];
+    label.textColor = [UIColor colorWithHue:(136.0/360.0) saturation:1.0 brightness:0.60 alpha:1.0];
     label.shadowColor = [UIColor whiteColor];
     label.shadowOffset = CGSizeMake(0.0, 1.0);
     label.font = [UIFont boldSystemFontOfSize:16];

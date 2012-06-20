@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "VSVocabulary.h"
-#import "VSMeaningCell.h"
+#import "VSMeaningView.h"
 #import "VSVocabularyListHeaderView.h"
 #import "VSConstant.h"
 #import "VSList.h"
@@ -19,7 +19,6 @@
 @interface VSVocabularyListViewController : UITableViewController
 
 @property (nonatomic, retain) NSMutableArray *vocabulariesToRecite;
-@property (nonatomic, retain) VSVocabulary *selectedVocabulary;
 @property (nonatomic, strong) VSVocabularyListHeaderView *headerView;
 @property (nonatomic, retain) VSList *listToday;
 @property (nonatomic, retain) VSList *currentList;
@@ -28,9 +27,11 @@
 @property (nonatomic, assign) int draggedIndex;
 @property (nonatomic, assign) int countInList;
 @property (nonatomic, assign) int rememberCount;
+@property (nonatomic, assign) int selectedIndex;
 @property (nonatomic, strong) UITableViewCell *draggedCell;
 @property (nonatomic, strong) UIView *rememberView;
 @property (nonatomic, strong) UIView *forgetView;
+@property (nonatomic, strong) VSMeaningView *meaningView;
 @property (nonatomic, strong) UIAlertView *alertWhenFinish;
 @property (nonatomic, retain) VSAlertDelegate *alertDelegate;
 

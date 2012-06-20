@@ -1,20 +1,19 @@
 //
-//  VSMeaningCell.m
+//  VSMeaningView.m
 //  VocabularySishu
 //
-//  Created by xiao xiao on 5/21/12.
+//  Created by xiao xiao on 6/18/12.
 //  Copyright (c) 2012 douban. All rights reserved.
 //
 
-#import "VSMeaningCell.h"
+#import "VSMeaningView.h"
 #import "VSConstant.h"
 
-@implementation VSMeaningCell
+@implementation VSMeaningView
 
 @synthesize _meanings;
 @synthesize meaningView;
 @synthesize viewHeight;
-@synthesize loaded;
 
 - (void)setMeaningContent:(NSArray *)meanings {
     self._meanings = meanings;
@@ -33,40 +32,38 @@
     [meaningView loadHTMLString:content baseURL:baseURL];
 }
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+- (id)initWithFrame:(CGRect)frame
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    self = [super initWithFrame:frame];
     if (self) {
-        self.loaded = NO;
+        // Initialization code
     }
     return self;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+/*
+// Only override drawRect: if you perform custom drawing.
+// An empty implementation adversely affects performance during animation.
+- (void)drawRect:(CGRect)rect
 {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+    // Drawing code
 }
-
-- (void)webViewDidStartLoad:(UIWebView *)webView {  
-    
-}
-
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-    NSLog(@"%@", [error localizedDescription]);
-}
-
+*/
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-    [meaningView sizeToFit];
-    [self.contentView addSubview:meaningView];
-    [self.contentView sizeToFit];
-    viewHeight = [[webView stringByEvaluatingJavaScriptFromString:@"document.body.offsetHeight;"] floatValue];
+    [self addSubview:meaningView];
+    NSLog ( @"Client height: %@", [webView stringByEvaluatingJavaScriptFromString: @"document.body.clientHeight"] );
+
+    viewHeight = [[webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('meaning').offsetHeight;"] floatValue];
     NSLog(@"%f", viewHeight);
-    self.loaded = YES;
+    [meaningView setFrame:CGRectMake(0, 0, 320, viewHeight + 5)];
+
+    NSNotification *notification = [NSNotification notificationWithName:FINISH_LOADING_MEANING_NOTIFICATION object:self];
+	[[NSNotificationCenter defaultCenter] postNotification:notification];
+
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     return YES;
 }
+
 @end

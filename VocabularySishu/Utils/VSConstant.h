@@ -16,6 +16,8 @@
 #define VOCABULARY_LIST_STATUS_NEW 0
 #define VOCABULARY_LIST_STATUS_FORGOT 2
 
+#define FINISH_LOADING_MEANING_NOTIFICATION @"finish_loading_meaning_notification"
+
 
 @interface VSConstant : NSObject
 
