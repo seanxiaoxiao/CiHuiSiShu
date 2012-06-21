@@ -48,7 +48,6 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    NSLog(@"Init with new list");
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.headerView = [[VSVocabularyListHeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 10)];
@@ -64,9 +63,8 @@
         self.selectedIndex = -1;
         self.title = self.currentList.name;
         
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(postLoadingMeaningView:)
-                                                     name:FINISH_LOADING_MEANING_NOTIFICATION object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(postLoadingMeaningView:) name:FINISH_LOADING_MEANING_NOTIFICATION object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showDetailView) name:SHOW_DETAIL_VIEW object:nil];
 
         __autoreleasing UIGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanning:)];
         panGesture.delegate = self;
@@ -136,17 +134,26 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (meaningView != nil && indexPath.row == selectedIndex + 1) {
+        return meaningView.viewHeight;
+    }
     return 59;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 7 < [self.vocabulariesToRecite count] ? 7 : [self.vocabulariesToRecite count];
+    int count = 7 < [self.vocabulariesToRecite count] ? 7 : [self.vocabulariesToRecite count];
+    return (self.meaningView != nil) ? count + 1 : count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    VSListVocabulary *listVocabulary = [vocabulariesToRecite objectAtIndex:indexPath.row];
+    NSLog(@"Index path at %d", indexPath.row);
+    if (meaningView != nil && indexPath.row == selectedIndex + 1) {
+        return meaningView;
+    }
+    int vocabularyIndex = meaningView != nil && indexPath.row > selectedIndex ? indexPath.row - 1 : indexPath.row;
+    VSListVocabulary *listVocabulary = [vocabulariesToRecite objectAtIndex:vocabularyIndex];
     NSString *CellIdentifier = listVocabulary.vocabulary.spell;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
@@ -156,6 +163,7 @@
     [cell.textLabel setTextAlignment:UITextAlignmentCenter];
     cell.textLabel.backgroundColor = [UIColor clearColor];
     cell.textLabel.textColor = [UIColor blackColor];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
@@ -202,65 +210,23 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     DetailViewController *detailViewController = [[DetailViewController alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-    if (selectedIndex != indexPath.row && (selectedIndex == -1 || indexPath.row != 0)) {
-        if (meaningView != nil) {
-            [meaningView removeFromSuperview];
-            meaningView = nil;
+    int index = indexPath.row;
+    if (selectedIndex != indexPath.row || selectedIndex == -1) {
+        if (meaningView != nil && selectedIndex != indexPath.row) {
+            if (indexPath.row > selectedIndex) {
+                index--;
+            }
+            [self removeMeaningView];
         }
-        selectedIndex = indexPath.row;
-        UITableViewCell *firstCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-        UITableViewCell *selectedCell = [self.tableView cellForRowAtIndexPath:indexPath];
-        UITableViewCell *cellOnTop = [[UITableViewCell alloc]initWithFrame:selectedCell.frame];
-        cellOnTop.center = selectedCell.center;
-        [cellOnTop.textLabel setTextAlignment:UITextAlignmentCenter];
-        cellOnTop.textLabel.text = selectedCell.textLabel.text;
-        cellOnTop.textLabel.backgroundColor = [UIColor redColor];
-        cellOnTop.textLabel.textColor = [UIColor blackColor];
-        [UIView beginAnimations:nil context:NULL];
-        [self.tableView addSubview:cellOnTop];
-        [UIView commitAnimations];
-
-        [UIView animateWithDuration:0.0f delay:0.0f options:UIViewAnimationOptionTransitionNone animations:^{
-                [cellOnTop setFrame:selectedCell.frame];
-            }
-            completion:^(BOOL finished) {
-                [UIView animateWithDuration:0.5f delay:0.0f options:UIViewAnimationOptionTransitionNone animations:^{
-                        [cellOnTop setFrame:firstCell.frame];
-                    }
-                    completion:^(BOOL finished) {
-                        if (finished == YES) {
-                            firstCell.textLabel.text = cellOnTop.textLabel.text;
-                            [cellOnTop removeFromSuperview];
-                            VSVocabulary *selectedVocabulary = ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:selectedIndex]).vocabulary;
-                            NSArray *meanings = [selectedVocabulary.meanings allObjects];
-                            for (NSString* meaning in meanings) {
-                                NSLog(@"%@", meaning);
-                            }
-                            meaningView = [[VSMeaningView alloc] initWithFrame:CGRectMake(0, 69, 320, 0)];
-                            [meaningView setMeaningContent:meanings];
-                            [self.view addSubview:meaningView];
-                            meaningView.hidden = YES;
-                        }
-                    }
-                ];
-            }
-        ];
+        selectedIndex = index;
+        VSVocabulary *selectedVocabulary = ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:selectedIndex]).vocabulary;
+        NSArray *meanings = [selectedVocabulary.meanings allObjects];
+        meaningView = [[VSMeaningView alloc] initWithFrame:CGRectMake(0, 69, 320, 0)];
+        [meaningView setMeaningContent:meanings];
+        meaningView.hidden = YES;
     }
     else {
-        [meaningView removeFromSuperview];
-        meaningView = nil;
-        UITableViewCell *firstCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-        UITableViewCell *selectedCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:selectedIndex inSection:0]];
-        firstCell.textLabel.text = ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:0]).vocabulary.spell;
-        selectedCell.textLabel.text = ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:selectedIndex]).vocabulary.spell;
-        selectedIndex = -1;
+        [self removeMeaningView];
     }
 }
 
@@ -281,9 +247,12 @@
 #pragma mark - View Control
 - (void)removeMeaningView
 {
-    if (self.meaningView != nil) {
-        [self.meaningView removeFromSuperview];
-        self.meaningView = nil;
+    if (meaningView != nil) {
+        [meaningView removeFromSuperview];
+        meaningView = nil;
+        NSIndexPath *meangingCellIndexPath = [NSIndexPath indexPathForRow:selectedIndex + 1 inSection:0];
+        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:meangingCellIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+        selectedIndex = -1;
     }
 }
 
@@ -292,16 +261,20 @@
 
 - (BOOL)gestureRecognizerShouldBegin:(UIPanGestureRecognizer *)gestureRecognizer
 {
-    NSLog(@"Recongnizer");
     UIView *cell = [gestureRecognizer view];
     CGPoint translation = [gestureRecognizer translationInView:[cell superview]];
-    
+    CGPoint point = [gestureRecognizer locationInView:self.tableView];
+    if ([self.tableView pointInside:point withEvent:nil]) {
+        NSIndexPath* indexPath = [self.tableView indexPathForRowAtPoint:point];
+        UITableViewCell* cell = [self.tableView cellForRowAtIndexPath:indexPath];
+        if ([cell class] == [VSMeaningView class]) {
+            return NO;
+        }
+    }
     // Check for horizontal gesture
-    if (fabsf(translation.x) > fabsf(translation.y))
-    {
+    if (fabsf(translation.x) > fabsf(translation.y)) {
         return YES;
     }
-    
     return NO;
 }
 
@@ -346,8 +319,7 @@
 - (void)initAssistView
 {
     CGPoint origin = draggedCell.frame.origin;
-    NSLog(@"Dragged Cell %f", origin.y);
-    
+
     origin.y -= 10;
 
     // get rid of old cell, if it wasn't disposed already
@@ -427,11 +399,25 @@
     }
 }
 
+#pragma mark - Notification
+
 - (void)postLoadingMeaningView:(id)object
 {
     meaningView.hidden = NO;
-    [self.view bringSubviewToFront:meaningView];
+    NSIndexPath *selectedIndexPath = [NSIndexPath indexPathForRow:selectedIndex inSection:0];
+    NSIndexPath *meaningCellIndexPath = [NSIndexPath indexPathForRow:(selectedIndex + 1) inSection:0];
+    [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:meaningCellIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+    [self.tableView scrollToRowAtIndexPath:selectedIndexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
 }
+
+- (void)showDetailView
+{
+    VSVocabulary *selectedVocabulary = ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:selectedIndex]).vocabulary;
+    VSVocabularyViewController *detailViewController = [[VSVocabularyViewController alloc] initWithNibName:@"VSVocabularyViewController" bundle:nil];
+    detailViewController.vocabulary = selectedVocabulary;
+    [self.navigationController pushViewController:detailViewController animated:YES];
+}
+
 
 - (void)forget
 {
@@ -444,7 +430,6 @@
 
 - (void)remember
 {
-    NSLog(@"Remembered");
     VSListVocabulary *rememberedVocabulary = [vocabulariesToRecite objectAtIndex:draggedIndex];
     [rememberedVocabulary remembered];
     [rememberedVocabulary.vocabulary remembered];
@@ -464,6 +449,7 @@
 
 - (void)updateVocabularyTable:(BOOL)remember
 {
+    [self removeMeaningView];
     [self.tableView beginUpdates];
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:touchPoint];
     [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
@@ -474,8 +460,7 @@
     else if (!remember) {
         int newIndex = [self.vocabulariesToRecite count] > 6 ? 6 : [self.vocabulariesToRecite count] - 1;
         NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:newIndex inSection:0];
-        [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];    
-        
+        [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
     [self.tableView endUpdates];
 }
@@ -492,39 +477,6 @@
         }
         [alertWhenFinish setDelegate:self.alertDelegate];
         [alertWhenFinish show];
-    }
-}
-
-
-#pragma mark - alert view
-
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
-{
-    [currentList finish];
-    if ([self.currentList isHistoryList]) {
-        [self.navigationController popViewControllerAnimated:YES];
-    }
-    else {
-        VSList *nextList = [self.currentList nextList];
-        VSContext *context = [VSContext getContext];
-        if (nextList != nil) {
-            [context fixCurrentList:nextList];
-            VSVocabularyListViewController *vocabularyListViewController = [VSVocabularyListViewController alloc];
-            vocabularyListViewController.currentList = nextList;
-            vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
-            
-            [UIView beginAnimations:nil context:NULL];
-            [UIView setAnimationDuration:1.5];	
-            
-            [UIView setAnimationTransition:UIViewAnimationTransitionCurlUp forView:vocabularyListViewController.view cache:YES];
-            [UIView commitAnimations];
-            self.view.hidden = YES;
-            self.view = vocabularyListViewController.view;
-        }
-        else {
-            [currentList.repository finishThisRound];
-            //TODO Jump to the configuration page?
-        }
     }
 }
 

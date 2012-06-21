@@ -35,11 +35,9 @@
     [listRequest setPredicate:datePredicate];
     NSArray *results = [[VSUtils currentMOContext] executeFetchRequest:listRequest error:&error];
     if ([results count] > 0) {
-        NSLog(@"Existed history list");
         return [results objectAtIndex:0];
     }
     else {
-        NSLog(@"New history list");
         VSList *listForToday = [NSEntityDescription insertNewObjectForEntityForName:@"VSList" inManagedObjectContext:[VSUtils currentMOContext]];
         NSCalendar *nowCalendar = [NSCalendar currentCalendar];
         NSDateComponents *nowComponents = [nowCalendar components:(NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:today];

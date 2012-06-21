@@ -32,13 +32,14 @@
     NSString *content = [NSString stringWithFormat:MEANINGTEMPLATE, lines];
     [meaningView setDelegate:self];
     [meaningView loadHTMLString:content baseURL:baseURL];
+    meaningView.scrollView.scrollEnabled = NO;
 }
 
-- (id)initWithFrame:(CGRect)frame
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
-    self = [super initWithFrame:frame];
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        // Initialization code
+        
     }
     return self;
 }
@@ -55,21 +56,19 @@
     UIView *viewForButton = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 30)];
     viewForButton.backgroundColor = [UIColor whiteColor];
     UIButton *but = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    but.frame= CGRectMake(200, 0, 30, 30);
-    [but setTitle:@"Ok" forState:UIControlStateNormal];
+    but.frame= CGRectMake(30, 0, 60, 30);
+    [but setTitle:@"详细" forState:UIControlStateNormal];
     [but addTarget:self action:@selector(showDetail) forControlEvents:UIControlEventTouchUpInside];
     [viewForButton addSubview:but];
-    [self addSubview:viewForButton];
-    [self addSubview:meaningView];
-    NSLog ( @"Client height: %@", [webView stringByEvaluatingJavaScriptFromString: @"document.body.clientHeight"] );
-
     viewHeight = [[webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('meaning').offsetHeight;"] floatValue];
-    NSLog(@"%f", viewHeight);
     [meaningView setFrame:CGRectMake(0, 30, 320, viewHeight + 5)];
+    [self.contentView addSubview:viewForButton];
+    [self.contentView addSubview:meaningView];
+    viewHeight = viewHeight + 50;
+    [self.contentView sizeToFit];
 
     NSNotification *notification = [NSNotification notificationWithName:FINISH_LOADING_MEANING_NOTIFICATION object:self];
 	[[NSNotificationCenter defaultCenter] postNotification:notification];
-
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
@@ -78,7 +77,14 @@
 
 - (void)showDetail
 {
-    NSLog(@"xxxxx");
+    NSNotification *notification = [NSNotification notificationWithName:SHOW_DETAIL_VIEW object:self];
+	[[NSNotificationCenter defaultCenter] postNotification:notification];
 }
 
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+{
+    [super setSelected:selected animated:animated];
+    
+    // Configure the view for the selected state
+}
 @end

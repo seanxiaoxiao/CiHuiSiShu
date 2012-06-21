@@ -10,7 +10,7 @@
 #import "VSMeaning.h"
 #import "VSVocabulary.h"
 
-@interface VSMeaningView : UIView<UIWebViewDelegate>
+@interface VSMeaningView : UITableViewCell<UIWebViewDelegate>
 
 @property (nonatomic, retain) NSArray *_meanings;
 @property (nonatomic, retain) UIWebView *meaningView;
