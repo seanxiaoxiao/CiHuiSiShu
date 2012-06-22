@@ -40,6 +40,14 @@
 
 - (NSArray *)vocabulariesToRecite;
 
+- (NSArray *)vocabulariesOftenForget;
+
+- (NSArray *)vocabulariesAlmostRemember;
+
+- (NSArray *)vocabulariesCannotRememberWell;
+
+- (NSArray *)allVocabularies;
+
 - (void)addVocabulary:(VSVocabulary *)vocabulary;
 
 - (BOOL)isHistoryList;

@@ -37,6 +37,14 @@
 
 - (NSDecimalNumber *)rememberRate;
 
+- (UIImage *)vocabularyImage;
+
+- (BOOL)forgetOften;
+
+- (BOOL)almostRemember;
+
+- (BOOL)cannotRememberWell;
+
 @end
 
 @interface VSVocabulary (CoreDataGeneratedAccessors)

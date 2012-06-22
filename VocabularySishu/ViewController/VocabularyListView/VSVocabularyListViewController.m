@@ -148,7 +148,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Index path at %d", indexPath.row);
     if (meaningView != nil && indexPath.row == selectedIndex + 1) {
         return meaningView;
     }
