@@ -148,7 +148,8 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     int count = 6 < [self.vocabulariesToRecite count] ? 6 : [self.vocabulariesToRecite count];
-    return (self.meaningView != nil) ? count + 1 : count;
+    count = (self.meaningView != nil) ? count + 1 : count;
+    return count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -492,8 +493,8 @@
 
 - (void)updateVocabularyTable:(BOOL)remember
 {
-    [self removeMeaningView];
     [self.tableView beginUpdates];
+    [self removeMeaningView];
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:touchPoint];
     [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     if (remember && [self.vocabulariesToRecite count] > 5) {
