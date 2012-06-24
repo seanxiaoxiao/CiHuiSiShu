@@ -50,7 +50,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.headerView = [[VSVocabularyListHeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 10)];
+        self.headerView = [[VSVocabularyListHeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 70)];
         self.tableView.tableHeaderView = headerView;
         if (![currentList isHistoryList]) {
             self.listToday = [VSList createAndGetHistoryList];
@@ -65,6 +65,11 @@
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(postLoadingMeaningView:) name:FINISH_LOADING_MEANING_NOTIFICATION object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showDetailView) name:SHOW_DETAIL_VIEW object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showAllVocabularies) name:SHOW_ALL object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showToRecite) name:SHOW_TORECITE object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showCannotRememberWell) name:SHOW_CANNOTREMEMBERWELL object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showEasyToForget) name:SHOW_EASYTOFORGET object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showOftenForget) name:SHOW_OFTENFORGET object:nil];
 
         __autoreleasing UIGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanning:)];
         panGesture.delegate = self;
@@ -142,13 +147,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    int count = 7 < [self.vocabulariesToRecite count] ? 7 : [self.vocabulariesToRecite count];
+    int count = 6 < [self.vocabulariesToRecite count] ? 6 : [self.vocabulariesToRecite count];
     return (self.meaningView != nil) ? count + 1 : count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Index path at %d", indexPath.row);
     if (meaningView != nil && indexPath.row == selectedIndex + 1) {
         return meaningView;
     }
@@ -418,6 +422,45 @@
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
+- (void)showAllVocabularies
+{
+    self.vocabulariesToRecite = [NSMutableArray arrayWithArray:[self.currentList allVocabularies]];
+    [self.tableView reloadData];
+    self.countInList = [self.currentList.listVocabularies count];
+    self.rememberCount = [self.currentList rememberedCount];
+}
+
+- (void)showToRecite
+{
+    self.vocabulariesToRecite = [NSMutableArray arrayWithArray:[self.currentList vocabulariesToRecite]];
+    [self.tableView reloadData];
+    self.countInList = [self.currentList.listVocabularies count];
+    self.rememberCount = [self.currentList rememberedCount];
+}
+
+- (void)showCannotRememberWell
+{
+    self.vocabulariesToRecite = [NSMutableArray arrayWithArray:[self.currentList vocabulariesCannotRememberWell]];
+    [self.tableView reloadData];
+    self.countInList = [self.currentList.listVocabularies count];
+    self.rememberCount = [self.currentList rememberedCount];
+}
+
+- (void)showEasyToForget
+{
+    self.vocabulariesToRecite = [NSMutableArray arrayWithArray:[self.currentList vocabulariesEasyToForget]];
+    [self.tableView reloadData];
+    self.countInList = [self.currentList.listVocabularies count];
+    self.rememberCount = [self.currentList rememberedCount];
+}
+
+- (void)showOftenForget
+{
+    self.vocabulariesToRecite = [NSMutableArray arrayWithArray:[self.currentList vocabulariesOftenForget]];
+    [self.tableView reloadData];
+    self.countInList = [self.currentList.listVocabularies count];
+    self.rememberCount = [self.currentList rememberedCount];
+}
 
 - (void)forget
 {
@@ -453,12 +496,12 @@
     [self.tableView beginUpdates];
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:touchPoint];
     [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    if (remember && [self.vocabulariesToRecite count] > 6) {
-        NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:6 inSection:0];
+    if (remember && [self.vocabulariesToRecite count] > 5) {
+        NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:5 inSection:0];
         [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];    
     }
     else if (!remember) {
-        int newIndex = [self.vocabulariesToRecite count] > 6 ? 6 : [self.vocabulariesToRecite count] - 1;
+        int newIndex = [self.vocabulariesToRecite count] > 5 ? 5 : [self.vocabulariesToRecite count] - 1;
         NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:newIndex inSection:0];
         [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
     }

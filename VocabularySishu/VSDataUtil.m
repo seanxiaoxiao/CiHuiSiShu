@@ -79,11 +79,10 @@
             list.repository = repository;
             list.isHistory = NO;
             list.status = [VSConstant LIST_STATUS_NEW];
-            __autoreleasing NSError *error = nil;
-            if (![[VSUtils currentMOContext] save:&error]) {
-                NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-            }
         }
+    }
+    if (![[VSUtils currentMOContext] save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
     }
 }
 
@@ -108,10 +107,10 @@
         vocabulary.etymology = [vocabularyInfo objectForKey:@"etymology"];
         vocabulary.meet = [NSNumber numberWithInt:0];
         vocabulary.forget = [NSNumber numberWithInt:0];
-        vocabulary.remember = [NSNumber numberWithInt:0];
-        if (![[VSUtils currentMOContext] save:&error]) {
-            NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-        }
+        vocabulary.remember = [NSNumber numberWithInt:0];   
+    }
+    if (![[VSUtils currentMOContext] save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
     }
 }
 
@@ -154,9 +153,9 @@
             listVocabulary.vocabulary = vocabulary;
             listVocabulary.list = list;
             listVocabulary.lastStatus = VOCABULARY_LIST_STATUS_NEW;
-            if (![[VSUtils currentMOContext] save:&error]) {
-                NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-            }
+        }
+        if (![[VSUtils currentMOContext] save:&error]) {
+            NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
         }
     }
 }
@@ -192,11 +191,12 @@
             meaning.vocabulary = vocabulary;
             meaning.attribute = [meaningInfo objectForKey:@"attribute"];
             meaning.meaning = [meaningInfo objectForKey:@"meaning"];
-            if (![[VSUtils currentMOContext] save:&error]) {
-                NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-            }
-        }
+        }        
     }
+    if (![[VSUtils currentMOContext] save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    }
+
 }
 
 + (void)initData

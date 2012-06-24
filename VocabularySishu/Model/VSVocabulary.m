@@ -56,6 +56,21 @@
     return [self.forget description];
 }
 
+- (BOOL)forgetOften
+{
+    return [self.meet intValue] > 0 && [[self rememberRate] floatValue] <= 0.45;
+}
+
+- (BOOL)cannotRememberWell
+{
+    return [self.meet intValue] > 0 && [[self rememberRate] floatValue] <= 0.79 && [[self rememberRate] floatValue] >= 0.53;
+}
+
+- (BOOL)easyToForget
+{
+    return [self.meet intValue] > 0 && [[self rememberRate] floatValue] <= 0.6 && [[self rememberRate] floatValue] >= 0.38;
+}
+
 - (NSDecimalNumber *)rememberRate
 {
     if ([self.meet intValue] == 0) {
@@ -64,6 +79,13 @@
     else {
         return [[NSDecimalNumber alloc] initWithFloat:([self.remember floatValue]/ [self.meet floatValue])];
     }
+}
+
+- (UIImage *)vocabularyImage
+{
+    NSURL *url = [[NSBundle mainBundle] URLForResource:self.spell withExtension: @"jpg"];
+    NSLog(@"%@", url);
+    return url != nil ? [UIImage imageWithData:[NSData dataWithContentsOfURL:url]] : nil;
 }
 
 @end
