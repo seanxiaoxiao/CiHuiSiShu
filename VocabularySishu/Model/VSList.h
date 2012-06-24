@@ -42,9 +42,9 @@
 
 - (NSArray *)vocabulariesOftenForget;
 
-- (NSArray *)vocabulariesAlmostRemember;
-
 - (NSArray *)vocabulariesCannotRememberWell;
+
+- (NSArray *)vocabulariesEasyToForget;
 
 - (NSArray *)allVocabularies;
 

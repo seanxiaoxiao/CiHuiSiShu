@@ -41,7 +41,7 @@
 
 - (BOOL)forgetOften;
 
-- (BOOL)almostRemember;
+- (BOOL)easyToForget;
 
 - (BOOL)cannotRememberWell;
 

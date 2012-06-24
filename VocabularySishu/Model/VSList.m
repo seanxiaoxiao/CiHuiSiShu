@@ -164,10 +164,10 @@
         return [[self.listVocabularies filteredSetUsingPredicate:predicate] sortedArrayUsingDescriptors:sortDescriptors];
     }
     else {
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(lastStatus!='1')"];
-        NSSortDescriptor *sortSpellDescriptor = [[NSSortDescriptor alloc] initWithKey:@"vocabulary.spell" ascending:YES];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(lastStatus!=1)"];
+        NSSortDescriptor *sortOrderDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
         NSSortDescriptor *sortStatusDescriptor = [[NSSortDescriptor alloc] initWithKey:@"lastStatus" ascending:YES];
-        NSArray *sortDescriptors = [NSArray arrayWithObjects:sortSpellDescriptor, sortStatusDescriptor, nil];
+        NSArray *sortDescriptors = [NSArray arrayWithObjects:sortOrderDescriptor, sortStatusDescriptor, nil];
         return [[self.listVocabularies filteredSetUsingPredicate:predicate] sortedArrayUsingDescriptors:sortDescriptors];
     }
 }
@@ -185,12 +185,12 @@
     return [listVocabularies sortedArrayUsingDescriptors:sortDescriptors];
 }
 
-- (NSArray *)vocabulariesAlmostRemember
+- (NSArray *)vocabulariesEasyToForget
 {
     NSMutableArray *listVocabularies = [NSMutableArray arrayWithCapacity:200];
     NSSortDescriptor *sortOrderDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
     for (VSListVocabulary *listVocabulary in [self.listVocabularies allObjects]) {
-        if ([listVocabulary.vocabulary almostRemember]) {
+        if ([listVocabulary.vocabulary easyToForget]) {
             [listVocabularies addObject:listVocabulary];
         }
     }
