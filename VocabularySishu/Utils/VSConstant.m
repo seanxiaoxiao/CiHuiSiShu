@@ -25,5 +25,19 @@
     return [NSNumber numberWithInt:2];
 }
 
++ (NSNumber *)VOCABULARY_LIST_STATUS_NEW
+{
+    return [NSNumber numberWithInt:0];
+}
+
++ (NSNumber *)VOCABULARY_LIST_STATUS_REMEMBERED
+{
+    return [NSNumber numberWithInt:1];
+}
+
++ (NSNumber *)VOCABULARY_LIST_STATUS_FORGOT
+{
+    return [NSNumber numberWithInt:2];
+}
 
 @end

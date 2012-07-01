@@ -152,7 +152,7 @@
             VSListVocabulary *listVocabulary = [NSEntityDescription insertNewObjectForEntityForName:@"VSListVocabulary" inManagedObjectContext:[VSUtils currentMOContext]];
             listVocabulary.vocabulary = vocabulary;
             listVocabulary.list = list;
-            listVocabulary.lastStatus = VOCABULARY_LIST_STATUS_NEW;
+            listVocabulary.lastStatus = [VSConstant VOCABULARY_LIST_STATUS_NEW];
         }
         if (![[VSUtils currentMOContext] save:&error]) {
             NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);

@@ -58,6 +58,8 @@
 
 - (void)finish;
 
+- (void)clearVocabularyStatus;
+
 @end
 
 @interface VSList (CoreDataGeneratedAccessors)

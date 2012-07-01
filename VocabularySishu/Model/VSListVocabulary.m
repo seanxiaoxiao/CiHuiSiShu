@@ -23,7 +23,7 @@
 {
     int newOrder = [theList.listVocabularies count];
     VSListVocabulary *newRecord = [NSEntityDescription insertNewObjectForEntityForName:@"VSListVocabulary" inManagedObjectContext:[VSUtils currentMOContext]];
-    newRecord.lastStatus = [NSNumber numberWithInt:VOCABULARY_LIST_STATUS_NEW];
+    newRecord.lastStatus = [VSConstant VOCABULARY_LIST_STATUS_NEW];
     newRecord.order = [NSNumber numberWithInt:newOrder];
     newRecord.list = theList;
     newRecord.vocabulary = theVocabulary;
@@ -35,7 +35,7 @@
 
 - (void)remembered
 {
-    self.lastStatus = [NSNumber numberWithInt:VOCABULARY_LIST_STATUS_REMEMBERED];
+    self.lastStatus = [VSConstant  VOCABULARY_LIST_STATUS_REMEMBERED];
     __autoreleasing NSError *error = nil;
     if (![[VSUtils currentMOContext] save:&error]) {
         NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
@@ -44,7 +44,7 @@
 
 - (void)forgot
 {
-    self.lastStatus = [NSNumber numberWithInt:VOCABULARY_LIST_STATUS_FORGOT];
+    self.lastStatus = [VSConstant  VOCABULARY_LIST_STATUS_FORGOT];
     __autoreleasing NSError *error = nil;
     if (![[VSUtils currentMOContext] save:&error]) {
         NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);

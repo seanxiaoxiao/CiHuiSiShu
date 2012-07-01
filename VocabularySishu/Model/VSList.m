@@ -114,7 +114,7 @@
 {
     int rememberedCount = 0;
     for (VSListVocabulary *listVocabulay in self.listVocabularies) {
-        if ([listVocabulay.lastStatus isEqualToNumber:[NSNumber numberWithInt:VOCABULARY_LIST_STATUS_REMEMBERED]]) {
+        if ([listVocabulay.lastStatus isEqualToNumber:[VSConstant VOCABULARY_LIST_STATUS_REMEMBERED]]) {
             rememberedCount++;
         }
     }
@@ -125,7 +125,7 @@
 {
     int rememberedCount = 0;
     for (VSListVocabulary *listVocabulay in self.listVocabularies) {
-        if ([listVocabulay.lastStatus isEqualToNumber:[NSNumber numberWithInt:VOCABULARY_LIST_STATUS_REMEMBERED]]) {
+        if ([listVocabulay.lastStatus isEqualToNumber:[VSConstant VOCABULARY_LIST_STATUS_REMEMBERED]]) {
             rememberedCount++;
         }
     }
@@ -136,7 +136,7 @@
 {
     int forgotCount = 0;
     for (VSListVocabulary *listVocabulay in self.listVocabularies) {
-        if ([listVocabulay.lastStatus isEqualToNumber:[NSNumber numberWithInt:VOCABULARY_LIST_STATUS_FORGOT]]) {
+        if ([listVocabulay.lastStatus isEqualToNumber:[VSConstant VOCABULARY_LIST_STATUS_FORGOT]]) {
             forgotCount++;
         }
     }
@@ -246,6 +246,14 @@
     NSPredicate *statusPredicate = [NSPredicate predicateWithFormat:@"NOT (status = 2)"];
     NSArray *results = [[[[self.repository.lists allObjects] filteredArrayUsingPredicate:orderPredicate] filteredArrayUsingPredicate:historyPredicate] filteredArrayUsingPredicate:statusPredicate];
     return [results count] > 0 ? [results objectAtIndex:0] : nil;
+}
+
+- (void)clearVocabularyStatus
+{
+    for (VSListVocabulary *listVocabualry in self.listVocabularies) {
+        listVocabualry.lastStatus = [VSConstant VOCABULARY_LIST_STATUS_NEW];
+    }
+    [VSUtils saveEntity];
 }
 
 @end

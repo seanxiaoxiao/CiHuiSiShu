@@ -12,10 +12,6 @@
 
 #define MEANINGLINETEMPLATE @"<li><div>%@</div><div>%@</div></li>"
 
-#define VOCABULARY_LIST_STATUS_REMEMBERED 1
-#define VOCABULARY_LIST_STATUS_NEW 0
-#define VOCABULARY_LIST_STATUS_FORGOT 2
-
 #define FINISH_LOADING_MEANING_NOTIFICATION @"finish_loading_meaning_notification"
 #define SHOW_DETAIL_VIEW @"show_detail_view"
 
@@ -32,5 +28,11 @@
 + (NSNumber *)LIST_STATUS_PROCESSING;
 
 + (NSNumber *)LIST_STATUS_FINISH;
+
++ (NSNumber *)VOCABULARY_LIST_STATUS_NEW;
+
++ (NSNumber *)VOCABULARY_LIST_STATUS_REMEMBERED;
+
++ (NSNumber *)VOCABULARY_LIST_STATUS_FORGOT;
 
 @end
