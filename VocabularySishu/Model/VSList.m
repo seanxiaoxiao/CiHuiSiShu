@@ -77,7 +77,14 @@
     listRequest.fetchLimit = 7;
     NSPredicate *isHistoryPredicate = [NSPredicate predicateWithFormat:@"(isHistory=1)"];
     [listRequest setPredicate:isHistoryPredicate];
-    return [[VSUtils currentMOContext] executeFetchRequest:listRequest error:&error];
+    NSArray *tempResult = [[VSUtils currentMOContext] executeFetchRequest:listRequest error:&error];
+    NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:[tempResult count]];
+    for (VSList *list in tempResult) {
+        if ([list.listVocabularies count] > 0) {
+            [result addObject:list];
+        }
+    }
+    return result;
 }
 
 + (void)recitedVocabulary:(VSVocabulary *)vocabulary
