@@ -63,6 +63,8 @@
 		00A1AFAD1586192400310669 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A1AFAC1586192400310669 /* AVFoundation.framework */; };
 		00A353821587575E0063DCAE /* abacus.bin in Resources */ = {isa = PBXBuildFile; fileRef = 00A353811587575E0063DCAE /* abacus.bin */; };
 		00A353831587575E0063DCAE /* abacus.bin in Resources */ = {isa = PBXBuildFile; fileRef = 00A353811587575E0063DCAE /* abacus.bin */; };
+		00A9E7B015A08699009832BA /* VSReviewPlan.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A9E7AF15A08699009832BA /* VSReviewPlan.m */; };
+		00A9E7B115A08699009832BA /* VSReviewPlan.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A9E7AF15A08699009832BA /* VSReviewPlan.m */; };
 		00AE80F1158B1318000CE7EA /* VSConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AE80EF158B1318000CE7EA /* VSConfigurationViewController.m */; };
 		00AE80F2158B1318000CE7EA /* VSConfigurationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */; };
 		00B5A8C01566889B00D20EB6 /* retina-navigationbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B5A8BF1566889B00D20EB6 /* retina-navigationbar.png */; };
@@ -159,6 +161,8 @@
 		00A1AFA61585FD4700310669 /* abacus.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = abacus.mp3; path = Resources/Audio/abacus.mp3; sourceTree = "<group>"; };
 		00A1AFAC1586192400310669 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		00A353811587575E0063DCAE /* abacus.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = abacus.bin; path = Resources/Audio/abacus.bin; sourceTree = "<group>"; };
+		00A9E7AE15A08699009832BA /* VSReviewPlan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSReviewPlan.h; path = Utils/VSReviewPlan.h; sourceTree = "<group>"; };
+		00A9E7AF15A08699009832BA /* VSReviewPlan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSReviewPlan.m; path = Utils/VSReviewPlan.m; sourceTree = "<group>"; };
 		00AE80EE158B1318000CE7EA /* VSConfigurationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSConfigurationViewController.h; path = ViewController/ConfigurationView/VSConfigurationViewController.h; sourceTree = "<group>"; };
 		00AE80EF158B1318000CE7EA /* VSConfigurationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSConfigurationViewController.m; path = ViewController/ConfigurationView/VSConfigurationViewController.m; sourceTree = "<group>"; };
 		00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSConfigurationViewController.xib; path = ViewController/ConfigurationView/VSConfigurationViewController.xib; sourceTree = "<group>"; };
@@ -196,6 +200,8 @@
 		000B08961553D58E00E7A850 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				00A9E7AE15A08699009832BA /* VSReviewPlan.h */,
+				00A9E7AF15A08699009832BA /* VSReviewPlan.m */,
 				0046408F15591DBD007E5FA9 /* VSUtils.h */,
 				0046409015591DBD007E5FA9 /* VSUtils.m */,
 				0073A67715688F2800B80422 /* VSDataUtil.h */,
@@ -596,6 +602,7 @@
 				009AFBFB1588982300293F6A /* VSAlertDelegate.m in Sources */,
 				00AE80F1158B1318000CE7EA /* VSConfigurationViewController.m in Sources */,
 				004D5005158F20B200F56BD7 /* VSMeaningView.m in Sources */,
+				00A9E7B015A08699009832BA /* VSReviewPlan.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,6 +612,7 @@
 			files = (
 				00701E5B1553CBCE00D30018 /* VocabularySishuTests.m in Sources */,
 				0046409215591DBD007E5FA9 /* VSUtils.m in Sources */,
+				00A9E7B115A08699009832BA /* VSReviewPlan.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

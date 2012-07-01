@@ -17,7 +17,7 @@
 @interface VSList : NSManagedObject
 
 @property (nonatomic, retain) NSDate * createdDate;
-@property (nonatomic, retain) NSNumber * isHistory;
+@property (nonatomic, retain) NSNumber * type;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * order;
 @property (nonatomic, retain) NSNumber * status;
@@ -27,6 +27,14 @@
 + (VSList *)createAndGetHistoryList;
 
 + (NSArray *)lastestHistoryList;
+
++ (VSList *)latestLongTermReviewList;
+
++ (VSList *)latestShortTermReviewList;
+
++ (VSList *)createAndGetShortTermReviewList;
+
++ (VSList *)createAndGetLongTermReviewList;
 
 + (void)recitedVocabulary:(VSVocabulary *)vocabulary;
 
@@ -59,6 +67,10 @@
 - (void)finish;
 
 - (void)clearVocabularyStatus;
+
+- (BOOL)shortTermExpire;
+
+- (BOOL)longTermExpire;
 
 @end
 

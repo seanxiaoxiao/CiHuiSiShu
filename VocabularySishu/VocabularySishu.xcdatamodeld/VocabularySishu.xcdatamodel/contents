@@ -7,10 +7,10 @@
     </entity>
     <entity name="VSList" representedClassName="VSList" syncable="YES">
         <attribute name="createdDate" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="isHistory" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="status" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" syncable="YES"/>
         <relationship name="listVocabularies" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="VSListVocabulary" inverseName="list" inverseEntity="VSListVocabulary" syncable="YES"/>
         <relationship name="repository" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VSRepository" inverseName="lists" inverseEntity="VSRepository" syncable="YES"/>
     </entity>
@@ -49,7 +49,7 @@
         <relationship name="vocabulary" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="VSVocabulary" inverseName="websterMeanings" inverseEntity="VSVocabulary" syncable="YES"/>
     </entity>
     <elements>
-        <element name="VSContext" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="VSContext" positionX="160" positionY="192" width="128" height="105"/>
         <element name="VSList" positionX="160" positionY="192" width="128" height="135"/>
         <element name="VSListVocabulary" positionX="160" positionY="192" width="128" height="105"/>
         <element name="VSMeaning" positionX="160" positionY="192" width="128" height="105"/>

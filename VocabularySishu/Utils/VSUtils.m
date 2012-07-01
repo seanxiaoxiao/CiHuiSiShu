@@ -56,6 +56,22 @@
     return [cal dateByAddingComponents:components toDate:localNow options:0];
 }
 
++ (NSDate *)getNow
+{
+    NSTimeZone *timezone = [NSTimeZone defaultTimeZone];
+    NSDate *now = [[NSDate alloc] init];
+    NSInteger seconds = [timezone secondsFromGMTForDate: now];
+    return [NSDate dateWithTimeInterval: seconds sinceDate: now];
+}
+
++ (NSDate *)converToNormalDate:(NSDate *)date
+{
+    NSTimeZone *timezone = [NSTimeZone defaultTimeZone];
+    NSDate *now = [[NSDate alloc] init];
+    NSInteger seconds = [timezone secondsFromGMTForDate: now];
+    return [NSDate dateWithTimeInterval: -seconds sinceDate: date];
+}
+
 + (BOOL) vocabularySame:(VSVocabulary *)first with:(VSVocabulary *)second
 {
     return [first.spell isEqualToString:second.spell];

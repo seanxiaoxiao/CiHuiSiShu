@@ -26,4 +26,8 @@
 
 + (NSString *)normalizeString:(NSString *)source;
 
++ (NSDate *)converToNormalDate:(NSDate *)date;
+
++ (NSDate *)getNow;
+
 @end

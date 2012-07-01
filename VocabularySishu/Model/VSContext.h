@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 #import "VSUtils.h"
+#import "VSConstant.h"
 
 @class VSList, VSListVocabulary, VSRepository;
 

@@ -14,7 +14,7 @@
 @implementation VSList
 
 @dynamic createdDate;
-@dynamic isHistory;
+@dynamic type;
 @dynamic name;
 @dynamic order;
 @dynamic listVocabularies;
@@ -30,7 +30,7 @@
     [listRequest setEntity:listDescription];
     NSDate *today = [VSUtils getToday];
     NSPredicate *datePredicate = [NSPredicate predicateWithFormat:@"(createdDate >= %@)", [NSDate dateWithTimeIntervalSinceNow:-86400]];
-    NSPredicate *isHistoryPredicate = [NSPredicate predicateWithFormat:@"(isHistory = 1)"];
+    NSPredicate *isHistoryPredicate = [NSPredicate predicateWithFormat:@"(type = 1)"];
     [listRequest setPredicate:isHistoryPredicate];
     [listRequest setPredicate:datePredicate];
     NSArray *results = [[VSUtils currentMOContext] executeFetchRequest:listRequest error:&error];
@@ -43,7 +43,7 @@
         NSDateComponents *nowComponents = [nowCalendar components:(NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:today];
         listForToday.name = [NSString stringWithFormat:@"%d月%d日背诵List", [nowComponents month], [nowComponents day ]];
         listForToday.order = [NSNumber numberWithInt:-1];
-        listForToday.isHistory = [NSNumber numberWithInt:1];
+        listForToday.type = [VSConstant LIST_TYPE_HISTORY];
         listForToday.repository = nil;
         listForToday.createdDate = today;
         listForToday.status = [VSConstant LIST_STATUS_NEW];
@@ -53,6 +53,31 @@
         return listForToday;
     }
 }
+
++ (VSList *)createAndGetShortTermReviewList
+{
+    VSList *shortTermList = [NSEntityDescription insertNewObjectForEntityForName:@"VSList" inManagedObjectContext:[VSUtils currentMOContext]];
+    shortTermList.order = [NSNumber numberWithInt:-1];
+    shortTermList.type = [VSConstant LIST_TYPE_SHORTTERM_REVIEW];
+    shortTermList.repository = nil;
+    shortTermList.createdDate = [VSUtils getNow];
+    shortTermList.status = [VSConstant LIST_STATUS_NEW];
+    [VSUtils saveEntity];
+    return shortTermList;
+}
+
++ (VSList *)createAndGetLongTermReviewList
+{
+    VSList *longTermList = [NSEntityDescription insertNewObjectForEntityForName:@"VSList" inManagedObjectContext:[VSUtils currentMOContext]];
+    longTermList.order = [NSNumber numberWithInt:-1];
+    longTermList.type = [VSConstant LIST_TYPE_LONGTERM_REVIEW];
+    longTermList.repository = nil;
+    longTermList.createdDate = [VSUtils getNow];
+    longTermList.status = [VSConstant LIST_STATUS_NEW];
+    [VSUtils saveEntity];
+    return longTermList;    
+}
+
 
 + (VSList *)firstList
 {
@@ -75,7 +100,7 @@
     [listRequest setEntity:listDescription];
     [listRequest setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"createdDate" ascending:NO]]];
     listRequest.fetchLimit = 7;
-    NSPredicate *isHistoryPredicate = [NSPredicate predicateWithFormat:@"(isHistory=1)"];
+    NSPredicate *isHistoryPredicate = [NSPredicate predicateWithFormat:@"(type=1)"];
     [listRequest setPredicate:isHistoryPredicate];
     NSArray *tempResult = [[VSUtils currentMOContext] executeFetchRequest:listRequest error:&error];
     NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:[tempResult count]];
@@ -85,6 +110,43 @@
         }
     }
     return result;
+}
+
++ (VSList *)latestShortTermReviewList
+{
+    __autoreleasing NSError *error = nil;
+    NSEntityDescription *listDescription = [NSEntityDescription entityForName:@"VSList" inManagedObjectContext:[VSUtils currentMOContext]];
+    NSFetchRequest *listRequest = [[NSFetchRequest alloc] init];
+    [listRequest setEntity:listDescription];
+    NSPredicate *isHistoryPredicate = [NSPredicate predicateWithFormat:@"(type = 2)"];
+    [listRequest setPredicate:isHistoryPredicate];
+    [listRequest setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"createdDate" ascending:NO]]];
+    NSArray *results = [[VSUtils currentMOContext] executeFetchRequest:listRequest error:&error];
+    if ([results count] > 0) {
+        return [results objectAtIndex:0];
+    }
+    else {
+        return nil;
+    }
+}
+
+
++ (VSList *)latestLongTermReviewList
+{
+    __autoreleasing NSError *error = nil;
+    NSEntityDescription *listDescription = [NSEntityDescription entityForName:@"VSList" inManagedObjectContext:[VSUtils currentMOContext]];
+    NSFetchRequest *listRequest = [[NSFetchRequest alloc] init];
+    [listRequest setEntity:listDescription];
+    NSPredicate *isHistoryPredicate = [NSPredicate predicateWithFormat:@"(type = 3)"];
+    [listRequest setPredicate:isHistoryPredicate];
+    [listRequest setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"createdDate" ascending:NO]]];
+    NSArray *results = [[VSUtils currentMOContext] executeFetchRequest:listRequest error:&error];
+    if ([results count] > 0) {
+        return [results objectAtIndex:0];
+    }
+    else {
+        return nil;
+    }
 }
 
 + (void)recitedVocabulary:(VSVocabulary *)vocabulary
@@ -107,7 +169,7 @@
 
 - (BOOL)isHistoryList
 {
-    return [self.isHistory intValue] == 1;
+    return [self.type intValue] == 1;
 }
 
 - (float)finishProgress
@@ -163,7 +225,7 @@
 
 - (NSArray *)vocabulariesToRecite
 {
-    if (self.isHistory) {
+    if (self.type) {
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(lastStatus!='1')"];
         NSSortDescriptor *sortOrderDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
         NSSortDescriptor *sortStatusDescriptor = [[NSSortDescriptor alloc] initWithKey:@"lastStatus" ascending:YES];
@@ -242,7 +304,7 @@
     NSNumber *nextOrder = [NSNumber numberWithInt:([self.order intValue] + 1) % allListsCount];
     
     NSPredicate *orderPredicate = [NSPredicate predicateWithFormat:@"(order = %@)", nextOrder];
-    NSPredicate *historyPredicate = [NSPredicate predicateWithFormat:@"(isHistory != 1)"];
+    NSPredicate *historyPredicate = [NSPredicate predicateWithFormat:@"(type = 0)"];
     NSPredicate *statusPredicate = [NSPredicate predicateWithFormat:@"NOT (status = 2)"];
     NSArray *results = [[[[self.repository.lists allObjects] filteredArrayUsingPredicate:orderPredicate] filteredArrayUsingPredicate:historyPredicate] filteredArrayUsingPredicate:statusPredicate];
     return [results count] > 0 ? [results objectAtIndex:0] : nil;
@@ -256,4 +318,15 @@
     [VSUtils saveEntity];
 }
 
+- (BOOL)shortTermExpire
+{
+    NSDate *now = [VSUtils getNow];
+    return [[VSConstant LIST_TYPE_SHORTTERM_REVIEW] isEqualToNumber:self.type] && -[self.createdDate timeIntervalSinceDate:now] >= SHORTTERM_EXPIRE_INTERVAL;
+}
+
+- (BOOL)longTermExpire
+{
+    NSDate *now = [VSUtils getNow];
+    return [[VSConstant LIST_TYPE_LONGTERM_REVIEW] isEqualToNumber:self.type] && -[self.createdDate timeIntervalSinceDate:now] >= LONGTERM_EXPIRE_INTERVAL;
+}
 @end

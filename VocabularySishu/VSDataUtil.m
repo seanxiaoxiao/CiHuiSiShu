@@ -77,7 +77,7 @@
             list.name = [repoLists objectAtIndex:i];
             list.order = [NSNumber numberWithInt:i];
             list.repository = repository;
-            list.isHistory = NO;
+            list.type = NO;
             list.status = [VSConstant LIST_STATUS_NEW];
         }
     }

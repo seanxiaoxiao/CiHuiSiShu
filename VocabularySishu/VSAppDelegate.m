@@ -27,6 +27,19 @@
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
+    UILocalNotification * reviewNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
+    if (reviewNotification != nil) {
+        NSDictionary *data = reviewNotification.userInfo;
+        if ([data valueForKey:@"short_term_list"] != nil || [data valueForKey:@"long_term_list"] != nil) {
+            VSVocabularyListViewController *vocabularyListViewController = [VSVocabularyListViewController alloc];
+            NSURL *listId = [NSURL URLWithString:[data valueForKey:@"list_id"]];
+            vocabularyListViewController.currentList = (VSList *)[[VSUtils currentMOContext].persistentStoreCoordinator managedObjectIDForURIRepresentation:listId];
+            vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
+            [navigationController pushViewController:vocabularyListViewController animated:YES];
+        }
+    }
+    
+
     return YES;
 }
 

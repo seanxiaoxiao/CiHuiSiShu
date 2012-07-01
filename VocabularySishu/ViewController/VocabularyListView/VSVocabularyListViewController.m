@@ -36,6 +36,7 @@
 @synthesize currentList;
 @synthesize alertWhenFinish;
 @synthesize alertDelegate;
+@synthesize reviewPlan;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -50,6 +51,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        self.reviewPlan = [VSReviewPlan getPlan];
         self.headerView = [[VSVocabularyListHeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 70)];
         self.tableView.tableHeaderView = headerView;
         if (![currentList isHistoryList]) {
@@ -74,6 +76,7 @@
         __autoreleasing UIGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanning:)];
         panGesture.delegate = self;
         [self.view addGestureRecognizer:panGesture];
+        [self.reviewPlan addVocabulary:nil];
     }
     return self;
 }

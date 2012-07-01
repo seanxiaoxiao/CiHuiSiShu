@@ -13,6 +13,7 @@
 #import "VSConstant.h"
 #import "VSList.h"
 #import "VSAlertDelegate.h"
+#import "VSReviewPlan.h"
 
 @class VSAlertDelegate;
 
@@ -34,5 +35,6 @@
 @property (nonatomic, strong) VSMeaningView *meaningView;
 @property (nonatomic, strong) UIAlertView *alertWhenFinish;
 @property (nonatomic, retain) VSAlertDelegate *alertDelegate;
+@property (nonatomic, retain) VSReviewPlan *reviewPlan;
 
 @end

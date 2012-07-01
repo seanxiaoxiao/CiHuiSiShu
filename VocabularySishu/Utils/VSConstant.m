@@ -40,4 +40,24 @@
     return [NSNumber numberWithInt:2];
 }
 
++ (NSNumber *)LIST_TYPE_NORMAL
+{
+    return [NSNumber numberWithInt:0];
+}
+
++ (NSNumber *)LIST_TYPE_HISTORY
+{
+    return [NSNumber numberWithInt:1];
+}
+
++ (NSNumber *)LIST_TYPE_SHORTTERM_REVIEW
+{
+    return [NSNumber numberWithInt:2];
+}
+
++ (NSNumber *)LIST_TYPE_LONGTERM_REVIEW
+{
+    return [NSNumber numberWithInt:3];
+}
+
 @end
