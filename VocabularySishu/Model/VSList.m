@@ -237,7 +237,7 @@
         NSSortDescriptor *sortOrderDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
         NSSortDescriptor *sortStatusDescriptor = [[NSSortDescriptor alloc] initWithKey:@"lastStatus" ascending:YES];
         NSArray *sortDescriptors = [NSArray arrayWithObjects:sortOrderDescriptor, sortStatusDescriptor, nil];
-        results = [NSMutableArray arrayWithArray:[self.listVocabularies sortedArrayUsingDescriptors:sortDescriptors]];
+        results = [NSMutableArray arrayWithArray:[[self.listVocabularies filteredSetUsingPredicate:predicate] sortedArrayUsingDescriptors:sortDescriptors]];
     }
     [results shuffle];
     return results;

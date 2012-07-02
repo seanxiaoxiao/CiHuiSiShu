@@ -72,7 +72,6 @@
         __autoreleasing UIGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanning:)];
         panGesture.delegate = self;
         [self.view addGestureRecognizer:panGesture];
-        [self.reviewPlan addVocabulary:nil];
     }
     return self;
 }
