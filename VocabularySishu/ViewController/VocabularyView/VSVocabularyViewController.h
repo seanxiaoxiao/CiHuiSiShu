@@ -12,6 +12,7 @@
 #import "VSList.h"
 #import "VSVocabulary.h"
 #import "VSMeaning.h"
+#import "FliteTTS.h"
 
 
 @interface VSVocabularyViewController : UIViewController {
@@ -57,6 +58,7 @@
 @property (nonatomic, strong) UILabel *translationContentLabel;
 @property (nonatomic, strong) UILabel *mwLabel;
 @property (nonatomic, strong) UILabel *mwContentLabel;
+@property (nonatomic, retain) FliteTTS *fliteEngine;
 
 - (IBAction)play:(id)sender;
 

@@ -442,6 +442,7 @@
     VSListVocabulary *forgotVocabulary = [vocabulariesToRecite objectAtIndex:draggedIndex];
     [forgotVocabulary forgot];
     [forgotVocabulary.vocabulary forgot];
+    [reviewPlan forgetVocabulary:forgotVocabulary.vocabulary];
     [vocabulariesToRecite removeObjectAtIndex:draggedIndex];
     [vocabulariesToRecite addObject:forgotVocabulary];
 }
@@ -456,7 +457,7 @@
     }
     self.rememberCount++;
     [self upgradeProgress];
-    [reviewPlan addVocabulary:rememberedVocabulary.vocabulary];
+    [reviewPlan rememberVocabulary:rememberedVocabulary.vocabulary];
     [vocabulariesToRecite removeObjectAtIndex:draggedIndex];
 }
 

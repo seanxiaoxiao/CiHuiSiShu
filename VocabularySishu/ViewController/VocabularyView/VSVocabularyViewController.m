@@ -37,7 +37,7 @@
 @synthesize translationContentLabel;
 @synthesize mwLabel;
 @synthesize mwContentLabel;
-
+@synthesize fliteEngine;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -164,12 +164,7 @@
     self.scrollView.contentSize = CGSizeMake(320, currentHeight + 5);
     
     
-    if (![self audioExist]) {
-        [self.playButton setHidden:YES];
-    }
-    else {
-        [self.playButton setHidden:NO];
-    }
+    fliteEngine = [[FliteTTS alloc] init];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -212,25 +207,9 @@
 
 - (IBAction)play:(id)sender
 {
-    NSURL *pathURL = [self audioPath:self.vocabulary.spell];
-    NSData *objectData = [NSData dataWithContentsOfURL:pathURL];
-    NSLog(@"%@", objectData);
-    NSError *error;
-    self.player = [[AVAudioPlayer alloc] initWithData:objectData error:&error];
-    [self.player prepareToPlay];
-    [self.player play];
+	[fliteEngine speakText:self.vocabulary.spell];
 }
 
-- (BOOL)audioExist
-{
-    NSURL *url = [[NSBundle mainBundle] URLForResource:self.vocabulary.spell withExtension: @"mp3"];
-    return url != nil;
-}
-
-- (NSURL *)audioPath:(NSString *)spell
-{
-    return [[NSBundle mainBundle] URLForResource:self.vocabulary.spell withExtension: @"bin"];
-}
 
 
 @end

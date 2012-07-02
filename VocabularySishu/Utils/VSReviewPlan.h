@@ -16,7 +16,9 @@
 
 + (VSReviewPlan *)getPlan;
 
-- (void)addVocabulary:(VSVocabulary *)vocabulary;
+- (void)forgetVocabulary:(VSVocabulary *)vocabulary;
+
+- (void)rememberVocabulary:(VSVocabulary *)vocabulary;
 
 @property (nonatomic, retain)VSList *shortTermList;
 
