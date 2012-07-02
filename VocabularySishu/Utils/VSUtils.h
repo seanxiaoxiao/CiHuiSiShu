@@ -20,6 +20,8 @@
 
 + (UIImage *)fetchImg:(NSString *)imageName;
 
++ (NSManagedObject *)get:(NSManagedObjectID *)moID;
+
 + (NSDate *)getToday;
 
 + (BOOL) vocabularySame:(VSVocabulary *)first with:(VSVocabulary *)second;

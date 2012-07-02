@@ -39,10 +39,6 @@
 
 - (UIImage *)vocabularyImage;
 
-- (BOOL)forgetOften;
-
-- (BOOL)easyToForget;
-
 - (BOOL)cannotRememberWell;
 
 @end

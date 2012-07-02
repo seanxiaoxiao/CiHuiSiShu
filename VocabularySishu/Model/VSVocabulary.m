@@ -56,19 +56,9 @@
     return [self.forget description];
 }
 
-- (BOOL)forgetOften
-{
-    return [self.meet intValue] > 0 && [[self rememberRate] floatValue] <= 0.45;
-}
-
 - (BOOL)cannotRememberWell
 {
-    return [self.meet intValue] > 0 && [[self rememberRate] floatValue] <= 0.79 && [[self rememberRate] floatValue] >= 0.53;
-}
-
-- (BOOL)easyToForget
-{
-    return [self.meet intValue] > 0 && [[self rememberRate] floatValue] <= 0.6 && [[self rememberRate] floatValue] >= 0.38;
+    return [self.meet intValue] > 0 && [[self rememberRate] floatValue] <= 0.79;
 }
 
 - (NSDecimalNumber *)rememberRate

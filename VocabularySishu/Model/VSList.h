@@ -11,6 +11,7 @@
 #import "VSUtils.h"
 #import "VSVocabulary.h"
 #import "VSUtils.h"
+#import "NSMutableArrayShuffling.h"
 
 @class VSListVocabulary, VSRepository, VSVocabulary;
 
@@ -47,12 +48,6 @@
 - (int)forgotCount;
 
 - (NSArray *)vocabulariesToRecite;
-
-- (NSArray *)vocabulariesOftenForget;
-
-- (NSArray *)vocabulariesCannotRememberWell;
-
-- (NSArray *)vocabulariesEasyToForget;
 
 - (NSArray *)allVocabularies;
 

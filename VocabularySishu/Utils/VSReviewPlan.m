@@ -26,6 +26,12 @@ static VSReviewPlan *PLAN;
 - (void)addVocabulary:(VSVocabulary *)vocabulary;
 {
     [self initReviewList];
+    if ([vocabulary cannotRememberWell]) {
+        [shortTermList addVocabulary:vocabulary];
+    }
+    else {
+        [longTermList addVocabulary:vocabulary];
+    }
 }
 
 - (void)initReviewList
@@ -54,9 +60,9 @@ static VSReviewPlan *PLAN;
 
 - (void)fireShortTermNotification
 {
-//    if ([self.shortTermList.listVocabularies count] == 0) {
-//        return;
-//    }
+    if ([self.shortTermList.listVocabularies count] == 0) {
+        return;
+    }
     UILocalNotification *notification=[[UILocalNotification alloc] init]; 
     if (notification != nil) {
         NSDate *now = [[NSDate alloc] init];
@@ -74,9 +80,9 @@ static VSReviewPlan *PLAN;
 
 - (void)fireLongTermNotification
 {
-//    if ([self.longTermList.listVocabularies count] == 0) {
-//        return;
-//    }
+    if ([self.longTermList.listVocabularies count] == 0) {
+        return;
+    }
     UILocalNotification *notification=[[UILocalNotification alloc] init]; 
     if (notification != nil) {
         NSDate *now = [[NSDate alloc] init];

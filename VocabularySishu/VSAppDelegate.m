@@ -28,18 +28,7 @@
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
     UILocalNotification * reviewNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
-    if (reviewNotification != nil) {
-        NSDictionary *data = reviewNotification.userInfo;
-        if ([data valueForKey:@"short_term_list"] != nil || [data valueForKey:@"long_term_list"] != nil) {
-            VSVocabularyListViewController *vocabularyListViewController = [VSVocabularyListViewController alloc];
-            NSURL *listId = [NSURL URLWithString:[data valueForKey:@"list_id"]];
-            vocabularyListViewController.currentList = (VSList *)[[VSUtils currentMOContext].persistentStoreCoordinator managedObjectIDForURIRepresentation:listId];
-            vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
-            [navigationController pushViewController:vocabularyListViewController animated:YES];
-        }
-    }
-    
-
+    [self handleNotification:reviewNotification];
     return YES;
 }
 
@@ -58,6 +47,7 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    NSLog(@"applicationWillEnterForeground");
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
@@ -69,6 +59,26 @@
 {
     // Saves changes in the application's managed object context before the application terminates.
     [self saveContext];
+}
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+{
+    [self handleNotification:notification];
+}
+
+- (void)handleNotification:(UILocalNotification *)notification
+{
+    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+    NSDictionary *data = notification.userInfo;
+    if ([data valueForKey:@"list_id"] != nil) {
+        VSVocabularyListViewController *vocabularyListViewController = [VSVocabularyListViewController alloc];
+        NSURL *listId = [NSURL URLWithString:[data valueForKey:@"list_id"]];
+        NSManagedObjectID *managedObjectId = [[VSUtils currentMOContext].persistentStoreCoordinator managedObjectIDForURIRepresentation:listId];
+        vocabularyListViewController.currentList = (VSList *)[VSUtils get:managedObjectId];
+        vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
+        [navigationController popToRootViewControllerAnimated:NO];
+        [navigationController pushViewController:vocabularyListViewController animated:NO];
+    }
 }
 
 - (void)saveContext

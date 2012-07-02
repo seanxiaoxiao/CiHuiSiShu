@@ -68,10 +68,6 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(postLoadingMeaningView:) name:FINISH_LOADING_MEANING_NOTIFICATION object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showDetailView) name:SHOW_DETAIL_VIEW object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showAllVocabularies) name:SHOW_ALL object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showToRecite) name:SHOW_TORECITE object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showCannotRememberWell) name:SHOW_CANNOTREMEMBERWELL object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showEasyToForget) name:SHOW_EASYTOFORGET object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showOftenForget) name:SHOW_OFTENFORGET object:nil];
 
         __autoreleasing UIGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanning:)];
         panGesture.delegate = self;
@@ -442,30 +438,6 @@
     self.rememberCount = [self.currentList rememberedCount];
 }
 
-- (void)showCannotRememberWell
-{
-    self.vocabulariesToRecite = [NSMutableArray arrayWithArray:[self.currentList vocabulariesCannotRememberWell]];
-    [self.tableView reloadData];
-    self.countInList = [self.currentList.listVocabularies count];
-    self.rememberCount = [self.currentList rememberedCount];
-}
-
-- (void)showEasyToForget
-{
-    self.vocabulariesToRecite = [NSMutableArray arrayWithArray:[self.currentList vocabulariesEasyToForget]];
-    [self.tableView reloadData];
-    self.countInList = [self.currentList.listVocabularies count];
-    self.rememberCount = [self.currentList rememberedCount];
-}
-
-- (void)showOftenForget
-{
-    self.vocabulariesToRecite = [NSMutableArray arrayWithArray:[self.currentList vocabulariesOftenForget]];
-    [self.tableView reloadData];
-    self.countInList = [self.currentList.listVocabularies count];
-    self.rememberCount = [self.currentList rememberedCount];
-}
-
 - (void)forget
 {
     VSListVocabulary *forgotVocabulary = [vocabulariesToRecite objectAtIndex:draggedIndex];
@@ -485,6 +457,7 @@
     }
     self.rememberCount++;
     [self upgradeProgress];
+    [reviewPlan addVocabulary:rememberedVocabulary.vocabulary];
     [vocabulariesToRecite removeObjectAtIndex:draggedIndex];
 }
 

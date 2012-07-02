@@ -25,6 +25,12 @@
     }
 }
 
++ (NSManagedObject *)get:(NSManagedObjectID *)moID
+{
+    NSError *error = nil;
+    return [[VSUtils currentMOContext] existingObjectWithID:moID error:&error];
+}
+
 + (UIImage *)fetchImg:(NSString *)imageName
 {
     if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)] && [[UIScreen mainScreen] scale] == 2) {
