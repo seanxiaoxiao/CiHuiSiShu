@@ -15,7 +15,7 @@
 #import "FliteTTS.h"
 
 
-@interface VSVocabularyViewController : UIViewController {
+@interface VSVocabularyViewController : UIViewController<AVAudioPlayerDelegate> {
     IBOutlet UILabel *vocabularyLabel;
     IBOutlet UILabel *phoneticLabel;
     IBOutlet UILabel *etymologyLabel;
@@ -58,7 +58,7 @@
 @property (nonatomic, strong) UILabel *translationContentLabel;
 @property (nonatomic, strong) UILabel *mwLabel;
 @property (nonatomic, strong) UILabel *mwContentLabel;
-@property (nonatomic, retain) FliteTTS *fliteEngine;
+@property (nonatomic, retain) AVAudioPlayer *audioPlayer;
 
 - (IBAction)play:(id)sender;
 

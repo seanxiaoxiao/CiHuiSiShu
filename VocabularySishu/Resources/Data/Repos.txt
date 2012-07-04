@@ -1,1 +1,1 @@
-["GRE顺序","GRE乱序","TOFEL顺序"]
+["GRE顺序","GRE逆序","GRE乱序","GRE分类","TOEFL顺序","TOEFL逆序","TOEFL乱序","TOEFL分类","GMAT顺序","GMAT逆序","GMAT乱序","IELTS顺序","IELTS逆序","IELTS乱序"]

@@ -8,6 +8,9 @@
 
 #import "VSDataUtil.h"
 
+NSMutableDictionary *repoMap;
+NSMutableDictionary *vocabularyMap;
+
 @implementation VSDataUtil
 
 + (void)clearEntities:(NSString *)entityName
@@ -26,8 +29,10 @@
 
 + (void)initRepoData
 {
+    NSDate *dateStarted = [[NSDate alloc] init];
+   
     [VSDataUtil clearEntities:@"VSRepository"];
-
+    repoMap = [[NSMutableDictionary alloc] init];
     NSBundle *bundle = [NSBundle mainBundle];
     NSString *repoData = [bundle pathForResource:@"Repos" ofType:@"txt"];
     NSFileHandle* file = [NSFileHandle fileHandleForReadingAtPath:repoData];
@@ -41,17 +46,16 @@
         repo.name = [repoArray objectAtIndex:i];
         repo.order = [NSNumber numberWithInt:i];
         repo.finishedRound = [NSNumber numberWithInt:0];
-        __autoreleasing NSError *error = nil;
-        if (![[VSUtils currentMOContext] save:&error]) {
-            NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-        }        
+        [repoMap setValue:repo forKey:repo.name];
     }
+    [VSUtils saveEntity];
+    NSLog(@"Time elapse %f in import repo", [dateStarted timeIntervalSinceNow]);
 }
 
 + (void)initRepoList
 {
     [VSDataUtil clearEntities:@"VSList"];
-    
+    [VSDataUtil clearEntities:@"VSListVocabulary"];
     NSBundle *bundle = [NSBundle mainBundle];
     NSString *repoData = [bundle pathForResource:@"Lists" ofType:@"txt"];
     NSFileHandle* file = [NSFileHandle fileHandleForReadingAtPath:repoData];
@@ -59,36 +63,32 @@
     [file closeFile];
     SBJsonParser *parser = [[SBJsonParser alloc] init];
     NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSDictionary *repoListDict = [parser objectWithString:jsonString];
-    NSArray *repoListKeys = [repoListDict allKeys];
-    __autoreleasing NSError *error = nil;
-    for (NSString *key in repoListKeys) {
-        NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"VSRepository" inManagedObjectContext:[VSUtils currentMOContext]];
-        NSFetchRequest *request = [[NSFetchRequest alloc] init];
-        [request setEntity:entityDescription];
-        NSString *predicateContent = [NSString stringWithFormat:@"(name=='%@')", key];
-        NSPredicate *predicate = [NSPredicate predicateWithFormat: predicateContent];
-        [request setPredicate:predicate];
-        NSArray *array = [[VSUtils currentMOContext] executeFetchRequest:request error:&error];
-        VSRepository *repository = [array objectAtIndex:0];
-        NSArray *repoLists = [repoListDict objectForKey:key];
-        for (int i = 0; i < [repoLists count]; i++) {
-            VSList *list = [NSEntityDescription insertNewObjectForEntityForName:@"VSList" inManagedObjectContext:[VSUtils currentMOContext]];
-            list.name = [repoLists objectAtIndex:i];
-            list.order = [NSNumber numberWithInt:i];
-            list.repository = repository;
-            list.type = NO;
-            list.status = [VSConstant LIST_STATUS_NEW];
+    NSArray *datas = [parser objectWithString:jsonString];
+    for (NSDictionary *data in datas) {
+        VSRepository *repository = [repoMap objectForKey:[data objectForKey:@"repoName"]];
+        VSList *list = [NSEntityDescription insertNewObjectForEntityForName:@"VSList" inManagedObjectContext:[VSUtils currentMOContext]];
+        list.name = [data objectForKey:@"name"];
+        list.order = [data objectForKey:@"order"];
+        list.repository = repository;
+        list.type = [VSConstant LIST_TYPE_NORMAL];
+        list.status = [VSConstant LIST_STATUS_NEW];
+        NSArray *vocabularies = [data objectForKey:@"vocabularyList"];
+        for (int i = 0; i < [vocabularies count]; i++) {
+            VSListVocabulary *listVocabulary = [NSEntityDescription insertNewObjectForEntityForName:@"VSListVocabulary" inManagedObjectContext:[VSUtils currentMOContext]];
+            listVocabulary.vocabulary = [vocabularyMap objectForKey:[vocabularies objectAtIndex:i]];
+            listVocabulary.list = list;
+            listVocabulary.order = [NSNumber numberWithInt:i];
+            listVocabulary.lastStatus = [VSConstant VOCABULARY_LIST_STATUS_NEW];
         }
     }
-    if (![[VSUtils currentMOContext] save:&error]) {
-        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-    }
+    [VSUtils saveEntity];
 }
 
 + (void)initVocabularies
 {
+    vocabularyMap = [[NSMutableDictionary alloc] init];
     [VSDataUtil clearEntities:@"VSVocabulary"];
+    NSDate *dateStarted = [[NSDate alloc] init];
 
     NSBundle *bundle = [NSBundle mainBundle];
     NSString *repoData = [bundle pathForResource:@"Vocabularies" ofType:@"txt"];
@@ -97,67 +97,21 @@
     [file closeFile];
     SBJsonParser *parser = [[SBJsonParser alloc] init];
     NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSArray *vocabularies = [parser objectWithString:jsonString];
-    __autoreleasing NSError *error = nil;
+    NSArray *vocabularies = [jsonString componentsSeparatedByString:@"\n"];
     for (int i = 0; i < [vocabularies count]; i++) {
-        NSDictionary *vocabularyInfo = [vocabularies objectAtIndex:i];
+        NSDictionary *vocabularyInfo = [parser objectWithString:[vocabularies objectAtIndex:i]];
         VSVocabulary *vocabulary = [NSEntityDescription insertNewObjectForEntityForName:@"VSVocabulary" inManagedObjectContext:[VSUtils currentMOContext]];
         vocabulary.spell = [vocabularyInfo objectForKey:@"spell"];
         vocabulary.phonetic = [vocabularyInfo objectForKey:@"phonetic"];
         vocabulary.etymology = [vocabularyInfo objectForKey:@"etymology"];
+        vocabulary.type = [vocabularyInfo objectForKey:@"type"];
         vocabulary.meet = [NSNumber numberWithInt:0];
         vocabulary.forget = [NSNumber numberWithInt:0];
-        vocabulary.remember = [NSNumber numberWithInt:0];   
+        vocabulary.remember = [NSNumber numberWithInt:0];
+        [vocabularyMap setValue:vocabulary forKey:vocabulary.spell];
     }
-    if (![[VSUtils currentMOContext] save:&error]) {
-        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-    }
-}
-
-+ (void)initListVocabularies
-{
-    [VSDataUtil clearEntities:@"VSListVocabulary"];
-
-    NSBundle *bundle = [NSBundle mainBundle];
-    NSString *repoData = [bundle pathForResource:@"ListVocabularies" ofType:@"txt"];
-    NSFileHandle* file = [NSFileHandle fileHandleForReadingAtPath:repoData];
-    NSData* data = [file readDataToEndOfFile];
-    [file closeFile];
-    __autoreleasing NSError *error = nil;
-    SBJsonParser *parser = [[SBJsonParser alloc] init];
-    NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSDictionary *repoVocabulariesDict = [parser objectWithString:jsonString];
-    NSArray *repoListKeys = [repoVocabulariesDict allKeys];
-    for (NSString *key in repoListKeys) {
-        NSEntityDescription *repoDescription = [NSEntityDescription entityForName:@"VSList" inManagedObjectContext:[VSUtils currentMOContext]];
-        NSFetchRequest *repoRequest = [[NSFetchRequest alloc] init];
-        [repoRequest setEntity:repoDescription];
-        NSString *repoPredicateContent = [NSString stringWithFormat:@"(name=='%@')", key];
-        NSPredicate *repoPredicate = [NSPredicate predicateWithFormat: repoPredicateContent];
-        [repoRequest setPredicate:repoPredicate];
-        NSArray *array = [[VSUtils currentMOContext] executeFetchRequest:repoRequest error:&error];
-        VSList *list = [array objectAtIndex:0];
-        NSArray *vocabularies = [repoVocabulariesDict objectForKey:key];
-        for (int i = 0; i < [vocabularies count]; i++) {
-            NSString *spell = [vocabularies objectAtIndex:i];
-            NSEntityDescription *vocabularyDescription = [NSEntityDescription entityForName:@"VSVocabulary" inManagedObjectContext:[VSUtils currentMOContext]];
-            NSFetchRequest *vocabularyRequest = [[NSFetchRequest alloc] init];
-            [vocabularyRequest setEntity:vocabularyDescription];
-            NSString *vocabularyPredicateContent = [NSString stringWithFormat:@"(spell=='%@')", spell];
-            NSPredicate *vocabularyPredicate = [NSPredicate predicateWithFormat:vocabularyPredicateContent];
-            [vocabularyRequest setPredicate:vocabularyPredicate];
-            NSArray *results = [[VSUtils currentMOContext] executeFetchRequest:vocabularyRequest error:&error];
-            VSVocabulary *vocabulary = [results objectAtIndex:0];
-            
-            VSListVocabulary *listVocabulary = [NSEntityDescription insertNewObjectForEntityForName:@"VSListVocabulary" inManagedObjectContext:[VSUtils currentMOContext]];
-            listVocabulary.vocabulary = vocabulary;
-            listVocabulary.list = list;
-            listVocabulary.lastStatus = [VSConstant VOCABULARY_LIST_STATUS_NEW];
-        }
-        if (![[VSUtils currentMOContext] save:&error]) {
-            NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-        }
-    }
+    [VSUtils saveEntity];
+    NSLog(@"Time elapse %f in import vocabulary", [dateStarted timeIntervalSinceNow]);
 }
 
 + (void)initMeanings
@@ -201,12 +155,14 @@
 
 + (void)initData
 {
+    NSDate *dateStarted = [[NSDate alloc] init];
     [VSDataUtil clearEntities:@"VSContext"];
+    [VSDataUtil initVocabularies];
     [VSDataUtil initRepoData];
     [VSDataUtil initRepoList];
-    [VSDataUtil initVocabularies];
-    [VSDataUtil initListVocabularies];
     [VSDataUtil initMeanings];
+    NSLog(@"Time elapse %f in import all", [dateStarted timeIntervalSinceNow]);
+
 }
 
 

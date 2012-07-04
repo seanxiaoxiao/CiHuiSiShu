@@ -33,12 +33,14 @@
         <relationship name="lists" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="VSList" inverseName="repository" inverseEntity="VSList" syncable="YES"/>
     </entity>
     <entity name="VSVocabulary" representedClassName="VSVocabulary" syncable="YES">
+        <attribute name="audioLink" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="etymology" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="forget" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="meet" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="phonetic" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="remember" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="spell" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="meanings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="VSMeaning" inverseName="vocabulary" inverseEntity="VSMeaning" syncable="YES"/>
         <relationship name="websterMeanings" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="VSWebsterMeaning" inverseName="vocabulary" inverseEntity="VSWebsterMeaning" syncable="YES"/>
     </entity>
@@ -54,7 +56,7 @@
         <element name="VSListVocabulary" positionX="160" positionY="192" width="128" height="105"/>
         <element name="VSMeaning" positionX="160" positionY="192" width="128" height="105"/>
         <element name="VSRepository" positionX="160" positionY="192" width="128" height="105"/>
-        <element name="VSVocabulary" positionX="160" positionY="192" width="128" height="165"/>
+        <element name="VSVocabulary" positionX="160" positionY="192" width="128" height="195"/>
         <element name="VSWebsterMeaning" positionX="160" positionY="192" width="128" height="105"/>
     </elements>
 </model>

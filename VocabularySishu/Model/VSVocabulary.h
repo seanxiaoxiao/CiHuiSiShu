@@ -20,6 +20,8 @@
 @property (nonatomic, retain) NSString * phonetic;
 @property (nonatomic, retain) NSNumber * remember;
 @property (nonatomic, retain) NSString * spell;
+@property (nonatomic, retain) NSNumber * type;
+@property (nonatomic, retain) NSString * audioLink;
 @property (nonatomic, retain) NSSet *meanings;
 @property (nonatomic, retain) NSManagedObject *websterMeanings;
 
@@ -40,6 +42,8 @@
 - (UIImage *)vocabularyImage;
 
 - (BOOL)cannotRememberWell;
+
+- (BOOL)hasAudioLink;
 
 @end
 

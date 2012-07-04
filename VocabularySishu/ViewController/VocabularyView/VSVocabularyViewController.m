@@ -37,7 +37,7 @@
 @synthesize translationContentLabel;
 @synthesize mwLabel;
 @synthesize mwContentLabel;
-@synthesize fliteEngine;
+@synthesize audioPlayer;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -163,8 +163,13 @@
     self.scrollView.scrollEnabled = YES;
     self.scrollView.contentSize = CGSizeMake(320, currentHeight + 5);
     
-    
-    fliteEngine = [[FliteTTS alloc] init];
+    if ([self.vocabulary hasAudioLink]) {
+        self.playButton.hidden = NO;
+    }
+    else {
+        self.playButton.hidden = YES;        
+    }
+
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -207,7 +212,14 @@
 
 - (IBAction)play:(id)sender
 {
-	[fliteEngine speakText:self.vocabulary.spell];
+    NSData *fetchedData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:@"http://mysite.com/mysounds.mp3"]];
+    if (audioPlayer) {
+        [audioPlayer stop];
+        audioPlayer = nil;
+    }
+    audioPlayer = [[AVAudioPlayer alloc] initWithData:fetchedData error:nil];
+    audioPlayer.delegate = self;
+    [audioPlayer play];
 }
 
 

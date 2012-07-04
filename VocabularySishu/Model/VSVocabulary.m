@@ -20,6 +20,8 @@
 @dynamic spell;
 @dynamic meanings;
 @dynamic websterMeanings;
+@dynamic type;
+@dynamic audioLink;
 
 - (void)remembered
 {
@@ -76,6 +78,11 @@
     NSURL *url = [[NSBundle mainBundle] URLForResource:self.spell withExtension: @"jpg"];
     NSLog(@"%@", url);
     return url != nil ? [UIImage imageWithData:[NSData dataWithContentsOfURL:url]] : nil;
+}
+
+- (BOOL)hasAudioLink
+{
+    return self.audioLink != nil && [self.audioLink length] > 0;
 }
 
 @end

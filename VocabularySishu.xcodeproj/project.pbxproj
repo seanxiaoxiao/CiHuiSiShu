@@ -40,7 +40,6 @@
 		0073A69A1568A0B200B80422 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6931568A0B200B80422 /* SBJsonParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0073A69B1568A0B200B80422 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6951568A0B200B80422 /* SBJsonWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0073A6A71569F0D200B80422 /* Lists.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6A61569F0D200B80422 /* Lists.txt */; };
-		0073A6A9156A1E3E00B80422 /* ListVocabularies.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6A8156A1E3E00B80422 /* ListVocabularies.txt */; };
 		0073A6AB156A223200B80422 /* Vocabularies.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6AA156A223200B80422 /* Vocabularies.txt */; };
 		0073A6BE156A5FF700B80422 /* VSVocabularyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6BC156A5FF700B80422 /* VSVocabularyListViewController.m */; };
 		0073A6BF156A5FF700B80422 /* VSVocabularyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */; };
@@ -226,7 +225,6 @@
 		0073A6941568A0B200B80422 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		0073A6951568A0B200B80422 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		0073A6A61569F0D200B80422 /* Lists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Lists.txt; path = Resources/Data/Lists.txt; sourceTree = "<group>"; };
-		0073A6A8156A1E3E00B80422 /* ListVocabularies.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ListVocabularies.txt; path = Resources/Data/ListVocabularies.txt; sourceTree = "<group>"; };
 		0073A6AA156A223200B80422 /* Vocabularies.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Vocabularies.txt; path = Resources/Data/Vocabularies.txt; sourceTree = "<group>"; };
 		0073A6BB156A5FF700B80422 /* VSVocabularyListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSVocabularyListViewController.h; path = ViewController/VocabularyListView/VSVocabularyListViewController.h; sourceTree = "<group>"; };
 		0073A6BC156A5FF700B80422 /* VSVocabularyListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSVocabularyListViewController.m; path = ViewController/VocabularyListView/VSVocabularyListViewController.m; sourceTree = "<group>"; };
@@ -631,7 +629,6 @@
 			children = (
 				00994A72156A767F00D522F4 /* Meaning.txt */,
 				0073A6AA156A223200B80422 /* Vocabularies.txt */,
-				0073A6A8156A1E3E00B80422 /* ListVocabularies.txt */,
 				0073A6A61569F0D200B80422 /* Lists.txt */,
 				0073A68415689E2200B80422 /* Repos.txt */,
 			);
@@ -1050,7 +1047,6 @@
 				0073A67615688B5100B80422 /* navigationbar.png in Resources */,
 				0073A68515689E2200B80422 /* Repos.txt in Resources */,
 				0073A6A71569F0D200B80422 /* Lists.txt in Resources */,
-				0073A6A9156A1E3E00B80422 /* ListVocabularies.txt in Resources */,
 				0073A6AB156A223200B80422 /* Vocabularies.txt in Resources */,
 				0073A6BF156A5FF700B80422 /* VSVocabularyListViewController.xib in Resources */,
 				00994A73156A767F00D522F4 /* Meaning.txt in Resources */,
