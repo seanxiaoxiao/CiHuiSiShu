@@ -212,7 +212,7 @@
 
 - (IBAction)play:(id)sender
 {
-    NSData *fetchedData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:@"http://mysite.com/mysounds.mp3"]];
+    NSData *fetchedData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:vocabulary.audioLink]];
     if (audioPlayer) {
         [audioPlayer stop];
         audioPlayer = nil;

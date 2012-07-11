@@ -469,8 +469,9 @@
 
 - (void)updateVocabularyTable:(BOOL)remember
 {
-    [self.tableView beginUpdates];
     [self removeMeaningView];
+    [self.tableView beginUpdates];
+
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:touchPoint];
     [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     if (remember && [self.vocabulariesToRecite count] > 5) {

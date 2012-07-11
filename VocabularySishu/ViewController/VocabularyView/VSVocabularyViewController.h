@@ -12,7 +12,6 @@
 #import "VSList.h"
 #import "VSVocabulary.h"
 #import "VSMeaning.h"
-#import "FliteTTS.h"
 
 
 @interface VSVocabularyViewController : UIViewController<AVAudioPlayerDelegate> {

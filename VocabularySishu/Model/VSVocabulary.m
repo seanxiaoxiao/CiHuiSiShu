@@ -21,6 +21,7 @@
 @dynamic meanings;
 @dynamic websterMeanings;
 @dynamic type;
+@dynamic summary;
 @dynamic audioLink;
 
 - (void)remembered

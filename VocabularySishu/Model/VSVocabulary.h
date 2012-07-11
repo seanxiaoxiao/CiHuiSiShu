@@ -22,6 +22,7 @@
 @property (nonatomic, retain) NSString * spell;
 @property (nonatomic, retain) NSNumber * type;
 @property (nonatomic, retain) NSString * audioLink;
+@property (nonatomic, retain) NSString * summary;
 @property (nonatomic, retain) NSSet *meanings;
 @property (nonatomic, retain) NSManagedObject *websterMeanings;
 
