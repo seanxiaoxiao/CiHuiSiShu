@@ -12,7 +12,7 @@
 
 @implementation VSWebsterMeaning
 
-@dynamic attibute;
+@dynamic attribute;
 @dynamic meaning;
 @dynamic order;
 @dynamic vocabulary;

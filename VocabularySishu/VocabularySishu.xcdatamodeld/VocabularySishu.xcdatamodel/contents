@@ -46,7 +46,7 @@
         <relationship name="websterMeanings" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="VSWebsterMeaning" inverseName="vocabulary" inverseEntity="VSWebsterMeaning" syncable="YES"/>
     </entity>
     <entity name="VSWebsterMeaning" representedClassName="VSWebsterMeaning" syncable="YES">
-        <attribute name="attibute" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="attribute" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="meaning" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="order" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="vocabulary" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="VSVocabulary" inverseName="websterMeanings" inverseEntity="VSVocabulary" syncable="YES"/>

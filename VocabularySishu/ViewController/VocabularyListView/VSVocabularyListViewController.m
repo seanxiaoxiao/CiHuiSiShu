@@ -58,12 +58,16 @@
             self.listToday = [VSList createAndGetHistoryList];
         }
         [currentList process];
-        [self.headerView setProgress:[self.currentList finishProgress]];
         self.vocabulariesToRecite = [NSMutableArray arrayWithArray:[self.currentList vocabulariesToRecite]];
         self.countInList = [self.currentList.listVocabularies count];
         self.rememberCount = [self.currentList rememberedCount];
         self.selectedIndex = -1;
         self.title = self.currentList.name;
+
+        UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
+        [backgroundImageView setFrame:self.tableView.frame]; 
+        
+        self.tableView.backgroundView = backgroundImageView;
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(postLoadingMeaningView:) name:FINISH_LOADING_MEANING_NOTIFICATION object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showDetailView) name:SHOW_DETAIL_VIEW object:nil];
@@ -92,7 +96,7 @@
     [backButton setBackgroundImage:image forState:UIControlStateNormal]; 
     [backButton setTitle:@" 词汇私塾" forState:UIControlStateNormal]; 
     [backButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal]; 
-    backButton.titleLabel.font=[UIFont boldSystemFontOfSize:10];
+    backButton.titleLabel.font = [UIFont boldSystemFontOfSize:10];
     backButton.titleLabel.shadowOffset = CGSizeMake(0, -1);
     [backButton addTarget:self action:@selector(backToMain) forControlEvents:UIControlEventTouchUpInside];
     
@@ -166,7 +170,16 @@
     [cell.textLabel setTextAlignment:UITextAlignmentCenter];
     cell.textLabel.backgroundColor = [UIColor clearColor];
     cell.textLabel.textColor = [UIColor blackColor];
+    cell.textLabel.alpha = 0.7f;
+    cell.textLabel.font = [UIFont fontWithName:@"Verdana" size:18];
+    cell.textLabel.shadowOffset = CGSizeMake(0, 1);
+    cell.textLabel.shadowColor = [UIColor whiteColor];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    UIImageView *cellBackgroundView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"CellBG"]];
+    cellBackgroundView.center = cell.center;
+    cell.backgroundView = cellBackgroundView;
+    
     return cell;
 }
 
@@ -274,10 +287,14 @@
             return NO;
         }
     }
-    // Check for horizontal gesture
-    if (fabsf(translation.x) > fabsf(translation.y)) {
+    // Check for right scroll
+    if (translation.x > 0) {
+        return NO;
+    }
+    else if (fabsf(translation.x) > fabsf(translation.y)) {
         return YES;
     }
+    
     return NO;
 }
 
@@ -464,7 +481,6 @@
 - (void)upgradeProgress
 {
     CGFloat progress = (CGFloat)self.rememberCount / (CGFloat)self.countInList;
-    [self.headerView setProgress:progress];
 }
 
 - (void)updateVocabularyTable:(BOOL)remember

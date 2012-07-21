@@ -13,7 +13,7 @@
 
 @interface VSWebsterMeaning : NSManagedObject
 
-@property (nonatomic, retain) NSString * attibute;
+@property (nonatomic, retain) NSString * attribute;
 @property (nonatomic, retain) NSString * meaning;
 @property (nonatomic, retain) NSNumber * order;
 @property (nonatomic, retain) VSVocabulary *vocabulary;

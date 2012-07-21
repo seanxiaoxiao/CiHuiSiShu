@@ -16,6 +16,7 @@
 #import "VSListVocabulary.h"
 #import "VSMeaning.h"
 #import "VSConstant.h"
+#import "VSWebsterMeaning.h"
 
 @interface VSDataUtil : NSObject
 
