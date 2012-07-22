@@ -11,6 +11,7 @@
 #import "VSUtils.h"
 
 @class VSMeaning;
+@class VSWebsterMeaning;
 
 @interface VSVocabulary : NSManagedObject
 
@@ -24,7 +25,7 @@
 @property (nonatomic, retain) NSString * audioLink;
 @property (nonatomic, retain) NSString * summary;
 @property (nonatomic, retain) NSSet *meanings;
-@property (nonatomic, retain) NSManagedObject *websterMeanings;
+@property (nonatomic, retain) NSSet *websterMeanings;
 
 - (void)remembered;
 
@@ -46,6 +47,8 @@
 
 - (BOOL)hasAudioLink;
 
++ (NSArray *)allVocabularies;
+
 @end
 
 @interface VSVocabulary (CoreDataGeneratedAccessors)
@@ -54,4 +57,10 @@
 - (void)removeMeaningsObject:(VSMeaning *)value;
 - (void)addMeanings:(NSSet *)values;
 - (void)removeMeanings:(NSSet *)values;
+
+- (void)addWebsterMeaningsObject:(VSWebsterMeaning *)value;
+- (void)removeWebsterMeaningsObject:(VSWebsterMeaning *)value;
+- (void)addWebsterMeanings:(NSSet *)values;
+- (void)removeWebsterMeanings:(NSSet *)values;
+
 @end

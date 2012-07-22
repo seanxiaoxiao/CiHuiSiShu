@@ -23,7 +23,9 @@
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:entityDescription];
     NSError *error = nil;
-    return [[VSUtils currentMOContext] executeFetchRequest:request error:&error];
+    NSSortDescriptor *sortOrderDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObjects:sortOrderDescriptor, nil];
+    return [[[VSUtils currentMOContext] executeFetchRequest:request error:&error] sortedArrayUsingDescriptors:sortDescriptors];
 }
 
 - (void)finishThisRound

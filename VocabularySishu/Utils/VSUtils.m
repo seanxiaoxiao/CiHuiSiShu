@@ -89,4 +89,18 @@
 
 }
 
++ (void)copySQLite
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES); 
+    NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"VocabularySishu.sqlite"]; 
+    NSString *urlString = [NSString stringWithFormat:@"file://%@", filePath];
+    NSURL* storeURL = [NSURL URLWithString:urlString];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:[storeURL path]]) {
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        NSError *error;
+        NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"VocabularySishu" ofType:@"sqlite"];
+        [fileManager copyItemAtPath:resourcePath toPath:filePath error:&error];
+    }
+}
+
 @end

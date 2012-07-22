@@ -43,7 +43,7 @@
         <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="meanings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="VSMeaning" inverseName="vocabulary" inverseEntity="VSMeaning" syncable="YES"/>
-        <relationship name="websterMeanings" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="VSWebsterMeaning" inverseName="vocabulary" inverseEntity="VSWebsterMeaning" syncable="YES"/>
+        <relationship name="websterMeanings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="VSWebsterMeaning" inverseName="vocabulary" inverseEntity="VSWebsterMeaning" syncable="YES"/>
     </entity>
     <entity name="VSWebsterMeaning" representedClassName="VSWebsterMeaning" syncable="YES">
         <attribute name="attribute" optional="YES" attributeType="String" syncable="YES"/>
@@ -57,7 +57,7 @@
         <element name="VSListVocabulary" positionX="160" positionY="192" width="128" height="105"/>
         <element name="VSMeaning" positionX="160" positionY="192" width="128" height="105"/>
         <element name="VSRepository" positionX="160" positionY="192" width="128" height="105"/>
-        <element name="VSVocabulary" positionX="160" positionY="192" width="128" height="210"/>
+        <element name="VSVocabulary" positionX="160" positionY="192" width="128" height="225"/>
         <element name="VSWebsterMeaning" positionX="160" positionY="192" width="128" height="105"/>
     </elements>
 </model>

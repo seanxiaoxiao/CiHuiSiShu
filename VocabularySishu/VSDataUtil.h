@@ -22,4 +22,8 @@
 
 + (void)initData;
 
++ (void)testData;
+
++ (void)initMWMeaning;
+
 @end

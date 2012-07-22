@@ -32,4 +32,6 @@
 
 + (NSDate *)getNow;
 
++ (void)copySQLite;
+
 @end
