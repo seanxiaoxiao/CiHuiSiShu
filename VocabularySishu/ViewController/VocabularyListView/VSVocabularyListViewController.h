@@ -14,6 +14,7 @@
 #import "VSList.h"
 #import "VSAlertDelegate.h"
 #import "VSReviewPlan.h"
+#import "VSSummaryView.h"
 
 @class VSAlertDelegate;
 
@@ -30,8 +31,7 @@
 @property (nonatomic, assign) int rememberCount;
 @property (nonatomic, assign) int selectedIndex;
 @property (nonatomic, strong) UITableViewCell *draggedCell;
-@property (nonatomic, strong) UIView *rememberView;
-@property (nonatomic, strong) UIView *forgetView;
+@property (nonatomic, strong) VSSummaryView *summaryView;
 @property (nonatomic, strong) VSMeaningView *meaningView;
 @property (nonatomic, strong) UIAlertView *alertWhenFinish;
 @property (nonatomic, retain) VSAlertDelegate *alertDelegate;

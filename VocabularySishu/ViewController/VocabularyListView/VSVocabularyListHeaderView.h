@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "VSConstant.h"
+#import "VSVocabulary.h"
 
 @interface VSVocabularyListHeaderView : UIView
 

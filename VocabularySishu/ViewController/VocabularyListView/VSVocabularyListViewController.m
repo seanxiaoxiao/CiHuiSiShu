@@ -24,8 +24,7 @@
 @synthesize headerView;
 @synthesize listToday;
 @synthesize meaningCellHeight;
-@synthesize rememberView;
-@synthesize forgetView;
+@synthesize summaryView;
 @synthesize meaningView;
 @synthesize touchPoint;
 @synthesize draggedCell;
@@ -52,7 +51,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.reviewPlan = [VSReviewPlan getPlan];
-        self.headerView = [[VSVocabularyListHeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 70)];
+        self.headerView = [[VSVocabularyListHeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
         self.tableView.tableHeaderView = headerView;
         if (![currentList isHistoryList]) {
             self.listToday = [VSList createAndGetHistoryList];
@@ -71,7 +70,6 @@
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(postLoadingMeaningView:) name:FINISH_LOADING_MEANING_NOTIFICATION object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showDetailView) name:SHOW_DETAIL_VIEW object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showAllVocabularies) name:SHOW_ALL object:nil];
 
         __autoreleasing UIGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanning:)];
         panGesture.delegate = self;
@@ -117,8 +115,7 @@
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
     self.headerView = nil;
-    self.rememberView = nil;
-    self.forgetView = nil;
+    self.summaryView = nil;
     self.draggedCell = nil;
     self.alertWhenFinish = nil;
     self.alertDelegate = nil;
@@ -174,12 +171,20 @@
     cell.textLabel.font = [UIFont fontWithName:@"Verdana" size:18];
     cell.textLabel.shadowOffset = CGSizeMake(0, 1);
     cell.textLabel.shadowColor = [UIColor whiteColor];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     UIImageView *cellBackgroundView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"CellBG"]];
     cellBackgroundView.center = cell.center;
     cell.backgroundView = cellBackgroundView;
     
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.highlighted = NO;
+
+    CGRect summaryFrame = CGRectMake(320, 0, 320, cell.frame.size.height);    
+    summaryView = [VSSummaryView alloc];
+    summaryView.vocabulary = ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:indexPath.row]).vocabulary;
+    summaryView = [summaryView initWithFrame:summaryFrame];
+    
+    [cell addSubview:summaryView];
     return cell;
 }
 
@@ -226,32 +231,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    int index = indexPath.row;
-    if (selectedIndex != indexPath.row || selectedIndex == -1) {
-        if (meaningView != nil && selectedIndex != indexPath.row) {
-            if (indexPath.row > selectedIndex) {
-                index--;
-            }
-            [self removeMeaningView];
-        }
-        selectedIndex = index;
-        VSVocabulary *selectedVocabulary = ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:selectedIndex]).vocabulary;
-        NSArray *meanings = [selectedVocabulary.meanings allObjects];
-        meaningView = [[VSMeaningView alloc] initWithFrame:CGRectMake(0, 69, 320, 0)];
-        [meaningView setMeaningContent:meanings];
-        meaningView.hidden = YES;
-    }
-    else {
-        [self removeMeaningView];
-    }
+    
 }
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
-    VSVocabularyViewController *detailViewController = [[VSVocabularyViewController alloc] initWithNibName:@"VSVocabularyViewController" bundle:nil];
-    VSListVocabulary *selected = [vocabulariesToRecite objectAtIndex:indexPath.row];
-    detailViewController.vocabulary = selected.vocabulary;
-    [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
 #pragma mark - Navigation Related
@@ -280,21 +264,15 @@
     UIView *cell = [gestureRecognizer view];
     CGPoint translation = [gestureRecognizer translationInView:[cell superview]];
     CGPoint point = [gestureRecognizer locationInView:self.tableView];
-    if ([self.tableView pointInside:point withEvent:nil]) {
-        NSIndexPath* indexPath = [self.tableView indexPathForRowAtPoint:point];
-        UITableViewCell* cell = [self.tableView cellForRowAtIndexPath:indexPath];
-        if ([cell class] == [VSMeaningView class]) {
-            return NO;
-        }
-    }
-    // Check for right scroll
-    if (translation.x > 0) {
+    NSIndexPath* indexPath = [self.tableView indexPathForRowAtPoint:point];
+
+    BOOL dragged = ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:indexPath.row]).dragged;
+    if (dragged && translation.x < 0) {
         return NO;
     }
-    else if (fabsf(translation.x) > fabsf(translation.y)) {
+    if (fabsf(translation.x) > fabsf(translation.y)) {
         return YES;
     }
-    
     return NO;
 }
 
@@ -330,40 +308,8 @@
         {
             draggedCell = cell;
             draggedIndex = indexPath.row;
-            [self initAssistView];
-            cell.highlighted = NO;
         }
     }
-}
-
-- (void)initAssistView
-{
-    CGPoint origin = draggedCell.frame.origin;
-
-    origin.y -= 10;
-
-    // get rid of old cell, if it wasn't disposed already
-    if (rememberView != nil)
-    {
-        [rememberView removeFromSuperview];
-        rememberView = nil;
-    }
-    if (forgetView != nil)
-    {
-        [forgetView removeFromSuperview];
-        forgetView = nil;
-    }
-    CGRect rememberFrame = CGRectMake(320, 0, 50, draggedCell.frame.size.height);
-    CGRect forgetFrame = CGRectMake(-50, 0, 50, draggedCell.frame.size.height);
-    
-    rememberView = [[UIView alloc] initWithFrame:rememberFrame];
-    forgetView = [[UIView alloc] initWithFrame:forgetFrame];
-    [rememberView setBackgroundColor:[UIColor greenColor]];
-    rememberView.alpha = 0.8;
-    [forgetView setBackgroundColor:[UIColor redColor]];
-    forgetView.alpha = 0.8;
-    [draggedCell addSubview:rememberView];
-    [draggedCell addSubview:forgetView];
 }
 
 - (void)doDrag:(UIPanGestureRecognizer *)gestureRecognizer
@@ -372,12 +318,15 @@
     CGPoint cellCenter = draggedCell.center;
     CGFloat margin = translation.x;
     CGPoint newCenter = cellCenter;
-    
-    if (fabs(margin) > 50) {
-        margin = margin / fabs(margin) * 50;
-    }
-    
+        
     newCenter.x = 160 + margin;
+    BOOL dragged = ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:draggedIndex]).dragged;
+    if (dragged) {
+        newCenter.x -= 320;
+    }
+    if (fabs(newCenter.x) > 160) {
+        newCenter.x = newCenter.x / fabs(newCenter.x) * 160;
+    }
     [draggedCell setCenter:newCenter];
 }
 
@@ -387,10 +336,14 @@
     CGPoint origin = draggedCell.frame.origin;
     CGPoint translation = [gestureRecognizer translationInView:draggedCell];
     CGFloat margin = translation.x;
-
     CGFloat targetX = 0;
-    if (fabs(margin) > 100) {
+    BOOL dragged = ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:draggedIndex]).dragged;
+    if (!dragged && fabs(margin) > 120) {
         targetX = margin / fabs(margin) * 320;
+    }
+    
+    if (!dragged && translation.x > 0) {
+        return;
     }
 
     if (draggedCell != nil) {
@@ -402,16 +355,13 @@
                 }
                 completion:^(BOOL finished) {
                     if (finished == YES) {
-                        if (targetX != 0) {  //The cell had been swipped.
-                            if (margin < 0) {
-                                [self remember];
-                                [self updateVocabularyTable:YES];
-                            }
-                            else {
-                                [self forget];
-                                [self updateVocabularyTable:NO];
-                            }
-                            [self processAfterSwipe];
+                        NSLog(@"Center x is %f", draggedCell.center.x);
+                        CGFloat cellCenterX = draggedCell.center.x;
+                        if (dragged && cellCenterX == 160) {
+                            ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:draggedIndex]).dragged = NO;
+                        }
+                        else if (!dragged && cellCenterX == -160) {
+                            ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:draggedIndex]).dragged = YES;
                         }
                     }
                 }
@@ -436,22 +386,6 @@
     VSVocabularyViewController *detailViewController = [[VSVocabularyViewController alloc] initWithNibName:@"VSVocabularyViewController" bundle:nil];
     detailViewController.vocabulary = selectedVocabulary;
     [self.navigationController pushViewController:detailViewController animated:YES];
-}
-
-- (void)showAllVocabularies
-{
-    self.vocabulariesToRecite = [NSMutableArray arrayWithArray:[self.currentList allVocabularies]];
-    [self.tableView reloadData];
-    self.countInList = [self.currentList.listVocabularies count];
-    self.rememberCount = [self.currentList rememberedCount];
-}
-
-- (void)showToRecite
-{
-    self.vocabulariesToRecite = [NSMutableArray arrayWithArray:[self.currentList vocabulariesToRecite]];
-    [self.tableView reloadData];
-    self.countInList = [self.currentList.listVocabularies count];
-    self.rememberCount = [self.currentList rememberedCount];
 }
 
 - (void)forget
@@ -485,9 +419,8 @@
 
 - (void)updateVocabularyTable:(BOOL)remember
 {
-    [self removeMeaningView];
     [self.tableView beginUpdates];
-
+    [self removeMeaningView];
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:touchPoint];
     [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     if (remember && [self.vocabulariesToRecite count] > 5) {
@@ -516,7 +449,6 @@
         [alertWhenFinish show];
     }
 }
-
 
 
 @end
