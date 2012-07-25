@@ -89,7 +89,6 @@
 
 }
 
-<<<<<<< HEAD
 + (void)copySQLite
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES); 
@@ -101,7 +100,9 @@
         NSError *error;
         NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"VocabularySishu" ofType:@"sqlite"];
         [fileManager copyItemAtPath:resourcePath toPath:filePath error:&error];
-=======
+    }
+}
+
 + (void)toNextList:(VSList *)currentList
 {
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
@@ -154,7 +155,6 @@
         [navigationController pushViewController:vocabularyListViewController animated:NO];
         [UIView setAnimationTransition:UIViewAnimationTransitionCurlDown forView:navigationController.view cache:NO];
         [UIView commitAnimations];
->>>>>>> new-ui
     }
 }
 

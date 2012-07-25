@@ -33,13 +33,10 @@
 
 + (NSDate *)getNow;
 
-<<<<<<< HEAD
 + (void)copySQLite;
-=======
+
 + (void)toNextList:(VSList *)currentList;
 
 + (void)toPreviousList:(VSList *)currentList;
-
->>>>>>> new-ui
 
 @end

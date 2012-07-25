@@ -66,9 +66,9 @@
 		00C42FE315BAFBC6006FF95E /* VSMeaningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C42FE215BAFBC6006FF95E /* VSMeaningView.m */; };
 		00C42FE915BB096F006FF95E /* VSSummaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C42FE815BB096F006FF95E /* VSSummaryView.m */; };
 		00C4300115BBFC44006FF95E /* VSVocabulary.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4300015BBFC44006FF95E /* VSVocabulary.m */; };
-		00C4300415BC3D9D006FF95E /* VocabularySishu.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00C4300315BC3D9D006FF95E /* VocabularySishu.sqlite */; };
 		00D6778815AD542E00EF152D /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D6778715AD542E00EF152D /* Crashlytics.framework */; };
 		00D6779215ADD03900EF152D /* DDFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D6779115ADD03900EF152D /* DDFileReader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		00E25A6F15C052F2006402B2 /* VSNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0081185015BEFE220022B515 /* VSNavigationBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -151,13 +151,9 @@
 		0073A6BB156A5FF700B80422 /* VSVocabularyListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSVocabularyListViewController.h; path = ViewController/VocabularyListView/VSVocabularyListViewController.h; sourceTree = "<group>"; };
 		0073A6BC156A5FF700B80422 /* VSVocabularyListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSVocabularyListViewController.m; path = ViewController/VocabularyListView/VSVocabularyListViewController.m; sourceTree = "<group>"; };
 		0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSVocabularyListViewController.xib; path = ViewController/VocabularyListView/VSVocabularyListViewController.xib; sourceTree = "<group>"; };
-<<<<<<< HEAD
-=======
 		0081184A15BEFDDE0022B515 /* retina-Navigation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-Navigation.png"; path = "Resources/Img/retina-Navigation.png"; sourceTree = "<group>"; };
 		0081184F15BEFE220022B515 /* VSNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSNavigationBar.h; path = Generic/VSNavigationBar.h; sourceTree = "<group>"; };
 		0081185015BEFE220022B515 /* VSNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSNavigationBar.m; path = Generic/VSNavigationBar.m; sourceTree = "<group>"; };
-		00994A72156A767F00D522F4 /* Meaning.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Meaning.txt; path = Resources/Data/Meaning.txt; sourceTree = "<group>"; };
->>>>>>> new-ui
 		009A86FE15A1A82900F7869D /* NSMutableArrayShuffling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSMutableArrayShuffling.h; path = Utils/NSMutableArrayShuffling.h; sourceTree = "<group>"; };
 		009A86FF15A1A82900F7869D /* NSMutableArrayShuffling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSMutableArrayShuffling.m; path = Utils/NSMutableArrayShuffling.m; sourceTree = "<group>"; };
 		009AFBF91588982300293F6A /* VSAlertDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSAlertDelegate.h; path = Utils/VSAlertDelegate.h; sourceTree = "<group>"; };
@@ -579,15 +575,6 @@
 				00701E3C1553CBCE00D30018 /* InfoPlist.strings in Resources */,
 				0046408E155916FA007E5FA9 /* VSMainMenuViewController.xib in Resources */,
 				0046409315591FD1007E5FA9 /* VSVocabularyViewController.xib in Resources */,
-<<<<<<< HEAD
-				00B5A8C01566889B00D20EB6 /* retina-navigationbar.png in Resources */,
-				0073A67615688B5100B80422 /* navigationbar.png in Resources */,
-=======
-				0073A68515689E2200B80422 /* Repos.txt in Resources */,
-				0073A6A71569F0D200B80422 /* Lists.txt in Resources */,
-				00D6778A15ADBE7900EF152D /* WebsterMeaning.txt in Resources */,
-				0073A6AB156A223200B80422 /* Vocabularies.txt in Resources */,
->>>>>>> new-ui
 				0073A6BF156A5FF700B80422 /* VSVocabularyListViewController.xib in Resources */,
 				00A006F9156B3BDF00D24418 /* Meaning.html in Resources */,
 				00A00706156D361E00D24418 /* back-button.png in Resources */,
@@ -597,14 +584,9 @@
 				00C42FDB15BAEEB1006FF95E /* retina-CellBG.png in Resources */,
 				00C42FDC15BAEEB1006FF95E /* retina-CellSummary.png in Resources */,
 				00C42FDD15BAEEB1006FF95E /* retina-ListBG.png in Resources */,
-<<<<<<< HEAD
-				00C4300415BC3D9D006FF95E /* VocabularySishu.sqlite in Resources */,
-=======
-				0081184B15BEFDDE0022B515 /* retina-Navigation.png in Resources */,
 				0029087915BF0AA800568B41 /* retina-Previous.png in Resources */,
 				0029087C15BF0B4500568B41 /* retina-Next.png in Resources */,
 				0029087E15BF882C00568B41 /* retina-CellClear.png in Resources */,
->>>>>>> new-ui
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -653,6 +635,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00E25A6F15C052F2006402B2 /* VSNavigationBar.m in Sources */,
 				00701E3E1553CBCE00D30018 /* main.m in Sources */,
 				00701E421553CBCE00D30018 /* VSAppDelegate.m in Sources */,
 				00701E451553CBCE00D30018 /* VocabularySishu.xcdatamodeld in Sources */,
@@ -682,11 +665,7 @@
 				00D6779215ADD03900EF152D /* DDFileReader.m in Sources */,
 				00C42FE315BAFBC6006FF95E /* VSMeaningView.m in Sources */,
 				00C42FE915BB096F006FF95E /* VSSummaryView.m in Sources */,
-<<<<<<< HEAD
 				00C4300115BBFC44006FF95E /* VSVocabulary.m in Sources */,
-=======
-				0081185115BEFE220022B515 /* VSNavigationBar.m in Sources */,
->>>>>>> new-ui
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
