@@ -21,30 +21,7 @@
         [navigationController popViewControllerAnimated:YES];
     }
     else {
-        VSList *nextList = [self.currentList nextList];
-        VSContext *context = [VSContext getContext];
-        if (nextList != nil) {
-            [context fixCurrentList:nextList];
-            VSVocabularyListViewController *vocabularyListViewController = [VSVocabularyListViewController alloc];
-            vocabularyListViewController.currentList = nextList;
-            vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
-
-            [UIView beginAnimations:nil context:NULL];
-            [UIView setAnimationDelay:0.375];
-            [navigationController popViewControllerAnimated:NO];
-            [UIView commitAnimations];
-
-            [UIView beginAnimations:nil context:NULL];
-            [UIView setAnimationCurve:UIViewAnimationTransitionCurlUp];
-            [UIView setAnimationDuration:0.75];
-            [navigationController pushViewController:vocabularyListViewController animated:NO];
-            [UIView setAnimationTransition:UIViewAnimationTransitionCurlUp forView:navigationController.view cache:NO];
-            [UIView commitAnimations];
-        }
-        else {
-            [currentList.repository finishThisRound];
-            //TODO Jump to the configuration page?
-        }
+        [VSUtils toNextList:self.currentList];
     }
 }
 

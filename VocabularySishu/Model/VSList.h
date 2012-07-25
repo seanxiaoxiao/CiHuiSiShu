@@ -57,6 +57,8 @@
 
 - (VSList *)nextList;
 
+- (VSList *)previousList;
+
 - (void)process;
 
 - (void)finish;
@@ -66,6 +68,10 @@
 - (BOOL)shortTermExpire;
 
 - (BOOL)longTermExpire;
+
+- (BOOL)isFirst;
+
+- (BOOL)isLast;
 
 @end
 

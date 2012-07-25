@@ -89,8 +89,8 @@
     //self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
     UIImage* image= [VSUtils fetchImg:@"back-button"];
-    CGRect frame= CGRectMake(0, 0, image.size.width, image.size.height); 
-    UIButton* backButton= [[UIButton alloc] initWithFrame:frame]; 
+    CGRect frame = CGRectMake(0, 0, image.size.width, image.size.height); 
+    UIButton* backButton = [[UIButton alloc] initWithFrame:frame]; 
     [backButton setBackgroundImage:image forState:UIControlStateNormal]; 
     [backButton setTitle:@" 词汇私塾" forState:UIControlStateNormal]; 
     [backButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal]; 
@@ -107,6 +107,34 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    if (![self.currentList isHistoryList]) {
+        UIView *rightView = [[UIView alloc] initWithFrame:CGRectMake(1, 0, 83, 44.01)];
+        rightView.backgroundColor = [UIColor clearColor];
+    
+        UIImage* previousImage = [VSUtils fetchImg:@"Previous"];
+        CGRect previousFrame = CGRectMake(0, 0, previousImage.size.width, previousImage.size.height); 
+        UIButton* previousButton = [[UIButton alloc] initWithFrame:previousFrame]; 
+        [previousButton setBackgroundImage:previousImage forState:UIControlStateNormal];
+        [previousButton addTarget:self action:@selector(previousList) forControlEvents:UIControlEventTouchUpInside];
+        if ([self.currentList isFirst]) {
+            [previousButton setEnabled:NO];
+        }
+        [rightView addSubview:previousButton];
+
+        UIImage* nextImage = [VSUtils fetchImg:@"Next"];
+        CGRect nextFrame = CGRectMake(44, 0, nextImage.size.width, nextImage.size.height); 
+        UIButton* nextButton = [[UIButton alloc] initWithFrame:nextFrame]; 
+        [nextButton setBackgroundImage:nextImage forState:UIControlStateNormal];
+        [nextButton addTarget:self action:@selector(nextList) forControlEvents:UIControlEventTouchUpInside];
+        
+        if ([self.currentList isLast]) {
+            [nextButton setEnabled:NO];
+        }
+
+        [rightView addSubview:nextButton];
+
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightView];
+    }
 }
 
 - (void)viewDidUnload
@@ -448,6 +476,16 @@
         [alertWhenFinish setDelegate:self.alertDelegate];
         [alertWhenFinish show];
     }
+}
+
+- (void)nextList
+{
+    [VSUtils toNextList:self.currentList];
+}
+
+- (void)previousList
+{
+    [VSUtils toPreviousList:self.currentList];
 }
 
 

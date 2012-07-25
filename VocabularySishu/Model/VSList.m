@@ -272,6 +272,19 @@
     return [results count] > 0 ? [results objectAtIndex:0] : nil;
 }
 
+- (VSList *)previousList
+{
+    int allListsCount = [self.repository.lists count];
+    NSNumber *nextOrder = [NSNumber numberWithInt:([self.order intValue] - 1) % allListsCount];
+    
+    NSPredicate *orderPredicate = [NSPredicate predicateWithFormat:@"(order = %@)", nextOrder];
+    NSPredicate *historyPredicate = [NSPredicate predicateWithFormat:@"(type = 0)"];
+    NSPredicate *statusPredicate = [NSPredicate predicateWithFormat:@"NOT (status = 2)"];
+    NSArray *results = [[[[self.repository.lists allObjects] filteredArrayUsingPredicate:orderPredicate] filteredArrayUsingPredicate:historyPredicate] filteredArrayUsingPredicate:statusPredicate];
+    return [results count] > 0 ? [results objectAtIndex:0] : nil;
+}
+
+
 - (void)clearVocabularyStatus
 {
     for (VSListVocabulary *listVocabualry in self.listVocabularies) {
@@ -291,4 +304,16 @@
     NSDate *now = [VSUtils getNow];
     return [[VSConstant LIST_TYPE_LONGTERM_REVIEW] isEqualToNumber:self.type] && -[self.createdDate timeIntervalSinceDate:now] >= LONGTERM_EXPIRE_INTERVAL;
 }
+
+- (BOOL)isFirst
+{
+    NSLog(@"Order %@", self.order);
+    return [self.order intValue] == 1;
+}
+
+- (BOOL)isLast
+{
+    return [self.order intValue] == [[self.repository lists] count];
+}
+
 @end

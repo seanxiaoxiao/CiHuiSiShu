@@ -89,4 +89,59 @@
 
 }
 
++ (void)toNextList:(VSList *)currentList
+{
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    UINavigationController *navigationController = (UINavigationController *)window.rootViewController;
+    
+    VSList *nextList = [currentList nextList];
+    VSContext *context = [VSContext getContext];
+    if (nextList != nil) {
+        [context fixCurrentList:nextList];
+        VSVocabularyListViewController *vocabularyListViewController = [VSVocabularyListViewController alloc];
+        vocabularyListViewController.currentList = nextList;
+        vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
+            
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDelay:0.375];
+        [navigationController popViewControllerAnimated:NO];
+        [UIView commitAnimations];
+            
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationCurve:UIViewAnimationTransitionCurlUp];
+        [UIView setAnimationDuration:0.75];
+        [navigationController pushViewController:vocabularyListViewController animated:NO];
+        [UIView setAnimationTransition:UIViewAnimationTransitionCurlUp forView:navigationController.view cache:NO];
+        [UIView commitAnimations];
+    }
+}
+
++ (void)toPreviousList:(VSList *)currentList
+{
+    
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    UINavigationController *navigationController = (UINavigationController *)window.rootViewController;
+    
+    VSList *nextList = [currentList previousList];
+    VSContext *context = [VSContext getContext];
+    if (nextList != nil) {
+        [context fixCurrentList:nextList];
+        VSVocabularyListViewController *vocabularyListViewController = [VSVocabularyListViewController alloc];
+        vocabularyListViewController.currentList = nextList;
+        vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
+        
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDelay:0.375];
+        [navigationController popViewControllerAnimated:NO];
+        [UIView commitAnimations];
+        
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationCurve:UIViewAnimationTransitionCurlDown];
+        [UIView setAnimationDuration:0.75];
+        [navigationController pushViewController:vocabularyListViewController animated:NO];
+        [UIView setAnimationTransition:UIViewAnimationTransitionCurlDown forView:navigationController.view cache:NO];
+        [UIView commitAnimations];
+    }
+}
+
 @end

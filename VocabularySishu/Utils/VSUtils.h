@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "VSContext.h"
 #import "VSVocabulary.h"
+#import "VSList.h"
 
 @class VSVocabulary;
 
@@ -31,5 +32,10 @@
 + (NSDate *)converToNormalDate:(NSDate *)date;
 
 + (NSDate *)getNow;
+
++ (void)toNextList:(VSList *)currentList;
+
++ (void)toPreviousList:(VSList *)currentList;
+
 
 @end
