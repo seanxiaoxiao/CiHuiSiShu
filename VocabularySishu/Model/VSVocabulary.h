@@ -26,10 +26,14 @@
 @property (nonatomic, retain) NSString * summary;
 @property (nonatomic, retain) NSSet *meanings;
 @property (nonatomic, retain) NSSet *websterMeanings;
+@property (nonatomic, retain) NSDate *seeSummaryStart;
+@property (nonatomic, assign) int seeSummaryTimes;
 
 - (void)remembered;
 
 - (void)forgot;
+
+- (void)finishSummary;
 
 - (void)play;
 

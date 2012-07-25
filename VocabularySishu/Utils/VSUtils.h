@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "VSContext.h"
 #import "VSVocabulary.h"
+#import "VSList.h"
 
 @class VSVocabulary;
 
@@ -32,6 +33,13 @@
 
 + (NSDate *)getNow;
 
+<<<<<<< HEAD
 + (void)copySQLite;
+=======
++ (void)toNextList:(VSList *)currentList;
+
++ (void)toPreviousList:(VSList *)currentList;
+
+>>>>>>> new-ui
 
 @end

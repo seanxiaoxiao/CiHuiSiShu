@@ -25,7 +25,6 @@
 @synthesize listToday;
 @synthesize meaningCellHeight;
 @synthesize summaryView;
-@synthesize meaningView;
 @synthesize touchPoint;
 @synthesize draggedCell;
 @synthesize countInList;
@@ -36,6 +35,7 @@
 @synthesize alertWhenFinish;
 @synthesize alertDelegate;
 @synthesize reviewPlan;
+@synthesize clearView;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -89,8 +89,8 @@
     //self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
     UIImage* image= [VSUtils fetchImg:@"back-button"];
-    CGRect frame= CGRectMake(0, 0, image.size.width, image.size.height); 
-    UIButton* backButton= [[UIButton alloc] initWithFrame:frame]; 
+    CGRect frame = CGRectMake(0, 0, image.size.width, image.size.height); 
+    UIButton* backButton = [[UIButton alloc] initWithFrame:frame]; 
     [backButton setBackgroundImage:image forState:UIControlStateNormal]; 
     [backButton setTitle:@" 词汇私塾" forState:UIControlStateNormal]; 
     [backButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal]; 
@@ -107,6 +107,34 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    if (![self.currentList isHistoryList]) {
+        UIView *rightView = [[UIView alloc] initWithFrame:CGRectMake(1, 0, 83, 44.01)];
+        rightView.backgroundColor = [UIColor clearColor];
+    
+        UIImage* previousImage = [VSUtils fetchImg:@"Previous"];
+        CGRect previousFrame = CGRectMake(0, 0, previousImage.size.width, previousImage.size.height); 
+        UIButton* previousButton = [[UIButton alloc] initWithFrame:previousFrame]; 
+        [previousButton setBackgroundImage:previousImage forState:UIControlStateNormal];
+        [previousButton addTarget:self action:@selector(previousList) forControlEvents:UIControlEventTouchUpInside];
+        if ([self.currentList isFirst]) {
+            [previousButton setEnabled:NO];
+        }
+        [rightView addSubview:previousButton];
+
+        UIImage* nextImage = [VSUtils fetchImg:@"Next"];
+        CGRect nextFrame = CGRectMake(44, 0, nextImage.size.width, nextImage.size.height); 
+        UIButton* nextButton = [[UIButton alloc] initWithFrame:nextFrame]; 
+        [nextButton setBackgroundImage:nextImage forState:UIControlStateNormal];
+        [nextButton addTarget:self action:@selector(nextList) forControlEvents:UIControlEventTouchUpInside];
+        
+        if ([self.currentList isLast]) {
+            [nextButton setEnabled:NO];
+        }
+
+        [rightView addSubview:nextButton];
+
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightView];
+    }
 }
 
 - (void)viewDidUnload
@@ -119,7 +147,7 @@
     self.draggedCell = nil;
     self.alertWhenFinish = nil;
     self.alertDelegate = nil;
-    self.meaningView = nil;
+    self.clearView = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -138,25 +166,18 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (meaningView != nil && indexPath.row == selectedIndex + 1) {
-        return meaningView.viewHeight;
-    }
     return 59;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     int count = 6 < [self.vocabulariesToRecite count] ? 6 : [self.vocabulariesToRecite count];
-    count = (self.meaningView != nil) ? count + 1 : count;
     return count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (meaningView != nil && indexPath.row == selectedIndex + 1) {
-        return meaningView;
-    }
-    int vocabularyIndex = meaningView != nil && indexPath.row > selectedIndex ? indexPath.row - 1 : indexPath.row;
+    int vocabularyIndex = indexPath.row;
     VSListVocabulary *listVocabulary = [vocabulariesToRecite objectAtIndex:vocabularyIndex];
     NSString *CellIdentifier = listVocabulary.vocabulary.spell;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -244,17 +265,6 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-#pragma mark - View Control
-- (void)removeMeaningView
-{
-    if (meaningView != nil) {
-        [meaningView removeFromSuperview];
-        meaningView = nil;
-        NSIndexPath *meangingCellIndexPath = [NSIndexPath indexPathForRow:selectedIndex + 1 inSection:0];
-        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:meangingCellIndexPath] withRowAnimation:UITableViewRowAnimationFade];
-        selectedIndex = -1;
-    }
-}
 
 #pragma mark - Gesture Related
 
@@ -309,6 +319,19 @@
             draggedCell = cell;
             draggedIndex = indexPath.row;
         }
+        BOOL dragged = ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:draggedIndex]).dragged;
+        CGPoint translation = [gestureRecognizer translationInView:draggedCell];
+        if (!dragged && translation.x > 0) {
+            if (clearView != nil) {
+                [clearView removeFromSuperview];
+                clearView = nil;
+            }
+            UIImage *clearImage = [VSUtils fetchImg:@"CellClear"];
+            clearView = [[UIImageView alloc] initWithImage:clearImage];
+            clearView.hidden = YES;
+            [draggedCell.textLabel addSubview:clearView];            
+            clearView.clipsToBounds = YES;
+        }
     }
 }
 
@@ -321,33 +344,56 @@
         
     newCenter.x = 160 + margin;
     BOOL dragged = ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:draggedIndex]).dragged;
-    if (dragged) {
-        newCenter.x -= 320;
+    if (!dragged && clearView != nil) {
+        CGPoint clearCenter = clearView.center;
+        clearCenter.x = margin - 100;
+        clearView.hidden = NO;
+        [clearView setCenter:clearCenter];
     }
-    if (fabs(newCenter.x) > 160) {
-        newCenter.x = newCenter.x / fabs(newCenter.x) * 160;
+    else {
+        if (dragged) {
+            newCenter.x -= 320;
+        }
+        if (fabs(newCenter.x) > 160) {
+            newCenter.x = newCenter.x / fabs(newCenter.x) * 160;
+        }
+        [draggedCell setCenter:newCenter];
     }
-    [draggedCell setCenter:newCenter];
 }
 
 
 - (void)stopDragging:(UIPanGestureRecognizer *)gestureRecognizer
 {
-    CGPoint origin = draggedCell.frame.origin;
-    CGPoint translation = [gestureRecognizer translationInView:draggedCell];
-    CGFloat margin = translation.x;
-    CGFloat targetX = 0;
-    BOOL dragged = ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:draggedIndex]).dragged;
-    if (!dragged && fabs(margin) > 120) {
-        targetX = margin / fabs(margin) * 320;
-    }
-    
-    if (!dragged && translation.x > 0) {
-        return;
-    }
-
     if (draggedCell != nil) {
-        [UIView animateWithDuration:0.5f 
+        CGPoint origin = draggedCell.frame.origin;
+        CGPoint translation = [gestureRecognizer translationInView:draggedCell];
+        CGFloat margin = translation.x;
+        CGFloat targetX = 0;
+
+        BOOL dragged = ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:draggedIndex]).dragged;
+        if (!dragged && fabs(margin) > 120) {
+            targetX = margin / fabs(margin) * 320;
+        }
+        
+        if (clearView != nil && !dragged && translation.x > 0) {
+            [UIView animateWithDuration:0.5f 
+                delay:0.0f 
+                options:UIViewAnimationCurveLinear 
+                animations:^{
+                    CGPoint center = clearView.center;
+                    center.x = draggedCell.center.x;
+                    [clearView setCenter:center];
+                }
+                completion:^(BOOL finished) {
+                    if (finished == YES) {
+                        [self clearVocabulary];
+                        [self updateVocabularyTable];
+                    }
+                }
+            ];
+        }
+        else {
+            [UIView animateWithDuration:0.5f 
                 delay:0.0f 
                 options:UIViewAnimationCurveLinear 
                 animations:^{
@@ -355,7 +401,6 @@
                 }
                 completion:^(BOOL finished) {
                     if (finished == YES) {
-                        NSLog(@"Center x is %f", draggedCell.center.x);
                         CGFloat cellCenterX = draggedCell.center.x;
                         if (dragged && cellCenterX == 160) {
                             ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:draggedIndex]).dragged = NO;
@@ -365,7 +410,8 @@
                         }
                     }
                 }
-        ];
+            ];
+        }
     }
 }
 
@@ -373,7 +419,6 @@
 
 - (void)postLoadingMeaningView:(id)object
 {
-    meaningView.hidden = NO;
     NSIndexPath *selectedIndexPath = [NSIndexPath indexPathForRow:selectedIndex inSection:0];
     NSIndexPath *meaningCellIndexPath = [NSIndexPath indexPathForRow:(selectedIndex + 1) inSection:0];
     [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:meaningCellIndexPath] withRowAnimation:UITableViewRowAnimationFade];
@@ -388,17 +433,7 @@
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
-- (void)forget
-{
-    VSListVocabulary *forgotVocabulary = [vocabulariesToRecite objectAtIndex:draggedIndex];
-    [forgotVocabulary forgot];
-    [forgotVocabulary.vocabulary forgot];
-    [reviewPlan forgetVocabulary:forgotVocabulary.vocabulary];
-    [vocabulariesToRecite removeObjectAtIndex:draggedIndex];
-    [vocabulariesToRecite addObject:forgotVocabulary];
-}
-
-- (void)remember
+- (void)clearVocabulary
 {
     VSListVocabulary *rememberedVocabulary = [vocabulariesToRecite objectAtIndex:draggedIndex];
     [rememberedVocabulary remembered];
@@ -417,20 +452,14 @@
     CGFloat progress = (CGFloat)self.rememberCount / (CGFloat)self.countInList;
 }
 
-- (void)updateVocabularyTable:(BOOL)remember
+- (void)updateVocabularyTable
 {
     [self.tableView beginUpdates];
-    [self removeMeaningView];
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:touchPoint];
     [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    if (remember && [self.vocabulariesToRecite count] > 5) {
+    if ([self.vocabulariesToRecite count] > 5) {
         NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:5 inSection:0];
         [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];    
-    }
-    else if (!remember) {
-        int newIndex = [self.vocabulariesToRecite count] > 5 ? 5 : [self.vocabulariesToRecite count] - 1;
-        NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:newIndex inSection:0];
-        [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
     [self.tableView endUpdates];
 }
@@ -448,6 +477,16 @@
         [alertWhenFinish setDelegate:self.alertDelegate];
         [alertWhenFinish show];
     }
+}
+
+- (void)nextList
+{
+    [VSUtils toNextList:self.currentList];
+}
+
+- (void)previousList
+{
+    [VSUtils toPreviousList:self.currentList];
 }
 
 
