@@ -8,7 +8,7 @@
 
 #import "VSVocabulary.h"
 #import "VSMeaning.h"
-
+#import <math.h>
 
 @implementation VSVocabulary
 
@@ -23,25 +23,43 @@
 @dynamic type;
 @dynamic summary;
 @dynamic audioLink;
+@synthesize seeSummaryStart;
+@synthesize seeSummaryTimes;
 
 - (void)remembered
 {
-    self.remember = [NSNumber numberWithInt:[self.remember intValue] + 1];
-    self.meet = [NSNumber numberWithInt:[self.meet intValue] + 1];
-    __autoreleasing NSError *error = nil;
-    if (![[VSUtils currentMOContext] save:&error]) {
-        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    double meet = [self.meet doubleValue];
+    double incr = 10 * pow(M_E, meet / (meet + 6));
+    self.remember = [NSNumber numberWithDouble:[self.remember doubleValue] + incr];
+    if ([self.remember doubleValue] > 100) {
+        self.remember = [NSNumber numberWithDouble:100];
     }
+    self.meet = [NSNumber numberWithInt:[self.meet intValue] + 1];
+    [VSUtils saveEntity];
 }
 
 - (void)forgot
 {
-    self.forget = [NSNumber numberWithInt:[self.forget intValue] + 1];
-    self.meet = [NSNumber numberWithInt:[self.meet intValue] + 1];
-    __autoreleasing NSError *error = nil;
-    if (![[VSUtils currentMOContext] save:&error]) {
-        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    double meet = [self.meet doubleValue];
+    double decr = 60 * pow(M_E, (-3 * meet) / (meet + 1) - 3 * self.seeSummaryTimes);
+    self.remember = [NSNumber numberWithDouble:[self.remember doubleValue] - decr];
+    if ([self.remember doubleValue] < 0) {
+        self.remember = [NSNumber numberWithDouble:0];
     }
+    [VSUtils saveEntity];
+    self.seeSummaryTimes += 1;
+    self.seeSummaryStart = [[NSDate alloc] init];
+}
+
+- (void)finishSummary
+{
+    NSTimeInterval elapse = -[self.seeSummaryStart timeIntervalSinceNow];
+    double decr = 8 / self.seeSummaryTimes * pow(M_E, elapse / 10);
+    self.remember = [NSNumber numberWithDouble:[self.remember doubleValue] - decr];
+    if ([self.remember doubleValue] < 0) {
+        self.remember = [NSNumber numberWithDouble:0];
+    }
+    [VSUtils saveEntity];
 }
 
 - (NSString *)meetTimes

@@ -10,6 +10,7 @@
 		0024B9DE1593562C001698C3 /* abacus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0024B9DD1593562C001698C3 /* abacus.jpg */; };
 		0029087915BF0AA800568B41 /* retina-Previous.png in Resources */ = {isa = PBXBuildFile; fileRef = 0029087815BF0AA800568B41 /* retina-Previous.png */; };
 		0029087C15BF0B4500568B41 /* retina-Next.png in Resources */ = {isa = PBXBuildFile; fileRef = 0029087B15BF0B4500568B41 /* retina-Next.png */; };
+		0029087E15BF882C00568B41 /* retina-CellClear.png in Resources */ = {isa = PBXBuildFile; fileRef = 0029087D15BF882C00568B41 /* retina-CellClear.png */; };
 		0046408315590E0B007E5FA9 /* VSVocabularyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408115590E0B007E5FA9 /* VSVocabularyViewController.xib */; };
 		0046408415591251007E5FA9 /* VSVocabularyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046408015590E0B007E5FA9 /* VSVocabularyViewController.m */; };
 		0046408D155916FA007E5FA9 /* VSMainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046408B155916FA007E5FA9 /* VSMainMenuViewController.m */; };
@@ -31,7 +32,6 @@
 		00701E501553CBCE00D30018 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00701E351553CBCE00D30018 /* CoreData.framework */; };
 		00701E581553CBCE00D30018 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00701E561553CBCE00D30018 /* InfoPlist.strings */; };
 		00701E5B1553CBCE00D30018 /* VocabularySishuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00701E5A1553CBCE00D30018 /* VocabularySishuTests.m */; };
-		0073A67615688B5100B80422 /* navigationbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 0073A67515688B5100B80422 /* navigationbar.png */; };
 		0073A67915688F2800B80422 /* VSDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A67815688F2800B80422 /* VSDataUtil.m */; };
 		0073A68515689E2200B80422 /* Repos.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0073A68415689E2200B80422 /* Repos.txt */; };
 		0073A6961568A0B200B80422 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A68B1568A0B200B80422 /* NSObject+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -67,7 +67,6 @@
 		00A9E7B115A08699009832BA /* VSReviewPlan.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A9E7AF15A08699009832BA /* VSReviewPlan.m */; };
 		00AE80F1158B1318000CE7EA /* VSConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AE80EF158B1318000CE7EA /* VSConfigurationViewController.m */; };
 		00AE80F2158B1318000CE7EA /* VSConfigurationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */; };
-		00B5A8C01566889B00D20EB6 /* retina-navigationbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B5A8BF1566889B00D20EB6 /* retina-navigationbar.png */; };
 		00C42FDB15BAEEB1006FF95E /* retina-CellBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C42FD815BAEEB1006FF95E /* retina-CellBG.png */; };
 		00C42FDC15BAEEB1006FF95E /* retina-CellSummary.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C42FD915BAEEB1006FF95E /* retina-CellSummary.png */; };
 		00C42FDD15BAEEB1006FF95E /* retina-ListBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C42FDA15BAEEB1006FF95E /* retina-ListBG.png */; };
@@ -92,6 +91,7 @@
 		0024B9DD1593562C001698C3 /* abacus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = abacus.jpg; path = Resources/VocabularyImg/abacus.jpg; sourceTree = "<group>"; };
 		0029087815BF0AA800568B41 /* retina-Previous.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-Previous.png"; path = "Resources/Img/retina-Previous.png"; sourceTree = "<group>"; };
 		0029087B15BF0B4500568B41 /* retina-Next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-Next.png"; path = "Resources/Img/retina-Next.png"; sourceTree = "<group>"; };
+		0029087D15BF882C00568B41 /* retina-CellClear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-CellClear.png"; path = "Resources/Img/retina-CellClear.png"; sourceTree = "<group>"; };
 		0046407F15590E0B007E5FA9 /* VSVocabularyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSVocabularyViewController.h; path = ViewController/VocabularyView/VSVocabularyViewController.h; sourceTree = "<group>"; };
 		0046408015590E0B007E5FA9 /* VSVocabularyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSVocabularyViewController.m; path = ViewController/VocabularyView/VSVocabularyViewController.m; sourceTree = "<group>"; };
 		0046408115590E0B007E5FA9 /* VSVocabularyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSVocabularyViewController.xib; path = ViewController/VocabularyView/VSVocabularyViewController.xib; sourceTree = "<group>"; };
@@ -118,7 +118,6 @@
 		00701E571553CBCE00D30018 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		00701E591553CBCE00D30018 /* VocabularySishuTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VocabularySishuTests.h; sourceTree = "<group>"; };
 		00701E5A1553CBCE00D30018 /* VocabularySishuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VocabularySishuTests.m; sourceTree = "<group>"; };
-		0073A67515688B5100B80422 /* navigationbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = navigationbar.png; path = Resources/Img/navigationbar.png; sourceTree = "<group>"; };
 		0073A67715688F2800B80422 /* VSDataUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSDataUtil.h; sourceTree = "<group>"; };
 		0073A67815688F2800B80422 /* VSDataUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSDataUtil.m; sourceTree = "<group>"; };
 		0073A68415689E2200B80422 /* Repos.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Repos.txt; path = Resources/Data/Repos.txt; sourceTree = "<group>"; };
@@ -176,7 +175,6 @@
 		00AE80EE158B1318000CE7EA /* VSConfigurationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSConfigurationViewController.h; path = ViewController/ConfigurationView/VSConfigurationViewController.h; sourceTree = "<group>"; };
 		00AE80EF158B1318000CE7EA /* VSConfigurationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSConfigurationViewController.m; path = ViewController/ConfigurationView/VSConfigurationViewController.m; sourceTree = "<group>"; };
 		00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSConfigurationViewController.xib; path = ViewController/ConfigurationView/VSConfigurationViewController.xib; sourceTree = "<group>"; };
-		00B5A8BF1566889B00D20EB6 /* retina-navigationbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-navigationbar.png"; path = "Resources/Img/retina-navigationbar.png"; sourceTree = "<group>"; };
 		00C42FD815BAEEB1006FF95E /* retina-CellBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-CellBG.png"; path = "Resources/Img/retina-CellBG.png"; sourceTree = "<group>"; };
 		00C42FD915BAEEB1006FF95E /* retina-CellSummary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-CellSummary.png"; path = "Resources/Img/retina-CellSummary.png"; sourceTree = "<group>"; };
 		00C42FDA15BAEEB1006FF95E /* retina-ListBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-ListBG.png"; path = "Resources/Img/retina-ListBG.png"; sourceTree = "<group>"; };
@@ -480,6 +478,7 @@
 			isa = PBXGroup;
 			children = (
 				0029087B15BF0B4500568B41 /* retina-Next.png */,
+				0029087D15BF882C00568B41 /* retina-CellClear.png */,
 				0029087815BF0AA800568B41 /* retina-Previous.png */,
 				0081184A15BEFDDE0022B515 /* retina-Navigation.png */,
 				00C42FD815BAEEB1006FF95E /* retina-CellBG.png */,
@@ -487,8 +486,6 @@
 				00C42FDA15BAEEB1006FF95E /* retina-ListBG.png */,
 				00A00704156D361E00D24418 /* back-button.png */,
 				00A00705156D361E00D24418 /* retina-back-button.png */,
-				0073A67515688B5100B80422 /* navigationbar.png */,
-				00B5A8BF1566889B00D20EB6 /* retina-navigationbar.png */,
 			);
 			name = Img;
 			sourceTree = "<group>";
@@ -569,8 +566,6 @@
 				00701E3C1553CBCE00D30018 /* InfoPlist.strings in Resources */,
 				0046408E155916FA007E5FA9 /* VSMainMenuViewController.xib in Resources */,
 				0046409315591FD1007E5FA9 /* VSVocabularyViewController.xib in Resources */,
-				00B5A8C01566889B00D20EB6 /* retina-navigationbar.png in Resources */,
-				0073A67615688B5100B80422 /* navigationbar.png in Resources */,
 				0073A68515689E2200B80422 /* Repos.txt in Resources */,
 				0073A6A71569F0D200B80422 /* Lists.txt in Resources */,
 				00D6778A15ADBE7900EF152D /* WebsterMeaning.txt in Resources */,
@@ -588,6 +583,7 @@
 				0081184B15BEFDDE0022B515 /* retina-Navigation.png in Resources */,
 				0029087915BF0AA800568B41 /* retina-Previous.png in Resources */,
 				0029087C15BF0B4500568B41 /* retina-Next.png in Resources */,
+				0029087E15BF882C00568B41 /* retina-CellClear.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

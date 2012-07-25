@@ -30,11 +30,11 @@
 @property (nonatomic, assign) int countInList;
 @property (nonatomic, assign) int rememberCount;
 @property (nonatomic, assign) int selectedIndex;
-@property (nonatomic, strong) UITableViewCell *draggedCell;
 @property (nonatomic, strong) VSSummaryView *summaryView;
-@property (nonatomic, strong) VSMeaningView *meaningView;
 @property (nonatomic, strong) UIAlertView *alertWhenFinish;
 @property (nonatomic, retain) VSAlertDelegate *alertDelegate;
 @property (nonatomic, retain) VSReviewPlan *reviewPlan;
+@property (nonatomic, strong) UITableViewCell *draggedCell;
+@property (nonatomic, strong) UIImageView *clearView;
 
 @end
