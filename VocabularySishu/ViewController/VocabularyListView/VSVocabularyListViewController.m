@@ -402,11 +402,14 @@
                 completion:^(BOOL finished) {
                     if (finished == YES) {
                         CGFloat cellCenterX = draggedCell.center.x;
+                        VSVocabulary *vocabulary = ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:draggedIndex]).vocabulary;
                         if (dragged && cellCenterX == 160) {
                             ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:draggedIndex]).dragged = NO;
+                            [vocabulary finishSummary];
                         }
                         else if (!dragged && cellCenterX == -160) {
                             ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:draggedIndex]).dragged = YES;
+                            [vocabulary forget];
                         }
                     }
                 }

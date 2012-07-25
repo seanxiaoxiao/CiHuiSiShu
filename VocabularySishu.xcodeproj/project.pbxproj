@@ -233,7 +233,6 @@
 			children = (
 				00A9E7AE15A08699009832BA /* VSReviewPlan.h */,
 				00A9E7AF15A08699009832BA /* VSReviewPlan.m */,
-				00701E6B1553CE8C00D30018 /* ViewController */,
 				0046408F15591DBD007E5FA9 /* VSUtils.h */,
 				0046409015591DBD007E5FA9 /* VSUtils.m */,
 				0073A67715688F2800B80422 /* VSDataUtil.h */,
@@ -315,6 +314,7 @@
 		00701E371553CBCE00D30018 /* VocabularySishu */ = {
 			isa = PBXGroup;
 			children = (
+				00701E6B1553CE8C00D30018 /* ViewController */,
 				0081184E15BEFDFF0022B515 /* Generic */,
 				0024B9DB159354A0001698C3 /* VocabularyImg */,
 				00A1AFA41585FD2400310669 /* Audio */,
