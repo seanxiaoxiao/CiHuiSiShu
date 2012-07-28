@@ -41,6 +41,8 @@
 		0073A69B1568A0B200B80422 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6951568A0B200B80422 /* SBJsonWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0073A6BE156A5FF700B80422 /* VSVocabularyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6BC156A5FF700B80422 /* VSVocabularyListViewController.m */; };
 		0073A6BF156A5FF700B80422 /* VSVocabularyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */; };
+		0078168A15C3A8F700CE5026 /* retina-Restart.png in Resources */ = {isa = PBXBuildFile; fileRef = 0078168915C3A8F700CE5026 /* retina-Restart.png */; };
+		0078168D15C3AA0100CE5026 /* retina-Restart-Highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 0078168C15C3AA0100CE5026 /* retina-Restart-Highlight.png */; };
 		009A870015A1A82900F7869D /* NSMutableArrayShuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = 009A86FF15A1A82900F7869D /* NSMutableArrayShuffling.m */; };
 		009AFBFB1588982300293F6A /* VSAlertDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 009AFBFA1588982300293F6A /* VSAlertDelegate.m */; };
 		00A006F9156B3BDF00D24418 /* Meaning.html in Resources */ = {isa = PBXBuildFile; fileRef = 00A006F8156B3BDF00D24418 /* Meaning.html */; };
@@ -151,6 +153,8 @@
 		0073A6BB156A5FF700B80422 /* VSVocabularyListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSVocabularyListViewController.h; path = ViewController/VocabularyListView/VSVocabularyListViewController.h; sourceTree = "<group>"; };
 		0073A6BC156A5FF700B80422 /* VSVocabularyListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSVocabularyListViewController.m; path = ViewController/VocabularyListView/VSVocabularyListViewController.m; sourceTree = "<group>"; };
 		0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSVocabularyListViewController.xib; path = ViewController/VocabularyListView/VSVocabularyListViewController.xib; sourceTree = "<group>"; };
+		0078168915C3A8F700CE5026 /* retina-Restart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-Restart.png"; path = "Resources/Img/retina-Restart.png"; sourceTree = "<group>"; };
+		0078168C15C3AA0100CE5026 /* retina-Restart-Highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-Restart-Highlight.png"; path = "Resources/Img/retina-Restart-Highlight.png"; sourceTree = "<group>"; };
 		0081184A15BEFDDE0022B515 /* retina-Navigation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-Navigation.png"; path = "Resources/Img/retina-Navigation.png"; sourceTree = "<group>"; };
 		0081184F15BEFE220022B515 /* VSNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSNavigationBar.h; path = Generic/VSNavigationBar.h; sourceTree = "<group>"; };
 		0081185015BEFE220022B515 /* VSNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSNavigationBar.m; path = Generic/VSNavigationBar.m; sourceTree = "<group>"; };
@@ -484,6 +488,8 @@
 		00B5A8BE1566886E00D20EB6 /* Img */ = {
 			isa = PBXGroup;
 			children = (
+				0078168C15C3AA0100CE5026 /* retina-Restart-Highlight.png */,
+				0078168915C3A8F700CE5026 /* retina-Restart.png */,
 				0029087B15BF0B4500568B41 /* retina-Next.png */,
 				0029087D15BF882C00568B41 /* retina-CellClear.png */,
 				0029087815BF0AA800568B41 /* retina-Previous.png */,
@@ -587,6 +593,8 @@
 				0029087915BF0AA800568B41 /* retina-Previous.png in Resources */,
 				0029087C15BF0B4500568B41 /* retina-Next.png in Resources */,
 				0029087E15BF882C00568B41 /* retina-CellClear.png in Resources */,
+				0078168A15C3A8F700CE5026 /* retina-Restart.png in Resources */,
+				0078168D15C3AA0100CE5026 /* retina-Restart-Highlight.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

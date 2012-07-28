@@ -50,30 +50,46 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.reviewPlan = [VSReviewPlan getPlan];
-        self.headerView = [[VSVocabularyListHeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
-        self.tableView.tableHeaderView = headerView;
-        if (![currentList isHistoryList]) {
-            self.listToday = [VSList createAndGetHistoryList];
-        }
-        [currentList process];
-        self.vocabulariesToRecite = [NSMutableArray arrayWithArray:[self.currentList vocabulariesToRecite]];
-        self.countInList = [self.currentList.listVocabularies count];
-        self.rememberCount = [self.currentList rememberedCount];
-        self.selectedIndex = -1;
         self.title = self.currentList.name;
-
-        UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
-        [backgroundImageView setFrame:self.tableView.frame]; 
+        self.vocabulariesToRecite = [NSMutableArray arrayWithArray:[self.currentList vocabulariesToRecite]];
+        if ([self.vocabulariesToRecite count] == 0) {
+            [self.tableView removeFromSuperview];
+            UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
+            [backgroundImageView setFrame:self.view.frame];
+            [self.view addSubview:backgroundImageView];
+            [self.view sendSubviewToBack:backgroundImageView];
+            UIImage *restartImage = [VSUtils fetchImg:@"Restart"];
+            UIButton *restartButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, restartImage.size.width, restartImage.size.height)];
+            [restartButton setImage:restartImage forState:UIControlStateNormal];
+            [restartButton setImage:[VSUtils fetchImg:@"Restart-Highlight"] forState:UIControlStateHighlighted];
+            [restartButton addTarget:self action:@selector(restart) forControlEvents:UIControlEventTouchUpInside];
+            [self.view addSubview:restartButton];
+            restartButton.center = self.view.center;
+        }
+        else {
+            self.reviewPlan = [VSReviewPlan getPlan];
+            self.headerView = [[VSVocabularyListHeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
+            self.tableView.tableHeaderView = headerView;
+            if (![currentList isHistoryList]) {
+                self.listToday = [VSList createAndGetHistoryList];
+            }
+            [currentList process];
+            self.countInList = [self.currentList.listVocabularies count];
+            self.rememberCount = [self.currentList rememberedCount];
+            self.selectedIndex = -1;
+            
+            UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
+            [backgroundImageView setFrame:self.tableView.frame];
         
-        self.tableView.backgroundView = backgroundImageView;
+            self.tableView.backgroundView = backgroundImageView;
         
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(postLoadingMeaningView:) name:FINISH_LOADING_MEANING_NOTIFICATION object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showDetailView) name:SHOW_DETAIL_VIEW object:nil];
+            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(postLoadingMeaningView:) name:FINISH_LOADING_MEANING_NOTIFICATION object:nil];
+            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showDetailView) name:SHOW_DETAIL_VIEW object:nil];
 
-        __autoreleasing UIGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanning:)];
-        panGesture.delegate = self;
-        [self.view addGestureRecognizer:panGesture];
+            __autoreleasing UIGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanning:)];
+            panGesture.delegate = self;
+            [self.view addGestureRecognizer:panGesture];
+        }
     }
     return self;
 }
@@ -492,5 +508,10 @@
     [VSUtils toPreviousList:self.currentList];
 }
 
+- (void)restart
+{
+    [self.currentList clearVocabularyStatus];
+    [VSUtils reloadCurrentList:self.currentList];
+}
 
 @end

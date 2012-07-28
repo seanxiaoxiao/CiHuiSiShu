@@ -38,6 +38,7 @@
         return [results objectAtIndex:0];
     }
     else {
+        NSLog(@"New here");
         VSList *listForToday = [NSEntityDescription insertNewObjectForEntityForName:@"VSList" inManagedObjectContext:[VSUtils currentMOContext]];
         NSCalendar *nowCalendar = [NSCalendar currentCalendar];
         NSDateComponents *nowComponents = [nowCalendar components:(NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:today];
@@ -47,9 +48,7 @@
         listForToday.repository = nil;
         listForToday.createdDate = today;
         listForToday.status = [VSConstant LIST_STATUS_NEW];
-        if (![[VSUtils currentMOContext] save:&error]) {
-            NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-        }
+        [VSUtils saveEntity];
         return listForToday;
     }
 }
@@ -99,17 +98,20 @@
     NSFetchRequest *listRequest = [[NSFetchRequest alloc] init];
     [listRequest setEntity:listDescription];
     [listRequest setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"createdDate" ascending:NO]]];
-    listRequest.fetchLimit = 7;
-    NSPredicate *isHistoryPredicate = [NSPredicate predicateWithFormat:@"(type=1)"];
+    NSPredicate *isHistoryPredicate = [NSPredicate predicateWithFormat:@"(type = 1)"];
     [listRequest setPredicate:isHistoryPredicate];
     NSArray *tempResult = [[VSUtils currentMOContext] executeFetchRequest:listRequest error:&error];
+    NSLog(@"Temp result count is %d", [tempResult count]);
     NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:[tempResult count]];
     for (VSList *list in tempResult) {
         if ([list.listVocabularies count] > 0) {
             [result addObject:list];
         }
+        if ([result count] == 7) {
+            break;
+        }
     }
-    return result;
+    return tempResult;
 }
 
 + (VSList *)latestShortTermReviewList
