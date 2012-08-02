@@ -37,4 +37,25 @@
     [VSUtils saveEntity];
 }
 
+- (NSArray *)orderedList
+{
+    NSSortDescriptor *sortOrderDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObjects:sortOrderDescriptor, nil];
+    return [[self.lists allObjects] sortedArrayUsingDescriptors:sortDescriptors];
+}
+
+- (VSList *)firstListInRepo
+{
+    NSEntityDescription *listDescription = [NSEntityDescription entityForName:@"VSList" inManagedObjectContext:[VSUtils currentMOContext]];
+    NSFetchRequest *listRequest = [[NSFetchRequest alloc] init];
+    [listRequest setEntity:listDescription];
+    [listRequest setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"order" ascending:YES]]];
+    NSPredicate *repoPredicate = [NSPredicate predicateWithFormat:@"(repository = %@)", self];
+    [listRequest setPredicate:repoPredicate];
+    [listRequest setFetchLimit:1];
+    NSError *error = nil;
+    NSArray *result = [[VSUtils currentMOContext] executeFetchRequest:listRequest error:&error];
+    return [result objectAtIndex:0];
+}
+
 @end

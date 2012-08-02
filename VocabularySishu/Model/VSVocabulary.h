@@ -16,7 +16,6 @@
 @interface VSVocabulary : NSManagedObject
 
 @property (nonatomic, retain) NSString * etymology;
-@property (nonatomic, retain) NSNumber * forget;
 @property (nonatomic, retain) NSNumber * meet;
 @property (nonatomic, retain) NSString * phonetic;
 @property (nonatomic, retain) NSNumber * remember;
@@ -50,6 +49,10 @@
 - (BOOL)cannotRememberWell;
 
 - (BOOL)hasAudioLink;
+
+- (NSArray *)orderedMeanings;
+
+- (NSArray *)orderedWMMeanings;
 
 + (NSArray *)allVocabularies;
 

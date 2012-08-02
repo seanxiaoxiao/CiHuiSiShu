@@ -23,15 +23,8 @@
 @synthesize etymologyContentLabel;
 @synthesize playButton;
 @synthesize player;
-@synthesize meetLabel;
-@synthesize rememberedLabel;
-@synthesize forgotLabel;
-@synthesize greQuizLabel;
-@synthesize gmatQuizLabel;
 @synthesize imageLabel;
 @synthesize vocabularyImageView;
-@synthesize greQuizContentLabel;
-@synthesize gmatQuizContentLabel;
 @synthesize scrollView;
 @synthesize translationLabel;
 @synthesize translationContentLabel;
@@ -54,10 +47,7 @@
     // Do any additional setup after loading the view from its nib.
     self.title = self.vocabulary.spell; //[context fetchCurrentList].name;
     self.vocabularyLabel.text = self.vocabulary.spell;
-    self.phoneticLabel.text = self.vocabulary.phonetic;
-    self.meetLabel.text = [self.vocabulary meetTimes];
-    self.rememberedLabel.text = [self.vocabulary rememberedTimes];
-    self.forgotLabel.text = [self.vocabulary forgotTimes];
+    self.phoneticLabel.text = [NSString stringWithFormat:@"[%@]", self.vocabulary.phonetic];
     [self.vocabularyLabel sizeToFit];
     [self.phoneticLabel sizeToFit];
     
@@ -70,7 +60,7 @@
         self.translationLabel.frame = frame;
         currentHeight = currentHeight + frame.size.height + 5;
         NSMutableString *translation = [NSMutableString stringWithString:@""];
-        for (VSMeaning *meaning in [self.vocabulary.meanings allObjects]) {
+        for (VSMeaning *meaning in [self.vocabulary orderedMeanings]) {
             [translation appendString:meaning.attribute];
             [translation appendString:@" "];
             [translation appendString:meaning.meaning];
@@ -100,48 +90,24 @@
         currentHeight = currentHeight + frame.size.height + 5;
     }
     
-    if (YES) {
+    if ([self.vocabulary.websterMeanings count] > 0) {
         self.mwLabel.hidden = NO;
         self.mwContentLabel.hidden = NO;
         CGRect frame = self.mwLabel.frame;
         frame.origin.y = currentHeight;
         self.mwLabel.frame = frame;
         currentHeight = currentHeight + frame.size.height + 5;
-        self.mwContentLabel.text = @"1 : an instrument for performing calculations by sliding counters along rods or in grooves\n2 : a slab that forms the uppermost member or division of the capital of a column";
+        NSMutableString *mwContent = [NSMutableString stringWithString:@""];
+        for (VSWebsterMeaning *meaning in [self.vocabulary orderedWMMeanings]) {
+            __autoreleasing NSString *meaningString = [NSString stringWithFormat:@"%@. %@\n", meaning.attribute, meaning.meaning];
+            [mwContent appendString:meaningString];
+            meaningString = nil;
+        }
+        self.mwContentLabel.text = mwContent;
         [self.mwContentLabel sizeToFit];
         frame = self.mwContentLabel.frame;
         frame.origin.y = currentHeight;
         self.mwContentLabel.frame = frame;
-        currentHeight = currentHeight + frame.size.height + 5;
-    }
-    
-    if (YES) {
-        self.greQuizLabel.hidden = NO;
-        self.greQuizContentLabel.hidden = NO;
-        CGRect frame = self.greQuizLabel.frame;
-        frame.origin.y = currentHeight;
-        self.greQuizLabel.frame = frame;
-        currentHeight = currentHeight + frame.size.height + 5;
-        self.greQuizContentLabel.text = @"The corporation expects only __ increases in sales next year despite a yearlong effort to revive its retailing business.\n\tA unquestionable\n\tB sequential\n\tC modest\n\tD exaggerated\n\tE groundless";
-        [self.greQuizContentLabel sizeToFit];
-        frame = self.greQuizContentLabel.frame;
-        frame.origin.y = currentHeight;
-        self.greQuizContentLabel.frame = frame;
-        currentHeight = currentHeight + frame.size.height + 5;
-    }
-    
-    if (YES) {
-        self.gmatQuizLabel.hidden = NO;
-        self.gmatQuizContentLabel.hidden = NO;
-        CGRect frame = self.greQuizLabel.frame;
-        frame.origin.y = currentHeight;
-        self.gmatQuizLabel.frame = frame;
-        currentHeight = currentHeight + frame.size.height + 5;
-        self.gmatQuizContentLabel.text = @"The corporation expects only __ increases in sales next year despite a yearlong effort to revive its retailing business.\n\tA unquestionable\n\tB sequential\n\tC modest\n\tD exaggerated\n\tE groundless";
-        [self.gmatQuizContentLabel sizeToFit];
-        frame = self.gmatQuizContentLabel.frame;
-        frame.origin.y = currentHeight;
-        self.gmatQuizContentLabel.frame = frame;
         currentHeight = currentHeight + frame.size.height + 5;
     }
     
@@ -188,15 +154,8 @@
     self.playButton = nil;
     self.vocabulary = nil;
     self.player = nil;
-    self.meetLabel = nil;
-    self.rememberedLabel = nil;
-    self.forgotLabel = nil;
-    self.greQuizLabel = nil;
-    self.gmatQuizLabel = nil;
     self.imageLabel = nil;
     self.vocabularyImageView = nil;
-    self.greQuizContentLabel = nil;
-    self.gmatQuizContentLabel = nil;
     self.scrollView = nil;
     self.etymologyContentLabel = nil;
     self.translationLabel = nil;

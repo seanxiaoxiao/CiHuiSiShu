@@ -16,6 +16,8 @@
 
 @synthesize listSelectRecords;
 @synthesize selectedListIndex;
+@synthesize selectedRepoIndex;
+@synthesize selectedRepo;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -76,6 +78,7 @@
         cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
         if (cell == nil) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+            selectedListIndex = indexPath.row;
         }
         cell.textLabel.text = repository.name;
         [cell.textLabel setTextAlignment:UITextAlignmentLeft];
@@ -145,8 +148,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSObject *selectedRecord = [listSelectRecords objectAtIndex:indexPath.row];
+    VSContext *context = [VSContext getContext];
     if ([selectedRecord class] == [VSList class]) {
-        VSContext *context = [VSContext getContext];
         VSList *selectedList = (VSList *)selectedRecord;
         [context fixCurrentList:selectedList];
         [context fixRepository:selectedList.repository];
@@ -157,10 +160,55 @@
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
         self.selectedListIndex = indexPath.row;
     }
+    else if (selectedRepoIndex != indexPath.row && [selectedRecord class] == [VSRepository class]) {
+        selectedRepo = (VSRepository *)selectedRecord;
+        [self contractRepo];
+        VSContext *context = [VSContext getContext];
+        [context fixRepository:selectedRepo];
+        [context fixCurrentList:[selectedRepo firstListInRepo]];
+        [self expandRepo];
+        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:selectedRepoIndex inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 40;
+}
+
+- (void)contractRepo {
+    NSMutableArray *removeIndexArray = [NSMutableArray array];
+    int count = [listSelectRecords count];
+    for (int i = selectedRepoIndex + 1; i < count; i++) {
+        NSObject *selectedRecord = [listSelectRecords objectAtIndex:selectedRepoIndex + 1];
+        if ([selectedRecord class] == [VSRepository class]) {
+            break;
+        }
+        else {
+            [listSelectRecords removeObjectAtIndex:selectedRepoIndex + 1];
+            [removeIndexArray addObject:[NSIndexPath indexPathForRow:i inSection:0]];
+        }
+    }
+    [self.tableView beginUpdates];
+    [self.tableView deleteRowsAtIndexPaths:removeIndexArray withRowAnimation:UITableViewRowAnimationTop];
+    [self.tableView endUpdates];
+}
+
+- (void)expandRepo {
+    NSMutableArray *insertIndexArray = [NSMutableArray array];
+    for (int i = 0; i < [listSelectRecords count]; i++) {
+        VSRepository *repo = [listSelectRecords objectAtIndex:i];
+        if ([repo isEqual:selectedRepo]) {
+            NSArray *listsInRepo = [repo orderedList];
+            for (int j = 0; j < [listsInRepo count]; j++) {
+                [listSelectRecords insertObject:[listsInRepo objectAtIndex:j] atIndex:i + j + 1];
+                [insertIndexArray addObject:[NSIndexPath indexPathForRow:i + j + 1 inSection:0]];
+            }
+            selectedRepoIndex = i;
+        }
+    }
+    [self.tableView beginUpdates];
+    [self.tableView insertRowsAtIndexPaths:insertIndexArray withRowAnimation:UITableViewScrollPositionBottom];
+    [self.tableView endUpdates];
 }
 
 
@@ -191,12 +239,17 @@
 - (void)initListSelectRecords
 {
     self.listSelectRecords = [[NSMutableArray alloc] init];
+    VSContext *context = [VSContext getContext];
     NSArray *rawRepos = [VSRepository allRepos];
-    for (VSRepository *repo in rawRepos) {
+    for (int i = 0; i < [rawRepos count]; i ++) {
+        VSRepository *repo = [rawRepos objectAtIndex:i];
         [self.listSelectRecords addObject:repo];
-        NSArray *listsInRepo = [repo.lists allObjects];
-        for (VSList *list in listsInRepo) {
-            [self.listSelectRecords addObject:list];
+        NSArray *listsInRepo = [repo orderedList];
+        if ([context.currentRepository isEqual:repo]) {
+            selectedRepoIndex = i;
+            for (VSList *list in listsInRepo) {
+                [self.listSelectRecords addObject:list];
+            }
         }
     }
 }

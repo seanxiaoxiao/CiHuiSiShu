@@ -214,6 +214,7 @@
     cell.backgroundView = cellBackgroundView;
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.highlighted = NO;
 
     CGRect summaryFrame = CGRectMake(320, 0, 320, cell.frame.size.height);    
@@ -266,13 +267,13 @@
 
 #pragma mark - Table view delegate
 
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-}
-
-- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
-{
+    VSVocabulary *selectedVocabulary = ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:indexPath.row]).vocabulary;
+    VSVocabularyViewController *detailViewController = [[VSVocabularyViewController alloc] initWithNibName:@"VSVocabularyViewController" bundle:nil];
+    detailViewController.vocabulary = selectedVocabulary;
+    [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
 #pragma mark - Navigation Related
@@ -425,7 +426,6 @@
                         }
                         else if (!dragged && cellCenterX == -160) {
                             ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:draggedIndex]).dragged = YES;
-                            [vocabulary forget];
                         }
                     }
                 }
@@ -444,13 +444,6 @@
     [self.tableView scrollToRowAtIndexPath:selectedIndexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
 }
 
-- (void)showDetailView
-{
-    VSVocabulary *selectedVocabulary = ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:selectedIndex]).vocabulary;
-    VSVocabularyViewController *detailViewController = [[VSVocabularyViewController alloc] initWithNibName:@"VSVocabularyViewController" bundle:nil];
-    detailViewController.vocabulary = selectedVocabulary;
-    [self.navigationController pushViewController:detailViewController animated:YES];
-}
 
 - (void)clearVocabulary
 {

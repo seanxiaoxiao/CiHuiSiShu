@@ -13,7 +13,6 @@
 @implementation VSVocabulary
 
 @dynamic etymology;
-@dynamic forget;
 @dynamic meet;
 @dynamic phonetic;
 @dynamic remember;
@@ -72,11 +71,6 @@
     return [self.remember description];
 }
 
-- (NSString *)forgotTimes
-{
-    return [self.forget description];
-}
-
 - (BOOL)cannotRememberWell
 {
     return [self.meet intValue] > 0 && [[self rememberRate] floatValue] <= 0.79;
@@ -102,6 +96,20 @@
 - (BOOL)hasAudioLink
 {
     return self.audioLink != nil && [self.audioLink length] > 0;
+}
+
+- (NSArray *)orderedMeanings
+{
+    NSSortDescriptor *sortOrderDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObjects:sortOrderDescriptor, nil];
+    return [[self.meanings allObjects] sortedArrayUsingDescriptors:sortDescriptors];
+}
+
+- (NSArray *)orderedWMMeanings
+{
+    NSSortDescriptor *sortOrderDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObjects:sortOrderDescriptor, nil];
+    return [[self.websterMeanings allObjects] sortedArrayUsingDescriptors:sortDescriptors];
 }
 
 + (NSArray *)allVocabularies

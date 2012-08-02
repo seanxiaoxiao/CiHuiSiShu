@@ -35,7 +35,6 @@
     <entity name="VSVocabulary" representedClassName="VSVocabulary" syncable="YES">
         <attribute name="audioLink" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="etymology" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="forget" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="meet" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="phonetic" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="remember" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -57,7 +56,7 @@
         <element name="VSListVocabulary" positionX="160" positionY="192" width="128" height="105"/>
         <element name="VSMeaning" positionX="160" positionY="192" width="128" height="105"/>
         <element name="VSRepository" positionX="160" positionY="192" width="128" height="105"/>
-        <element name="VSVocabulary" positionX="160" positionY="192" width="128" height="225"/>
+        <element name="VSVocabulary" positionX="160" positionY="192" width="128" height="195"/>
         <element name="VSWebsterMeaning" positionX="160" positionY="192" width="128" height="105"/>
     </elements>
 </model>

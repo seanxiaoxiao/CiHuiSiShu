@@ -62,6 +62,7 @@
 		00A9E7B115A08699009832BA /* VSReviewPlan.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A9E7AF15A08699009832BA /* VSReviewPlan.m */; };
 		00AE80F1158B1318000CE7EA /* VSConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AE80EF158B1318000CE7EA /* VSConfigurationViewController.m */; };
 		00AE80F2158B1318000CE7EA /* VSConfigurationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */; };
+		00B4B5B415C95E4B00AAC4B8 /* VocabularySishu.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00B4B5B315C95E4B00AAC4B8 /* VocabularySishu.sqlite */; };
 		00C42FDB15BAEEB1006FF95E /* retina-CellBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C42FD815BAEEB1006FF95E /* retina-CellBG.png */; };
 		00C42FDC15BAEEB1006FF95E /* retina-CellSummary.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C42FD915BAEEB1006FF95E /* retina-CellSummary.png */; };
 		00C42FDD15BAEEB1006FF95E /* retina-ListBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C42FDA15BAEEB1006FF95E /* retina-ListBG.png */; };
@@ -188,6 +189,7 @@
 		00AE80EE158B1318000CE7EA /* VSConfigurationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSConfigurationViewController.h; path = ViewController/ConfigurationView/VSConfigurationViewController.h; sourceTree = "<group>"; };
 		00AE80EF158B1318000CE7EA /* VSConfigurationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSConfigurationViewController.m; path = ViewController/ConfigurationView/VSConfigurationViewController.m; sourceTree = "<group>"; };
 		00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSConfigurationViewController.xib; path = ViewController/ConfigurationView/VSConfigurationViewController.xib; sourceTree = "<group>"; };
+		00B4B5B315C95E4B00AAC4B8 /* VocabularySishu.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = VocabularySishu.sqlite; path = Resources/Data/VocabularySishu.sqlite; sourceTree = "<group>"; };
 		00C42FD815BAEEB1006FF95E /* retina-CellBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-CellBG.png"; path = "Resources/Img/retina-CellBG.png"; sourceTree = "<group>"; };
 		00C42FD915BAEEB1006FF95E /* retina-CellSummary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-CellSummary.png"; path = "Resources/Img/retina-CellSummary.png"; sourceTree = "<group>"; };
 		00C42FDA15BAEEB1006FF95E /* retina-ListBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-ListBG.png"; path = "Resources/Img/retina-ListBG.png"; sourceTree = "<group>"; };
@@ -197,7 +199,6 @@
 		00C42FE815BB096F006FF95E /* VSSummaryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSSummaryView.m; path = ViewController/VocabularyListView/VSSummaryView.m; sourceTree = "<group>"; };
 		00C4300015BBFC44006FF95E /* VSVocabulary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSVocabulary.m; path = Model/VSVocabulary.m; sourceTree = "<group>"; };
 		00C4300215BBFD2E006FF95E /* VSVocabulary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSVocabulary.h; path = Model/VSVocabulary.h; sourceTree = "<group>"; };
-		00C4300315BC3D9D006FF95E /* VocabularySishu.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = VocabularySishu.sqlite; path = Resources/Data/VocabularySishu.sqlite; sourceTree = "<group>"; };
 		00D6778715AD542E00EF152D /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		00D6779015ADD03900EF152D /* DDFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDFileReader.h; path = Utils/DDFileReader.h; sourceTree = "<group>"; };
 		00D6779115ADD03900EF152D /* DDFileReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDFileReader.m; path = Utils/DDFileReader.m; sourceTree = "<group>"; };
@@ -401,7 +402,7 @@
 		0073A68115689DA900B80422 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				00C4300315BC3D9D006FF95E /* VocabularySishu.sqlite */,
+				00B4B5B315C95E4B00AAC4B8 /* VocabularySishu.sqlite */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -595,6 +596,7 @@
 				0029087E15BF882C00568B41 /* retina-CellClear.png in Resources */,
 				0078168A15C3A8F700CE5026 /* retina-Restart.png in Resources */,
 				0078168D15C3AA0100CE5026 /* retina-Restart-Highlight.png in Resources */,
+				00B4B5B415C95E4B00AAC4B8 /* VocabularySishu.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

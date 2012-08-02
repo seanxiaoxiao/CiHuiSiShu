@@ -13,7 +13,9 @@
 
 @interface VSConfigurationViewController : UITableViewController
 
-@property (nonatomic, assign)int selectedListIndex;
-@property (nonatomic, retain)NSMutableArray *listSelectRecords;
+@property (nonatomic, assign) int selectedListIndex;
+@property (nonatomic, assign) int selectedRepoIndex;
+@property (nonatomic, retain) NSMutableArray *listSelectRecords;
+@property (nonatomic, retain) VSRepository *selectedRepo;
 
 @end

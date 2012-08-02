@@ -25,6 +25,10 @@
 
 - (void)finishThisRound;
 
+- (NSArray *)orderedList;
+
+- (VSList *)firstListInRepo;
+
 @end
 
 @interface VSRepository (CoreDataGeneratedAccessors)

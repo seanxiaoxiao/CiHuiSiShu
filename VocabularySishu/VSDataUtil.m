@@ -116,8 +116,7 @@ NSMutableDictionary *vocabularyMap;
         vocabulary.audioLink = [vocabularyInfo objectForKey:@"audioLink"];
         vocabulary.summary = [vocabularyInfo objectForKey:@"summary"];
         vocabulary.meet = [NSNumber numberWithInt:0];
-        vocabulary.forget = [NSNumber numberWithInt:0];
-        vocabulary.remember = [NSNumber numberWithInt:0];
+        vocabulary.remember = [NSNumber numberWithInt:100];
         [vocabularyMap setValue:vocabulary forKey:vocabulary.spell];
     }
     [VSUtils saveEntity];

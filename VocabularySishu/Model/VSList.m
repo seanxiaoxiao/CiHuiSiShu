@@ -38,7 +38,6 @@
         return [results objectAtIndex:0];
     }
     else {
-        NSLog(@"New here");
         VSList *listForToday = [NSEntityDescription insertNewObjectForEntityForName:@"VSList" inManagedObjectContext:[VSUtils currentMOContext]];
         NSCalendar *nowCalendar = [NSCalendar currentCalendar];
         NSDateComponents *nowComponents = [nowCalendar components:(NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:today];
@@ -101,7 +100,6 @@
     NSPredicate *isHistoryPredicate = [NSPredicate predicateWithFormat:@"(type = 1)"];
     [listRequest setPredicate:isHistoryPredicate];
     NSArray *tempResult = [[VSUtils currentMOContext] executeFetchRequest:listRequest error:&error];
-    NSLog(@"Temp result count is %d", [tempResult count]);
     NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:[tempResult count]];
     for (VSList *list in tempResult) {
         if ([list.listVocabularies count] > 0) {
@@ -309,7 +307,6 @@
 
 - (BOOL)isFirst
 {
-    NSLog(@"Order %@", self.order);
     return [self.order intValue] == 1;
 }
 
