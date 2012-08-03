@@ -201,7 +201,7 @@
     }
     cell.highlighted = NO;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-
+    
     return cell;
 }
 
@@ -249,10 +249,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    VSVocabulary *selectedVocabulary = ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:indexPath.row]).vocabulary;
-    VSVocabularyViewController *detailViewController = [[VSVocabularyViewController alloc] initWithNibName:@"VSVocabularyViewController" bundle:nil];
-    detailViewController.vocabulary = selectedVocabulary;
-    [self.navigationController pushViewController:detailViewController animated:YES];
+    VSVocabularyCell* cell = (VSVocabularyCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+    if (cell.curlUp) {
+        VSVocabulary *selectedVocabulary = ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:indexPath.row]).vocabulary;
+        VSVocabularyViewController *detailViewController = [[VSVocabularyViewController alloc] initWithNibName:@"VSVocabularyViewController" bundle:nil];
+        detailViewController.vocabulary = selectedVocabulary;
+        [self.navigationController pushViewController:detailViewController animated:YES];
+    }
 }
 
 #pragma mark - Navigation Related
@@ -326,7 +329,7 @@
     }
     else {
         if (draggedCell.curlUp && !draggedCell.curling && !draggedCell.clearing && translation.x > 0) {
-            [draggedCell dragSummary:point.x - 60];
+            [draggedCell dragSummary:point.x - 80];
         }
         else if (!draggedCell.curlUp && !draggedCell.curling && !draggedCell.clearing && translation.x < 0) {
             [draggedCell dragSummary:point.x];
@@ -378,7 +381,7 @@
         self.rememberCount++;
         [self upgradeProgress];
         [reviewPlan rememberVocabulary:rememberedVocabulary.vocabulary];
-        [vocabulariesToRecite removeObjectAtIndex:draggedIndex];
+        [vocabulariesToRecite removeObjectAtIndex:index];
         [self updateVocabularyTable:index];
     }
 }

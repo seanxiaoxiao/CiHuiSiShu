@@ -59,13 +59,20 @@
         self.vocabularyContainerView.clipsToBounds = YES;
         [self.contentView addSubview:self.vocabularyContainerView];
 
-        self.summaryLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 6, 300, self.frame.size.height)];
+        self.summaryLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 6, 280, self.frame.size.height)];
         self.summaryLabel.text = self.vocabulary.summary;
+        self.summaryLabel.textColor = [UIColor blackColor];
+        self.summaryLabel.alpha = 0.7f;
+        self.summaryLabel.font = [UIFont fontWithName:@"Verdana" size:14];
+        self.summaryLabel.shadowOffset = CGSizeMake(0, 1);
+        self.summaryLabel.shadowColor = [UIColor whiteColor];
+        self.summaryLabel.minimumFontSize = 10;
+        
         self.summaryLabel.backgroundColor = [UIColor clearColor];
         [self.summaryLabel setTextAlignment:UITextAlignmentCenter];
 
         self.summaryLabel.bounds = CGRectMake(0, 0, 300, VOCAVULARY_CELL_HEIGHT);
-        
+
         self.summaryContainerView.clipsToBounds = YES;
         [self.summaryContainerView addSubview:self.summaryLabel];
         self.summaryContainerView.backgroundColor = [UIColor clearColor];
@@ -133,10 +140,12 @@
         [curlUpTimer invalidate];
         self.curling = NO;
         self.curlUp = YES;
+        self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     if (lastGestureX > 260) {
         [curlUpTimer invalidate];
         self.curling = NO;
+        self.accessoryType = UITableViewCellAccessoryNone;
     }
 }
 
@@ -155,12 +164,14 @@
         [self dragSummary:-180];
         [curlUpTimer invalidate];
         self.curling = NO;
+        self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 
     }
     if (lastGestureX > 260) {
         [curlUpTimer invalidate];
         self.curlUp = NO;
         self.curling = NO;
+        self.accessoryType = UITableViewCellAccessoryNone;
     }
 }
 
@@ -191,7 +202,7 @@
         tapeTailImage.frame = CGRectMake(tailX, 1, 41, 56);
         self.vocabularyContainerView.frame = CGRectMake(0, 0, gestureX + 20, VOCAVULARY_CELL_HEIGHT);
         self.summaryContainerView.frame = CGRectMake(gestureX + 30, 0, 290 - gestureX, VOCAVULARY_CELL_HEIGHT);
-        self.summaryLabel.frame = CGRectMake(-gestureX - 30, 0, 300, VOCAVULARY_CELL_HEIGHT);
+        self.summaryLabel.frame = CGRectMake(-gestureX - 10, 0, 280, VOCAVULARY_CELL_HEIGHT);
     }
 }
 
