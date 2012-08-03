@@ -172,7 +172,7 @@
     return [self.type intValue] == 1;
 }
 
-- (float)finishProgress
+- (double)finishProgress
 {
     int rememberedCount = 0;
     for (VSListVocabulary *listVocabulay in self.listVocabularies) {
@@ -180,7 +180,7 @@
             rememberedCount++;
         }
     }
-    return (float)(rememberedCount) / (float)([self.listVocabularies count]);
+    return (double)(rememberedCount) / (double)([self.listVocabularies count]);
 }
 
 - (int)rememberedCount

@@ -49,6 +49,9 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = self.currentList.name;
+        self.headerView = [[VSVocabularyListHeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
+        self.tableView.tableHeaderView = headerView;
+        [self.headerView updateProgress:[self.currentList finishProgress]];
         self.vocabulariesToRecite = [NSMutableArray arrayWithArray:[self.currentList vocabulariesToRecite]];
         if ([self.vocabulariesToRecite count] == 0) {
             [self.tableView removeFromSuperview];
@@ -66,8 +69,6 @@
         }
         else {
             self.reviewPlan = [VSReviewPlan getPlan];
-            self.headerView = [[VSVocabularyListHeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
-            self.tableView.tableHeaderView = headerView;
             if (![currentList isHistoryList]) {
                 self.listToday = [VSList createAndGetHistoryList];
             }
@@ -388,7 +389,7 @@
 
 - (void)upgradeProgress
 {
-    CGFloat progress = (CGFloat)self.rememberCount / (CGFloat)self.countInList;
+    [self.headerView updateProgress:[self.currentList finishProgress]];
 }
 
 - (void)updateVocabularyTable:(int)index

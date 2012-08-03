@@ -59,15 +59,15 @@
         self.vocabularyContainerView.clipsToBounds = YES;
         [self.contentView addSubview:self.vocabularyContainerView];
 
-        self.summaryLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 6, 280, self.frame.size.height)];
+        self.summaryLabel = [[UILabel alloc] initWithFrame:CGRectMake(35, 6, 250, self.frame.size.height)];
         self.summaryLabel.text = self.vocabulary.summary;
         self.summaryLabel.textColor = [UIColor blackColor];
-        self.summaryLabel.alpha = 0.7f;
+        self.summaryLabel.alpha = 0.9f;
         self.summaryLabel.font = [UIFont fontWithName:@"Verdana" size:14];
         self.summaryLabel.shadowOffset = CGSizeMake(0, 1);
         self.summaryLabel.shadowColor = [UIColor whiteColor];
-        self.summaryLabel.minimumFontSize = 10;
-        
+        self.summaryLabel.minimumFontSize = 12;
+        self.summaryLabel.adjustsFontSizeToFitWidth = YES;
         self.summaryLabel.backgroundColor = [UIColor clearColor];
         [self.summaryLabel setTextAlignment:UITextAlignmentCenter];
 
@@ -202,7 +202,7 @@
         tapeTailImage.frame = CGRectMake(tailX, 1, 41, 56);
         self.vocabularyContainerView.frame = CGRectMake(0, 0, gestureX + 20, VOCAVULARY_CELL_HEIGHT);
         self.summaryContainerView.frame = CGRectMake(gestureX + 30, 0, 290 - gestureX, VOCAVULARY_CELL_HEIGHT);
-        self.summaryLabel.frame = CGRectMake(-gestureX - 10, 0, 280, VOCAVULARY_CELL_HEIGHT);
+        self.summaryLabel.frame = CGRectMake(-gestureX + 15, 0, 250, VOCAVULARY_CELL_HEIGHT);
     }
 }
 

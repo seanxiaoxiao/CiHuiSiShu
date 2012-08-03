@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00032B2015CC18BC008FDF9F /* retina-Navigation.png in Resources */ = {isa = PBXBuildFile; fileRef = 0081184A15BEFDDE0022B515 /* retina-Navigation.png */; };
+		00032B2415CC1B36008FDF9F /* retina-PenBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2215CC1B36008FDF9F /* retina-PenBG.png */; };
+		00032B2515CC1B36008FDF9F /* retina-PenFG.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2315CC1B36008FDF9F /* retina-PenFG.png */; };
+		00032B2715CC1D87008FDF9F /* retina-InkHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2615CC1D87008FDF9F /* retina-InkHeader.png */; };
+		00032B2915CC1E49008FDF9F /* retina-InkNeck.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2815CC1E49008FDF9F /* retina-InkNeck.png */; };
+		00032B2B15CC1FB4008FDF9F /* retina-InkBody.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2A15CC1FB4008FDF9F /* retina-InkBody.png */; };
+		00032B2D15CC208F008FDF9F /* retina-InkFooter.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2C15CC208F008FDF9F /* retina-InkFooter.png */; };
 		0024B9DE1593562C001698C3 /* abacus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0024B9DD1593562C001698C3 /* abacus.jpg */; };
 		0029087915BF0AA800568B41 /* retina-Previous.png in Resources */ = {isa = PBXBuildFile; fileRef = 0029087815BF0AA800568B41 /* retina-Previous.png */; };
 		0029087C15BF0B4500568B41 /* retina-Next.png in Resources */ = {isa = PBXBuildFile; fileRef = 0029087B15BF0B4500568B41 /* retina-Next.png */; };
@@ -111,6 +118,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00032B2215CC1B36008FDF9F /* retina-PenBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-PenBG.png"; path = "Resources/Img/retina-PenBG.png"; sourceTree = "<group>"; };
+		00032B2315CC1B36008FDF9F /* retina-PenFG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-PenFG.png"; path = "Resources/Img/retina-PenFG.png"; sourceTree = "<group>"; };
+		00032B2615CC1D87008FDF9F /* retina-InkHeader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-InkHeader.png"; path = "Resources/Img/retina-InkHeader.png"; sourceTree = "<group>"; };
+		00032B2815CC1E49008FDF9F /* retina-InkNeck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-InkNeck.png"; path = "Resources/Img/retina-InkNeck.png"; sourceTree = "<group>"; };
+		00032B2A15CC1FB4008FDF9F /* retina-InkBody.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-InkBody.png"; path = "Resources/Img/retina-InkBody.png"; sourceTree = "<group>"; };
+		00032B2C15CC208F008FDF9F /* retina-InkFooter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-InkFooter.png"; path = "Resources/Img/retina-InkFooter.png"; sourceTree = "<group>"; };
 		0024B9DD1593562C001698C3 /* abacus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = abacus.jpg; path = Resources/VocabularyImg/abacus.jpg; sourceTree = "<group>"; };
 		0029087815BF0AA800568B41 /* retina-Previous.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-Previous.png"; path = "Resources/Img/retina-Previous.png"; sourceTree = "<group>"; };
 		0029087B15BF0B4500568B41 /* retina-Next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-Next.png"; path = "Resources/Img/retina-Next.png"; sourceTree = "<group>"; };
@@ -503,9 +516,15 @@
 			isa = PBXGroup;
 			children = (
 				009BB48815CAC448008E5B2B /* retina-TapeBody.png */,
+				00032B2C15CC208F008FDF9F /* retina-InkFooter.png */,
 				009BB48915CAC448008E5B2B /* retina-TapeTail.png */,
 				009BB48A15CAC448008E5B2B /* retina-TapeHead.png */,
+				00032B2815CC1E49008FDF9F /* retina-InkNeck.png */,
+				00032B2215CC1B36008FDF9F /* retina-PenBG.png */,
+				00032B2315CC1B36008FDF9F /* retina-PenFG.png */,
 				009BB48E15CAC760008E5B2B /* retina-CellLine.png */,
+				00032B2A15CC1FB4008FDF9F /* retina-InkBody.png */,
+				00032B2615CC1D87008FDF9F /* retina-InkHeader.png */,
 				0078168C15C3AA0100CE5026 /* retina-Restart-Highlight.png */,
 				0078168915C3A8F700CE5026 /* retina-Restart.png */,
 				0029087B15BF0B4500568B41 /* retina-Next.png */,
@@ -601,9 +620,11 @@
 				0046409315591FD1007E5FA9 /* VSVocabularyViewController.xib in Resources */,
 				0073A6BF156A5FF700B80422 /* VSVocabularyListViewController.xib in Resources */,
 				00A006F9156B3BDF00D24418 /* Meaning.html in Resources */,
+				00032B2015CC18BC008FDF9F /* retina-Navigation.png in Resources */,
 				00A00706156D361E00D24418 /* back-button.png in Resources */,
 				00A00707156D361E00D24418 /* retina-back-button.png in Resources */,
 				00AE80F2158B1318000CE7EA /* VSConfigurationViewController.xib in Resources */,
+				00032B2915CC1E49008FDF9F /* retina-InkNeck.png in Resources */,
 				0024B9DE1593562C001698C3 /* abacus.jpg in Resources */,
 				00C42FDB15BAEEB1006FF95E /* retina-CellBG.png in Resources */,
 				00C42FDC15BAEEB1006FF95E /* retina-CellSummary.png in Resources */,
@@ -618,6 +639,11 @@
 				009BB48C15CAC448008E5B2B /* retina-TapeTail.png in Resources */,
 				009BB48D15CAC448008E5B2B /* retina-TapeHead.png in Resources */,
 				009BB48F15CAC760008E5B2B /* retina-CellLine.png in Resources */,
+				00032B2415CC1B36008FDF9F /* retina-PenBG.png in Resources */,
+				00032B2515CC1B36008FDF9F /* retina-PenFG.png in Resources */,
+				00032B2715CC1D87008FDF9F /* retina-InkHeader.png in Resources */,
+				00032B2B15CC1FB4008FDF9F /* retina-InkBody.png in Resources */,
+				00032B2D15CC208F008FDF9F /* retina-InkFooter.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

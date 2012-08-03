@@ -41,7 +41,7 @@
 
 + (VSList *)firstList;
 
-- (float)finishProgress;
+- (double)finishProgress;
 
 - (int)rememberedCount;
 
