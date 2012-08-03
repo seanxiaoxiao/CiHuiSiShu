@@ -45,6 +45,11 @@
 		0078168D15C3AA0100CE5026 /* retina-Restart-Highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 0078168C15C3AA0100CE5026 /* retina-Restart-Highlight.png */; };
 		009A870015A1A82900F7869D /* NSMutableArrayShuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = 009A86FF15A1A82900F7869D /* NSMutableArrayShuffling.m */; };
 		009AFBFB1588982300293F6A /* VSAlertDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 009AFBFA1588982300293F6A /* VSAlertDelegate.m */; };
+		009BB48615CAAFF2008E5B2B /* VSVocabularyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 009BB48515CAAFF2008E5B2B /* VSVocabularyCell.m */; };
+		009BB48B15CAC448008E5B2B /* retina-TapeBody.png in Resources */ = {isa = PBXBuildFile; fileRef = 009BB48815CAC448008E5B2B /* retina-TapeBody.png */; };
+		009BB48C15CAC448008E5B2B /* retina-TapeTail.png in Resources */ = {isa = PBXBuildFile; fileRef = 009BB48915CAC448008E5B2B /* retina-TapeTail.png */; };
+		009BB48D15CAC448008E5B2B /* retina-TapeHead.png in Resources */ = {isa = PBXBuildFile; fileRef = 009BB48A15CAC448008E5B2B /* retina-TapeHead.png */; };
+		009BB48F15CAC760008E5B2B /* retina-CellLine.png in Resources */ = {isa = PBXBuildFile; fileRef = 009BB48E15CAC760008E5B2B /* retina-CellLine.png */; };
 		00A006F9156B3BDF00D24418 /* Meaning.html in Resources */ = {isa = PBXBuildFile; fileRef = 00A006F8156B3BDF00D24418 /* Meaning.html */; };
 		00A006FC156B3D6D00D24418 /* VSConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A006FB156B3D6D00D24418 /* VSConstant.m */; };
 		00A00703156D15F200D24418 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A00702156D15F200D24418 /* QuartzCore.framework */; };
@@ -163,6 +168,12 @@
 		009A86FF15A1A82900F7869D /* NSMutableArrayShuffling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSMutableArrayShuffling.m; path = Utils/NSMutableArrayShuffling.m; sourceTree = "<group>"; };
 		009AFBF91588982300293F6A /* VSAlertDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSAlertDelegate.h; path = Utils/VSAlertDelegate.h; sourceTree = "<group>"; };
 		009AFBFA1588982300293F6A /* VSAlertDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSAlertDelegate.m; path = Utils/VSAlertDelegate.m; sourceTree = "<group>"; };
+		009BB48415CAAFF2008E5B2B /* VSVocabularyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSVocabularyCell.h; path = ViewController/VocabularyListView/VSVocabularyCell.h; sourceTree = "<group>"; };
+		009BB48515CAAFF2008E5B2B /* VSVocabularyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSVocabularyCell.m; path = ViewController/VocabularyListView/VSVocabularyCell.m; sourceTree = "<group>"; };
+		009BB48815CAC448008E5B2B /* retina-TapeBody.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-TapeBody.png"; path = "Resources/Img/retina-TapeBody.png"; sourceTree = "<group>"; };
+		009BB48915CAC448008E5B2B /* retina-TapeTail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-TapeTail.png"; path = "Resources/Img/retina-TapeTail.png"; sourceTree = "<group>"; };
+		009BB48A15CAC448008E5B2B /* retina-TapeHead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-TapeHead.png"; path = "Resources/Img/retina-TapeHead.png"; sourceTree = "<group>"; };
+		009BB48E15CAC760008E5B2B /* retina-CellLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-CellLine.png"; path = "Resources/Img/retina-CellLine.png"; sourceTree = "<group>"; };
 		00A006F8156B3BDF00D24418 /* Meaning.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = Meaning.html; path = Resources/Template/Meaning.html; sourceTree = "<group>"; };
 		00A006FA156B3D6D00D24418 /* VSConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSConstant.h; path = Utils/VSConstant.h; sourceTree = "<group>"; };
 		00A006FB156B3D6D00D24418 /* VSConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSConstant.m; path = Utils/VSConstant.m; sourceTree = "<group>"; };
@@ -448,6 +459,8 @@
 				00A00731156F7FEE00D24418 /* VSVocabularyListHeaderView.m */,
 				00C42FE715BB096F006FF95E /* VSSummaryView.h */,
 				00C42FE815BB096F006FF95E /* VSSummaryView.m */,
+				009BB48415CAAFF2008E5B2B /* VSVocabularyCell.h */,
+				009BB48515CAAFF2008E5B2B /* VSVocabularyCell.m */,
 			);
 			name = VocabularyListView;
 			sourceTree = "<group>";
@@ -489,6 +502,10 @@
 		00B5A8BE1566886E00D20EB6 /* Img */ = {
 			isa = PBXGroup;
 			children = (
+				009BB48815CAC448008E5B2B /* retina-TapeBody.png */,
+				009BB48915CAC448008E5B2B /* retina-TapeTail.png */,
+				009BB48A15CAC448008E5B2B /* retina-TapeHead.png */,
+				009BB48E15CAC760008E5B2B /* retina-CellLine.png */,
 				0078168C15C3AA0100CE5026 /* retina-Restart-Highlight.png */,
 				0078168915C3A8F700CE5026 /* retina-Restart.png */,
 				0029087B15BF0B4500568B41 /* retina-Next.png */,
@@ -597,6 +614,10 @@
 				0078168A15C3A8F700CE5026 /* retina-Restart.png in Resources */,
 				0078168D15C3AA0100CE5026 /* retina-Restart-Highlight.png in Resources */,
 				00B4B5B415C95E4B00AAC4B8 /* VocabularySishu.sqlite in Resources */,
+				009BB48B15CAC448008E5B2B /* retina-TapeBody.png in Resources */,
+				009BB48C15CAC448008E5B2B /* retina-TapeTail.png in Resources */,
+				009BB48D15CAC448008E5B2B /* retina-TapeHead.png in Resources */,
+				009BB48F15CAC760008E5B2B /* retina-CellLine.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -676,6 +697,7 @@
 				00C42FE315BAFBC6006FF95E /* VSMeaningView.m in Sources */,
 				00C42FE915BB096F006FF95E /* VSSummaryView.m in Sources */,
 				00C4300115BBFC44006FF95E /* VSVocabulary.m in Sources */,
+				009BB48615CAAFF2008E5B2B /* VSVocabularyCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

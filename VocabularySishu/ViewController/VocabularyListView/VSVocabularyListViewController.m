@@ -23,7 +23,6 @@
 @synthesize vocabulariesToRecite;
 @synthesize headerView;
 @synthesize listToday;
-@synthesize meaningCellHeight;
 @synthesize summaryView;
 @synthesize touchPoint;
 @synthesize draggedCell;
@@ -35,7 +34,6 @@
 @synthesize alertWhenFinish;
 @synthesize alertDelegate;
 @synthesize reviewPlan;
-@synthesize clearView;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -83,8 +81,8 @@
         
             self.tableView.backgroundView = backgroundImageView;
         
-            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(postLoadingMeaningView:) name:FINISH_LOADING_MEANING_NOTIFICATION object:nil];
             [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showDetailView) name:SHOW_DETAIL_VIEW object:nil];
+            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clearVocabulary:) name:CLEAR_VOCABULRY object:nil];
 
             __autoreleasing UIGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanning:)];
             panGesture.delegate = self;
@@ -163,7 +161,6 @@
     self.draggedCell = nil;
     self.alertWhenFinish = nil;
     self.alertDelegate = nil;
-    self.clearView = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -182,7 +179,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 59;
+    return VOCAVULARY_CELL_HEIGHT;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -198,31 +195,13 @@
     NSString *CellIdentifier = listVocabulary.vocabulary.spell;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [VSVocabularyCell alloc];
+        ((VSVocabularyCell *)cell).vocabulary = listVocabulary.vocabulary;
+        cell = [cell initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    cell.textLabel.text = listVocabulary.vocabulary.spell;
-    [cell.textLabel setTextAlignment:UITextAlignmentCenter];
-    cell.textLabel.backgroundColor = [UIColor clearColor];
-    cell.textLabel.textColor = [UIColor blackColor];
-    cell.textLabel.alpha = 0.7f;
-    cell.textLabel.font = [UIFont fontWithName:@"Verdana" size:18];
-    cell.textLabel.shadowOffset = CGSizeMake(0, 1);
-    cell.textLabel.shadowColor = [UIColor whiteColor];
-    
-    UIImageView *cellBackgroundView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"CellBG"]];
-    cellBackgroundView.center = cell.center;
-    cell.backgroundView = cellBackgroundView;
-    
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.highlighted = NO;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
-    CGRect summaryFrame = CGRectMake(320, 0, 320, cell.frame.size.height);    
-    summaryView = [VSSummaryView alloc];
-    summaryView.vocabulary = ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:indexPath.row]).vocabulary;
-    summaryView = [summaryView initWithFrame:summaryFrame];
-    
-    [cell addSubview:summaryView];
     return cell;
 }
 
@@ -315,10 +294,6 @@
         case UIGestureRecognizerStateEnded:
             [self stopDragging:gestureRecognizer];
             break;
-        case UIGestureRecognizerStateCancelled:
-            break;
-        case UIGestureRecognizerStateFailed:
-            break;
         default:
             break;
     }
@@ -330,51 +305,32 @@
     self.touchPoint = point;
     if ([self.tableView pointInside:point withEvent:nil]) {
         NSIndexPath* indexPath = [self.tableView indexPathForRowAtPoint:point];
-        UITableViewCell* cell = [self.tableView cellForRowAtIndexPath:indexPath];
-        if(cell != nil)
-        {
+        VSVocabularyCell* cell = (VSVocabularyCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+        if(cell != nil) {
             draggedCell = cell;
             draggedIndex = indexPath.row;
         }
-        BOOL dragged = ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:draggedIndex]).dragged;
         CGPoint translation = [gestureRecognizer translationInView:draggedCell];
-        if (!dragged && translation.x > 0) {
-            if (clearView != nil) {
-                [clearView removeFromSuperview];
-                clearView = nil;
-            }
-            UIImage *clearImage = [VSUtils fetchImg:@"CellClear"];
-            clearView = [[UIImageView alloc] initWithImage:clearImage];
-            clearView.hidden = YES;
-            [draggedCell.textLabel addSubview:clearView];            
-            clearView.clipsToBounds = YES;
+        if (!cell.curlUp && !draggedCell.curling && translation.x > 0 && !draggedCell.clearing) {
+            [cell showClearView];
         }
     }
 }
 
 - (void)doDrag:(UIPanGestureRecognizer *)gestureRecognizer
 {
+    CGPoint point = [gestureRecognizer locationInView:self.tableView];
     CGPoint translation = [gestureRecognizer translationInView:draggedCell];
-    CGPoint cellCenter = draggedCell.center;
-    CGFloat margin = translation.x;
-    CGPoint newCenter = cellCenter;
-        
-    newCenter.x = 160 + margin;
-    BOOL dragged = ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:draggedIndex]).dragged;
-    if (!dragged && clearView != nil) {
-        CGPoint clearCenter = clearView.center;
-        clearCenter.x = margin - 100;
-        clearView.hidden = NO;
-        [clearView setCenter:clearCenter];
+    if (!draggedCell.curlUp && draggedCell.clearShow && !draggedCell.clearing) {
+        [draggedCell moveClearView:point.x];
     }
     else {
-        if (dragged) {
-            newCenter.x -= 320;
+        if (draggedCell.curlUp && !draggedCell.curling && !draggedCell.clearing && translation.x > 0) {
+            [draggedCell dragSummary:point.x - 60];
         }
-        if (fabs(newCenter.x) > 160) {
-            newCenter.x = newCenter.x / fabs(newCenter.x) * 160;
+        else if (!draggedCell.curlUp && !draggedCell.curling && !draggedCell.clearing && translation.x < 0) {
+            [draggedCell dragSummary:point.x];
         }
-        [draggedCell setCenter:newCenter];
     }
 }
 
@@ -382,81 +338,49 @@
 - (void)stopDragging:(UIPanGestureRecognizer *)gestureRecognizer
 {
     if (draggedCell != nil) {
-        CGPoint origin = draggedCell.frame.origin;
+        CGPoint point = [gestureRecognizer locationInView:self.tableView];
         CGPoint translation = [gestureRecognizer translationInView:draggedCell];
-        CGFloat margin = translation.x;
-        CGFloat targetX = 0;
-
-        BOOL dragged = ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:draggedIndex]).dragged;
-        if (!dragged && fabs(margin) > 120) {
-            targetX = margin / fabs(margin) * 320;
-        }
         
-        if (clearView != nil && !dragged && translation.x > 0) {
-            [UIView animateWithDuration:0.5f 
-                delay:0.0f 
-                options:UIViewAnimationCurveLinear 
-                animations:^{
-                    CGPoint center = clearView.center;
-                    center.x = draggedCell.center.x;
-                    [clearView setCenter:center];
-                }
-                completion:^(BOOL finished) {
-                    if (finished == YES) {
-                        [self clearVocabulary];
-                        [self updateVocabularyTable];
-                    }
-                }
-            ];
+        if (draggedCell.clearShow && !draggedCell.curlUp && !draggedCell.clearing) {
+            CGFloat margin = translation.x;
+            BOOL clear = fabs(margin) > 120;
+            [draggedCell clearVocabulry:clear];
         }
-        else {
-            [UIView animateWithDuration:0.5f 
-                delay:0.0f 
-                options:UIViewAnimationCurveLinear 
-                animations:^{
-                    [draggedCell setFrame:CGRectMake(targetX, origin.y, draggedCell.frame.size.width, draggedCell.frame.size.height)];
-                }
-                completion:^(BOOL finished) {
-                    if (finished == YES) {
-                        CGFloat cellCenterX = draggedCell.center.x;
-                        VSVocabulary *vocabulary = ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:draggedIndex]).vocabulary;
-                        if (dragged && cellCenterX == 160) {
-                            ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:draggedIndex]).dragged = NO;
-                            [vocabulary finishSummary];
-                        }
-                        else if (!dragged && cellCenterX == -160) {
-                            ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:draggedIndex]).dragged = YES;
-                        }
-                    }
-                }
-            ];
+        else if (!draggedCell.curlUp && !draggedCell.clearing && translation.x < 0) {
+            [draggedCell curlUp:point.x];
+        }
+        else if (draggedCell.curlUp && !draggedCell.clearing && translation.x > 0) {
+            [draggedCell curlDown:point.x - 60];
         }
     }
 }
 
 #pragma mark - Notification
 
-- (void)postLoadingMeaningView:(id)object
+- (void)clearVocabulary:(NSNotification *)notification
 {
-    NSIndexPath *selectedIndexPath = [NSIndexPath indexPathForRow:selectedIndex inSection:0];
-    NSIndexPath *meaningCellIndexPath = [NSIndexPath indexPathForRow:(selectedIndex + 1) inSection:0];
-    [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:meaningCellIndexPath] withRowAnimation:UITableViewRowAnimationFade];
-    [self.tableView scrollToRowAtIndexPath:selectedIndexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
-}
-
-
-- (void)clearVocabulary
-{
-    VSListVocabulary *rememberedVocabulary = [vocabulariesToRecite objectAtIndex:draggedIndex];
-    [rememberedVocabulary remembered];
-    [rememberedVocabulary.vocabulary remembered];
-    if (![self.currentList isHistoryList]) {
-        [self.listToday addVocabulary:rememberedVocabulary.vocabulary];
+    @synchronized(self) {
+        int index = -1;
+        VSVocabulary *vocabulary = [notification.userInfo objectForKey:@"vocabulary"];
+        for (int i = 0 ; i < [self.vocabulariesToRecite count]; i++) {
+            VSListVocabulary *listVocabulary = [self.vocabulariesToRecite objectAtIndex:i];
+            if ([listVocabulary.vocabulary isEqual:vocabulary]) {
+                index = i;
+                break;
+            }
+        }
+        VSListVocabulary *rememberedVocabulary = [vocabulariesToRecite objectAtIndex:index];
+        [rememberedVocabulary remembered];
+        [rememberedVocabulary.vocabulary remembered];
+        if (![self.currentList isHistoryList]) {
+            [self.listToday addVocabulary:rememberedVocabulary.vocabulary];
+        }
+        self.rememberCount++;
+        [self upgradeProgress];
+        [reviewPlan rememberVocabulary:rememberedVocabulary.vocabulary];
+        [vocabulariesToRecite removeObjectAtIndex:draggedIndex];
+        [self updateVocabularyTable:index];
     }
-    self.rememberCount++;
-    [self upgradeProgress];
-    [reviewPlan rememberVocabulary:rememberedVocabulary.vocabulary];
-    [vocabulariesToRecite removeObjectAtIndex:draggedIndex];
 }
 
 - (void)upgradeProgress
@@ -464,10 +388,10 @@
     CGFloat progress = (CGFloat)self.rememberCount / (CGFloat)self.countInList;
 }
 
-- (void)updateVocabularyTable
+- (void)updateVocabularyTable:(int)index
 {
     [self.tableView beginUpdates];
-    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:touchPoint];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
     [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     if ([self.vocabulariesToRecite count] > 5) {
         NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:5 inSection:0];

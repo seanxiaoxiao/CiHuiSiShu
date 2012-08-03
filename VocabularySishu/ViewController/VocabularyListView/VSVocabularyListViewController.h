@@ -15,6 +15,7 @@
 #import "VSAlertDelegate.h"
 #import "VSReviewPlan.h"
 #import "VSSummaryView.h"
+#import "VSVocabularyCell.h"
 
 @class VSAlertDelegate;
 
@@ -24,7 +25,6 @@
 @property (nonatomic, strong) VSVocabularyListHeaderView *headerView;
 @property (nonatomic, retain) VSList *listToday;
 @property (nonatomic, retain) VSList *currentList;
-@property (nonatomic, assign) CGFloat meaningCellHeight;
 @property (nonatomic, assign) CGPoint touchPoint;
 @property (nonatomic, assign) int draggedIndex;
 @property (nonatomic, assign) int countInList;
@@ -34,7 +34,6 @@
 @property (nonatomic, strong) UIAlertView *alertWhenFinish;
 @property (nonatomic, retain) VSAlertDelegate *alertDelegate;
 @property (nonatomic, retain) VSReviewPlan *reviewPlan;
-@property (nonatomic, strong) UITableViewCell *draggedCell;
-@property (nonatomic, strong) UIImageView *clearView;
+@property (nonatomic, strong) VSVocabularyCell *draggedCell;
 
 @end
