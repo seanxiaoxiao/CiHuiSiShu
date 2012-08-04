@@ -70,9 +70,14 @@
 - (void) updateProgress:(double)progress
 {
     double margin = progress * 200;
-    self.inkNeck.frame = CGRectMake(inkHeadImage.size.width, 20, inkNeckImage.size.width + margin, inkNeckImage.size.height);
-    self.inkBody.frame = CGRectMake(inkNeckImage.size.width + inkHeadImage.size.width + margin, 20, inkBodyImage.size.width, inkBodyImage.size.height);
-    self.inkFooter.frame = CGRectMake(inkNeckImage.size.width + inkHeadImage.size.width + margin + inkBodyImage.size.width, 20, 200 - margin, inkBodyImage.size.height);
+    [UIView animateWithDuration:0.1f delay:0.0f options:UIViewAnimationCurveLinear 
+        animations:^{
+            self.inkNeck.frame = CGRectMake(inkHeadImage.size.width, 20, inkNeckImage.size.width + margin, inkNeckImage.size.height);
+            self.inkBody.frame = CGRectMake(inkNeckImage.size.width + inkHeadImage.size.width + margin, 20, inkBodyImage.size.width, inkBodyImage.size.height);
+            self.inkFooter.frame = CGRectMake(inkNeckImage.size.width + inkHeadImage.size.width + margin + inkBodyImage.size.width, 20, 200 - margin, inkBodyImage.size.height);
+        }
+        completion:^(BOOL finished) {
+        }];
 }
 
 @end
