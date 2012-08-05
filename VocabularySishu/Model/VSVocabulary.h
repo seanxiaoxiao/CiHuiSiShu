@@ -34,11 +34,9 @@
 
 - (void)finishSummary;
 
+- (void)seeSummary;
+
 - (void)play;
-
-- (NSString *)meetTimes;
-
-- (NSString *)rememberedTimes;
 
 - (NSString *)forgotTimes;
 

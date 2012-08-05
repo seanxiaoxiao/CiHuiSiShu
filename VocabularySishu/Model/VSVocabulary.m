@@ -28,24 +28,26 @@
 - (void)remembered
 {
     double meet = [self.meet doubleValue];
-    double incr = 10 * pow(M_E, meet / (meet + 6));
+    double incr = 12 * pow(M_E, meet / (meet + 6));
     self.remember = [NSNumber numberWithDouble:[self.remember doubleValue] + incr];
     if ([self.remember doubleValue] > 100) {
         self.remember = [NSNumber numberWithDouble:100];
     }
     self.meet = [NSNumber numberWithInt:[self.meet intValue] + 1];
     [VSUtils saveEntity];
+    NSLog(@"Remember %@, meet %@, incr is %f, now remember is %@", self.meet, self.spell, incr, self.remember);
 }
 
 - (void)forgot
 {
     double meet = [self.meet doubleValue];
-    double decr = 60 * pow(M_E, (-3 * meet) / (meet + 1) - 3 * self.seeSummaryTimes);
+    double decr = 40 * pow(M_E, (-3 * meet) / (meet + 1) - 3 * self.seeSummaryTimes);
     self.remember = [NSNumber numberWithDouble:[self.remember doubleValue] - decr];
     if ([self.remember doubleValue] < 0) {
         self.remember = [NSNumber numberWithDouble:0];
     }
     [VSUtils saveEntity];
+    NSLog(@"Forget %@, meet %@, decr is %f, now remember is %@", self.meet, self.spell, decr, self.remember);
     self.seeSummaryTimes += 1;
     self.seeSummaryStart = [[NSDate alloc] init];
 }
@@ -53,22 +55,18 @@
 - (void)finishSummary
 {
     NSTimeInterval elapse = -[self.seeSummaryStart timeIntervalSinceNow];
-    double decr = 8 / self.seeSummaryTimes * pow(M_E, elapse / 10);
+    double decr = 4 / self.seeSummaryTimes * pow(M_E, elapse / 10);
     self.remember = [NSNumber numberWithDouble:[self.remember doubleValue] - decr];
     if ([self.remember doubleValue] < 0) {
         self.remember = [NSNumber numberWithDouble:0];
     }
+    NSLog(@"Finish Summary %@, meet %@, decr is %f, now remember is %@", self.meet, self.spell, decr, self.remember);
     [VSUtils saveEntity];
 }
 
-- (NSString *)meetTimes
+- (void)seeSummary
 {
-    return [self.meet description];
-}
-
-- (NSString *)rememberedTimes
-{
-    return [self.remember description];
+    self.seeSummaryStart = [[NSDate alloc] init];
 }
 
 - (BOOL)cannotRememberWell

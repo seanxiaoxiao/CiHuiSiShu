@@ -10,7 +10,7 @@
 
 @implementation VSVocabularyCell
 
-@synthesize vocabulary;
+@synthesize _vocabulary;
 @synthesize vocabularyLabel;
 @synthesize summaryLabel;
 @synthesize vocabularyContainerView;
@@ -27,6 +27,7 @@
 @synthesize curling;
 @synthesize clearShow;
 @synthesize clearContainer;
+@synthesize cellAccessoryImage;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -41,10 +42,8 @@
         self.clearContainer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, VOCAVULARY_CELL_HEIGHT)];
         self.clearContainer.clipsToBounds = YES;
         [self.clearContainer addSubview:self.clearImage];
-        [self.contentView addSubview:self.clearContainer];
 
-        self.vocabularyLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 6, 300, self.frame.size.height)];
-        self.vocabularyLabel.text = self.vocabulary.spell;
+        self.vocabularyLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 6.5, 300, self.frame.size.height)];
         [self.vocabularyLabel setTextAlignment:UITextAlignmentCenter];
         self.vocabularyLabel.backgroundColor = [UIColor clearColor];
         self.vocabularyLabel.textColor = [UIColor blackColor];
@@ -59,13 +58,12 @@
         self.vocabularyContainerView.clipsToBounds = YES;
         [self.contentView addSubview:self.vocabularyContainerView];
 
-        self.summaryLabel = [[UILabel alloc] initWithFrame:CGRectMake(35, 6, 250, self.frame.size.height)];
-        self.summaryLabel.text = self.vocabulary.summary;
+        self.summaryLabel = [[UILabel alloc] initWithFrame:CGRectMake(35, 6.5, 250, self.frame.size.height)];
         self.summaryLabel.textColor = [UIColor blackColor];
         self.summaryLabel.alpha = 0.9f;
-        self.summaryLabel.font = [UIFont fontWithName:@"Verdana" size:14];
+        self.summaryLabel.font = [UIFont fontWithName:@"Verdana" size:16];
         self.summaryLabel.shadowOffset = CGSizeMake(0, 1);
-        self.summaryLabel.shadowColor = [UIColor whiteColor];
+        self.summaryLabel.shadowColor = [UIColor colorWithWhite:1 alpha:0.6];
         self.summaryLabel.minimumFontSize = 12;
         self.summaryLabel.adjustsFontSizeToFitWidth = YES;
         self.summaryLabel.backgroundColor = [UIColor clearColor];
@@ -78,11 +76,20 @@
         self.summaryContainerView.backgroundColor = [UIColor clearColor];
         [self.contentView addSubview:self.summaryContainerView];
         [self.contentView sendSubviewToBack:self.summaryContainerView];
+        [self.contentView addSubview:self.clearContainer];
 
         UIImageView *backgroundImage = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"CellBG"]];
         [self.contentView addSubview:backgroundImage];
         [self.contentView sendSubviewToBack:backgroundImage];
 
+        cellAccessoryImage = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"CellAccessory"]];
+        CGRect frame = cellAccessoryImage.frame;
+        frame.origin.x = 320 - 30;
+        frame.origin.y = 20;
+        cellAccessoryImage.frame = frame;
+        cellAccessoryImage.hidden = YES;
+        [self.contentView addSubview:self.cellAccessoryImage];
+        
         tapeHeadImage = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"TapeHead"]];
         tapeBodyImage = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"TapeBody"]];
         tapeTailImage = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"TapeTail"]];
@@ -94,8 +101,17 @@
         tapeTailImage.hidden = YES;
         tapeHeadImage.hidden = YES;
         tapeBodyImage.hidden = YES;
+
     }
     return self;
+}
+
+
+- (void) initWithVocabulary:(VSVocabulary *)vocabulary
+{
+    self._vocabulary = vocabulary;
+    self.vocabularyLabel.text = self._vocabulary.spell;
+    self.summaryLabel.text = self._vocabulary.summary;
 }
 
 - (void) clearVocabulry:(BOOL)clear
@@ -111,7 +127,7 @@
             self.clearShow = NO;
             if (finished == YES && clear) {
                 NSMutableDictionary *orientationData = [[NSMutableDictionary alloc] init];
-                [orientationData setValue:self.vocabulary forKey:@"vocabulary"];
+                [orientationData setValue:self._vocabulary forKey:@"vocabulary"];
                 NSNotification *notification = [NSNotification notificationWithName:CLEAR_VOCABULRY object:nil userInfo:orientationData];
                 [[NSNotificationCenter defaultCenter] postNotification:notification];
             }
@@ -121,6 +137,9 @@
 - (void) curlUp:(CGFloat)gestureX
 {
     lastGestureX = gestureX;
+    if (curlUpTimer != nil) {
+        curlUpTimer = nil;
+    }
     curlUpTimer = [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(doCurlUp) userInfo:nil repeats:YES];
 }
 
@@ -138,14 +157,18 @@
     if (lastGestureX < - 180) {
         [self dragSummary:-180];
         [curlUpTimer invalidate];
+        curlUpTimer = nil;
         self.curling = NO;
         self.curlUp = YES;
-        self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        self.cellAccessoryImage.hidden = NO;
+        [self._vocabulary forgot];
+        [self._vocabulary seeSummaryStart];
     }
     if (lastGestureX > 260) {
         [curlUpTimer invalidate];
+        curlUpTimer = nil;
+        self.cellAccessoryImage.hidden = YES;
         self.curling = NO;
-        self.accessoryType = UITableViewCellAccessoryNone;
     }
 }
 
@@ -163,15 +186,17 @@
     if (lastGestureX < - 180) {
         [self dragSummary:-180];
         [curlUpTimer invalidate];
+        curlUpTimer = nil;
         self.curling = NO;
-        self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-
+        self.cellAccessoryImage.hidden = NO;
     }
     if (lastGestureX > 260) {
         [curlUpTimer invalidate];
+        curlUpTimer = nil;
+        self.cellAccessoryImage.hidden = YES;
         self.curlUp = NO;
         self.curling = NO;
-        self.accessoryType = UITableViewCellAccessoryNone;
+        [self._vocabulary finishSummary];
     }
 }
 
@@ -216,10 +241,19 @@
     self.clearContainer.frame = CGRectMake(0, 0, gestureX, VOCAVULARY_CELL_HEIGHT);
 }
 
+- (void) prepareForReuse
+{
+    [super prepareForReuse];
+    self.curlUp = NO;
+    self.curling = NO;
+    self.clearing = NO;
+    self.clearShow = NO;
+    self.clearContainer.frame = CGRectMake(0, 0, 0, VOCAVULARY_CELL_HEIGHT);
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
-
     // Configure the view for the selected state
 }
 

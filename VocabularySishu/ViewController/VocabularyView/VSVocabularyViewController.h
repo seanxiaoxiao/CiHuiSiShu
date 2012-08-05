@@ -23,11 +23,9 @@
     IBOutlet UIButton *playButton;
     IBOutlet UILabel *imageLabel;
     IBOutlet UIImageView *vocabularyImageView;
-    IBOutlet UILabel *translationLabel;
-    IBOutlet UILabel *translationContentLabel;
     IBOutlet UILabel *mwLabel;
-    IBOutlet UILabel *mwContentLabel;
     IBOutlet UIScrollView *scrollView;
+    IBOutlet UIImageView *backgroundImage;
 }
 
 @property (nonatomic, strong) UILabel *vocabularyLabel;
@@ -40,11 +38,9 @@
 @property (nonatomic, strong) UILabel *imageLabel;
 @property (nonatomic, strong) UIImageView *vocabularyImageView;
 @property (nonatomic, strong) UIScrollView *scrollView;
-@property (nonatomic, strong) UILabel *translationLabel;
-@property (nonatomic, strong) UILabel *translationContentLabel;
 @property (nonatomic, strong) UILabel *mwLabel;
-@property (nonatomic, strong) UILabel *mwContentLabel;
 @property (nonatomic, retain) AVAudioPlayer *audioPlayer;
+@property (nonatomic, strong) UIImageView *backgroundImage;
 
 - (IBAction)play:(id)sender;
 

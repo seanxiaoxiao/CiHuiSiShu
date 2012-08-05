@@ -29,7 +29,6 @@
 @synthesize countInList;
 @synthesize rememberCount;
 @synthesize selectedIndex;
-@synthesize draggedIndex;
 @synthesize currentList;
 @synthesize alertWhenFinish;
 @synthesize alertDelegate;
@@ -193,16 +192,15 @@
 {
     int vocabularyIndex = indexPath.row;
     VSListVocabulary *listVocabulary = [vocabulariesToRecite objectAtIndex:vocabularyIndex];
-    NSString *CellIdentifier = listVocabulary.vocabulary.spell;
+    NSString *CellIdentifier = @"VocabularyCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [VSVocabularyCell alloc];
-        ((VSVocabularyCell *)cell).vocabulary = listVocabulary.vocabulary;
         cell = [cell initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell.highlighted = NO;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
-    cell.highlighted = NO;
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
+    [((VSVocabularyCell *)cell) initWithVocabulary:listVocabulary.vocabulary];
     return cell;
 }
 
@@ -250,6 +248,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSLog(@"Selected");
     VSVocabularyCell* cell = (VSVocabularyCell *)[self.tableView cellForRowAtIndexPath:indexPath];
     if (cell.curlUp) {
         VSVocabulary *selectedVocabulary = ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:indexPath.row]).vocabulary;
@@ -259,6 +258,7 @@
     }
 }
 
+
 #pragma mark - Navigation Related
 - (void)backToMain
 {
@@ -267,7 +267,6 @@
 
 
 #pragma mark - Gesture Related
-
 
 - (BOOL)gestureRecognizerShouldBegin:(UIPanGestureRecognizer *)gestureRecognizer
 {
@@ -286,8 +285,10 @@
     return NO;
 }
 
+
 - (void)handlePanning:(UIPanGestureRecognizer *)gestureRecognizer
 {
+    gestureRecognizer.cancelsTouchesInView = NO;
     switch ([gestureRecognizer state]) {
         case UIGestureRecognizerStateBegan:
             [self startDragging:gestureRecognizer];
@@ -296,6 +297,9 @@
             [self doDrag:gestureRecognizer];
             break;
         case UIGestureRecognizerStateEnded:
+            [self stopDragging:gestureRecognizer];
+            break;
+        case UIGestureRecognizerStateCancelled:
             [self stopDragging:gestureRecognizer];
             break;
         default:
@@ -312,7 +316,6 @@
         VSVocabularyCell* cell = (VSVocabularyCell *)[self.tableView cellForRowAtIndexPath:indexPath];
         if(cell != nil) {
             draggedCell = cell;
-            draggedIndex = indexPath.row;
         }
         CGPoint translation = [gestureRecognizer translationInView:draggedCell];
         if (!cell.curlUp && !draggedCell.curling && translation.x > 0 && !draggedCell.clearing) {
@@ -380,16 +383,11 @@
             [self.listToday addVocabulary:rememberedVocabulary.vocabulary];
         }
         self.rememberCount++;
-        [self upgradeProgress];
+        [self.headerView updateProgress:[self.currentList finishProgress]];
         [reviewPlan rememberVocabulary:rememberedVocabulary.vocabulary];
         [vocabulariesToRecite removeObjectAtIndex:index];
         [self updateVocabularyTable:index];
     }
-}
-
-- (void)upgradeProgress
-{
-    [self.headerView updateProgress:[self.currentList finishProgress]];
 }
 
 - (void)updateVocabularyTable:(int)index
@@ -399,7 +397,7 @@
     [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     if ([self.vocabulariesToRecite count] > 5) {
         NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:5 inSection:0];
-        [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];    
+        [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
     [self.tableView endUpdates];
 }

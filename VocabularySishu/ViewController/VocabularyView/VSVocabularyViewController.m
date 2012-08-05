@@ -26,17 +26,16 @@
 @synthesize imageLabel;
 @synthesize vocabularyImageView;
 @synthesize scrollView;
-@synthesize translationLabel;
-@synthesize translationContentLabel;
 @synthesize mwLabel;
-@synthesize mwContentLabel;
 @synthesize audioPlayer;
+@synthesize backgroundImage;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
     }
     return self;
 }
@@ -45,89 +44,149 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.title = self.vocabulary.spell; //[context fetchCurrentList].name;
+    [self.view sendSubviewToBack:self.backgroundImage];
+    UIImage* backImage= [VSUtils fetchImg:@"NavBackButton"];
+    CGRect frame = CGRectMake(0, 0, backImage.size.width, backImage.size.height); 
+    UIButton* backButton = [[UIButton alloc] initWithFrame:frame]; 
+    [backButton setBackgroundImage:backImage forState:UIControlStateNormal]; 
+    [backButton addTarget:self action:@selector(backToList) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem* backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton]; 
+    [self.navigationItem setLeftBarButtonItem:backButtonItem];
+
     self.vocabularyLabel.text = self.vocabulary.spell;
-    self.phoneticLabel.text = [NSString stringWithFormat:@"[%@]", self.vocabulary.phonetic];
-    [self.vocabularyLabel sizeToFit];
-    [self.phoneticLabel sizeToFit];
-    
-    int currentHeight = self.scrollView.frame.origin.y - 5;
+    [self.vocabularyLabel setTextAlignment:UITextAlignmentCenter];
+    self.vocabularyLabel.backgroundColor = [UIColor clearColor];
+    self.vocabularyLabel.textColor = [UIColor blackColor];
+    self.vocabularyLabel.alpha = 0.7f;
+    self.vocabularyLabel.font = [UIFont fontWithName:@"Verdana-Bold" size:17];
+    self.vocabularyLabel.shadowOffset = CGSizeMake(0, 1);
+    self.vocabularyLabel.shadowColor = [UIColor whiteColor];
+    if (self.vocabulary.phonetic == nil || [self.vocabulary.phonetic length] == 0) {
+        CGPoint center = self.vocabularyLabel.center;
+        center.x = 160;
+        self.vocabularyLabel.center = center;
+        self.phoneticLabel.hidden = YES;
+    }
+    else {
+        self.phoneticLabel.text = [NSString stringWithFormat:@"[%@]", self.vocabulary.phonetic];
+        [self.phoneticLabel setTextAlignment:UITextAlignmentCenter];
+        self.phoneticLabel.backgroundColor = [UIColor clearColor];
+        self.phoneticLabel.textColor = [UIColor blackColor];
+        self.phoneticLabel.alpha = 0.7f;
+        self.phoneticLabel.font = [UIFont fontWithName:@"Verdana" size:17];
+        self.phoneticLabel.shadowOffset = CGSizeMake(0, 1);
+        self.phoneticLabel.shadowColor = [UIColor whiteColor];
+    }
+    int currentHeight = 13;
     if ([self.vocabulary.meanings count] > 0) {
-        self.translationLabel.hidden = NO;
-        self.translationContentLabel.hidden = NO;
-        CGRect frame = self.translationLabel.frame;
-        frame.origin.y = currentHeight;
-        self.translationLabel.frame = frame;
-        currentHeight = currentHeight + frame.size.height + 5;
-        NSMutableString *translation = [NSMutableString stringWithString:@""];
+        currentHeight = currentHeight + 5;
+        NSString *lastAttr = [NSString stringWithString:@""];
+        int countInAttr = 0;
         for (VSMeaning *meaning in [self.vocabulary orderedMeanings]) {
-            [translation appendString:meaning.attribute];
-            [translation appendString:@" "];
-            [translation appendString:meaning.meaning];
-            [translation appendString:@"\n"];
+            if (![lastAttr isEqualToString:meaning.attribute]) {
+                countInAttr = 1;
+                UILabel *attrLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, currentHeight, 145, 20)];
+                lastAttr = meaning.attribute;
+                NSRange range = [meaning.attribute rangeOfString:@"（"];
+                attrLabel.text = range.location != NSNotFound ? [meaning.attribute substringToIndex:range.location] : meaning.attribute;
+                attrLabel.backgroundColor = [UIColor clearColor];
+                attrLabel.shadowOffset = CGSizeMake(0, 1);
+                attrLabel.shadowColor = [UIColor colorWithWhite:1 alpha:0.6];
+                currentHeight += 25;
+                [self.scrollView addSubview:attrLabel];
+            }
+            UILabel *countLabel = [[UILabel alloc] initWithFrame:CGRectMake(1, currentHeight - 4, 30, 30)];
+            countLabel.font = [UIFont fontWithName:@"Arial-BoldMT" size:18];
+            countLabel.text = [NSString stringWithFormat:@"%d", countInAttr];
+            countLabel.backgroundColor = [UIColor clearColor];
+            countLabel.textAlignment = UITextAlignmentRight;
+            countLabel.alpha = 0.8;
+            countLabel.shadowOffset = CGSizeMake(0, 1);
+            countLabel.shadowColor = [UIColor colorWithWhite:1 alpha:0.6];
+            [self.scrollView addSubview:countLabel];
+            UILabel *meaningLabel = [[UILabel alloc] initWithFrame:CGRectMake(38, currentHeight, 262, 30)];
+            meaningLabel.text = meaning.meaning;
+            meaningLabel.numberOfLines = 0;
+            meaningLabel.lineBreakMode = UILineBreakModeCharacterWrap;            
+            [meaningLabel sizeToFit];
+            meaningLabel.backgroundColor = [UIColor clearColor];
+            meaningLabel.shadowOffset = CGSizeMake(0, 1);
+            meaningLabel.shadowColor = [UIColor colorWithWhite:1 alpha:0.6];
+            [self.scrollView addSubview:meaningLabel];
+            currentHeight = currentHeight + meaningLabel.frame.size.height + 10;
+            countInAttr++;
         }
-        self.translationContentLabel.text = translation;
-        [self.translationContentLabel sizeToFit];
-        frame = self.translationContentLabel.frame;
-        frame.origin.y = currentHeight;
-        self.translationContentLabel.frame = frame;
-        currentHeight = currentHeight + frame.size.height + 5;
     }
     
-    UIImage *image = [self.vocabulary vocabularyImage];
-    if (image != nil) {
-        self.imageLabel.hidden = NO;
-        self.vocabularyImageView.hidden = NO;
-        CGRect frame = self.imageLabel.frame;
-        frame.origin.y = currentHeight;
-        self.imageLabel.frame = frame;
-        currentHeight = currentHeight + frame.size.height + 5;
-        [self.vocabularyImageView setImage:image];
-        [self.vocabularyImageView sizeToFit];
-        frame = self.vocabularyImageView.frame;
-        frame.origin.y = currentHeight;
-        self.vocabularyImageView.frame = frame;
-        currentHeight = currentHeight + frame.size.height + 5;
-    }
+    currentHeight = currentHeight;
     
     if ([self.vocabulary.websterMeanings count] > 0) {
         self.mwLabel.hidden = NO;
-        self.mwContentLabel.hidden = NO;
         CGRect frame = self.mwLabel.frame;
-        frame.origin.y = currentHeight;
+        frame.origin.y = currentHeight + 10;
         self.mwLabel.frame = frame;
-        currentHeight = currentHeight + frame.size.height + 5;
-        NSMutableString *mwContent = [NSMutableString stringWithString:@""];
+        currentHeight = currentHeight + frame.size.height + 20;
+        NSString *lastAttr = [NSString stringWithString:@""];
+        int countInAttr = 0;
         for (VSWebsterMeaning *meaning in [self.vocabulary orderedWMMeanings]) {
-            __autoreleasing NSString *meaningString = [NSString stringWithFormat:@"%@. %@\n", meaning.attribute, meaning.meaning];
-            [mwContent appendString:meaningString];
-            meaningString = nil;
+            if (![lastAttr isEqualToString:meaning.attribute]) {
+                countInAttr = 1;
+                UILabel *attrLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, currentHeight, 145, 20)];
+                lastAttr = meaning.attribute;
+                attrLabel.text = [NSString stringWithFormat:@"%@.", meaning.attribute];
+                attrLabel.backgroundColor = [UIColor clearColor];
+                attrLabel.font = [UIFont fontWithName:@"Arial" size:18];
+                attrLabel.backgroundColor = [UIColor clearColor];
+                attrLabel.shadowOffset = CGSizeMake(0, 1);
+                attrLabel.shadowColor = [UIColor colorWithWhite:1 alpha:0.6];
+                currentHeight += 25;
+                [self.scrollView addSubview:attrLabel];
+            }
+            UILabel *countLabel = [[UILabel alloc] initWithFrame:CGRectMake(1, currentHeight - 4, 30, 30)];
+            countLabel.font = [UIFont fontWithName:@"Arial-BoldMT" size:18];
+            countLabel.text = [NSString stringWithFormat:@"%d", countInAttr];
+            countLabel.backgroundColor = [UIColor clearColor];
+            countLabel.textAlignment = UITextAlignmentRight;
+            countLabel.alpha = 0.8;
+            countLabel.shadowOffset = CGSizeMake(0, 1);
+            countLabel.shadowColor = [UIColor colorWithWhite:1 alpha:0.6];
+            [self.scrollView addSubview:countLabel];
+            UILabel *meaningLabel = [[UILabel alloc] initWithFrame:CGRectMake(38, currentHeight, 262, 30)];
+            meaningLabel.text = meaning.meaning;
+            meaningLabel.numberOfLines = 0;
+            meaningLabel.lineBreakMode = UILineBreakModeCharacterWrap;
+            [meaningLabel sizeToFit];
+            meaningLabel.backgroundColor = [UIColor clearColor];
+            meaningLabel.lineBreakMode = UILineBreakModeWordWrap;
+            meaningLabel.shadowOffset = CGSizeMake(0, 1);
+            meaningLabel.shadowColor = [UIColor colorWithWhite:1 alpha:0.6];
+            [self.scrollView addSubview:meaningLabel];
+            currentHeight = currentHeight + meaningLabel.frame.size.height + 10;
+            countInAttr++;
         }
-        self.mwContentLabel.text = mwContent;
-        [self.mwContentLabel sizeToFit];
-        frame = self.mwContentLabel.frame;
-        frame.origin.y = currentHeight;
-        self.mwContentLabel.frame = frame;
-        currentHeight = currentHeight + frame.size.height + 5;
     }
     
-    if (self.vocabulary.etymology) {
+    if (self.vocabulary.etymology != nil && [self.vocabulary.etymology length] > 0) {
         self.etymologyLabel.hidden = NO;
-        self.etymologyContentLabel.hidden = NO;
         CGRect frame = self.etymologyLabel.frame;
         frame.origin.y = currentHeight;
         self.etymologyLabel.frame = frame;
-        currentHeight = currentHeight + frame.size.height + 5;
+        self.etymologyContentLabel.hidden = NO;
         self.etymologyContentLabel.text = self.vocabulary.etymology;
         [self.etymologyContentLabel sizeToFit];
         frame = self.etymologyContentLabel.frame;
-        frame.origin.y = currentHeight;
+        frame.origin.y = currentHeight + 35;
         self.etymologyContentLabel.frame = frame;
-        currentHeight = currentHeight + frame.size.height + 5;
+        self.etymologyContentLabel.lineBreakMode = UILineBreakModeWordWrap;
+        self.etymologyContentLabel.shadowOffset = CGSizeMake(0, 1);
+        self.etymologyContentLabel.shadowColor = [UIColor colorWithWhite:1 alpha:0.6];
+
+        currentHeight = currentHeight + frame.size.height + 35;
     }
     
     self.scrollView.scrollEnabled = YES;
-    self.scrollView.contentSize = CGSizeMake(320, currentHeight + 5);
+    self.scrollView.contentSize = CGSizeMake(320, currentHeight + 20);
     
     if ([self.vocabulary hasAudioLink]) {
         self.playButton.hidden = NO;
@@ -158,10 +217,8 @@
     self.vocabularyImageView = nil;
     self.scrollView = nil;
     self.etymologyContentLabel = nil;
-    self.translationLabel = nil;
-    self.translationContentLabel = nil;
     self.mwLabel = nil;
-    self.mwContentLabel = nil;
+    self.backgroundImage = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -181,6 +238,10 @@
     [audioPlayer play];
 }
 
+- (void)backToList
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 
 @end

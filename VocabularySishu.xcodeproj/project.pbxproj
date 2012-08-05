@@ -25,6 +25,10 @@
 		0046409115591DBD007E5FA9 /* VSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046409015591DBD007E5FA9 /* VSUtils.m */; };
 		0046409215591DBD007E5FA9 /* VSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046409015591DBD007E5FA9 /* VSUtils.m */; };
 		0046409315591FD1007E5FA9 /* VSVocabularyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408115590E0B007E5FA9 /* VSVocabularyViewController.xib */; };
+		005F7E9A15CD298F00932B93 /* retina-NavBackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 005F7E9915CD298F00932B93 /* retina-NavBackButton.png */; };
+		005F7E9D15CD84CD00932B93 /* retina-DetailsHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = 005F7E9B15CD84CD00932B93 /* retina-DetailsHeader.png */; };
+		005F7E9E15CD84CD00932B93 /* retina-DetailsBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 005F7E9C15CD84CD00932B93 /* retina-DetailsBG.png */; };
+		005F7EA015CD959100932B93 /* retina-CellAccessory.png in Resources */ = {isa = PBXBuildFile; fileRef = 005F7E9F15CD959100932B93 /* retina-CellAccessory.png */; };
 		00701E301553CBCE00D30018 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00701E2F1553CBCE00D30018 /* UIKit.framework */; };
 		00701E321553CBCE00D30018 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00701E311553CBCE00D30018 /* Foundation.framework */; };
 		00701E341553CBCE00D30018 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00701E331553CBCE00D30018 /* CoreGraphics.framework */; };
@@ -136,6 +140,10 @@
 		0046408C155916FA007E5FA9 /* VSMainMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSMainMenuViewController.xib; path = ViewController/MainView/VSMainMenuViewController.xib; sourceTree = "<group>"; };
 		0046408F15591DBD007E5FA9 /* VSUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSUtils.h; path = Utils/VSUtils.h; sourceTree = "<group>"; };
 		0046409015591DBD007E5FA9 /* VSUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSUtils.m; path = Utils/VSUtils.m; sourceTree = "<group>"; };
+		005F7E9915CD298F00932B93 /* retina-NavBackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-NavBackButton.png"; path = "../../../Downloads/retina-NavBackButton.png"; sourceTree = "<group>"; };
+		005F7E9B15CD84CD00932B93 /* retina-DetailsHeader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-DetailsHeader.png"; path = "Resources/Img/retina-DetailsHeader.png"; sourceTree = "<group>"; };
+		005F7E9C15CD84CD00932B93 /* retina-DetailsBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-DetailsBG.png"; path = "Resources/Img/retina-DetailsBG.png"; sourceTree = "<group>"; };
+		005F7E9F15CD959100932B93 /* retina-CellAccessory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-CellAccessory.png"; path = "Resources/Img/retina-CellAccessory.png"; sourceTree = "<group>"; };
 		00701E2B1553CBCE00D30018 /* VocabularySishu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VocabularySishu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00701E2F1553CBCE00D30018 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		00701E311553CBCE00D30018 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -515,12 +523,16 @@
 		00B5A8BE1566886E00D20EB6 /* Img */ = {
 			isa = PBXGroup;
 			children = (
+				005F7E9915CD298F00932B93 /* retina-NavBackButton.png */,
 				009BB48815CAC448008E5B2B /* retina-TapeBody.png */,
 				00032B2C15CC208F008FDF9F /* retina-InkFooter.png */,
 				009BB48915CAC448008E5B2B /* retina-TapeTail.png */,
 				009BB48A15CAC448008E5B2B /* retina-TapeHead.png */,
+				005F7E9F15CD959100932B93 /* retina-CellAccessory.png */,
 				00032B2815CC1E49008FDF9F /* retina-InkNeck.png */,
 				00032B2215CC1B36008FDF9F /* retina-PenBG.png */,
+				005F7E9B15CD84CD00932B93 /* retina-DetailsHeader.png */,
+				005F7E9C15CD84CD00932B93 /* retina-DetailsBG.png */,
 				00032B2315CC1B36008FDF9F /* retina-PenFG.png */,
 				009BB48E15CAC760008E5B2B /* retina-CellLine.png */,
 				00032B2A15CC1FB4008FDF9F /* retina-InkBody.png */,
@@ -644,6 +656,10 @@
 				00032B2515CC1B36008FDF9F /* retina-PenFG.png in Resources */,
 				00032B2715CC1D87008FDF9F /* retina-InkHeader.png in Resources */,
 				00032B2D15CC208F008FDF9F /* retina-InkFooter.png in Resources */,
+				005F7E9A15CD298F00932B93 /* retina-NavBackButton.png in Resources */,
+				005F7E9D15CD84CD00932B93 /* retina-DetailsHeader.png in Resources */,
+				005F7E9E15CD84CD00932B93 /* retina-DetailsBG.png in Resources */,
+				005F7EA015CD959100932B93 /* retina-CellAccessory.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -825,7 +841,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
 				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -847,7 +863,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
 				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "56416541-0D03-44A4-867C-B5CD2311C6F9";

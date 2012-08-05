@@ -13,7 +13,7 @@
 
 @interface VSVocabularyCell : UITableViewCell
 
-@property (nonatomic, retain) VSVocabulary *vocabulary;
+@property (nonatomic, retain) VSVocabulary *_vocabulary;
 @property (nonatomic, retain) UILabel *vocabularyLabel;
 @property (nonatomic, retain) UILabel *summaryLabel;
 @property (nonatomic, retain) UIView *vocabularyContainerView;
@@ -23,6 +23,7 @@
 @property (nonatomic, retain) UIImageView *tapeBodyImage;
 @property (nonatomic, retain) UIImageView *tapeTailImage;
 @property (nonatomic, retain) UIImageView *lineImage;
+@property (nonatomic, retain) UIImageView *cellAccessoryImage;
 @property (nonatomic, retain) UIView *clearContainer;
 @property (nonatomic, assign) BOOL curlUp;
 @property (nonatomic, assign) BOOL curling;
@@ -40,6 +41,8 @@
 - (void) curlDown:(CGFloat)gestureX;
 
 - (void) showClearView;
+
+- (void) initWithVocabulary:(VSVocabulary *)vocabulary;
 
 - (void) moveClearView:(CGFloat)gestureX;
 
