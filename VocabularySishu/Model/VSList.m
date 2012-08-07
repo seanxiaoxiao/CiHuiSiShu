@@ -271,6 +271,7 @@
 {
     for (VSListVocabulary *listVocabualry in self.listVocabularies) {
         listVocabualry.lastStatus = [VSConstant VOCABULARY_LIST_STATUS_NEW];
+        listVocabualry.lastRememberStatus = nil;
     }
     [VSUtils saveEntity];
 }
@@ -312,7 +313,7 @@
 {
     int rememberCount = 0;
     for (VSListVocabulary *listVocabulay in self.listVocabularies) {
-        if ([[VSConstant VOCABULARY_LIST_STATUS_REMEMBERED] isEqualToNumber:listVocabulay.lastStatus]) {
+        if (listVocabulay.lastRememberStatus != nil && [[VSConstant REMEMBER_STATUS_GOOD] isEqualToNumber:listVocabulay.lastRememberStatus]) {
             rememberCount++;
         }
     }

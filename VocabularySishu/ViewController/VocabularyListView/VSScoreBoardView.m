@@ -46,7 +46,9 @@
         [self.retryButton setTitle:@"重新背诵" forState:UIControlStateNormal];
         [self.retryButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [self.retryButton addTarget:self action:@selector(retry) forControlEvents:UIControlEventTouchUpInside];
-        self.retryButton.titleLabel.font = [UIFont boldSystemFontOfSize:16];
+        self.retryButton.titleLabel.font = [UIFont boldSystemFontOfSize:15];
+        self.retryButton.titleLabel.shadowOffset = CGSizeMake(0, -1);
+        self.retryButton.titleLabel.shadowColor = [UIColor blackColor];
         
         self.nextButton = [[UIButton alloc] initWithFrame:CGRectMake(120, 165, normalButtonImage.size.width, normalButtonImage.size.height)];
         [self.nextButton setBackgroundImage:normalButtonImage forState:UIControlStateNormal];
@@ -54,7 +56,9 @@
         [self.nextButton setTitle:@"下个列表" forState:UIControlStateNormal];
         [self.nextButton addTarget:self action:@selector(next) forControlEvents:UIControlEventTouchUpInside];
         [self.nextButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        self.nextButton.titleLabel.font = [UIFont boldSystemFontOfSize:16];
+        self.nextButton.titleLabel.font = [UIFont boldSystemFontOfSize:15];
+        self.nextButton.titleLabel.shadowOffset = CGSizeMake(0, -1);
+        self.nextButton.titleLabel.shadowColor = [UIColor blackColor];
         
         self.finishLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 75, 70, 30)];
         self.finishLabel.textAlignment = UITextAlignmentLeft;
@@ -62,6 +66,10 @@
         self.finishLabel.text = @"完成度";
         self.finishLabel.font = [UIFont boldSystemFontOfSize:18];
         self.finishLabel.textColor = [UIColor whiteColor];
+        self.finishLabel.alpha = 0.9;
+        self.finishLabel.shadowOffset = CGSizeMake(0, -1);
+        self.finishLabel.shadowColor = [UIColor blackColor];
+
 
         self.notWellLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 115, 70, 30)];
         self.notWellLabel.text = @"不靠谱";
@@ -69,6 +77,9 @@
         self.notWellLabel.backgroundColor = [UIColor clearColor];
         self.notWellLabel.textAlignment = UITextAlignmentLeft;
         self.notWellLabel.textColor = [UIColor whiteColor];
+        self.notWellLabel.alpha = 0.9;
+        self.notWellLabel.shadowOffset = CGSizeMake(0, -1);
+        self.notWellLabel.shadowColor = [UIColor blackColor];
 
         self.finishRateLabel = [[UILabel alloc] initWithFrame:CGRectMake(80, 73, 120, 30)];
         self.finishRateLabel.textAlignment = UITextAlignmentRight;
@@ -76,6 +87,9 @@
         self.finishRateLabel.text = @"-";
         self.finishRateLabel.font = [UIFont fontWithName:@"TrebuchetMS-Bold" size:30];
         self.finishRateLabel.textColor = [UIColor whiteColor];
+        self.finishRateLabel.alpha = 0.9;
+        self.finishRateLabel.shadowOffset = CGSizeMake(0, -1);
+        self.finishRateLabel.shadowColor = [UIColor blackColor];
 
         self.notWellRateLabel = [[UILabel alloc] initWithFrame:CGRectMake(80, 113, 120, 30)];
         self.notWellRateLabel.text = @"-";
@@ -83,6 +97,9 @@
         self.notWellRateLabel.backgroundColor = [UIColor clearColor];
         self.notWellRateLabel.textAlignment = UITextAlignmentRight;
         self.notWellRateLabel.textColor = [UIColor whiteColor];
+        self.notWellRateLabel.alpha = 0.9;
+        self.notWellRateLabel.shadowOffset = CGSizeMake(0, -1);
+        self.notWellRateLabel.shadowColor = [UIColor blackColor];
 
         [self addSubview:finishLabel];
         [self addSubview:notWellLabel];
@@ -117,8 +134,11 @@
     self._list = list;
     self.notRememberWellInList = [self._list notWellRate];
     self.finishProgressInList = [self._list finishProgress];
-    notRememberWellStep = (self.notRememberWellInList) / 25;
-    finishProgressStep = (1 - self.finishProgressInList) / 25;
+    notRememberWellStep = (1.01 - self.notRememberWellInList) / 20;
+    finishProgressStep = (self.finishProgressInList) / 20;
+    if (finishProgressStep == 0) {
+        finishProgressStep = 0.01;
+    }
 
     self.finishProgressTimer = [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(updateFinishProgress) userInfo:nil repeats:YES];
     self.notRememberWellTimer = [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(updateNotRememberWell) userInfo:nil repeats:YES];

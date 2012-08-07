@@ -13,7 +13,6 @@
 #import "VSConstant.h"
 #import "VSList.h"
 #import "VSAlertDelegate.h"
-#import "VSReviewPlan.h"
 #import "VSSummaryView.h"
 #import "VSVocabularyCell.h"
 #import "VSScoreBoardView.h"
@@ -33,8 +32,8 @@
 @property (nonatomic, strong) VSSummaryView *summaryView;
 @property (nonatomic, strong) UIAlertView *alertWhenFinish;
 @property (nonatomic, retain) VSAlertDelegate *alertDelegate;
-@property (nonatomic, retain) VSReviewPlan *reviewPlan;
 @property (nonatomic, strong) VSVocabularyCell *draggedCell;
-@property (nonatomic, retain) VSScoreBoardView *scoreBoardView;
+@property (nonatomic, strong) VSScoreBoardView *scoreBoardView;
+@property (nonatomic, strong) UIView *blockView;
 
 @end
