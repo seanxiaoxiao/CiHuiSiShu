@@ -41,11 +41,9 @@
 
 - (NSString *)forgotTimes;
 
-- (NSDecimalNumber *)rememberRate;
-
 - (UIImage *)vocabularyImage;
 
-- (BOOL)cannotRememberWell;
+- (BOOL)rememberWell;
 
 - (BOOL)hasAudioLink;
 

@@ -26,7 +26,7 @@ static VSReviewPlan *PLAN;
 - (void)rememberVocabulary:(VSVocabulary *)vocabulary;
 {
     [self initReviewList];
-    if ([vocabulary cannotRememberWell]) {
+    if (![vocabulary rememberWell]) {
         [shortTermList addVocabulary:vocabulary];
     }
     else {
@@ -37,7 +37,7 @@ static VSReviewPlan *PLAN;
 - (void)forgetVocabulary:(VSVocabulary *)vocabulary
 {
     [self initReviewList];
-    if (![vocabulary cannotRememberWell]) {
+    if ([vocabulary rememberWell]) {
         [shortTermList addVocabulary:vocabulary];
     }
 }

@@ -18,12 +18,9 @@
 @property (nonatomic, retain) NSNumber * lastRememberStatus;
 @property (nonatomic, retain) VSList *list;
 @property (nonatomic, retain) VSVocabulary *vocabulary;
-@property (nonatomic, assign) BOOL dragged;
 
 + (void)create:(VSList *)theList withVocabulary:(VSVocabulary *)theVocabulary;
 
 - (void)remembered;
-
-- (void)forgot;
 
 @end

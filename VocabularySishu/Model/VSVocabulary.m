@@ -70,20 +70,11 @@
     self.seeSummaryStart = [[NSDate alloc] init];
 }
 
-- (BOOL)cannotRememberWell
+- (BOOL)rememberWell
 {
-    return [self.meet intValue] > 0 && [[self rememberRate] floatValue] <= 0.79;
+    return [self.remember intValue] > 60;
 }
 
-- (NSDecimalNumber *)rememberRate
-{
-    if ([self.meet intValue] == 0) {
-        return [[NSDecimalNumber alloc] initWithFloat:0];
-    }
-    else {
-        return [[NSDecimalNumber alloc] initWithFloat:([self.remember floatValue]/ [self.meet floatValue])];
-    }
-}
 
 - (UIImage *)vocabularyImage
 {

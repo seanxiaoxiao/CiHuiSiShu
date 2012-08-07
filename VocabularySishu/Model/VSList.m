@@ -81,13 +81,11 @@
 
 + (VSList *)firstList
 {
-    
     NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"VSRepository" inManagedObjectContext:[VSUtils currentMOContext]];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     NSSortDescriptor *sortOrderDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
     NSArray *sortDescriptors = [NSArray arrayWithObjects:sortOrderDescriptor, nil];
     [request setEntity:entityDescription];
-    //[request setPredicate:predicate];
     NSError *error = nil;
     NSArray *array = [[VSUtils currentMOContext] executeFetchRequest:request error:&error];
     VSRepository *firstRepo = [[array sortedArrayUsingDescriptors:sortDescriptors] objectAtIndex:0];
@@ -187,28 +185,6 @@
     return (double)(rememberedCount) / (double)([self.listVocabularies count]);
 }
 
-- (int)rememberedCount
-{
-    int rememberedCount = 0;
-    for (VSListVocabulary *listVocabulay in self.listVocabularies) {
-        if ([listVocabulay.lastStatus isEqualToNumber:[VSConstant VOCABULARY_LIST_STATUS_REMEMBERED]]) {
-            rememberedCount++;
-        }
-    }
-    return rememberedCount;
-}
-
-- (int)forgotCount
-{
-    int forgotCount = 0;
-    for (VSListVocabulary *listVocabulay in self.listVocabularies) {
-        if ([listVocabulay.lastStatus isEqualToNumber:[VSConstant VOCABULARY_LIST_STATUS_FORGOT]]) {
-            forgotCount++;
-        }
-    }
-    return forgotCount;    
-}
-
 - (void)process
 {
     __autoreleasing NSError *error = nil;
@@ -258,6 +234,8 @@
 {
     for (VSListVocabulary *listVocabulary in self.listVocabularies) {
         if ([VSUtils vocabularySame:vocabulary with:listVocabulary.vocabulary]) {
+            listVocabulary.lastRememberStatus = [vocabulary rememberWell] ? [VSConstant REMEMBER_STATUS_GOOD] : [VSConstant REMEMBER_STATUS_BAD];
+            [VSUtils saveEntity];
             return;
         }
     }
@@ -317,6 +295,28 @@
 - (BOOL)isLast
 {
     return [self.order intValue] == [[self.repository lists] count];
+}
+
+- (double)notWellRate
+{
+    int notWellCount = 0;
+    for (VSListVocabulary *listVocabulay in self.listVocabularies) {
+        if (![listVocabulay.vocabulary rememberWell]) {
+            notWellCount++;
+        }
+    }
+    return (double)(notWellCount) / (double)([self.listVocabularies count]);
+}
+
+- (double)rememberRate
+{
+    int rememberCount = 0;
+    for (VSListVocabulary *listVocabulay in self.listVocabularies) {
+        if ([[VSConstant VOCABULARY_LIST_STATUS_REMEMBERED] isEqualToNumber:listVocabulay.lastStatus]) {
+            rememberCount++;
+        }
+    }
+    return (double)(rememberCount) / (double)([self.listVocabularies count]);
 }
 
 @end

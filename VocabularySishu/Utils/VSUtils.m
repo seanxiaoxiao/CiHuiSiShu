@@ -119,13 +119,12 @@
         vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
             
         [UIView beginAnimations:nil context:NULL];
-        [UIView setAnimationDelay:0.375];
         [navigationController popViewControllerAnimated:NO];
         [UIView commitAnimations];
             
         [UIView beginAnimations:nil context:NULL];
         [UIView setAnimationCurve:UIViewAnimationTransitionCurlUp];
-        [UIView setAnimationDuration:0.75];
+        [UIView setAnimationDuration:0.5];
         [navigationController pushViewController:vocabularyListViewController animated:NO];
         [UIView setAnimationTransition:UIViewAnimationTransitionCurlUp forView:navigationController.view cache:NO];
         [UIView commitAnimations];
@@ -171,13 +170,13 @@
         vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
         
         [UIView beginAnimations:nil context:NULL];
-        [UIView setAnimationDelay:0.375];
+        [UIView setAnimationDelay:0.4];
         [navigationController popViewControllerAnimated:NO];
         [UIView commitAnimations];
         
         [UIView beginAnimations:nil context:NULL];
         [UIView setAnimationCurve:UIViewAnimationTransitionCurlDown];
-        [UIView setAnimationDuration:0.75];
+        [UIView setAnimationDuration:0.4];
         [navigationController pushViewController:vocabularyListViewController animated:NO];
         [UIView setAnimationTransition:UIViewAnimationTransitionCurlDown forView:navigationController.view cache:NO];
         [UIView commitAnimations];

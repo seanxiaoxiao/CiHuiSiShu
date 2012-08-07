@@ -250,9 +250,27 @@
 		00FF6FE515CFDA0A0043BA91 /* Repos.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FDF15CFDA0A0043BA91 /* Repos.txt */; };
 		00FF6FE715CFDC4B0043BA91 /* Vocabularies.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FE615CFDC4B0043BA91 /* Vocabularies.txt */; };
 		00FF6FE915D0AC940043BA91 /* VocabularySishu.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FE815D0AC940043BA91 /* VocabularySishu.sqlite */; };
-		00FF6FEC15D0AD640043BA91 /* VSStatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF6FEB15D0AD640043BA91 /* VSStatViewController.m */; };
-		00FF6FED15D0AD640043BA91 /* VSStatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF6FEB15D0AD640043BA91 /* VSStatViewController.m */; };
-		00FF6FEE15D0AD640043BA91 /* VSStatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF6FEB15D0AD640043BA91 /* VSStatViewController.m */; };
+		00FF6FF015D0AF1E0043BA91 /* retina-ScoreBoardButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FEF15D0AF1E0043BA91 /* retina-ScoreBoardButton.png */; };
+		00FF6FF115D0AF1E0043BA91 /* retina-ScoreBoardButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FEF15D0AF1E0043BA91 /* retina-ScoreBoardButton.png */; };
+		00FF6FF215D0AF1E0043BA91 /* retina-ScoreBoardButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FEF15D0AF1E0043BA91 /* retina-ScoreBoardButton.png */; };
+		00FF6FFA15D0BACB0043BA91 /* VSScoreBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF6FF915D0BACB0043BA91 /* VSScoreBoardView.m */; };
+		00FF6FFB15D0BACB0043BA91 /* VSScoreBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF6FF915D0BACB0043BA91 /* VSScoreBoardView.m */; };
+		00FF6FFC15D0BACB0043BA91 /* VSScoreBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF6FF915D0BACB0043BA91 /* VSScoreBoardView.m */; };
+		00FF6FFE15D0C2A50043BA91 /* retina-ScoreBoardPopup.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FFD15D0C2A50043BA91 /* retina-ScoreBoardPopup.png */; };
+		00FF6FFF15D0C2A50043BA91 /* retina-ScoreBoardPopup.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FFD15D0C2A50043BA91 /* retina-ScoreBoardPopup.png */; };
+		00FF700015D0C2A50043BA91 /* retina-ScoreBoardPopup.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FFD15D0C2A50043BA91 /* retina-ScoreBoardPopup.png */; };
+		00FF700315D0C4B80043BA91 /* retina-ButtonBT.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF700115D0C4B80043BA91 /* retina-ButtonBT.png */; };
+		00FF700415D0C4B80043BA91 /* retina-ButtonBT.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF700115D0C4B80043BA91 /* retina-ButtonBT.png */; };
+		00FF700515D0C4B80043BA91 /* retina-ButtonBT.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF700115D0C4B80043BA91 /* retina-ButtonBT.png */; };
+		00FF700615D0C4B80043BA91 /* retina-ButtonBTHighLighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF700215D0C4B80043BA91 /* retina-ButtonBTHighLighted.png */; };
+		00FF700715D0C4B80043BA91 /* retina-ButtonBTHighLighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF700215D0C4B80043BA91 /* retina-ButtonBTHighLighted.png */; };
+		00FF700815D0C4B80043BA91 /* retina-ButtonBTHighLighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF700215D0C4B80043BA91 /* retina-ButtonBTHighLighted.png */; };
+		00FF700A15D113220043BA91 /* retina-Star.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF700915D113220043BA91 /* retina-Star.png */; };
+		00FF700B15D113220043BA91 /* retina-Star.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF700915D113220043BA91 /* retina-Star.png */; };
+		00FF700C15D113220043BA91 /* retina-Star.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF700915D113220043BA91 /* retina-Star.png */; };
+		00FF700E15D113880043BA91 /* retina-StarNone.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF700D15D113880043BA91 /* retina-StarNone.png */; };
+		00FF700F15D113880043BA91 /* retina-StarNone.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF700D15D113880043BA91 /* retina-StarNone.png */; };
+		00FF701015D113880043BA91 /* retina-StarNone.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF700D15D113880043BA91 /* retina-StarNone.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -455,8 +473,14 @@
 		00FF6FDF15CFDA0A0043BA91 /* Repos.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Repos.txt; path = Resources/Data/FULL/Repos.txt; sourceTree = "<group>"; };
 		00FF6FE615CFDC4B0043BA91 /* Vocabularies.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Vocabularies.txt; path = Resources/Data/FULL/Vocabularies.txt; sourceTree = "<group>"; };
 		00FF6FE815D0AC940043BA91 /* VocabularySishu.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = VocabularySishu.sqlite; path = Resources/Data/GRE/VocabularySishu.sqlite; sourceTree = "<group>"; };
-		00FF6FEA15D0AD640043BA91 /* VSStatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSStatViewController.h; path = ViewController/VocabularyListView/VSStatViewController.h; sourceTree = "<group>"; };
-		00FF6FEB15D0AD640043BA91 /* VSStatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSStatViewController.m; path = ViewController/VocabularyListView/VSStatViewController.m; sourceTree = "<group>"; };
+		00FF6FEF15D0AF1E0043BA91 /* retina-ScoreBoardButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-ScoreBoardButton.png"; path = "Resources/Img/retina-ScoreBoardButton.png"; sourceTree = "<group>"; };
+		00FF6FF815D0BACA0043BA91 /* VSScoreBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSScoreBoardView.h; path = ViewController/VocabularyListView/VSScoreBoardView.h; sourceTree = "<group>"; };
+		00FF6FF915D0BACB0043BA91 /* VSScoreBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSScoreBoardView.m; path = ViewController/VocabularyListView/VSScoreBoardView.m; sourceTree = "<group>"; };
+		00FF6FFD15D0C2A50043BA91 /* retina-ScoreBoardPopup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-ScoreBoardPopup.png"; path = "Resources/Img/retina-ScoreBoardPopup.png"; sourceTree = "<group>"; };
+		00FF700115D0C4B80043BA91 /* retina-ButtonBT.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-ButtonBT.png"; path = "Resources/Img/retina-ButtonBT.png"; sourceTree = "<group>"; };
+		00FF700215D0C4B80043BA91 /* retina-ButtonBTHighLighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-ButtonBTHighLighted.png"; path = "Resources/Img/retina-ButtonBTHighLighted.png"; sourceTree = "<group>"; };
+		00FF700915D113220043BA91 /* retina-Star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-Star.png"; path = "Resources/Img/retina-Star.png"; sourceTree = "<group>"; };
+		00FF700D15D113880043BA91 /* retina-StarNone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-StarNone.png"; path = "Resources/Img/retina-StarNone.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -738,8 +762,8 @@
 				00C42FE815BB096F006FF95E /* VSSummaryView.m */,
 				009BB48415CAAFF2008E5B2B /* VSVocabularyCell.h */,
 				009BB48515CAAFF2008E5B2B /* VSVocabularyCell.m */,
-				00FF6FEA15D0AD640043BA91 /* VSStatViewController.h */,
-				00FF6FEB15D0AD640043BA91 /* VSStatViewController.m */,
+				00FF6FF815D0BACA0043BA91 /* VSScoreBoardView.h */,
+				00FF6FF915D0BACB0043BA91 /* VSScoreBoardView.m */,
 			);
 			name = VocabularyListView;
 			sourceTree = "<group>";
@@ -781,6 +805,12 @@
 		00B5A8BE1566886E00D20EB6 /* Img */ = {
 			isa = PBXGroup;
 			children = (
+				00FF700915D113220043BA91 /* retina-Star.png */,
+				00FF700115D0C4B80043BA91 /* retina-ButtonBT.png */,
+				00FF700D15D113880043BA91 /* retina-StarNone.png */,
+				00FF700215D0C4B80043BA91 /* retina-ButtonBTHighLighted.png */,
+				00FF6FFD15D0C2A50043BA91 /* retina-ScoreBoardPopup.png */,
+				00FF6FEF15D0AF1E0043BA91 /* retina-ScoreBoardButton.png */,
 				009BB48815CAC448008E5B2B /* retina-TapeBody.png */,
 				00032B2C15CC208F008FDF9F /* retina-InkFooter.png */,
 				009BB48915CAC448008E5B2B /* retina-TapeTail.png */,
@@ -1005,6 +1035,12 @@
 				00FF6FD115CFD2DF0043BA91 /* mw-1.txt in Resources */,
 				00FF6FD515CFD48A0043BA91 /* Meaning.txt in Resources */,
 				00FF6FE915D0AC940043BA91 /* VocabularySishu.sqlite in Resources */,
+				00FF6FF215D0AF1E0043BA91 /* retina-ScoreBoardButton.png in Resources */,
+				00FF700015D0C2A50043BA91 /* retina-ScoreBoardPopup.png in Resources */,
+				00FF700515D0C4B80043BA91 /* retina-ButtonBT.png in Resources */,
+				00FF700815D0C4B80043BA91 /* retina-ButtonBTHighLighted.png in Resources */,
+				00FF700C15D113220043BA91 /* retina-Star.png in Resources */,
+				00FF701015D113880043BA91 /* retina-StarNone.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1052,6 +1088,12 @@
 				00FF6FE415CFDA0A0043BA91 /* Lists.txt in Resources */,
 				00FF6FE515CFDA0A0043BA91 /* Repos.txt in Resources */,
 				00FF6FE715CFDC4B0043BA91 /* Vocabularies.txt in Resources */,
+				00FF6FF015D0AF1E0043BA91 /* retina-ScoreBoardButton.png in Resources */,
+				00FF6FFE15D0C2A50043BA91 /* retina-ScoreBoardPopup.png in Resources */,
+				00FF700315D0C4B80043BA91 /* retina-ButtonBT.png in Resources */,
+				00FF700615D0C4B80043BA91 /* retina-ButtonBTHighLighted.png in Resources */,
+				00FF700A15D113220043BA91 /* retina-Star.png in Resources */,
+				00FF700E15D113880043BA91 /* retina-StarNone.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1106,6 +1148,12 @@
 				00201DDC15CFBA2F0089B8FA /* retina-NavBackButton.png in Resources */,
 				00201E3315CFBF9C0089B8FA /* VocabularySishu.sqlite in Resources */,
 				00FF6FD415CFD48A0043BA91 /* Meaning.txt in Resources */,
+				00FF6FF115D0AF1E0043BA91 /* retina-ScoreBoardButton.png in Resources */,
+				00FF6FFF15D0C2A50043BA91 /* retina-ScoreBoardPopup.png in Resources */,
+				00FF700415D0C4B80043BA91 /* retina-ButtonBT.png in Resources */,
+				00FF700715D0C4B80043BA91 /* retina-ButtonBTHighLighted.png in Resources */,
+				00FF700B15D113220043BA91 /* retina-Star.png in Resources */,
+				00FF700F15D113880043BA91 /* retina-StarNone.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1203,7 +1251,7 @@
 				00201DFC15CFBAD30089B8FA /* VSSummaryView.m in Sources */,
 				00201DFD15CFBAD30089B8FA /* VSVocabulary.m in Sources */,
 				00201DFE15CFBAD30089B8FA /* VSVocabularyCell.m in Sources */,
-				00FF6FEE15D0AD640043BA91 /* VSStatViewController.m in Sources */,
+				00FF6FFC15D0BACB0043BA91 /* VSScoreBoardView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1243,7 +1291,7 @@
 				00C42FE915BB096F006FF95E /* VSSummaryView.m in Sources */,
 				00C4300115BBFC44006FF95E /* VSVocabulary.m in Sources */,
 				009BB48615CAAFF2008E5B2B /* VSVocabularyCell.m in Sources */,
-				00FF6FEC15D0AD640043BA91 /* VSStatViewController.m in Sources */,
+				00FF6FFA15D0BACB0043BA91 /* VSScoreBoardView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1293,7 +1341,7 @@
 				00BDE57515CF9B9400BC205C /* VSSummaryView.m in Sources */,
 				00BDE57615CF9B9400BC205C /* VSVocabulary.m in Sources */,
 				00BDE57715CF9B9400BC205C /* VSVocabularyCell.m in Sources */,
-				00FF6FED15D0AD640043BA91 /* VSStatViewController.m in Sources */,
+				00FF6FFB15D0BACB0043BA91 /* VSScoreBoardView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

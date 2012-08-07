@@ -28,29 +28,21 @@
     newRecord.order = [NSNumber numberWithInt:newOrder];
     newRecord.list = theList;
     newRecord.vocabulary = theVocabulary;
-    __autoreleasing NSError *error = nil;
-    if (![[VSUtils currentMOContext] save:&error]) {
-        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    if ([theList isHistoryList]) {
+        newRecord.lastRememberStatus = [theVocabulary rememberWell] ? [VSConstant REMEMBER_STATUS_GOOD] : [VSConstant REMEMBER_STATUS_BAD];
     }
+    [VSUtils saveEntity];
 }
 
 - (void)remembered
 {
-    self.lastStatus = [VSConstant  VOCABULARY_LIST_STATUS_REMEMBERED];
-    __autoreleasing NSError *error = nil;
-    if (![[VSUtils currentMOContext] save:&error]) {
-        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    self.lastStatus = [VSConstant VOCABULARY_LIST_STATUS_REMEMBERED];
+    if (![self.list isHistoryList]) {
+        self.lastRememberStatus = [self.vocabulary rememberWell] ? [VSConstant REMEMBER_STATUS_GOOD] : [VSConstant REMEMBER_STATUS_BAD];
     }
+    [VSUtils saveEntity];
 }
 
-- (void)forgot
-{
-    self.lastStatus = [VSConstant  VOCABULARY_LIST_STATUS_FORGOT];
-    __autoreleasing NSError *error = nil;
-    if (![[VSUtils currentMOContext] save:&error]) {
-        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-    }
-}
 
 
 @end

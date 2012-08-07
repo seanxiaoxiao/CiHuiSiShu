@@ -44,10 +44,6 @@
 
 - (double)finishProgress;
 
-- (int)rememberedCount;
-
-- (int)forgotCount;
-
 - (NSArray *)vocabulariesToRecite;
 
 - (NSArray *)allVocabularies;
@@ -73,6 +69,10 @@
 - (BOOL)isFirst;
 
 - (BOOL)isLast;
+
+- (double)notWellRate;
+
+- (double)rememberRate;
 
 @end
 

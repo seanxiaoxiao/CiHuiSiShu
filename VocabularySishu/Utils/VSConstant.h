@@ -15,6 +15,9 @@
 #define FINISH_LOADING_MEANING_NOTIFICATION @"finish_loading_meaning_notification"
 #define SHOW_DETAIL_VIEW @"show_detail_view"
 #define CLEAR_VOCABULRY @"clear_vocabulary"
+#define RESTART_LIST @"restart_list"
+#define NEXT_LIST @"next_list"
+#define HIDE_SCOREBOARD @"hide_scoreboard"
 
 #define SHOW_TORECITE @"show_torecite"
 #define SHOW_CANNOTREMEMBERWELL @"show_cannotrememberwell"

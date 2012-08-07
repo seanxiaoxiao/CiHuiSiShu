@@ -33,6 +33,7 @@
 @synthesize alertWhenFinish;
 @synthesize alertDelegate;
 @synthesize reviewPlan;
+@synthesize scoreBoardView;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -73,7 +74,6 @@
             }
             [currentList process];
             self.countInList = [self.currentList.listVocabularies count];
-            self.rememberCount = [self.currentList rememberedCount];
             self.selectedIndex = -1;
             
             UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
@@ -83,7 +83,8 @@
         
             [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showDetailView) name:SHOW_DETAIL_VIEW object:nil];
             [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clearVocabulary:) name:CLEAR_VOCABULRY object:nil];
-
+            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(restart) name:RESTART_LIST object:nil];
+            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(nextList) name:NEXT_LIST object:nil];
             __autoreleasing UIGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanning:)];
             panGesture.delegate = self;
             [self.view addGestureRecognizer:panGesture];
@@ -121,34 +122,16 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if (![self.currentList isHistoryList]) {
-        UIView *rightView = [[UIView alloc] initWithFrame:CGRectMake(1, 0, 83, 44.01)];
-        rightView.backgroundColor = [UIColor clearColor];
-    
-        UIImage* previousImage = [VSUtils fetchImg:@"Previous"];
-        CGRect previousFrame = CGRectMake(0, 0, previousImage.size.width, previousImage.size.height); 
-        UIButton* previousButton = [[UIButton alloc] initWithFrame:previousFrame]; 
-        [previousButton setBackgroundImage:previousImage forState:UIControlStateNormal];
-        [previousButton addTarget:self action:@selector(previousList) forControlEvents:UIControlEventTouchUpInside];
-        if ([self.currentList isFirst]) {
-            [previousButton setEnabled:NO];
-        }
-        [rightView addSubview:previousButton];
+    UIView *rightView = [[UIView alloc] initWithFrame:CGRectMake(1, 0, 43, 44.01)];
+    rightView.backgroundColor = [UIColor clearColor];
+    UIImage *scoreBoardImage = [VSUtils fetchImg:@"ScoreBoardButton"];
+    CGRect scoreBoardFrame = CGRectMake(0, 0, scoreBoardImage.size.width, scoreBoardImage.size.height);
+    UIButton *scoreBoardButton = [[UIButton alloc] initWithFrame:scoreBoardFrame];
+    [scoreBoardButton setBackgroundImage:scoreBoardImage forState:UIControlStateNormal];
+    [scoreBoardButton addTarget:self action:@selector(showHideScoreBoard) forControlEvents:UIControlEventTouchUpInside];
+    [rightView addSubview:scoreBoardButton];
 
-        UIImage* nextImage = [VSUtils fetchImg:@"Next"];
-        CGRect nextFrame = CGRectMake(44, 0, nextImage.size.width, nextImage.size.height); 
-        UIButton* nextButton = [[UIButton alloc] initWithFrame:nextFrame]; 
-        [nextButton setBackgroundImage:nextImage forState:UIControlStateNormal];
-        [nextButton addTarget:self action:@selector(nextList) forControlEvents:UIControlEventTouchUpInside];
-        
-        if ([self.currentList isLast]) {
-            [nextButton setEnabled:NO];
-        }
-
-        [rightView addSubview:nextButton];
-
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightView];
-    }
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightView];
 }
 
 - (void)viewDidUnload
@@ -248,9 +231,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Selected");
     VSVocabularyCell* cell = (VSVocabularyCell *)[self.tableView cellForRowAtIndexPath:indexPath];
-    if (cell.curlUp) {
+    if (cell.curlUp && scoreBoardView == nil) {
         VSVocabulary *selectedVocabulary = ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:indexPath.row]).vocabulary;
         VSVocabularyViewController *detailViewController = [[VSVocabularyViewController alloc] initWithNibName:@"VSVocabularyViewController" bundle:nil];
         detailViewController.vocabulary = selectedVocabulary;
@@ -262,7 +244,9 @@
 #pragma mark - Navigation Related
 - (void)backToMain
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    if (self.scoreBoardView == nil) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 
@@ -270,6 +254,9 @@
 
 - (BOOL)gestureRecognizerShouldBegin:(UIPanGestureRecognizer *)gestureRecognizer
 {
+    if (scoreBoardView != nil) {
+        return NO;
+    }
     UIView *cell = [gestureRecognizer view];
     CGPoint translation = [gestureRecognizer translationInView:[cell superview]];
     CGPoint point = [gestureRecognizer locationInView:self.tableView];
@@ -417,20 +404,61 @@
     }
 }
 
-- (void)nextList
+- (void)showHideScoreBoard
 {
-    [VSUtils toNextList:self.currentList];
+    if (scoreBoardView == nil) {
+        CGRect modalRect = CGRectMake(50, 105, 200, 210);
+        scoreBoardView = [[VSScoreBoardView alloc] initWithFrame:modalRect];
+        CATransition *applicationLoadViewIn =[CATransition animation];
+        [applicationLoadViewIn setDuration:0.2f];
+        [applicationLoadViewIn setType:kCATransitionReveal];
+        [applicationLoadViewIn setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn]];
+        [[scoreBoardView layer] addAnimation:applicationLoadViewIn forKey:kCATransitionReveal];
+        [self.view addSubview:scoreBoardView];
+        [scoreBoardView performSelector:@selector(initWithList:) withObject:self.currentList afterDelay:0.5f];
+        UIButton * exitButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [exitButton addTarget:self action:@selector(hideScoreBoard) forControlEvents:UIControlEventTouchUpInside];
+        [exitButton setTitle:@"" forState:UIControlStateNormal];
+        exitButton.frame = self.view.frame;
+        [self.view addSubview:exitButton];
+        [self.view bringSubviewToFront:scoreBoardView];
+    }
+    else {
+        [self hideScoreBoard];
+    }
 }
 
-- (void)previousList
+- (void)hideScoreBoard
 {
-    [VSUtils toPreviousList:self.currentList];
+    [UIView beginAnimations:@"removeWithEffect" context:nil];
+    [UIView setAnimationDuration:0.2f];
+    scoreBoardView.alpha = 0.0f;
+    [UIView commitAnimations];
+    [scoreBoardView performSelector:@selector(removeFromSuperview) withObject:nil afterDelay:0.5f];
+    scoreBoardView = nil;
 }
 
 - (void)restart
 {
+    [self performSelector:@selector(doRestart) withObject:nil afterDelay:0.2f];
+}
+
+- (void)doRestart
+{
     [self.currentList clearVocabularyStatus];
     [VSUtils reloadCurrentList:self.currentList];
 }
+
+- (void)nextList
+{
+    [self performSelector:@selector(doNextList) withObject:nil afterDelay:0.2f];
+}
+
+- (void)doNextList
+{
+    [VSUtils toNextList:self.currentList];
+}
+
+
 
 @end

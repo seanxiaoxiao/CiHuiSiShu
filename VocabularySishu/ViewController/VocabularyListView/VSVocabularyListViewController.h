@@ -16,6 +16,7 @@
 #import "VSReviewPlan.h"
 #import "VSSummaryView.h"
 #import "VSVocabularyCell.h"
+#import "VSScoreBoardView.h"
 
 @class VSAlertDelegate;
 
@@ -34,5 +35,6 @@
 @property (nonatomic, retain) VSAlertDelegate *alertDelegate;
 @property (nonatomic, retain) VSReviewPlan *reviewPlan;
 @property (nonatomic, strong) VSVocabularyCell *draggedCell;
+@property (nonatomic, retain) VSScoreBoardView *scoreBoardView;
 
 @end
