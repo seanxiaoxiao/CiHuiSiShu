@@ -99,7 +99,9 @@
         NSFileManager *fileManager = [NSFileManager defaultManager];
         NSError *error;
         NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"VocabularySishu" ofType:@"sqlite"];
-        [fileManager copyItemAtPath:resourcePath toPath:filePath error:&error];
+        if ([[NSFileManager defaultManager] fileExistsAtPath:resourcePath]) {
+            [fileManager copyItemAtPath:resourcePath toPath:filePath error:&error];
+        }
     }
 }
 

@@ -45,6 +45,7 @@ NSMutableDictionary *vocabularyMap;
     for (int i = 0; i < [repoArray count]; i++) {
         VSRepository *repo = [NSEntityDescription insertNewObjectForEntityForName:@"VSRepository" inManagedObjectContext:[VSUtils currentMOContext]];
         repo.name = [repoArray objectAtIndex:i];
+        NSLog(@"name is %@", repo.name);
         repo.order = [NSNumber numberWithInt:i];
         repo.finishedRound = [NSNumber numberWithInt:0];
         [repoMap setValue:repo forKey:repo.name];
@@ -75,6 +76,7 @@ NSMutableDictionary *vocabularyMap;
             list.repository = repository;
             list.type = [VSConstant LIST_TYPE_NORMAL];
             list.status = [VSConstant LIST_STATUS_NEW];
+            list.round = [NSNumber numberWithInt:0];
             NSArray *vocabularies = [data objectForKey:@"vocabularyList"];
             for (int i = 0; i < [vocabularies count]; i++) {
                 VSVocabulary *vocabulary = [vocabularyMap objectForKey:[vocabularies objectAtIndex:i]];
@@ -105,6 +107,7 @@ NSMutableDictionary *vocabularyMap;
     [file closeFile];
     SBJsonParser *parser = [[SBJsonParser alloc] init];
     NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+
     NSArray *vocabularies = [jsonString componentsSeparatedByString:@"\n"];
     for (int i = 0; i < [vocabularies count]; i++) {
         NSDictionary *vocabularyInfo = [parser objectWithString:[vocabularies objectAtIndex:i]];
@@ -116,7 +119,7 @@ NSMutableDictionary *vocabularyMap;
         vocabulary.audioLink = [vocabularyInfo objectForKey:@"audioLink"];
         vocabulary.summary = [vocabularyInfo objectForKey:@"summary"];
         vocabulary.meet = [NSNumber numberWithInt:0];
-        vocabulary.remember = [NSNumber numberWithInt:100];
+        vocabulary.remember = [NSNumber numberWithInt:50];
         [vocabularyMap setValue:vocabulary forKey:vocabulary.spell];
     }
     [VSUtils saveEntity];
@@ -184,7 +187,6 @@ NSMutableDictionary *vocabularyMap;
         if (vocabulary == nil) {
             continue;
         }
-        NSLog(@"%@", [info objectAtIndex:0]);
         for (NSDictionary *meaningInfo in meaningArray) {
             __autoreleasing NSString *attr = [meaningInfo objectForKey:@"attribute"];
             __autoreleasing NSString *meaningContent = [meaningInfo objectForKey:@"meaning"];
@@ -345,12 +347,52 @@ NSMutableDictionary *vocabularyMap;
     [VSDataUtil initMeanings];
     NSLog(@"MWMeaning");
     [VSDataUtil clearEntities:@"VSWebsterMeaning"];
-//    [VSDataUtil initMWMeanings1];
-//    [VSDataUtil initMWMeanings2];
-//    [VSDataUtil initMWMeanings3];
-//    [VSDataUtil initMWMeanings4];
+    //[VSDataUtil initFullMWMeanings];
+
     NSLog(@"Time elapse %f in import all", [dateStarted timeIntervalSinceNow]);
 
+}
+
++ (void)initFullMWMeanings
+{
+    NSBundle *bundle = [NSBundle mainBundle];
+    NSString *repoData = [bundle pathForResource:@"WebsterMeaning" ofType:@"txt"];
+    
+    NSFileHandle* file = [NSFileHandle fileHandleForReadingAtPath:repoData];
+    NSData* data = [file readDataToEndOfFile];
+    [file closeFile];
+    SBJsonParser *parser = [[SBJsonParser alloc] init];
+    NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    
+    NSArray *lines = [jsonString componentsSeparatedByString:@"\n"];
+    int count = 0;
+    for (NSString *line in lines) {
+        __autoreleasing NSArray *info = [line componentsSeparatedByString:@"\t"];
+        __autoreleasing NSString *spell = [info objectAtIndex:0];
+        __autoreleasing NSString *dataString = [info objectAtIndex:1];
+        __autoreleasing NSArray *meaningArray = [parser objectWithString:dataString];
+        int order = 0;
+        __autoreleasing VSVocabulary *vocabulary = [vocabularyMap objectForKey:spell];
+        if (vocabulary == nil) {
+            continue;
+        }
+        count++;
+        for (NSDictionary *meaningInfo in meaningArray) {
+            __autoreleasing NSString *attr = [meaningInfo objectForKey:@"attribute"];
+            __autoreleasing NSString *meaningContent = [meaningInfo objectForKey:@"meaning"];
+            if ([attr length] == 0 || [meaningContent length] == 0) {
+                continue;
+            }
+            VSWebsterMeaning *meaning = [NSEntityDescription insertNewObjectForEntityForName:@"VSWebsterMeaning" inManagedObjectContext:[VSUtils currentMOContext]];
+            meaning.vocabulary = vocabulary;
+            meaning.attribute = attr;
+            meaning.meaning = meaningContent;
+            meaning.order = [NSNumber numberWithInt:order];
+            order = order + 1;
+        }
+    }
+    [VSUtils saveEntity];
+    NSLog(@"%d saved", count);
 }
 
 + (void)initMWMeaning
@@ -365,13 +407,12 @@ NSMutableDictionary *vocabularyMap;
     NSArray *list = [[VSUtils currentMOContext] executeFetchRequest:request error:&error];
     for (VSVocabulary *vocabulary in list) {
         [vocabularyMap setValue:vocabulary forKey:vocabulary.spell];
-        NSLog(@"count for vocabulary %@ is %d", vocabulary.spell, [vocabulary.meanings count]);
     }
     //[VSDataUtil clearEntities:@"VSWebsterMeaning"];
     //[VSDataUtil initMWMeanings1];
-    //[VSDataUtil initMWMeanings2];
-    [VSDataUtil initMWMeanings3];
-    [VSDataUtil initMWMeanings4];
+    [VSDataUtil initMWMeanings2];
+    //[VSDataUtil initMWMeanings3];
+    //[VSDataUtil initMWMeanings4];
 }
 
 + (void)testData

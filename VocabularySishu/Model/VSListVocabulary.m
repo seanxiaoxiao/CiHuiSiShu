@@ -18,7 +18,7 @@
 @dynamic order;
 @dynamic list;
 @dynamic vocabulary;
-@synthesize dragged;
+@dynamic lastRememberStatus;
 
 + (void)create:(VSList *)theList withVocabulary:(VSVocabulary *)theVocabulary
 {

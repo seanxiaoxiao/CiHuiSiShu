@@ -52,4 +52,8 @@
 
 + (NSNumber *)LIST_TYPE_LONGTERM_REVIEW;
 
++ (NSNumber *)REMEMBER_STATUS_BAD;
+
++ (NSNumber *)REMEMBER_STATUS_GOOD;
+
 @end

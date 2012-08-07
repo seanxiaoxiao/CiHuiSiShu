@@ -15,6 +15,7 @@
 
 @property (nonatomic, retain) NSNumber * lastStatus;
 @property (nonatomic, retain) NSNumber * order;
+@property (nonatomic, retain) NSNumber * lastRememberStatus;
 @property (nonatomic, retain) VSList *list;
 @property (nonatomic, retain) VSVocabulary *vocabulary;
 @property (nonatomic, assign) BOOL dragged;

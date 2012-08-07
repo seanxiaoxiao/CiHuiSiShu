@@ -26,6 +26,7 @@
 @property (nonatomic, retain) NSSet *meanings;
 @property (nonatomic, retain) NSSet *websterMeanings;
 @property (nonatomic, retain) NSDate *seeSummaryStart;
+@property (nonatomic, retain) NSDate *lastSeeDate;
 @property (nonatomic, assign) int seeSummaryTimes;
 
 - (void)remembered;

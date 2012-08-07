@@ -24,6 +24,7 @@
 @property (nonatomic, retain) NSNumber * status;
 @property (nonatomic, retain) NSSet *listVocabularies;
 @property (nonatomic, retain) VSRepository *repository;
+@property (nonatomic, retain) NSNumber * round;
 
 + (VSList *)createAndGetHistoryList;
 

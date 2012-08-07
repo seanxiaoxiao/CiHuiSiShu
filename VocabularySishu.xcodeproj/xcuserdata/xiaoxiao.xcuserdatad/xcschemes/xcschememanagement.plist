@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>VocabularySishu copy 2.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>VocabularySishu copy.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>VocabularySishu.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,12 +22,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>00201DDD15CFBAD30089B8FA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>00701E2A1553CBCE00D30018</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>00701E4A1553CBCE00D30018</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>00BDE55615CF9B9400BC205C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

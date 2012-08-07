@@ -20,6 +20,7 @@
 @dynamic listVocabularies;
 @dynamic repository;
 @dynamic status;
+@dynamic round;
 
 
 + (VSList *)createAndGetHistoryList
@@ -47,6 +48,7 @@
         listForToday.repository = nil;
         listForToday.createdDate = today;
         listForToday.status = [VSConstant LIST_STATUS_NEW];
+        listForToday.round = [NSNumber numberWithInt:0];
         [VSUtils saveEntity];
         return listForToday;
     }
@@ -79,15 +81,17 @@
 
 + (VSList *)firstList
 {
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"VSList" inManagedObjectContext:[VSUtils currentMOContext]];
+    
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"VSRepository" inManagedObjectContext:[VSUtils currentMOContext]];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSSortDescriptor *sortOrderDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObjects:sortOrderDescriptor, nil];
     [request setEntity:entityDescription];
-    NSString *predicateContent = [NSString stringWithFormat:@"(name=='GRE顺序List1')"];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat: predicateContent];
-    [request setPredicate:predicate];
+    //[request setPredicate:predicate];
     NSError *error = nil;
     NSArray *array = [[VSUtils currentMOContext] executeFetchRequest:request error:&error];
-    return [array objectAtIndex:0];
+    VSRepository *firstRepo = [[array sortedArrayUsingDescriptors:sortDescriptors] objectAtIndex:0];
+    return [firstRepo firstListInRepo];;
 }
 
 + (NSArray *)lastestHistoryList

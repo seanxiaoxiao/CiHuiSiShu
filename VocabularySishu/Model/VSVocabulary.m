@@ -22,6 +22,7 @@
 @dynamic type;
 @dynamic summary;
 @dynamic audioLink;
+@dynamic lastSeeDate;
 @synthesize seeSummaryStart;
 @synthesize seeSummaryTimes;
 

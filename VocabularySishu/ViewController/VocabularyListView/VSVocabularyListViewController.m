@@ -275,8 +275,8 @@
     CGPoint point = [gestureRecognizer locationInView:self.tableView];
     NSIndexPath* indexPath = [self.tableView indexPathForRowAtPoint:point];
 
-    BOOL dragged = ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:indexPath.row]).dragged;
-    if (dragged && translation.x < 0) {
+    VSVocabularyCell* touchedCell = (VSVocabularyCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+    if (touchedCell.curlUp && translation.x < 0) {
         return NO;
     }
     if (fabsf(translation.x) > fabsf(translation.y)) {

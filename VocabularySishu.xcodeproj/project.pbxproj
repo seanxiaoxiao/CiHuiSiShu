@@ -14,6 +14,83 @@
 		00032B2915CC1E49008FDF9F /* retina-InkNeck.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2815CC1E49008FDF9F /* retina-InkNeck.png */; };
 		00032B2B15CC1FB4008FDF9F /* retina-InkBody.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2A15CC1FB4008FDF9F /* retina-InkBody.png */; };
 		00032B2D15CC208F008FDF9F /* retina-InkFooter.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2C15CC208F008FDF9F /* retina-InkFooter.png */; };
+		00201DDB15CFBA2F0089B8FA /* retina-NavBackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 00201DDA15CFBA2F0089B8FA /* retina-NavBackButton.png */; };
+		00201DDC15CFBA2F0089B8FA /* retina-NavBackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 00201DDA15CFBA2F0089B8FA /* retina-NavBackButton.png */; };
+		00201DDF15CFBAD30089B8FA /* VSNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0081185015BEFE220022B515 /* VSNavigationBar.m */; };
+		00201DE015CFBAD30089B8FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00701E3D1553CBCE00D30018 /* main.m */; };
+		00201DE115CFBAD30089B8FA /* VSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00701E411553CBCE00D30018 /* VSAppDelegate.m */; };
+		00201DE215CFBAD30089B8FA /* VocabularySishu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00701E431553CBCE00D30018 /* VocabularySishu.xcdatamodeld */; };
+		00201DE315CFBAD30089B8FA /* VSVocabularyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046408015590E0B007E5FA9 /* VSVocabularyViewController.m */; };
+		00201DE415CFBAD30089B8FA /* VSMainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046408B155916FA007E5FA9 /* VSMainMenuViewController.m */; };
+		00201DE515CFBAD30089B8FA /* VSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046409015591DBD007E5FA9 /* VSUtils.m */; };
+		00201DE615CFBAD30089B8FA /* VSDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A67815688F2800B80422 /* VSDataUtil.m */; };
+		00201DE715CFBAD30089B8FA /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A68B1568A0B200B80422 /* NSObject+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		00201DE815CFBAD30089B8FA /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A68D1568A0B200B80422 /* NSString+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		00201DE915CFBAD30089B8FA /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A68F1568A0B200B80422 /* SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		00201DEA15CFBAD30089B8FA /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6911568A0B200B80422 /* SBJsonBase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		00201DEB15CFBAD30089B8FA /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6931568A0B200B80422 /* SBJsonParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		00201DEC15CFBAD30089B8FA /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6951568A0B200B80422 /* SBJsonWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		00201DED15CFBAD30089B8FA /* VSVocabularyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6BC156A5FF700B80422 /* VSVocabularyListViewController.m */; };
+		00201DEE15CFBAD30089B8FA /* VSConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A006FB156B3D6D00D24418 /* VSConstant.m */; };
+		00201DEF15CFBAD30089B8FA /* VSContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A0071C156E3A7B00D24418 /* VSContext.m */; };
+		00201DF015CFBAD30089B8FA /* VSList.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A0071F156E3A8F00D24418 /* VSList.m */; };
+		00201DF115CFBAD30089B8FA /* VSListVocabulary.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A00722156E3AF400D24418 /* VSListVocabulary.m */; };
+		00201DF215CFBAD30089B8FA /* VSMeaning.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A00725156E3B0500D24418 /* VSMeaning.m */; };
+		00201DF315CFBAD30089B8FA /* VSRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A00728156E3B9E00D24418 /* VSRepository.m */; };
+		00201DF415CFBAD30089B8FA /* VSWebsterMeaning.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A0072E156E3C4800D24418 /* VSWebsterMeaning.m */; };
+		00201DF515CFBAD30089B8FA /* VSVocabularyListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A00731156F7FEE00D24418 /* VSVocabularyListHeaderView.m */; };
+		00201DF615CFBAD30089B8FA /* VSAlertDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 009AFBFA1588982300293F6A /* VSAlertDelegate.m */; };
+		00201DF715CFBAD30089B8FA /* VSConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AE80EF158B1318000CE7EA /* VSConfigurationViewController.m */; };
+		00201DF815CFBAD30089B8FA /* VSReviewPlan.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A9E7AF15A08699009832BA /* VSReviewPlan.m */; };
+		00201DF915CFBAD30089B8FA /* NSMutableArrayShuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = 009A86FF15A1A82900F7869D /* NSMutableArrayShuffling.m */; };
+		00201DFA15CFBAD30089B8FA /* DDFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D6779115ADD03900EF152D /* DDFileReader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		00201DFB15CFBAD30089B8FA /* VSMeaningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C42FE215BAFBC6006FF95E /* VSMeaningView.m */; };
+		00201DFC15CFBAD30089B8FA /* VSSummaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C42FE815BB096F006FF95E /* VSSummaryView.m */; };
+		00201DFD15CFBAD30089B8FA /* VSVocabulary.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4300015BBFC44006FF95E /* VSVocabulary.m */; };
+		00201DFE15CFBAD30089B8FA /* VSVocabularyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 009BB48515CAAFF2008E5B2B /* VSVocabularyCell.m */; };
+		00201E0015CFBAD30089B8FA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A1AFAC1586192400310669 /* AVFoundation.framework */; };
+		00201E0115CFBAD30089B8FA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A00702156D15F200D24418 /* QuartzCore.framework */; };
+		00201E0215CFBAD30089B8FA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00701E2F1553CBCE00D30018 /* UIKit.framework */; };
+		00201E0315CFBAD30089B8FA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00701E311553CBCE00D30018 /* Foundation.framework */; };
+		00201E0415CFBAD30089B8FA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00701E331553CBCE00D30018 /* CoreGraphics.framework */; };
+		00201E0515CFBAD30089B8FA /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00701E351553CBCE00D30018 /* CoreData.framework */; };
+		00201E0615CFBAD30089B8FA /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D6778715AD542E00EF152D /* Crashlytics.framework */; };
+		00201E0815CFBAD30089B8FA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00701E3A1553CBCE00D30018 /* InfoPlist.strings */; };
+		00201E0915CFBAD30089B8FA /* VSMainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408C155916FA007E5FA9 /* VSMainMenuViewController.xib */; };
+		00201E0A15CFBAD30089B8FA /* VSVocabularyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408115590E0B007E5FA9 /* VSVocabularyViewController.xib */; };
+		00201E0B15CFBAD30089B8FA /* VSVocabularyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */; };
+		00201E0C15CFBAD30089B8FA /* Meaning.html in Resources */ = {isa = PBXBuildFile; fileRef = 00A006F8156B3BDF00D24418 /* Meaning.html */; };
+		00201E0D15CFBAD30089B8FA /* retina-Navigation.png in Resources */ = {isa = PBXBuildFile; fileRef = 0081184A15BEFDDE0022B515 /* retina-Navigation.png */; };
+		00201E0E15CFBAD30089B8FA /* back-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A00704156D361E00D24418 /* back-button.png */; };
+		00201E0F15CFBAD30089B8FA /* retina-back-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A00705156D361E00D24418 /* retina-back-button.png */; };
+		00201E1015CFBAD30089B8FA /* VSConfigurationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */; };
+		00201E1115CFBAD30089B8FA /* retina-InkNeck.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2815CC1E49008FDF9F /* retina-InkNeck.png */; };
+		00201E1215CFBAD30089B8FA /* abacus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0024B9DD1593562C001698C3 /* abacus.jpg */; };
+		00201E1315CFBAD30089B8FA /* retina-CellBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C42FD815BAEEB1006FF95E /* retina-CellBG.png */; };
+		00201E1415CFBAD30089B8FA /* retina-CellSummary.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C42FD915BAEEB1006FF95E /* retina-CellSummary.png */; };
+		00201E1515CFBAD30089B8FA /* retina-ListBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C42FDA15BAEEB1006FF95E /* retina-ListBG.png */; };
+		00201E1615CFBAD30089B8FA /* retina-CellClear.png in Resources */ = {isa = PBXBuildFile; fileRef = 0029087D15BF882C00568B41 /* retina-CellClear.png */; };
+		00201E1715CFBAD30089B8FA /* retina-Restart.png in Resources */ = {isa = PBXBuildFile; fileRef = 0078168915C3A8F700CE5026 /* retina-Restart.png */; };
+		00201E1815CFBAD30089B8FA /* retina-Restart-Highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 0078168C15C3AA0100CE5026 /* retina-Restart-Highlight.png */; };
+		00201E1915CFBAD30089B8FA /* retina-Next.png in Resources */ = {isa = PBXBuildFile; fileRef = 0029087B15BF0B4500568B41 /* retina-Next.png */; };
+		00201E1B15CFBAD30089B8FA /* retina-Previous.png in Resources */ = {isa = PBXBuildFile; fileRef = 0029087815BF0AA800568B41 /* retina-Previous.png */; };
+		00201E1C15CFBAD30089B8FA /* retina-InkBody.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2A15CC1FB4008FDF9F /* retina-InkBody.png */; };
+		00201E1D15CFBAD30089B8FA /* retina-PenBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2215CC1B36008FDF9F /* retina-PenBG.png */; };
+		00201E1E15CFBAD30089B8FA /* retina-TapeBody.png in Resources */ = {isa = PBXBuildFile; fileRef = 009BB48815CAC448008E5B2B /* retina-TapeBody.png */; };
+		00201E1F15CFBAD30089B8FA /* retina-TapeTail.png in Resources */ = {isa = PBXBuildFile; fileRef = 009BB48915CAC448008E5B2B /* retina-TapeTail.png */; };
+		00201E2015CFBAD30089B8FA /* retina-TapeHead.png in Resources */ = {isa = PBXBuildFile; fileRef = 009BB48A15CAC448008E5B2B /* retina-TapeHead.png */; };
+		00201E2115CFBAD30089B8FA /* retina-CellLine.png in Resources */ = {isa = PBXBuildFile; fileRef = 009BB48E15CAC760008E5B2B /* retina-CellLine.png */; };
+		00201E2215CFBAD30089B8FA /* retina-PenFG.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2315CC1B36008FDF9F /* retina-PenFG.png */; };
+		00201E2315CFBAD30089B8FA /* retina-InkHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2615CC1D87008FDF9F /* retina-InkHeader.png */; };
+		00201E2415CFBAD30089B8FA /* retina-InkFooter.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2C15CC208F008FDF9F /* retina-InkFooter.png */; };
+		00201E2515CFBAD30089B8FA /* retina-DetailsHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = 005F7E9B15CD84CD00932B93 /* retina-DetailsHeader.png */; };
+		00201E2615CFBAD30089B8FA /* retina-DetailsBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 005F7E9C15CD84CD00932B93 /* retina-DetailsBG.png */; };
+		00201E2715CFBAD30089B8FA /* retina-CellAccessory.png in Resources */ = {isa = PBXBuildFile; fileRef = 005F7E9F15CD959100932B93 /* retina-CellAccessory.png */; };
+		00201E2815CFBAD30089B8FA /* retina-NavBackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 00201DDA15CFBA2F0089B8FA /* retina-NavBackButton.png */; };
+		00201E3315CFBF9C0089B8FA /* VocabularySishu.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00201E3215CFBF9C0089B8FA /* VocabularySishu.sqlite */; };
+		00201E4A15CFCDD00089B8FA /* Vocabularies.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00201E3515CFC3560089B8FA /* Vocabularies.txt */; };
+		00201E4B15CFCDD00089B8FA /* Lists.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00201E3615CFC3560089B8FA /* Lists.txt */; };
+		00201E4C15CFCDD00089B8FA /* Repos.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00201E3715CFC3560089B8FA /* Repos.txt */; };
 		0024B9DE1593562C001698C3 /* abacus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0024B9DD1593562C001698C3 /* abacus.jpg */; };
 		0029087915BF0AA800568B41 /* retina-Previous.png in Resources */ = {isa = PBXBuildFile; fileRef = 0029087815BF0AA800568B41 /* retina-Previous.png */; };
 		0029087C15BF0B4500568B41 /* retina-Next.png in Resources */ = {isa = PBXBuildFile; fileRef = 0029087B15BF0B4500568B41 /* retina-Next.png */; };
@@ -25,7 +102,6 @@
 		0046409115591DBD007E5FA9 /* VSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046409015591DBD007E5FA9 /* VSUtils.m */; };
 		0046409215591DBD007E5FA9 /* VSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046409015591DBD007E5FA9 /* VSUtils.m */; };
 		0046409315591FD1007E5FA9 /* VSVocabularyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408115590E0B007E5FA9 /* VSVocabularyViewController.xib */; };
-		005F7E9A15CD298F00932B93 /* retina-NavBackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 005F7E9915CD298F00932B93 /* retina-NavBackButton.png */; };
 		005F7E9D15CD84CD00932B93 /* retina-DetailsHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = 005F7E9B15CD84CD00932B93 /* retina-DetailsHeader.png */; };
 		005F7E9E15CD84CD00932B93 /* retina-DetailsBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 005F7E9C15CD84CD00932B93 /* retina-DetailsBG.png */; };
 		005F7EA015CD959100932B93 /* retina-CellAccessory.png in Resources */ = {isa = PBXBuildFile; fileRef = 005F7E9F15CD959100932B93 /* retina-CellAccessory.png */; };
@@ -78,7 +154,76 @@
 		00A9E7B115A08699009832BA /* VSReviewPlan.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A9E7AF15A08699009832BA /* VSReviewPlan.m */; };
 		00AE80F1158B1318000CE7EA /* VSConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AE80EF158B1318000CE7EA /* VSConfigurationViewController.m */; };
 		00AE80F2158B1318000CE7EA /* VSConfigurationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */; };
-		00B4B5B415C95E4B00AAC4B8 /* VocabularySishu.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00B4B5B315C95E4B00AAC4B8 /* VocabularySishu.sqlite */; };
+		00BDE55815CF9B9400BC205C /* VSNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0081185015BEFE220022B515 /* VSNavigationBar.m */; };
+		00BDE55915CF9B9400BC205C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00701E3D1553CBCE00D30018 /* main.m */; };
+		00BDE55A15CF9B9400BC205C /* VSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00701E411553CBCE00D30018 /* VSAppDelegate.m */; };
+		00BDE55B15CF9B9400BC205C /* VocabularySishu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00701E431553CBCE00D30018 /* VocabularySishu.xcdatamodeld */; };
+		00BDE55C15CF9B9400BC205C /* VSVocabularyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046408015590E0B007E5FA9 /* VSVocabularyViewController.m */; };
+		00BDE55D15CF9B9400BC205C /* VSMainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046408B155916FA007E5FA9 /* VSMainMenuViewController.m */; };
+		00BDE55E15CF9B9400BC205C /* VSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046409015591DBD007E5FA9 /* VSUtils.m */; };
+		00BDE55F15CF9B9400BC205C /* VSDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A67815688F2800B80422 /* VSDataUtil.m */; };
+		00BDE56015CF9B9400BC205C /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A68B1568A0B200B80422 /* NSObject+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		00BDE56115CF9B9400BC205C /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A68D1568A0B200B80422 /* NSString+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		00BDE56215CF9B9400BC205C /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A68F1568A0B200B80422 /* SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		00BDE56315CF9B9400BC205C /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6911568A0B200B80422 /* SBJsonBase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		00BDE56415CF9B9400BC205C /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6931568A0B200B80422 /* SBJsonParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		00BDE56515CF9B9400BC205C /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6951568A0B200B80422 /* SBJsonWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		00BDE56615CF9B9400BC205C /* VSVocabularyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6BC156A5FF700B80422 /* VSVocabularyListViewController.m */; };
+		00BDE56715CF9B9400BC205C /* VSConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A006FB156B3D6D00D24418 /* VSConstant.m */; };
+		00BDE56815CF9B9400BC205C /* VSContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A0071C156E3A7B00D24418 /* VSContext.m */; };
+		00BDE56915CF9B9400BC205C /* VSList.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A0071F156E3A8F00D24418 /* VSList.m */; };
+		00BDE56A15CF9B9400BC205C /* VSListVocabulary.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A00722156E3AF400D24418 /* VSListVocabulary.m */; };
+		00BDE56B15CF9B9400BC205C /* VSMeaning.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A00725156E3B0500D24418 /* VSMeaning.m */; };
+		00BDE56C15CF9B9400BC205C /* VSRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A00728156E3B9E00D24418 /* VSRepository.m */; };
+		00BDE56D15CF9B9400BC205C /* VSWebsterMeaning.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A0072E156E3C4800D24418 /* VSWebsterMeaning.m */; };
+		00BDE56E15CF9B9400BC205C /* VSVocabularyListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A00731156F7FEE00D24418 /* VSVocabularyListHeaderView.m */; };
+		00BDE56F15CF9B9400BC205C /* VSAlertDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 009AFBFA1588982300293F6A /* VSAlertDelegate.m */; };
+		00BDE57015CF9B9400BC205C /* VSConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AE80EF158B1318000CE7EA /* VSConfigurationViewController.m */; };
+		00BDE57115CF9B9400BC205C /* VSReviewPlan.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A9E7AF15A08699009832BA /* VSReviewPlan.m */; };
+		00BDE57215CF9B9400BC205C /* NSMutableArrayShuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = 009A86FF15A1A82900F7869D /* NSMutableArrayShuffling.m */; };
+		00BDE57315CF9B9400BC205C /* DDFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D6779115ADD03900EF152D /* DDFileReader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		00BDE57415CF9B9400BC205C /* VSMeaningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C42FE215BAFBC6006FF95E /* VSMeaningView.m */; };
+		00BDE57515CF9B9400BC205C /* VSSummaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C42FE815BB096F006FF95E /* VSSummaryView.m */; };
+		00BDE57615CF9B9400BC205C /* VSVocabulary.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4300015BBFC44006FF95E /* VSVocabulary.m */; };
+		00BDE57715CF9B9400BC205C /* VSVocabularyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 009BB48515CAAFF2008E5B2B /* VSVocabularyCell.m */; };
+		00BDE57915CF9B9400BC205C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A1AFAC1586192400310669 /* AVFoundation.framework */; };
+		00BDE57A15CF9B9400BC205C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A00702156D15F200D24418 /* QuartzCore.framework */; };
+		00BDE57B15CF9B9400BC205C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00701E2F1553CBCE00D30018 /* UIKit.framework */; };
+		00BDE57C15CF9B9400BC205C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00701E311553CBCE00D30018 /* Foundation.framework */; };
+		00BDE57D15CF9B9400BC205C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00701E331553CBCE00D30018 /* CoreGraphics.framework */; };
+		00BDE57E15CF9B9400BC205C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00701E351553CBCE00D30018 /* CoreData.framework */; };
+		00BDE57F15CF9B9400BC205C /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D6778715AD542E00EF152D /* Crashlytics.framework */; };
+		00BDE58115CF9B9400BC205C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00701E3A1553CBCE00D30018 /* InfoPlist.strings */; };
+		00BDE58215CF9B9400BC205C /* VSMainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408C155916FA007E5FA9 /* VSMainMenuViewController.xib */; };
+		00BDE58315CF9B9400BC205C /* VSVocabularyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408115590E0B007E5FA9 /* VSVocabularyViewController.xib */; };
+		00BDE58415CF9B9400BC205C /* VSVocabularyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */; };
+		00BDE58515CF9B9400BC205C /* Meaning.html in Resources */ = {isa = PBXBuildFile; fileRef = 00A006F8156B3BDF00D24418 /* Meaning.html */; };
+		00BDE58615CF9B9400BC205C /* retina-Navigation.png in Resources */ = {isa = PBXBuildFile; fileRef = 0081184A15BEFDDE0022B515 /* retina-Navigation.png */; };
+		00BDE58715CF9B9400BC205C /* back-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A00704156D361E00D24418 /* back-button.png */; };
+		00BDE58815CF9B9400BC205C /* retina-back-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A00705156D361E00D24418 /* retina-back-button.png */; };
+		00BDE58915CF9B9400BC205C /* VSConfigurationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */; };
+		00BDE58A15CF9B9400BC205C /* retina-InkNeck.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2815CC1E49008FDF9F /* retina-InkNeck.png */; };
+		00BDE58B15CF9B9400BC205C /* abacus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0024B9DD1593562C001698C3 /* abacus.jpg */; };
+		00BDE58C15CF9B9400BC205C /* retina-CellBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C42FD815BAEEB1006FF95E /* retina-CellBG.png */; };
+		00BDE58D15CF9B9400BC205C /* retina-CellSummary.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C42FD915BAEEB1006FF95E /* retina-CellSummary.png */; };
+		00BDE58E15CF9B9400BC205C /* retina-ListBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C42FDA15BAEEB1006FF95E /* retina-ListBG.png */; };
+		00BDE58F15CF9B9400BC205C /* retina-CellClear.png in Resources */ = {isa = PBXBuildFile; fileRef = 0029087D15BF882C00568B41 /* retina-CellClear.png */; };
+		00BDE59015CF9B9400BC205C /* retina-Restart.png in Resources */ = {isa = PBXBuildFile; fileRef = 0078168915C3A8F700CE5026 /* retina-Restart.png */; };
+		00BDE59115CF9B9400BC205C /* retina-Restart-Highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 0078168C15C3AA0100CE5026 /* retina-Restart-Highlight.png */; };
+		00BDE59215CF9B9400BC205C /* retina-Next.png in Resources */ = {isa = PBXBuildFile; fileRef = 0029087B15BF0B4500568B41 /* retina-Next.png */; };
+		00BDE59415CF9B9400BC205C /* retina-Previous.png in Resources */ = {isa = PBXBuildFile; fileRef = 0029087815BF0AA800568B41 /* retina-Previous.png */; };
+		00BDE59515CF9B9400BC205C /* retina-InkBody.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2A15CC1FB4008FDF9F /* retina-InkBody.png */; };
+		00BDE59615CF9B9400BC205C /* retina-PenBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2215CC1B36008FDF9F /* retina-PenBG.png */; };
+		00BDE59715CF9B9400BC205C /* retina-TapeBody.png in Resources */ = {isa = PBXBuildFile; fileRef = 009BB48815CAC448008E5B2B /* retina-TapeBody.png */; };
+		00BDE59815CF9B9400BC205C /* retina-TapeTail.png in Resources */ = {isa = PBXBuildFile; fileRef = 009BB48915CAC448008E5B2B /* retina-TapeTail.png */; };
+		00BDE59915CF9B9400BC205C /* retina-TapeHead.png in Resources */ = {isa = PBXBuildFile; fileRef = 009BB48A15CAC448008E5B2B /* retina-TapeHead.png */; };
+		00BDE59A15CF9B9400BC205C /* retina-CellLine.png in Resources */ = {isa = PBXBuildFile; fileRef = 009BB48E15CAC760008E5B2B /* retina-CellLine.png */; };
+		00BDE59B15CF9B9400BC205C /* retina-PenFG.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2315CC1B36008FDF9F /* retina-PenFG.png */; };
+		00BDE59C15CF9B9400BC205C /* retina-InkHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2615CC1D87008FDF9F /* retina-InkHeader.png */; };
+		00BDE59D15CF9B9400BC205C /* retina-InkFooter.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2C15CC208F008FDF9F /* retina-InkFooter.png */; };
+		00BDE59F15CF9B9400BC205C /* retina-DetailsHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = 005F7E9B15CD84CD00932B93 /* retina-DetailsHeader.png */; };
+		00BDE5A015CF9B9400BC205C /* retina-DetailsBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 005F7E9C15CD84CD00932B93 /* retina-DetailsBG.png */; };
+		00BDE5A115CF9B9400BC205C /* retina-CellAccessory.png in Resources */ = {isa = PBXBuildFile; fileRef = 005F7E9F15CD959100932B93 /* retina-CellAccessory.png */; };
 		00C42FDB15BAEEB1006FF95E /* retina-CellBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C42FD815BAEEB1006FF95E /* retina-CellBG.png */; };
 		00C42FDC15BAEEB1006FF95E /* retina-CellSummary.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C42FD915BAEEB1006FF95E /* retina-CellSummary.png */; };
 		00C42FDD15BAEEB1006FF95E /* retina-ListBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C42FDA15BAEEB1006FF95E /* retina-ListBG.png */; };
@@ -88,9 +233,65 @@
 		00D6778815AD542E00EF152D /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D6778715AD542E00EF152D /* Crashlytics.framework */; };
 		00D6779215ADD03900EF152D /* DDFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D6779115ADD03900EF152D /* DDFileReader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		00E25A6F15C052F2006402B2 /* VSNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0081185015BEFE220022B515 /* VSNavigationBar.m */; };
+		00FF6FD015CFD2DF0043BA91 /* mw-2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FCE15CFD2DF0043BA91 /* mw-2.txt */; };
+		00FF6FD115CFD2DF0043BA91 /* mw-1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FCF15CFD2DF0043BA91 /* mw-1.txt */; };
+		00FF6FD315CFD48A0043BA91 /* Meaning.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FD215CFD48A0043BA91 /* Meaning.txt */; };
+		00FF6FD415CFD48A0043BA91 /* Meaning.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FD215CFD48A0043BA91 /* Meaning.txt */; };
+		00FF6FD515CFD48A0043BA91 /* Meaning.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FD215CFD48A0043BA91 /* Meaning.txt */; };
+		00FF6FD615CFD4D70043BA91 /* WebsterMeaning.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FC915CFD0150043BA91 /* WebsterMeaning.txt */; };
+		00FF6FD715CFD4D90043BA91 /* Vocabularies.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FCA15CFD0150043BA91 /* Vocabularies.txt */; };
+		00FF6FD815CFD4DA0043BA91 /* Lists.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FCB15CFD0150043BA91 /* Lists.txt */; };
+		00FF6FD915CFD4DB0043BA91 /* Repos.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FCC15CFD0150043BA91 /* Repos.txt */; };
+		00FF6FE015CFDA0A0043BA91 /* mw-4.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FDA15CFDA0A0043BA91 /* mw-4.txt */; };
+		00FF6FE115CFDA0A0043BA91 /* mw-3.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FDB15CFDA0A0043BA91 /* mw-3.txt */; };
+		00FF6FE215CFDA0A0043BA91 /* mw-2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FDC15CFDA0A0043BA91 /* mw-2.txt */; };
+		00FF6FE315CFDA0A0043BA91 /* mw-1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FDD15CFDA0A0043BA91 /* mw-1.txt */; };
+		00FF6FE415CFDA0A0043BA91 /* Lists.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FDE15CFDA0A0043BA91 /* Lists.txt */; };
+		00FF6FE515CFDA0A0043BA91 /* Repos.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FDF15CFDA0A0043BA91 /* Repos.txt */; };
+		00FF6FE715CFDC4B0043BA91 /* Vocabularies.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FE615CFDC4B0043BA91 /* Vocabularies.txt */; };
+		00FF6FE915D0AC940043BA91 /* VocabularySishu.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FE815D0AC940043BA91 /* VocabularySishu.sqlite */; };
+		00FF6FEC15D0AD640043BA91 /* VSStatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF6FEB15D0AD640043BA91 /* VSStatViewController.m */; };
+		00FF6FED15D0AD640043BA91 /* VSStatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF6FEB15D0AD640043BA91 /* VSStatViewController.m */; };
+		00FF6FEE15D0AD640043BA91 /* VSStatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF6FEB15D0AD640043BA91 /* VSStatViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
+		00201E2A15CFBAD30089B8FA /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = text.plist;
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# builtin-copyPlist\n";
+		};
+		00201E2B15CFBAD30089B8FA /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = text.plist;
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# builtin-copyPlist\n";
+		};
+		00BDE5A315CF9B9400BC205C /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = text.plist;
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# builtin-copyPlist\n";
+		};
+		00BDE5A415CF9B9400BC205C /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = text.plist;
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# builtin-copyPlist\n";
+		};
 		00C4300515BC4219006FF95E /* PBXBuildRule */ = {
 			isa = PBXBuildRule;
 			compilerSpec = com.apple.compilers.proxy.script;
@@ -128,6 +329,12 @@
 		00032B2815CC1E49008FDF9F /* retina-InkNeck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-InkNeck.png"; path = "Resources/Img/retina-InkNeck.png"; sourceTree = "<group>"; };
 		00032B2A15CC1FB4008FDF9F /* retina-InkBody.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-InkBody.png"; path = "Resources/Img/retina-InkBody.png"; sourceTree = "<group>"; };
 		00032B2C15CC208F008FDF9F /* retina-InkFooter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-InkFooter.png"; path = "Resources/Img/retina-InkFooter.png"; sourceTree = "<group>"; };
+		00201DDA15CFBA2F0089B8FA /* retina-NavBackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-NavBackButton.png"; path = "Resources/Img/retina-NavBackButton.png"; sourceTree = "<group>"; };
+		00201E2F15CFBAD30089B8FA /* VocabularySishu copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VocabularySishu copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00201E3215CFBF9C0089B8FA /* VocabularySishu.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = VocabularySishu.sqlite; path = Resources/Data/TOEFL/VocabularySishu.sqlite; sourceTree = "<group>"; };
+		00201E3515CFC3560089B8FA /* Vocabularies.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Vocabularies.txt; path = Resources/Data/GRE/Vocabularies.txt; sourceTree = "<group>"; };
+		00201E3615CFC3560089B8FA /* Lists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Lists.txt; path = Resources/Data/GRE/Lists.txt; sourceTree = "<group>"; };
+		00201E3715CFC3560089B8FA /* Repos.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Repos.txt; path = Resources/Data/GRE/Repos.txt; sourceTree = "<group>"; };
 		0024B9DD1593562C001698C3 /* abacus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = abacus.jpg; path = Resources/VocabularyImg/abacus.jpg; sourceTree = "<group>"; };
 		0029087815BF0AA800568B41 /* retina-Previous.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-Previous.png"; path = "Resources/Img/retina-Previous.png"; sourceTree = "<group>"; };
 		0029087B15BF0B4500568B41 /* retina-Next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-Next.png"; path = "Resources/Img/retina-Next.png"; sourceTree = "<group>"; };
@@ -140,7 +347,6 @@
 		0046408C155916FA007E5FA9 /* VSMainMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSMainMenuViewController.xib; path = ViewController/MainView/VSMainMenuViewController.xib; sourceTree = "<group>"; };
 		0046408F15591DBD007E5FA9 /* VSUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSUtils.h; path = Utils/VSUtils.h; sourceTree = "<group>"; };
 		0046409015591DBD007E5FA9 /* VSUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSUtils.m; path = Utils/VSUtils.m; sourceTree = "<group>"; };
-		005F7E9915CD298F00932B93 /* retina-NavBackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-NavBackButton.png"; path = "../../../Downloads/retina-NavBackButton.png"; sourceTree = "<group>"; };
 		005F7E9B15CD84CD00932B93 /* retina-DetailsHeader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-DetailsHeader.png"; path = "Resources/Img/retina-DetailsHeader.png"; sourceTree = "<group>"; };
 		005F7E9C15CD84CD00932B93 /* retina-DetailsBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-DetailsBG.png"; path = "Resources/Img/retina-DetailsBG.png"; sourceTree = "<group>"; };
 		005F7E9F15CD959100932B93 /* retina-CellAccessory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-CellAccessory.png"; path = "Resources/Img/retina-CellAccessory.png"; sourceTree = "<group>"; };
@@ -221,7 +427,7 @@
 		00AE80EE158B1318000CE7EA /* VSConfigurationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSConfigurationViewController.h; path = ViewController/ConfigurationView/VSConfigurationViewController.h; sourceTree = "<group>"; };
 		00AE80EF158B1318000CE7EA /* VSConfigurationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSConfigurationViewController.m; path = ViewController/ConfigurationView/VSConfigurationViewController.m; sourceTree = "<group>"; };
 		00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSConfigurationViewController.xib; path = ViewController/ConfigurationView/VSConfigurationViewController.xib; sourceTree = "<group>"; };
-		00B4B5B315C95E4B00AAC4B8 /* VocabularySishu.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = VocabularySishu.sqlite; path = Resources/Data/VocabularySishu.sqlite; sourceTree = "<group>"; };
+		00BDE5A815CF9B9400BC205C /* VocabularySishu copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VocabularySishu copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00C42FD815BAEEB1006FF95E /* retina-CellBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-CellBG.png"; path = "Resources/Img/retina-CellBG.png"; sourceTree = "<group>"; };
 		00C42FD915BAEEB1006FF95E /* retina-CellSummary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-CellSummary.png"; path = "Resources/Img/retina-CellSummary.png"; sourceTree = "<group>"; };
 		00C42FDA15BAEEB1006FF95E /* retina-ListBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-ListBG.png"; path = "Resources/Img/retina-ListBG.png"; sourceTree = "<group>"; };
@@ -234,9 +440,40 @@
 		00D6778715AD542E00EF152D /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		00D6779015ADD03900EF152D /* DDFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDFileReader.h; path = Utils/DDFileReader.h; sourceTree = "<group>"; };
 		00D6779115ADD03900EF152D /* DDFileReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDFileReader.m; path = Utils/DDFileReader.m; sourceTree = "<group>"; };
+		00FF6FC915CFD0150043BA91 /* WebsterMeaning.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = WebsterMeaning.txt; path = Resources/Data/TOEFL/WebsterMeaning.txt; sourceTree = "<group>"; };
+		00FF6FCA15CFD0150043BA91 /* Vocabularies.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = Vocabularies.txt; path = Resources/Data/TOEFL/Vocabularies.txt; sourceTree = "<group>"; };
+		00FF6FCB15CFD0150043BA91 /* Lists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = Lists.txt; path = Resources/Data/TOEFL/Lists.txt; sourceTree = "<group>"; };
+		00FF6FCC15CFD0150043BA91 /* Repos.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = Repos.txt; path = Resources/Data/TOEFL/Repos.txt; sourceTree = "<group>"; };
+		00FF6FCE15CFD2DF0043BA91 /* mw-2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "mw-2.txt"; path = "Resources/Data/GRE/mw-2.txt"; sourceTree = "<group>"; };
+		00FF6FCF15CFD2DF0043BA91 /* mw-1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "mw-1.txt"; path = "Resources/Data/GRE/mw-1.txt"; sourceTree = "<group>"; };
+		00FF6FD215CFD48A0043BA91 /* Meaning.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Meaning.txt; path = Resources/Data/Meaning.txt; sourceTree = "<group>"; };
+		00FF6FDA15CFDA0A0043BA91 /* mw-4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "mw-4.txt"; path = "Resources/Data/FULL/mw-4.txt"; sourceTree = "<group>"; };
+		00FF6FDB15CFDA0A0043BA91 /* mw-3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "mw-3.txt"; path = "Resources/Data/FULL/mw-3.txt"; sourceTree = "<group>"; };
+		00FF6FDC15CFDA0A0043BA91 /* mw-2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "mw-2.txt"; path = "Resources/Data/FULL/mw-2.txt"; sourceTree = "<group>"; };
+		00FF6FDD15CFDA0A0043BA91 /* mw-1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "mw-1.txt"; path = "Resources/Data/FULL/mw-1.txt"; sourceTree = "<group>"; };
+		00FF6FDE15CFDA0A0043BA91 /* Lists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Lists.txt; path = Resources/Data/FULL/Lists.txt; sourceTree = "<group>"; };
+		00FF6FDF15CFDA0A0043BA91 /* Repos.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Repos.txt; path = Resources/Data/FULL/Repos.txt; sourceTree = "<group>"; };
+		00FF6FE615CFDC4B0043BA91 /* Vocabularies.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Vocabularies.txt; path = Resources/Data/FULL/Vocabularies.txt; sourceTree = "<group>"; };
+		00FF6FE815D0AC940043BA91 /* VocabularySishu.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = VocabularySishu.sqlite; path = Resources/Data/GRE/VocabularySishu.sqlite; sourceTree = "<group>"; };
+		00FF6FEA15D0AD640043BA91 /* VSStatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSStatViewController.h; path = ViewController/VocabularyListView/VSStatViewController.h; sourceTree = "<group>"; };
+		00FF6FEB15D0AD640043BA91 /* VSStatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSStatViewController.m; path = ViewController/VocabularyListView/VSStatViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		00201DFF15CFBAD30089B8FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00201E0015CFBAD30089B8FA /* AVFoundation.framework in Frameworks */,
+				00201E0115CFBAD30089B8FA /* QuartzCore.framework in Frameworks */,
+				00201E0215CFBAD30089B8FA /* UIKit.framework in Frameworks */,
+				00201E0315CFBAD30089B8FA /* Foundation.framework in Frameworks */,
+				00201E0415CFBAD30089B8FA /* CoreGraphics.framework in Frameworks */,
+				00201E0515CFBAD30089B8FA /* CoreData.framework in Frameworks */,
+				00201E0615CFBAD30089B8FA /* Crashlytics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		00701E281553CBCE00D30018 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -259,6 +496,20 @@
 				00701E4E1553CBCE00D30018 /* UIKit.framework in Frameworks */,
 				00701E4F1553CBCE00D30018 /* Foundation.framework in Frameworks */,
 				00701E501553CBCE00D30018 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00BDE57815CF9B9400BC205C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00BDE57915CF9B9400BC205C /* AVFoundation.framework in Frameworks */,
+				00BDE57A15CF9B9400BC205C /* QuartzCore.framework in Frameworks */,
+				00BDE57B15CF9B9400BC205C /* UIKit.framework in Frameworks */,
+				00BDE57C15CF9B9400BC205C /* Foundation.framework in Frameworks */,
+				00BDE57D15CF9B9400BC205C /* CoreGraphics.framework in Frameworks */,
+				00BDE57E15CF9B9400BC205C /* CoreData.framework in Frameworks */,
+				00BDE57F15CF9B9400BC205C /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +580,8 @@
 			children = (
 				00701E2B1553CBCE00D30018 /* VocabularySishu.app */,
 				00701E4B1553CBCE00D30018 /* VocabularySishuTests.octest */,
+				00BDE5A815CF9B9400BC205C /* VocabularySishu copy.app */,
+				00201E2F15CFBAD30089B8FA /* VocabularySishu copy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -434,7 +687,10 @@
 		0073A68115689DA900B80422 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				00B4B5B315C95E4B00AAC4B8 /* VocabularySishu.sqlite */,
+				00FF6FD215CFD48A0043BA91 /* Meaning.txt */,
+				00BDE55515CF9B8500BC205C /* FULL */,
+				00BDE55415CF9B7C00BC205C /* TOEFL */,
+				00BDE55215CF9B7300BC205C /* GRE */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -482,6 +738,8 @@
 				00C42FE815BB096F006FF95E /* VSSummaryView.m */,
 				009BB48415CAAFF2008E5B2B /* VSVocabularyCell.h */,
 				009BB48515CAAFF2008E5B2B /* VSVocabularyCell.m */,
+				00FF6FEA15D0AD640043BA91 /* VSStatViewController.h */,
+				00FF6FEB15D0AD640043BA91 /* VSStatViewController.m */,
 			);
 			name = VocabularyListView;
 			sourceTree = "<group>";
@@ -523,10 +781,10 @@
 		00B5A8BE1566886E00D20EB6 /* Img */ = {
 			isa = PBXGroup;
 			children = (
-				005F7E9915CD298F00932B93 /* retina-NavBackButton.png */,
 				009BB48815CAC448008E5B2B /* retina-TapeBody.png */,
 				00032B2C15CC208F008FDF9F /* retina-InkFooter.png */,
 				009BB48915CAC448008E5B2B /* retina-TapeTail.png */,
+				00201DDA15CFBA2F0089B8FA /* retina-NavBackButton.png */,
 				009BB48A15CAC448008E5B2B /* retina-TapeHead.png */,
 				005F7E9F15CD959100932B93 /* retina-CellAccessory.png */,
 				00032B2815CC1E49008FDF9F /* retina-InkNeck.png */,
@@ -552,9 +810,68 @@
 			name = Img;
 			sourceTree = "<group>";
 		};
+		00BDE55215CF9B7300BC205C /* GRE */ = {
+			isa = PBXGroup;
+			children = (
+				00201E3515CFC3560089B8FA /* Vocabularies.txt */,
+				00FF6FCE15CFD2DF0043BA91 /* mw-2.txt */,
+				00FF6FE815D0AC940043BA91 /* VocabularySishu.sqlite */,
+				00FF6FCF15CFD2DF0043BA91 /* mw-1.txt */,
+				00201E3615CFC3560089B8FA /* Lists.txt */,
+				00201E3715CFC3560089B8FA /* Repos.txt */,
+			);
+			name = GRE;
+			sourceTree = "<group>";
+		};
+		00BDE55415CF9B7C00BC205C /* TOEFL */ = {
+			isa = PBXGroup;
+			children = (
+				00FF6FC915CFD0150043BA91 /* WebsterMeaning.txt */,
+				00FF6FCA15CFD0150043BA91 /* Vocabularies.txt */,
+				00FF6FCB15CFD0150043BA91 /* Lists.txt */,
+				00FF6FCC15CFD0150043BA91 /* Repos.txt */,
+				00201E3215CFBF9C0089B8FA /* VocabularySishu.sqlite */,
+			);
+			name = TOEFL;
+			sourceTree = "<group>";
+		};
+		00BDE55515CF9B8500BC205C /* FULL */ = {
+			isa = PBXGroup;
+			children = (
+				00FF6FE615CFDC4B0043BA91 /* Vocabularies.txt */,
+				00FF6FDA15CFDA0A0043BA91 /* mw-4.txt */,
+				00FF6FDB15CFDA0A0043BA91 /* mw-3.txt */,
+				00FF6FDC15CFDA0A0043BA91 /* mw-2.txt */,
+				00FF6FDD15CFDA0A0043BA91 /* mw-1.txt */,
+				00FF6FDE15CFDA0A0043BA91 /* Lists.txt */,
+				00FF6FDF15CFDA0A0043BA91 /* Repos.txt */,
+			);
+			name = FULL;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		00201DDD15CFBAD30089B8FA /* VocabularySishu GRE */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00201E2C15CFBAD30089B8FA /* Build configuration list for PBXNativeTarget "VocabularySishu GRE" */;
+			buildPhases = (
+				00201DDE15CFBAD30089B8FA /* Sources */,
+				00201DFF15CFBAD30089B8FA /* Frameworks */,
+				00201E0715CFBAD30089B8FA /* Resources */,
+				00201E2915CFBAD30089B8FA /* ShellScript */,
+			);
+			buildRules = (
+				00201E2A15CFBAD30089B8FA /* PBXBuildRule */,
+				00201E2B15CFBAD30089B8FA /* PBXBuildRule */,
+			);
+			dependencies = (
+			);
+			name = "VocabularySishu GRE";
+			productName = VocabularySishu;
+			productReference = 00201E2F15CFBAD30089B8FA /* VocabularySishu copy.app */;
+			productType = "com.apple.product-type.application";
+		};
 		00701E2A1553CBCE00D30018 /* VocabularySishu */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00701E5E1553CBCE00D30018 /* Build configuration list for PBXNativeTarget "VocabularySishu" */;
@@ -594,6 +911,26 @@
 			productReference = 00701E4B1553CBCE00D30018 /* VocabularySishuTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
+		00BDE55615CF9B9400BC205C /* VocabularySishu TOEFL */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00BDE5A515CF9B9400BC205C /* Build configuration list for PBXNativeTarget "VocabularySishu TOEFL" */;
+			buildPhases = (
+				00BDE55715CF9B9400BC205C /* Sources */,
+				00BDE57815CF9B9400BC205C /* Frameworks */,
+				00BDE58015CF9B9400BC205C /* Resources */,
+				00BDE5A215CF9B9400BC205C /* ShellScript */,
+			);
+			buildRules = (
+				00BDE5A315CF9B9400BC205C /* PBXBuildRule */,
+				00BDE5A415CF9B9400BC205C /* PBXBuildRule */,
+			);
+			dependencies = (
+			);
+			name = "VocabularySishu TOEFL";
+			productName = VocabularySishu;
+			productReference = 00BDE5A815CF9B9400BC205C /* VocabularySishu copy.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -618,18 +955,70 @@
 			targets = (
 				00701E2A1553CBCE00D30018 /* VocabularySishu */,
 				00701E4A1553CBCE00D30018 /* VocabularySishuTests */,
+				00BDE55615CF9B9400BC205C /* VocabularySishu TOEFL */,
+				00201DDD15CFBAD30089B8FA /* VocabularySishu GRE */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		00201E0715CFBAD30089B8FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00201E0815CFBAD30089B8FA /* InfoPlist.strings in Resources */,
+				00201E0915CFBAD30089B8FA /* VSMainMenuViewController.xib in Resources */,
+				00201E0A15CFBAD30089B8FA /* VSVocabularyViewController.xib in Resources */,
+				00201E0B15CFBAD30089B8FA /* VSVocabularyListViewController.xib in Resources */,
+				00201E0C15CFBAD30089B8FA /* Meaning.html in Resources */,
+				00201E0D15CFBAD30089B8FA /* retina-Navigation.png in Resources */,
+				00201E0E15CFBAD30089B8FA /* back-button.png in Resources */,
+				00201E0F15CFBAD30089B8FA /* retina-back-button.png in Resources */,
+				00201E1015CFBAD30089B8FA /* VSConfigurationViewController.xib in Resources */,
+				00201E1115CFBAD30089B8FA /* retina-InkNeck.png in Resources */,
+				00201E1215CFBAD30089B8FA /* abacus.jpg in Resources */,
+				00201E1315CFBAD30089B8FA /* retina-CellBG.png in Resources */,
+				00201E1415CFBAD30089B8FA /* retina-CellSummary.png in Resources */,
+				00201E1515CFBAD30089B8FA /* retina-ListBG.png in Resources */,
+				00201E1615CFBAD30089B8FA /* retina-CellClear.png in Resources */,
+				00201E1715CFBAD30089B8FA /* retina-Restart.png in Resources */,
+				00201E1815CFBAD30089B8FA /* retina-Restart-Highlight.png in Resources */,
+				00201E1915CFBAD30089B8FA /* retina-Next.png in Resources */,
+				00201E1B15CFBAD30089B8FA /* retina-Previous.png in Resources */,
+				00201E1C15CFBAD30089B8FA /* retina-InkBody.png in Resources */,
+				00201E1D15CFBAD30089B8FA /* retina-PenBG.png in Resources */,
+				00201E1E15CFBAD30089B8FA /* retina-TapeBody.png in Resources */,
+				00201E1F15CFBAD30089B8FA /* retina-TapeTail.png in Resources */,
+				00201E2015CFBAD30089B8FA /* retina-TapeHead.png in Resources */,
+				00201E2115CFBAD30089B8FA /* retina-CellLine.png in Resources */,
+				00201E2215CFBAD30089B8FA /* retina-PenFG.png in Resources */,
+				00201E2315CFBAD30089B8FA /* retina-InkHeader.png in Resources */,
+				00201E2415CFBAD30089B8FA /* retina-InkFooter.png in Resources */,
+				00201E2515CFBAD30089B8FA /* retina-DetailsHeader.png in Resources */,
+				00201E2615CFBAD30089B8FA /* retina-DetailsBG.png in Resources */,
+				00201E4A15CFCDD00089B8FA /* Vocabularies.txt in Resources */,
+				00201E4B15CFCDD00089B8FA /* Lists.txt in Resources */,
+				00201E4C15CFCDD00089B8FA /* Repos.txt in Resources */,
+				00201E2715CFBAD30089B8FA /* retina-CellAccessory.png in Resources */,
+				00201E2815CFBAD30089B8FA /* retina-NavBackButton.png in Resources */,
+				00FF6FD015CFD2DF0043BA91 /* mw-2.txt in Resources */,
+				00FF6FD115CFD2DF0043BA91 /* mw-1.txt in Resources */,
+				00FF6FD515CFD48A0043BA91 /* Meaning.txt in Resources */,
+				00FF6FE915D0AC940043BA91 /* VocabularySishu.sqlite in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		00701E291553CBCE00D30018 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				00701E3C1553CBCE00D30018 /* InfoPlist.strings in Resources */,
+				00FF6FE315CFDA0A0043BA91 /* mw-1.txt in Resources */,
 				0046408E155916FA007E5FA9 /* VSMainMenuViewController.xib in Resources */,
+				00FF6FE215CFDA0A0043BA91 /* mw-2.txt in Resources */,
 				0046409315591FD1007E5FA9 /* VSVocabularyViewController.xib in Resources */,
+				00FF6FE115CFDA0A0043BA91 /* mw-3.txt in Resources */,
+				00FF6FE015CFDA0A0043BA91 /* mw-4.txt in Resources */,
 				0073A6BF156A5FF700B80422 /* VSVocabularyListViewController.xib in Resources */,
 				00A006F9156B3BDF00D24418 /* Meaning.html in Resources */,
 				00032B2015CC18BC008FDF9F /* retina-Navigation.png in Resources */,
@@ -645,7 +1034,6 @@
 				0078168A15C3A8F700CE5026 /* retina-Restart.png in Resources */,
 				0078168D15C3AA0100CE5026 /* retina-Restart-Highlight.png in Resources */,
 				0029087C15BF0B4500568B41 /* retina-Next.png in Resources */,
-				00B4B5B415C95E4B00AAC4B8 /* VocabularySishu.sqlite in Resources */,
 				0029087915BF0AA800568B41 /* retina-Previous.png in Resources */,
 				00032B2B15CC1FB4008FDF9F /* retina-InkBody.png in Resources */,
 				00032B2415CC1B36008FDF9F /* retina-PenBG.png in Resources */,
@@ -656,10 +1044,14 @@
 				00032B2515CC1B36008FDF9F /* retina-PenFG.png in Resources */,
 				00032B2715CC1D87008FDF9F /* retina-InkHeader.png in Resources */,
 				00032B2D15CC208F008FDF9F /* retina-InkFooter.png in Resources */,
-				005F7E9A15CD298F00932B93 /* retina-NavBackButton.png in Resources */,
 				005F7E9D15CD84CD00932B93 /* retina-DetailsHeader.png in Resources */,
 				005F7E9E15CD84CD00932B93 /* retina-DetailsBG.png in Resources */,
 				005F7EA015CD959100932B93 /* retina-CellAccessory.png in Resources */,
+				00201DDB15CFBA2F0089B8FA /* retina-NavBackButton.png in Resources */,
+				00FF6FD315CFD48A0043BA91 /* Meaning.txt in Resources */,
+				00FF6FE415CFDA0A0043BA91 /* Lists.txt in Resources */,
+				00FF6FE515CFDA0A0043BA91 /* Repos.txt in Resources */,
+				00FF6FE715CFDC4B0043BA91 /* Vocabularies.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -672,9 +1064,67 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		00BDE58015CF9B9400BC205C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00BDE58115CF9B9400BC205C /* InfoPlist.strings in Resources */,
+				00BDE58215CF9B9400BC205C /* VSMainMenuViewController.xib in Resources */,
+				00BDE58315CF9B9400BC205C /* VSVocabularyViewController.xib in Resources */,
+				00BDE58415CF9B9400BC205C /* VSVocabularyListViewController.xib in Resources */,
+				00BDE58515CF9B9400BC205C /* Meaning.html in Resources */,
+				00BDE58615CF9B9400BC205C /* retina-Navigation.png in Resources */,
+				00BDE58715CF9B9400BC205C /* back-button.png in Resources */,
+				00BDE58815CF9B9400BC205C /* retina-back-button.png in Resources */,
+				00BDE58915CF9B9400BC205C /* VSConfigurationViewController.xib in Resources */,
+				00BDE58A15CF9B9400BC205C /* retina-InkNeck.png in Resources */,
+				00FF6FD615CFD4D70043BA91 /* WebsterMeaning.txt in Resources */,
+				00BDE58B15CF9B9400BC205C /* abacus.jpg in Resources */,
+				00BDE58C15CF9B9400BC205C /* retina-CellBG.png in Resources */,
+				00FF6FD915CFD4DB0043BA91 /* Repos.txt in Resources */,
+				00FF6FD815CFD4DA0043BA91 /* Lists.txt in Resources */,
+				00BDE58D15CF9B9400BC205C /* retina-CellSummary.png in Resources */,
+				00FF6FD715CFD4D90043BA91 /* Vocabularies.txt in Resources */,
+				00BDE58E15CF9B9400BC205C /* retina-ListBG.png in Resources */,
+				00BDE58F15CF9B9400BC205C /* retina-CellClear.png in Resources */,
+				00BDE59015CF9B9400BC205C /* retina-Restart.png in Resources */,
+				00BDE59115CF9B9400BC205C /* retina-Restart-Highlight.png in Resources */,
+				00BDE59215CF9B9400BC205C /* retina-Next.png in Resources */,
+				00BDE59415CF9B9400BC205C /* retina-Previous.png in Resources */,
+				00BDE59515CF9B9400BC205C /* retina-InkBody.png in Resources */,
+				00BDE59615CF9B9400BC205C /* retina-PenBG.png in Resources */,
+				00BDE59715CF9B9400BC205C /* retina-TapeBody.png in Resources */,
+				00BDE59815CF9B9400BC205C /* retina-TapeTail.png in Resources */,
+				00BDE59915CF9B9400BC205C /* retina-TapeHead.png in Resources */,
+				00BDE59A15CF9B9400BC205C /* retina-CellLine.png in Resources */,
+				00BDE59B15CF9B9400BC205C /* retina-PenFG.png in Resources */,
+				00BDE59C15CF9B9400BC205C /* retina-InkHeader.png in Resources */,
+				00BDE59D15CF9B9400BC205C /* retina-InkFooter.png in Resources */,
+				00BDE59F15CF9B9400BC205C /* retina-DetailsHeader.png in Resources */,
+				00BDE5A015CF9B9400BC205C /* retina-DetailsBG.png in Resources */,
+				00BDE5A115CF9B9400BC205C /* retina-CellAccessory.png in Resources */,
+				00201DDC15CFBA2F0089B8FA /* retina-NavBackButton.png in Resources */,
+				00201E3315CFBF9C0089B8FA /* VocabularySishu.sqlite in Resources */,
+				00FF6FD415CFD48A0043BA91 /* Meaning.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		00201E2915CFBAD30089B8FA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = ./Crashlytics.framework/run;
+		};
 		00701E491553CBCE00D30018 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -687,6 +1137,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		00BDE5A215CF9B9400BC205C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = ./Crashlytics.framework/run;
 		};
 		00D6778415AD534300EF152D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -704,6 +1167,46 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		00201DDE15CFBAD30089B8FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00201DDF15CFBAD30089B8FA /* VSNavigationBar.m in Sources */,
+				00201DE015CFBAD30089B8FA /* main.m in Sources */,
+				00201DE115CFBAD30089B8FA /* VSAppDelegate.m in Sources */,
+				00201DE215CFBAD30089B8FA /* VocabularySishu.xcdatamodeld in Sources */,
+				00201DE315CFBAD30089B8FA /* VSVocabularyViewController.m in Sources */,
+				00201DE415CFBAD30089B8FA /* VSMainMenuViewController.m in Sources */,
+				00201DE515CFBAD30089B8FA /* VSUtils.m in Sources */,
+				00201DE615CFBAD30089B8FA /* VSDataUtil.m in Sources */,
+				00201DE715CFBAD30089B8FA /* NSObject+SBJSON.m in Sources */,
+				00201DE815CFBAD30089B8FA /* NSString+SBJSON.m in Sources */,
+				00201DE915CFBAD30089B8FA /* SBJSON.m in Sources */,
+				00201DEA15CFBAD30089B8FA /* SBJsonBase.m in Sources */,
+				00201DEB15CFBAD30089B8FA /* SBJsonParser.m in Sources */,
+				00201DEC15CFBAD30089B8FA /* SBJsonWriter.m in Sources */,
+				00201DED15CFBAD30089B8FA /* VSVocabularyListViewController.m in Sources */,
+				00201DEE15CFBAD30089B8FA /* VSConstant.m in Sources */,
+				00201DEF15CFBAD30089B8FA /* VSContext.m in Sources */,
+				00201DF015CFBAD30089B8FA /* VSList.m in Sources */,
+				00201DF115CFBAD30089B8FA /* VSListVocabulary.m in Sources */,
+				00201DF215CFBAD30089B8FA /* VSMeaning.m in Sources */,
+				00201DF315CFBAD30089B8FA /* VSRepository.m in Sources */,
+				00201DF415CFBAD30089B8FA /* VSWebsterMeaning.m in Sources */,
+				00201DF515CFBAD30089B8FA /* VSVocabularyListHeaderView.m in Sources */,
+				00201DF615CFBAD30089B8FA /* VSAlertDelegate.m in Sources */,
+				00201DF715CFBAD30089B8FA /* VSConfigurationViewController.m in Sources */,
+				00201DF815CFBAD30089B8FA /* VSReviewPlan.m in Sources */,
+				00201DF915CFBAD30089B8FA /* NSMutableArrayShuffling.m in Sources */,
+				00201DFA15CFBAD30089B8FA /* DDFileReader.m in Sources */,
+				00201DFB15CFBAD30089B8FA /* VSMeaningView.m in Sources */,
+				00201DFC15CFBAD30089B8FA /* VSSummaryView.m in Sources */,
+				00201DFD15CFBAD30089B8FA /* VSVocabulary.m in Sources */,
+				00201DFE15CFBAD30089B8FA /* VSVocabularyCell.m in Sources */,
+				00FF6FEE15D0AD640043BA91 /* VSStatViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		00701E271553CBCE00D30018 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -740,6 +1243,7 @@
 				00C42FE915BB096F006FF95E /* VSSummaryView.m in Sources */,
 				00C4300115BBFC44006FF95E /* VSVocabulary.m in Sources */,
 				009BB48615CAAFF2008E5B2B /* VSVocabularyCell.m in Sources */,
+				00FF6FEC15D0AD640043BA91 /* VSStatViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -750,6 +1254,46 @@
 				00701E5B1553CBCE00D30018 /* VocabularySishuTests.m in Sources */,
 				0046409215591DBD007E5FA9 /* VSUtils.m in Sources */,
 				00A9E7B115A08699009832BA /* VSReviewPlan.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00BDE55715CF9B9400BC205C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00BDE55815CF9B9400BC205C /* VSNavigationBar.m in Sources */,
+				00BDE55915CF9B9400BC205C /* main.m in Sources */,
+				00BDE55A15CF9B9400BC205C /* VSAppDelegate.m in Sources */,
+				00BDE55B15CF9B9400BC205C /* VocabularySishu.xcdatamodeld in Sources */,
+				00BDE55C15CF9B9400BC205C /* VSVocabularyViewController.m in Sources */,
+				00BDE55D15CF9B9400BC205C /* VSMainMenuViewController.m in Sources */,
+				00BDE55E15CF9B9400BC205C /* VSUtils.m in Sources */,
+				00BDE55F15CF9B9400BC205C /* VSDataUtil.m in Sources */,
+				00BDE56015CF9B9400BC205C /* NSObject+SBJSON.m in Sources */,
+				00BDE56115CF9B9400BC205C /* NSString+SBJSON.m in Sources */,
+				00BDE56215CF9B9400BC205C /* SBJSON.m in Sources */,
+				00BDE56315CF9B9400BC205C /* SBJsonBase.m in Sources */,
+				00BDE56415CF9B9400BC205C /* SBJsonParser.m in Sources */,
+				00BDE56515CF9B9400BC205C /* SBJsonWriter.m in Sources */,
+				00BDE56615CF9B9400BC205C /* VSVocabularyListViewController.m in Sources */,
+				00BDE56715CF9B9400BC205C /* VSConstant.m in Sources */,
+				00BDE56815CF9B9400BC205C /* VSContext.m in Sources */,
+				00BDE56915CF9B9400BC205C /* VSList.m in Sources */,
+				00BDE56A15CF9B9400BC205C /* VSListVocabulary.m in Sources */,
+				00BDE56B15CF9B9400BC205C /* VSMeaning.m in Sources */,
+				00BDE56C15CF9B9400BC205C /* VSRepository.m in Sources */,
+				00BDE56D15CF9B9400BC205C /* VSWebsterMeaning.m in Sources */,
+				00BDE56E15CF9B9400BC205C /* VSVocabularyListHeaderView.m in Sources */,
+				00BDE56F15CF9B9400BC205C /* VSAlertDelegate.m in Sources */,
+				00BDE57015CF9B9400BC205C /* VSConfigurationViewController.m in Sources */,
+				00BDE57115CF9B9400BC205C /* VSReviewPlan.m in Sources */,
+				00BDE57215CF9B9400BC205C /* NSMutableArrayShuffling.m in Sources */,
+				00BDE57315CF9B9400BC205C /* DDFileReader.m in Sources */,
+				00BDE57415CF9B9400BC205C /* VSMeaningView.m in Sources */,
+				00BDE57515CF9B9400BC205C /* VSSummaryView.m in Sources */,
+				00BDE57615CF9B9400BC205C /* VSVocabulary.m in Sources */,
+				00BDE57715CF9B9400BC205C /* VSVocabularyCell.m in Sources */,
+				00FF6FED15D0AD640043BA91 /* VSStatViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -783,6 +1327,52 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		00201E2D15CFBAD30089B8FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xiao Xiao (KC9ND38234)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xiao Xiao (KC9ND38234)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
+				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				PRODUCT_NAME = "VocabularySishu copy";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = app;
+				version = 0;
+			};
+			name = Debug;
+		};
+		00201E2E15CFBAD30089B8FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xiao Xiao (KC9ND38234)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xiao Xiao (KC9ND38234)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
+				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				PRODUCT_NAME = "VocabularySishu copy";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "56416541-0D03-44A4-867C-B5CD2311C6F9";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = app;
+				version = 0;
+			};
+			name = Release;
+		};
 		00701E5C1553CBCE00D30018 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -847,6 +1437,7 @@
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
+				version = 0;
 			};
 			name = Debug;
 		};
@@ -869,6 +1460,7 @@
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "56416541-0D03-44A4-867C-B5CD2311C6F9";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
+				version = 0;
 			};
 			name = Release;
 		};
@@ -908,9 +1500,64 @@
 			};
 			name = Release;
 		};
+		00BDE5A615CF9B9400BC205C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xiao Xiao (KC9ND38234)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xiao Xiao (KC9ND38234)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
+				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				PRODUCT_NAME = "VocabularySishu copy";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = app;
+				version = 0;
+			};
+			name = Debug;
+		};
+		00BDE5A715CF9B9400BC205C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xiao Xiao (KC9ND38234)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xiao Xiao (KC9ND38234)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
+				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				PRODUCT_NAME = "VocabularySishu copy";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "56416541-0D03-44A4-867C-B5CD2311C6F9";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = app;
+				version = 0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		00201E2C15CFBAD30089B8FA /* Build configuration list for PBXNativeTarget "VocabularySishu GRE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00201E2D15CFBAD30089B8FA /* Debug */,
+				00201E2E15CFBAD30089B8FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		00701E251553CBCE00D30018 /* Build configuration list for PBXProject "VocabularySishu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -934,6 +1581,15 @@
 			buildConfigurations = (
 				00701E621553CBCE00D30018 /* Debug */,
 				00701E631553CBCE00D30018 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00BDE5A515CF9B9400BC205C /* Build configuration list for PBXNativeTarget "VocabularySishu TOEFL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00BDE5A615CF9B9400BC205C /* Debug */,
+				00BDE5A715CF9B9400BC205C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

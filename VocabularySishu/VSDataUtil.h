@@ -26,4 +26,5 @@
 
 + (void)initMWMeaning;
 
++ (void)initFullMWMeanings;
 @end

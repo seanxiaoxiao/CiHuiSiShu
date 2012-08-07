@@ -80,7 +80,6 @@
 - (IBAction)initData:(id)sender
 {
     [VSDataUtil initMWMeaning];
-
 }
 
 #pragma mark - Table view delegate

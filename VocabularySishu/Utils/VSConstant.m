@@ -60,4 +60,14 @@
     return [NSNumber numberWithInt:3];
 }
 
++ (NSNumber *)REMEMBER_STATUS_GOOD
+{
+    return [NSNumber numberWithInt:1];
+}
+
++ (NSNumber *)REMEMBER_STATUS_BAD
+{
+    return [NSNumber numberWithInt:0];  
+}
+
 @end
