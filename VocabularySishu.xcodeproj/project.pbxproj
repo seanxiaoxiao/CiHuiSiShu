@@ -271,6 +271,15 @@
 		00FF700E15D113880043BA91 /* retina-StarNone.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF700D15D113880043BA91 /* retina-StarNone.png */; };
 		00FF700F15D113880043BA91 /* retina-StarNone.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF700D15D113880043BA91 /* retina-StarNone.png */; };
 		00FF701015D113880043BA91 /* retina-StarNone.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF700D15D113880043BA91 /* retina-StarNone.png */; };
+		00FF701315D1676F0043BA91 /* VSHisotryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF701215D1676F0043BA91 /* VSHisotryListCell.m */; };
+		00FF701415D1676F0043BA91 /* VSHisotryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF701215D1676F0043BA91 /* VSHisotryListCell.m */; };
+		00FF701515D1676F0043BA91 /* VSHisotryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF701215D1676F0043BA91 /* VSHisotryListCell.m */; };
+		00FF701815D16C050043BA91 /* retina-TimeLineCellDark.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF701615D16C050043BA91 /* retina-TimeLineCellDark.png */; };
+		00FF701915D16C050043BA91 /* retina-TimeLineCellDark.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF701615D16C050043BA91 /* retina-TimeLineCellDark.png */; };
+		00FF701A15D16C050043BA91 /* retina-TimeLineCellDark.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF701615D16C050043BA91 /* retina-TimeLineCellDark.png */; };
+		00FF701B15D16C050043BA91 /* retina-TimeLineCellLight.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF701715D16C050043BA91 /* retina-TimeLineCellLight.png */; };
+		00FF701C15D16C050043BA91 /* retina-TimeLineCellLight.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF701715D16C050043BA91 /* retina-TimeLineCellLight.png */; };
+		00FF701D15D16C050043BA91 /* retina-TimeLineCellLight.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF701715D16C050043BA91 /* retina-TimeLineCellLight.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -481,6 +490,10 @@
 		00FF700215D0C4B80043BA91 /* retina-ButtonBTHighLighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-ButtonBTHighLighted.png"; path = "Resources/Img/retina-ButtonBTHighLighted.png"; sourceTree = "<group>"; };
 		00FF700915D113220043BA91 /* retina-Star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-Star.png"; path = "Resources/Img/retina-Star.png"; sourceTree = "<group>"; };
 		00FF700D15D113880043BA91 /* retina-StarNone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-StarNone.png"; path = "Resources/Img/retina-StarNone.png"; sourceTree = "<group>"; };
+		00FF701115D1676F0043BA91 /* VSHisotryListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSHisotryListCell.h; path = ViewController/MainView/VSHisotryListCell.h; sourceTree = "<group>"; };
+		00FF701215D1676F0043BA91 /* VSHisotryListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSHisotryListCell.m; path = ViewController/MainView/VSHisotryListCell.m; sourceTree = "<group>"; };
+		00FF701615D16C050043BA91 /* retina-TimeLineCellDark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-TimeLineCellDark.png"; path = "Resources/Img/retina-TimeLineCellDark.png"; sourceTree = "<group>"; };
+		00FF701715D16C050043BA91 /* retina-TimeLineCellLight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-TimeLineCellLight.png"; path = "Resources/Img/retina-TimeLineCellLight.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -575,6 +588,8 @@
 				0046408A155916FA007E5FA9 /* VSMainMenuViewController.h */,
 				0046408B155916FA007E5FA9 /* VSMainMenuViewController.m */,
 				0046408C155916FA007E5FA9 /* VSMainMenuViewController.xib */,
+				00FF701115D1676F0043BA91 /* VSHisotryListCell.h */,
+				00FF701215D1676F0043BA91 /* VSHisotryListCell.m */,
 			);
 			name = MainView;
 			sourceTree = "<group>";
@@ -808,6 +823,8 @@
 				00FF700915D113220043BA91 /* retina-Star.png */,
 				00FF700115D0C4B80043BA91 /* retina-ButtonBT.png */,
 				00FF700D15D113880043BA91 /* retina-StarNone.png */,
+				00FF701615D16C050043BA91 /* retina-TimeLineCellDark.png */,
+				00FF701715D16C050043BA91 /* retina-TimeLineCellLight.png */,
 				00FF700215D0C4B80043BA91 /* retina-ButtonBTHighLighted.png */,
 				00FF6FFD15D0C2A50043BA91 /* retina-ScoreBoardPopup.png */,
 				00FF6FEF15D0AF1E0043BA91 /* retina-ScoreBoardButton.png */,
@@ -1041,6 +1058,8 @@
 				00FF700815D0C4B80043BA91 /* retina-ButtonBTHighLighted.png in Resources */,
 				00FF700C15D113220043BA91 /* retina-Star.png in Resources */,
 				00FF701015D113880043BA91 /* retina-StarNone.png in Resources */,
+				00FF701A15D16C050043BA91 /* retina-TimeLineCellDark.png in Resources */,
+				00FF701D15D16C050043BA91 /* retina-TimeLineCellLight.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1094,6 +1113,8 @@
 				00FF700615D0C4B80043BA91 /* retina-ButtonBTHighLighted.png in Resources */,
 				00FF700A15D113220043BA91 /* retina-Star.png in Resources */,
 				00FF700E15D113880043BA91 /* retina-StarNone.png in Resources */,
+				00FF701815D16C050043BA91 /* retina-TimeLineCellDark.png in Resources */,
+				00FF701B15D16C050043BA91 /* retina-TimeLineCellLight.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1154,6 +1175,8 @@
 				00FF700715D0C4B80043BA91 /* retina-ButtonBTHighLighted.png in Resources */,
 				00FF700B15D113220043BA91 /* retina-Star.png in Resources */,
 				00FF700F15D113880043BA91 /* retina-StarNone.png in Resources */,
+				00FF701915D16C050043BA91 /* retina-TimeLineCellDark.png in Resources */,
+				00FF701C15D16C050043BA91 /* retina-TimeLineCellLight.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1252,6 +1275,7 @@
 				00201DFD15CFBAD30089B8FA /* VSVocabulary.m in Sources */,
 				00201DFE15CFBAD30089B8FA /* VSVocabularyCell.m in Sources */,
 				00FF6FFC15D0BACB0043BA91 /* VSScoreBoardView.m in Sources */,
+				00FF701515D1676F0043BA91 /* VSHisotryListCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1292,6 +1316,7 @@
 				00C4300115BBFC44006FF95E /* VSVocabulary.m in Sources */,
 				009BB48615CAAFF2008E5B2B /* VSVocabularyCell.m in Sources */,
 				00FF6FFA15D0BACB0043BA91 /* VSScoreBoardView.m in Sources */,
+				00FF701315D1676F0043BA91 /* VSHisotryListCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1342,6 +1367,7 @@
 				00BDE57615CF9B9400BC205C /* VSVocabulary.m in Sources */,
 				00BDE57715CF9B9400BC205C /* VSVocabularyCell.m in Sources */,
 				00FF6FFB15D0BACB0043BA91 /* VSScoreBoardView.m in Sources */,
+				00FF701415D1676F0043BA91 /* VSHisotryListCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

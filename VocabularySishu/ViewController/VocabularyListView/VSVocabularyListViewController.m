@@ -376,6 +376,7 @@
         [self.headerView updateProgress:[self.currentList finishProgress]];
         [vocabulariesToRecite removeObjectAtIndex:index];
         [self updateVocabularyTable:index];
+        [self processAfterSwipe];
     }
 }
 
@@ -396,13 +397,13 @@
     if ([self.vocabulariesToRecite count] == 0) {
         alertWhenFinish = nil;
         if ([self.currentList isHistoryList]) {
-            alertWhenFinish = [[UIAlertView alloc] initWithTitle:@"" message:@"复习完毕" delegate:self cancelButtonTitle:@"嗯，好的" otherButtonTitles:nil,nil];
+            alertWhenFinish = [[UIAlertView alloc] initWithTitle:@"" message:@"复习完毕" delegate:self cancelButtonTitle:@"嗯，好的" otherButtonTitles:nil, nil];
+            [alertWhenFinish setDelegate:self.alertDelegate];
+            [alertWhenFinish show];
         }
         else {
-            alertWhenFinish = [[UIAlertView alloc] initWithTitle:@"" message:@"当前List已经背诵完毕\n将进入下一个List的背诵" delegate:self cancelButtonTitle:@"嗯，好的" otherButtonTitles:nil,nil];
+            [self showHideScoreBoard];
         }
-        [alertWhenFinish setDelegate:self.alertDelegate];
-        [alertWhenFinish show];
     }
 }
 

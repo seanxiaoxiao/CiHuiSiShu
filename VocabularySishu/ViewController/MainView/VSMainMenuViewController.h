@@ -9,12 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "VSDataUtil.h"
 #import "VSContext.h"
+#import "VSHisotryListCell.h"
 
 @interface VSMainMenuViewController : UIViewController<UITableViewDelegate, UITableViewDataSource> {
     IBOutlet UITableView *historyTable;
 }
 
-@property (nonatomic, retain) NSArray *historyLists;
+@property (nonatomic, retain) UIView *tableFooterView;
+@property (nonatomic, retain) UIActivityIndicatorView *activator;
+@property (nonatomic, retain) NSMutableArray *historyLists;
 @property (nonatomic, strong) UITableView *historyTable;
 
 

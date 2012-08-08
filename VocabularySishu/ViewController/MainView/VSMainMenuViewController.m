@@ -18,12 +18,13 @@
 
 @synthesize historyLists;
 @synthesize historyTable;
+@synthesize tableFooterView;
+@synthesize activator;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    if (self) {        
     }
     return self;
 }
@@ -32,6 +33,10 @@
 {
     [super viewDidLoad];
     self.title = @"词汇私塾";
+    UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
+    [backgroundImageView setFrame:self.view.frame];
+    [self.view addSubview:backgroundImageView];
+    [self.view sendSubviewToBack:backgroundImageView];
 }
 
 - (void)viewDidUnload
@@ -54,12 +59,13 @@
     UIBarButtonItem* configurationButtonItem = [[UIBarButtonItem alloc] initWithCustomView:configurationButton]; 
     [self.navigationItem setRightBarButtonItem:configurationButtonItem];
 
-    self.historyLists = [VSList lastestHistoryList];
+    self.historyLists = [NSMutableArray arrayWithArray:[VSList lastestHistoryList]];
     [self.historyTable reloadData];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
+    
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -101,27 +107,59 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 59;
+    return 60;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 7 < [self.historyLists count] ? 7 : [self.historyLists count];
+    return [self.historyLists count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     VSList *list = [historyLists objectAtIndex:indexPath.row];
-    NSString *CellIdentifier = [list.objectID description];
+    NSString *CellIdentifier = @"ListCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[VSHisotryListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    cell.textLabel.text = list.name;
-    [cell.textLabel setTextAlignment:UITextAlignmentCenter];
-    cell.textLabel.backgroundColor = [UIColor clearColor];
-    cell.textLabel.textColor = [UIColor blackColor];
+    [((VSHisotryListCell *)(cell)) initWithList:list andRow:indexPath.row];
+    BOOL lastCell = indexPath.row == [self.historyLists count] - 1;
+    if (lastCell) {
+        [((VSHisotryListCell *)(cell)) addCellShadow];
+    }
+    else {
+        [((VSHisotryListCell *)(cell)) removeCellShadow];
+    }
+    
     return cell;
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+	if (([scrollView contentOffset].y + scrollView.frame.size.height) == [scrollView contentSize].height) {
+        tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 280, 60)];
+        activator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        activator.center = tableFooterView.center;
+        [tableFooterView addSubview:activator];
+        self.historyTable.tableFooterView = tableFooterView;
+        [self.activator startAnimating];
+        [self performSelector:@selector(stopAnimatingFooter) withObject:nil afterDelay:0.5];
+	}
+}
+
+- (void) stopAnimatingFooter
+{
+    [self.activator stopAnimating];
+    self.historyTable.tableFooterView = nil;
+    [self addMoreList];
+    [self.historyTable reloadData];
+}
+
+- (void) addMoreList
+{
+    NSDate *lastCreatedDate = ((VSList *)[self.historyLists objectAtIndex:[self.historyLists count] - 1]).createdDate;
+    [self.historyLists addObjectsFromArray:[VSList historyListBefore:lastCreatedDate]];
 }
 
 #pragma mark - setup 

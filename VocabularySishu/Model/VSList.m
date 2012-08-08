@@ -29,8 +29,10 @@
     NSEntityDescription *listDescription = [NSEntityDescription entityForName:@"VSList" inManagedObjectContext:[VSUtils currentMOContext]];
     NSFetchRequest *listRequest = [[NSFetchRequest alloc] init];
     [listRequest setEntity:listDescription];
-    NSDate *today = [VSUtils getToday];
-    NSPredicate *datePredicate = [NSPredicate predicateWithFormat:@"(createdDate >= %@)", [NSDate dateWithTimeIntervalSinceNow:-86400]];
+    NSDate *today = [VSUtils getNow];
+    NSDate *last = [NSDate dateWithTimeInterval:-24 * 60 * 60 sinceDate:today];
+    NSLog(@"%@", last);
+    NSPredicate *datePredicate = [NSPredicate predicateWithFormat:@"(createdDate >= %@)", [NSDate dateWithTimeInterval:-24 * 60 * 60 sinceDate:today]];
     NSPredicate *isHistoryPredicate = [NSPredicate predicateWithFormat:@"(type = 1)"];
     [listRequest setPredicate:isHistoryPredicate];
     [listRequest setPredicate:datePredicate];
@@ -42,7 +44,7 @@
         VSList *listForToday = [NSEntityDescription insertNewObjectForEntityForName:@"VSList" inManagedObjectContext:[VSUtils currentMOContext]];
         NSCalendar *nowCalendar = [NSCalendar currentCalendar];
         NSDateComponents *nowComponents = [nowCalendar components:(NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:today];
-        listForToday.name = [NSString stringWithFormat:@"%d月%d日背诵List", [nowComponents month], [nowComponents day ]];
+        listForToday.name = [NSString stringWithFormat:@"%d月%d日", [nowComponents month], [nowComponents day ]];
         listForToday.order = [NSNumber numberWithInt:-1];
         listForToday.type = [VSConstant LIST_TYPE_HISTORY];
         listForToday.repository = nil;
@@ -99,8 +101,8 @@
     NSFetchRequest *listRequest = [[NSFetchRequest alloc] init];
     [listRequest setEntity:listDescription];
     [listRequest setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"createdDate" ascending:NO]]];
-    NSPredicate *isHistoryPredicate = [NSPredicate predicateWithFormat:@"(type = 1)"];
-    [listRequest setPredicate:isHistoryPredicate];
+//    NSPredicate *isHistoryPredicate = [NSPredicate predicateWithFormat:@"(type = 1)"];
+//    [listRequest setPredicate:isHistoryPredicate];
     NSArray *tempResult = [[VSUtils currentMOContext] executeFetchRequest:listRequest error:&error];
     NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:[tempResult count]];
     for (VSList *list in tempResult) {
@@ -111,7 +113,31 @@
             break;
         }
     }
-    return tempResult;
+    return result;
+}
+
++ (NSArray *)historyListBefore:(NSDate *)startAt
+{
+    __autoreleasing NSError *error = nil;
+    NSEntityDescription *listDescription = [NSEntityDescription entityForName:@"VSList" inManagedObjectContext:[VSUtils currentMOContext]];
+    NSFetchRequest *listRequest = [[NSFetchRequest alloc] init];
+    [listRequest setEntity:listDescription];
+    [listRequest setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"createdDate" ascending:NO]]];
+//    NSPredicate *createDatePredicate = [NSPredicate predicateWithFormat:@"(createdDate < %@)", startAt];
+//    [listRequest setPredicate:createDatePredicate];
+//    NSPredicate *isHistoryPredicate = [NSPredicate predicateWithFormat:@"(type = 1)"];
+//    [listRequest setPredicate:isHistoryPredicate];
+    NSArray *tempResult = [[VSUtils currentMOContext] executeFetchRequest:listRequest error:&error];
+    NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:[tempResult count]];
+    for (VSList *list in tempResult) {
+        if ([list.listVocabularies count] > 0) {
+            [result addObject:list];
+        }
+        if ([result count] == 7) {
+            break;
+        }
+    }
+    return result;
 }
 
 + (VSList *)latestShortTermReviewList
@@ -131,7 +157,6 @@
         return nil;
     }
 }
-
 
 + (VSList *)latestLongTermReviewList
 {
@@ -258,7 +283,7 @@
 {
     int allListsCount = [self.repository.lists count];
     NSNumber *nextOrder = [NSNumber numberWithInt:([self.order intValue] - 1) % allListsCount];
-    
+
     NSPredicate *orderPredicate = [NSPredicate predicateWithFormat:@"(order = %@)", nextOrder];
     NSPredicate *historyPredicate = [NSPredicate predicateWithFormat:@"(type = 0)"];
     NSPredicate *statusPredicate = [NSPredicate predicateWithFormat:@"NOT (status = 2)"];
@@ -306,7 +331,7 @@
             notWellCount++;
         }
     }
-    return (double)(notWellCount) / (double)([self.listVocabularies count]);
+    return [self.listVocabularies count] == 0 ? 0.0 : (double)(notWellCount) / (double)([self.listVocabularies count]);
 }
 
 - (double)rememberRate

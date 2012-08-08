@@ -30,6 +30,8 @@
 
 + (NSArray *)lastestHistoryList;
 
++ (NSArray *)historyListBefore:(NSDate *)startAt;
+
 + (VSList *)latestLongTermReviewList;
 
 + (VSList *)latestShortTermReviewList;
