@@ -31,7 +31,6 @@
     [listRequest setEntity:listDescription];
     NSDate *today = [VSUtils getNow];
     NSDate *last = [NSDate dateWithTimeInterval:-24 * 60 * 60 sinceDate:today];
-    NSLog(@"%@", last);
     NSPredicate *datePredicate = [NSPredicate predicateWithFormat:@"(createdDate >= %@)", [NSDate dateWithTimeInterval:-24 * 60 * 60 sinceDate:today]];
     NSPredicate *isHistoryPredicate = [NSPredicate predicateWithFormat:@"(type = 1)"];
     [listRequest setPredicate:isHistoryPredicate];

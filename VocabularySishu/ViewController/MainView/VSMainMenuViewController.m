@@ -140,7 +140,7 @@
 	if (([scrollView contentOffset].y + scrollView.frame.size.height) == [scrollView contentSize].height) {
         tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 280, 60)];
         activator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-        activator.center = tableFooterView.center;
+        activator.center = CGPointMake(160, 30);
         [tableFooterView addSubview:activator];
         self.historyTable.tableFooterView = tableFooterView;
         [self.activator startAnimating];
