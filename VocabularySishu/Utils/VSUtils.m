@@ -105,6 +105,31 @@
     }
 }
 
++ (void)toGivenList:(VSList *)list
+{
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    UINavigationController *navigationController = (UINavigationController *)window.rootViewController;
+    
+    VSContext *context = [VSContext getContext];
+    if (list != nil) {
+        [context fixCurrentList:list];
+        VSVocabularyListViewController *vocabularyListViewController = [VSVocabularyListViewController alloc];
+        vocabularyListViewController.currentList = list;
+        vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
+        
+        [UIView beginAnimations:nil context:NULL];
+        [navigationController popViewControllerAnimated:NO];
+        [UIView commitAnimations];
+        
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationCurve:UIViewAnimationTransitionCurlUp];
+        [UIView setAnimationDuration:0.5];
+        [navigationController pushViewController:vocabularyListViewController animated:NO];
+        [UIView setAnimationTransition:UIViewAnimationTransitionCurlUp forView:navigationController.view cache:NO];
+        [UIView commitAnimations];
+    }
+}
+
 + (void)toNextList:(VSList *)currentList
 {
     UIWindow *window = [UIApplication sharedApplication].keyWindow;

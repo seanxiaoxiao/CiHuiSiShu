@@ -6,15 +6,14 @@
 //  Copyright (c) 2012年 baidu. All rights reserved.
 //
 
-#import "VSMainMenuViewController.h"
-#import "VSConfigurationViewController.h"
+#import "VSHistoryViewController.h"
 #import "VSVocabularyListViewController.h"
 
-@interface VSMainMenuViewController ()
+@interface VSHistoryViewController ()
 
 @end
 
-@implementation VSMainMenuViewController
+@implementation VSHistoryViewController
 
 @synthesize historyLists;
 @synthesize historyTable;
@@ -32,11 +31,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"词汇私塾";
-    UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
-    [backgroundImageView setFrame:self.view.frame];
-    [self.view addSubview:backgroundImageView];
-    [self.view sendSubviewToBack:backgroundImageView];
+    self.view.backgroundColor = [UIColor clearColor];
+    self.historyLists = [NSMutableArray arrayWithArray:[VSList lastestHistoryList]];
+    [self.historyTable reloadData];
 }
 
 - (void)viewDidUnload
@@ -47,26 +44,7 @@
     self.historyTable = nil;
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    CGRect frame= CGRectMake(0, 0, 20, 20); 
-    UIButton* configurationButton = [[UIButton alloc] initWithFrame:frame]; 
-    [configurationButton setTitle:@"设置" forState:UIControlStateNormal]; 
-    [configurationButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal]; 
-    configurationButton.titleLabel.font=[UIFont boldSystemFontOfSize:10];
-    configurationButton.titleLabel.shadowOffset = CGSizeMake(0, -1);
-    [configurationButton addTarget:self action:@selector(toConfigurationView) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem* configurationButtonItem = [[UIBarButtonItem alloc] initWithCustomView:configurationButton]; 
-    [self.navigationItem setRightBarButtonItem:configurationButtonItem];
 
-    self.historyLists = [NSMutableArray arrayWithArray:[VSList lastestHistoryList]];
-    [self.historyTable reloadData];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    
-}
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -80,7 +58,9 @@
     VSList *list = context.currentList;
     vocabularyListViewController.currentList = list;
     vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
-    [self.navigationController pushViewController:vocabularyListViewController animated:YES];
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    UINavigationController *navigationController = (UINavigationController *)window.rootViewController;
+    [navigationController pushViewController:vocabularyListViewController animated:YES];
 }
 
 - (IBAction)initData:(id)sender
@@ -96,7 +76,9 @@
     VSList *selectedList = [historyLists objectAtIndex:indexPath.row];
     vocabularyListViewController.currentList = selectedList;
     vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
-    [self.navigationController pushViewController:vocabularyListViewController animated:YES]; 
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    UINavigationController *navigationController = (UINavigationController *)window.rootViewController;
+    [navigationController pushViewController:vocabularyListViewController animated:YES]; 
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -162,12 +144,11 @@
     [self.historyLists addObjectsFromArray:[VSList historyListBefore:lastCreatedDate]];
 }
 
-#pragma mark - setup 
-
-- (void)toConfigurationView
+- (void)reloadHistory
 {
-    VSConfigurationViewController *configurationViewController = [[VSConfigurationViewController alloc] initWithNibName:@"VSConfigurationViewController" bundle:nil];
-    [self.navigationController pushViewController:configurationViewController animated:YES];
+    self.historyLists = [NSMutableArray arrayWithArray:[VSList lastestHistoryList]];
+    [self.historyTable reloadData];
 }
+
 
 @end

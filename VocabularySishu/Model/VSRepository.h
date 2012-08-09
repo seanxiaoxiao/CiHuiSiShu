@@ -29,6 +29,8 @@
 
 - (VSList *)firstListInRepo;
 
+- (int) wordsTotal;
+
 @end
 
 @interface VSRepository (CoreDataGeneratedAccessors)

@@ -58,4 +58,13 @@
     return [result objectAtIndex:0];
 }
 
+- (int) wordsTotal
+{
+    int count = 0;
+    for (VSList *list in self.lists) {
+        count += [list.listVocabularies count];
+    }
+    return count;
+}
+
 @end

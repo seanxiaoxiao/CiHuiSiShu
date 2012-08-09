@@ -21,7 +21,7 @@
 		00201DE115CFBAD30089B8FA /* VSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00701E411553CBCE00D30018 /* VSAppDelegate.m */; };
 		00201DE215CFBAD30089B8FA /* VocabularySishu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00701E431553CBCE00D30018 /* VocabularySishu.xcdatamodeld */; };
 		00201DE315CFBAD30089B8FA /* VSVocabularyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046408015590E0B007E5FA9 /* VSVocabularyViewController.m */; };
-		00201DE415CFBAD30089B8FA /* VSMainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046408B155916FA007E5FA9 /* VSMainMenuViewController.m */; };
+		00201DE415CFBAD30089B8FA /* VSHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046408B155916FA007E5FA9 /* VSHistoryViewController.m */; };
 		00201DE515CFBAD30089B8FA /* VSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046409015591DBD007E5FA9 /* VSUtils.m */; };
 		00201DE615CFBAD30089B8FA /* VSDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A67815688F2800B80422 /* VSDataUtil.m */; };
 		00201DE715CFBAD30089B8FA /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A68B1568A0B200B80422 /* NSObject+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -56,7 +56,7 @@
 		00201E0515CFBAD30089B8FA /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00701E351553CBCE00D30018 /* CoreData.framework */; };
 		00201E0615CFBAD30089B8FA /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D6778715AD542E00EF152D /* Crashlytics.framework */; };
 		00201E0815CFBAD30089B8FA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00701E3A1553CBCE00D30018 /* InfoPlist.strings */; };
-		00201E0915CFBAD30089B8FA /* VSMainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408C155916FA007E5FA9 /* VSMainMenuViewController.xib */; };
+		00201E0915CFBAD30089B8FA /* VSHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408C155916FA007E5FA9 /* VSHistoryViewController.xib */; };
 		00201E0A15CFBAD30089B8FA /* VSVocabularyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408115590E0B007E5FA9 /* VSVocabularyViewController.xib */; };
 		00201E0B15CFBAD30089B8FA /* VSVocabularyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */; };
 		00201E0C15CFBAD30089B8FA /* Meaning.html in Resources */ = {isa = PBXBuildFile; fileRef = 00A006F8156B3BDF00D24418 /* Meaning.html */; };
@@ -95,10 +95,28 @@
 		0029087915BF0AA800568B41 /* retina-Previous.png in Resources */ = {isa = PBXBuildFile; fileRef = 0029087815BF0AA800568B41 /* retina-Previous.png */; };
 		0029087C15BF0B4500568B41 /* retina-Next.png in Resources */ = {isa = PBXBuildFile; fileRef = 0029087B15BF0B4500568B41 /* retina-Next.png */; };
 		0029087E15BF882C00568B41 /* retina-CellClear.png in Resources */ = {isa = PBXBuildFile; fileRef = 0029087D15BF882C00568B41 /* retina-CellClear.png */; };
+		0044C13B15D371E20022154A /* VSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0044C13915D371E20022154A /* VSMainViewController.m */; };
+		0044C13C15D371E20022154A /* VSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0044C13915D371E20022154A /* VSMainViewController.m */; };
+		0044C13D15D371E20022154A /* VSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0044C13915D371E20022154A /* VSMainViewController.m */; };
+		0044C14415D3723F0022154A /* VSRepoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0044C14215D3723F0022154A /* VSRepoViewController.m */; };
+		0044C14515D3723F0022154A /* VSRepoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0044C14215D3723F0022154A /* VSRepoViewController.m */; };
+		0044C14615D3723F0022154A /* VSRepoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0044C14215D3723F0022154A /* VSRepoViewController.m */; };
+		0044C14715D3723F0022154A /* VSRepoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0044C14315D3723F0022154A /* VSRepoViewController.xib */; };
+		0044C14815D3723F0022154A /* VSRepoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0044C14315D3723F0022154A /* VSRepoViewController.xib */; };
+		0044C14915D3723F0022154A /* VSRepoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0044C14315D3723F0022154A /* VSRepoViewController.xib */; };
+		0044C14F15D397630022154A /* VSMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0044C14E15D397630022154A /* VSMainViewController.xib */; };
+		0044C15015D397630022154A /* VSMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0044C14E15D397630022154A /* VSMainViewController.xib */; };
+		0044C15115D397630022154A /* VSMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0044C14E15D397630022154A /* VSMainViewController.xib */; };
+		0044C15515D3B70F0022154A /* VSRepoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0044C15315D3B70F0022154A /* VSRepoListViewController.m */; };
+		0044C15615D3B70F0022154A /* VSRepoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0044C15315D3B70F0022154A /* VSRepoListViewController.m */; };
+		0044C15715D3B70F0022154A /* VSRepoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0044C15315D3B70F0022154A /* VSRepoListViewController.m */; };
+		0044C15815D3B70F0022154A /* VSRepoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0044C15415D3B70F0022154A /* VSRepoListViewController.xib */; };
+		0044C15915D3B70F0022154A /* VSRepoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0044C15415D3B70F0022154A /* VSRepoListViewController.xib */; };
+		0044C15A15D3B70F0022154A /* VSRepoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0044C15415D3B70F0022154A /* VSRepoListViewController.xib */; };
 		0046408315590E0B007E5FA9 /* VSVocabularyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408115590E0B007E5FA9 /* VSVocabularyViewController.xib */; };
 		0046408415591251007E5FA9 /* VSVocabularyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046408015590E0B007E5FA9 /* VSVocabularyViewController.m */; };
-		0046408D155916FA007E5FA9 /* VSMainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046408B155916FA007E5FA9 /* VSMainMenuViewController.m */; };
-		0046408E155916FA007E5FA9 /* VSMainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408C155916FA007E5FA9 /* VSMainMenuViewController.xib */; };
+		0046408D155916FA007E5FA9 /* VSHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046408B155916FA007E5FA9 /* VSHistoryViewController.m */; };
+		0046408E155916FA007E5FA9 /* VSHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408C155916FA007E5FA9 /* VSHistoryViewController.xib */; };
 		0046409115591DBD007E5FA9 /* VSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046409015591DBD007E5FA9 /* VSUtils.m */; };
 		0046409215591DBD007E5FA9 /* VSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046409015591DBD007E5FA9 /* VSUtils.m */; };
 		0046409315591FD1007E5FA9 /* VSVocabularyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408115590E0B007E5FA9 /* VSVocabularyViewController.xib */; };
@@ -159,7 +177,7 @@
 		00BDE55A15CF9B9400BC205C /* VSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00701E411553CBCE00D30018 /* VSAppDelegate.m */; };
 		00BDE55B15CF9B9400BC205C /* VocabularySishu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00701E431553CBCE00D30018 /* VocabularySishu.xcdatamodeld */; };
 		00BDE55C15CF9B9400BC205C /* VSVocabularyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046408015590E0B007E5FA9 /* VSVocabularyViewController.m */; };
-		00BDE55D15CF9B9400BC205C /* VSMainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046408B155916FA007E5FA9 /* VSMainMenuViewController.m */; };
+		00BDE55D15CF9B9400BC205C /* VSHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046408B155916FA007E5FA9 /* VSHistoryViewController.m */; };
 		00BDE55E15CF9B9400BC205C /* VSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046409015591DBD007E5FA9 /* VSUtils.m */; };
 		00BDE55F15CF9B9400BC205C /* VSDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A67815688F2800B80422 /* VSDataUtil.m */; };
 		00BDE56015CF9B9400BC205C /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A68B1568A0B200B80422 /* NSObject+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -194,7 +212,7 @@
 		00BDE57E15CF9B9400BC205C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00701E351553CBCE00D30018 /* CoreData.framework */; };
 		00BDE57F15CF9B9400BC205C /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D6778715AD542E00EF152D /* Crashlytics.framework */; };
 		00BDE58115CF9B9400BC205C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00701E3A1553CBCE00D30018 /* InfoPlist.strings */; };
-		00BDE58215CF9B9400BC205C /* VSMainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408C155916FA007E5FA9 /* VSMainMenuViewController.xib */; };
+		00BDE58215CF9B9400BC205C /* VSHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408C155916FA007E5FA9 /* VSHistoryViewController.xib */; };
 		00BDE58315CF9B9400BC205C /* VSVocabularyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408115590E0B007E5FA9 /* VSVocabularyViewController.xib */; };
 		00BDE58415CF9B9400BC205C /* VSVocabularyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */; };
 		00BDE58515CF9B9400BC205C /* Meaning.html in Resources */ = {isa = PBXBuildFile; fileRef = 00A006F8156B3BDF00D24418 /* Meaning.html */; };
@@ -230,6 +248,9 @@
 		00C42FE315BAFBC6006FF95E /* VSMeaningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C42FE215BAFBC6006FF95E /* VSMeaningView.m */; };
 		00C42FE915BB096F006FF95E /* VSSummaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C42FE815BB096F006FF95E /* VSSummaryView.m */; };
 		00C4300115BBFC44006FF95E /* VSVocabulary.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4300015BBFC44006FF95E /* VSVocabulary.m */; };
+		00C4FE3B15D3FAF6000B9849 /* VSSingleListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4FE3A15D3FAF6000B9849 /* VSSingleListView.m */; };
+		00C4FE3C15D3FAF6000B9849 /* VSSingleListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4FE3A15D3FAF6000B9849 /* VSSingleListView.m */; };
+		00C4FE3D15D3FAF6000B9849 /* VSSingleListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4FE3A15D3FAF6000B9849 /* VSSingleListView.m */; };
 		00D6778815AD542E00EF152D /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D6778715AD542E00EF152D /* Crashlytics.framework */; };
 		00D6779215ADD03900EF152D /* DDFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D6779115ADD03900EF152D /* DDFileReader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		00E25A6F15C052F2006402B2 /* VSNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0081185015BEFE220022B515 /* VSNavigationBar.m */; };
@@ -366,12 +387,21 @@
 		0029087815BF0AA800568B41 /* retina-Previous.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-Previous.png"; path = "Resources/Img/retina-Previous.png"; sourceTree = "<group>"; };
 		0029087B15BF0B4500568B41 /* retina-Next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-Next.png"; path = "Resources/Img/retina-Next.png"; sourceTree = "<group>"; };
 		0029087D15BF882C00568B41 /* retina-CellClear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-CellClear.png"; path = "Resources/Img/retina-CellClear.png"; sourceTree = "<group>"; };
+		0044C13815D371E20022154A /* VSMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSMainViewController.h; path = ViewController/MainView/VSMainViewController.h; sourceTree = "<group>"; };
+		0044C13915D371E20022154A /* VSMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSMainViewController.m; path = ViewController/MainView/VSMainViewController.m; sourceTree = "<group>"; };
+		0044C14115D3723F0022154A /* VSRepoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSRepoViewController.h; path = ViewController/MainView/VSRepoViewController.h; sourceTree = "<group>"; };
+		0044C14215D3723F0022154A /* VSRepoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSRepoViewController.m; path = ViewController/MainView/VSRepoViewController.m; sourceTree = "<group>"; };
+		0044C14315D3723F0022154A /* VSRepoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSRepoViewController.xib; path = ViewController/MainView/VSRepoViewController.xib; sourceTree = "<group>"; };
+		0044C14E15D397630022154A /* VSMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSMainViewController.xib; path = ViewController/MainView/VSMainViewController.xib; sourceTree = "<group>"; };
+		0044C15215D3B70E0022154A /* VSRepoListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSRepoListViewController.h; path = ViewController/MainView/VSRepoListViewController.h; sourceTree = "<group>"; };
+		0044C15315D3B70F0022154A /* VSRepoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSRepoListViewController.m; path = ViewController/MainView/VSRepoListViewController.m; sourceTree = "<group>"; };
+		0044C15415D3B70F0022154A /* VSRepoListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSRepoListViewController.xib; path = ViewController/MainView/VSRepoListViewController.xib; sourceTree = "<group>"; };
 		0046407F15590E0B007E5FA9 /* VSVocabularyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSVocabularyViewController.h; path = ViewController/VocabularyView/VSVocabularyViewController.h; sourceTree = "<group>"; };
 		0046408015590E0B007E5FA9 /* VSVocabularyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSVocabularyViewController.m; path = ViewController/VocabularyView/VSVocabularyViewController.m; sourceTree = "<group>"; };
 		0046408115590E0B007E5FA9 /* VSVocabularyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSVocabularyViewController.xib; path = ViewController/VocabularyView/VSVocabularyViewController.xib; sourceTree = "<group>"; };
-		0046408A155916FA007E5FA9 /* VSMainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSMainMenuViewController.h; path = ViewController/MainView/VSMainMenuViewController.h; sourceTree = "<group>"; };
-		0046408B155916FA007E5FA9 /* VSMainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSMainMenuViewController.m; path = ViewController/MainView/VSMainMenuViewController.m; sourceTree = "<group>"; };
-		0046408C155916FA007E5FA9 /* VSMainMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSMainMenuViewController.xib; path = ViewController/MainView/VSMainMenuViewController.xib; sourceTree = "<group>"; };
+		0046408A155916FA007E5FA9 /* VSHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSHistoryViewController.h; path = ViewController/MainView/VSHistoryViewController.h; sourceTree = "<group>"; };
+		0046408B155916FA007E5FA9 /* VSHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSHistoryViewController.m; path = ViewController/MainView/VSHistoryViewController.m; sourceTree = "<group>"; };
+		0046408C155916FA007E5FA9 /* VSHistoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSHistoryViewController.xib; path = ViewController/MainView/VSHistoryViewController.xib; sourceTree = "<group>"; };
 		0046408F15591DBD007E5FA9 /* VSUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSUtils.h; path = Utils/VSUtils.h; sourceTree = "<group>"; };
 		0046409015591DBD007E5FA9 /* VSUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSUtils.m; path = Utils/VSUtils.m; sourceTree = "<group>"; };
 		005F7E9B15CD84CD00932B93 /* retina-DetailsHeader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-DetailsHeader.png"; path = "Resources/Img/retina-DetailsHeader.png"; sourceTree = "<group>"; };
@@ -464,6 +494,8 @@
 		00C42FE815BB096F006FF95E /* VSSummaryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSSummaryView.m; path = ViewController/VocabularyListView/VSSummaryView.m; sourceTree = "<group>"; };
 		00C4300015BBFC44006FF95E /* VSVocabulary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSVocabulary.m; path = Model/VSVocabulary.m; sourceTree = "<group>"; };
 		00C4300215BBFD2E006FF95E /* VSVocabulary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSVocabulary.h; path = Model/VSVocabulary.h; sourceTree = "<group>"; };
+		00C4FE3915D3FAF6000B9849 /* VSSingleListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSSingleListView.h; path = ViewController/MainView/VSSingleListView.h; sourceTree = "<group>"; };
+		00C4FE3A15D3FAF6000B9849 /* VSSingleListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSSingleListView.m; path = ViewController/MainView/VSSingleListView.m; sourceTree = "<group>"; };
 		00D6778715AD542E00EF152D /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		00D6779015ADD03900EF152D /* DDFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDFileReader.h; path = Utils/DDFileReader.h; sourceTree = "<group>"; };
 		00D6779115ADD03900EF152D /* DDFileReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDFileReader.m; path = Utils/DDFileReader.m; sourceTree = "<group>"; };
@@ -585,11 +617,22 @@
 		0046407715590CC8007E5FA9 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
-				0046408A155916FA007E5FA9 /* VSMainMenuViewController.h */,
-				0046408B155916FA007E5FA9 /* VSMainMenuViewController.m */,
-				0046408C155916FA007E5FA9 /* VSMainMenuViewController.xib */,
+				0046408A155916FA007E5FA9 /* VSHistoryViewController.h */,
+				0046408B155916FA007E5FA9 /* VSHistoryViewController.m */,
+				0046408C155916FA007E5FA9 /* VSHistoryViewController.xib */,
 				00FF701115D1676F0043BA91 /* VSHisotryListCell.h */,
 				00FF701215D1676F0043BA91 /* VSHisotryListCell.m */,
+				0044C13815D371E20022154A /* VSMainViewController.h */,
+				0044C13915D371E20022154A /* VSMainViewController.m */,
+				0044C14E15D397630022154A /* VSMainViewController.xib */,
+				0044C14115D3723F0022154A /* VSRepoViewController.h */,
+				0044C14215D3723F0022154A /* VSRepoViewController.m */,
+				0044C14315D3723F0022154A /* VSRepoViewController.xib */,
+				0044C15215D3B70E0022154A /* VSRepoListViewController.h */,
+				0044C15315D3B70F0022154A /* VSRepoListViewController.m */,
+				0044C15415D3B70F0022154A /* VSRepoListViewController.xib */,
+				00C4FE3915D3FAF6000B9849 /* VSSingleListView.h */,
+				00C4FE3A15D3FAF6000B9849 /* VSSingleListView.m */,
 			);
 			name = MainView;
 			sourceTree = "<group>";
@@ -1014,7 +1057,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00201E0815CFBAD30089B8FA /* InfoPlist.strings in Resources */,
-				00201E0915CFBAD30089B8FA /* VSMainMenuViewController.xib in Resources */,
+				00201E0915CFBAD30089B8FA /* VSHistoryViewController.xib in Resources */,
 				00201E0A15CFBAD30089B8FA /* VSVocabularyViewController.xib in Resources */,
 				00201E0B15CFBAD30089B8FA /* VSVocabularyListViewController.xib in Resources */,
 				00201E0C15CFBAD30089B8FA /* Meaning.html in Resources */,
@@ -1060,6 +1103,9 @@
 				00FF701015D113880043BA91 /* retina-StarNone.png in Resources */,
 				00FF701A15D16C050043BA91 /* retina-TimeLineCellDark.png in Resources */,
 				00FF701D15D16C050043BA91 /* retina-TimeLineCellLight.png in Resources */,
+				0044C14915D3723F0022154A /* VSRepoViewController.xib in Resources */,
+				0044C15115D397630022154A /* VSMainViewController.xib in Resources */,
+				0044C15A15D3B70F0022154A /* VSRepoListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1069,7 +1115,7 @@
 			files = (
 				00701E3C1553CBCE00D30018 /* InfoPlist.strings in Resources */,
 				00FF6FE315CFDA0A0043BA91 /* mw-1.txt in Resources */,
-				0046408E155916FA007E5FA9 /* VSMainMenuViewController.xib in Resources */,
+				0046408E155916FA007E5FA9 /* VSHistoryViewController.xib in Resources */,
 				00FF6FE215CFDA0A0043BA91 /* mw-2.txt in Resources */,
 				0046409315591FD1007E5FA9 /* VSVocabularyViewController.xib in Resources */,
 				00FF6FE115CFDA0A0043BA91 /* mw-3.txt in Resources */,
@@ -1115,6 +1161,9 @@
 				00FF700E15D113880043BA91 /* retina-StarNone.png in Resources */,
 				00FF701815D16C050043BA91 /* retina-TimeLineCellDark.png in Resources */,
 				00FF701B15D16C050043BA91 /* retina-TimeLineCellLight.png in Resources */,
+				0044C14715D3723F0022154A /* VSRepoViewController.xib in Resources */,
+				0044C14F15D397630022154A /* VSMainViewController.xib in Resources */,
+				0044C15815D3B70F0022154A /* VSRepoListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1132,7 +1181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00BDE58115CF9B9400BC205C /* InfoPlist.strings in Resources */,
-				00BDE58215CF9B9400BC205C /* VSMainMenuViewController.xib in Resources */,
+				00BDE58215CF9B9400BC205C /* VSHistoryViewController.xib in Resources */,
 				00BDE58315CF9B9400BC205C /* VSVocabularyViewController.xib in Resources */,
 				00BDE58415CF9B9400BC205C /* VSVocabularyListViewController.xib in Resources */,
 				00BDE58515CF9B9400BC205C /* Meaning.html in Resources */,
@@ -1177,6 +1226,9 @@
 				00FF700F15D113880043BA91 /* retina-StarNone.png in Resources */,
 				00FF701915D16C050043BA91 /* retina-TimeLineCellDark.png in Resources */,
 				00FF701C15D16C050043BA91 /* retina-TimeLineCellLight.png in Resources */,
+				0044C14815D3723F0022154A /* VSRepoViewController.xib in Resources */,
+				0044C15015D397630022154A /* VSMainViewController.xib in Resources */,
+				0044C15915D3B70F0022154A /* VSRepoListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1247,7 +1299,7 @@
 				00201DE115CFBAD30089B8FA /* VSAppDelegate.m in Sources */,
 				00201DE215CFBAD30089B8FA /* VocabularySishu.xcdatamodeld in Sources */,
 				00201DE315CFBAD30089B8FA /* VSVocabularyViewController.m in Sources */,
-				00201DE415CFBAD30089B8FA /* VSMainMenuViewController.m in Sources */,
+				00201DE415CFBAD30089B8FA /* VSHistoryViewController.m in Sources */,
 				00201DE515CFBAD30089B8FA /* VSUtils.m in Sources */,
 				00201DE615CFBAD30089B8FA /* VSDataUtil.m in Sources */,
 				00201DE715CFBAD30089B8FA /* NSObject+SBJSON.m in Sources */,
@@ -1276,6 +1328,10 @@
 				00201DFE15CFBAD30089B8FA /* VSVocabularyCell.m in Sources */,
 				00FF6FFC15D0BACB0043BA91 /* VSScoreBoardView.m in Sources */,
 				00FF701515D1676F0043BA91 /* VSHisotryListCell.m in Sources */,
+				0044C13D15D371E20022154A /* VSMainViewController.m in Sources */,
+				0044C14615D3723F0022154A /* VSRepoViewController.m in Sources */,
+				0044C15715D3B70F0022154A /* VSRepoListViewController.m in Sources */,
+				00C4FE3D15D3FAF6000B9849 /* VSSingleListView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1288,7 +1344,7 @@
 				00701E421553CBCE00D30018 /* VSAppDelegate.m in Sources */,
 				00701E451553CBCE00D30018 /* VocabularySishu.xcdatamodeld in Sources */,
 				0046408415591251007E5FA9 /* VSVocabularyViewController.m in Sources */,
-				0046408D155916FA007E5FA9 /* VSMainMenuViewController.m in Sources */,
+				0046408D155916FA007E5FA9 /* VSHistoryViewController.m in Sources */,
 				0046409115591DBD007E5FA9 /* VSUtils.m in Sources */,
 				0073A67915688F2800B80422 /* VSDataUtil.m in Sources */,
 				0073A6961568A0B200B80422 /* NSObject+SBJSON.m in Sources */,
@@ -1317,6 +1373,10 @@
 				009BB48615CAAFF2008E5B2B /* VSVocabularyCell.m in Sources */,
 				00FF6FFA15D0BACB0043BA91 /* VSScoreBoardView.m in Sources */,
 				00FF701315D1676F0043BA91 /* VSHisotryListCell.m in Sources */,
+				0044C13B15D371E20022154A /* VSMainViewController.m in Sources */,
+				0044C14415D3723F0022154A /* VSRepoViewController.m in Sources */,
+				0044C15515D3B70F0022154A /* VSRepoListViewController.m in Sources */,
+				00C4FE3B15D3FAF6000B9849 /* VSSingleListView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1339,7 +1399,7 @@
 				00BDE55A15CF9B9400BC205C /* VSAppDelegate.m in Sources */,
 				00BDE55B15CF9B9400BC205C /* VocabularySishu.xcdatamodeld in Sources */,
 				00BDE55C15CF9B9400BC205C /* VSVocabularyViewController.m in Sources */,
-				00BDE55D15CF9B9400BC205C /* VSMainMenuViewController.m in Sources */,
+				00BDE55D15CF9B9400BC205C /* VSHistoryViewController.m in Sources */,
 				00BDE55E15CF9B9400BC205C /* VSUtils.m in Sources */,
 				00BDE55F15CF9B9400BC205C /* VSDataUtil.m in Sources */,
 				00BDE56015CF9B9400BC205C /* NSObject+SBJSON.m in Sources */,
@@ -1368,6 +1428,10 @@
 				00BDE57715CF9B9400BC205C /* VSVocabularyCell.m in Sources */,
 				00FF6FFB15D0BACB0043BA91 /* VSScoreBoardView.m in Sources */,
 				00FF701415D1676F0043BA91 /* VSHisotryListCell.m in Sources */,
+				0044C13C15D371E20022154A /* VSMainViewController.m in Sources */,
+				0044C14515D3723F0022154A /* VSRepoViewController.m in Sources */,
+				0044C15615D3B70F0022154A /* VSRepoListViewController.m in Sources */,
+				00C4FE3C15D3FAF6000B9849 /* VSSingleListView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

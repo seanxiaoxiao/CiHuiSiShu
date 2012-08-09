@@ -39,6 +39,8 @@
 
 + (void)toPreviousList:(VSList *)currentList;
 
++ (void)toGivenList:(VSList *)list;
+
 + (void)reloadCurrentList:(VSList *)currentList;
 
 @end

@@ -16,7 +16,6 @@
 {
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     UINavigationController *navigationController = (UINavigationController *)window.rootViewController;
-    [currentList finish];
     if ([self.currentList isHistoryList]) {
         [navigationController popViewControllerAnimated:YES];
     }

@@ -396,6 +396,7 @@
 {
     if ([self.vocabulariesToRecite count] == 0) {
         alertWhenFinish = nil;
+        [self.currentList finish];
         if ([self.currentList isHistoryList]) {
             alertWhenFinish = [[UIAlertView alloc] initWithTitle:@"" message:@"复习完毕" delegate:self cancelButtonTitle:@"嗯，好的" otherButtonTitles:nil, nil];
             [alertWhenFinish setDelegate:self.alertDelegate];

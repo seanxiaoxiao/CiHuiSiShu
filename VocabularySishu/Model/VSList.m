@@ -29,9 +29,9 @@
     NSEntityDescription *listDescription = [NSEntityDescription entityForName:@"VSList" inManagedObjectContext:[VSUtils currentMOContext]];
     NSFetchRequest *listRequest = [[NSFetchRequest alloc] init];
     [listRequest setEntity:listDescription];
-    NSDate *today = [VSUtils getNow];
-    NSDate *last = [NSDate dateWithTimeInterval:-24 * 60 * 60 sinceDate:today];
-    NSPredicate *datePredicate = [NSPredicate predicateWithFormat:@"(createdDate >= %@)", [NSDate dateWithTimeInterval:-24 * 60 * 60 sinceDate:today]];
+    NSDate *now = [VSUtils getNow];
+//    NSDate *last = [NSDate dateWithTimeInterval:-24 * 60 * 60 sinceDate:now];
+    NSPredicate *datePredicate = [NSPredicate predicateWithFormat:@"(createdDate >= %@)", [NSDate dateWithTimeInterval:-24 * 60 * 60 sinceDate:now]];
     NSPredicate *isHistoryPredicate = [NSPredicate predicateWithFormat:@"(type = 1)"];
     [listRequest setPredicate:isHistoryPredicate];
     [listRequest setPredicate:datePredicate];
@@ -40,6 +40,7 @@
         return [results objectAtIndex:0];
     }
     else {
+        NSDate *today = [VSUtils getToday];
         VSList *listForToday = [NSEntityDescription insertNewObjectForEntityForName:@"VSList" inManagedObjectContext:[VSUtils currentMOContext]];
         NSCalendar *nowCalendar = [NSCalendar currentCalendar];
         NSDateComponents *nowComponents = [nowCalendar components:(NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:today];
@@ -100,15 +101,15 @@
     NSFetchRequest *listRequest = [[NSFetchRequest alloc] init];
     [listRequest setEntity:listDescription];
     [listRequest setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"createdDate" ascending:NO]]];
-//    NSPredicate *isHistoryPredicate = [NSPredicate predicateWithFormat:@"(type = 1)"];
-//    [listRequest setPredicate:isHistoryPredicate];
+    NSPredicate *isHistoryPredicate = [NSPredicate predicateWithFormat:@"(type = 1)"];
+    [listRequest setPredicate:isHistoryPredicate];
     NSArray *tempResult = [[VSUtils currentMOContext] executeFetchRequest:listRequest error:&error];
     NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:[tempResult count]];
     for (VSList *list in tempResult) {
         if ([list.listVocabularies count] > 0) {
             [result addObject:list];
         }
-        if ([result count] == 7) {
+        if ([result count] == 6) {
             break;
         }
     }
@@ -122,17 +123,17 @@
     NSFetchRequest *listRequest = [[NSFetchRequest alloc] init];
     [listRequest setEntity:listDescription];
     [listRequest setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"createdDate" ascending:NO]]];
-//    NSPredicate *createDatePredicate = [NSPredicate predicateWithFormat:@"(createdDate < %@)", startAt];
-//    [listRequest setPredicate:createDatePredicate];
-//    NSPredicate *isHistoryPredicate = [NSPredicate predicateWithFormat:@"(type = 1)"];
-//    [listRequest setPredicate:isHistoryPredicate];
+    NSPredicate *createDatePredicate = [NSPredicate predicateWithFormat:@"(createdDate < %@)", startAt];
+    [listRequest setPredicate:createDatePredicate];
+    NSPredicate *isHistoryPredicate = [NSPredicate predicateWithFormat:@"(type = 1)"];
+    [listRequest setPredicate:isHistoryPredicate];
     NSArray *tempResult = [[VSUtils currentMOContext] executeFetchRequest:listRequest error:&error];
     NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:[tempResult count]];
     for (VSList *list in tempResult) {
         if ([list.listVocabularies count] > 0) {
             [result addObject:list];
         }
-        if ([result count] == 7) {
+        if ([result count] == 6) {
             break;
         }
     }
@@ -222,6 +223,7 @@
 {
     __autoreleasing NSError *error = nil;
     self.status = [VSConstant LIST_STATUS_FINISH];
+    self.round = [NSNumber numberWithInt:[self.round intValue] + 1];
     if (![[VSUtils currentMOContext] save:&error]) {
         NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
     }

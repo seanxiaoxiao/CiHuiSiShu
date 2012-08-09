@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "VSUtils.h"
-#import "VSMainMenuViewController.h"
+#import "VSMainViewController.h"
 #import "VSVocabularyListViewController.h"
 
 @interface VSAppDelegate : UIResponder <UIApplicationDelegate>
@@ -18,7 +18,7 @@
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-@property (nonatomic, strong) VSMainMenuViewController *viewController;
+@property (nonatomic, strong) VSMainViewController *viewController;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;

@@ -24,7 +24,7 @@
     [VSUtils copySQLite];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[VSMainMenuViewController alloc] initWithNibName:@"VSMainMenuViewController" bundle:nil];
+    self.viewController = [[VSMainViewController alloc] initWithNibName:@"VSMainViewController" bundle:nil];
     UINavigationController *navigationController = [self customizedNavigationController];
 
     self.window.backgroundColor = [UIColor whiteColor];
@@ -65,7 +65,6 @@
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
-    NSLog(@"didReceiveLocalNotification");
     if (application.applicationState == UIApplicationStateActive) {
         [application cancelLocalNotification:notification];
         NSDate *now = [[NSDate alloc] init];

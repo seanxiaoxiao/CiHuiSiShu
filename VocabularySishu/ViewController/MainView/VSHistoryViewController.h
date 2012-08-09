@@ -11,7 +11,7 @@
 #import "VSContext.h"
 #import "VSHisotryListCell.h"
 
-@interface VSMainMenuViewController : UIViewController<UITableViewDelegate, UITableViewDataSource> {
+@interface VSHistoryViewController : UIViewController<UITableViewDelegate, UITableViewDataSource> {
     IBOutlet UITableView *historyTable;
 }
 
@@ -20,10 +20,10 @@
 @property (nonatomic, retain) NSMutableArray *historyLists;
 @property (nonatomic, strong) UITableView *historyTable;
 
-
 - (IBAction)recite:(id)sender;
 
 - (IBAction)initData:(id)sender;
 
+- (void)reloadHistory;
 
 @end
