@@ -34,6 +34,7 @@
 @property (nonatomic, retain) VSAlertDelegate *alertDelegate;
 @property (nonatomic, strong) VSVocabularyCell *draggedCell;
 @property (nonatomic, strong) VSScoreBoardView *scoreBoardView;
+@property (nonatomic, strong) UIButton *exitButton;
 @property (nonatomic, strong) UIView *blockView;
 
 @end

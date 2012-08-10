@@ -98,7 +98,6 @@
     UIBarButtonItem* configurationButtonItem = [[UIBarButtonItem alloc] initWithCustomView:configurationButton]; 
     [self.navigationItem setRightBarButtonItem:configurationButtonItem];
     
-    NSLog(@"xxxxx");
     if (hasHistory) {
         [self.historyViewController reloadHistory];
     }

@@ -34,6 +34,7 @@
 @synthesize alertDelegate;
 @synthesize scoreBoardView;
 @synthesize blockView;
+@synthesize exitButton;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -145,6 +146,7 @@
     self.alertDelegate = nil;
     self.blockView = nil;
     self.scoreBoardView = nil;
+    self.exitButton = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -420,7 +422,7 @@
         [[scoreBoardView layer] addAnimation:applicationLoadViewIn forKey:kCATransitionReveal];
         [self.view addSubview:scoreBoardView];
         [scoreBoardView performSelector:@selector(initWithList:) withObject:self.currentList afterDelay:0.5f];
-        UIButton * exitButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        exitButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [exitButton addTarget:self action:@selector(hideScoreBoard) forControlEvents:UIControlEventTouchUpInside];
         [exitButton setTitle:@"" forState:UIControlStateNormal];
         exitButton.frame = self.view.frame;
@@ -446,6 +448,8 @@
     scoreBoardView = nil;
     [self.blockView removeFromSuperview];
     self.blockView = nil;
+    [self.exitButton removeFromSuperview];
+    self.exitButton = nil;
 }
 
 - (void)restart
