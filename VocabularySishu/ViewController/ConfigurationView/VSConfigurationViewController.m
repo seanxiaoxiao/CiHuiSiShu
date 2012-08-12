@@ -13,11 +13,7 @@
 @end
 
 @implementation VSConfigurationViewController
-
-@synthesize listSelectRecords;
-@synthesize selectedListIndex;
-@synthesize selectedRepoIndex;
-@synthesize selectedRepo;
+@synthesize contactContents;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -30,10 +26,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self initListSelectRecords];
     self.title = @"设置";
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
+    contactContents = [NSArray arrayWithObjects:@"给词汇私塾评分", @"意见反馈", nil];
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -55,53 +51,32 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [self.listSelectRecords count];
+    if (CONTACT_SECTION == section) {
+        return [contactContents count];
+    }
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSObject *record = [self.listSelectRecords objectAtIndex:indexPath.row];
-    UITableViewCell *cell = nil;
-    VSContext *context = [VSContext getContext];
-    if ([record class] == [VSRepository class]) {
-        VSRepository *repository = (VSRepository *)record;
-        NSString *cellIdentifier = repository.name;
-        cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (CONTACT_SECTION == indexPath.section) {
+        NSString *cellIdentifier = @"Contact";
+        UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
         if (cell == nil) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-            selectedListIndex = indexPath.row;
+            cell.textLabel.textAlignment = UITextAlignmentCenter;
+            cell.textLabel.text = [contactContents objectAtIndex:indexPath.row];
         }
-        cell.textLabel.text = repository.name;
-        [cell.textLabel setTextAlignment:UITextAlignmentLeft];
-        cell.textLabel.backgroundColor = [UIColor clearColor];
-        cell.textLabel.textColor = [UIColor blackColor];
+        return cell;
     }
-    else {
-        VSList *list  = (VSList *)record;
-        NSString *cellIdentifier = list.name;
-        cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-        }
-        cell.textLabel.text = list.name;
-        [cell.textLabel setTextAlignment:UITextAlignmentCenter];
-        cell.textLabel.backgroundColor = [UIColor clearColor];
-        cell.textLabel.textColor = [UIColor blackColor];
-        if ([context.currentList.name isEqualToString:list.name]) {
-            cell.accessoryType = UITableViewCellAccessoryCheckmark;
-            selectedListIndex = indexPath.row;
-        }
-    }
-    return cell;
+    return nil;
 }
 
 /*
@@ -147,111 +122,66 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSObject *selectedRecord = [listSelectRecords objectAtIndex:indexPath.row];
-    VSContext *context = [VSContext getContext];
-    if ([selectedRecord class] == [VSList class]) {
-        VSList *selectedList = (VSList *)selectedRecord;
-        [context fixCurrentList:selectedList];
-        [context fixRepository:selectedList.repository];
-        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-        NSIndexPath *lastSelectedIndexPath = [NSIndexPath indexPathForRow:self.selectedListIndex inSection:indexPath.section];
-        UITableViewCell *lastSelectedCell = [self.tableView cellForRowAtIndexPath:lastSelectedIndexPath];
-        lastSelectedCell.accessoryType = UITableViewCellAccessoryNone;
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-        self.selectedListIndex = indexPath.row;
-    }
-    else if (selectedRepoIndex != indexPath.row && [selectedRecord class] == [VSRepository class]) {
-        selectedRepo = (VSRepository *)selectedRecord;
-        [self contractRepo];
-        VSContext *context = [VSContext getContext];
-        [context fixRepository:selectedRepo];
-        [context fixCurrentList:[selectedRepo firstListInRepo]];
-        [self expandRepo];
-        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:selectedRepoIndex inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
-    }
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 40;
-}
-
-- (void)contractRepo {
-    NSMutableArray *removeIndexArray = [NSMutableArray array];
-    int count = [listSelectRecords count];
-    for (int i = selectedRepoIndex + 1; i < count; i++) {
-        NSObject *selectedRecord = [listSelectRecords objectAtIndex:selectedRepoIndex + 1];
-        if ([selectedRecord class] == [VSRepository class]) {
-            break;
+    if (indexPath.section == CONTACT_SECTION) {
+        if (indexPath.row == RATEUS) {
+            [self voteOnAppStore];
         }
-        else {
-            [listSelectRecords removeObjectAtIndex:selectedRepoIndex + 1];
-            [removeIndexArray addObject:[NSIndexPath indexPathForRow:i inSection:0]];
+        else if (indexPath.row == FEADBACK) {
+            [self sendFeedbackFrom:self];
         }
     }
-    [self.tableView beginUpdates];
-    [self.tableView deleteRowsAtIndexPaths:removeIndexArray withRowAnimation:UITableViewRowAnimationTop];
-    [self.tableView endUpdates];
-}
-
-- (void)expandRepo {
-    NSMutableArray *insertIndexArray = [NSMutableArray array];
-    for (int i = 0; i < [listSelectRecords count]; i++) {
-        VSRepository *repo = [listSelectRecords objectAtIndex:i];
-        if ([repo isEqual:selectedRepo]) {
-            NSArray *listsInRepo = [repo orderedList];
-            for (int j = 0; j < [listsInRepo count]; j++) {
-                [listSelectRecords insertObject:[listsInRepo objectAtIndex:j] atIndex:i + j + 1];
-                [insertIndexArray addObject:[NSIndexPath indexPathForRow:i + j + 1 inSection:0]];
-            }
-            selectedRepoIndex = i;
-        }
-    }
-    [self.tableView beginUpdates];
-    [self.tableView insertRowsAtIndexPaths:insertIndexArray withRowAnimation:UITableViewScrollPositionBottom];
-    [self.tableView endUpdates];
 }
 
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    NSString *sectionTitle = @"选择背诵列表";
-    if (sectionTitle == nil) {
-        return nil;
-    }
-    // Create label with section title
-    UILabel *label = [[UILabel alloc] init];
-    label.frame = CGRectMake(20, 6, 300, 30);
-    label.backgroundColor = [UIColor clearColor];
-    label.textColor = [UIColor colorWithHue:(136.0/360.0) saturation:1.0 brightness:0.60 alpha:1.0];
-    label.shadowColor = [UIColor whiteColor];
-    label.shadowOffset = CGSizeMake(0.0, 1.0);
-    label.font = [UIFont boldSystemFontOfSize:16];
-    label.text = sectionTitle;
-    
-    // Create header view and add label as a subview
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 40)];
-    [view addSubview:label];
-    
-    return view;
-}
-
-#pragma mark - Private methods
-
-- (void)initListSelectRecords
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    self.listSelectRecords = [[NSMutableArray alloc] init];
-    VSContext *context = [VSContext getContext];
-    NSArray *rawRepos = [VSRepository allRepos];
-    for (int i = 0; i < [rawRepos count]; i ++) {
-        VSRepository *repo = [rawRepos objectAtIndex:i];
-        [self.listSelectRecords addObject:repo];
-        NSArray *listsInRepo = [repo orderedList];
-        if ([context.currentRepository isEqual:repo]) {
-            selectedRepoIndex = i;
-            for (VSList *list in listsInRepo) {
-                [self.listSelectRecords addObject:list];
-            }
-        }
+    if (section == CONTACT_SECTION) {
+        return @"联系我们";
     }
+    return @"";
+}
+
+- (void)voteOnAppStore
+{
+    [ [ UIApplication sharedApplication ] openURL: [ NSURL URLWithString: [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@", @"12345"] ] ];
+}
+
+- (void)sendFeedbackFrom:(UIViewController *)controller
+{
+    if ( [ MFMailComposeViewController canSendMail ] ) {
+        UIDevice *device = [ UIDevice currentDevice ];
+        MFMailComposeViewController *mailController =  [ [ MFMailComposeViewController alloc ] init ];
+        mailController.mailComposeDelegate = self;
+        [ mailController setSubject: [ NSString stringWithFormat: @"Feedback - 词汇私塾 "]];// BUNDLE_DISPLAY_NAME, BUNDLE_VERSION, BUNDLE_BUILD_NUMBER ] ];
+        [ mailController setToRecipients: [ NSArray arrayWithObject: EMAIL_SUPPORTING ] ];
+        [ mailController setMessageBody: [ NSString stringWithFormat: @"\n\n\n\n\n\nDevice: %@\nSystem: %@\nMTS: %@\nWiFi:\nInternet:\n", [ device model ], [ device systemVersion ], IS_MULTITASKING_SUPPORTED ? @"Yes" : @"No" ] isHTML: NO ];
+        [ controller presentModalViewController: mailController animated: YES ];
+    } else {
+        [[[UIAlertView alloc] initWithTitle: @"意外" message: @"邮件没有正确配置" delegate: nil cancelButtonTitle: @"嗯，知道了" otherButtonTitles: nil] show];
+    }    
+}
+
+#pragma mark - MFMessageComposeViewControllerDelegate methods
+
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
+{
+    if (result == MessageComposeResultSent) {
+		[ [ [ UIAlertView alloc ] initWithTitle: @"邮件发生完毕" message: @"谢谢你的反馈，你是好筒子" delegate: nil cancelButtonTitle: @"嗯，好" otherButtonTitles: nil ] show ];
+    } else if (result == MessageComposeResultFailed) {
+		[[[UIAlertView alloc] initWithTitle:@"邮件发送失败" message:nil delegate:nil cancelButtonTitle:@"嗯，知道了" otherButtonTitles:nil] show];        
+    }
+    [controller dismissModalViewControllerAnimated:YES];
+}
+
+#pragma mark - MFMailComposeViewControllerDelegate methods
+
+- ( void ) mailComposeController: ( MFMailComposeViewController * ) controller didFinishWithResult: ( MFMailComposeResult ) result error: ( NSError * ) error {
+	if ( result == MFMailComposeResultSent ) {
+		[ [ [ UIAlertView alloc ] initWithTitle: @"邮件发生完毕" message: @"谢谢你的反馈，你是好筒子" delegate: nil cancelButtonTitle: @"嗯，好" otherButtonTitles: nil ] show ];
+	} else if ( result == MFMailComposeResultFailed ) {
+		[ [ [ UIAlertView alloc ] initWithTitle: @"邮件发送失败" message: nil delegate: nil cancelButtonTitle: @"嗯，知道了" otherButtonTitles: nil ] show ];
+	}
+	[ controller dismissModalViewControllerAnimated: YES ];
 }
 
 @end

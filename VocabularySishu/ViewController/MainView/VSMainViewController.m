@@ -14,8 +14,7 @@
 @end
 
 @implementation VSMainViewController
-@synthesize scrollView, pageControl, allRepos, pageIndex, pageControlUsed;
-@synthesize historyViewController, controllers, hasHistory;
+@synthesize scrollView, pageControl, allRepos, pageIndex, pageControlUsed, controllers;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,24 +36,16 @@
     [self.view addSubview:backgroundImageView];
     [self.view sendSubviewToBack:backgroundImageView];
     self.allRepos = [VSRepository allRepos];
-    hasHistory = [[VSList lastestHistoryList] count] > 0;
-    int totalPageCount = hasHistory ? [allRepos count] + 1 : [allRepos count]; 
     scrollView.pagingEnabled = YES;
-    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * totalPageCount, scrollView.frame.size.height);
+    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * [self.allRepos count], scrollView.frame.size.height);
     scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.showsVerticalScrollIndicator = NO;
     scrollView.alwaysBounceVertical = NO;
     scrollView.scrollsToTop = NO;
     scrollView.delegate = self;
-    if (hasHistory) {
-        self.historyViewController = [[VSHistoryViewController alloc] initWithNibName:@"VSHistoryViewController" bundle:nil];
-        CGRect frame = CGRectMake(0, 0, 320, 416);
-        self.historyViewController.view.frame = frame;
-        [self.scrollView addSubview:self.historyViewController.view];
-    }
-    int pageCount = hasHistory ? 1 : 0;
+
     for (int i = 0; i < [allRepos count]; i++) {
-        CGRect frame = CGRectMake(pageCount++ * 320, 0, 320, 416);
+        CGRect frame = CGRectMake(i * 320, 0, 320, 416);
         VSRepoViewController *controller = [[VSRepoViewController alloc] initWithNibName:@"VSRepoViewController" bundle:nil];
         [controllers addObject:controller];
         VSRepository *currentRepo = [allRepos objectAtIndex:i];
@@ -64,16 +55,9 @@
         controller.view.frame = frame;
         [self.scrollView addSubview:controller.view];
     }
-    pageControl.numberOfPages = pageCount;
+    pageControl.numberOfPages = [self.allRepos count];
     pageControl.currentPage = 0;
     [self.view bringSubviewToFront:self.pageControl];
-    if (hasHistory) {
-        CGRect frame = scrollView.frame;
-        frame.origin.x = frame.size.width * 1;
-        frame.origin.y = 0;
-        [scrollView scrollRectToVisible:frame animated:NO];
-        pageControl.currentPage = 1;
-    }
 }
 
 - (void)viewDidUnload
@@ -85,23 +69,6 @@
     self.pageControl = nil;
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    self.title = @"词汇私塾";
-    CGRect frame= CGRectMake(0, 0, 20, 20); 
-    UIButton* configurationButton = [[UIButton alloc] initWithFrame:frame]; 
-    [configurationButton setTitle:@"设置" forState:UIControlStateNormal]; 
-    [configurationButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal]; 
-    configurationButton.titleLabel.font=[UIFont boldSystemFontOfSize:10];
-    configurationButton.titleLabel.shadowOffset = CGSizeMake(0, -1);
-    [configurationButton addTarget:self action:@selector(toConfigurationView) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem* configurationButtonItem = [[UIBarButtonItem alloc] initWithCustomView:configurationButton]; 
-    [self.navigationItem setRightBarButtonItem:configurationButtonItem];
-    
-    if (hasHistory) {
-        [self.historyViewController reloadHistory];
-    }
-}
 
 - (void)scrollViewDidScroll:(UIScrollView *)sender
 {
@@ -113,6 +80,7 @@
     CGFloat pageWidth = scrollView.frame.size.width;
     int page = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
     pageControl.currentPage = page;
+    [[controllers objectAtIndex:page] loadView];
     
 }
 
@@ -147,12 +115,5 @@
     pageControlUsed = YES;
 }
 
-#pragma mark - setup 
-
-- (void)toConfigurationView
-{
-    VSConfigurationViewController *configurationViewController = [[VSConfigurationViewController alloc] initWithNibName:@"VSConfigurationViewController" bundle:nil];
-    [self.navigationController pushViewController:configurationViewController animated:YES];
-}
 
 @end

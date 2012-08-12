@@ -7,15 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 #import "VSRepository.h"
 #import "VSList.h"
 #import "VSContext.h"
 
-@interface VSConfigurationViewController : UITableViewController
+#define CONTACT_SECTION 0
+#define RATEUS 0
+#define FEADBACK 1
+#define EMAIL_SUPPORTING @"seanxiaoxiao@hotmail.com"
 
-@property (nonatomic, assign) int selectedListIndex;
-@property (nonatomic, assign) int selectedRepoIndex;
-@property (nonatomic, retain) NSMutableArray *listSelectRecords;
-@property (nonatomic, retain) VSRepository *selectedRepo;
+#define IS_IOS5_AND_PLUS			( [ [ [ UIDevice currentDevice ] systemVersion ] compare: @"5.0" options: NSNumericSearch ] != NSOrderedAscending )
+#define IS_IOS4_AND_PLUS			( [ [ [ UIDevice currentDevice ] systemVersion ] compare: @"4.0" options: NSNumericSearch ] != NSOrderedAscending )
+#define IS_RETINA_DISPLAY			( [ UIScreen instancesRespondToSelector: @selector ( scale ) ] ? ( [ [ UIScreen mainScreen ] scale ] == 2 ) : NO )
+#define IS_MULTITASKING_SUPPORTED	( [ UIDevice instancesRespondToSelector: @selector ( isMultitaskingSupported ) ] ? ( [ UIDevice currentDevice ].multitaskingSupported ) : NO )
+
+
+@interface VSConfigurationViewController : UITableViewController<MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate>
+
+@property (nonatomic, retain) NSArray *contactContents;
 
 @end

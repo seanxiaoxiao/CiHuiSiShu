@@ -20,6 +20,7 @@
 @property (nonatomic, retain) VSRepository *repo;
 @property (nonatomic, retain) VSRepository *lastRepo;
 @property (nonatomic, retain) VSRepository *nextRepo;
+@property (nonatomic, assign) BOOL loaded;
 
 - (IBAction)enterRepos:(id)sender;
 

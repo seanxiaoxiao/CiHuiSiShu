@@ -10,6 +10,9 @@
 #import "VSDataUtil.h"
 #import "VSContext.h"
 #import "VSHisotryListCell.h"
+#import "VSConfigurationViewController.h"
+#import "VSMainViewController.h"
+#import "VSContext.h"
 
 @interface VSHistoryViewController : UIViewController<UITableViewDelegate, UITableViewDataSource> {
     IBOutlet UITableView *historyTable;

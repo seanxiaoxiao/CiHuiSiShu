@@ -18,6 +18,7 @@
 @synthesize infoLabel;
 @synthesize lastRepo;
 @synthesize nextRepo;
+@synthesize loaded;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,10 +32,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
     self.repoButton.titleLabel.text = self.repo.name;
     self.infoLabel.text = [NSString stringWithFormat:@"共%d个单词", [self.repo wordsTotal]];
     [self.infoLabel sizeToFit];
+    loaded = YES;
+    // Do any additional setup after loading the view from its nib.
+}
+
+- (void)loadView;
+{
+    if (!loaded) {
+    }
 }
 
 - (void)viewDidUnload

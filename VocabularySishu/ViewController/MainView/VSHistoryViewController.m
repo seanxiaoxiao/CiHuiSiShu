@@ -31,9 +31,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor clearColor];
-    self.historyLists = [NSMutableArray arrayWithArray:[VSList lastestHistoryList]];
-    [self.historyTable reloadData];
+    
+    UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
+    [backgroundImageView setFrame:self.view.frame];
+    [self.view addSubview:backgroundImageView];
+    [self.view sendSubviewToBack:backgroundImageView];
+    if ([VSContext isFirstTime]) {
+        [self toRepoSelect];
+    }
 }
 
 - (void)viewDidUnload
@@ -42,6 +47,23 @@
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
     self.historyTable = nil;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.title = @"词汇私塾";
+    CGRect frame= CGRectMake(0, 0, 20, 20); 
+    UIButton* configurationButton = [[UIButton alloc] initWithFrame:frame]; 
+    [configurationButton setTitle:@"设置" forState:UIControlStateNormal]; 
+    [configurationButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal]; 
+    configurationButton.titleLabel.font=[UIFont boldSystemFontOfSize:10];
+    configurationButton.titleLabel.shadowOffset = CGSizeMake(0, -1);
+    [configurationButton addTarget:self action:@selector(toConfigurationView) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem* configurationButtonItem = [[UIBarButtonItem alloc] initWithCustomView:configurationButton]; 
+    [self.navigationItem setRightBarButtonItem:configurationButtonItem];
+    
+    self.historyLists = [NSMutableArray arrayWithArray:[VSList lastestHistoryList]];
+    [self.historyTable reloadData];
 }
 
 
@@ -53,14 +75,6 @@
 
 - (IBAction)recite:(id)sender
 {
-    VSVocabularyListViewController *vocabularyListViewController = [VSVocabularyListViewController alloc];
-    VSContext *context = [VSContext getContext];
-    VSList *list = context.currentList;
-    vocabularyListViewController.currentList = list;
-    vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    UINavigationController *navigationController = (UINavigationController *)window.rootViewController;
-    [navigationController pushViewController:vocabularyListViewController animated:YES];
 }
 
 - (IBAction)initData:(id)sender
@@ -72,13 +86,26 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    VSVocabularyListViewController *vocabularyListViewController = [VSVocabularyListViewController alloc];
-    VSList *selectedList = [historyLists objectAtIndex:indexPath.row];
-    vocabularyListViewController.currentList = selectedList;
-    vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    UINavigationController *navigationController = (UINavigationController *)window.rootViewController;
-    [navigationController pushViewController:vocabularyListViewController animated:YES]; 
+    if (indexPath.row < 2) {
+        if (indexPath.row == 0) {
+            VSVocabularyListViewController *vocabularyListViewController = [VSVocabularyListViewController alloc];
+            VSContext *context = [VSContext getContext];
+            VSList *list = context.currentList;
+            vocabularyListViewController.currentList = list;
+            vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
+            [self.navigationController pushViewController:vocabularyListViewController animated:YES];
+        }
+        else {
+            [self toRepoSelect];
+        }
+    }
+    else {
+        VSVocabularyListViewController *vocabularyListViewController = [VSVocabularyListViewController alloc];
+        VSList *selectedList = [historyLists objectAtIndex:indexPath.row - 2];
+        vocabularyListViewController.currentList = selectedList;
+        vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
+        [self.navigationController pushViewController:vocabularyListViewController animated:YES];
+    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -94,27 +121,43 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.historyLists count];
+    return [self.historyLists count] + 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    VSList *list = [historyLists objectAtIndex:indexPath.row];
-    NSString *CellIdentifier = @"ListCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[VSHisotryListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
-    [((VSHisotryListCell *)(cell)) initWithList:list andRow:indexPath.row];
-    BOOL lastCell = indexPath.row == [self.historyLists count] - 1;
-    if (lastCell) {
-        [((VSHisotryListCell *)(cell)) addCellShadow];
+    if (indexPath.row <= 1) {
+        NSString *CellIdentifier = @"ButtonCell";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        }
+        if (indexPath.row == 0) {
+            cell.textLabel.text = @"继续背诵";
+        }
+        else {
+            cell.textLabel.text = @"选择词库";
+        }
+        return cell;
     }
     else {
-        [((VSHisotryListCell *)(cell)) removeCellShadow];
+        VSList *list = [historyLists objectAtIndex:indexPath.row - 2];
+        NSString *CellIdentifier = @"ListCell";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil) {
+            cell = [[VSHisotryListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        }
+        [((VSHisotryListCell *)(cell)) initWithList:list andRow:indexPath.row];
+        BOOL lastCell = indexPath.row == [self.historyLists count] - 1;
+        if (lastCell) {
+            [((VSHisotryListCell *)(cell)) addCellShadow];
+        }
+        else {
+            [((VSHisotryListCell *)(cell)) removeCellShadow];
+        }
+        return cell;
     }
     
-    return cell;
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
@@ -148,6 +191,21 @@
 {
     self.historyLists = [NSMutableArray arrayWithArray:[VSList lastestHistoryList]];
     [self.historyTable reloadData];
+}
+
+- (void)toRepoSelect
+{
+    VSMainViewController *mainController = [[VSMainViewController alloc] initWithNibName:@"VSMainViewController" bundle:nil];
+    [self.navigationController pushViewController:mainController animated:YES];   
+}
+
+
+#pragma mark - setup 
+
+- (void)toConfigurationView
+{
+    VSConfigurationViewController *configurationViewController = [[VSConfigurationViewController alloc] initWithNibName:@"VSConfigurationViewController" bundle:nil];
+    [self.navigationController pushViewController:configurationViewController animated:YES];
 }
 
 

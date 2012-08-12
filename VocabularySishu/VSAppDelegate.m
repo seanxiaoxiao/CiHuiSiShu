@@ -24,7 +24,7 @@
     [VSUtils copySQLite];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[VSMainViewController alloc] initWithNibName:@"VSMainViewController" bundle:nil];
+    self.viewController = [[VSHistoryViewController alloc] initWithNibName:@"VSHistoryViewController" bundle:nil];
     UINavigationController *navigationController = [self customizedNavigationController];
 
     self.window.backgroundColor = [UIColor whiteColor];

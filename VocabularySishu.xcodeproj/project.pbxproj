@@ -149,6 +149,9 @@
 		0078168A15C3A8F700CE5026 /* retina-Restart.png in Resources */ = {isa = PBXBuildFile; fileRef = 0078168915C3A8F700CE5026 /* retina-Restart.png */; };
 		0078168D15C3AA0100CE5026 /* retina-Restart-Highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 0078168C15C3AA0100CE5026 /* retina-Restart-Highlight.png */; };
 		009397D215D7F6D3009AE73E /* VocabularySishu.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 009397D115D7F6D3009AE73E /* VocabularySishu.sqlite */; };
+		009397D515D82B7A009AE73E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009397D415D82B79009AE73E /* MessageUI.framework */; };
+		009397D615D82C5E009AE73E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009397D415D82B79009AE73E /* MessageUI.framework */; };
+		009397D715D82C61009AE73E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009397D415D82B79009AE73E /* MessageUI.framework */; };
 		009A870015A1A82900F7869D /* NSMutableArrayShuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = 009A86FF15A1A82900F7869D /* NSMutableArrayShuffling.m */; };
 		009AFBFB1588982300293F6A /* VSAlertDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 009AFBFA1588982300293F6A /* VSAlertDelegate.m */; };
 		009BB48615CAAFF2008E5B2B /* VSVocabularyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 009BB48515CAAFF2008E5B2B /* VSVocabularyCell.m */; };
@@ -304,63 +307,6 @@
 		00FF701D15D16C050043BA91 /* retina-TimeLineCellLight.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF701715D16C050043BA91 /* retina-TimeLineCellLight.png */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXBuildRule section */
-		00201E2A15CFBAD30089B8FA /* PBXBuildRule */ = {
-			isa = PBXBuildRule;
-			compilerSpec = com.apple.compilers.proxy.script;
-			fileType = text.plist;
-			isEditable = 1;
-			outputFiles = (
-			);
-			script = "# builtin-copyPlist\n";
-		};
-		00201E2B15CFBAD30089B8FA /* PBXBuildRule */ = {
-			isa = PBXBuildRule;
-			compilerSpec = com.apple.compilers.proxy.script;
-			fileType = text.plist;
-			isEditable = 1;
-			outputFiles = (
-			);
-			script = "# builtin-copyPlist\n";
-		};
-		00BDE5A315CF9B9400BC205C /* PBXBuildRule */ = {
-			isa = PBXBuildRule;
-			compilerSpec = com.apple.compilers.proxy.script;
-			fileType = text.plist;
-			isEditable = 1;
-			outputFiles = (
-			);
-			script = "# builtin-copyPlist\n";
-		};
-		00BDE5A415CF9B9400BC205C /* PBXBuildRule */ = {
-			isa = PBXBuildRule;
-			compilerSpec = com.apple.compilers.proxy.script;
-			fileType = text.plist;
-			isEditable = 1;
-			outputFiles = (
-			);
-			script = "# builtin-copyPlist\n";
-		};
-		00C4300515BC4219006FF95E /* PBXBuildRule */ = {
-			isa = PBXBuildRule;
-			compilerSpec = com.apple.compilers.proxy.script;
-			fileType = text.plist;
-			isEditable = 1;
-			outputFiles = (
-			);
-			script = "# builtin-copyPlist\n";
-		};
-		00C4300615BC4530006FF95E /* PBXBuildRule */ = {
-			isa = PBXBuildRule;
-			compilerSpec = com.apple.compilers.proxy.script;
-			fileType = text.plist;
-			isEditable = 1;
-			outputFiles = (
-			);
-			script = "# builtin-copyPlist\n";
-		};
-/* End PBXBuildRule section */
-
 /* Begin PBXContainerItemProxy section */
 		00701E511553CBCE00D30018 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -450,6 +396,7 @@
 		0081184F15BEFE220022B515 /* VSNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSNavigationBar.h; path = Generic/VSNavigationBar.h; sourceTree = "<group>"; };
 		0081185015BEFE220022B515 /* VSNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSNavigationBar.m; path = Generic/VSNavigationBar.m; sourceTree = "<group>"; };
 		009397D115D7F6D3009AE73E /* VocabularySishu.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = VocabularySishu.sqlite; path = Resources/Data/FULL/VocabularySishu.sqlite; sourceTree = "<group>"; };
+		009397D415D82B79009AE73E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		009A86FE15A1A82900F7869D /* NSMutableArrayShuffling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSMutableArrayShuffling.h; path = Utils/NSMutableArrayShuffling.h; sourceTree = "<group>"; };
 		009A86FF15A1A82900F7869D /* NSMutableArrayShuffling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSMutableArrayShuffling.m; path = Utils/NSMutableArrayShuffling.m; sourceTree = "<group>"; };
 		009AFBF91588982300293F6A /* VSAlertDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSAlertDelegate.h; path = Utils/VSAlertDelegate.h; sourceTree = "<group>"; };
@@ -536,6 +483,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00201E0015CFBAD30089B8FA /* AVFoundation.framework in Frameworks */,
+				009397D515D82B7A009AE73E /* MessageUI.framework in Frameworks */,
 				00201E0115CFBAD30089B8FA /* QuartzCore.framework in Frameworks */,
 				00201E0215CFBAD30089B8FA /* UIKit.framework in Frameworks */,
 				00201E0315CFBAD30089B8FA /* Foundation.framework in Frameworks */,
@@ -550,6 +498,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00A1AFAD1586192400310669 /* AVFoundation.framework in Frameworks */,
+				009397D715D82C61009AE73E /* MessageUI.framework in Frameworks */,
 				00A00703156D15F200D24418 /* QuartzCore.framework in Frameworks */,
 				00701E301553CBCE00D30018 /* UIKit.framework in Frameworks */,
 				00701E321553CBCE00D30018 /* Foundation.framework in Frameworks */,
@@ -575,6 +524,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00BDE57915CF9B9400BC205C /* AVFoundation.framework in Frameworks */,
+				009397D615D82C5E009AE73E /* MessageUI.framework in Frameworks */,
 				00BDE57A15CF9B9400BC205C /* QuartzCore.framework in Frameworks */,
 				00BDE57B15CF9B9400BC205C /* UIKit.framework in Frameworks */,
 				00BDE57C15CF9B9400BC205C /* Foundation.framework in Frameworks */,
@@ -673,6 +623,7 @@
 		00701E2E1553CBCE00D30018 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				009397D415D82B79009AE73E /* MessageUI.framework */,
 				00D6778715AD542E00EF152D /* Crashlytics.framework */,
 				00A1AFAC1586192400310669 /* AVFoundation.framework */,
 				00A00702156D15F200D24418 /* QuartzCore.framework */,
@@ -955,8 +906,6 @@
 				00201E2915CFBAD30089B8FA /* ShellScript */,
 			);
 			buildRules = (
-				00201E2A15CFBAD30089B8FA /* PBXBuildRule */,
-				00201E2B15CFBAD30089B8FA /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -975,8 +924,6 @@
 				00D6778415AD534300EF152D /* ShellScript */,
 			);
 			buildRules = (
-				00C4300615BC4530006FF95E /* PBXBuildRule */,
-				00C4300515BC4219006FF95E /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -1014,8 +961,6 @@
 				00BDE5A215CF9B9400BC205C /* ShellScript */,
 			);
 			buildRules = (
-				00BDE5A315CF9B9400BC205C /* PBXBuildRule */,
-				00BDE5A415CF9B9400BC205C /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -1473,6 +1418,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUNDLE_NAME = "VocabularySishu-GRE";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Xiao Xiao (KC9ND38234)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xiao Xiao (KC9ND38234)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1488,7 +1434,6 @@
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
-				version = 0;
 			};
 			name = Debug;
 		};
@@ -1496,6 +1441,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUNDLE_NAME = "VocabularySishu-GRE";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Xiao Xiao (KC9ND38234)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xiao Xiao (KC9ND38234)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1511,7 +1457,6 @@
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "56416541-0D03-44A4-867C-B5CD2311C6F9";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
-				version = 0;
 			};
 			name = Release;
 		};
@@ -1564,6 +1509,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUNDLE_NAME = "VocabularySishu-Full";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Xiao Xiao (KC9ND38234)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xiao Xiao (KC9ND38234)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1579,7 +1525,6 @@
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
-				version = 0;
 			};
 			name = Debug;
 		};
@@ -1587,6 +1532,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUNDLE_NAME = "VocabularySishu-Full";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Xiao Xiao (KC9ND38234)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xiao Xiao (KC9ND38234)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1602,7 +1548,6 @@
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "56416541-0D03-44A4-867C-B5CD2311C6F9";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
-				version = 0;
 			};
 			name = Release;
 		};
@@ -1646,6 +1591,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUNDLE_NAME = "VocabularySishu-TOEFL";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Xiao Xiao (KC9ND38234)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xiao Xiao (KC9ND38234)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1656,12 +1602,12 @@
 				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
 				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				New_Setting = "";
 				PRODUCT_NAME = "VocabularySishu copy";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
-				version = 0;
 			};
 			name = Debug;
 		};
@@ -1669,6 +1615,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUNDLE_NAME = "VocabularySishu-TOEFL";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Xiao Xiao (KC9ND38234)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xiao Xiao (KC9ND38234)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1679,12 +1626,12 @@
 				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
 				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				New_Setting = "";
 				PRODUCT_NAME = "VocabularySishu copy";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "56416541-0D03-44A4-867C-B5CD2311C6F9";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
-				version = 0;
 			};
 			name = Release;
 		};

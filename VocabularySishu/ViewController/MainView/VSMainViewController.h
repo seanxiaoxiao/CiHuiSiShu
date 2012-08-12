@@ -25,8 +25,6 @@
 @property (nonatomic, retain) NSArray *allRepos;
 @property (nonatomic, assign) int pageIndex;
 @property (nonatomic, assign) BOOL pageControlUsed;
-@property (nonatomic, assign) BOOL hasHistory;
-@property (nonatomic, retain) VSHistoryViewController *historyViewController;
 @property (nonatomic, strong) NSMutableArray *controllers;
 
 @end
