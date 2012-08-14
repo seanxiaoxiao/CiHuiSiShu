@@ -51,8 +51,6 @@
     clipView.scrollView = scrollView;
     [self.view addSubview:clipView];
 
-    int selected = -1;
-    VSRepository *repo = [VSContext getContext].currentRepository;
     for (int i = 0; i < [allRepos count]; i++) {
         CGRect frame = CGRectMake(i * 205, 0, 205, 416);
         VSRepoViewController *controller = [[VSRepoViewController alloc] initWithNibName:nil bundle:nil];
@@ -61,24 +59,36 @@
         [controller initWithCurrentRepo:currentRepo];
         controller.view.frame = frame;
         [self.scrollView addSubview:controller.view];
-        if ([repo isEqual:currentRepo]) {
-            selected = i;
-        }
     }
     pageControl.numberOfPages = [self.allRepos count];
     pageControl.currentPage = 0;
-    if (selected != -1) {
-        CGRect frame = scrollView.frame;
-        frame.origin.x = frame.size.width * selected;
-        frame.origin.y = 0;
-        [scrollView scrollRectToVisible:frame animated:NO];
-        pageControl.currentPage = selected;
-    }
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.title = @"选择词库";
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    int selected = -1;
+    VSRepository *repo = [VSContext getContext].currentRepository;
+    for (int i = 0; i < [allRepos count]; i++) {
+        VSRepository *currentRepo = [allRepos objectAtIndex:i];
+        if ([repo isEqual:currentRepo]) {
+            selected = i;
+        }
+    }
+    if (selected != -1) {
+        CGRect frame = scrollView.frame;
+        frame.origin.x = frame.size.width * selected;
+        frame.origin.y = 0;
+        [scrollView scrollRectToVisible:frame animated:YES];
+        pageControl.currentPage = selected;
+    }
     [[controllers objectAtIndex:pageControl.currentPage] loadRepoView];
 }
 
@@ -89,12 +99,6 @@
     // e.g. self.myOutlet = nil;
     self.scrollView = nil;
     self.pageControl = nil;
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    self.title = @"选择词库";
 }
 
 
