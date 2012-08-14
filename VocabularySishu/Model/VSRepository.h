@@ -11,6 +11,8 @@
 
 #import "VSList.h"
 #import "VSConstant.h"
+#import "VSUtils.h"
+#import "VSListVocabulary.h"
 
 @class VSList;
 
@@ -30,6 +32,12 @@
 - (VSList *)firstListInRepo;
 
 - (int) wordsTotal;
+
+- (int) rememberedInRepo;
+
+- (UIImage *)repoImage;
+
+- (UIColor *)repoNameColor;
 
 @end
 

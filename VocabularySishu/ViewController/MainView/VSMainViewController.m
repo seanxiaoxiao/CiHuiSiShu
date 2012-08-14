@@ -8,6 +8,7 @@
 
 #import "VSMainViewController.h"
 #import "VSConfigurationViewController.h"
+#import "VSClipView.h"
 
 @interface VSMainViewController ()
 
@@ -29,6 +30,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
     self.controllers = [[NSMutableArray alloc] init];
 
     UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
@@ -37,27 +39,47 @@
     [self.view sendSubviewToBack:backgroundImageView];
     self.allRepos = [VSRepository allRepos];
     scrollView.pagingEnabled = YES;
-    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * [self.allRepos count], scrollView.frame.size.height);
+    scrollView.contentSize = CGSizeMake(205 * [self.allRepos count], scrollView.frame.size.height);
     scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.showsVerticalScrollIndicator = NO;
     scrollView.alwaysBounceVertical = NO;
     scrollView.scrollsToTop = NO;
     scrollView.delegate = self;
+    scrollView.clipsToBounds = NO;
+    
+    VSClipView *clipView = [[VSClipView alloc] initWithFrame:CGRectMake(self.scrollView.frame.size.width, 0, 320 - self.scrollView.frame.size.width, self.scrollView.frame.size.height)];
+    clipView.scrollView = scrollView;
+    [self.view addSubview:clipView];
 
+    int selected = -1;
+    VSRepository *repo = [VSContext getContext].currentRepository;
     for (int i = 0; i < [allRepos count]; i++) {
-        CGRect frame = CGRectMake(i * 320, 0, 320, 416);
-        VSRepoViewController *controller = [[VSRepoViewController alloc] initWithNibName:@"VSRepoViewController" bundle:nil];
+        CGRect frame = CGRectMake(i * 205, 0, 205, 416);
+        VSRepoViewController *controller = [[VSRepoViewController alloc] initWithNibName:nil bundle:nil];
         [controllers addObject:controller];
         VSRepository *currentRepo = [allRepos objectAtIndex:i];
-        VSRepository *lastRepo = i == 0 ? nil : [allRepos objectAtIndex:i - 1];
-        VSRepository *nextRepo = i == ([allRepos count] - 1) ? nil : [allRepos objectAtIndex:[allRepos count] - 1];
-        [controller initWithCurrentRepo:currentRepo last:lastRepo next:nextRepo];
+        [controller initWithCurrentRepo:currentRepo];
         controller.view.frame = frame;
         [self.scrollView addSubview:controller.view];
+        if ([repo isEqual:currentRepo]) {
+            selected = i;
+        }
     }
     pageControl.numberOfPages = [self.allRepos count];
     pageControl.currentPage = 0;
-    [self.view bringSubviewToFront:self.pageControl];
+    if (selected != -1) {
+        CGRect frame = scrollView.frame;
+        frame.origin.x = frame.size.width * selected;
+        frame.origin.y = 0;
+        [scrollView scrollRectToVisible:frame animated:NO];
+        pageControl.currentPage = selected;
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [[controllers objectAtIndex:pageControl.currentPage] loadRepoView];
 }
 
 - (void)viewDidUnload
@@ -69,19 +91,23 @@
     self.pageControl = nil;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.title = @"选择词库";
+}
+
 
 - (void)scrollViewDidScroll:(UIScrollView *)sender
 {
     if (pageControlUsed) {
         return;
     }
-    
+
     // Switch the indicator when more than 50% of the previous/next page is visible
     CGFloat pageWidth = scrollView.frame.size.width;
     int page = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
     pageControl.currentPage = page;
-    [[controllers objectAtIndex:page] loadView];
-    
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
@@ -93,6 +119,7 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     pageControlUsed = NO;
+    [[controllers objectAtIndex:pageControl.currentPage] loadRepoView];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -100,7 +127,7 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (IBAction)changePage:(id)sender
+- (void)changePage:(id)sender
 {
     int page = pageControl.currentPage;
 	

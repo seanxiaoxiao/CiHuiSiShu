@@ -18,7 +18,7 @@
     IBOutlet UIPageControl *pageControl;
 }
 
-- (IBAction)changePage:(id)sender;
+- (void)changePage:(id)sender;
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIPageControl *pageControl;
