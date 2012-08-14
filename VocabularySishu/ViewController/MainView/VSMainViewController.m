@@ -16,6 +16,7 @@
 
 @implementation VSMainViewController
 @synthesize scrollView, pageControl, allRepos, pageIndex, pageControlUsed, controllers;
+@synthesize firstEnter;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,6 +32,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    self.firstEnter = YES;
     self.controllers = [[NSMutableArray alloc] init];
 
     UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
@@ -74,22 +76,25 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    int selected = -1;
-    VSRepository *repo = [VSContext getContext].currentRepository;
-    for (int i = 0; i < [allRepos count]; i++) {
-        VSRepository *currentRepo = [allRepos objectAtIndex:i];
-        if ([repo isEqual:currentRepo]) {
-            selected = i;
+    if (firstEnter) {
+        int selected = -1;
+        VSRepository *repo = [VSContext getContext].currentRepository;
+        for (int i = 0; i < [allRepos count]; i++) {
+            VSRepository *currentRepo = [allRepos objectAtIndex:i];
+            if ([repo isEqual:currentRepo]) {
+                selected = i;
+            }
         }
+        if (selected != -1) {
+            CGRect frame = scrollView.frame;
+            frame.origin.x = frame.size.width * selected;
+            frame.origin.y = 0;
+            [scrollView scrollRectToVisible:frame animated:YES];
+            pageControl.currentPage = selected;
+        }
+        [[controllers objectAtIndex:pageControl.currentPage] loadRepoView];
+        firstEnter = NO;
     }
-    if (selected != -1) {
-        CGRect frame = scrollView.frame;
-        frame.origin.x = frame.size.width * selected;
-        frame.origin.y = 0;
-        [scrollView scrollRectToVisible:frame animated:YES];
-        pageControl.currentPage = selected;
-    }
-    [[controllers objectAtIndex:pageControl.currentPage] loadRepoView];
 }
 
 - (void)viewDidUnload

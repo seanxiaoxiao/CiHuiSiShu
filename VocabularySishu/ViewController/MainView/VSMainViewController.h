@@ -26,5 +26,6 @@
 @property (nonatomic, assign) int pageIndex;
 @property (nonatomic, assign) BOOL pageControlUsed;
 @property (nonatomic, strong) NSMutableArray *controllers;
+@property (nonatomic, assign) BOOL firstEnter;
 
 @end
