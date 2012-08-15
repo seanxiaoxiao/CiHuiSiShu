@@ -18,7 +18,7 @@
     IBOutlet UIPageControl *pageControl;
 }
 
-- (IBAction)changePage:(id)sender;
+- (void)changePage:(id)sender;
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIPageControl *pageControl;
@@ -26,5 +26,6 @@
 @property (nonatomic, assign) int pageIndex;
 @property (nonatomic, assign) BOOL pageControlUsed;
 @property (nonatomic, strong) NSMutableArray *controllers;
+@property (nonatomic, assign) BOOL firstEnter;
 
 @end

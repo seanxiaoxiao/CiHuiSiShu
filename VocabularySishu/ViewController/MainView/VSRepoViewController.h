@@ -11,19 +11,20 @@
 #import "VSRepoListViewController.h"
 
 @interface VSRepoViewController : UIViewController {
-    IBOutlet UIButton *repoButton;
-    IBOutlet UILabel *infoLabel;
+
 }
 
-@property (nonatomic, strong) UIButton *repoButton;
-@property (nonatomic, strong) UILabel *infoLabel;
+@property (nonatomic, retain) UIButton *repoButton;
+@property (nonatomic, retain) UILabel *infoLabel;
+@property (nonatomic, retain) UILabel *listCountLabel;
 @property (nonatomic, retain) VSRepository *repo;
-@property (nonatomic, retain) VSRepository *lastRepo;
-@property (nonatomic, retain) VSRepository *nextRepo;
-@property (nonatomic, assign) BOOL loaded;
+@property (nonatomic, retain) UILabel *repoNameLabel;
+@property (nonatomic, retain) UIActivityIndicatorView *activityIndicator;
 
-- (IBAction)enterRepos:(id)sender;
+- (void)enterRepos:(id)sender;
 
-- (void)initWithCurrentRepo:(VSRepository *)current last:(VSRepository *)last next:(VSRepository *)next;
+- (void)loadRepoView;
+
+- (void)initWithCurrentRepo:(VSRepository *)current;
 
 @end

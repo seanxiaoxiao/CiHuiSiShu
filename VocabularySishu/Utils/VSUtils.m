@@ -113,6 +113,7 @@
     VSContext *context = [VSContext getContext];
     if (list != nil) {
         [context fixCurrentList:list];
+        [context fixRepository:list.repository];
         VSVocabularyListViewController *vocabularyListViewController = [VSVocabularyListViewController alloc];
         vocabularyListViewController.currentList = list;
         vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];

@@ -67,4 +67,46 @@
     return count;
 }
 
+- (int) rememberedInRepo
+{
+    int count = 0;
+    for (VSList *list in self.lists) {
+        for (VSListVocabulary *listVocabulary in list.listVocabularies) {
+            if ([listVocabulary.lastStatus isEqualToNumber:[VSConstant VOCABULARY_LIST_STATUS_REMEMBERED]]) {
+                count++;
+            }
+        }
+    }
+    return count;
+}
+
+
+- (UIImage *)repoImage
+{
+    int remainder = [self.order intValue] % 3;
+    if (remainder == 0) {
+        return [VSUtils fetchImg:@"BookBlack"];
+    }
+    else if (remainder == 1) {
+        return [VSUtils fetchImg:@"BookRed"];
+    }
+    else {
+        return [VSUtils fetchImg:@"BookLake"];
+    }
+}
+
+- (UIColor *)repoNameColor
+{
+    int remainder = [self.order intValue] % 3;
+    if (remainder == 0) {
+        return [UIColor colorWithHue:45.0/360.0 saturation:0.5 brightness:1 alpha:0.8];
+    }
+    else if (remainder == 1) {
+        return [UIColor colorWithHue:45.0/360.0 saturation:0.5 brightness:1 alpha:0.8];
+    }
+    else {
+        return [UIColor colorWithHue:190.0/360.0 saturation:0.2 brightness:1 alpha:0.8];
+    }
+}
+
 @end
