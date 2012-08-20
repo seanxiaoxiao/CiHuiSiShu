@@ -23,6 +23,9 @@
 @property (nonatomic, retain) UIImage *inkNeckImage;
 @property (nonatomic, retain) UIImage *inkBodyImage;
 @property (nonatomic, retain) UIImage *inkFooterImage;
+@property (nonatomic, retain) UILabel *finishProgressLabel;
+@property (nonatomic, retain) NSNumberFormatter *numberFormatter;
+
 
 - (void) updateProgress:(double)progress; 
 

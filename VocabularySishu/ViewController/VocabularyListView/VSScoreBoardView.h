@@ -17,9 +17,7 @@
 @property (nonatomic, retain) UIImageView *scoreBoardBackground;
 @property (nonatomic, retain) UIButton *retryButton;
 @property (nonatomic, retain) UIButton *nextButton;
-@property (nonatomic, retain) UILabel *finishLabel;
 @property (nonatomic, retain) UILabel *notWellLabel;
-@property (nonatomic, retain) UILabel *finishRateLabel;
 @property (nonatomic, retain) UILabel *notWellRateLabel;
 @property (nonatomic, retain) VSList *_list;
 @property (nonatomic, assign) double finishProgress;

@@ -30,20 +30,21 @@
     NSFetchRequest *listRequest = [[NSFetchRequest alloc] init];
     [listRequest setEntity:listDescription];
     NSDate *now = [VSUtils getNow];
-//    NSDate *last = [NSDate dateWithTimeInterval:-24 * 60 * 60 sinceDate:now];
-    NSPredicate *datePredicate = [NSPredicate predicateWithFormat:@"(createdDate >= %@)", [NSDate dateWithTimeInterval:-24 * 60 * 60 sinceDate:now]];
+    NSPredicate *datePredicate = [NSPredicate predicateWithFormat:@"(createdDate >= %@ AND createdDate <= %@)", [NSDate dateWithTimeInterval:-24 * 60 * 60 sinceDate:now], now];
     NSPredicate *isHistoryPredicate = [NSPredicate predicateWithFormat:@"(type = 1)"];
     [listRequest setPredicate:isHistoryPredicate];
     [listRequest setPredicate:datePredicate];
     NSArray *results = [[VSUtils currentMOContext] executeFetchRequest:listRequest error:&error];
     if ([results count] > 0) {
+        //[[VSUtils currentMOContext] deleteObject:[results objectAtIndex:0]];
+        NSLog (@"%@", [results objectAtIndex:0]);
         return [results objectAtIndex:0];
     }
     else {
         NSDate *today = [VSUtils getToday];
         VSList *listForToday = [NSEntityDescription insertNewObjectForEntityForName:@"VSList" inManagedObjectContext:[VSUtils currentMOContext]];
         NSCalendar *nowCalendar = [NSCalendar currentCalendar];
-        NSDateComponents *nowComponents = [nowCalendar components:(NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:today];
+        NSDateComponents *nowComponents = [nowCalendar components:(NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:now];
         listForToday.name = [NSString stringWithFormat:@"%d月%d日", [nowComponents month], [nowComponents day ]];
         listForToday.order = [NSNumber numberWithInt:-1];
         listForToday.type = [VSConstant LIST_TYPE_HISTORY];
@@ -232,19 +233,11 @@
 - (NSArray *)vocabulariesToRecite
 {
     NSMutableArray *results = nil;
-    if (![self.type isEqualToNumber:[VSConstant LIST_TYPE_NORMAL]]) {
-        NSSortDescriptor *sortOrderDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
-        NSSortDescriptor *sortStatusDescriptor = [[NSSortDescriptor alloc] initWithKey:@"lastStatus" ascending:YES];
-        NSArray *sortDescriptors = [NSArray arrayWithObjects:sortOrderDescriptor, sortStatusDescriptor, nil];
-        results = [NSMutableArray arrayWithArray:[self.listVocabularies sortedArrayUsingDescriptors:sortDescriptors]];
-    }
-    else {
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(lastStatus!=1)"];
-        NSSortDescriptor *sortOrderDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
-        NSSortDescriptor *sortStatusDescriptor = [[NSSortDescriptor alloc] initWithKey:@"lastStatus" ascending:YES];
-        NSArray *sortDescriptors = [NSArray arrayWithObjects:sortOrderDescriptor, sortStatusDescriptor, nil];
-        results = [NSMutableArray arrayWithArray:[[self.listVocabularies filteredSetUsingPredicate:predicate] sortedArrayUsingDescriptors:sortDescriptors]];
-    }
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(lastStatus!=1)"];
+    NSSortDescriptor *sortOrderDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
+    NSSortDescriptor *sortStatusDescriptor = [[NSSortDescriptor alloc] initWithKey:@"lastStatus" ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObjects:sortOrderDescriptor, sortStatusDescriptor, nil];
+    results = [NSMutableArray arrayWithArray:[[self.listVocabularies filteredSetUsingPredicate:predicate] sortedArrayUsingDescriptors:sortDescriptors]];
     [results shuffle];
     return results;
 }

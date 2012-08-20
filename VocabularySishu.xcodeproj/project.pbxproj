@@ -61,7 +61,6 @@
 		00201E0B15CFBAD30089B8FA /* VSVocabularyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */; };
 		00201E0C15CFBAD30089B8FA /* Meaning.html in Resources */ = {isa = PBXBuildFile; fileRef = 00A006F8156B3BDF00D24418 /* Meaning.html */; };
 		00201E0D15CFBAD30089B8FA /* retina-Navigation.png in Resources */ = {isa = PBXBuildFile; fileRef = 0081184A15BEFDDE0022B515 /* retina-Navigation.png */; };
-		00201E0E15CFBAD30089B8FA /* back-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A00704156D361E00D24418 /* back-button.png */; };
 		00201E0F15CFBAD30089B8FA /* retina-back-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A00705156D361E00D24418 /* retina-back-button.png */; };
 		00201E1015CFBAD30089B8FA /* VSConfigurationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */; };
 		00201E1115CFBAD30089B8FA /* retina-InkNeck.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2815CC1E49008FDF9F /* retina-InkNeck.png */; };
@@ -159,7 +158,6 @@
 		00A006F9156B3BDF00D24418 /* Meaning.html in Resources */ = {isa = PBXBuildFile; fileRef = 00A006F8156B3BDF00D24418 /* Meaning.html */; };
 		00A006FC156B3D6D00D24418 /* VSConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A006FB156B3D6D00D24418 /* VSConstant.m */; };
 		00A00703156D15F200D24418 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A00702156D15F200D24418 /* QuartzCore.framework */; };
-		00A00706156D361E00D24418 /* back-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A00704156D361E00D24418 /* back-button.png */; };
 		00A00707156D361E00D24418 /* retina-back-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A00705156D361E00D24418 /* retina-back-button.png */; };
 		00A0071D156E3A7B00D24418 /* VSContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A0071C156E3A7B00D24418 /* VSContext.m */; };
 		00A00720156E3A8F00D24418 /* VSList.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A0071F156E3A8F00D24418 /* VSList.m */; };
@@ -227,7 +225,6 @@
 		00BDE58415CF9B9400BC205C /* VSVocabularyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */; };
 		00BDE58515CF9B9400BC205C /* Meaning.html in Resources */ = {isa = PBXBuildFile; fileRef = 00A006F8156B3BDF00D24418 /* Meaning.html */; };
 		00BDE58615CF9B9400BC205C /* retina-Navigation.png in Resources */ = {isa = PBXBuildFile; fileRef = 0081184A15BEFDDE0022B515 /* retina-Navigation.png */; };
-		00BDE58715CF9B9400BC205C /* back-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A00704156D361E00D24418 /* back-button.png */; };
 		00BDE58815CF9B9400BC205C /* retina-back-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A00705156D361E00D24418 /* retina-back-button.png */; };
 		00BDE58915CF9B9400BC205C /* VSConfigurationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */; };
 		00BDE58A15CF9B9400BC205C /* retina-InkNeck.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2815CC1E49008FDF9F /* retina-InkNeck.png */; };
@@ -419,7 +416,6 @@
 		00A006FA156B3D6D00D24418 /* VSConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSConstant.h; path = Utils/VSConstant.h; sourceTree = "<group>"; };
 		00A006FB156B3D6D00D24418 /* VSConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSConstant.m; path = Utils/VSConstant.m; sourceTree = "<group>"; };
 		00A00702156D15F200D24418 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		00A00704156D361E00D24418 /* back-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "back-button.png"; path = "Resources/Img/back-button.png"; sourceTree = "<group>"; };
 		00A00705156D361E00D24418 /* retina-back-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-back-button.png"; path = "Resources/Img/retina-back-button.png"; sourceTree = "<group>"; };
 		00A0071B156E3A7B00D24418 /* VSContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSContext.h; path = Model/VSContext.h; sourceTree = "<group>"; };
 		00A0071C156E3A7B00D24418 /* VSContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSContext.m; path = Model/VSContext.m; sourceTree = "<group>"; };
@@ -864,7 +860,6 @@
 				00C42FD815BAEEB1006FF95E /* retina-CellBG.png */,
 				00C42FD915BAEEB1006FF95E /* retina-CellSummary.png */,
 				00C42FDA15BAEEB1006FF95E /* retina-ListBG.png */,
-				00A00704156D361E00D24418 /* back-button.png */,
 				00A00705156D361E00D24418 /* retina-back-button.png */,
 			);
 			name = Img;
@@ -1027,7 +1022,6 @@
 				00201E0B15CFBAD30089B8FA /* VSVocabularyListViewController.xib in Resources */,
 				00201E0C15CFBAD30089B8FA /* Meaning.html in Resources */,
 				00201E0D15CFBAD30089B8FA /* retina-Navigation.png in Resources */,
-				00201E0E15CFBAD30089B8FA /* back-button.png in Resources */,
 				00201E0F15CFBAD30089B8FA /* retina-back-button.png in Resources */,
 				00201E1015CFBAD30089B8FA /* VSConfigurationViewController.xib in Resources */,
 				00201E1115CFBAD30089B8FA /* retina-InkNeck.png in Resources */,
@@ -1092,7 +1086,6 @@
 				0073A6BF156A5FF700B80422 /* VSVocabularyListViewController.xib in Resources */,
 				00A006F9156B3BDF00D24418 /* Meaning.html in Resources */,
 				00032B2015CC18BC008FDF9F /* retina-Navigation.png in Resources */,
-				00A00706156D361E00D24418 /* back-button.png in Resources */,
 				00A00707156D361E00D24418 /* retina-back-button.png in Resources */,
 				00AE80F2158B1318000CE7EA /* VSConfigurationViewController.xib in Resources */,
 				00032B2915CC1E49008FDF9F /* retina-InkNeck.png in Resources */,
@@ -1156,7 +1149,6 @@
 				00BDE58415CF9B9400BC205C /* VSVocabularyListViewController.xib in Resources */,
 				00BDE58515CF9B9400BC205C /* Meaning.html in Resources */,
 				00BDE58615CF9B9400BC205C /* retina-Navigation.png in Resources */,
-				00BDE58715CF9B9400BC205C /* back-button.png in Resources */,
 				00BDE58815CF9B9400BC205C /* retina-back-button.png in Resources */,
 				00BDE58915CF9B9400BC205C /* VSConfigurationViewController.xib in Resources */,
 				00BDE58A15CF9B9400BC205C /* retina-InkNeck.png in Resources */,

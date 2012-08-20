@@ -13,9 +13,7 @@
 @synthesize scoreBoardBackground;
 @synthesize retryButton;
 @synthesize nextButton;
-@synthesize finishLabel;
 @synthesize notWellLabel;
-@synthesize finishRateLabel;
 @synthesize notWellRateLabel;
 @synthesize _list;
 @synthesize finishProgress;
@@ -40,7 +38,7 @@
         UIImage *normalButtonImage = [VSUtils fetchImg:@"ButtonBT"];
         UIImage *highlightButtonImage = [VSUtils fetchImg:@"ButtonBTHighLighted"];
         
-        self.retryButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 165, normalButtonImage.size.width, normalButtonImage.size.height)];
+        self.retryButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 125, normalButtonImage.size.width, normalButtonImage.size.height)];
         [self.retryButton setBackgroundImage:normalButtonImage forState:UIControlStateNormal];
         [self.retryButton setBackgroundImage:highlightButtonImage forState:UIControlStateHighlighted];
         [self.retryButton setTitle:@"重新背诵" forState:UIControlStateNormal];
@@ -50,7 +48,7 @@
         self.retryButton.titleLabel.shadowOffset = CGSizeMake(0, -1);
         self.retryButton.titleLabel.shadowColor = [UIColor blackColor];
         
-        self.nextButton = [[UIButton alloc] initWithFrame:CGRectMake(120, 165, normalButtonImage.size.width, normalButtonImage.size.height)];
+        self.nextButton = [[UIButton alloc] initWithFrame:CGRectMake(120, 125, normalButtonImage.size.width, normalButtonImage.size.height)];
         [self.nextButton setBackgroundImage:normalButtonImage forState:UIControlStateNormal];
         [self.nextButton setBackgroundImage:highlightButtonImage forState:UIControlStateHighlighted];
         [self.nextButton setTitle:@"下个列表" forState:UIControlStateNormal];
@@ -59,19 +57,8 @@
         self.nextButton.titleLabel.font = [UIFont boldSystemFontOfSize:15];
         self.nextButton.titleLabel.shadowOffset = CGSizeMake(0, -1);
         self.nextButton.titleLabel.shadowColor = [UIColor blackColor];
-        
-        self.finishLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 75, 70, 30)];
-        self.finishLabel.textAlignment = UITextAlignmentLeft;
-        self.finishLabel.backgroundColor = [UIColor clearColor];
-        self.finishLabel.text = @"完成度";
-        self.finishLabel.font = [UIFont boldSystemFontOfSize:18];
-        self.finishLabel.textColor = [UIColor whiteColor];
-        self.finishLabel.alpha = 0.9;
-        self.finishLabel.shadowOffset = CGSizeMake(0, -1);
-        self.finishLabel.shadowColor = [UIColor blackColor];
 
-
-        self.notWellLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 115, 70, 30)];
+        self.notWellLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 75, 70, 30)];
         self.notWellLabel.text = @"不靠谱";
         self.notWellLabel.font = [UIFont boldSystemFontOfSize:18];
         self.notWellLabel.backgroundColor = [UIColor clearColor];
@@ -81,17 +68,7 @@
         self.notWellLabel.shadowOffset = CGSizeMake(0, -1);
         self.notWellLabel.shadowColor = [UIColor blackColor];
 
-        self.finishRateLabel = [[UILabel alloc] initWithFrame:CGRectMake(80, 73, 120, 30)];
-        self.finishRateLabel.textAlignment = UITextAlignmentRight;
-        self.finishRateLabel.backgroundColor = [UIColor clearColor];
-        self.finishRateLabel.text = @"-";
-        self.finishRateLabel.font = [UIFont fontWithName:@"TrebuchetMS-Bold" size:30];
-        self.finishRateLabel.textColor = [UIColor whiteColor];
-        self.finishRateLabel.alpha = 0.9;
-        self.finishRateLabel.shadowOffset = CGSizeMake(0, -1);
-        self.finishRateLabel.shadowColor = [UIColor blackColor];
-
-        self.notWellRateLabel = [[UILabel alloc] initWithFrame:CGRectMake(80, 113, 120, 30)];
+        self.notWellRateLabel = [[UILabel alloc] initWithFrame:CGRectMake(80, 73, 120, 30)];
         self.notWellRateLabel.text = @"-";
         self.notWellRateLabel.font = [UIFont fontWithName:@"TrebuchetMS-Bold" size:30];
         self.notWellRateLabel.backgroundColor = [UIColor clearColor];
@@ -101,9 +78,7 @@
         self.notWellRateLabel.shadowOffset = CGSizeMake(0, -1);
         self.notWellRateLabel.shadowColor = [UIColor blackColor];
 
-        [self addSubview:finishLabel];
         [self addSubview:notWellLabel];
-        [self addSubview:finishRateLabel];
         [self addSubview:notWellRateLabel];
         [self addSubview:retryButton];
         [self addSubview:nextButton];
@@ -186,8 +161,6 @@
         }
 
     }
-    NSString *formattedNumberString = [numberFormatter stringFromNumber:[NSNumber numberWithDouble:self.finishProgress]];
-    self.finishRateLabel.text = formattedNumberString;
 }
 
 

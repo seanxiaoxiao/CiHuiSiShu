@@ -54,41 +54,31 @@
         self.tableView.tableHeaderView = headerView;
         [self.headerView updateProgress:[self.currentList finishProgress]];
         self.vocabulariesToRecite = [NSMutableArray arrayWithArray:[self.currentList vocabulariesToRecite]];
-        if ([self.vocabulariesToRecite count] == 0) {
-            [self.tableView removeFromSuperview];
-            UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
-            [backgroundImageView setFrame:self.view.frame];
-            [self.view addSubview:backgroundImageView];
-            [self.view sendSubviewToBack:backgroundImageView];
-            UIImage *restartImage = [VSUtils fetchImg:@"Restart"];
-            UIButton *restartButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, restartImage.size.width, restartImage.size.height)];
-            [restartButton setImage:restartImage forState:UIControlStateNormal];
-            [restartButton setImage:[VSUtils fetchImg:@"Restart-Highlight"] forState:UIControlStateHighlighted];
-            [restartButton addTarget:self action:@selector(restart) forControlEvents:UIControlEventTouchUpInside];
-            [self.view addSubview:restartButton];
-            restartButton.center = self.view.center;
+
+        if (![currentList isHistoryList]) {
+            self.listToday = [VSList createAndGetHistoryList];
         }
-        else {
-            if (![currentList isHistoryList]) {
-                self.listToday = [VSList createAndGetHistoryList];
-            }
-            [currentList process];
-            self.countInList = [self.currentList.listVocabularies count];
-            self.selectedIndex = -1;
-            
-            UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
-            [backgroundImageView setFrame:self.tableView.frame];
+        [currentList process];
+        self.countInList = [self.currentList.listVocabularies count];
+        self.selectedIndex = -1;
         
-            self.tableView.backgroundView = backgroundImageView;
+        UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
+        [backgroundImageView setFrame:self.tableView.frame];
         
-            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showDetailView) name:SHOW_DETAIL_VIEW object:nil];
-            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clearVocabulary:) name:CLEAR_VOCABULRY object:nil];
-            __autoreleasing UIGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanning:)];
-            panGesture.delegate = self;
-            [self.view addGestureRecognizer:panGesture];
-        }
+        self.tableView.backgroundView = backgroundImageView;
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showDetailView) name:SHOW_DETAIL_VIEW object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clearVocabulary:) name:CLEAR_VOCABULRY object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(restart) name:RESTART_LIST object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(nextList) name:NEXT_LIST object:nil];
+
+        __autoreleasing UIGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanning:)];
+        panGesture.delegate = self;
+        [self.view addGestureRecognizer:panGesture];
+
+        if ([self.vocabulariesToRecite count] == 0) {
+            [self showHideScoreBoard];
+        }
     }
     return self;
 }
@@ -413,7 +403,7 @@
 - (void)showHideScoreBoard
 {
     if (scoreBoardView == nil) {
-        CGRect modalRect = CGRectMake(50, 105, 200, 210);
+        CGRect modalRect = CGRectMake(50, 105, 200, 170);
         scoreBoardView = [[VSScoreBoardView alloc] initWithFrame:modalRect];
         CATransition *applicationLoadViewIn =[CATransition animation];
         [applicationLoadViewIn setDuration:0.2f];

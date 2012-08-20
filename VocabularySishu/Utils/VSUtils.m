@@ -49,7 +49,7 @@
 
 + (NSDate *)getToday
 {
-    NSTimeZone *timezone = [NSTimeZone defaultTimeZone];
+    NSTimeZone *timezone = [NSTimeZone localTimeZone];
     NSDate *now = [[NSDate alloc] init];
     NSInteger seconds = [timezone secondsFromGMTForDate: now];
     NSDate *localNow = [NSDate dateWithTimeInterval: seconds sinceDate: now];
@@ -64,7 +64,7 @@
 
 + (NSDate *)getNow
 {
-    NSTimeZone *timezone = [NSTimeZone defaultTimeZone];
+    NSTimeZone *timezone = [NSTimeZone localTimeZone];
     NSDate *now = [[NSDate alloc] init];
     NSInteger seconds = [timezone secondsFromGMTForDate: now];
     return [NSDate dateWithTimeInterval: seconds sinceDate: now];

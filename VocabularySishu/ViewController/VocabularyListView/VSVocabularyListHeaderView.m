@@ -21,6 +21,8 @@
 @synthesize inkFooterImage;
 @synthesize inkHeadImage;
 @synthesize inkNeckImage;
+@synthesize finishProgressLabel;
+@synthesize numberFormatter;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -40,6 +42,10 @@
         self.inkBody = [[UIImageView alloc] initWithImage:self.inkBodyImage];
         self.inkFooter = [[UIImageView alloc] initWithImage:self.inkFooterImage];
 
+        self.finishProgressLabel = [[UILabel alloc] initWithFrame:CGRectMake(250, 20, 80, 20)];
+        self.finishProgressLabel.backgroundColor = [UIColor clearColor];
+        self.finishProgressLabel.text = @"-";
+
         self.penBG.frame = CGRectMake(0, 20, penBGImage.size.width, penBGImage.size.height);
         self.penFG.frame = CGRectMake(0, 20, penFGImage.size.width, penFGImage.size.height);
         self.inkHeader.frame = CGRectMake(0, 20, inkHeadImage.size.width, inkHeadImage.size.height);
@@ -52,6 +58,10 @@
         [self addSubview:self.inkNeck];
         [self addSubview:self.inkBody];
         [self addSubview:self.inkFooter];
+        [self addSubview:self.finishProgressLabel];
+        
+        numberFormatter = [[NSNumberFormatter alloc] init];
+        [numberFormatter setPositiveFormat:@"0.0%;0.0%-0.0%"];
     }
     return self;
 }
@@ -77,6 +87,8 @@
             self.inkFooter.frame = CGRectMake(inkNeckImage.size.width + inkHeadImage.size.width + margin + inkBodyImage.size.width, 20, 200 - margin, inkBodyImage.size.height);
         }
         completion:^(BOOL finished) {
+            NSString *formattedNumberString = [numberFormatter stringFromNumber:[NSNumber numberWithDouble:progress]];
+            finishProgressLabel.text = formattedNumberString;
         }];
 }
 
