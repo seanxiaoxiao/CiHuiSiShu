@@ -23,7 +23,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {        
+    if (self) {
     }
     return self;
 }
@@ -31,7 +31,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
+    activator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    activator.center = CGPointMake(160, 30);
+
     UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
     [backgroundImageView setFrame:self.view.frame];
     [self.view addSubview:backgroundImageView];
@@ -162,10 +165,8 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-	if (([scrollView contentOffset].y + scrollView.frame.size.height) == [scrollView contentSize].height) {
+	if (([scrollView contentOffset].y + scrollView.frame.size.height) == [scrollView contentSize].height && ![self.activator isAnimating]) {
         tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 280, 60)];
-        activator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-        activator.center = CGPointMake(160, 30);
         [tableFooterView addSubview:activator];
         self.historyTable.tableFooterView = tableFooterView;
         [self.activator startAnimating];

@@ -125,9 +125,9 @@
     [listRequest setEntity:listDescription];
     [listRequest setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"createdDate" ascending:NO]]];
     NSPredicate *createDatePredicate = [NSPredicate predicateWithFormat:@"(createdDate < %@)", startAt];
-    [listRequest setPredicate:createDatePredicate];
     NSPredicate *isHistoryPredicate = [NSPredicate predicateWithFormat:@"(type = 1)"];
     [listRequest setPredicate:isHistoryPredicate];
+    [listRequest setPredicate:createDatePredicate];
     NSArray *tempResult = [[VSUtils currentMOContext] executeFetchRequest:listRequest error:&error];
     NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:[tempResult count]];
     for (VSList *list in tempResult) {
