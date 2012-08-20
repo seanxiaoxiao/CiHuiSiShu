@@ -38,7 +38,7 @@
     self.listNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 11, 46, 20)];
     self.listNameLabel.textColor = [UIColor blackColor];
     self.listNameLabel.alpha = 0.9f;
-    self.listNameLabel.font = [UIFont fontWithName:@"Verdana" size:16];
+    self.listNameLabel.font = [UIFont fontWithName:@"TrebuchetMS" size:16];
     self.listNameLabel.shadowOffset = CGSizeMake(0, 1);
     self.listNameLabel.shadowColor = [UIColor colorWithWhite:1 alpha:0.6];
     self.listNameLabel.minimumFontSize = 12;
