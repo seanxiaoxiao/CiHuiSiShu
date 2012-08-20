@@ -14,6 +14,7 @@
 @synthesize button;
 @synthesize theList;
 @synthesize indicator;
+@synthesize listNameLabel;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -30,31 +31,43 @@
     UIImage *listImage = [VSUtils fetchImg:@"Unit"];
     self.button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, listImage.size.width, listImage.size.height)];
     [self.button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal]; 
-    self.button.titleLabel.font = [UIFont boldSystemFontOfSize:10];
     [self.button setBackgroundImage:listImage forState:UIControlStateNormal];
-    [self.button setTitle:[list displayName] forState:UIControlStateNormal];
     [self.button addTarget:self action:@selector(toList) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.button];
     
-//    int starCount = [list rememberRate] / 0.33;
-//    int originX = 5;
-//    for (int i = 0; i < starCount; i++) {
-//        UIImageView *starImage = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"Star"]];
-//        starImage.frame = CGRectMake(originX, 50, starImage.image.size.width, starImage.image.size.height);
-//        originX += starImage.image.size.width + 5;
-//        [self addSubview:starImage];
-//    }
-//    for (int i = 0 ; i < 3 - starCount; i++) {
-//        UIImageView *noStarImage = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"StarNone"]];
-//        noStarImage.frame = CGRectMake(originX, 50, noStarImage.image.size.width, noStarImage.image.size.height);
-//        originX += noStarImage.image.size.width + 5;
-//        [self addSubview:noStarImage];
-//    }
+    self.listNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 11, 46, 20)];
+    self.listNameLabel.textColor = [UIColor blackColor];
+    self.listNameLabel.alpha = 0.9f;
+    self.listNameLabel.font = [UIFont fontWithName:@"Verdana" size:16];
+    self.listNameLabel.shadowOffset = CGSizeMake(0, 1);
+    self.listNameLabel.shadowColor = [UIColor colorWithWhite:1 alpha:0.6];
+    self.listNameLabel.minimumFontSize = 12;
+    self.listNameLabel.adjustsFontSizeToFitWidth = YES;
+    self.listNameLabel.backgroundColor = [UIColor clearColor];
+    self.listNameLabel.text = [theList displayName];
+    [self.listNameLabel setTextAlignment:UITextAlignmentCenter];
+    [self addSubview:listNameLabel];
+    
+    self.indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    self.indicator.center = CGPointMake(23, 45);
+    [self addSubview:self.indicator];
+
+    int originX = 5;
+    for (int i = 0; i < 3; i++) {
+        UIImageView *starImage = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"StarSmall"]];
+        starImage.frame = CGRectMake(originX, 42, starImage.image.size.width, starImage.image.size.height);
+        originX += starImage.image.size.width ;
+        [self addSubview:starImage];
+    }
 }
 
 - (void)toList
 {
     [VSUtils toGivenList:self.theList];
+}
+
+- (void)loadScore
+{
 }
 
 /*

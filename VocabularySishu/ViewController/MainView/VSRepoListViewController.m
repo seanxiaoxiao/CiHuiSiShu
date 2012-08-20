@@ -36,16 +36,16 @@
 
     NSArray *listArray = [self.repo orderedList];
     int horizontalCount = 0;
-    int width = 15;
+    int width = 27.2;
     int height = 20;
     for (VSList *list in listArray) {
         VSSingleListView *listView = [[VSSingleListView alloc] initWithFrame:CGRectMake(width, height, 50, 80)];
         [listView initWithList:list];
         [self.scrollView addSubview:listView];
-        width += 60;
+        width += 73.2;
         horizontalCount++;
-        if (horizontalCount == 5) {
-            width = 15;
+        if (horizontalCount == 4) {
+            width = 27.2;
             horizontalCount = 0;
             height += 70;
         }

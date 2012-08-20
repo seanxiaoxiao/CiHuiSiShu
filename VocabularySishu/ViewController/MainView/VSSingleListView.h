@@ -14,8 +14,11 @@
 @property (nonatomic, assign) int index;
 @property (nonatomic, retain) UIButton *button;
 @property (nonatomic, retain) VSList *theList;
+@property (nonatomic, retain) UILabel *listNameLabel;
 @property (nonatomic, retain) UIActivityIndicatorView *indicator;
 
 - (void)initWithList:(VSList *)list;
+
+- (void)loadScore;
 
 @end
