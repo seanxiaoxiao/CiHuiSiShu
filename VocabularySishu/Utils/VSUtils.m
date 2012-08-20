@@ -119,7 +119,7 @@
         vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
         
         [UIView beginAnimations:nil context:NULL];
-        [navigationController popViewControllerAnimated:NO];
+        [navigationController popToRootViewControllerAnimated:NO];
         [UIView commitAnimations];
         
         [UIView beginAnimations:nil context:NULL];

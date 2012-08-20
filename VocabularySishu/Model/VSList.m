@@ -36,15 +36,14 @@
     [listRequest setPredicate:datePredicate];
     NSArray *results = [[VSUtils currentMOContext] executeFetchRequest:listRequest error:&error];
     if ([results count] > 0) {
-        //[[VSUtils currentMOContext] deleteObject:[results objectAtIndex:0]];
-        NSLog (@"%@", [results objectAtIndex:0]);
         return [results objectAtIndex:0];
     }
     else {
         NSDate *today = [VSUtils getToday];
         VSList *listForToday = [NSEntityDescription insertNewObjectForEntityForName:@"VSList" inManagedObjectContext:[VSUtils currentMOContext]];
+        NSDate *rightNow = [[NSDate alloc] init];
         NSCalendar *nowCalendar = [NSCalendar currentCalendar];
-        NSDateComponents *nowComponents = [nowCalendar components:(NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:now];
+        NSDateComponents *nowComponents = [nowCalendar components:(NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:rightNow];
         listForToday.name = [NSString stringWithFormat:@"%d月%d日", [nowComponents month], [nowComponents day ]];
         listForToday.order = [NSNumber numberWithInt:-1];
         listForToday.type = [VSConstant LIST_TYPE_HISTORY];
@@ -110,7 +109,7 @@
         if ([list.listVocabularies count] > 0) {
             [result addObject:list];
         }
-        if ([result count] == 6) {
+        if ([result count] == 4) {
             break;
         }
     }
@@ -134,7 +133,7 @@
         if ([list.listVocabularies count] > 0) {
             [result addObject:list];
         }
-        if ([result count] == 6) {
+        if ([result count] == 4) {
             break;
         }
     }
