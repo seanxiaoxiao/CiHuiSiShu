@@ -53,7 +53,9 @@
     [self addSubview:self.indicator];
 
     int originX = 5;
-    for (int i = 0; i < 3; i++) {
+    int starCount = [self.theList rememberRate] / 0.33;
+
+    for (int i = 0; i < starCount; i++) {
         UIImageView *starImage = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"StarSmall"]];
         starImage.frame = CGRectMake(originX, 42, starImage.image.size.width, starImage.image.size.height);
         originX += starImage.image.size.width ;

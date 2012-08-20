@@ -292,6 +292,7 @@
         listVocabualry.lastStatus = [VSConstant VOCABULARY_LIST_STATUS_NEW];
         listVocabualry.lastRememberStatus = nil;
     }
+    self.rememberCount = [NSNumber numberWithInt:0];
     [VSUtils saveEntity];
 }
 
@@ -330,13 +331,7 @@
 
 - (double)rememberRate
 {
-    int rememberCount = 0;
-    for (VSListVocabulary *listVocabulay in self.listVocabularies) {
-        if (listVocabulay.lastRememberStatus != nil && [[VSConstant REMEMBER_STATUS_GOOD] isEqualToNumber:listVocabulay.lastRememberStatus]) {
-            rememberCount++;
-        }
-    }
-    return (double)(rememberCount) / (double)([self.listVocabularies count]);
+    return [self.rememberCount doubleValue] / (double)([self.listVocabularies count]);
 }
 
 - (NSString *)displayName

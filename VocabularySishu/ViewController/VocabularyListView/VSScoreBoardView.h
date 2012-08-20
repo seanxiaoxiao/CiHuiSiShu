@@ -20,14 +20,10 @@
 @property (nonatomic, retain) UILabel *notWellLabel;
 @property (nonatomic, retain) UILabel *notWellRateLabel;
 @property (nonatomic, retain) VSList *_list;
-@property (nonatomic, assign) double finishProgress;
 @property (nonatomic, assign) double notRememberWell;
-@property (nonatomic, assign) double finishProgressStep;
 @property (nonatomic, assign) double notRememberWellStep;
-@property (nonatomic, assign) double finishProgressInList;
 @property (nonatomic, assign) double notRememberWellInList;
 @property (nonatomic, retain) NSNumberFormatter *numberFormatter;
-@property (nonatomic, retain) NSTimer *finishProgressTimer;
 @property (nonatomic, retain) NSTimer *notRememberWellTimer;
 
 

@@ -16,14 +16,10 @@
 @synthesize notWellLabel;
 @synthesize notWellRateLabel;
 @synthesize _list;
-@synthesize finishProgress;
 @synthesize notRememberWell;
-@synthesize finishProgressStep;
 @synthesize notRememberWellStep;
 @synthesize numberFormatter;
-@synthesize finishProgressTimer;
 @synthesize notRememberWellTimer;
-@synthesize finishProgressInList;
 @synthesize notRememberWellInList;
 
 - (id)initWithFrame:(CGRect)frame
@@ -59,7 +55,7 @@
         self.nextButton.titleLabel.shadowColor = [UIColor blackColor];
 
         self.notWellLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 75, 70, 30)];
-        self.notWellLabel.text = @"不靠谱";
+        self.notWellLabel.text = @"靠谱";
         self.notWellLabel.font = [UIFont boldSystemFontOfSize:18];
         self.notWellLabel.backgroundColor = [UIColor clearColor];
         self.notWellLabel.textAlignment = UITextAlignmentLeft;
@@ -80,10 +76,10 @@
 
         [self addSubview:notWellLabel];
         [self addSubview:notWellRateLabel];
+        
         [self addSubview:retryButton];
         [self addSubview:nextButton];
         
-        self.finishProgress = 0.0;
         self.notRememberWell = 1.0;
         
         numberFormatter = [[NSNumberFormatter alloc] init];
@@ -107,28 +103,23 @@
 - (void)initWithList:(VSList *)list
 {
     self._list = list;
-    self.notRememberWellInList = [self._list notWellRate];
-    self.finishProgressInList = [self._list finishProgress];
+    self.notRememberWellInList = [self._list rememberRate];
     notRememberWellStep = (1.01 - self.notRememberWellInList) / 20;
-    finishProgressStep = (self.finishProgressInList) / 20;
-    if (finishProgressStep == 0) {
-        finishProgressStep = 0.01;
-    }
-
-    self.finishProgressTimer = [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(updateFinishProgress) userInfo:nil repeats:YES];
     self.notRememberWellTimer = [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(updateNotRememberWell) userInfo:nil repeats:YES];
 }
 
-- (void)updateFinishProgress
+
+- (void)updateNotRememberWell
 {
-    self.finishProgress += finishProgressStep;
-    if (self.finishProgress > self.finishProgressInList) {
-        self.finishProgress = self.finishProgressInList;
-        [self.finishProgressTimer invalidate];
-        self.finishProgressTimer = nil;
-        int starCount = [self._list rememberRate] / 0.33;
-        int originX = 54;
+    self.notRememberWell -= notRememberWellStep;
+    if (self.notRememberWell < self.notRememberWellInList) {
+        self.notRememberWell = self.notRememberWellInList;
+        [self.notRememberWellTimer invalidate];
+        self.notRememberWellTimer = nil;
         
+        int starCount = self.notRememberWellInList / 0.33;
+        int originX = 54;
+
         for (int i = 0; i < starCount; i++) {
             UIImageView *starImage = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"Star"]];
             starImage.frame = CGRectMake(originX, 20, starImage.image.size.width, starImage.image.size.height);
@@ -136,13 +127,13 @@
             CGRect originalFrame = starImage.frame;
             CGRect enlargedFrame = CGRectMake(originalFrame.origin.x - 5, originalFrame.origin.y - 5, originalFrame.size.width + 10, originalFrame.size.height + 10);
             [self addSubview:starImage];
-            [UIView animateWithDuration:0.15f delay:0.0f options:UIViewAnimationCurveLinear 
+            [UIView animateWithDuration:0.15f delay:0.0f options:UIViewAnimationCurveLinear
                              animations:^{
                                  starImage.frame = enlargedFrame;
                              }
                              completion:^(BOOL finished) {
                                  if (finished == YES) {
-                                     [UIView animateWithDuration:0.15f delay:0.0f options:UIViewAnimationCurveLinear 
+                                     [UIView animateWithDuration:0.15f delay:0.0f options:UIViewAnimationCurveLinear
                                                       animations:^{
                                                           starImage.frame = originalFrame;
                                                       }
@@ -159,18 +150,6 @@
             originX += noStarImage.image.size.width + 5;
             [self addSubview:noStarImage];
         }
-
-    }
-}
-
-
-- (void)updateNotRememberWell
-{
-    self.notRememberWell -= notRememberWellStep;
-    if (self.notRememberWell < self.notRememberWellInList) {
-        self.notRememberWell = self.notRememberWellInList;
-        [self.notRememberWellTimer invalidate];
-        self.notRememberWellTimer = nil;
     }
     NSString *formattedNumberString = [numberFormatter stringFromNumber:[NSNumber numberWithDouble:self.notRememberWell]];
     self.notWellRateLabel.text = formattedNumberString;
