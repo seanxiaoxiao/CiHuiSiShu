@@ -39,6 +39,8 @@
 
 - (UIColor *)repoNameColor;
 
+- (NSString *)displayName;
+
 @end
 
 @interface VSRepository (CoreDataGeneratedAccessors)

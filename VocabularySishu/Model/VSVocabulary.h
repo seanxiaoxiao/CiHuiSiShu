@@ -37,10 +37,6 @@
 
 - (void)seeSummary;
 
-- (void)play;
-
-- (NSString *)forgotTimes;
-
 - (UIImage *)vocabularyImage;
 
 - (BOOL)rememberWell;

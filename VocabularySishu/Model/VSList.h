@@ -76,6 +76,8 @@
 
 - (double)rememberRate;
 
+- (NSString *)displayName;
+
 @end
 
 @interface VSList (CoreDataGeneratedAccessors)

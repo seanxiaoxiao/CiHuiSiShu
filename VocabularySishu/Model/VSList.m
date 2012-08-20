@@ -339,4 +339,14 @@
     return (double)(rememberCount) / (double)([self.listVocabularies count]);
 }
 
+- (NSString *)displayName
+{
+    if ([self.repository.name rangeOfString:@"分类"].location == NSNotFound) {
+        return [self.order stringValue];
+    }
+    else {
+        return self.name;
+    }
+}
+
 @end

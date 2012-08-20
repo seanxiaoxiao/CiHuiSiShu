@@ -249,6 +249,12 @@
 		00BDE59F15CF9B9400BC205C /* retina-DetailsHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = 005F7E9B15CD84CD00932B93 /* retina-DetailsHeader.png */; };
 		00BDE5A015CF9B9400BC205C /* retina-DetailsBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 005F7E9C15CD84CD00932B93 /* retina-DetailsBG.png */; };
 		00BDE5A115CF9B9400BC205C /* retina-CellAccessory.png in Resources */ = {isa = PBXBuildFile; fileRef = 005F7E9F15CD959100932B93 /* retina-CellAccessory.png */; };
+		00C09A9D15E209BC00AD33C3 /* retina-Unit.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C09A9C15E209BC00AD33C3 /* retina-Unit.png */; };
+		00C09A9E15E209BC00AD33C3 /* retina-Unit.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C09A9C15E209BC00AD33C3 /* retina-Unit.png */; };
+		00C09A9F15E209BC00AD33C3 /* retina-Unit.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C09A9C15E209BC00AD33C3 /* retina-Unit.png */; };
+		00C09AA115E209C400AD33C3 /* retina-StarSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C09AA015E209C400AD33C3 /* retina-StarSmall.png */; };
+		00C09AA215E209C400AD33C3 /* retina-StarSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C09AA015E209C400AD33C3 /* retina-StarSmall.png */; };
+		00C09AA315E209C400AD33C3 /* retina-StarSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C09AA015E209C400AD33C3 /* retina-StarSmall.png */; };
 		00C42FDB15BAEEB1006FF95E /* retina-CellBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C42FD815BAEEB1006FF95E /* retina-CellBG.png */; };
 		00C42FDC15BAEEB1006FF95E /* retina-CellSummary.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C42FD915BAEEB1006FF95E /* retina-CellSummary.png */; };
 		00C42FDD15BAEEB1006FF95E /* retina-ListBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C42FDA15BAEEB1006FF95E /* retina-ListBG.png */; };
@@ -441,6 +447,8 @@
 		00AE80EF158B1318000CE7EA /* VSConfigurationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSConfigurationViewController.m; path = ViewController/ConfigurationView/VSConfigurationViewController.m; sourceTree = "<group>"; };
 		00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSConfigurationViewController.xib; path = ViewController/ConfigurationView/VSConfigurationViewController.xib; sourceTree = "<group>"; };
 		00BDE5A815CF9B9400BC205C /* VocabularySishu copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VocabularySishu copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00C09A9C15E209BC00AD33C3 /* retina-Unit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-Unit.png"; path = "Resources/Img/retina-Unit.png"; sourceTree = "<group>"; };
+		00C09AA015E209C400AD33C3 /* retina-StarSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-StarSmall.png"; path = "Resources/Img/retina-StarSmall.png"; sourceTree = "<group>"; };
 		00C42FD815BAEEB1006FF95E /* retina-CellBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-CellBG.png"; path = "Resources/Img/retina-CellBG.png"; sourceTree = "<group>"; };
 		00C42FD915BAEEB1006FF95E /* retina-CellSummary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-CellSummary.png"; path = "Resources/Img/retina-CellSummary.png"; sourceTree = "<group>"; };
 		00C42FDA15BAEEB1006FF95E /* retina-ListBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-ListBG.png"; path = "Resources/Img/retina-ListBG.png"; sourceTree = "<group>"; };
@@ -827,10 +835,12 @@
 			isa = PBXGroup;
 			children = (
 				00AC8C6515DA1D0B006F58D5 /* retina-BookBlack.png */,
+				00C09AA015E209C400AD33C3 /* retina-StarSmall.png */,
 				00AC8C6615DA1D0B006F58D5 /* retina-BookRed.png */,
 				00AC8C6715DA1D0B006F58D5 /* retina-BookLake.png */,
 				00FF700915D113220043BA91 /* retina-Star.png */,
 				00FF700115D0C4B80043BA91 /* retina-ButtonBT.png */,
+				00C09A9C15E209BC00AD33C3 /* retina-Unit.png */,
 				00FF700D15D113880043BA91 /* retina-StarNone.png */,
 				00FF701615D16C050043BA91 /* retina-TimeLineCellDark.png */,
 				00FF701715D16C050043BA91 /* retina-TimeLineCellLight.png */,
@@ -1067,6 +1077,8 @@
 				00FF701D15D16C050043BA91 /* retina-TimeLineCellLight.png in Resources */,
 				0044C15115D397630022154A /* VSMainViewController.xib in Resources */,
 				0044C15A15D3B70F0022154A /* VSRepoListViewController.xib in Resources */,
+				00C09A9F15E209BC00AD33C3 /* retina-Unit.png in Resources */,
+				00C09AA315E209C400AD33C3 /* retina-StarSmall.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1127,6 +1139,8 @@
 				00FF701815D16C050043BA91 /* retina-TimeLineCellDark.png in Resources */,
 				00FF701B15D16C050043BA91 /* retina-TimeLineCellLight.png in Resources */,
 				009397D215D7F6D3009AE73E /* VocabularySishu.sqlite in Resources */,
+				00C09A9D15E209BC00AD33C3 /* retina-Unit.png in Resources */,
+				00C09AA115E209C400AD33C3 /* retina-StarSmall.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1193,6 +1207,8 @@
 				00FF701C15D16C050043BA91 /* retina-TimeLineCellLight.png in Resources */,
 				0044C15015D397630022154A /* VSMainViewController.xib in Resources */,
 				0044C15915D3B70F0022154A /* VSRepoListViewController.xib in Resources */,
+				00C09A9E15E209BC00AD33C3 /* retina-Unit.png in Resources */,
+				00C09AA215E209C400AD33C3 /* retina-StarSmall.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

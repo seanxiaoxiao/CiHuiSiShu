@@ -81,7 +81,7 @@
     int currentHeight = 13;
     if ([self.vocabulary.meanings count] > 0) {
         currentHeight = currentHeight + 5;
-        NSString *lastAttr = [NSString stringWithString:@""];
+        NSString *lastAttr = @"";
         int countInAttr = 0;
         for (VSMeaning *meaning in [self.vocabulary orderedMeanings]) {
             if (![lastAttr isEqualToString:meaning.attribute]) {
@@ -127,7 +127,7 @@
         frame.origin.y = currentHeight + 10;
         self.mwLabel.frame = frame;
         currentHeight = currentHeight + frame.size.height + 20;
-        NSString *lastAttr = [NSString stringWithString:@""];
+        NSString *lastAttr = @"";
         int countInAttr = 0;
         for (VSWebsterMeaning *meaning in [self.vocabulary orderedWMMeanings]) {
             if (![lastAttr isEqualToString:meaning.attribute]) {

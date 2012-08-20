@@ -16,12 +16,9 @@
 
 @property (nonatomic, retain) UIButton *repoButton;
 @property (nonatomic, retain) UILabel *infoLabel;
-@property (nonatomic, retain) UILabel *listCountLabel;
 @property (nonatomic, retain) VSRepository *repo;
 @property (nonatomic, retain) UILabel *repoNameLabel;
 @property (nonatomic, retain) UIActivityIndicatorView *activityIndicator;
-
-- (void)enterRepos:(id)sender;
 
 - (void)loadRepoView;
 

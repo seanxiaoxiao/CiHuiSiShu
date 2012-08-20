@@ -13,6 +13,7 @@
 @synthesize index;
 @synthesize button;
 @synthesize theList;
+@synthesize indicator;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -26,11 +27,12 @@
 - (void)initWithList:(VSList *)list
 {
     self.theList = list;
-    CGRect frame = CGRectMake(0, 0, 50, 50); 
-    self.button = [[UIButton alloc] initWithFrame:frame];
+    UIImage *listImage = [VSUtils fetchImg:@"Unit"];
+    self.button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, listImage.size.width, listImage.size.height)];
     [self.button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal]; 
     self.button.titleLabel.font = [UIFont boldSystemFontOfSize:10];
-    [self.button setTitle:list.name forState:UIControlStateNormal]; 
+    [self.button setBackgroundImage:listImage forState:UIControlStateNormal];
+    [self.button setTitle:[list displayName] forState:UIControlStateNormal];
     [self.button addTarget:self action:@selector(toList) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.button];
     
