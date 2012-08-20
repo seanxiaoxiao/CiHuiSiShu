@@ -26,6 +26,12 @@
     [contextRequest setEntity:contextDescription];
     NSArray *results = [[VSUtils currentMOContext] executeFetchRequest:contextRequest error:&error];
     if ([results count] > 0) {
+        VSContext *context = [results objectAtIndex:0];
+        if (context.currentList == nil) {
+            context.currentList = [VSList firstList];
+            context.currentRepository = context.currentList.repository;
+            [VSUtils saveEntity];
+        }
         return [results objectAtIndex:0];
     }
     else {
@@ -46,7 +52,7 @@
     NSFetchRequest *contextRequest = [[NSFetchRequest alloc] init];
     [contextRequest setEntity:contextDescription];
     NSArray *results = [[VSUtils currentMOContext] executeFetchRequest:contextRequest error:&error];
-    return ([results count] == 0);
+    return ([results count] == 0 || ((VSContext *)[results objectAtIndex:0]).currentList == nil);
 }
 
 - (void)fixCurrentList:(VSList *)list

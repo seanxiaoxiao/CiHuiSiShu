@@ -16,7 +16,6 @@
 @synthesize repo;
 @synthesize repoButton;
 @synthesize infoLabel;
-@synthesize activityIndicator;
 @synthesize repoNameLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -31,13 +30,6 @@
 {
     [super viewDidLoad];
     CGPoint center = self.view.center;
-
-    activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    center.y = 270;
-    activityIndicator.center = center;
-    [self.view addSubview:activityIndicator];
-    [activityIndicator startAnimating];
-    [self.view bringSubviewToFront:activityIndicator];
     
     UIImage *repoImage = [repo repoImage];
     self.repoButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, repoImage.size.width, repoImage.size.height)];
@@ -61,26 +53,19 @@
     [self.view addSubview:self.repoNameLabel];
     [self.view bringSubviewToFront:self.repoNameLabel];
 
+    self.infoLabel = [[UILabel alloc] initWithFrame:CGRectMake(95, 255, 130, 40)];
+    self.infoLabel.text = [NSString stringWithFormat:@"共%@个单词\n%d个单词列表", self.repo.wordsTotal, [self.repo.lists count]];
+    self.infoLabel.font = [UIFont boldSystemFontOfSize:14];
+    self.infoLabel.numberOfLines = 0;
+    self.infoLabel.backgroundColor = [UIColor clearColor];
+    self.infoLabel.textColor = [UIColor colorWithHue:45.0/360.0 saturation:0.2 brightness:1 alpha:0.9];
+    self.infoLabel.shadowColor = [UIColor colorWithWhite:0 alpha:0.4];
+    self.infoLabel.textAlignment = UITextAlignmentCenter;
+    self.infoLabel.shadowOffset = CGSizeMake(0, 2);
+    
+    [self.view addSubview:self.infoLabel];
 }
 
-- (void)loadRepoView;
-{
-    if ([self.activityIndicator isAnimating]) {
-        self.infoLabel = [[UILabel alloc] initWithFrame:CGRectMake(95, 255, 130, 40)];
-        self.infoLabel.text = [NSString stringWithFormat:@"共%d个单词\n%d个单词列表", [self.repo wordsTotal], [self.repo.lists count]];
-        self.infoLabel.font = [UIFont boldSystemFontOfSize:14];
-        self.infoLabel.numberOfLines = 0;
-        self.infoLabel.backgroundColor = [UIColor clearColor];
-        self.infoLabel.textColor = [UIColor colorWithHue:45.0/360.0 saturation:0.2 brightness:1 alpha:0.9];
-        self.infoLabel.shadowColor = [UIColor colorWithWhite:0 alpha:0.4];
-        self.infoLabel.textAlignment = UITextAlignmentCenter;
-        self.infoLabel.shadowOffset = CGSizeMake(0, 2);
-        
-        [self.view addSubview:self.infoLabel];
-        
-        [self.activityIndicator stopAnimating];
-    }
-}
 
 - (void)viewDidUnload
 {
@@ -89,7 +74,6 @@
     self.repoButton = nil;
     self.infoLabel = nil;
     self.repoNameLabel = nil;
-    self.activityIndicator = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

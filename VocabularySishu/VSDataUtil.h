@@ -27,4 +27,7 @@
 + (void)initMWMeaning;
 
 + (void)initFullMWMeanings;
+
++ (void)migrateData;
+
 @end

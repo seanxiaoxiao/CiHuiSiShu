@@ -22,6 +22,7 @@
 @property (nonatomic, retain) NSNumber * order;
 @property (nonatomic, retain) NSNumber * finishedRound;
 @property (nonatomic, retain) NSSet *lists;
+@property (nonatomic, retain) NSNumber * wordsTotal;
 
 + (NSArray *)allRepos;
 
@@ -31,7 +32,7 @@
 
 - (VSList *)firstListInRepo;
 
-- (int) wordsTotal;
+- (int) wordsInRepo;
 
 - (int) rememberedInRepo;
 

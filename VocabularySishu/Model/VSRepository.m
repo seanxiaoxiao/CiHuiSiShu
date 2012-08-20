@@ -16,6 +16,7 @@
 @dynamic order;
 @dynamic lists;
 @dynamic finishedRound;
+@dynamic wordsTotal;
 
 + (NSArray *)allRepos
 {
@@ -58,7 +59,7 @@
     return [result objectAtIndex:0];
 }
 
-- (int) wordsTotal
+- (int) wordsInRepo
 {
     int count = 0;
     for (VSList *list in self.lists) {

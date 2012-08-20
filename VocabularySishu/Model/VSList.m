@@ -21,6 +21,7 @@
 @dynamic repository;
 @dynamic status;
 @dynamic round;
+@dynamic rememberCount;
 
 
 + (VSList *)createAndGetHistoryList
