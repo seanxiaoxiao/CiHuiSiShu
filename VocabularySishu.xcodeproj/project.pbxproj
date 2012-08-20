@@ -1083,9 +1083,11 @@
 				00701E3C1553CBCE00D30018 /* InfoPlist.strings in Resources */,
 				00FF6FE315CFDA0A0043BA91 /* mw-1.txt in Resources */,
 				0046408E155916FA007E5FA9 /* VSHistoryViewController.xib in Resources */,
+				0044C14F15D397630022154A /* VSMainViewController.xib in Resources */,
 				00FF6FE215CFDA0A0043BA91 /* mw-2.txt in Resources */,
 				0046409315591FD1007E5FA9 /* VSVocabularyViewController.xib in Resources */,
 				00FF6FE115CFDA0A0043BA91 /* mw-3.txt in Resources */,
+				0044C15815D3B70F0022154A /* VSRepoListViewController.xib in Resources */,
 				00FF6FE015CFDA0A0043BA91 /* mw-4.txt in Resources */,
 				0073A6BF156A5FF700B80422 /* VSVocabularyListViewController.xib in Resources */,
 				00A006F9156B3BDF00D24418 /* Meaning.html in Resources */,
@@ -1124,7 +1126,6 @@
 				00FF6FE515CFDA0A0043BA91 /* Repos.txt in Resources */,
 				00FF6FE715CFDC4B0043BA91 /* Vocabularies.txt in Resources */,
 				00FF6FF015D0AF1E0043BA91 /* retina-ScoreBoardButton.png in Resources */,
-				0044C14F15D397630022154A /* VSMainViewController.xib in Resources */,
 				00FF6FFE15D0C2A50043BA91 /* retina-ScoreBoardPopup.png in Resources */,
 				00FF700315D0C4B80043BA91 /* retina-ButtonBT.png in Resources */,
 				00FF700615D0C4B80043BA91 /* retina-ButtonBTHighLighted.png in Resources */,
@@ -1132,7 +1133,6 @@
 				00FF700E15D113880043BA91 /* retina-StarNone.png in Resources */,
 				00FF701815D16C050043BA91 /* retina-TimeLineCellDark.png in Resources */,
 				00FF701B15D16C050043BA91 /* retina-TimeLineCellLight.png in Resources */,
-				0044C15815D3B70F0022154A /* VSRepoListViewController.xib in Resources */,
 				009397D215D7F6D3009AE73E /* VocabularySishu.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -83,30 +83,17 @@
 
 - (UIImage *)repoImage
 {
-    int remainder = [self.order intValue] % 3;
-    if (remainder == 0) {
+    if ([self.name rangeOfString:@"分类"].location != NSNotFound) {
         return [VSUtils fetchImg:@"BookBlack"];
     }
-    else if (remainder == 1) {
-        return [VSUtils fetchImg:@"BookRed"];
-    }
     else {
-        return [VSUtils fetchImg:@"BookLake"];
+        return [VSUtils fetchImg:@"BookRed"];
     }
 }
 
 - (UIColor *)repoNameColor
 {
-    int remainder = [self.order intValue] % 3;
-    if (remainder == 0) {
-        return [UIColor colorWithHue:45.0/360.0 saturation:0.5 brightness:1 alpha:0.8];
-    }
-    else if (remainder == 1) {
-        return [UIColor colorWithHue:45.0/360.0 saturation:0.5 brightness:1 alpha:0.8];
-    }
-    else {
-        return [UIColor colorWithHue:190.0/360.0 saturation:0.2 brightness:1 alpha:0.8];
-    }
+    return [UIColor colorWithHue:45.0/360.0 saturation:0.5 brightness:1 alpha:0.8];
 }
 
 @end
