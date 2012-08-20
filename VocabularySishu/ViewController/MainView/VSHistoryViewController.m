@@ -148,7 +148,7 @@
             cell = [[VSHisotryListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         }
         [((VSHisotryListCell *)(cell)) initWithList:list andRow:indexPath.row];
-        BOOL lastCell = indexPath.row == [self.historyLists count] - 1;
+        BOOL lastCell = indexPath.row == [self.historyLists count] + 1;
         if (lastCell) {
             [((VSHisotryListCell *)(cell)) addCellShadow];
         }
