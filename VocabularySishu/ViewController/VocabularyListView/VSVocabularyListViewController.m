@@ -421,6 +421,7 @@
         [self.view addSubview:self.blockView];
         [self.view addSubview:exitButton];
         [self.view bringSubviewToFront:scoreBoardView];
+        self.navigationController.navigationBar.userInteractionEnabled = NO;
     }
     else {
         [self hideScoreBoard];
@@ -439,6 +440,7 @@
     self.blockView = nil;
     [self.exitButton removeFromSuperview];
     self.exitButton = nil;
+    self.navigationController.navigationBar.userInteractionEnabled = YES;
 }
 
 - (void)restart
