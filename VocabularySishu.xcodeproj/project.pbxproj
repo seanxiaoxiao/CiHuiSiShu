@@ -7,15 +7,120 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00032B2015CC18BC008FDF9F /* retina-Navigation.png in Resources */ = {isa = PBXBuildFile; fileRef = 0081184A15BEFDDE0022B515 /* retina-Navigation.png */; };
-		00032B2415CC1B36008FDF9F /* retina-PenBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2215CC1B36008FDF9F /* retina-PenBG.png */; };
-		00032B2515CC1B36008FDF9F /* retina-PenFG.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2315CC1B36008FDF9F /* retina-PenFG.png */; };
-		00032B2715CC1D87008FDF9F /* retina-InkHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2615CC1D87008FDF9F /* retina-InkHeader.png */; };
-		00032B2915CC1E49008FDF9F /* retina-InkNeck.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2815CC1E49008FDF9F /* retina-InkNeck.png */; };
-		00032B2B15CC1FB4008FDF9F /* retina-InkBody.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2A15CC1FB4008FDF9F /* retina-InkBody.png */; };
-		00032B2D15CC208F008FDF9F /* retina-InkFooter.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2C15CC208F008FDF9F /* retina-InkFooter.png */; };
-		00201DDB15CFBA2F0089B8FA /* retina-NavBackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 00201DDA15CFBA2F0089B8FA /* retina-NavBackButton.png */; };
-		00201DDC15CFBA2F0089B8FA /* retina-NavBackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 00201DDA15CFBA2F0089B8FA /* retina-NavBackButton.png */; };
+		000E585415E40C9900B7AB04 /* back-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E582E15E40C9900B7AB04 /* back-button@2x.png */; };
+		000E585515E40C9900B7AB04 /* back-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E582E15E40C9900B7AB04 /* back-button@2x.png */; };
+		000E585615E40C9900B7AB04 /* back-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E582E15E40C9900B7AB04 /* back-button@2x.png */; };
+		000E585715E40C9900B7AB04 /* BookBlack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E582F15E40C9900B7AB04 /* BookBlack@2x.png */; };
+		000E585815E40C9900B7AB04 /* BookBlack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E582F15E40C9900B7AB04 /* BookBlack@2x.png */; };
+		000E585915E40C9900B7AB04 /* BookBlack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E582F15E40C9900B7AB04 /* BookBlack@2x.png */; };
+		000E585A15E40C9900B7AB04 /* BookLake@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583015E40C9900B7AB04 /* BookLake@2x.png */; };
+		000E585B15E40C9900B7AB04 /* BookLake@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583015E40C9900B7AB04 /* BookLake@2x.png */; };
+		000E585C15E40C9900B7AB04 /* BookLake@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583015E40C9900B7AB04 /* BookLake@2x.png */; };
+		000E585D15E40C9900B7AB04 /* BookRed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583115E40C9900B7AB04 /* BookRed@2x.png */; };
+		000E585E15E40C9900B7AB04 /* BookRed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583115E40C9900B7AB04 /* BookRed@2x.png */; };
+		000E585F15E40C9900B7AB04 /* BookRed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583115E40C9900B7AB04 /* BookRed@2x.png */; };
+		000E586015E40C9900B7AB04 /* ButtonBT@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583215E40C9900B7AB04 /* ButtonBT@2x.png */; };
+		000E586115E40C9900B7AB04 /* ButtonBT@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583215E40C9900B7AB04 /* ButtonBT@2x.png */; };
+		000E586215E40C9900B7AB04 /* ButtonBT@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583215E40C9900B7AB04 /* ButtonBT@2x.png */; };
+		000E586315E40C9900B7AB04 /* ButtonBTHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583315E40C9900B7AB04 /* ButtonBTHighLighted@2x.png */; };
+		000E586415E40C9900B7AB04 /* ButtonBTHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583315E40C9900B7AB04 /* ButtonBTHighLighted@2x.png */; };
+		000E586515E40C9900B7AB04 /* ButtonBTHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583315E40C9900B7AB04 /* ButtonBTHighLighted@2x.png */; };
+		000E586615E40C9900B7AB04 /* CellAccessory@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583415E40C9900B7AB04 /* CellAccessory@2x.png */; };
+		000E586715E40C9900B7AB04 /* CellAccessory@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583415E40C9900B7AB04 /* CellAccessory@2x.png */; };
+		000E586815E40C9900B7AB04 /* CellAccessory@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583415E40C9900B7AB04 /* CellAccessory@2x.png */; };
+		000E586915E40C9900B7AB04 /* CellBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583515E40C9900B7AB04 /* CellBG@2x.png */; };
+		000E586A15E40C9900B7AB04 /* CellBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583515E40C9900B7AB04 /* CellBG@2x.png */; };
+		000E586B15E40C9900B7AB04 /* CellBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583515E40C9900B7AB04 /* CellBG@2x.png */; };
+		000E586C15E40C9900B7AB04 /* CellClear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583615E40C9900B7AB04 /* CellClear@2x.png */; };
+		000E586D15E40C9900B7AB04 /* CellClear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583615E40C9900B7AB04 /* CellClear@2x.png */; };
+		000E586E15E40C9900B7AB04 /* CellClear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583615E40C9900B7AB04 /* CellClear@2x.png */; };
+		000E586F15E40C9900B7AB04 /* CellLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583715E40C9900B7AB04 /* CellLine@2x.png */; };
+		000E587015E40C9900B7AB04 /* CellLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583715E40C9900B7AB04 /* CellLine@2x.png */; };
+		000E587115E40C9900B7AB04 /* CellLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583715E40C9900B7AB04 /* CellLine@2x.png */; };
+		000E587215E40C9900B7AB04 /* CellSummary@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583815E40C9900B7AB04 /* CellSummary@2x.png */; };
+		000E587315E40C9900B7AB04 /* CellSummary@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583815E40C9900B7AB04 /* CellSummary@2x.png */; };
+		000E587415E40C9900B7AB04 /* CellSummary@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583815E40C9900B7AB04 /* CellSummary@2x.png */; };
+		000E587515E40C9900B7AB04 /* DetailsBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583915E40C9900B7AB04 /* DetailsBG@2x.png */; };
+		000E587615E40C9900B7AB04 /* DetailsBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583915E40C9900B7AB04 /* DetailsBG@2x.png */; };
+		000E587715E40C9900B7AB04 /* DetailsBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583915E40C9900B7AB04 /* DetailsBG@2x.png */; };
+		000E587815E40C9900B7AB04 /* DetailsHeader@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583A15E40C9900B7AB04 /* DetailsHeader@2x.png */; };
+		000E587915E40C9900B7AB04 /* DetailsHeader@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583A15E40C9900B7AB04 /* DetailsHeader@2x.png */; };
+		000E587A15E40C9900B7AB04 /* DetailsHeader@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583A15E40C9900B7AB04 /* DetailsHeader@2x.png */; };
+		000E587B15E40C9900B7AB04 /* infoButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583B15E40C9900B7AB04 /* infoButton@2x.png */; };
+		000E587C15E40C9900B7AB04 /* infoButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583B15E40C9900B7AB04 /* infoButton@2x.png */; };
+		000E587D15E40C9900B7AB04 /* infoButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583B15E40C9900B7AB04 /* infoButton@2x.png */; };
+		000E587E15E40C9900B7AB04 /* InkBody@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583C15E40C9900B7AB04 /* InkBody@2x.png */; };
+		000E587F15E40C9900B7AB04 /* InkBody@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583C15E40C9900B7AB04 /* InkBody@2x.png */; };
+		000E588015E40C9900B7AB04 /* InkBody@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583C15E40C9900B7AB04 /* InkBody@2x.png */; };
+		000E588115E40C9900B7AB04 /* InkFooter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583D15E40C9900B7AB04 /* InkFooter@2x.png */; };
+		000E588215E40C9900B7AB04 /* InkFooter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583D15E40C9900B7AB04 /* InkFooter@2x.png */; };
+		000E588315E40C9900B7AB04 /* InkFooter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583D15E40C9900B7AB04 /* InkFooter@2x.png */; };
+		000E588415E40C9900B7AB04 /* InkHeader@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583E15E40C9900B7AB04 /* InkHeader@2x.png */; };
+		000E588515E40C9900B7AB04 /* InkHeader@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583E15E40C9900B7AB04 /* InkHeader@2x.png */; };
+		000E588615E40C9900B7AB04 /* InkHeader@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583E15E40C9900B7AB04 /* InkHeader@2x.png */; };
+		000E588715E40C9900B7AB04 /* InkNeck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583F15E40C9900B7AB04 /* InkNeck@2x.png */; };
+		000E588815E40C9900B7AB04 /* InkNeck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583F15E40C9900B7AB04 /* InkNeck@2x.png */; };
+		000E588915E40C9900B7AB04 /* InkNeck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583F15E40C9900B7AB04 /* InkNeck@2x.png */; };
+		000E588A15E40C9900B7AB04 /* ListBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584015E40C9900B7AB04 /* ListBG@2x.png */; };
+		000E588B15E40C9900B7AB04 /* ListBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584015E40C9900B7AB04 /* ListBG@2x.png */; };
+		000E588C15E40C9900B7AB04 /* ListBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584015E40C9900B7AB04 /* ListBG@2x.png */; };
+		000E588D15E40C9900B7AB04 /* Menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584115E40C9900B7AB04 /* Menu@2x.png */; };
+		000E588E15E40C9900B7AB04 /* Menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584115E40C9900B7AB04 /* Menu@2x.png */; };
+		000E588F15E40C9900B7AB04 /* Menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584115E40C9900B7AB04 /* Menu@2x.png */; };
+		000E589015E40C9900B7AB04 /* NavBackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584215E40C9900B7AB04 /* NavBackButton@2x.png */; };
+		000E589115E40C9900B7AB04 /* NavBackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584215E40C9900B7AB04 /* NavBackButton@2x.png */; };
+		000E589215E40C9900B7AB04 /* NavBackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584215E40C9900B7AB04 /* NavBackButton@2x.png */; };
+		000E589315E40C9900B7AB04 /* Navigation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584315E40C9900B7AB04 /* Navigation@2x.png */; };
+		000E589415E40C9900B7AB04 /* Navigation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584315E40C9900B7AB04 /* Navigation@2x.png */; };
+		000E589515E40C9900B7AB04 /* Navigation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584315E40C9900B7AB04 /* Navigation@2x.png */; };
+		000E589615E40C9900B7AB04 /* Next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584415E40C9900B7AB04 /* Next@2x.png */; };
+		000E589715E40C9900B7AB04 /* Next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584415E40C9900B7AB04 /* Next@2x.png */; };
+		000E589815E40C9900B7AB04 /* Next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584415E40C9900B7AB04 /* Next@2x.png */; };
+		000E589915E40C9900B7AB04 /* PenBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584515E40C9900B7AB04 /* PenBG@2x.png */; };
+		000E589A15E40C9900B7AB04 /* PenBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584515E40C9900B7AB04 /* PenBG@2x.png */; };
+		000E589B15E40C9900B7AB04 /* PenBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584515E40C9900B7AB04 /* PenBG@2x.png */; };
+		000E589C15E40C9900B7AB04 /* PenFG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584615E40C9900B7AB04 /* PenFG@2x.png */; };
+		000E589D15E40C9900B7AB04 /* PenFG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584615E40C9900B7AB04 /* PenFG@2x.png */; };
+		000E589E15E40C9900B7AB04 /* PenFG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584615E40C9900B7AB04 /* PenFG@2x.png */; };
+		000E589F15E40C9900B7AB04 /* ScoreBoardButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584715E40C9900B7AB04 /* ScoreBoardButton@2x.png */; };
+		000E58A015E40C9900B7AB04 /* ScoreBoardButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584715E40C9900B7AB04 /* ScoreBoardButton@2x.png */; };
+		000E58A115E40C9900B7AB04 /* ScoreBoardButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584715E40C9900B7AB04 /* ScoreBoardButton@2x.png */; };
+		000E58A215E40C9900B7AB04 /* ScoreBoardPopup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584815E40C9900B7AB04 /* ScoreBoardPopup@2x.png */; };
+		000E58A315E40C9900B7AB04 /* ScoreBoardPopup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584815E40C9900B7AB04 /* ScoreBoardPopup@2x.png */; };
+		000E58A415E40C9900B7AB04 /* ScoreBoardPopup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584815E40C9900B7AB04 /* ScoreBoardPopup@2x.png */; };
+		000E58A515E40C9900B7AB04 /* SeparatorDots@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584915E40C9900B7AB04 /* SeparatorDots@2x.png */; };
+		000E58A615E40C9900B7AB04 /* SeparatorDots@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584915E40C9900B7AB04 /* SeparatorDots@2x.png */; };
+		000E58A715E40C9900B7AB04 /* SeparatorDots@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584915E40C9900B7AB04 /* SeparatorDots@2x.png */; };
+		000E58A815E40C9900B7AB04 /* SeparatorLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584A15E40C9900B7AB04 /* SeparatorLine@2x.png */; };
+		000E58A915E40C9900B7AB04 /* SeparatorLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584A15E40C9900B7AB04 /* SeparatorLine@2x.png */; };
+		000E58AA15E40C9900B7AB04 /* SeparatorLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584A15E40C9900B7AB04 /* SeparatorLine@2x.png */; };
+		000E58AB15E40C9900B7AB04 /* Star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584B15E40C9900B7AB04 /* Star@2x.png */; };
+		000E58AC15E40C9900B7AB04 /* Star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584B15E40C9900B7AB04 /* Star@2x.png */; };
+		000E58AD15E40C9900B7AB04 /* Star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584B15E40C9900B7AB04 /* Star@2x.png */; };
+		000E58AE15E40C9900B7AB04 /* StarNone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584C15E40C9900B7AB04 /* StarNone@2x.png */; };
+		000E58AF15E40C9900B7AB04 /* StarNone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584C15E40C9900B7AB04 /* StarNone@2x.png */; };
+		000E58B015E40C9900B7AB04 /* StarNone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584C15E40C9900B7AB04 /* StarNone@2x.png */; };
+		000E58B115E40C9900B7AB04 /* StarSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584D15E40C9900B7AB04 /* StarSmall@2x.png */; };
+		000E58B215E40C9900B7AB04 /* StarSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584D15E40C9900B7AB04 /* StarSmall@2x.png */; };
+		000E58B315E40C9900B7AB04 /* StarSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584D15E40C9900B7AB04 /* StarSmall@2x.png */; };
+		000E58B415E40C9900B7AB04 /* TapeBody@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584E15E40C9900B7AB04 /* TapeBody@2x.png */; };
+		000E58B515E40C9900B7AB04 /* TapeBody@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584E15E40C9900B7AB04 /* TapeBody@2x.png */; };
+		000E58B615E40C9900B7AB04 /* TapeBody@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584E15E40C9900B7AB04 /* TapeBody@2x.png */; };
+		000E58B715E40C9900B7AB04 /* TapeHead@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584F15E40C9900B7AB04 /* TapeHead@2x.png */; };
+		000E58B815E40C9900B7AB04 /* TapeHead@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584F15E40C9900B7AB04 /* TapeHead@2x.png */; };
+		000E58B915E40C9900B7AB04 /* TapeHead@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584F15E40C9900B7AB04 /* TapeHead@2x.png */; };
+		000E58BA15E40C9900B7AB04 /* TapeTail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E585015E40C9900B7AB04 /* TapeTail@2x.png */; };
+		000E58BB15E40C9900B7AB04 /* TapeTail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E585015E40C9900B7AB04 /* TapeTail@2x.png */; };
+		000E58BC15E40C9900B7AB04 /* TapeTail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E585015E40C9900B7AB04 /* TapeTail@2x.png */; };
+		000E58BD15E40C9900B7AB04 /* TimeLineCellDark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E585115E40C9900B7AB04 /* TimeLineCellDark@2x.png */; };
+		000E58BE15E40C9900B7AB04 /* TimeLineCellDark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E585115E40C9900B7AB04 /* TimeLineCellDark@2x.png */; };
+		000E58BF15E40C9900B7AB04 /* TimeLineCellDark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E585115E40C9900B7AB04 /* TimeLineCellDark@2x.png */; };
+		000E58C015E40C9900B7AB04 /* TimeLineCellLight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E585215E40C9900B7AB04 /* TimeLineCellLight@2x.png */; };
+		000E58C115E40C9900B7AB04 /* TimeLineCellLight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E585215E40C9900B7AB04 /* TimeLineCellLight@2x.png */; };
+		000E58C215E40C9900B7AB04 /* TimeLineCellLight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E585215E40C9900B7AB04 /* TimeLineCellLight@2x.png */; };
+		000E58C315E40C9900B7AB04 /* Unit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E585315E40C9900B7AB04 /* Unit@2x.png */; };
+		000E58C415E40C9900B7AB04 /* Unit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E585315E40C9900B7AB04 /* Unit@2x.png */; };
+		000E58C515E40C9900B7AB04 /* Unit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E585315E40C9900B7AB04 /* Unit@2x.png */; };
 		00201DDF15CFBAD30089B8FA /* VSNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0081185015BEFE220022B515 /* VSNavigationBar.m */; };
 		00201DE015CFBAD30089B8FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00701E3D1553CBCE00D30018 /* main.m */; };
 		00201DE115CFBAD30089B8FA /* VSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00701E411553CBCE00D30018 /* VSAppDelegate.m */; };
@@ -60,40 +165,11 @@
 		00201E0A15CFBAD30089B8FA /* VSVocabularyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408115590E0B007E5FA9 /* VSVocabularyViewController.xib */; };
 		00201E0B15CFBAD30089B8FA /* VSVocabularyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */; };
 		00201E0C15CFBAD30089B8FA /* Meaning.html in Resources */ = {isa = PBXBuildFile; fileRef = 00A006F8156B3BDF00D24418 /* Meaning.html */; };
-		00201E0D15CFBAD30089B8FA /* retina-Navigation.png in Resources */ = {isa = PBXBuildFile; fileRef = 0081184A15BEFDDE0022B515 /* retina-Navigation.png */; };
-		00201E0F15CFBAD30089B8FA /* retina-back-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A00705156D361E00D24418 /* retina-back-button.png */; };
 		00201E1015CFBAD30089B8FA /* VSConfigurationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */; };
-		00201E1115CFBAD30089B8FA /* retina-InkNeck.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2815CC1E49008FDF9F /* retina-InkNeck.png */; };
-		00201E1215CFBAD30089B8FA /* abacus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0024B9DD1593562C001698C3 /* abacus.jpg */; };
-		00201E1315CFBAD30089B8FA /* retina-CellBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C42FD815BAEEB1006FF95E /* retina-CellBG.png */; };
-		00201E1415CFBAD30089B8FA /* retina-CellSummary.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C42FD915BAEEB1006FF95E /* retina-CellSummary.png */; };
-		00201E1515CFBAD30089B8FA /* retina-ListBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C42FDA15BAEEB1006FF95E /* retina-ListBG.png */; };
-		00201E1615CFBAD30089B8FA /* retina-CellClear.png in Resources */ = {isa = PBXBuildFile; fileRef = 0029087D15BF882C00568B41 /* retina-CellClear.png */; };
-		00201E1715CFBAD30089B8FA /* retina-Restart.png in Resources */ = {isa = PBXBuildFile; fileRef = 0078168915C3A8F700CE5026 /* retina-Restart.png */; };
-		00201E1815CFBAD30089B8FA /* retina-Restart-Highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 0078168C15C3AA0100CE5026 /* retina-Restart-Highlight.png */; };
-		00201E1915CFBAD30089B8FA /* retina-Next.png in Resources */ = {isa = PBXBuildFile; fileRef = 0029087B15BF0B4500568B41 /* retina-Next.png */; };
-		00201E1B15CFBAD30089B8FA /* retina-Previous.png in Resources */ = {isa = PBXBuildFile; fileRef = 0029087815BF0AA800568B41 /* retina-Previous.png */; };
-		00201E1C15CFBAD30089B8FA /* retina-InkBody.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2A15CC1FB4008FDF9F /* retina-InkBody.png */; };
-		00201E1D15CFBAD30089B8FA /* retina-PenBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2215CC1B36008FDF9F /* retina-PenBG.png */; };
-		00201E1E15CFBAD30089B8FA /* retina-TapeBody.png in Resources */ = {isa = PBXBuildFile; fileRef = 009BB48815CAC448008E5B2B /* retina-TapeBody.png */; };
-		00201E1F15CFBAD30089B8FA /* retina-TapeTail.png in Resources */ = {isa = PBXBuildFile; fileRef = 009BB48915CAC448008E5B2B /* retina-TapeTail.png */; };
-		00201E2015CFBAD30089B8FA /* retina-TapeHead.png in Resources */ = {isa = PBXBuildFile; fileRef = 009BB48A15CAC448008E5B2B /* retina-TapeHead.png */; };
-		00201E2115CFBAD30089B8FA /* retina-CellLine.png in Resources */ = {isa = PBXBuildFile; fileRef = 009BB48E15CAC760008E5B2B /* retina-CellLine.png */; };
-		00201E2215CFBAD30089B8FA /* retina-PenFG.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2315CC1B36008FDF9F /* retina-PenFG.png */; };
-		00201E2315CFBAD30089B8FA /* retina-InkHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2615CC1D87008FDF9F /* retina-InkHeader.png */; };
-		00201E2415CFBAD30089B8FA /* retina-InkFooter.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2C15CC208F008FDF9F /* retina-InkFooter.png */; };
-		00201E2515CFBAD30089B8FA /* retina-DetailsHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = 005F7E9B15CD84CD00932B93 /* retina-DetailsHeader.png */; };
-		00201E2615CFBAD30089B8FA /* retina-DetailsBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 005F7E9C15CD84CD00932B93 /* retina-DetailsBG.png */; };
-		00201E2715CFBAD30089B8FA /* retina-CellAccessory.png in Resources */ = {isa = PBXBuildFile; fileRef = 005F7E9F15CD959100932B93 /* retina-CellAccessory.png */; };
-		00201E2815CFBAD30089B8FA /* retina-NavBackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 00201DDA15CFBA2F0089B8FA /* retina-NavBackButton.png */; };
 		00201E3315CFBF9C0089B8FA /* VocabularySishu.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00201E3215CFBF9C0089B8FA /* VocabularySishu.sqlite */; };
 		00201E4A15CFCDD00089B8FA /* Vocabularies.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00201E3515CFC3560089B8FA /* Vocabularies.txt */; };
 		00201E4B15CFCDD00089B8FA /* Lists.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00201E3615CFC3560089B8FA /* Lists.txt */; };
 		00201E4C15CFCDD00089B8FA /* Repos.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00201E3715CFC3560089B8FA /* Repos.txt */; };
-		0024B9DE1593562C001698C3 /* abacus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0024B9DD1593562C001698C3 /* abacus.jpg */; };
-		0029087915BF0AA800568B41 /* retina-Previous.png in Resources */ = {isa = PBXBuildFile; fileRef = 0029087815BF0AA800568B41 /* retina-Previous.png */; };
-		0029087C15BF0B4500568B41 /* retina-Next.png in Resources */ = {isa = PBXBuildFile; fileRef = 0029087B15BF0B4500568B41 /* retina-Next.png */; };
-		0029087E15BF882C00568B41 /* retina-CellClear.png in Resources */ = {isa = PBXBuildFile; fileRef = 0029087D15BF882C00568B41 /* retina-CellClear.png */; };
 		0044C13B15D371E20022154A /* VSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0044C13915D371E20022154A /* VSMainViewController.m */; };
 		0044C13C15D371E20022154A /* VSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0044C13915D371E20022154A /* VSMainViewController.m */; };
 		0044C13D15D371E20022154A /* VSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0044C13915D371E20022154A /* VSMainViewController.m */; };
@@ -116,12 +192,6 @@
 		0046409115591DBD007E5FA9 /* VSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046409015591DBD007E5FA9 /* VSUtils.m */; };
 		0046409215591DBD007E5FA9 /* VSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046409015591DBD007E5FA9 /* VSUtils.m */; };
 		0046409315591FD1007E5FA9 /* VSVocabularyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408115590E0B007E5FA9 /* VSVocabularyViewController.xib */; };
-		005F7E9D15CD84CD00932B93 /* retina-DetailsHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = 005F7E9B15CD84CD00932B93 /* retina-DetailsHeader.png */; };
-		005F7E9E15CD84CD00932B93 /* retina-DetailsBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 005F7E9C15CD84CD00932B93 /* retina-DetailsBG.png */; };
-		005F7EA015CD959100932B93 /* retina-CellAccessory.png in Resources */ = {isa = PBXBuildFile; fileRef = 005F7E9F15CD959100932B93 /* retina-CellAccessory.png */; };
-		006B4CD715E3583200711C64 /* retina-infoButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 006B4CD615E3583200711C64 /* retina-infoButton.png */; };
-		006B4CD815E3583200711C64 /* retina-infoButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 006B4CD615E3583200711C64 /* retina-infoButton.png */; };
-		006B4CD915E3583200711C64 /* retina-infoButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 006B4CD615E3583200711C64 /* retina-infoButton.png */; };
 		006B4CDE15E3638C00711C64 /* VSGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 006B4CDC15E3638B00711C64 /* VSGuideViewController.m */; };
 		006B4CDF15E3638C00711C64 /* VSGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 006B4CDC15E3638B00711C64 /* VSGuideViewController.m */; };
 		006B4CE015E3638C00711C64 /* VSGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 006B4CDC15E3638B00711C64 /* VSGuideViewController.m */; };
@@ -154,8 +224,6 @@
 		0073A69B1568A0B200B80422 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6951568A0B200B80422 /* SBJsonWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0073A6BE156A5FF700B80422 /* VSVocabularyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6BC156A5FF700B80422 /* VSVocabularyListViewController.m */; };
 		0073A6BF156A5FF700B80422 /* VSVocabularyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */; };
-		0078168A15C3A8F700CE5026 /* retina-Restart.png in Resources */ = {isa = PBXBuildFile; fileRef = 0078168915C3A8F700CE5026 /* retina-Restart.png */; };
-		0078168D15C3AA0100CE5026 /* retina-Restart-Highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 0078168C15C3AA0100CE5026 /* retina-Restart-Highlight.png */; };
 		009397D215D7F6D3009AE73E /* VocabularySishu.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 009397D115D7F6D3009AE73E /* VocabularySishu.sqlite */; };
 		009397D515D82B7A009AE73E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009397D415D82B79009AE73E /* MessageUI.framework */; };
 		009397D615D82C5E009AE73E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009397D415D82B79009AE73E /* MessageUI.framework */; };
@@ -163,14 +231,9 @@
 		009A870015A1A82900F7869D /* NSMutableArrayShuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = 009A86FF15A1A82900F7869D /* NSMutableArrayShuffling.m */; };
 		009AFBFB1588982300293F6A /* VSAlertDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 009AFBFA1588982300293F6A /* VSAlertDelegate.m */; };
 		009BB48615CAAFF2008E5B2B /* VSVocabularyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 009BB48515CAAFF2008E5B2B /* VSVocabularyCell.m */; };
-		009BB48B15CAC448008E5B2B /* retina-TapeBody.png in Resources */ = {isa = PBXBuildFile; fileRef = 009BB48815CAC448008E5B2B /* retina-TapeBody.png */; };
-		009BB48C15CAC448008E5B2B /* retina-TapeTail.png in Resources */ = {isa = PBXBuildFile; fileRef = 009BB48915CAC448008E5B2B /* retina-TapeTail.png */; };
-		009BB48D15CAC448008E5B2B /* retina-TapeHead.png in Resources */ = {isa = PBXBuildFile; fileRef = 009BB48A15CAC448008E5B2B /* retina-TapeHead.png */; };
-		009BB48F15CAC760008E5B2B /* retina-CellLine.png in Resources */ = {isa = PBXBuildFile; fileRef = 009BB48E15CAC760008E5B2B /* retina-CellLine.png */; };
 		00A006F9156B3BDF00D24418 /* Meaning.html in Resources */ = {isa = PBXBuildFile; fileRef = 00A006F8156B3BDF00D24418 /* Meaning.html */; };
 		00A006FC156B3D6D00D24418 /* VSConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A006FB156B3D6D00D24418 /* VSConstant.m */; };
 		00A00703156D15F200D24418 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A00702156D15F200D24418 /* QuartzCore.framework */; };
-		00A00707156D361E00D24418 /* retina-back-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A00705156D361E00D24418 /* retina-back-button.png */; };
 		00A0071D156E3A7B00D24418 /* VSContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A0071C156E3A7B00D24418 /* VSContext.m */; };
 		00A00720156E3A8F00D24418 /* VSList.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A0071F156E3A8F00D24418 /* VSList.m */; };
 		00A00723156E3AF400D24418 /* VSListVocabulary.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A00722156E3AF400D24418 /* VSListVocabulary.m */; };
@@ -181,15 +244,6 @@
 		00A1AFAD1586192400310669 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A1AFAC1586192400310669 /* AVFoundation.framework */; };
 		00A9E7B015A08699009832BA /* VSReviewPlan.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A9E7AF15A08699009832BA /* VSReviewPlan.m */; };
 		00A9E7B115A08699009832BA /* VSReviewPlan.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A9E7AF15A08699009832BA /* VSReviewPlan.m */; };
-		00AC8C6815DA1D0B006F58D5 /* retina-BookBlack.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AC8C6515DA1D0B006F58D5 /* retina-BookBlack.png */; };
-		00AC8C6915DA1D0B006F58D5 /* retina-BookBlack.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AC8C6515DA1D0B006F58D5 /* retina-BookBlack.png */; };
-		00AC8C6A15DA1D0B006F58D5 /* retina-BookBlack.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AC8C6515DA1D0B006F58D5 /* retina-BookBlack.png */; };
-		00AC8C6B15DA1D0B006F58D5 /* retina-BookRed.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AC8C6615DA1D0B006F58D5 /* retina-BookRed.png */; };
-		00AC8C6C15DA1D0B006F58D5 /* retina-BookRed.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AC8C6615DA1D0B006F58D5 /* retina-BookRed.png */; };
-		00AC8C6D15DA1D0B006F58D5 /* retina-BookRed.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AC8C6615DA1D0B006F58D5 /* retina-BookRed.png */; };
-		00AC8C6E15DA1D0B006F58D5 /* retina-BookLake.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AC8C6715DA1D0B006F58D5 /* retina-BookLake.png */; };
-		00AC8C6F15DA1D0B006F58D5 /* retina-BookLake.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AC8C6715DA1D0B006F58D5 /* retina-BookLake.png */; };
-		00AC8C7015DA1D0B006F58D5 /* retina-BookLake.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AC8C6715DA1D0B006F58D5 /* retina-BookLake.png */; };
 		00AE80F1158B1318000CE7EA /* VSConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AE80EF158B1318000CE7EA /* VSConfigurationViewController.m */; };
 		00AE80F2158B1318000CE7EA /* VSConfigurationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */; };
 		00BDE55815CF9B9400BC205C /* VSNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0081185015BEFE220022B515 /* VSNavigationBar.m */; };
@@ -236,40 +290,7 @@
 		00BDE58315CF9B9400BC205C /* VSVocabularyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408115590E0B007E5FA9 /* VSVocabularyViewController.xib */; };
 		00BDE58415CF9B9400BC205C /* VSVocabularyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */; };
 		00BDE58515CF9B9400BC205C /* Meaning.html in Resources */ = {isa = PBXBuildFile; fileRef = 00A006F8156B3BDF00D24418 /* Meaning.html */; };
-		00BDE58615CF9B9400BC205C /* retina-Navigation.png in Resources */ = {isa = PBXBuildFile; fileRef = 0081184A15BEFDDE0022B515 /* retina-Navigation.png */; };
-		00BDE58815CF9B9400BC205C /* retina-back-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 00A00705156D361E00D24418 /* retina-back-button.png */; };
 		00BDE58915CF9B9400BC205C /* VSConfigurationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */; };
-		00BDE58A15CF9B9400BC205C /* retina-InkNeck.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2815CC1E49008FDF9F /* retina-InkNeck.png */; };
-		00BDE58B15CF9B9400BC205C /* abacus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0024B9DD1593562C001698C3 /* abacus.jpg */; };
-		00BDE58C15CF9B9400BC205C /* retina-CellBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C42FD815BAEEB1006FF95E /* retina-CellBG.png */; };
-		00BDE58D15CF9B9400BC205C /* retina-CellSummary.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C42FD915BAEEB1006FF95E /* retina-CellSummary.png */; };
-		00BDE58E15CF9B9400BC205C /* retina-ListBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C42FDA15BAEEB1006FF95E /* retina-ListBG.png */; };
-		00BDE58F15CF9B9400BC205C /* retina-CellClear.png in Resources */ = {isa = PBXBuildFile; fileRef = 0029087D15BF882C00568B41 /* retina-CellClear.png */; };
-		00BDE59015CF9B9400BC205C /* retina-Restart.png in Resources */ = {isa = PBXBuildFile; fileRef = 0078168915C3A8F700CE5026 /* retina-Restart.png */; };
-		00BDE59115CF9B9400BC205C /* retina-Restart-Highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 0078168C15C3AA0100CE5026 /* retina-Restart-Highlight.png */; };
-		00BDE59215CF9B9400BC205C /* retina-Next.png in Resources */ = {isa = PBXBuildFile; fileRef = 0029087B15BF0B4500568B41 /* retina-Next.png */; };
-		00BDE59415CF9B9400BC205C /* retina-Previous.png in Resources */ = {isa = PBXBuildFile; fileRef = 0029087815BF0AA800568B41 /* retina-Previous.png */; };
-		00BDE59515CF9B9400BC205C /* retina-InkBody.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2A15CC1FB4008FDF9F /* retina-InkBody.png */; };
-		00BDE59615CF9B9400BC205C /* retina-PenBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2215CC1B36008FDF9F /* retina-PenBG.png */; };
-		00BDE59715CF9B9400BC205C /* retina-TapeBody.png in Resources */ = {isa = PBXBuildFile; fileRef = 009BB48815CAC448008E5B2B /* retina-TapeBody.png */; };
-		00BDE59815CF9B9400BC205C /* retina-TapeTail.png in Resources */ = {isa = PBXBuildFile; fileRef = 009BB48915CAC448008E5B2B /* retina-TapeTail.png */; };
-		00BDE59915CF9B9400BC205C /* retina-TapeHead.png in Resources */ = {isa = PBXBuildFile; fileRef = 009BB48A15CAC448008E5B2B /* retina-TapeHead.png */; };
-		00BDE59A15CF9B9400BC205C /* retina-CellLine.png in Resources */ = {isa = PBXBuildFile; fileRef = 009BB48E15CAC760008E5B2B /* retina-CellLine.png */; };
-		00BDE59B15CF9B9400BC205C /* retina-PenFG.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2315CC1B36008FDF9F /* retina-PenFG.png */; };
-		00BDE59C15CF9B9400BC205C /* retina-InkHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2615CC1D87008FDF9F /* retina-InkHeader.png */; };
-		00BDE59D15CF9B9400BC205C /* retina-InkFooter.png in Resources */ = {isa = PBXBuildFile; fileRef = 00032B2C15CC208F008FDF9F /* retina-InkFooter.png */; };
-		00BDE59F15CF9B9400BC205C /* retina-DetailsHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = 005F7E9B15CD84CD00932B93 /* retina-DetailsHeader.png */; };
-		00BDE5A015CF9B9400BC205C /* retina-DetailsBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 005F7E9C15CD84CD00932B93 /* retina-DetailsBG.png */; };
-		00BDE5A115CF9B9400BC205C /* retina-CellAccessory.png in Resources */ = {isa = PBXBuildFile; fileRef = 005F7E9F15CD959100932B93 /* retina-CellAccessory.png */; };
-		00C09A9D15E209BC00AD33C3 /* retina-Unit.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C09A9C15E209BC00AD33C3 /* retina-Unit.png */; };
-		00C09A9E15E209BC00AD33C3 /* retina-Unit.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C09A9C15E209BC00AD33C3 /* retina-Unit.png */; };
-		00C09A9F15E209BC00AD33C3 /* retina-Unit.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C09A9C15E209BC00AD33C3 /* retina-Unit.png */; };
-		00C09AA115E209C400AD33C3 /* retina-StarSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C09AA015E209C400AD33C3 /* retina-StarSmall.png */; };
-		00C09AA215E209C400AD33C3 /* retina-StarSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C09AA015E209C400AD33C3 /* retina-StarSmall.png */; };
-		00C09AA315E209C400AD33C3 /* retina-StarSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C09AA015E209C400AD33C3 /* retina-StarSmall.png */; };
-		00C42FDB15BAEEB1006FF95E /* retina-CellBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C42FD815BAEEB1006FF95E /* retina-CellBG.png */; };
-		00C42FDC15BAEEB1006FF95E /* retina-CellSummary.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C42FD915BAEEB1006FF95E /* retina-CellSummary.png */; };
-		00C42FDD15BAEEB1006FF95E /* retina-ListBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C42FDA15BAEEB1006FF95E /* retina-ListBG.png */; };
 		00C42FE315BAFBC6006FF95E /* VSMeaningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C42FE215BAFBC6006FF95E /* VSMeaningView.m */; };
 		00C42FE915BB096F006FF95E /* VSSummaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C42FE815BB096F006FF95E /* VSSummaryView.m */; };
 		00C4300115BBFC44006FF95E /* VSVocabulary.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4300015BBFC44006FF95E /* VSVocabulary.m */; };
@@ -282,6 +303,9 @@
 		00E83B3015DAC42F005BE3AF /* VSClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E83B2F15DAC42F005BE3AF /* VSClipView.m */; };
 		00E83B3115DAC42F005BE3AF /* VSClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E83B2F15DAC42F005BE3AF /* VSClipView.m */; };
 		00E83B3215DAC42F005BE3AF /* VSClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E83B2F15DAC42F005BE3AF /* VSClipView.m */; };
+		00FF1B1015E407AC005B9E51 /* SeparatorDots@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF1B0F15E407AC005B9E51 /* SeparatorDots@2x.png */; };
+		00FF1B1115E407AC005B9E51 /* SeparatorDots@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF1B0F15E407AC005B9E51 /* SeparatorDots@2x.png */; };
+		00FF1B1215E407AC005B9E51 /* SeparatorDots@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF1B0F15E407AC005B9E51 /* SeparatorDots@2x.png */; };
 		00FF6FD015CFD2DF0043BA91 /* mw-2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FCE15CFD2DF0043BA91 /* mw-2.txt */; };
 		00FF6FD115CFD2DF0043BA91 /* mw-1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FCF15CFD2DF0043BA91 /* mw-1.txt */; };
 		00FF6FD315CFD48A0043BA91 /* Meaning.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FD215CFD48A0043BA91 /* Meaning.txt */; };
@@ -299,36 +323,12 @@
 		00FF6FE515CFDA0A0043BA91 /* Repos.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FDF15CFDA0A0043BA91 /* Repos.txt */; };
 		00FF6FE715CFDC4B0043BA91 /* Vocabularies.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FE615CFDC4B0043BA91 /* Vocabularies.txt */; };
 		00FF6FE915D0AC940043BA91 /* VocabularySishu.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FE815D0AC940043BA91 /* VocabularySishu.sqlite */; };
-		00FF6FF015D0AF1E0043BA91 /* retina-ScoreBoardButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FEF15D0AF1E0043BA91 /* retina-ScoreBoardButton.png */; };
-		00FF6FF115D0AF1E0043BA91 /* retina-ScoreBoardButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FEF15D0AF1E0043BA91 /* retina-ScoreBoardButton.png */; };
-		00FF6FF215D0AF1E0043BA91 /* retina-ScoreBoardButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FEF15D0AF1E0043BA91 /* retina-ScoreBoardButton.png */; };
 		00FF6FFA15D0BACB0043BA91 /* VSScoreBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF6FF915D0BACB0043BA91 /* VSScoreBoardView.m */; };
 		00FF6FFB15D0BACB0043BA91 /* VSScoreBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF6FF915D0BACB0043BA91 /* VSScoreBoardView.m */; };
 		00FF6FFC15D0BACB0043BA91 /* VSScoreBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF6FF915D0BACB0043BA91 /* VSScoreBoardView.m */; };
-		00FF6FFE15D0C2A50043BA91 /* retina-ScoreBoardPopup.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FFD15D0C2A50043BA91 /* retina-ScoreBoardPopup.png */; };
-		00FF6FFF15D0C2A50043BA91 /* retina-ScoreBoardPopup.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FFD15D0C2A50043BA91 /* retina-ScoreBoardPopup.png */; };
-		00FF700015D0C2A50043BA91 /* retina-ScoreBoardPopup.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FFD15D0C2A50043BA91 /* retina-ScoreBoardPopup.png */; };
-		00FF700315D0C4B80043BA91 /* retina-ButtonBT.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF700115D0C4B80043BA91 /* retina-ButtonBT.png */; };
-		00FF700415D0C4B80043BA91 /* retina-ButtonBT.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF700115D0C4B80043BA91 /* retina-ButtonBT.png */; };
-		00FF700515D0C4B80043BA91 /* retina-ButtonBT.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF700115D0C4B80043BA91 /* retina-ButtonBT.png */; };
-		00FF700615D0C4B80043BA91 /* retina-ButtonBTHighLighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF700215D0C4B80043BA91 /* retina-ButtonBTHighLighted.png */; };
-		00FF700715D0C4B80043BA91 /* retina-ButtonBTHighLighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF700215D0C4B80043BA91 /* retina-ButtonBTHighLighted.png */; };
-		00FF700815D0C4B80043BA91 /* retina-ButtonBTHighLighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF700215D0C4B80043BA91 /* retina-ButtonBTHighLighted.png */; };
-		00FF700A15D113220043BA91 /* retina-Star.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF700915D113220043BA91 /* retina-Star.png */; };
-		00FF700B15D113220043BA91 /* retina-Star.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF700915D113220043BA91 /* retina-Star.png */; };
-		00FF700C15D113220043BA91 /* retina-Star.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF700915D113220043BA91 /* retina-Star.png */; };
-		00FF700E15D113880043BA91 /* retina-StarNone.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF700D15D113880043BA91 /* retina-StarNone.png */; };
-		00FF700F15D113880043BA91 /* retina-StarNone.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF700D15D113880043BA91 /* retina-StarNone.png */; };
-		00FF701015D113880043BA91 /* retina-StarNone.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF700D15D113880043BA91 /* retina-StarNone.png */; };
 		00FF701315D1676F0043BA91 /* VSHisotryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF701215D1676F0043BA91 /* VSHisotryListCell.m */; };
 		00FF701415D1676F0043BA91 /* VSHisotryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF701215D1676F0043BA91 /* VSHisotryListCell.m */; };
 		00FF701515D1676F0043BA91 /* VSHisotryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF701215D1676F0043BA91 /* VSHisotryListCell.m */; };
-		00FF701815D16C050043BA91 /* retina-TimeLineCellDark.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF701615D16C050043BA91 /* retina-TimeLineCellDark.png */; };
-		00FF701915D16C050043BA91 /* retina-TimeLineCellDark.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF701615D16C050043BA91 /* retina-TimeLineCellDark.png */; };
-		00FF701A15D16C050043BA91 /* retina-TimeLineCellDark.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF701615D16C050043BA91 /* retina-TimeLineCellDark.png */; };
-		00FF701B15D16C050043BA91 /* retina-TimeLineCellLight.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF701715D16C050043BA91 /* retina-TimeLineCellLight.png */; };
-		00FF701C15D16C050043BA91 /* retina-TimeLineCellLight.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF701715D16C050043BA91 /* retina-TimeLineCellLight.png */; };
-		00FF701D15D16C050043BA91 /* retina-TimeLineCellLight.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF701715D16C050043BA91 /* retina-TimeLineCellLight.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -342,22 +342,49 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00032B2215CC1B36008FDF9F /* retina-PenBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-PenBG.png"; path = "Resources/Img/retina-PenBG.png"; sourceTree = "<group>"; };
-		00032B2315CC1B36008FDF9F /* retina-PenFG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-PenFG.png"; path = "Resources/Img/retina-PenFG.png"; sourceTree = "<group>"; };
-		00032B2615CC1D87008FDF9F /* retina-InkHeader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-InkHeader.png"; path = "Resources/Img/retina-InkHeader.png"; sourceTree = "<group>"; };
-		00032B2815CC1E49008FDF9F /* retina-InkNeck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-InkNeck.png"; path = "Resources/Img/retina-InkNeck.png"; sourceTree = "<group>"; };
-		00032B2A15CC1FB4008FDF9F /* retina-InkBody.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-InkBody.png"; path = "Resources/Img/retina-InkBody.png"; sourceTree = "<group>"; };
-		00032B2C15CC208F008FDF9F /* retina-InkFooter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-InkFooter.png"; path = "Resources/Img/retina-InkFooter.png"; sourceTree = "<group>"; };
-		00201DDA15CFBA2F0089B8FA /* retina-NavBackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-NavBackButton.png"; path = "Resources/Img/retina-NavBackButton.png"; sourceTree = "<group>"; };
+		000E582E15E40C9900B7AB04 /* back-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "back-button@2x.png"; path = "Resources/Img/back-button@2x.png"; sourceTree = "<group>"; };
+		000E582F15E40C9900B7AB04 /* BookBlack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BookBlack@2x.png"; path = "Resources/Img/BookBlack@2x.png"; sourceTree = "<group>"; };
+		000E583015E40C9900B7AB04 /* BookLake@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BookLake@2x.png"; path = "Resources/Img/BookLake@2x.png"; sourceTree = "<group>"; };
+		000E583115E40C9900B7AB04 /* BookRed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BookRed@2x.png"; path = "Resources/Img/BookRed@2x.png"; sourceTree = "<group>"; };
+		000E583215E40C9900B7AB04 /* ButtonBT@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ButtonBT@2x.png"; path = "Resources/Img/ButtonBT@2x.png"; sourceTree = "<group>"; };
+		000E583315E40C9900B7AB04 /* ButtonBTHighLighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ButtonBTHighLighted@2x.png"; path = "Resources/Img/ButtonBTHighLighted@2x.png"; sourceTree = "<group>"; };
+		000E583415E40C9900B7AB04 /* CellAccessory@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "CellAccessory@2x.png"; path = "Resources/Img/CellAccessory@2x.png"; sourceTree = "<group>"; };
+		000E583515E40C9900B7AB04 /* CellBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "CellBG@2x.png"; path = "Resources/Img/CellBG@2x.png"; sourceTree = "<group>"; };
+		000E583615E40C9900B7AB04 /* CellClear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "CellClear@2x.png"; path = "Resources/Img/CellClear@2x.png"; sourceTree = "<group>"; };
+		000E583715E40C9900B7AB04 /* CellLine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "CellLine@2x.png"; path = "Resources/Img/CellLine@2x.png"; sourceTree = "<group>"; };
+		000E583815E40C9900B7AB04 /* CellSummary@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "CellSummary@2x.png"; path = "Resources/Img/CellSummary@2x.png"; sourceTree = "<group>"; };
+		000E583915E40C9900B7AB04 /* DetailsBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "DetailsBG@2x.png"; path = "Resources/Img/DetailsBG@2x.png"; sourceTree = "<group>"; };
+		000E583A15E40C9900B7AB04 /* DetailsHeader@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "DetailsHeader@2x.png"; path = "Resources/Img/DetailsHeader@2x.png"; sourceTree = "<group>"; };
+		000E583B15E40C9900B7AB04 /* infoButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "infoButton@2x.png"; path = "Resources/Img/infoButton@2x.png"; sourceTree = "<group>"; };
+		000E583C15E40C9900B7AB04 /* InkBody@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "InkBody@2x.png"; path = "Resources/Img/InkBody@2x.png"; sourceTree = "<group>"; };
+		000E583D15E40C9900B7AB04 /* InkFooter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "InkFooter@2x.png"; path = "Resources/Img/InkFooter@2x.png"; sourceTree = "<group>"; };
+		000E583E15E40C9900B7AB04 /* InkHeader@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "InkHeader@2x.png"; path = "Resources/Img/InkHeader@2x.png"; sourceTree = "<group>"; };
+		000E583F15E40C9900B7AB04 /* InkNeck@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "InkNeck@2x.png"; path = "Resources/Img/InkNeck@2x.png"; sourceTree = "<group>"; };
+		000E584015E40C9900B7AB04 /* ListBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ListBG@2x.png"; path = "Resources/Img/ListBG@2x.png"; sourceTree = "<group>"; };
+		000E584115E40C9900B7AB04 /* Menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Menu@2x.png"; path = "Resources/Img/Menu@2x.png"; sourceTree = "<group>"; };
+		000E584215E40C9900B7AB04 /* NavBackButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NavBackButton@2x.png"; path = "Resources/Img/NavBackButton@2x.png"; sourceTree = "<group>"; };
+		000E584315E40C9900B7AB04 /* Navigation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Navigation@2x.png"; path = "Resources/Img/Navigation@2x.png"; sourceTree = "<group>"; };
+		000E584415E40C9900B7AB04 /* Next@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Next@2x.png"; path = "Resources/Img/Next@2x.png"; sourceTree = "<group>"; };
+		000E584515E40C9900B7AB04 /* PenBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "PenBG@2x.png"; path = "Resources/Img/PenBG@2x.png"; sourceTree = "<group>"; };
+		000E584615E40C9900B7AB04 /* PenFG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "PenFG@2x.png"; path = "Resources/Img/PenFG@2x.png"; sourceTree = "<group>"; };
+		000E584715E40C9900B7AB04 /* ScoreBoardButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ScoreBoardButton@2x.png"; path = "Resources/Img/ScoreBoardButton@2x.png"; sourceTree = "<group>"; };
+		000E584815E40C9900B7AB04 /* ScoreBoardPopup@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ScoreBoardPopup@2x.png"; path = "Resources/Img/ScoreBoardPopup@2x.png"; sourceTree = "<group>"; };
+		000E584915E40C9900B7AB04 /* SeparatorDots@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "SeparatorDots@2x.png"; path = "Resources/Img/SeparatorDots@2x.png"; sourceTree = "<group>"; };
+		000E584A15E40C9900B7AB04 /* SeparatorLine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "SeparatorLine@2x.png"; path = "Resources/Img/SeparatorLine@2x.png"; sourceTree = "<group>"; };
+		000E584B15E40C9900B7AB04 /* Star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Star@2x.png"; path = "Resources/Img/Star@2x.png"; sourceTree = "<group>"; };
+		000E584C15E40C9900B7AB04 /* StarNone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "StarNone@2x.png"; path = "Resources/Img/StarNone@2x.png"; sourceTree = "<group>"; };
+		000E584D15E40C9900B7AB04 /* StarSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "StarSmall@2x.png"; path = "Resources/Img/StarSmall@2x.png"; sourceTree = "<group>"; };
+		000E584E15E40C9900B7AB04 /* TapeBody@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TapeBody@2x.png"; path = "Resources/Img/TapeBody@2x.png"; sourceTree = "<group>"; };
+		000E584F15E40C9900B7AB04 /* TapeHead@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TapeHead@2x.png"; path = "Resources/Img/TapeHead@2x.png"; sourceTree = "<group>"; };
+		000E585015E40C9900B7AB04 /* TapeTail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TapeTail@2x.png"; path = "Resources/Img/TapeTail@2x.png"; sourceTree = "<group>"; };
+		000E585115E40C9900B7AB04 /* TimeLineCellDark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TimeLineCellDark@2x.png"; path = "Resources/Img/TimeLineCellDark@2x.png"; sourceTree = "<group>"; };
+		000E585215E40C9900B7AB04 /* TimeLineCellLight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TimeLineCellLight@2x.png"; path = "Resources/Img/TimeLineCellLight@2x.png"; sourceTree = "<group>"; };
+		000E585315E40C9900B7AB04 /* Unit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Unit@2x.png"; path = "Resources/Img/Unit@2x.png"; sourceTree = "<group>"; };
 		00201E2F15CFBAD30089B8FA /* VocabularySishu copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VocabularySishu copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00201E3215CFBF9C0089B8FA /* VocabularySishu.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = VocabularySishu.sqlite; path = Resources/Data/TOEFL/VocabularySishu.sqlite; sourceTree = "<group>"; };
 		00201E3515CFC3560089B8FA /* Vocabularies.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Vocabularies.txt; path = Resources/Data/GRE/Vocabularies.txt; sourceTree = "<group>"; };
 		00201E3615CFC3560089B8FA /* Lists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Lists.txt; path = Resources/Data/GRE/Lists.txt; sourceTree = "<group>"; };
 		00201E3715CFC3560089B8FA /* Repos.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Repos.txt; path = Resources/Data/GRE/Repos.txt; sourceTree = "<group>"; };
-		0024B9DD1593562C001698C3 /* abacus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = abacus.jpg; path = Resources/VocabularyImg/abacus.jpg; sourceTree = "<group>"; };
-		0029087815BF0AA800568B41 /* retina-Previous.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-Previous.png"; path = "Resources/Img/retina-Previous.png"; sourceTree = "<group>"; };
-		0029087B15BF0B4500568B41 /* retina-Next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-Next.png"; path = "Resources/Img/retina-Next.png"; sourceTree = "<group>"; };
-		0029087D15BF882C00568B41 /* retina-CellClear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-CellClear.png"; path = "Resources/Img/retina-CellClear.png"; sourceTree = "<group>"; };
 		0044C13815D371E20022154A /* VSMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSMainViewController.h; path = ViewController/MainView/VSMainViewController.h; sourceTree = "<group>"; };
 		0044C13915D371E20022154A /* VSMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSMainViewController.m; path = ViewController/MainView/VSMainViewController.m; sourceTree = "<group>"; };
 		0044C14115D3723F0022154A /* VSRepoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSRepoViewController.h; path = ViewController/MainView/VSRepoViewController.h; sourceTree = "<group>"; };
@@ -374,10 +401,6 @@
 		0046408C155916FA007E5FA9 /* VSHistoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSHistoryViewController.xib; path = ViewController/MainView/VSHistoryViewController.xib; sourceTree = "<group>"; };
 		0046408F15591DBD007E5FA9 /* VSUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSUtils.h; path = Utils/VSUtils.h; sourceTree = "<group>"; };
 		0046409015591DBD007E5FA9 /* VSUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSUtils.m; path = Utils/VSUtils.m; sourceTree = "<group>"; };
-		005F7E9B15CD84CD00932B93 /* retina-DetailsHeader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-DetailsHeader.png"; path = "Resources/Img/retina-DetailsHeader.png"; sourceTree = "<group>"; };
-		005F7E9C15CD84CD00932B93 /* retina-DetailsBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-DetailsBG.png"; path = "Resources/Img/retina-DetailsBG.png"; sourceTree = "<group>"; };
-		005F7E9F15CD959100932B93 /* retina-CellAccessory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-CellAccessory.png"; path = "Resources/Img/retina-CellAccessory.png"; sourceTree = "<group>"; };
-		006B4CD615E3583200711C64 /* retina-infoButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-infoButton.png"; path = "Resources/Img/retina-infoButton.png"; sourceTree = "<group>"; };
 		006B4CDB15E3638B00711C64 /* VSGuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSGuideViewController.h; path = ViewController/ConfigurationView/VSGuideViewController.h; sourceTree = "<group>"; };
 		006B4CDC15E3638B00711C64 /* VSGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSGuideViewController.m; path = ViewController/ConfigurationView/VSGuideViewController.m; sourceTree = "<group>"; };
 		006B4CDD15E3638B00711C64 /* VSGuideViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSGuideViewController.xib; path = ViewController/ConfigurationView/VSGuideViewController.xib; sourceTree = "<group>"; };
@@ -418,9 +441,6 @@
 		0073A6BB156A5FF700B80422 /* VSVocabularyListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSVocabularyListViewController.h; path = ViewController/VocabularyListView/VSVocabularyListViewController.h; sourceTree = "<group>"; };
 		0073A6BC156A5FF700B80422 /* VSVocabularyListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSVocabularyListViewController.m; path = ViewController/VocabularyListView/VSVocabularyListViewController.m; sourceTree = "<group>"; };
 		0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSVocabularyListViewController.xib; path = ViewController/VocabularyListView/VSVocabularyListViewController.xib; sourceTree = "<group>"; };
-		0078168915C3A8F700CE5026 /* retina-Restart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-Restart.png"; path = "Resources/Img/retina-Restart.png"; sourceTree = "<group>"; };
-		0078168C15C3AA0100CE5026 /* retina-Restart-Highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-Restart-Highlight.png"; path = "Resources/Img/retina-Restart-Highlight.png"; sourceTree = "<group>"; };
-		0081184A15BEFDDE0022B515 /* retina-Navigation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-Navigation.png"; path = "Resources/Img/retina-Navigation.png"; sourceTree = "<group>"; };
 		0081184F15BEFE220022B515 /* VSNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSNavigationBar.h; path = Generic/VSNavigationBar.h; sourceTree = "<group>"; };
 		0081185015BEFE220022B515 /* VSNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSNavigationBar.m; path = Generic/VSNavigationBar.m; sourceTree = "<group>"; };
 		009397D115D7F6D3009AE73E /* VocabularySishu.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = VocabularySishu.sqlite; path = Resources/Data/FULL/VocabularySishu.sqlite; sourceTree = "<group>"; };
@@ -431,15 +451,10 @@
 		009AFBFA1588982300293F6A /* VSAlertDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSAlertDelegate.m; path = Utils/VSAlertDelegate.m; sourceTree = "<group>"; };
 		009BB48415CAAFF2008E5B2B /* VSVocabularyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSVocabularyCell.h; path = ViewController/VocabularyListView/VSVocabularyCell.h; sourceTree = "<group>"; };
 		009BB48515CAAFF2008E5B2B /* VSVocabularyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSVocabularyCell.m; path = ViewController/VocabularyListView/VSVocabularyCell.m; sourceTree = "<group>"; };
-		009BB48815CAC448008E5B2B /* retina-TapeBody.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-TapeBody.png"; path = "Resources/Img/retina-TapeBody.png"; sourceTree = "<group>"; };
-		009BB48915CAC448008E5B2B /* retina-TapeTail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-TapeTail.png"; path = "Resources/Img/retina-TapeTail.png"; sourceTree = "<group>"; };
-		009BB48A15CAC448008E5B2B /* retina-TapeHead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-TapeHead.png"; path = "Resources/Img/retina-TapeHead.png"; sourceTree = "<group>"; };
-		009BB48E15CAC760008E5B2B /* retina-CellLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-CellLine.png"; path = "Resources/Img/retina-CellLine.png"; sourceTree = "<group>"; };
 		00A006F8156B3BDF00D24418 /* Meaning.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = Meaning.html; path = Resources/Template/Meaning.html; sourceTree = "<group>"; };
 		00A006FA156B3D6D00D24418 /* VSConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSConstant.h; path = Utils/VSConstant.h; sourceTree = "<group>"; };
 		00A006FB156B3D6D00D24418 /* VSConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSConstant.m; path = Utils/VSConstant.m; sourceTree = "<group>"; };
 		00A00702156D15F200D24418 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		00A00705156D361E00D24418 /* retina-back-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-back-button.png"; path = "Resources/Img/retina-back-button.png"; sourceTree = "<group>"; };
 		00A0071B156E3A7B00D24418 /* VSContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSContext.h; path = Model/VSContext.h; sourceTree = "<group>"; };
 		00A0071C156E3A7B00D24418 /* VSContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSContext.m; path = Model/VSContext.m; sourceTree = "<group>"; };
 		00A0071E156E3A8F00D24418 /* VSList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSList.h; path = Model/VSList.h; sourceTree = "<group>"; };
@@ -457,19 +472,11 @@
 		00A1AFAC1586192400310669 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		00A9E7AE15A08699009832BA /* VSReviewPlan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSReviewPlan.h; path = Utils/VSReviewPlan.h; sourceTree = "<group>"; };
 		00A9E7AF15A08699009832BA /* VSReviewPlan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSReviewPlan.m; path = Utils/VSReviewPlan.m; sourceTree = "<group>"; };
-		00AC8C6515DA1D0B006F58D5 /* retina-BookBlack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-BookBlack.png"; path = "Resources/Img/retina-BookBlack.png"; sourceTree = "<group>"; };
-		00AC8C6615DA1D0B006F58D5 /* retina-BookRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-BookRed.png"; path = "Resources/Img/retina-BookRed.png"; sourceTree = "<group>"; };
-		00AC8C6715DA1D0B006F58D5 /* retina-BookLake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-BookLake.png"; path = "Resources/Img/retina-BookLake.png"; sourceTree = "<group>"; };
 		00AE80EE158B1318000CE7EA /* VSConfigurationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSConfigurationViewController.h; path = ViewController/ConfigurationView/VSConfigurationViewController.h; sourceTree = "<group>"; };
 		00AE80EF158B1318000CE7EA /* VSConfigurationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSConfigurationViewController.m; path = ViewController/ConfigurationView/VSConfigurationViewController.m; sourceTree = "<group>"; };
 		00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSConfigurationViewController.xib; path = ViewController/ConfigurationView/VSConfigurationViewController.xib; sourceTree = "<group>"; };
 		00BDE5A815CF9B9400BC205C /* VocabularySishu copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VocabularySishu copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		00C09A9C15E209BC00AD33C3 /* retina-Unit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-Unit.png"; path = "Resources/Img/retina-Unit.png"; sourceTree = "<group>"; };
-		00C09AA015E209C400AD33C3 /* retina-StarSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-StarSmall.png"; path = "Resources/Img/retina-StarSmall.png"; sourceTree = "<group>"; };
 		00C09AA415E2B05800AD33C3 /* VocabularySishu 1.1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "VocabularySishu 1.1.xcdatamodel"; sourceTree = "<group>"; };
-		00C42FD815BAEEB1006FF95E /* retina-CellBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-CellBG.png"; path = "Resources/Img/retina-CellBG.png"; sourceTree = "<group>"; };
-		00C42FD915BAEEB1006FF95E /* retina-CellSummary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-CellSummary.png"; path = "Resources/Img/retina-CellSummary.png"; sourceTree = "<group>"; };
-		00C42FDA15BAEEB1006FF95E /* retina-ListBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-ListBG.png"; path = "Resources/Img/retina-ListBG.png"; sourceTree = "<group>"; };
 		00C42FE115BAFBC6006FF95E /* VSMeaningView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSMeaningView.h; path = ViewController/VocabularyListView/VSMeaningView.h; sourceTree = "<group>"; };
 		00C42FE215BAFBC6006FF95E /* VSMeaningView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSMeaningView.m; path = ViewController/VocabularyListView/VSMeaningView.m; sourceTree = "<group>"; };
 		00C42FE715BB096F006FF95E /* VSSummaryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSSummaryView.h; path = ViewController/VocabularyListView/VSSummaryView.h; sourceTree = "<group>"; };
@@ -483,6 +490,7 @@
 		00D6779115ADD03900EF152D /* DDFileReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDFileReader.m; path = Utils/DDFileReader.m; sourceTree = "<group>"; };
 		00E83B2E15DAC42F005BE3AF /* VSClipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSClipView.h; path = ViewController/MainView/VSClipView.h; sourceTree = "<group>"; };
 		00E83B2F15DAC42F005BE3AF /* VSClipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSClipView.m; path = ViewController/MainView/VSClipView.m; sourceTree = "<group>"; };
+		00FF1B0F15E407AC005B9E51 /* SeparatorDots@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "SeparatorDots@2x.png"; path = "Resources/Img/SeparatorDots@2x.png"; sourceTree = "<group>"; };
 		00FF6FC915CFD0150043BA91 /* WebsterMeaning.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = WebsterMeaning.txt; path = Resources/Data/TOEFL/WebsterMeaning.txt; sourceTree = "<group>"; };
 		00FF6FCA15CFD0150043BA91 /* Vocabularies.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = Vocabularies.txt; path = Resources/Data/TOEFL/Vocabularies.txt; sourceTree = "<group>"; };
 		00FF6FCB15CFD0150043BA91 /* Lists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = Lists.txt; path = Resources/Data/TOEFL/Lists.txt; sourceTree = "<group>"; };
@@ -498,18 +506,10 @@
 		00FF6FDF15CFDA0A0043BA91 /* Repos.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Repos.txt; path = Resources/Data/FULL/Repos.txt; sourceTree = "<group>"; };
 		00FF6FE615CFDC4B0043BA91 /* Vocabularies.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Vocabularies.txt; path = Resources/Data/FULL/Vocabularies.txt; sourceTree = "<group>"; };
 		00FF6FE815D0AC940043BA91 /* VocabularySishu.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = VocabularySishu.sqlite; path = Resources/Data/GRE/VocabularySishu.sqlite; sourceTree = "<group>"; };
-		00FF6FEF15D0AF1E0043BA91 /* retina-ScoreBoardButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-ScoreBoardButton.png"; path = "Resources/Img/retina-ScoreBoardButton.png"; sourceTree = "<group>"; };
 		00FF6FF815D0BACA0043BA91 /* VSScoreBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSScoreBoardView.h; path = ViewController/VocabularyListView/VSScoreBoardView.h; sourceTree = "<group>"; };
 		00FF6FF915D0BACB0043BA91 /* VSScoreBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSScoreBoardView.m; path = ViewController/VocabularyListView/VSScoreBoardView.m; sourceTree = "<group>"; };
-		00FF6FFD15D0C2A50043BA91 /* retina-ScoreBoardPopup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-ScoreBoardPopup.png"; path = "Resources/Img/retina-ScoreBoardPopup.png"; sourceTree = "<group>"; };
-		00FF700115D0C4B80043BA91 /* retina-ButtonBT.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-ButtonBT.png"; path = "Resources/Img/retina-ButtonBT.png"; sourceTree = "<group>"; };
-		00FF700215D0C4B80043BA91 /* retina-ButtonBTHighLighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-ButtonBTHighLighted.png"; path = "Resources/Img/retina-ButtonBTHighLighted.png"; sourceTree = "<group>"; };
-		00FF700915D113220043BA91 /* retina-Star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-Star.png"; path = "Resources/Img/retina-Star.png"; sourceTree = "<group>"; };
-		00FF700D15D113880043BA91 /* retina-StarNone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-StarNone.png"; path = "Resources/Img/retina-StarNone.png"; sourceTree = "<group>"; };
 		00FF701115D1676F0043BA91 /* VSHisotryListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSHisotryListCell.h; path = ViewController/MainView/VSHisotryListCell.h; sourceTree = "<group>"; };
 		00FF701215D1676F0043BA91 /* VSHisotryListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSHisotryListCell.m; path = ViewController/MainView/VSHisotryListCell.m; sourceTree = "<group>"; };
-		00FF701615D16C050043BA91 /* retina-TimeLineCellDark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-TimeLineCellDark.png"; path = "Resources/Img/retina-TimeLineCellDark.png"; sourceTree = "<group>"; };
-		00FF701715D16C050043BA91 /* retina-TimeLineCellLight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-TimeLineCellLight.png"; path = "Resources/Img/retina-TimeLineCellLight.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -593,14 +593,6 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
-		0024B9DB159354A0001698C3 /* VocabularyImg */ = {
-			isa = PBXGroup;
-			children = (
-				0024B9DD1593562C001698C3 /* abacus.jpg */,
-			);
-			name = VocabularyImg;
-			sourceTree = "<group>";
-		};
 		0046407715590CC8007E5FA9 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
@@ -677,7 +669,6 @@
 			children = (
 				00701E6B1553CE8C00D30018 /* ViewController */,
 				0081184E15BEFDFF0022B515 /* Generic */,
-				0024B9DB159354A0001698C3 /* VocabularyImg */,
 				00A1AFA41585FD2400310669 /* Audio */,
 				00A006F6156B3B8800D24418 /* Template */,
 				0073A68715689FB400B80422 /* Libs */,
@@ -855,45 +846,46 @@
 		00B5A8BE1566886E00D20EB6 /* Img */ = {
 			isa = PBXGroup;
 			children = (
+				000E582E15E40C9900B7AB04 /* back-button@2x.png */,
+				000E582F15E40C9900B7AB04 /* BookBlack@2x.png */,
+				000E583015E40C9900B7AB04 /* BookLake@2x.png */,
+				000E583115E40C9900B7AB04 /* BookRed@2x.png */,
+				000E583215E40C9900B7AB04 /* ButtonBT@2x.png */,
+				000E583315E40C9900B7AB04 /* ButtonBTHighLighted@2x.png */,
+				000E583415E40C9900B7AB04 /* CellAccessory@2x.png */,
+				000E583515E40C9900B7AB04 /* CellBG@2x.png */,
+				000E583615E40C9900B7AB04 /* CellClear@2x.png */,
+				000E583715E40C9900B7AB04 /* CellLine@2x.png */,
+				000E583815E40C9900B7AB04 /* CellSummary@2x.png */,
+				000E583915E40C9900B7AB04 /* DetailsBG@2x.png */,
+				000E583A15E40C9900B7AB04 /* DetailsHeader@2x.png */,
+				000E583B15E40C9900B7AB04 /* infoButton@2x.png */,
+				000E583C15E40C9900B7AB04 /* InkBody@2x.png */,
+				000E583D15E40C9900B7AB04 /* InkFooter@2x.png */,
+				000E583E15E40C9900B7AB04 /* InkHeader@2x.png */,
+				000E583F15E40C9900B7AB04 /* InkNeck@2x.png */,
+				000E584015E40C9900B7AB04 /* ListBG@2x.png */,
+				000E584115E40C9900B7AB04 /* Menu@2x.png */,
+				000E584215E40C9900B7AB04 /* NavBackButton@2x.png */,
+				000E584315E40C9900B7AB04 /* Navigation@2x.png */,
+				000E584415E40C9900B7AB04 /* Next@2x.png */,
+				000E584515E40C9900B7AB04 /* PenBG@2x.png */,
+				000E584615E40C9900B7AB04 /* PenFG@2x.png */,
+				000E584715E40C9900B7AB04 /* ScoreBoardButton@2x.png */,
+				000E584815E40C9900B7AB04 /* ScoreBoardPopup@2x.png */,
+				000E584915E40C9900B7AB04 /* SeparatorDots@2x.png */,
+				000E584A15E40C9900B7AB04 /* SeparatorLine@2x.png */,
+				000E584B15E40C9900B7AB04 /* Star@2x.png */,
+				000E584C15E40C9900B7AB04 /* StarNone@2x.png */,
+				000E584D15E40C9900B7AB04 /* StarSmall@2x.png */,
+				000E584E15E40C9900B7AB04 /* TapeBody@2x.png */,
+				000E584F15E40C9900B7AB04 /* TapeHead@2x.png */,
+				000E585015E40C9900B7AB04 /* TapeTail@2x.png */,
+				000E585115E40C9900B7AB04 /* TimeLineCellDark@2x.png */,
+				000E585215E40C9900B7AB04 /* TimeLineCellLight@2x.png */,
+				000E585315E40C9900B7AB04 /* Unit@2x.png */,
+				00FF1B0F15E407AC005B9E51 /* SeparatorDots@2x.png */,
 				006B4CE415E3F3B100711C64 /* Menu@2x.png */,
-				00AC8C6515DA1D0B006F58D5 /* retina-BookBlack.png */,
-				00C09AA015E209C400AD33C3 /* retina-StarSmall.png */,
-				00AC8C6615DA1D0B006F58D5 /* retina-BookRed.png */,
-				00AC8C6715DA1D0B006F58D5 /* retina-BookLake.png */,
-				00FF700915D113220043BA91 /* retina-Star.png */,
-				00FF700115D0C4B80043BA91 /* retina-ButtonBT.png */,
-				00C09A9C15E209BC00AD33C3 /* retina-Unit.png */,
-				00FF700D15D113880043BA91 /* retina-StarNone.png */,
-				00FF701615D16C050043BA91 /* retina-TimeLineCellDark.png */,
-				00FF701715D16C050043BA91 /* retina-TimeLineCellLight.png */,
-				00FF700215D0C4B80043BA91 /* retina-ButtonBTHighLighted.png */,
-				00FF6FFD15D0C2A50043BA91 /* retina-ScoreBoardPopup.png */,
-				00FF6FEF15D0AF1E0043BA91 /* retina-ScoreBoardButton.png */,
-				009BB48815CAC448008E5B2B /* retina-TapeBody.png */,
-				00032B2C15CC208F008FDF9F /* retina-InkFooter.png */,
-				006B4CD615E3583200711C64 /* retina-infoButton.png */,
-				009BB48915CAC448008E5B2B /* retina-TapeTail.png */,
-				00201DDA15CFBA2F0089B8FA /* retina-NavBackButton.png */,
-				009BB48A15CAC448008E5B2B /* retina-TapeHead.png */,
-				005F7E9F15CD959100932B93 /* retina-CellAccessory.png */,
-				00032B2815CC1E49008FDF9F /* retina-InkNeck.png */,
-				00032B2215CC1B36008FDF9F /* retina-PenBG.png */,
-				005F7E9B15CD84CD00932B93 /* retina-DetailsHeader.png */,
-				005F7E9C15CD84CD00932B93 /* retina-DetailsBG.png */,
-				00032B2315CC1B36008FDF9F /* retina-PenFG.png */,
-				009BB48E15CAC760008E5B2B /* retina-CellLine.png */,
-				00032B2A15CC1FB4008FDF9F /* retina-InkBody.png */,
-				00032B2615CC1D87008FDF9F /* retina-InkHeader.png */,
-				0078168C15C3AA0100CE5026 /* retina-Restart-Highlight.png */,
-				0078168915C3A8F700CE5026 /* retina-Restart.png */,
-				0029087B15BF0B4500568B41 /* retina-Next.png */,
-				0029087D15BF882C00568B41 /* retina-CellClear.png */,
-				0029087815BF0AA800568B41 /* retina-Previous.png */,
-				0081184A15BEFDDE0022B515 /* retina-Navigation.png */,
-				00C42FD815BAEEB1006FF95E /* retina-CellBG.png */,
-				00C42FD915BAEEB1006FF95E /* retina-CellSummary.png */,
-				00C42FDA15BAEEB1006FF95E /* retina-ListBG.png */,
-				00A00705156D361E00D24418 /* retina-back-button.png */,
 			);
 			name = Img;
 			sourceTree = "<group>";
@@ -1054,57 +1046,57 @@
 				00201E0A15CFBAD30089B8FA /* VSVocabularyViewController.xib in Resources */,
 				00201E0B15CFBAD30089B8FA /* VSVocabularyListViewController.xib in Resources */,
 				00201E0C15CFBAD30089B8FA /* Meaning.html in Resources */,
-				00201E0D15CFBAD30089B8FA /* retina-Navigation.png in Resources */,
-				00201E0F15CFBAD30089B8FA /* retina-back-button.png in Resources */,
 				00201E1015CFBAD30089B8FA /* VSConfigurationViewController.xib in Resources */,
-				00201E1115CFBAD30089B8FA /* retina-InkNeck.png in Resources */,
-				00201E1215CFBAD30089B8FA /* abacus.jpg in Resources */,
-				00201E1315CFBAD30089B8FA /* retina-CellBG.png in Resources */,
-				00201E1415CFBAD30089B8FA /* retina-CellSummary.png in Resources */,
-				00201E1515CFBAD30089B8FA /* retina-ListBG.png in Resources */,
-				00201E1615CFBAD30089B8FA /* retina-CellClear.png in Resources */,
-				00201E1715CFBAD30089B8FA /* retina-Restart.png in Resources */,
-				00201E1815CFBAD30089B8FA /* retina-Restart-Highlight.png in Resources */,
-				00201E1915CFBAD30089B8FA /* retina-Next.png in Resources */,
-				00201E1B15CFBAD30089B8FA /* retina-Previous.png in Resources */,
-				00201E1C15CFBAD30089B8FA /* retina-InkBody.png in Resources */,
-				00201E1D15CFBAD30089B8FA /* retina-PenBG.png in Resources */,
-				00201E1E15CFBAD30089B8FA /* retina-TapeBody.png in Resources */,
-				00201E1F15CFBAD30089B8FA /* retina-TapeTail.png in Resources */,
-				00201E2015CFBAD30089B8FA /* retina-TapeHead.png in Resources */,
-				00201E2115CFBAD30089B8FA /* retina-CellLine.png in Resources */,
-				00201E2215CFBAD30089B8FA /* retina-PenFG.png in Resources */,
-				00201E2315CFBAD30089B8FA /* retina-InkHeader.png in Resources */,
-				00201E2415CFBAD30089B8FA /* retina-InkFooter.png in Resources */,
-				00201E2515CFBAD30089B8FA /* retina-DetailsHeader.png in Resources */,
-				00201E2615CFBAD30089B8FA /* retina-DetailsBG.png in Resources */,
 				00201E4A15CFCDD00089B8FA /* Vocabularies.txt in Resources */,
 				00201E4B15CFCDD00089B8FA /* Lists.txt in Resources */,
 				00201E4C15CFCDD00089B8FA /* Repos.txt in Resources */,
-				00201E2715CFBAD30089B8FA /* retina-CellAccessory.png in Resources */,
-				00201E2815CFBAD30089B8FA /* retina-NavBackButton.png in Resources */,
 				00FF6FD015CFD2DF0043BA91 /* mw-2.txt in Resources */,
 				00FF6FD115CFD2DF0043BA91 /* mw-1.txt in Resources */,
 				00FF6FD515CFD48A0043BA91 /* Meaning.txt in Resources */,
 				00FF6FE915D0AC940043BA91 /* VocabularySishu.sqlite in Resources */,
-				00FF6FF215D0AF1E0043BA91 /* retina-ScoreBoardButton.png in Resources */,
-				00FF700015D0C2A50043BA91 /* retina-ScoreBoardPopup.png in Resources */,
-				00FF700515D0C4B80043BA91 /* retina-ButtonBT.png in Resources */,
-				00FF700815D0C4B80043BA91 /* retina-ButtonBTHighLighted.png in Resources */,
-				00FF700C15D113220043BA91 /* retina-Star.png in Resources */,
-				00FF701015D113880043BA91 /* retina-StarNone.png in Resources */,
-				00AC8C6A15DA1D0B006F58D5 /* retina-BookBlack.png in Resources */,
-				00FF701A15D16C050043BA91 /* retina-TimeLineCellDark.png in Resources */,
-				00AC8C6D15DA1D0B006F58D5 /* retina-BookRed.png in Resources */,
-				00AC8C7015DA1D0B006F58D5 /* retina-BookLake.png in Resources */,
-				00FF701D15D16C050043BA91 /* retina-TimeLineCellLight.png in Resources */,
 				0044C15115D397630022154A /* VSMainViewController.xib in Resources */,
 				0044C15A15D3B70F0022154A /* VSRepoListViewController.xib in Resources */,
-				00C09A9F15E209BC00AD33C3 /* retina-Unit.png in Resources */,
-				00C09AA315E209C400AD33C3 /* retina-StarSmall.png in Resources */,
-				006B4CD915E3583200711C64 /* retina-infoButton.png in Resources */,
 				006B4CE315E3638C00711C64 /* VSGuideViewController.xib in Resources */,
 				006B4CE715E3F3B100711C64 /* Menu@2x.png in Resources */,
+				00FF1B1215E407AC005B9E51 /* SeparatorDots@2x.png in Resources */,
+				000E585615E40C9900B7AB04 /* back-button@2x.png in Resources */,
+				000E585915E40C9900B7AB04 /* BookBlack@2x.png in Resources */,
+				000E585C15E40C9900B7AB04 /* BookLake@2x.png in Resources */,
+				000E585F15E40C9900B7AB04 /* BookRed@2x.png in Resources */,
+				000E586215E40C9900B7AB04 /* ButtonBT@2x.png in Resources */,
+				000E586515E40C9900B7AB04 /* ButtonBTHighLighted@2x.png in Resources */,
+				000E586815E40C9900B7AB04 /* CellAccessory@2x.png in Resources */,
+				000E586B15E40C9900B7AB04 /* CellBG@2x.png in Resources */,
+				000E586E15E40C9900B7AB04 /* CellClear@2x.png in Resources */,
+				000E587115E40C9900B7AB04 /* CellLine@2x.png in Resources */,
+				000E587415E40C9900B7AB04 /* CellSummary@2x.png in Resources */,
+				000E587715E40C9900B7AB04 /* DetailsBG@2x.png in Resources */,
+				000E587A15E40C9900B7AB04 /* DetailsHeader@2x.png in Resources */,
+				000E587D15E40C9900B7AB04 /* infoButton@2x.png in Resources */,
+				000E588015E40C9900B7AB04 /* InkBody@2x.png in Resources */,
+				000E588315E40C9900B7AB04 /* InkFooter@2x.png in Resources */,
+				000E588615E40C9900B7AB04 /* InkHeader@2x.png in Resources */,
+				000E588915E40C9900B7AB04 /* InkNeck@2x.png in Resources */,
+				000E588C15E40C9900B7AB04 /* ListBG@2x.png in Resources */,
+				000E588F15E40C9900B7AB04 /* Menu@2x.png in Resources */,
+				000E589215E40C9900B7AB04 /* NavBackButton@2x.png in Resources */,
+				000E589515E40C9900B7AB04 /* Navigation@2x.png in Resources */,
+				000E589815E40C9900B7AB04 /* Next@2x.png in Resources */,
+				000E589B15E40C9900B7AB04 /* PenBG@2x.png in Resources */,
+				000E589E15E40C9900B7AB04 /* PenFG@2x.png in Resources */,
+				000E58A115E40C9900B7AB04 /* ScoreBoardButton@2x.png in Resources */,
+				000E58A415E40C9900B7AB04 /* ScoreBoardPopup@2x.png in Resources */,
+				000E58A715E40C9900B7AB04 /* SeparatorDots@2x.png in Resources */,
+				000E58AA15E40C9900B7AB04 /* SeparatorLine@2x.png in Resources */,
+				000E58AD15E40C9900B7AB04 /* Star@2x.png in Resources */,
+				000E58B015E40C9900B7AB04 /* StarNone@2x.png in Resources */,
+				000E58B315E40C9900B7AB04 /* StarSmall@2x.png in Resources */,
+				000E58B615E40C9900B7AB04 /* TapeBody@2x.png in Resources */,
+				000E58B915E40C9900B7AB04 /* TapeHead@2x.png in Resources */,
+				000E58BC15E40C9900B7AB04 /* TapeTail@2x.png in Resources */,
+				000E58BF15E40C9900B7AB04 /* TimeLineCellDark@2x.png in Resources */,
+				000E58C215E40C9900B7AB04 /* TimeLineCellLight@2x.png in Resources */,
+				000E58C515E40C9900B7AB04 /* Unit@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1123,53 +1115,53 @@
 				00FF6FE015CFDA0A0043BA91 /* mw-4.txt in Resources */,
 				0073A6BF156A5FF700B80422 /* VSVocabularyListViewController.xib in Resources */,
 				00A006F9156B3BDF00D24418 /* Meaning.html in Resources */,
-				00032B2015CC18BC008FDF9F /* retina-Navigation.png in Resources */,
-				00A00707156D361E00D24418 /* retina-back-button.png in Resources */,
 				00AE80F2158B1318000CE7EA /* VSConfigurationViewController.xib in Resources */,
-				00032B2915CC1E49008FDF9F /* retina-InkNeck.png in Resources */,
-				0024B9DE1593562C001698C3 /* abacus.jpg in Resources */,
-				00C42FDB15BAEEB1006FF95E /* retina-CellBG.png in Resources */,
-				00C42FDC15BAEEB1006FF95E /* retina-CellSummary.png in Resources */,
-				00C42FDD15BAEEB1006FF95E /* retina-ListBG.png in Resources */,
-				0029087E15BF882C00568B41 /* retina-CellClear.png in Resources */,
-				0078168A15C3A8F700CE5026 /* retina-Restart.png in Resources */,
-				0078168D15C3AA0100CE5026 /* retina-Restart-Highlight.png in Resources */,
-				0029087C15BF0B4500568B41 /* retina-Next.png in Resources */,
-				0029087915BF0AA800568B41 /* retina-Previous.png in Resources */,
-				00032B2B15CC1FB4008FDF9F /* retina-InkBody.png in Resources */,
-				00032B2415CC1B36008FDF9F /* retina-PenBG.png in Resources */,
-				009BB48B15CAC448008E5B2B /* retina-TapeBody.png in Resources */,
-				009BB48C15CAC448008E5B2B /* retina-TapeTail.png in Resources */,
-				009BB48D15CAC448008E5B2B /* retina-TapeHead.png in Resources */,
-				009BB48F15CAC760008E5B2B /* retina-CellLine.png in Resources */,
-				00032B2515CC1B36008FDF9F /* retina-PenFG.png in Resources */,
-				00032B2715CC1D87008FDF9F /* retina-InkHeader.png in Resources */,
-				00032B2D15CC208F008FDF9F /* retina-InkFooter.png in Resources */,
-				005F7E9D15CD84CD00932B93 /* retina-DetailsHeader.png in Resources */,
-				00AC8C6E15DA1D0B006F58D5 /* retina-BookLake.png in Resources */,
-				005F7E9E15CD84CD00932B93 /* retina-DetailsBG.png in Resources */,
-				00AC8C6B15DA1D0B006F58D5 /* retina-BookRed.png in Resources */,
-				00AC8C6815DA1D0B006F58D5 /* retina-BookBlack.png in Resources */,
-				005F7EA015CD959100932B93 /* retina-CellAccessory.png in Resources */,
-				00201DDB15CFBA2F0089B8FA /* retina-NavBackButton.png in Resources */,
 				00FF6FD315CFD48A0043BA91 /* Meaning.txt in Resources */,
 				00FF6FE415CFDA0A0043BA91 /* Lists.txt in Resources */,
 				00FF6FE515CFDA0A0043BA91 /* Repos.txt in Resources */,
 				00FF6FE715CFDC4B0043BA91 /* Vocabularies.txt in Resources */,
-				00FF6FF015D0AF1E0043BA91 /* retina-ScoreBoardButton.png in Resources */,
-				00FF6FFE15D0C2A50043BA91 /* retina-ScoreBoardPopup.png in Resources */,
-				00FF700315D0C4B80043BA91 /* retina-ButtonBT.png in Resources */,
-				00FF700615D0C4B80043BA91 /* retina-ButtonBTHighLighted.png in Resources */,
-				00FF700A15D113220043BA91 /* retina-Star.png in Resources */,
-				00FF700E15D113880043BA91 /* retina-StarNone.png in Resources */,
-				00FF701815D16C050043BA91 /* retina-TimeLineCellDark.png in Resources */,
-				00FF701B15D16C050043BA91 /* retina-TimeLineCellLight.png in Resources */,
 				009397D215D7F6D3009AE73E /* VocabularySishu.sqlite in Resources */,
-				00C09A9D15E209BC00AD33C3 /* retina-Unit.png in Resources */,
-				00C09AA115E209C400AD33C3 /* retina-StarSmall.png in Resources */,
-				006B4CD715E3583200711C64 /* retina-infoButton.png in Resources */,
 				006B4CE115E3638C00711C64 /* VSGuideViewController.xib in Resources */,
 				006B4CE515E3F3B100711C64 /* Menu@2x.png in Resources */,
+				00FF1B1015E407AC005B9E51 /* SeparatorDots@2x.png in Resources */,
+				000E585415E40C9900B7AB04 /* back-button@2x.png in Resources */,
+				000E585715E40C9900B7AB04 /* BookBlack@2x.png in Resources */,
+				000E585A15E40C9900B7AB04 /* BookLake@2x.png in Resources */,
+				000E585D15E40C9900B7AB04 /* BookRed@2x.png in Resources */,
+				000E586015E40C9900B7AB04 /* ButtonBT@2x.png in Resources */,
+				000E586315E40C9900B7AB04 /* ButtonBTHighLighted@2x.png in Resources */,
+				000E586615E40C9900B7AB04 /* CellAccessory@2x.png in Resources */,
+				000E586915E40C9900B7AB04 /* CellBG@2x.png in Resources */,
+				000E586C15E40C9900B7AB04 /* CellClear@2x.png in Resources */,
+				000E586F15E40C9900B7AB04 /* CellLine@2x.png in Resources */,
+				000E587215E40C9900B7AB04 /* CellSummary@2x.png in Resources */,
+				000E587515E40C9900B7AB04 /* DetailsBG@2x.png in Resources */,
+				000E587815E40C9900B7AB04 /* DetailsHeader@2x.png in Resources */,
+				000E587B15E40C9900B7AB04 /* infoButton@2x.png in Resources */,
+				000E587E15E40C9900B7AB04 /* InkBody@2x.png in Resources */,
+				000E588115E40C9900B7AB04 /* InkFooter@2x.png in Resources */,
+				000E588415E40C9900B7AB04 /* InkHeader@2x.png in Resources */,
+				000E588715E40C9900B7AB04 /* InkNeck@2x.png in Resources */,
+				000E588A15E40C9900B7AB04 /* ListBG@2x.png in Resources */,
+				000E588D15E40C9900B7AB04 /* Menu@2x.png in Resources */,
+				000E589015E40C9900B7AB04 /* NavBackButton@2x.png in Resources */,
+				000E589315E40C9900B7AB04 /* Navigation@2x.png in Resources */,
+				000E589615E40C9900B7AB04 /* Next@2x.png in Resources */,
+				000E589915E40C9900B7AB04 /* PenBG@2x.png in Resources */,
+				000E589C15E40C9900B7AB04 /* PenFG@2x.png in Resources */,
+				000E589F15E40C9900B7AB04 /* ScoreBoardButton@2x.png in Resources */,
+				000E58A215E40C9900B7AB04 /* ScoreBoardPopup@2x.png in Resources */,
+				000E58A515E40C9900B7AB04 /* SeparatorDots@2x.png in Resources */,
+				000E58A815E40C9900B7AB04 /* SeparatorLine@2x.png in Resources */,
+				000E58AB15E40C9900B7AB04 /* Star@2x.png in Resources */,
+				000E58AE15E40C9900B7AB04 /* StarNone@2x.png in Resources */,
+				000E58B115E40C9900B7AB04 /* StarSmall@2x.png in Resources */,
+				000E58B415E40C9900B7AB04 /* TapeBody@2x.png in Resources */,
+				000E58B715E40C9900B7AB04 /* TapeHead@2x.png in Resources */,
+				000E58BA15E40C9900B7AB04 /* TapeTail@2x.png in Resources */,
+				000E58BD15E40C9900B7AB04 /* TimeLineCellDark@2x.png in Resources */,
+				000E58C015E40C9900B7AB04 /* TimeLineCellLight@2x.png in Resources */,
+				000E58C315E40C9900B7AB04 /* Unit@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1191,56 +1183,56 @@
 				00BDE58315CF9B9400BC205C /* VSVocabularyViewController.xib in Resources */,
 				00BDE58415CF9B9400BC205C /* VSVocabularyListViewController.xib in Resources */,
 				00BDE58515CF9B9400BC205C /* Meaning.html in Resources */,
-				00BDE58615CF9B9400BC205C /* retina-Navigation.png in Resources */,
 				006B4CE215E3638C00711C64 /* VSGuideViewController.xib in Resources */,
-				00BDE58815CF9B9400BC205C /* retina-back-button.png in Resources */,
 				00BDE58915CF9B9400BC205C /* VSConfigurationViewController.xib in Resources */,
-				00BDE58A15CF9B9400BC205C /* retina-InkNeck.png in Resources */,
 				00FF6FD615CFD4D70043BA91 /* WebsterMeaning.txt in Resources */,
-				00BDE58B15CF9B9400BC205C /* abacus.jpg in Resources */,
-				00BDE58C15CF9B9400BC205C /* retina-CellBG.png in Resources */,
 				00FF6FD915CFD4DB0043BA91 /* Repos.txt in Resources */,
 				00FF6FD815CFD4DA0043BA91 /* Lists.txt in Resources */,
-				00BDE58D15CF9B9400BC205C /* retina-CellSummary.png in Resources */,
 				00FF6FD715CFD4D90043BA91 /* Vocabularies.txt in Resources */,
-				00BDE58E15CF9B9400BC205C /* retina-ListBG.png in Resources */,
-				00BDE58F15CF9B9400BC205C /* retina-CellClear.png in Resources */,
-				00BDE59015CF9B9400BC205C /* retina-Restart.png in Resources */,
-				00BDE59115CF9B9400BC205C /* retina-Restart-Highlight.png in Resources */,
-				00BDE59215CF9B9400BC205C /* retina-Next.png in Resources */,
-				00BDE59415CF9B9400BC205C /* retina-Previous.png in Resources */,
-				00BDE59515CF9B9400BC205C /* retina-InkBody.png in Resources */,
-				00BDE59615CF9B9400BC205C /* retina-PenBG.png in Resources */,
-				00BDE59715CF9B9400BC205C /* retina-TapeBody.png in Resources */,
-				00BDE59815CF9B9400BC205C /* retina-TapeTail.png in Resources */,
-				00BDE59915CF9B9400BC205C /* retina-TapeHead.png in Resources */,
-				00BDE59A15CF9B9400BC205C /* retina-CellLine.png in Resources */,
-				00BDE59B15CF9B9400BC205C /* retina-PenFG.png in Resources */,
-				00BDE59C15CF9B9400BC205C /* retina-InkHeader.png in Resources */,
-				00BDE59D15CF9B9400BC205C /* retina-InkFooter.png in Resources */,
-				00BDE59F15CF9B9400BC205C /* retina-DetailsHeader.png in Resources */,
-				00BDE5A015CF9B9400BC205C /* retina-DetailsBG.png in Resources */,
-				00BDE5A115CF9B9400BC205C /* retina-CellAccessory.png in Resources */,
-				00201DDC15CFBA2F0089B8FA /* retina-NavBackButton.png in Resources */,
 				00201E3315CFBF9C0089B8FA /* VocabularySishu.sqlite in Resources */,
 				00FF6FD415CFD48A0043BA91 /* Meaning.txt in Resources */,
-				00FF6FF115D0AF1E0043BA91 /* retina-ScoreBoardButton.png in Resources */,
-				00FF6FFF15D0C2A50043BA91 /* retina-ScoreBoardPopup.png in Resources */,
-				00AC8C6915DA1D0B006F58D5 /* retina-BookBlack.png in Resources */,
-				00FF700415D0C4B80043BA91 /* retina-ButtonBT.png in Resources */,
-				00FF700715D0C4B80043BA91 /* retina-ButtonBTHighLighted.png in Resources */,
-				00FF700B15D113220043BA91 /* retina-Star.png in Resources */,
-				00FF700F15D113880043BA91 /* retina-StarNone.png in Resources */,
-				00AC8C6C15DA1D0B006F58D5 /* retina-BookRed.png in Resources */,
-				00FF701915D16C050043BA91 /* retina-TimeLineCellDark.png in Resources */,
-				00AC8C6F15DA1D0B006F58D5 /* retina-BookLake.png in Resources */,
-				00FF701C15D16C050043BA91 /* retina-TimeLineCellLight.png in Resources */,
 				0044C15015D397630022154A /* VSMainViewController.xib in Resources */,
 				0044C15915D3B70F0022154A /* VSRepoListViewController.xib in Resources */,
-				00C09A9E15E209BC00AD33C3 /* retina-Unit.png in Resources */,
-				00C09AA215E209C400AD33C3 /* retina-StarSmall.png in Resources */,
-				006B4CD815E3583200711C64 /* retina-infoButton.png in Resources */,
 				006B4CE615E3F3B100711C64 /* Menu@2x.png in Resources */,
+				00FF1B1115E407AC005B9E51 /* SeparatorDots@2x.png in Resources */,
+				000E585515E40C9900B7AB04 /* back-button@2x.png in Resources */,
+				000E585815E40C9900B7AB04 /* BookBlack@2x.png in Resources */,
+				000E585B15E40C9900B7AB04 /* BookLake@2x.png in Resources */,
+				000E585E15E40C9900B7AB04 /* BookRed@2x.png in Resources */,
+				000E586115E40C9900B7AB04 /* ButtonBT@2x.png in Resources */,
+				000E586415E40C9900B7AB04 /* ButtonBTHighLighted@2x.png in Resources */,
+				000E586715E40C9900B7AB04 /* CellAccessory@2x.png in Resources */,
+				000E586A15E40C9900B7AB04 /* CellBG@2x.png in Resources */,
+				000E586D15E40C9900B7AB04 /* CellClear@2x.png in Resources */,
+				000E587015E40C9900B7AB04 /* CellLine@2x.png in Resources */,
+				000E587315E40C9900B7AB04 /* CellSummary@2x.png in Resources */,
+				000E587615E40C9900B7AB04 /* DetailsBG@2x.png in Resources */,
+				000E587915E40C9900B7AB04 /* DetailsHeader@2x.png in Resources */,
+				000E587C15E40C9900B7AB04 /* infoButton@2x.png in Resources */,
+				000E587F15E40C9900B7AB04 /* InkBody@2x.png in Resources */,
+				000E588215E40C9900B7AB04 /* InkFooter@2x.png in Resources */,
+				000E588515E40C9900B7AB04 /* InkHeader@2x.png in Resources */,
+				000E588815E40C9900B7AB04 /* InkNeck@2x.png in Resources */,
+				000E588B15E40C9900B7AB04 /* ListBG@2x.png in Resources */,
+				000E588E15E40C9900B7AB04 /* Menu@2x.png in Resources */,
+				000E589115E40C9900B7AB04 /* NavBackButton@2x.png in Resources */,
+				000E589415E40C9900B7AB04 /* Navigation@2x.png in Resources */,
+				000E589715E40C9900B7AB04 /* Next@2x.png in Resources */,
+				000E589A15E40C9900B7AB04 /* PenBG@2x.png in Resources */,
+				000E589D15E40C9900B7AB04 /* PenFG@2x.png in Resources */,
+				000E58A015E40C9900B7AB04 /* ScoreBoardButton@2x.png in Resources */,
+				000E58A315E40C9900B7AB04 /* ScoreBoardPopup@2x.png in Resources */,
+				000E58A615E40C9900B7AB04 /* SeparatorDots@2x.png in Resources */,
+				000E58A915E40C9900B7AB04 /* SeparatorLine@2x.png in Resources */,
+				000E58AC15E40C9900B7AB04 /* Star@2x.png in Resources */,
+				000E58AF15E40C9900B7AB04 /* StarNone@2x.png in Resources */,
+				000E58B215E40C9900B7AB04 /* StarSmall@2x.png in Resources */,
+				000E58B515E40C9900B7AB04 /* TapeBody@2x.png in Resources */,
+				000E58B815E40C9900B7AB04 /* TapeHead@2x.png in Resources */,
+				000E58BB15E40C9900B7AB04 /* TapeTail@2x.png in Resources */,
+				000E58BE15E40C9900B7AB04 /* TimeLineCellDark@2x.png in Resources */,
+				000E58C115E40C9900B7AB04 /* TimeLineCellLight@2x.png in Resources */,
+				000E58C415E40C9900B7AB04 /* Unit@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -51,6 +51,11 @@
         self.notRememberWellLabel.shadowOffset = CGSizeMake(0, 1);
         self.notRememberWellLabel.shadowColor = [UIColor colorWithWhite:1 alpha:0.4];
 
+        UIImage *separator = [VSUtils fetchImg:@"SeparatorLine"];
+        self.backgroundImage = [[UIImageView alloc] initWithImage:separator];
+        self.backgroundImage.frame = CGRectMake(40, 48, 240, 3);
+        [self.contentView addSubview:self.backgroundImage];
+        
         self.detailImage = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"CellAccessory"]];
         CGRect frame = self.detailImage.frame;
         frame.origin.x = 275;
@@ -68,10 +73,6 @@
 - (void)initWithList:(VSList *)theList andRow:(int)row
 {
     self.list = theList;
-    if (self.backgroundImage != nil) {
-        [self.backgroundImage removeFromSuperview];
-        self.backgroundImage = nil;
-    }
     self.dateLabel.text = self.list.name;
     self.reciteLabel.text = [NSString stringWithFormat:@"背诵%d个单词", [self.list.listVocabularies count]];
     NSString *formattedNumberString = [numberFormatter stringFromNumber:[NSNumber numberWithDouble:[self.list notWellRate]]];
