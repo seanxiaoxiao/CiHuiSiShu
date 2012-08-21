@@ -40,7 +40,6 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-//        UIImage *backbutton = [VSUtils fetchImg:@"back-buttom.png"];
     }
     return self;
 }

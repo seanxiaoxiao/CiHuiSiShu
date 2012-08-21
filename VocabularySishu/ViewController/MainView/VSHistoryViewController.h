@@ -29,4 +29,6 @@
 
 - (void)reloadHistory;
 
+- (IBAction)toConfigurationView:(id)sender;
+
 @end

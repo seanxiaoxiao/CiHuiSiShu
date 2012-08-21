@@ -55,16 +55,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     self.title = @"词汇私塾";
-    CGRect frame= CGRectMake(0, 0, 20, 20); 
-    UIButton* configurationButton = [[UIButton alloc] initWithFrame:frame]; 
-    [configurationButton setTitle:@"设置" forState:UIControlStateNormal]; 
-    [configurationButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal]; 
-    configurationButton.titleLabel.font=[UIFont boldSystemFontOfSize:10];
-    configurationButton.titleLabel.shadowOffset = CGSizeMake(0, -1);
-    [configurationButton addTarget:self action:@selector(toConfigurationView) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem* configurationButtonItem = [[UIBarButtonItem alloc] initWithCustomView:configurationButton]; 
-    [self.navigationItem setRightBarButtonItem:configurationButtonItem];
-    
+        
     self.historyLists = [NSMutableArray arrayWithArray:[VSList lastestHistoryList]];
     [self.historyTable reloadData];
 }
@@ -203,7 +194,7 @@
 
 #pragma mark - setup 
 
-- (void)toConfigurationView
+- (IBAction)toConfigurationView:(id)sender
 {
     VSConfigurationViewController *configurationViewController = [[VSConfigurationViewController alloc] initWithNibName:@"VSConfigurationViewController" bundle:nil];
     [self.navigationController pushViewController:configurationViewController animated:YES];
