@@ -39,15 +39,15 @@
     [self.repoButton addTarget:self action:@selector(enterRepos) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.repoButton];
     
-    self.repoNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(130, 100, 80, 80)];
+    self.repoNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(128, 102, 80, 80)];
     self.repoNameLabel.numberOfLines = 0;
     self.repoNameLabel.text = [self.repo displayName];
     self.repoNameLabel.lineBreakMode = UILineBreakModeWordWrap;
-    self.repoNameLabel.font = [UIFont boldSystemFontOfSize:22];
+    self.repoNameLabel.font = [UIFont boldSystemFontOfSize:20];
     self.repoNameLabel.textColor = [self.repo repoNameColor];
     self.repoNameLabel.backgroundColor = [UIColor clearColor];
-    self.repoNameLabel.shadowColor = [UIColor blackColor];
-    self.repoNameLabel.shadowOffset = CGSizeMake(0, -2);
+    self.repoNameLabel.shadowColor = [UIColor colorWithWhite:0 alpha:0.6];
+    self.repoNameLabel.shadowOffset = CGSizeMake(0, -1);
     self.repoNameLabel.textAlignment = UITextAlignmentCenter;
     
     [self.view addSubview:self.repoNameLabel];

@@ -46,12 +46,12 @@
         self.finishProgressLabel.backgroundColor = [UIColor clearColor];
         self.finishProgressLabel.text = @"-";
 
-        self.penBG.frame = CGRectMake(0, 20, penBGImage.size.width, penBGImage.size.height);
-        self.penFG.frame = CGRectMake(0, 20, penFGImage.size.width, penFGImage.size.height);
+        self.penBG.frame = CGRectMake(-50, 20, penBGImage.size.width, penBGImage.size.height);
+        self.penFG.frame = CGRectMake(-50, 20, penFGImage.size.width, penFGImage.size.height);
         self.inkHeader.frame = CGRectMake(0, 20, inkHeadImage.size.width, inkHeadImage.size.height);
         self.inkNeck.frame = CGRectMake(inkHeadImage.size.width, 20, inkNeckImage.size.width, inkNeckImage.size.height);
         self.inkBody.frame = CGRectMake(inkNeckImage.size.width + inkHeadImage.size.width, 20, inkBodyImage.size.width, inkBodyImage.size.height);
-        self.inkFooter.frame = CGRectMake(inkNeckImage.size.width + inkHeadImage.size.width + inkBodyImage.size.width, 20, 200, inkBodyImage.size.height);
+        self.inkFooter.frame = CGRectMake(inkNeckImage.size.width + inkHeadImage.size.width + inkBodyImage.size.width, 20, 150, inkBodyImage.size.height);
         [self addSubview:self.penBG];
         [self addSubview:self.penFG];
         [self addSubview:self.inkHeader];
@@ -79,12 +79,12 @@
 
 - (void) updateProgress:(double)progress
 {
-    double margin = progress * 200;
+    double margin = progress * 150;
     [UIView animateWithDuration:0.1f delay:0.0f options:UIViewAnimationCurveLinear 
         animations:^{
             self.inkNeck.frame = CGRectMake(inkHeadImage.size.width, 20, inkNeckImage.size.width + margin, inkNeckImage.size.height);
             self.inkBody.frame = CGRectMake(inkNeckImage.size.width + inkHeadImage.size.width + margin, 20, inkBodyImage.size.width, inkBodyImage.size.height);
-            self.inkFooter.frame = CGRectMake(inkNeckImage.size.width + inkHeadImage.size.width + margin + inkBodyImage.size.width, 20, 200 - margin, inkBodyImage.size.height);
+            self.inkFooter.frame = CGRectMake(inkNeckImage.size.width + inkHeadImage.size.width + margin + inkBodyImage.size.width, 20, 150 - margin, inkBodyImage.size.height);
         }
         completion:^(BOOL finished) {
             NSString *formattedNumberString = [numberFormatter stringFromNumber:[NSNumber numberWithDouble:progress]];
