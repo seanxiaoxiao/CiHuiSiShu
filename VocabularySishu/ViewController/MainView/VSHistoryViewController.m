@@ -55,7 +55,17 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     self.title = @"词汇私塾";
-        
+    
+    UIImage* image= [VSUtils fetchImg:@"infoButton"];
+    CGRect frame = CGRectMake(0, 0, image.size.width, image.size.height);
+    UIButton* infoButton = [[UIButton alloc] initWithFrame:frame];
+    [infoButton setBackgroundImage:image forState:UIControlStateNormal];
+    [infoButton addTarget:self action:@selector(toConfigurationView:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem* infoButtonItem = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
+    [self.navigationItem setRightBarButtonItem:infoButtonItem];
+
+    
     self.historyLists = [NSMutableArray arrayWithArray:[VSList lastestHistoryList]];
     [self.historyTable reloadData];
 }
