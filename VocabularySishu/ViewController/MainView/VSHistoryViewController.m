@@ -19,6 +19,7 @@
 @synthesize historyTable;
 @synthesize tableFooterView;
 @synthesize activator;
+@synthesize loading;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,6 +32,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    loading = NO;
 
     activator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     activator.center = CGPointMake(160, 30);
@@ -116,27 +118,40 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.historyLists count];
+
+    return loading ? [self.historyLists count] + 1 : [self.historyLists count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    VSList *list = [historyLists objectAtIndex:indexPath.row];
-    NSString *CellIdentifier = @"ListCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[VSHisotryListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    if (indexPath.row != [historyLists count]) {
+        VSList *list = [historyLists objectAtIndex:indexPath.row];
+        NSString *CellIdentifier = @"ListCell";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil) {
+            cell = [[VSHisotryListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        }
+        [((VSHisotryListCell *)(cell)) initWithList:list andRow:indexPath.row];
+        return cell;
     }
-    [((VSHisotryListCell *)(cell)) initWithList:list andRow:indexPath.row];
-    return cell;
+    else {
+        NSString *CellIdentifier = @"LoadingCell";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+            [cell.contentView addSubview:self.activator];
+        }
+        return cell;
+    }
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
 	if (([scrollView contentOffset].y + scrollView.frame.size.height) == [scrollView contentSize].height && ![self.activator isAnimating]) {
-        tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 280, 60)];
-        [tableFooterView addSubview:activator];
-        self.historyTable.tableFooterView = tableFooterView;
+        self.loading = YES;
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[historyLists count] inSection:0];
+        NSArray *indexPaths = [[NSArray alloc] initWithObjects:indexPath, nil];
+        [self.historyTable insertRowsAtIndexPaths: indexPaths withRowAnimation:UITableViewRowAnimationBottom];
         [self.activator startAnimating];
         [self performSelector:@selector(stopAnimatingFooter) withObject:nil afterDelay:0.5];
 	}
@@ -144,10 +159,21 @@
 
 - (void) stopAnimatingFooter
 {
+    int indexStart = [historyLists count];
     [self.activator stopAnimating];
-    self.historyTable.tableFooterView = nil;
+    self.loading = NO;
+    [self.historyTable beginUpdates];
+    NSIndexPath *deleteIndexPath = [NSIndexPath indexPathForRow:indexStart inSection:0];
+    NSArray *deleteIndexPaths = [[NSArray alloc] initWithObjects:deleteIndexPath, nil];
+    [self.historyTable deleteRowsAtIndexPaths:deleteIndexPaths withRowAnimation:UITableViewRowAnimationBottom];
     [self addMoreList];
-    [self.historyTable reloadData];
+    int indexEnd = [historyLists count];
+    NSMutableArray *insertIndexPaths = [[NSMutableArray alloc] init];
+    for (int i = 0; i < indexEnd - indexStart; i++) {
+        [insertIndexPaths addObject:[NSIndexPath indexPathForRow:indexStart + i inSection:0]];
+    }
+    [self.historyTable insertRowsAtIndexPaths:insertIndexPaths withRowAnimation:UITableViewRowAnimationBottom];
+    [self.historyTable endUpdates];
 }
 
 - (void) addMoreList

@@ -22,6 +22,7 @@
 @property (nonatomic, retain) UIActivityIndicatorView *activator;
 @property (nonatomic, retain) NSMutableArray *historyLists;
 @property (nonatomic, strong) UITableView *historyTable;
+@property (nonatomic, assign) BOOL loading;
 
 - (IBAction)recite:(id)sender;
 

@@ -13,6 +13,7 @@
 @synthesize scoreBoardBackground;
 @synthesize retryButton;
 @synthesize nextButton;
+@synthesize backButton;
 @synthesize notWellLabel;
 @synthesize notWellRateLabel;
 @synthesize _list;
@@ -31,29 +32,6 @@
         [self addSubview:scoreBoardBackground];
         [self sendSubviewToBack:scoreBoardBackground];
         
-        UIImage *normalButtonImage = [VSUtils fetchImg:@"ButtonBT"];
-        UIImage *highlightButtonImage = [VSUtils fetchImg:@"ButtonBTHighLighted"];
-        
-        self.retryButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 125, normalButtonImage.size.width, normalButtonImage.size.height)];
-        [self.retryButton setBackgroundImage:normalButtonImage forState:UIControlStateNormal];
-        [self.retryButton setBackgroundImage:highlightButtonImage forState:UIControlStateHighlighted];
-        [self.retryButton setTitle:@"重新背诵" forState:UIControlStateNormal];
-        [self.retryButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [self.retryButton addTarget:self action:@selector(retry) forControlEvents:UIControlEventTouchUpInside];
-        self.retryButton.titleLabel.font = [UIFont boldSystemFontOfSize:15];
-        self.retryButton.titleLabel.shadowOffset = CGSizeMake(0, -1);
-        self.retryButton.titleLabel.shadowColor = [UIColor blackColor];
-        
-        self.nextButton = [[UIButton alloc] initWithFrame:CGRectMake(120, 125, normalButtonImage.size.width, normalButtonImage.size.height)];
-        [self.nextButton setBackgroundImage:normalButtonImage forState:UIControlStateNormal];
-        [self.nextButton setBackgroundImage:highlightButtonImage forState:UIControlStateHighlighted];
-        [self.nextButton setTitle:@"下个列表" forState:UIControlStateNormal];
-        [self.nextButton addTarget:self action:@selector(next) forControlEvents:UIControlEventTouchUpInside];
-        [self.nextButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        self.nextButton.titleLabel.font = [UIFont boldSystemFontOfSize:15];
-        self.nextButton.titleLabel.shadowOffset = CGSizeMake(0, -1);
-        self.nextButton.titleLabel.shadowColor = [UIColor blackColor];
-
         self.notWellLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 75, 70, 30)];
         self.notWellLabel.text = @"靠谱";
         self.notWellLabel.font = [UIFont boldSystemFontOfSize:18];
@@ -77,9 +55,6 @@
         [self addSubview:notWellLabel];
         [self addSubview:notWellRateLabel];
         
-        [self addSubview:retryButton];
-        [self addSubview:nextButton];
-        
         self.notRememberWell = 1.0;
         
         numberFormatter = [[NSNumberFormatter alloc] init];
@@ -100,12 +75,64 @@
     [[NSNotificationCenter defaultCenter] postNotification:notification];
 }
 
+- (void)backToMain
+{
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    UINavigationController *navigationController = (UINavigationController *)window.rootViewController;
+    [navigationController popToRootViewControllerAnimated:YES];
+    navigationController.navigationBar.userInteractionEnabled = YES;
+}
+
 - (void)initWithList:(VSList *)list
 {
     self._list = list;
     self.notRememberWellInList = [self._list rememberRate];
     notRememberWellStep = (1.01 - self.notRememberWellInList) / 20;
     self.notRememberWellTimer = [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(updateNotRememberWell) userInfo:nil repeats:YES];
+}
+
+- (void)showButtons
+{
+    UIImage *normalButtonImage = [VSUtils fetchImg:@"ButtonBT"];
+    UIImage *highlightButtonImage = [VSUtils fetchImg:@"ButtonBTHighLighted"];
+    
+    self.retryButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 125, normalButtonImage.size.width, normalButtonImage.size.height)];
+    [self.retryButton setBackgroundImage:normalButtonImage forState:UIControlStateNormal];
+    [self.retryButton setBackgroundImage:highlightButtonImage forState:UIControlStateHighlighted];
+    [self.retryButton setTitle:@"重新背诵" forState:UIControlStateNormal];
+    [self.retryButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.retryButton addTarget:self action:@selector(retry) forControlEvents:UIControlEventTouchUpInside];
+    self.retryButton.titleLabel.font = [UIFont boldSystemFontOfSize:15];
+    self.retryButton.titleLabel.shadowOffset = CGSizeMake(0, -1);
+    self.retryButton.titleLabel.shadowColor = [UIColor blackColor];
+    
+    [self addSubview:retryButton];
+    
+    if ([self._list isHistoryList]) {
+        self.backButton = [[UIButton alloc] initWithFrame:CGRectMake(120, 125, normalButtonImage.size.width, normalButtonImage.size.height)];
+        [self.backButton setBackgroundImage:normalButtonImage forState:UIControlStateNormal];
+        [self.backButton setBackgroundImage:highlightButtonImage forState:UIControlStateHighlighted];
+        [self.backButton setTitle:@"返回" forState:UIControlStateNormal];
+        [self.backButton addTarget:self action:@selector(backToMain) forControlEvents:UIControlEventTouchUpInside];
+        [self.backButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        self.backButton.titleLabel.font = [UIFont boldSystemFontOfSize:15];
+        self.backButton.titleLabel.shadowOffset = CGSizeMake(0, -1);
+        self.backButton.titleLabel.shadowColor = [UIColor blackColor];
+        self.backButton.titleLabel.textAlignment = UITextAlignmentCenter;
+        [self addSubview:backButton];
+    }
+    else {
+        self.nextButton = [[UIButton alloc] initWithFrame:CGRectMake(120, 125, normalButtonImage.size.width, normalButtonImage.size.height)];
+        [self.nextButton setBackgroundImage:normalButtonImage forState:UIControlStateNormal];
+        [self.nextButton setBackgroundImage:highlightButtonImage forState:UIControlStateHighlighted];
+        [self.nextButton setTitle:@"下个列表" forState:UIControlStateNormal];
+        [self.nextButton addTarget:self action:@selector(next) forControlEvents:UIControlEventTouchUpInside];
+        [self.nextButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        self.nextButton.titleLabel.font = [UIFont boldSystemFontOfSize:15];
+        self.nextButton.titleLabel.shadowOffset = CGSizeMake(0, -1);
+        self.nextButton.titleLabel.shadowColor = [UIColor blackColor];
+        [self addSubview:nextButton];
+    }
 }
 
 
@@ -150,6 +177,7 @@
             originX += noStarImage.image.size.width + 5;
             [self addSubview:noStarImage];
         }
+        [self showButtons];
     }
     NSString *formattedNumberString = [numberFormatter stringFromNumber:[NSNumber numberWithDouble:self.notRememberWell]];
     self.notWellRateLabel.text = formattedNumberString;
