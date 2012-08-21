@@ -65,12 +65,20 @@
 
 - (void)retry
 {
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    UINavigationController *navigationController = (UINavigationController *)window.rootViewController;
+    navigationController.navigationBar.userInteractionEnabled = YES;
+
     NSNotification *notification = [NSNotification notificationWithName:RESTART_LIST object:nil userInfo:nil];
     [[NSNotificationCenter defaultCenter] postNotification:notification];
 }
 
 - (void)next
 {
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    UINavigationController *navigationController = (UINavigationController *)window.rootViewController;
+    navigationController.navigationBar.userInteractionEnabled = YES;
+
     NSNotification *notification = [NSNotification notificationWithName:NEXT_LIST object:nil userInfo:nil];
     [[NSNotificationCenter defaultCenter] postNotification:notification];
 }

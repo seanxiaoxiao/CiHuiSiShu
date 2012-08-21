@@ -102,7 +102,7 @@
     backButton.titleLabel.shadowOffset = CGSizeMake(0, -1);
     [backButton addTarget:self action:@selector(backToMain) forControlEvents:UIControlEventTouchUpInside];
     
-    UIBarButtonItem* backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton]; 
+    UIBarButtonItem* backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
     [self.navigationItem setLeftBarButtonItem:backButtonItem];
     self.alertDelegate = [[VSAlertDelegate alloc] init];
     self.alertDelegate.currentList = currentList;
