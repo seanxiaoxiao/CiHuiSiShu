@@ -78,21 +78,7 @@
     self.notRememberWellLabel.text = [NSString stringWithFormat:@"%@不靠谱", formattedNumberString];
 }
 
-- (void)addCellShadow
-{
-    self.layer.shadowOffset = CGSizeMake(0, 3);
-    self.layer.shadowColor = [[UIColor blackColor] CGColor];
-    self.layer.shadowRadius = 1.5;
-    self.layer.shadowOpacity = .4;
-}
 
-- (void)removeCellShadow
-{
-    self.layer.shadowOffset = CGSizeMake(0, 0);
-    self.layer.shadowColor = [[UIColor clearColor] CGColor];
-    self.layer.shadowRadius = 0;
-    self.layer.shadowOpacity = 1;
-}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {

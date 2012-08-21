@@ -23,8 +23,4 @@
 
 - (void)initWithList:(VSList *)theList andRow:(int)row;
 
-- (void)addCellShadow;
-
-- (void)removeCellShadow;
-
 @end

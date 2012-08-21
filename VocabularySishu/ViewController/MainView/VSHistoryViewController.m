@@ -86,15 +86,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    if (indexPath.row < 2) {
-//        if (indexPath.row == 0) {
-//            
-//        }
-//        else {
-//            [self toRepoSelect];
-//        }
-//    }
-//    else {
     VSVocabularyListViewController *vocabularyListViewController = [VSVocabularyListViewController alloc];
     VSList *selectedList = [historyLists objectAtIndex:indexPath.row];
     vocabularyListViewController.currentList = selectedList;
@@ -127,13 +118,6 @@
         cell = [[VSHisotryListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     [((VSHisotryListCell *)(cell)) initWithList:list andRow:indexPath.row];
-    BOOL lastCell = indexPath.row == [self.historyLists count] - 1;
-    if (lastCell) {
-        [((VSHisotryListCell *)(cell)) addCellShadow];
-    }
-    else {
-        [((VSHisotryListCell *)(cell)) removeCellShadow];
-    }
     return cell;
 }
 
