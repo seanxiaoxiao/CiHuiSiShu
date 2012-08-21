@@ -52,13 +52,16 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    if (CONTACT_SECTION == section) {
+    if (GUIDE_SECTION == section) {
+        return 1;
+    }
+    else if (CONTACT_SECTION == section) {
         return [contactContents count];
     }
     return 0;
@@ -66,17 +69,19 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (CONTACT_SECTION == indexPath.section) {
-        NSString *cellIdentifier = @"Contact";
-        UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-            cell.textLabel.textAlignment = UITextAlignmentCenter;
-            cell.textLabel.text = [contactContents objectAtIndex:indexPath.row];
-        }
-        return cell;
+    NSString *cellIdentifier = @"Contact";
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell.textLabel.textAlignment = UITextAlignmentCenter;
     }
-    return nil;
+    if (GUIDE_SECTION == indexPath.section) {
+        cell.textLabel.text = @"使用向导";
+    }
+    else if (CONTACT_SECTION == indexPath.section) {
+        cell.textLabel.text = [contactContents objectAtIndex:indexPath.row];
+    }
+    return cell;
 }
 
 /*
@@ -122,7 +127,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == CONTACT_SECTION) {
+    if (indexPath.section == GUIDE_SECTION) {
+        if (indexPath.row == GUIDE) {
+            
+        }
+    }
+    else if (indexPath.section == CONTACT_SECTION) {
         if (indexPath.row == RATEUS) {
             [self voteOnAppStore];
         }
@@ -135,7 +145,10 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    if (section == CONTACT_SECTION) {
+    if (section == GUIDE_SECTION) {
+        return @"用户指南";
+    }
+    else if (section == CONTACT_SECTION) {
         return @"联系我们";
     }
     return @"";

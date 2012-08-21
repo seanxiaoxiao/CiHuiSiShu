@@ -12,7 +12,9 @@
 #import "VSList.h"
 #import "VSContext.h"
 
-#define CONTACT_SECTION 0
+#define CONTACT_SECTION 1
+#define GUIDE_SECTION 0
+#define GUIDE 0
 #define RATEUS 0
 #define FEADBACK 1
 #define EMAIL_SUPPORTING @"seanxiaoxiao@hotmail.com"

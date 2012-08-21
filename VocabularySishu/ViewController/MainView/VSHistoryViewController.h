@@ -27,6 +27,8 @@
 
 - (IBAction)initData:(id)sender;
 
+- (IBAction)toRepoSelect:(id)sender;
+
 - (void)reloadHistory;
 
 - (IBAction)toConfigurationView:(id)sender;

@@ -122,6 +122,15 @@
 		006B4CD715E3583200711C64 /* retina-infoButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 006B4CD615E3583200711C64 /* retina-infoButton.png */; };
 		006B4CD815E3583200711C64 /* retina-infoButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 006B4CD615E3583200711C64 /* retina-infoButton.png */; };
 		006B4CD915E3583200711C64 /* retina-infoButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 006B4CD615E3583200711C64 /* retina-infoButton.png */; };
+		006B4CDE15E3638C00711C64 /* VSGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 006B4CDC15E3638B00711C64 /* VSGuideViewController.m */; };
+		006B4CDF15E3638C00711C64 /* VSGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 006B4CDC15E3638B00711C64 /* VSGuideViewController.m */; };
+		006B4CE015E3638C00711C64 /* VSGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 006B4CDC15E3638B00711C64 /* VSGuideViewController.m */; };
+		006B4CE115E3638C00711C64 /* VSGuideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006B4CDD15E3638B00711C64 /* VSGuideViewController.xib */; };
+		006B4CE215E3638C00711C64 /* VSGuideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006B4CDD15E3638B00711C64 /* VSGuideViewController.xib */; };
+		006B4CE315E3638C00711C64 /* VSGuideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006B4CDD15E3638B00711C64 /* VSGuideViewController.xib */; };
+		006B4CE515E3F3B100711C64 /* Menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 006B4CE415E3F3B100711C64 /* Menu@2x.png */; };
+		006B4CE615E3F3B100711C64 /* Menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 006B4CE415E3F3B100711C64 /* Menu@2x.png */; };
+		006B4CE715E3F3B100711C64 /* Menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 006B4CE415E3F3B100711C64 /* Menu@2x.png */; };
 		00701E301553CBCE00D30018 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00701E2F1553CBCE00D30018 /* UIKit.framework */; };
 		00701E321553CBCE00D30018 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00701E311553CBCE00D30018 /* Foundation.framework */; };
 		00701E341553CBCE00D30018 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00701E331553CBCE00D30018 /* CoreGraphics.framework */; };
@@ -369,6 +378,10 @@
 		005F7E9C15CD84CD00932B93 /* retina-DetailsBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-DetailsBG.png"; path = "Resources/Img/retina-DetailsBG.png"; sourceTree = "<group>"; };
 		005F7E9F15CD959100932B93 /* retina-CellAccessory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-CellAccessory.png"; path = "Resources/Img/retina-CellAccessory.png"; sourceTree = "<group>"; };
 		006B4CD615E3583200711C64 /* retina-infoButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retina-infoButton.png"; path = "Resources/Img/retina-infoButton.png"; sourceTree = "<group>"; };
+		006B4CDB15E3638B00711C64 /* VSGuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSGuideViewController.h; path = ViewController/ConfigurationView/VSGuideViewController.h; sourceTree = "<group>"; };
+		006B4CDC15E3638B00711C64 /* VSGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSGuideViewController.m; path = ViewController/ConfigurationView/VSGuideViewController.m; sourceTree = "<group>"; };
+		006B4CDD15E3638B00711C64 /* VSGuideViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSGuideViewController.xib; path = ViewController/ConfigurationView/VSGuideViewController.xib; sourceTree = "<group>"; };
+		006B4CE415E3F3B100711C64 /* Menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Menu@2x.png"; path = "Resources/Img/Menu@2x.png"; sourceTree = "<group>"; };
 		00701E2B1553CBCE00D30018 /* VocabularySishu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VocabularySishu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00701E2F1553CBCE00D30018 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		00701E311553CBCE00D30018 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -832,6 +845,9 @@
 				00AE80EE158B1318000CE7EA /* VSConfigurationViewController.h */,
 				00AE80EF158B1318000CE7EA /* VSConfigurationViewController.m */,
 				00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */,
+				006B4CDB15E3638B00711C64 /* VSGuideViewController.h */,
+				006B4CDC15E3638B00711C64 /* VSGuideViewController.m */,
+				006B4CDD15E3638B00711C64 /* VSGuideViewController.xib */,
 			);
 			name = ConfigurationView;
 			sourceTree = "<group>";
@@ -839,6 +855,7 @@
 		00B5A8BE1566886E00D20EB6 /* Img */ = {
 			isa = PBXGroup;
 			children = (
+				006B4CE415E3F3B100711C64 /* Menu@2x.png */,
 				00AC8C6515DA1D0B006F58D5 /* retina-BookBlack.png */,
 				00C09AA015E209C400AD33C3 /* retina-StarSmall.png */,
 				00AC8C6615DA1D0B006F58D5 /* retina-BookRed.png */,
@@ -1086,6 +1103,8 @@
 				00C09A9F15E209BC00AD33C3 /* retina-Unit.png in Resources */,
 				00C09AA315E209C400AD33C3 /* retina-StarSmall.png in Resources */,
 				006B4CD915E3583200711C64 /* retina-infoButton.png in Resources */,
+				006B4CE315E3638C00711C64 /* VSGuideViewController.xib in Resources */,
+				006B4CE715E3F3B100711C64 /* Menu@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1149,6 +1168,8 @@
 				00C09A9D15E209BC00AD33C3 /* retina-Unit.png in Resources */,
 				00C09AA115E209C400AD33C3 /* retina-StarSmall.png in Resources */,
 				006B4CD715E3583200711C64 /* retina-infoButton.png in Resources */,
+				006B4CE115E3638C00711C64 /* VSGuideViewController.xib in Resources */,
+				006B4CE515E3F3B100711C64 /* Menu@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1171,6 +1192,7 @@
 				00BDE58415CF9B9400BC205C /* VSVocabularyListViewController.xib in Resources */,
 				00BDE58515CF9B9400BC205C /* Meaning.html in Resources */,
 				00BDE58615CF9B9400BC205C /* retina-Navigation.png in Resources */,
+				006B4CE215E3638C00711C64 /* VSGuideViewController.xib in Resources */,
 				00BDE58815CF9B9400BC205C /* retina-back-button.png in Resources */,
 				00BDE58915CF9B9400BC205C /* VSConfigurationViewController.xib in Resources */,
 				00BDE58A15CF9B9400BC205C /* retina-InkNeck.png in Resources */,
@@ -1218,6 +1240,7 @@
 				00C09A9E15E209BC00AD33C3 /* retina-Unit.png in Resources */,
 				00C09AA215E209C400AD33C3 /* retina-StarSmall.png in Resources */,
 				006B4CD815E3583200711C64 /* retina-infoButton.png in Resources */,
+				006B4CE615E3F3B100711C64 /* Menu@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1322,6 +1345,7 @@
 				0044C15715D3B70F0022154A /* VSRepoListViewController.m in Sources */,
 				00C4FE3D15D3FAF6000B9849 /* VSSingleListView.m in Sources */,
 				00E83B3215DAC42F005BE3AF /* VSClipView.m in Sources */,
+				006B4CE015E3638C00711C64 /* VSGuideViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1368,6 +1392,7 @@
 				0044C15515D3B70F0022154A /* VSRepoListViewController.m in Sources */,
 				00C4FE3B15D3FAF6000B9849 /* VSSingleListView.m in Sources */,
 				00E83B3015DAC42F005BE3AF /* VSClipView.m in Sources */,
+				006B4CDE15E3638C00711C64 /* VSGuideViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1424,6 +1449,7 @@
 				0044C15615D3B70F0022154A /* VSRepoListViewController.m in Sources */,
 				00C4FE3C15D3FAF6000B9849 /* VSSingleListView.m in Sources */,
 				00E83B3115DAC42F005BE3AF /* VSClipView.m in Sources */,
+				006B4CDF15E3638C00711C64 /* VSGuideViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

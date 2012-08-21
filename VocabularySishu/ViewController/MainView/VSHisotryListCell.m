@@ -72,16 +72,6 @@
         [self.backgroundImage removeFromSuperview];
         self.backgroundImage = nil;
     }
-    if (row % 2 == 0) {
-        self.backgroundImage = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"TimeLineCellLight"]];
-        [self.contentView addSubview:self.backgroundImage];
-        [self.contentView sendSubviewToBack:self.backgroundImage];
-    }
-    else {
-        self.backgroundImage = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"TimeLineCellDark"]];
-        [self.contentView addSubview:self.backgroundImage];
-        [self.contentView sendSubviewToBack:self.backgroundImage];
-    }
     self.dateLabel.text = self.list.name;
     self.reciteLabel.text = [NSString stringWithFormat:@"背诵%d个单词", [self.list.listVocabularies count]];
     NSString *formattedNumberString = [numberFormatter stringFromNumber:[NSNumber numberWithDouble:[self.list notWellRate]]];

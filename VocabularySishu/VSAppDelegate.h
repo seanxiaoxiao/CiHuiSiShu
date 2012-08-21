@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "VSUtils.h"
 #import "VSMainViewController.h"
+#import "VSGuideViewController.h"
 #import "VSVocabularyListViewController.h"
 
 @interface VSAppDelegate : UIResponder <UIApplicationDelegate>
@@ -19,6 +20,7 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (nonatomic, strong) VSHistoryViewController *viewController;
+@property (nonatomic, strong) VSGuideViewController *guideViewController;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;

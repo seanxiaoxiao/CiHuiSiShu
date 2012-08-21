@@ -17,22 +17,34 @@
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
 @synthesize viewController;
+@synthesize guideViewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [Crashlytics startWithAPIKey:@"89e2516487b822e3169f0a4c5a8d24c6aebea788"];
     [VSUtils copySQLite];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.viewController = [[VSHistoryViewController alloc] initWithNibName:@"VSHistoryViewController" bundle:nil];
-    UINavigationController *navigationController = [self customizedNavigationController];
+    
+    if ( ! [[NSUserDefaults standardUserDefaults] boolForKey:@"initialized"] ) {
+        
+        guideViewController = [[VSGuideViewController alloc] initWithNibName:@"VSGuideViewController" bundle:nil];
+        [self.window addSubview:guideViewController.view];
+        [self.window makeKeyAndVisible];
 
-    self.window.backgroundColor = [UIColor whiteColor];
-    self.window.rootViewController = navigationController;
-    [self.window makeKeyAndVisible];
-    UILocalNotification * reviewNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
-    [self handleNotification:application withNotification:reviewNotification];
-    return YES;
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"initialized"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        return YES;
+    }
+    else {
+        // Override point for customization after application launch.
+        self.viewController = [[VSHistoryViewController alloc] initWithNibName:@"VSHistoryViewController" bundle:nil];
+        UINavigationController *navigationController = [self customizedNavigationController];
+
+        self.window.backgroundColor = [UIColor whiteColor];
+        self.window.rootViewController = navigationController;
+        [self.window makeKeyAndVisible];
+        return YES;
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
