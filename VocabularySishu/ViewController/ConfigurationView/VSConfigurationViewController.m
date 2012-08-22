@@ -41,13 +41,15 @@
     [backButton addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem* backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
     [self.navigationItem setLeftBarButtonItem:backButtonItem];
+    NSDictionary* infoDict = [[NSBundle mainBundle] infoDictionary];
+    NSString* versionNum = [infoDict objectForKey:@"CFBundleVersion"];
     self.infoLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 260, 130)];
     self.infoLabel.textAlignment = UITextAlignmentCenter;
     self.infoLabel.font = [UIFont systemFontOfSize:12];
     self.infoLabel.textColor = [UIColor colorWithWhite:0 alpha:0.7];
     self.infoLabel.backgroundColor = [UIColor clearColor];
     self.infoLabel.numberOfLines = 0;
-    self.infoLabel.text = @"词汇私塾\nVersion 1.0.0\nXiao Xiao -- Program\nSu Shaowen -- Design\n©2012 GeFo Studio";
+    self.infoLabel.text = [NSString stringWithFormat:@"词汇私塾\nVersion %@\nXiao Xiao -- Program\nSu Shaowen -- Design\n©2012 GeFo Studio", versionNum];
     
     self.tableView.tableFooterView = self.infoLabel;
 }
