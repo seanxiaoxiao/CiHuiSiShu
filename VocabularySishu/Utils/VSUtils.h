@@ -10,6 +10,7 @@
 #import "VSContext.h"
 #import "VSVocabulary.h"
 #import "VSList.h"
+#import "VSGuideViewController.h"
 
 @class VSVocabulary;
 
@@ -42,5 +43,7 @@
 + (void)toGivenList:(VSList *)list;
 
 + (void)reloadCurrentList:(VSList *)currentList;
+
++ (void)showGuidPage;
 
 @end

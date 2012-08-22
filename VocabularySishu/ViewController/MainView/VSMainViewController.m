@@ -31,10 +31,19 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
+    self.title = @"选择词库";
+
     self.firstEnter = YES;
     self.controllers = [[NSMutableArray alloc] init];
 
+    UIImage* backImage= [VSUtils fetchImg:@"NavBackButton"];
+    CGRect frame = CGRectMake(0, 0, backImage.size.width, backImage.size.height);
+    UIButton* backButton = [[UIButton alloc] initWithFrame:frame];
+    [backButton setBackgroundImage:backImage forState:UIControlStateNormal];
+    [backButton addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem* backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+    [self.navigationItem setLeftBarButtonItem:backButtonItem];
+    
     UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
     [backgroundImageView setFrame:self.view.frame];
     [self.view addSubview:backgroundImageView];
@@ -82,10 +91,9 @@
 
 }
 
-- (void)viewWillAppear:(BOOL)animated
+- (void)goBack
 {
-    [super viewWillAppear:animated];
-    self.title = @"选择词库";
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)viewDidUnload

@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "VSUtils.h"
 #import "VSMainViewController.h"
-#import "VSGuideViewController.h"
 #import "VSVocabularyListViewController.h"
 
 @interface VSAppDelegate : UIResponder <UIApplicationDelegate>

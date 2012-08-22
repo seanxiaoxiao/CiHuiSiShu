@@ -10,4 +10,6 @@
 
 @interface VSGuideViewController : UIViewController
 
+-(IBAction)exitGuide:(id)sender;
+
 @end
