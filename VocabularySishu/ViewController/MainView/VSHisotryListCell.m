@@ -31,7 +31,7 @@
         self.dateLabel.backgroundColor = [UIColor clearColor];
         self.dateLabel.textAlignment = UITextAlignmentLeft;
         self.dateLabel.textColor = [UIColor colorWithWhite:0 alpha:0.4];
-        self.dateLabel.font = [UIFont boldSystemFontOfSize:20];
+        self.dateLabel.font = [UIFont fontWithName:@"TrebuchetMS" size:20];
         self.dateLabel.shadowOffset = CGSizeMake(0, 1);
         self.dateLabel.shadowColor = [UIColor colorWithWhite:1 alpha:0.4];
     
@@ -39,14 +39,14 @@
         self.reciteLabel.textColor = [UIColor colorWithHue:220.0 / 360.0 saturation:0.2 brightness:0.5 alpha:1];
         self.reciteLabel.backgroundColor = [UIColor clearColor];
         self.reciteLabel.textAlignment = UITextAlignmentRight;
-        self.reciteLabel.font = [UIFont boldSystemFontOfSize:14];
+        self.reciteLabel.font = [UIFont fontWithName:@"TrebuchetMS" size:14];
         self.reciteLabel.shadowOffset = CGSizeMake(0, 1);
         self.reciteLabel.shadowColor = [UIColor colorWithWhite:1 alpha:0.4];
 
         self.notRememberWellLabel = [[UILabel alloc] initWithFrame:CGRectMake(101, 28, 160, 24)];
         self.notRememberWellLabel.backgroundColor = [UIColor clearColor];
         self.notRememberWellLabel.textAlignment = UITextAlignmentRight;
-        self.notRememberWellLabel.font = [UIFont boldSystemFontOfSize:14];
+        self.notRememberWellLabel.font = [UIFont fontWithName:@"TrebuchetMS" size:14];
         self.notRememberWellLabel.textColor = [UIColor colorWithHue:0 saturation:0.2 brightness:0.6 alpha:1];
         self.notRememberWellLabel.shadowOffset = CGSizeMake(0, 1);
         self.notRememberWellLabel.shadowColor = [UIColor colorWithWhite:1 alpha:0.4];
