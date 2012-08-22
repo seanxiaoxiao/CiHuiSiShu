@@ -35,6 +35,12 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [[self navigationController] setNavigationBarHidden:NO animated:NO];
+}
+
 - (void)viewDidUnload
 {
     [super viewDidUnload];
@@ -129,7 +135,7 @@
 {
     if (indexPath.section == GUIDE_SECTION) {
         if (indexPath.row == GUIDE) {
-            
+            [VSUtils showGuidPage];
         }
     }
     else if (indexPath.section == CONTACT_SECTION) {

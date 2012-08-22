@@ -196,4 +196,12 @@
     }
 }
 
++ (void)showGuidPage
+{
+    VSGuideViewController *guideViewController = [[VSGuideViewController alloc] initWithNibName:@"VSGuideViewController" bundle:nil];
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    UINavigationController *navigationController = (UINavigationController *)window.rootViewController;
+    [navigationController pushViewController:guideViewController animated:NO];
+}
+
 @end

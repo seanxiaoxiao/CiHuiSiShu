@@ -56,6 +56,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [[self navigationController] setNavigationBarHidden:NO animated:NO];
     self.title = @"词汇私塾";
     
     UIImage* image= [VSUtils fetchImg:@"infoButton"];

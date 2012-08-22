@@ -25,26 +25,20 @@
     [VSUtils copySQLite];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    if ( ! [[NSUserDefaults standardUserDefaults] boolForKey:@"initialized"] ) {
-        
-        guideViewController = [[VSGuideViewController alloc] initWithNibName:@"VSGuideViewController" bundle:nil];
-        [self.window addSubview:guideViewController.view];
-        [self.window makeKeyAndVisible];
+    // Override point for customization after application launch.
+    self.viewController = [[VSHistoryViewController alloc] initWithNibName:@"VSHistoryViewController" bundle:nil];
+    UINavigationController *navigationController = [self customizedNavigationController];
 
+    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = navigationController;
+    [self.window makeKeyAndVisible];
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"initialized"] ) {
+        [VSUtils showGuidPage];
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"initialized"];
         [[NSUserDefaults standardUserDefaults] synchronize];
         return YES;
     }
-    else {
-        // Override point for customization after application launch.
-        self.viewController = [[VSHistoryViewController alloc] initWithNibName:@"VSHistoryViewController" bundle:nil];
-        UINavigationController *navigationController = [self customizedNavigationController];
-
-        self.window.backgroundColor = [UIColor whiteColor];
-        self.window.rootViewController = navigationController;
-        [self.window makeKeyAndVisible];
-        return YES;
-    }
+    return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
