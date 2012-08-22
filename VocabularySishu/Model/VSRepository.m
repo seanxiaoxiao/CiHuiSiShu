@@ -94,7 +94,7 @@
 
 - (UIColor *)repoNameColor
 {
-    return [UIColor colorWithHue:45.0/360.0 saturation:0.5 brightness:1 alpha:0.8];
+    return [UIColor colorWithHue:50.0/360.0 saturation:0.6 brightness:1 alpha:0.9];
 }
 
 - (NSString *)displayName
