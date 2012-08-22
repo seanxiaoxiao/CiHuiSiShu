@@ -382,7 +382,7 @@
 		000E585115E40C9900B7AB04 /* TimeLineCellDark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TimeLineCellDark@2x.png"; path = "Resources/Img/TimeLineCellDark@2x.png"; sourceTree = "<group>"; };
 		000E585215E40C9900B7AB04 /* TimeLineCellLight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TimeLineCellLight@2x.png"; path = "Resources/Img/TimeLineCellLight@2x.png"; sourceTree = "<group>"; };
 		000E585315E40C9900B7AB04 /* Unit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Unit@2x.png"; path = "Resources/Img/Unit@2x.png"; sourceTree = "<group>"; };
-		00201E2F15CFBAD30089B8FA /* VocabularySishu copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VocabularySishu copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00201E2F15CFBAD30089B8FA /* VocabularySishu GRE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VocabularySishu GRE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00201E3215CFBF9C0089B8FA /* VocabularySishu.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = VocabularySishu.sqlite; path = Resources/Data/TOEFL/VocabularySishu.sqlite; sourceTree = "<group>"; };
 		00201E3515CFC3560089B8FA /* Vocabularies.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Vocabularies.txt; path = Resources/Data/GRE/Vocabularies.txt; sourceTree = "<group>"; };
 		00201E3615CFC3560089B8FA /* Lists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Lists.txt; path = Resources/Data/GRE/Lists.txt; sourceTree = "<group>"; };
@@ -479,7 +479,7 @@
 		00AE80EE158B1318000CE7EA /* VSConfigurationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSConfigurationViewController.h; path = ViewController/ConfigurationView/VSConfigurationViewController.h; sourceTree = "<group>"; };
 		00AE80EF158B1318000CE7EA /* VSConfigurationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSConfigurationViewController.m; path = ViewController/ConfigurationView/VSConfigurationViewController.m; sourceTree = "<group>"; };
 		00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSConfigurationViewController.xib; path = ViewController/ConfigurationView/VSConfigurationViewController.xib; sourceTree = "<group>"; };
-		00BDE5A815CF9B9400BC205C /* VocabularySishu copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VocabularySishu copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00BDE5A815CF9B9400BC205C /* VocabularySishu TOEFL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VocabularySishu TOEFL.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00C09AA415E2B05800AD33C3 /* VocabularySishu 1.1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "VocabularySishu 1.1.xcdatamodel"; sourceTree = "<group>"; };
 		00C42FE115BAFBC6006FF95E /* VSMeaningView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSMeaningView.h; path = ViewController/VocabularyListView/VSMeaningView.h; sourceTree = "<group>"; };
 		00C42FE215BAFBC6006FF95E /* VSMeaningView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSMeaningView.m; path = ViewController/VocabularyListView/VSMeaningView.m; sourceTree = "<group>"; };
@@ -646,8 +646,8 @@
 			children = (
 				00701E2B1553CBCE00D30018 /* VocabularySishu.app */,
 				00701E4B1553CBCE00D30018 /* VocabularySishuTests.octest */,
-				00BDE5A815CF9B9400BC205C /* VocabularySishu copy.app */,
-				00201E2F15CFBAD30089B8FA /* VocabularySishu copy.app */,
+				00BDE5A815CF9B9400BC205C /* VocabularySishu TOEFL.app */,
+				00201E2F15CFBAD30089B8FA /* VocabularySishu GRE.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -953,7 +953,7 @@
 			);
 			name = "VocabularySishu GRE";
 			productName = VocabularySishu;
-			productReference = 00201E2F15CFBAD30089B8FA /* VocabularySishu copy.app */;
+			productReference = 00201E2F15CFBAD30089B8FA /* VocabularySishu GRE.app */;
 			productType = "com.apple.product-type.application";
 		};
 		00701E2A1553CBCE00D30018 /* VocabularySishu */ = {
@@ -1008,7 +1008,7 @@
 			);
 			name = "VocabularySishu TOEFL";
 			productName = VocabularySishu;
-			productReference = 00BDE5A815CF9B9400BC205C /* VocabularySishu copy.app */;
+			productReference = 00BDE5A815CF9B9400BC205C /* VocabularySishu TOEFL.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1498,7 +1498,7 @@
 				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
 				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
-				PRODUCT_NAME = "VocabularySishu copy";
+				PRODUCT_NAME = "VocabularySishu GRE";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
@@ -1521,7 +1521,7 @@
 				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
 				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
-				PRODUCT_NAME = "VocabularySishu copy";
+				PRODUCT_NAME = "VocabularySishu GRE";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
@@ -1678,7 +1678,7 @@
 				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				New_Setting = "";
-				PRODUCT_NAME = "VocabularySishu copy";
+				PRODUCT_NAME = "VocabularySishu TOEFL";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
@@ -1702,7 +1702,7 @@
 				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				New_Setting = "";
-				PRODUCT_NAME = "VocabularySishu copy";
+				PRODUCT_NAME = "VocabularySishu TOEFL";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "56416541-0D03-44A4-867C-B5CD2311C6F9";
 				SDKROOT = iphoneos;

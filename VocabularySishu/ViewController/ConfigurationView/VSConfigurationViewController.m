@@ -195,7 +195,10 @@
         mailController.mailComposeDelegate = self;
         [ mailController setSubject: [ NSString stringWithFormat: @"Feedback - 词汇私塾 "]];// BUNDLE_DISPLAY_NAME, BUNDLE_VERSION, BUNDLE_BUILD_NUMBER ] ];
         [ mailController setToRecipients: [ NSArray arrayWithObject: EMAIL_SUPPORTING ] ];
-        [ mailController setMessageBody: [ NSString stringWithFormat: @"\n\n\n\n\n\nDevice: %@\nSystem: %@\nMTS: %@\nWiFi:\nInternet:\n", [ device model ], [ device systemVersion ], IS_MULTITASKING_SUPPORTED ? @"Yes" : @"No" ] isHTML: NO ];
+        NSDictionary* infoDict = [[NSBundle mainBundle] infoDictionary];
+        NSString* versionNum = [infoDict objectForKey:@"CFBundleVersion"];
+        NSString *appName = [infoDict objectForKey:@"CFBundleName"];
+        [ mailController setMessageBody: [ NSString stringWithFormat: @"\n\n\n\n\n\nApp: %@\nVersion :%@\nDevice: %@\nSystem: %@\nMTS: %@\nWiFi:\nInternet:\n",appName, versionNum, [ device model ], [ device systemVersion ], IS_MULTITASKING_SUPPORTED ? @"Yes" : @"No" ] isHTML: NO ];
         [ controller presentModalViewController: mailController animated: YES ];
     } else {
         [[[UIAlertView alloc] initWithTitle: @"意外" message: @"邮件没有正确配置" delegate: nil cancelButtonTitle: @"嗯，知道了" otherButtonTitles: nil] show];
