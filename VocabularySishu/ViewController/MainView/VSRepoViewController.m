@@ -53,16 +53,17 @@
     [self.view addSubview:self.repoNameLabel];
     [self.view bringSubviewToFront:self.repoNameLabel];
 
-    self.infoLabel = [[UILabel alloc] initWithFrame:CGRectMake(95, 255, 130, 40)];
+    self.infoLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 130, 40)];
     self.infoLabel.text = [NSString stringWithFormat:@"共%@个单词\n%d个单词列表", self.repo.wordsTotal, [self.repo.lists count]];
     self.infoLabel.font = [UIFont boldSystemFontOfSize:14];
     self.infoLabel.numberOfLines = 0;
     self.infoLabel.backgroundColor = [UIColor clearColor];
-    self.infoLabel.textColor = [UIColor colorWithHue:45.0/360.0 saturation:0.2 brightness:1 alpha:0.9];
+    self.infoLabel.textColor = [UIColor colorWithHue:48.0/360.0 saturation:0.4 brightness:1 alpha:0.9];
     self.infoLabel.shadowColor = [UIColor colorWithWhite:0 alpha:0.4];
     self.infoLabel.textAlignment = UITextAlignmentCenter;
-    self.infoLabel.shadowOffset = CGSizeMake(0, 2);
-    
+    self.infoLabel.shadowOffset = CGSizeMake(0, 1.5);
+    self.infoLabel.center = CGPointMake(self.view.center.x, 280);
+	
     [self.view addSubview:self.infoLabel];
 }
 
