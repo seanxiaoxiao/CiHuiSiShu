@@ -92,18 +92,14 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     //self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
-    UIImage* image= [VSUtils fetchImg:@"back-button"];
-    CGRect frame = CGRectMake(0, 0, image.size.width, image.size.height); 
-    UIButton* backButton = [[UIButton alloc] initWithFrame:frame]; 
-    [backButton setBackgroundImage:image forState:UIControlStateNormal]; 
-    [backButton setTitle:@" 词汇私塾" forState:UIControlStateNormal]; 
-    [backButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal]; 
-    backButton.titleLabel.font = [UIFont boldSystemFontOfSize:10];
-    backButton.titleLabel.shadowOffset = CGSizeMake(0, -1);
+    UIImage* backImage= [VSUtils fetchImg:@"NavBackButton"];
+    CGRect frame = CGRectMake(0, 0, backImage.size.width, backImage.size.height);
+    UIButton* backButton = [[UIButton alloc] initWithFrame:frame];
+    [backButton setBackgroundImage:backImage forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(backToMain) forControlEvents:UIControlEventTouchUpInside];
-    
     UIBarButtonItem* backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
     [self.navigationItem setLeftBarButtonItem:backButtonItem];
+
     self.alertDelegate = [[VSAlertDelegate alloc] init];
     self.alertDelegate.currentList = currentList;
 }

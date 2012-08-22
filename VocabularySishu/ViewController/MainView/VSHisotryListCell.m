@@ -35,7 +35,7 @@
         self.dateLabel.shadowOffset = CGSizeMake(0, 1);
         self.dateLabel.shadowColor = [UIColor colorWithWhite:1 alpha:0.4];
     
-        self.reciteLabel = [[UILabel alloc] initWithFrame:CGRectMake(105, 10, 160, 24)];
+        self.reciteLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 10, 160, 24)];
         self.reciteLabel.textColor = [UIColor colorWithHue:220.0 / 360.0 saturation:0.2 brightness:0.5 alpha:1];
         self.reciteLabel.backgroundColor = [UIColor clearColor];
         self.reciteLabel.textAlignment = UITextAlignmentRight;
@@ -43,7 +43,7 @@
         self.reciteLabel.shadowOffset = CGSizeMake(0, 1);
         self.reciteLabel.shadowColor = [UIColor colorWithWhite:1 alpha:0.4];
 
-        self.notRememberWellLabel = [[UILabel alloc] initWithFrame:CGRectMake(106, 28, 160, 24)];
+        self.notRememberWellLabel = [[UILabel alloc] initWithFrame:CGRectMake(101, 28, 160, 24)];
         self.notRememberWellLabel.backgroundColor = [UIColor clearColor];
         self.notRememberWellLabel.textAlignment = UITextAlignmentRight;
         self.notRememberWellLabel.font = [UIFont boldSystemFontOfSize:14];
@@ -53,12 +53,12 @@
 
         UIImage *separator = [VSUtils fetchImg:@"SeparatorLine"];
         self.backgroundImage = [[UIImageView alloc] initWithImage:separator];
-        self.backgroundImage.frame = CGRectMake(40, 48, 240, 3);
+        self.backgroundImage.frame = CGRectMake(40, 53, 240, 3);
         [self.contentView addSubview:self.backgroundImage];
         
         self.detailImage = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"CellAccessory"]];
         CGRect frame = self.detailImage.frame;
-        frame.origin.x = 275;
+        frame.origin.x = 270;
         frame.origin.y = 24;
         self.detailImage.frame = frame;
         
@@ -78,8 +78,6 @@
     NSString *formattedNumberString = [numberFormatter stringFromNumber:[NSNumber numberWithDouble:[self.list notWellRate]]];
     self.notRememberWellLabel.text = [NSString stringWithFormat:@"%@不靠谱", formattedNumberString];
 }
-
-
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {

@@ -29,6 +29,16 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.title = self.repo.name;
+
+    UIImage* backImage= [VSUtils fetchImg:@"NavBackButton"];
+    CGRect frame = CGRectMake(0, 0, backImage.size.width, backImage.size.height);
+    UIButton* backButton = [[UIButton alloc] initWithFrame:frame];
+    [backButton setBackgroundImage:backImage forState:UIControlStateNormal];
+    [backButton addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem* backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+    [self.navigationItem setLeftBarButtonItem:backButtonItem];
+
     UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
     [backgroundImageView setFrame:self.view.frame];
     [self.view addSubview:backgroundImageView];
@@ -60,10 +70,9 @@
     // e.g. self.myOutlet = nil;
 }
 
-- (void)viewWillAppear:(BOOL)animated
+- (void)goBack
 {
-    [super viewWillAppear:animated];
-    self.title = self.repo.name;
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)initWithRepo:(VSRepository *)repository
