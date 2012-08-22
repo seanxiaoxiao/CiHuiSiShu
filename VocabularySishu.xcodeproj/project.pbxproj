@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		000E585415E40C9900B7AB04 /* back-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E582E15E40C9900B7AB04 /* back-button@2x.png */; };
-		000E585515E40C9900B7AB04 /* back-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E582E15E40C9900B7AB04 /* back-button@2x.png */; };
-		000E585615E40C9900B7AB04 /* back-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E582E15E40C9900B7AB04 /* back-button@2x.png */; };
 		000E585715E40C9900B7AB04 /* BookBlack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E582F15E40C9900B7AB04 /* BookBlack@2x.png */; };
 		000E585815E40C9900B7AB04 /* BookBlack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E582F15E40C9900B7AB04 /* BookBlack@2x.png */; };
 		000E585915E40C9900B7AB04 /* BookBlack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E582F15E40C9900B7AB04 /* BookBlack@2x.png */; };
@@ -244,6 +241,12 @@
 		00A1AFAD1586192400310669 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A1AFAC1586192400310669 /* AVFoundation.framework */; };
 		00A9E7B015A08699009832BA /* VSReviewPlan.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A9E7AF15A08699009832BA /* VSReviewPlan.m */; };
 		00A9E7B115A08699009832BA /* VSReviewPlan.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A9E7AF15A08699009832BA /* VSReviewPlan.m */; };
+		00AC5E4B15E4BBFC00150402 /* PopupClose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AC5E4915E4BBFB00150402 /* PopupClose@2x.png */; };
+		00AC5E4C15E4BBFC00150402 /* PopupClose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AC5E4915E4BBFB00150402 /* PopupClose@2x.png */; };
+		00AC5E4D15E4BBFC00150402 /* PopupClose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AC5E4915E4BBFB00150402 /* PopupClose@2x.png */; };
+		00AC5E4E15E4BBFC00150402 /* PopupCloseHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AC5E4A15E4BBFB00150402 /* PopupCloseHighLighted@2x.png */; };
+		00AC5E4F15E4BBFC00150402 /* PopupCloseHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AC5E4A15E4BBFB00150402 /* PopupCloseHighLighted@2x.png */; };
+		00AC5E5015E4BBFC00150402 /* PopupCloseHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AC5E4A15E4BBFB00150402 /* PopupCloseHighLighted@2x.png */; };
 		00AE80F1158B1318000CE7EA /* VSConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AE80EF158B1318000CE7EA /* VSConfigurationViewController.m */; };
 		00AE80F2158B1318000CE7EA /* VSConfigurationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */; };
 		00BDE55815CF9B9400BC205C /* VSNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0081185015BEFE220022B515 /* VSNavigationBar.m */; };
@@ -342,7 +345,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		000E582E15E40C9900B7AB04 /* back-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "back-button@2x.png"; path = "Resources/Img/back-button@2x.png"; sourceTree = "<group>"; };
 		000E582F15E40C9900B7AB04 /* BookBlack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BookBlack@2x.png"; path = "Resources/Img/BookBlack@2x.png"; sourceTree = "<group>"; };
 		000E583015E40C9900B7AB04 /* BookLake@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BookLake@2x.png"; path = "Resources/Img/BookLake@2x.png"; sourceTree = "<group>"; };
 		000E583115E40C9900B7AB04 /* BookRed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BookRed@2x.png"; path = "Resources/Img/BookRed@2x.png"; sourceTree = "<group>"; };
@@ -472,6 +474,8 @@
 		00A1AFAC1586192400310669 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		00A9E7AE15A08699009832BA /* VSReviewPlan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSReviewPlan.h; path = Utils/VSReviewPlan.h; sourceTree = "<group>"; };
 		00A9E7AF15A08699009832BA /* VSReviewPlan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSReviewPlan.m; path = Utils/VSReviewPlan.m; sourceTree = "<group>"; };
+		00AC5E4915E4BBFB00150402 /* PopupClose@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "PopupClose@2x.png"; path = "Resources/Img/PopupClose@2x.png"; sourceTree = "<group>"; };
+		00AC5E4A15E4BBFB00150402 /* PopupCloseHighLighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "PopupCloseHighLighted@2x.png"; path = "Resources/Img/PopupCloseHighLighted@2x.png"; sourceTree = "<group>"; };
 		00AE80EE158B1318000CE7EA /* VSConfigurationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSConfigurationViewController.h; path = ViewController/ConfigurationView/VSConfigurationViewController.h; sourceTree = "<group>"; };
 		00AE80EF158B1318000CE7EA /* VSConfigurationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSConfigurationViewController.m; path = ViewController/ConfigurationView/VSConfigurationViewController.m; sourceTree = "<group>"; };
 		00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSConfigurationViewController.xib; path = ViewController/ConfigurationView/VSConfigurationViewController.xib; sourceTree = "<group>"; };
@@ -846,7 +850,8 @@
 		00B5A8BE1566886E00D20EB6 /* Img */ = {
 			isa = PBXGroup;
 			children = (
-				000E582E15E40C9900B7AB04 /* back-button@2x.png */,
+				00AC5E4915E4BBFB00150402 /* PopupClose@2x.png */,
+				00AC5E4A15E4BBFB00150402 /* PopupCloseHighLighted@2x.png */,
 				000E582F15E40C9900B7AB04 /* BookBlack@2x.png */,
 				000E583015E40C9900B7AB04 /* BookLake@2x.png */,
 				000E583115E40C9900B7AB04 /* BookRed@2x.png */,
@@ -1059,7 +1064,6 @@
 				006B4CE315E3638C00711C64 /* VSGuideViewController.xib in Resources */,
 				006B4CE715E3F3B100711C64 /* Menu@2x.png in Resources */,
 				00FF1B1215E407AC005B9E51 /* SeparatorDots@2x.png in Resources */,
-				000E585615E40C9900B7AB04 /* back-button@2x.png in Resources */,
 				000E585915E40C9900B7AB04 /* BookBlack@2x.png in Resources */,
 				000E585C15E40C9900B7AB04 /* BookLake@2x.png in Resources */,
 				000E585F15E40C9900B7AB04 /* BookRed@2x.png in Resources */,
@@ -1097,6 +1101,8 @@
 				000E58BF15E40C9900B7AB04 /* TimeLineCellDark@2x.png in Resources */,
 				000E58C215E40C9900B7AB04 /* TimeLineCellLight@2x.png in Resources */,
 				000E58C515E40C9900B7AB04 /* Unit@2x.png in Resources */,
+				00AC5E4D15E4BBFC00150402 /* PopupClose@2x.png in Resources */,
+				00AC5E5015E4BBFC00150402 /* PopupCloseHighLighted@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1124,7 +1130,6 @@
 				006B4CE115E3638C00711C64 /* VSGuideViewController.xib in Resources */,
 				006B4CE515E3F3B100711C64 /* Menu@2x.png in Resources */,
 				00FF1B1015E407AC005B9E51 /* SeparatorDots@2x.png in Resources */,
-				000E585415E40C9900B7AB04 /* back-button@2x.png in Resources */,
 				000E585715E40C9900B7AB04 /* BookBlack@2x.png in Resources */,
 				000E585A15E40C9900B7AB04 /* BookLake@2x.png in Resources */,
 				000E585D15E40C9900B7AB04 /* BookRed@2x.png in Resources */,
@@ -1162,6 +1167,8 @@
 				000E58BD15E40C9900B7AB04 /* TimeLineCellDark@2x.png in Resources */,
 				000E58C015E40C9900B7AB04 /* TimeLineCellLight@2x.png in Resources */,
 				000E58C315E40C9900B7AB04 /* Unit@2x.png in Resources */,
+				00AC5E4B15E4BBFC00150402 /* PopupClose@2x.png in Resources */,
+				00AC5E4E15E4BBFC00150402 /* PopupCloseHighLighted@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1195,7 +1202,6 @@
 				0044C15915D3B70F0022154A /* VSRepoListViewController.xib in Resources */,
 				006B4CE615E3F3B100711C64 /* Menu@2x.png in Resources */,
 				00FF1B1115E407AC005B9E51 /* SeparatorDots@2x.png in Resources */,
-				000E585515E40C9900B7AB04 /* back-button@2x.png in Resources */,
 				000E585815E40C9900B7AB04 /* BookBlack@2x.png in Resources */,
 				000E585B15E40C9900B7AB04 /* BookLake@2x.png in Resources */,
 				000E585E15E40C9900B7AB04 /* BookRed@2x.png in Resources */,
@@ -1233,6 +1239,8 @@
 				000E58BE15E40C9900B7AB04 /* TimeLineCellDark@2x.png in Resources */,
 				000E58C115E40C9900B7AB04 /* TimeLineCellLight@2x.png in Resources */,
 				000E58C415E40C9900B7AB04 /* Unit@2x.png in Resources */,
+				00AC5E4C15E4BBFC00150402 /* PopupClose@2x.png in Resources */,
+				00AC5E4F15E4BBFC00150402 /* PopupCloseHighLighted@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

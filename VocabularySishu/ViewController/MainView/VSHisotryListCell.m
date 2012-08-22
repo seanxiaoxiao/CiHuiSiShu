@@ -53,7 +53,7 @@
 
         UIImage *separator = [VSUtils fetchImg:@"SeparatorLine"];
         self.backgroundImage = [[UIImageView alloc] initWithImage:separator];
-        self.backgroundImage.frame = CGRectMake(40, 53, 240, 3);
+        self.backgroundImage.frame = CGRectMake(40, 53, 240, 1.5);
         [self.contentView addSubview:self.backgroundImage];
         
         self.detailImage = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"CellAccessory"]];

@@ -28,5 +28,6 @@
 @interface VSConfigurationViewController : UITableViewController<MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate>
 
 @property (nonatomic, retain) NSArray *contactContents;
+@property (nonatomic, retain) UILabel *infoLabel;
 
 @end

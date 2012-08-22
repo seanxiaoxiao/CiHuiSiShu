@@ -55,10 +55,20 @@
         [self addSubview:notWellLabel];
         [self addSubview:notWellRateLabel];
         
+        UIImage *closeButtonImage = [VSUtils fetchImg:@"PopupClose"];
+        UIImage *highlightCloseButtonImage = [VSUtils fetchImg:@"PopupCloseHighLighted"];
+        self.closeButton = [[UIButton alloc] initWithFrame:CGRectMake(165, 5, closeButtonImage.size.width, closeButtonImage.size.height)];
+        [self.closeButton setBackgroundImage:closeButtonImage forState:UIControlStateNormal];
+        [self.closeButton setBackgroundImage:highlightCloseButtonImage forState:UIControlStateHighlighted];
+        [self.closeButton addTarget:self action:@selector(closePopup) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:self.closeButton];
+        
         self.notRememberWell = 1.0;
         
         numberFormatter = [[NSNumberFormatter alloc] init];
         [numberFormatter setPositiveFormat:@"0.0%;0.0%-0.0%"];
+        
+        
     }
     return self;
 }
@@ -89,6 +99,16 @@
     UINavigationController *navigationController = (UINavigationController *)window.rootViewController;
     [navigationController popToRootViewControllerAnimated:YES];
     navigationController.navigationBar.userInteractionEnabled = YES;
+}
+
+- (void)closePopup
+{
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    UINavigationController *navigationController = (UINavigationController *)window.rootViewController;
+    navigationController.navigationBar.userInteractionEnabled = YES;
+
+    NSNotification *notification = [NSNotification notificationWithName:CLOSE_POPUP object:nil userInfo:nil];
+    [[NSNotificationCenter defaultCenter] postNotification:notification];    
 }
 
 - (void)initWithList:(VSList *)list
@@ -157,7 +177,7 @@
 
         for (int i = 0; i < starCount; i++) {
             UIImageView *starImage = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"Star"]];
-            starImage.frame = CGRectMake(originX, 20, starImage.image.size.width, starImage.image.size.height);
+            starImage.frame = CGRectMake(originX, 12, starImage.image.size.width, starImage.image.size.height);
             originX += starImage.image.size.width + 5;
             CGRect originalFrame = starImage.frame;
             CGRect enlargedFrame = CGRectMake(originalFrame.origin.x - 5, originalFrame.origin.y - 5, originalFrame.size.width + 10, originalFrame.size.height + 10);
@@ -181,7 +201,7 @@
         }
         for (int i = 0 ; i < 3 - starCount; i++) {
             UIImageView *noStarImage = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"StarNone"]];
-            noStarImage.frame = CGRectMake(originX, 20, noStarImage.image.size.width, noStarImage.image.size.height);
+            noStarImage.frame = CGRectMake(originX, 12, noStarImage.image.size.width, noStarImage.image.size.height);
             originX += noStarImage.image.size.width + 5;
             [self addSubview:noStarImage];
         }

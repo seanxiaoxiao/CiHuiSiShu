@@ -18,6 +18,7 @@
 @property (nonatomic, retain) UIButton *retryButton;
 @property (nonatomic, retain) UIButton *nextButton;
 @property (nonatomic, retain) UIButton *backButton;
+@property (nonatomic, retain) UIButton *closeButton;
 @property (nonatomic, retain) UILabel *notWellLabel;
 @property (nonatomic, retain) UILabel *notWellRateLabel;
 @property (nonatomic, retain) VSList *_list;

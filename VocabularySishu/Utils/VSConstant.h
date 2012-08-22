@@ -18,6 +18,7 @@
 #define RESTART_LIST @"restart_list"
 #define NEXT_LIST @"next_list"
 #define HIDE_SCOREBOARD @"hide_scoreboard"
+#define CLOSE_POPUP @"close_popup"
 
 #define SHOW_TORECITE @"show_torecite"
 #define SHOW_CANNOTREMEMBERWELL @"show_cannotrememberwell"

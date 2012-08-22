@@ -70,7 +70,8 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clearVocabulary:) name:CLEAR_VOCABULRY object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(restart) name:RESTART_LIST object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(nextList) name:NEXT_LIST object:nil];
-
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideScoreBoard) name:CLOSE_POPUP object:nil];
+        
         __autoreleasing UIGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanning:)];
         panGesture.delegate = self;
         [self.view addGestureRecognizer:panGesture];
@@ -381,16 +382,8 @@
 - (void)processAfterSwipe
 {
     if ([self.vocabulariesToRecite count] == 0) {
-        alertWhenFinish = nil;
         [self.currentList finish];
-        if ([self.currentList isHistoryList]) {
-            alertWhenFinish = [[UIAlertView alloc] initWithTitle:@"" message:@"复习完毕" delegate:self cancelButtonTitle:@"嗯，好的" otherButtonTitles:nil, nil];
-            [alertWhenFinish setDelegate:self.alertDelegate];
-            [alertWhenFinish show];
-        }
-        else {
-            [self showHideScoreBoard];
-        }
+        [self showHideScoreBoard];
     }
 }
 
