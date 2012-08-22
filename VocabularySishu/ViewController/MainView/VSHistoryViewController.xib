@@ -78,14 +78,14 @@
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MSAxIDEAA</bytes>
 						</object>
-						<object class="IBUIFontDescription" key="IBUIFontDescription" id="188931082">
-							<string key="name">TrebuchetMS-Bold</string>
-							<string key="family">Trebuchet MS</string>
+						<object class="IBUIFontDescription" key="IBUIFontDescription">
+							<string key="name">Helvetica-Bold</string>
+							<string key="family">Helvetica</string>
 							<int key="traits">2</int>
 							<double key="pointSize">16</double>
 						</object>
-						<object class="NSFont" key="IBUIFont" id="1053217423">
-							<string key="NSName">TrebuchetMS-Bold</string>
+						<object class="NSFont" key="IBUIFont" id="62352215">
+							<string key="NSName">Helvetica-Bold</string>
 							<double key="NSSize">16</double>
 							<int key="NSfFlags">16</int>
 						</object>
@@ -110,8 +110,11 @@
 							<bytes key="NSWhite">MCAwLjcAA</bytes>
 						</object>
 						<reference key="IBUINormalTitleShadowColor" ref="34945644"/>
-						<reference key="IBUIFontDescription" ref="188931082"/>
-						<reference key="IBUIFont" ref="1053217423"/>
+						<object class="IBUIFontDescription" key="IBUIFontDescription">
+							<int key="type">2</int>
+							<double key="pointSize">16</double>
+						</object>
+						<reference key="IBUIFont" ref="62352215"/>
 					</object>
 					<object class="IBUITableView" id="1051185263">
 						<reference key="NSNextResponder" ref="191373211"/>
