@@ -55,7 +55,7 @@
 					<object class="IBUIButton" id="455639394">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{40, 79}, {240, 42}}</string>
+						<string key="NSFrame">{{39, 79}, {240, 42}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="205040765"/>
@@ -66,9 +66,9 @@
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<string key="IBUITitleShadowOffset">{0, 1}</string>
 						<string key="IBUINormalTitle">继续背诵</string>
-						<object class="NSColor" key="IBUIHighlightedTitleColor" id="1019243979">
-							<int key="NSColorSpace">3</int>
-							<bytes key="NSWhite">MQA</bytes>
+						<object class="NSColor" key="IBUIHighlightedTitleColor" id="710960775">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MCAwIDAAA</bytes>
 						</object>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">3</int>
@@ -78,7 +78,7 @@
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MSAxIDEAA</bytes>
 						</object>
-						<object class="NSCustomResource" key="IBUIHighlightedBackgroundImage" id="283487949">
+						<object class="NSCustomResource" key="IBUIHighlightedBackgroundImage" id="815116177">
 							<string key="NSClassName">NSImage</string>
 							<string key="NSResourceName">MenuButtonHighLighted@2x.png</string>
 						</object>
@@ -97,7 +97,7 @@
 					<object class="IBUIButton" id="205040765">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{40, 123}, {240, 42}}</string>
+						<string key="NSFrame">{{39, 123}, {240, 42}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="1051185263"/>
@@ -108,13 +108,13 @@
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<string key="IBUITitleShadowOffset">{0, 1}</string>
 						<string key="IBUINormalTitle">选择词库</string>
-						<reference key="IBUIHighlightedTitleColor" ref="1019243979"/>
+						<reference key="IBUIHighlightedTitleColor" ref="710960775"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MCAwLjcAA</bytes>
 						</object>
 						<reference key="IBUINormalTitleShadowColor" ref="34945644"/>
-						<reference key="IBUIHighlightedBackgroundImage" ref="283487949"/>
+						<reference key="IBUIHighlightedBackgroundImage" ref="815116177"/>
 						<object class="IBUIFontDescription" key="IBUIFontDescription">
 							<int key="type">2</int>
 							<double key="pointSize">16</double>
