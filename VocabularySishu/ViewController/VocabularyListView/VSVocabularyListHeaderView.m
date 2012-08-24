@@ -42,7 +42,7 @@
         self.inkBody = [[UIImageView alloc] initWithImage:self.inkBodyImage];
         self.inkFooter = [[UIImageView alloc] initWithImage:self.inkFooterImage];
 
-        self.wordRemainLabel = [[UILabel alloc] initWithFrame:CGRectMake(255, 22, 40, 20)];
+        self.wordRemainLabel = [[UILabel alloc] initWithFrame:CGRectMake(265, 22, 40, 20)];
         self.wordRemainLabel.backgroundColor = [UIColor clearColor];
         self.wordRemainLabel.font = [UIFont fontWithName:@"Dakota" size:20];
         self.wordRemainLabel.textAlignment = UITextAlignmentCenter;
@@ -51,14 +51,14 @@
         
         UIImage *markImage = [VSUtils fetchImg:@"Mark"];
         self.remainBackground = [[UIImageView alloc] initWithImage:markImage];
-        self.remainBackground.frame = CGRectMake(248, 9, markImage.size.width, markImage.size.height);
+        self.remainBackground.frame = CGRectMake(258, 9, markImage.size.width, markImage.size.height);
 
-        self.penBG.frame = CGRectMake(-50, 20, penBGImage.size.width, penBGImage.size.height);
-        self.penFG.frame = CGRectMake(-50, 20, penFGImage.size.width, penFGImage.size.height);
+        self.penBG.frame = CGRectMake(-40, 20, penBGImage.size.width, penBGImage.size.height);
+        self.penFG.frame = CGRectMake(-40, 20, penFGImage.size.width, penFGImage.size.height);
         self.inkHeader.frame = CGRectMake(0, 20, inkHeadImage.size.width, inkHeadImage.size.height);
         self.inkNeck.frame = CGRectMake(inkHeadImage.size.width, 20, inkNeckImage.size.width, inkNeckImage.size.height);
         self.inkBody.frame = CGRectMake(inkNeckImage.size.width + inkHeadImage.size.width, 20, inkBodyImage.size.width, inkBodyImage.size.height);
-        self.inkFooter.frame = CGRectMake(inkNeckImage.size.width + inkHeadImage.size.width + inkBodyImage.size.width, 20, 150, inkBodyImage.size.height);
+        self.inkFooter.frame = CGRectMake(inkNeckImage.size.width + inkHeadImage.size.width + inkBodyImage.size.width, 20, 160, inkBodyImage.size.height);
         [self addSubview:self.penBG];
         [self addSubview:self.penFG];
         [self addSubview:self.inkHeader];
@@ -85,12 +85,12 @@
 
 - (void) updateProgress:(double)progress
 {
-    double margin = progress * 150;
+    double margin = progress * 160;
     [UIView animateWithDuration:0.1f delay:0.0f options:UIViewAnimationCurveLinear 
         animations:^{
             self.inkNeck.frame = CGRectMake(inkHeadImage.size.width, 20, inkNeckImage.size.width + margin, inkNeckImage.size.height);
             self.inkBody.frame = CGRectMake(inkNeckImage.size.width + inkHeadImage.size.width + margin, 20, inkBodyImage.size.width, inkBodyImage.size.height);
-            self.inkFooter.frame = CGRectMake(inkNeckImage.size.width + inkHeadImage.size.width + margin + inkBodyImage.size.width, 20, 150 - margin, inkBodyImage.size.height);
+            self.inkFooter.frame = CGRectMake(inkNeckImage.size.width + inkHeadImage.size.width + margin + inkBodyImage.size.width, 20, 160 - margin, inkBodyImage.size.height);
         }
         completion:^(BOOL finished) {
     

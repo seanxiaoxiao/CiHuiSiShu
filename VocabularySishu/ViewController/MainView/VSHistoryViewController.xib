@@ -55,7 +55,7 @@
 					<object class="IBUIButton" id="455639394">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{35, 80}, {250, 40}}</string>
+						<string key="NSFrame">{{40, 79}, {240, 42}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="205040765"/>
@@ -78,7 +78,7 @@
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MSAxIDEAA</bytes>
 						</object>
-						<object class="NSCustomResource" key="IBUIHighlightedBackgroundImage" id="970373117">
+						<object class="NSCustomResource" key="IBUIHighlightedBackgroundImage" id="283487949">
 							<string key="NSClassName">NSImage</string>
 							<string key="NSResourceName">MenuButtonHighLighted@2x.png</string>
 						</object>
@@ -97,7 +97,7 @@
 					<object class="IBUIButton" id="205040765">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{35, 130}, {250, 40}}</string>
+						<string key="NSFrame">{{40, 123}, {240, 42}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="1051185263"/>
@@ -114,7 +114,7 @@
 							<bytes key="NSWhite">MCAwLjcAA</bytes>
 						</object>
 						<reference key="IBUINormalTitleShadowColor" ref="34945644"/>
-						<reference key="IBUIHighlightedBackgroundImage" ref="970373117"/>
+						<reference key="IBUIHighlightedBackgroundImage" ref="283487949"/>
 						<object class="IBUIFontDescription" key="IBUIFontDescription">
 							<int key="type">2</int>
 							<double key="pointSize">16</double>
@@ -246,8 +246,8 @@
 							<reference ref="40178228"/>
 							<reference ref="455639394"/>
 							<reference ref="1051185263"/>
-							<reference ref="205040765"/>
 							<reference ref="277937103"/>
+							<reference ref="205040765"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
