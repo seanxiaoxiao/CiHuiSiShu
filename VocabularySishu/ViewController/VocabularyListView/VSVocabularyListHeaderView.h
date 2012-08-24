@@ -23,10 +23,14 @@
 @property (nonatomic, retain) UIImage *inkNeckImage;
 @property (nonatomic, retain) UIImage *inkBodyImage;
 @property (nonatomic, retain) UIImage *inkFooterImage;
-@property (nonatomic, retain) UILabel *finishProgressLabel;
-@property (nonatomic, retain) NSNumberFormatter *numberFormatter;
+@property (nonatomic, retain) UILabel *wordRemainLabel;
+@property (nonatomic, retain) UIImageView *remainBackground;
+@property (nonatomic, assign) int wordRemain;
 
+- (void) updateProgress:(double)progress;
 
-- (void) updateProgress:(double)progress; 
+- (void) setWordRemains:(int)wordRemain;
+
+- (void) decrWordRemain;
 
 @end

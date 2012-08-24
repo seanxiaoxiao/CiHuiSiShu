@@ -26,7 +26,6 @@
 @synthesize summaryView;
 @synthesize touchPoint;
 @synthesize draggedCell;
-@synthesize countInList;
 @synthesize rememberCount;
 @synthesize selectedIndex;
 @synthesize currentList;
@@ -48,24 +47,23 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = self.currentList.name;
-        self.headerView = [[VSVocabularyListHeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
-        self.tableView.tableHeaderView = headerView;
-        [self.headerView updateProgress:[self.currentList finishProgress]];
-        self.vocabulariesToRecite = [NSMutableArray arrayWithArray:[self.currentList vocabulariesToRecite]];
-
         if (![currentList isHistoryList]) {
             self.listToday = [VSList createAndGetHistoryList];
         }
         [currentList process];
-        self.countInList = [self.currentList.listVocabularies count];
         self.selectedIndex = -1;
-        
+        self.title = self.currentList.name;
+        NSArray *vocabularies = [self.currentList vocabulariesToRecite];
+        self.headerView = [[VSVocabularyListHeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
+        [self.headerView setWordRemains:[vocabularies count]];
+        [self.headerView updateProgress:[self.currentList finishProgress]];
+        self.tableView.tableHeaderView = headerView;
+        self.vocabulariesToRecite = [NSMutableArray arrayWithArray:vocabularies];
+
         UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
         [backgroundImageView setFrame:self.tableView.frame];
-        
+
         self.tableView.backgroundView = backgroundImageView;
-        
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showDetailView) name:SHOW_DETAIL_VIEW object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clearVocabulary:) name:CLEAR_VOCABULRY object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(restart) name:RESTART_LIST object:nil];
@@ -361,6 +359,7 @@
         }
         self.rememberCount++;
         [self.headerView updateProgress:[self.currentList finishProgress]];
+        [self.headerView decrWordRemain];
         [vocabulariesToRecite removeObjectAtIndex:index];
         [self updateVocabularyTable:index];
         [self processAfterSwipe];

@@ -182,6 +182,15 @@
 		0044C15815D3B70F0022154A /* VSRepoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0044C15415D3B70F0022154A /* VSRepoListViewController.xib */; };
 		0044C15915D3B70F0022154A /* VSRepoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0044C15415D3B70F0022154A /* VSRepoListViewController.xib */; };
 		0044C15A15D3B70F0022154A /* VSRepoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0044C15415D3B70F0022154A /* VSRepoListViewController.xib */; };
+		0045250915E74FE700935B34 /* Dakota.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0045250815E74FE700935B34 /* Dakota.ttf */; };
+		0045250A15E74FE700935B34 /* Dakota.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0045250815E74FE700935B34 /* Dakota.ttf */; };
+		0045250B15E74FE700935B34 /* Dakota.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0045250815E74FE700935B34 /* Dakota.ttf */; };
+		0045250D15E750EA00935B34 /* Mark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0045250C15E750EA00935B34 /* Mark@2x.png */; };
+		0045250E15E750EA00935B34 /* Mark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0045250C15E750EA00935B34 /* Mark@2x.png */; };
+		0045250F15E750EA00935B34 /* Mark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0045250C15E750EA00935B34 /* Mark@2x.png */; };
+		0045251115E7572000935B34 /* MenuButtonHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0045251015E7572000935B34 /* MenuButtonHighLighted@2x.png */; };
+		0045251215E7572000935B34 /* MenuButtonHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0045251015E7572000935B34 /* MenuButtonHighLighted@2x.png */; };
+		0045251315E7572000935B34 /* MenuButtonHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0045251015E7572000935B34 /* MenuButtonHighLighted@2x.png */; };
 		0046408315590E0B007E5FA9 /* VSVocabularyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408115590E0B007E5FA9 /* VSVocabularyViewController.xib */; };
 		0046408415591251007E5FA9 /* VSVocabularyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046408015590E0B007E5FA9 /* VSVocabularyViewController.m */; };
 		0046408D155916FA007E5FA9 /* VSHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046408B155916FA007E5FA9 /* VSHistoryViewController.m */; };
@@ -395,6 +404,9 @@
 		0044C15215D3B70E0022154A /* VSRepoListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSRepoListViewController.h; path = ViewController/MainView/VSRepoListViewController.h; sourceTree = "<group>"; };
 		0044C15315D3B70F0022154A /* VSRepoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSRepoListViewController.m; path = ViewController/MainView/VSRepoListViewController.m; sourceTree = "<group>"; };
 		0044C15415D3B70F0022154A /* VSRepoListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSRepoListViewController.xib; path = ViewController/MainView/VSRepoListViewController.xib; sourceTree = "<group>"; };
+		0045250815E74FE700935B34 /* Dakota.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Dakota.ttf; path = Resources/Font/Dakota.ttf; sourceTree = "<group>"; };
+		0045250C15E750EA00935B34 /* Mark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Mark@2x.png"; path = "Resources/Img/Mark@2x.png"; sourceTree = "<group>"; };
+		0045251015E7572000935B34 /* MenuButtonHighLighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MenuButtonHighLighted@2x.png"; path = "Resources/Img/MenuButtonHighLighted@2x.png"; sourceTree = "<group>"; };
 		0046407F15590E0B007E5FA9 /* VSVocabularyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSVocabularyViewController.h; path = ViewController/VocabularyView/VSVocabularyViewController.h; sourceTree = "<group>"; };
 		0046408015590E0B007E5FA9 /* VSVocabularyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSVocabularyViewController.m; path = ViewController/VocabularyView/VSVocabularyViewController.m; sourceTree = "<group>"; };
 		0046408115590E0B007E5FA9 /* VSVocabularyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSVocabularyViewController.xib; path = ViewController/VocabularyView/VSVocabularyViewController.xib; sourceTree = "<group>"; };
@@ -597,6 +609,14 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
+		004524FE15E7488B00935B34 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				0045250815E74FE700935B34 /* Dakota.ttf */,
+			);
+			name = Font;
+			sourceTree = "<group>";
+		};
 		0046407715590CC8007E5FA9 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
@@ -671,6 +691,7 @@
 		00701E371553CBCE00D30018 /* VocabularySishu */ = {
 			isa = PBXGroup;
 			children = (
+				004524FE15E7488B00935B34 /* Font */,
 				00701E6B1553CE8C00D30018 /* ViewController */,
 				0081184E15BEFDFF0022B515 /* Generic */,
 				00A1AFA41585FD2400310669 /* Audio */,
@@ -850,10 +871,12 @@
 		00B5A8BE1566886E00D20EB6 /* Img */ = {
 			isa = PBXGroup;
 			children = (
+				0045251015E7572000935B34 /* MenuButtonHighLighted@2x.png */,
 				00AC5E4915E4BBFB00150402 /* PopupClose@2x.png */,
 				00AC5E4A15E4BBFB00150402 /* PopupCloseHighLighted@2x.png */,
 				000E582F15E40C9900B7AB04 /* BookBlack@2x.png */,
 				000E583015E40C9900B7AB04 /* BookLake@2x.png */,
+				0045250C15E750EA00935B34 /* Mark@2x.png */,
 				000E583115E40C9900B7AB04 /* BookRed@2x.png */,
 				000E583215E40C9900B7AB04 /* ButtonBT@2x.png */,
 				000E583315E40C9900B7AB04 /* ButtonBTHighLighted@2x.png */,
@@ -1103,6 +1126,9 @@
 				000E58C515E40C9900B7AB04 /* Unit@2x.png in Resources */,
 				00AC5E4D15E4BBFC00150402 /* PopupClose@2x.png in Resources */,
 				00AC5E5015E4BBFC00150402 /* PopupCloseHighLighted@2x.png in Resources */,
+				0045250B15E74FE700935B34 /* Dakota.ttf in Resources */,
+				0045250F15E750EA00935B34 /* Mark@2x.png in Resources */,
+				0045251315E7572000935B34 /* MenuButtonHighLighted@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1169,6 +1195,9 @@
 				000E58C315E40C9900B7AB04 /* Unit@2x.png in Resources */,
 				00AC5E4B15E4BBFC00150402 /* PopupClose@2x.png in Resources */,
 				00AC5E4E15E4BBFC00150402 /* PopupCloseHighLighted@2x.png in Resources */,
+				0045250915E74FE700935B34 /* Dakota.ttf in Resources */,
+				0045250D15E750EA00935B34 /* Mark@2x.png in Resources */,
+				0045251115E7572000935B34 /* MenuButtonHighLighted@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1241,6 +1270,9 @@
 				000E58C415E40C9900B7AB04 /* Unit@2x.png in Resources */,
 				00AC5E4C15E4BBFC00150402 /* PopupClose@2x.png in Resources */,
 				00AC5E4F15E4BBFC00150402 /* PopupCloseHighLighted@2x.png in Resources */,
+				0045250A15E74FE700935B34 /* Dakota.ttf in Resources */,
+				0045250E15E750EA00935B34 /* Mark@2x.png in Resources */,
+				0045251215E7572000935B34 /* MenuButtonHighLighted@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

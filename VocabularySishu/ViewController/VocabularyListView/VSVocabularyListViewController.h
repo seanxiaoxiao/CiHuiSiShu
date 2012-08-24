@@ -26,7 +26,6 @@
 @property (nonatomic, retain) VSList *listToday;
 @property (nonatomic, retain) VSList *currentList;
 @property (nonatomic, assign) CGPoint touchPoint;
-@property (nonatomic, assign) int countInList;
 @property (nonatomic, assign) int rememberCount;
 @property (nonatomic, assign) int selectedIndex;
 @property (nonatomic, strong) VSSummaryView *summaryView;

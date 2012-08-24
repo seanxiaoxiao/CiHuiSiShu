@@ -21,8 +21,8 @@
 @synthesize inkFooterImage;
 @synthesize inkHeadImage;
 @synthesize inkNeckImage;
-@synthesize finishProgressLabel;
-@synthesize numberFormatter;
+@synthesize wordRemainLabel;
+@synthesize remainBackground;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -42,9 +42,16 @@
         self.inkBody = [[UIImageView alloc] initWithImage:self.inkBodyImage];
         self.inkFooter = [[UIImageView alloc] initWithImage:self.inkFooterImage];
 
-        self.finishProgressLabel = [[UILabel alloc] initWithFrame:CGRectMake(250, 20, 80, 20)];
-        self.finishProgressLabel.backgroundColor = [UIColor clearColor];
-        self.finishProgressLabel.text = @"-";
+        self.wordRemainLabel = [[UILabel alloc] initWithFrame:CGRectMake(255, 22, 40, 20)];
+        self.wordRemainLabel.backgroundColor = [UIColor clearColor];
+        self.wordRemainLabel.font = [UIFont fontWithName:@"Dakota" size:20];
+        self.wordRemainLabel.textAlignment = UITextAlignmentCenter;
+        self.wordRemainLabel.text = @"-";
+        self.wordRemainLabel.textColor = [UIColor colorWithHue:240.0/360.0 saturation:0.7 brightness:0.3 alpha:1];
+        
+        UIImage *markImage = [VSUtils fetchImg:@"Mark"];
+        self.remainBackground = [[UIImageView alloc] initWithImage:markImage];
+        self.remainBackground.frame = CGRectMake(248, 9, markImage.size.width, markImage.size.height);
 
         self.penBG.frame = CGRectMake(-50, 20, penBGImage.size.width, penBGImage.size.height);
         self.penFG.frame = CGRectMake(-50, 20, penFGImage.size.width, penFGImage.size.height);
@@ -58,10 +65,9 @@
         [self addSubview:self.inkNeck];
         [self addSubview:self.inkBody];
         [self addSubview:self.inkFooter];
-        [self addSubview:self.finishProgressLabel];
+        [self addSubview:self.wordRemainLabel];
+        [self addSubview:self.remainBackground];
         
-        numberFormatter = [[NSNumberFormatter alloc] init];
-        [numberFormatter setPositiveFormat:@"0.0%;0.0%-0.0%"];
     }
     return self;
 }
@@ -87,9 +93,20 @@
             self.inkFooter.frame = CGRectMake(inkNeckImage.size.width + inkHeadImage.size.width + margin + inkBodyImage.size.width, 20, 150 - margin, inkBodyImage.size.height);
         }
         completion:^(BOOL finished) {
-            NSString *formattedNumberString = [numberFormatter stringFromNumber:[NSNumber numberWithDouble:progress]];
-            finishProgressLabel.text = formattedNumberString;
+    
         }];
+}
+
+- (void) setWordRemains:(int)wordRemain
+{
+    self.wordRemain = wordRemain;
+    self.wordRemainLabel.text = [NSString stringWithFormat:@"%d", self.wordRemain];
+}
+
+- (void) decrWordRemain
+{
+    self.wordRemain--;
+    self.wordRemainLabel.text = [NSString stringWithFormat:@"%d", self.wordRemain];
 }
 
 @end
