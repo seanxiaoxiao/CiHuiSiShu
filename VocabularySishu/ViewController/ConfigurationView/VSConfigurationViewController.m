@@ -49,7 +49,7 @@
     self.infoLabel.textColor = [UIColor colorWithWhite:0 alpha:0.7];
     self.infoLabel.backgroundColor = [UIColor clearColor];
     self.infoLabel.numberOfLines = 0;
-    self.infoLabel.text = [NSString stringWithFormat:@"词汇私塾\nVersion %@\nXiao Xiao -- Program\nSu Shaowen -- Design\n©2012 GeFo Studio", versionNum];
+    self.infoLabel.text = [NSString stringWithFormat:@"词汇私塾\nVersion %@\nXiao Xiao -- Direct\nSu Shaowen -- Art\n©2012 GeFo Studio", versionNum];
     
     self.tableView.tableFooterView = self.infoLabel;
 }
