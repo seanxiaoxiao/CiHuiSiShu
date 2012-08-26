@@ -439,5 +439,21 @@ NSMutableDictionary *vocabularyMap;
     [VSUtils saveEntity];
 }
 
++ (void)fixData
+{
+    NSArray* repos = [VSRepository allRepos];
+    for (VSRepository *repo in repos) {
+        repo.wordsTotal = [NSNumber numberWithInt:[repo wordsInRepo]];
+        for (VSList *list in [repo lists]) {
+            if ([list.order intValue] == 35 && [list.repository.name isEqualToString:@"GRE分类"]) {
+                list.name = @"错误";
+                [VSUtils saveEntity];
+            }
+        }
+    }
+    
+    
+}
+
 
 @end

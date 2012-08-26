@@ -30,4 +30,6 @@
 
 + (void)migrateData;
 
++ (void)fixData;
+
 @end

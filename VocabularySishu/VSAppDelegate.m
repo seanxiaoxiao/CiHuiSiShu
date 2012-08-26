@@ -33,6 +33,7 @@
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"initialized"] ) {
+        [VSDataUtil fixData];
         [VSUtils showGuidPage];
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"initialized"];
         [[NSUserDefaults standardUserDefaults] synchronize];
