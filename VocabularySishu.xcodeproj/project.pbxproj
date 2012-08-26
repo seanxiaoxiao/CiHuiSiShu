@@ -309,6 +309,9 @@
 		00C4FE3B15D3FAF6000B9849 /* VSSingleListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4FE3A15D3FAF6000B9849 /* VSSingleListView.m */; };
 		00C4FE3C15D3FAF6000B9849 /* VSSingleListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4FE3A15D3FAF6000B9849 /* VSSingleListView.m */; };
 		00C4FE3D15D3FAF6000B9849 /* VSSingleListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4FE3A15D3FAF6000B9849 /* VSSingleListView.m */; };
+		00CBF0D915E9F333001588A3 /* UnitHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00CBF0D815E9F333001588A3 /* UnitHighLighted@2x.png */; };
+		00CBF0DA15E9F333001588A3 /* UnitHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00CBF0D815E9F333001588A3 /* UnitHighLighted@2x.png */; };
+		00CBF0DB15E9F333001588A3 /* UnitHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00CBF0D815E9F333001588A3 /* UnitHighLighted@2x.png */; };
 		00D6778815AD542E00EF152D /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D6778715AD542E00EF152D /* Crashlytics.framework */; };
 		00D6779215ADD03900EF152D /* DDFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D6779115ADD03900EF152D /* DDFileReader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		00E25A6F15C052F2006402B2 /* VSNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0081185015BEFE220022B515 /* VSNavigationBar.m */; };
@@ -501,6 +504,7 @@
 		00C4300215BBFD2E006FF95E /* VSVocabulary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSVocabulary.h; path = Model/VSVocabulary.h; sourceTree = "<group>"; };
 		00C4FE3915D3FAF6000B9849 /* VSSingleListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSSingleListView.h; path = ViewController/MainView/VSSingleListView.h; sourceTree = "<group>"; };
 		00C4FE3A15D3FAF6000B9849 /* VSSingleListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSSingleListView.m; path = ViewController/MainView/VSSingleListView.m; sourceTree = "<group>"; };
+		00CBF0D815E9F333001588A3 /* UnitHighLighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UnitHighLighted@2x.png"; path = "Resources/Img/UnitHighLighted@2x.png"; sourceTree = "<group>"; };
 		00D6778715AD542E00EF152D /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		00D6779015ADD03900EF152D /* DDFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDFileReader.h; path = Utils/DDFileReader.h; sourceTree = "<group>"; };
 		00D6779115ADD03900EF152D /* DDFileReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDFileReader.m; path = Utils/DDFileReader.m; sourceTree = "<group>"; };
@@ -872,6 +876,7 @@
 			isa = PBXGroup;
 			children = (
 				0045251015E7572000935B34 /* MenuButtonHighLighted@2x.png */,
+				00CBF0D815E9F333001588A3 /* UnitHighLighted@2x.png */,
 				00AC5E4915E4BBFB00150402 /* PopupClose@2x.png */,
 				00AC5E4A15E4BBFB00150402 /* PopupCloseHighLighted@2x.png */,
 				000E582F15E40C9900B7AB04 /* BookBlack@2x.png */,
@@ -1129,6 +1134,7 @@
 				0045250B15E74FE700935B34 /* Dakota.ttf in Resources */,
 				0045250F15E750EA00935B34 /* Mark@2x.png in Resources */,
 				0045251315E7572000935B34 /* MenuButtonHighLighted@2x.png in Resources */,
+				00CBF0DB15E9F333001588A3 /* UnitHighLighted@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1198,6 +1204,7 @@
 				0045250915E74FE700935B34 /* Dakota.ttf in Resources */,
 				0045250D15E750EA00935B34 /* Mark@2x.png in Resources */,
 				0045251115E7572000935B34 /* MenuButtonHighLighted@2x.png in Resources */,
+				00CBF0D915E9F333001588A3 /* UnitHighLighted@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1273,6 +1280,7 @@
 				0045250A15E74FE700935B34 /* Dakota.ttf in Resources */,
 				0045250E15E750EA00935B34 /* Mark@2x.png in Resources */,
 				0045251215E7572000935B34 /* MenuButtonHighLighted@2x.png in Resources */,
+				00CBF0DA15E9F333001588A3 /* UnitHighLighted@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
