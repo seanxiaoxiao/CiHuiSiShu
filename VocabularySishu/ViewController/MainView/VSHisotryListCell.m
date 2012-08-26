@@ -75,8 +75,8 @@
     self.list = theList;
     self.dateLabel.text = self.list.name;
     self.reciteLabel.text = [NSString stringWithFormat:@"背诵%d个单词", [self.list.listVocabularies count]];
-    NSString *formattedNumberString = [numberFormatter stringFromNumber:[NSNumber numberWithDouble:[self.list notWellRate]]];
-    self.notRememberWellLabel.text = [NSString stringWithFormat:@"%@不靠谱", formattedNumberString];
+    NSString *formattedNumberString = [numberFormatter stringFromNumber:[NSNumber numberWithDouble:1.0 - [self.list notWellRate]]];
+    self.notRememberWellLabel.text = [NSString stringWithFormat:@"%@靠谱", formattedNumberString];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
