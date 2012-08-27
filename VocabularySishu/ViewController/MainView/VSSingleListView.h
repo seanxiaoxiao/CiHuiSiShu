@@ -15,14 +15,18 @@
 @property (nonatomic, assign) int index;
 @property (nonatomic, retain) UIButton *button;
 @property (nonatomic, retain) VSList *theList;
+@property (nonatomic, assign) BOOL selected;
 @property (nonatomic, retain) UILabel *listNameLabel;
 @property (nonatomic, retain) UIActivityIndicatorView *indicator;
+@property (nonatomic, retain) NSMutableArray *stars;
 
 - (void)initWithList:(VSList *)list;
 
 - (void)loadScore;
 
-- (void)changeButtonImage;
+- (void)selectList;
+
+- (void)unselectList;
 
 - (void)showStars;
 

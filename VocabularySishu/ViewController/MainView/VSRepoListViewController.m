@@ -74,8 +74,11 @@
     VSContext *context = [VSContext getContext];
     for (VSSingleListView *listView in self.listViews) {
         [listView showStars];
+        if (listView.selected == YES) {
+            [listView unselectList];
+        }
         if ([context.currentList isEqual:listView.theList]) {
-            [listView changeButtonImage];
+            [listView selectList];
         }
     }
 }

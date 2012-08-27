@@ -15,6 +15,8 @@
 @synthesize theList;
 @synthesize indicator;
 @synthesize listNameLabel;
+@synthesize stars;
+@synthesize selected;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -28,6 +30,8 @@
 - (void)initWithList:(VSList *)list
 {
     self.theList = list;
+    self.selected = NO;
+    self.stars = [[NSMutableArray alloc] init];
     UIImage *listImage = [VSUtils fetchImg:@"Unit"];
     UIImage *listHighlightImage = [VSUtils fetchImg:@"UnitHighLighted"];
     self.button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, listImage.size.width, listImage.size.height)];
@@ -60,14 +64,26 @@
     [VSUtils toGivenList:self.theList];
 }
 
-- (void)changeButtonImage
+- (void)selectList
 {
     UIImage *listSelectedImage = [VSUtils fetchImg:@"UnitSelected"];
     [self.button setBackgroundImage:listSelectedImage forState:UIControlStateNormal];
+    self.selected = YES;
+}
+
+- (void)unselectList
+{
+    self.selected = NO;
+    UIImage *listImage = [VSUtils fetchImg:@"Unit"];
+    [self.button setBackgroundImage:listImage forState:UIControlStateNormal];
 }
 
 - (void)showStars
 {
+    for (UIImageView *exsitedStar in self.stars) {
+        [exsitedStar removeFromSuperview];
+    }
+    self.stars = [[NSMutableArray alloc] init];
     int originX = 5;
     int starCount = [self.theList rememberRate] / 0.33;
     
@@ -76,6 +92,7 @@
         starImage.frame = CGRectMake(originX, 44, starImage.image.size.width, starImage.image.size.height);
         originX += starImage.image.size.width ;
         [self addSubview:starImage];
+        [stars addObject:starImage];
     }
 }
 
