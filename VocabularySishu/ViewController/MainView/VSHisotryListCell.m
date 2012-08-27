@@ -66,9 +66,7 @@
         [self.contentView addSubview:self.notRememberWellLabel];
         [self.contentView addSubview:self.detailImage];
         
-        self.viewSelected = [[UIView alloc] initWithFrame:CGRectMake(20, 0, 200, 50)];
-        self.viewSelected.backgroundColor = [UIColor redColor];
-        [self setSelectedBackgroundView:viewSelected];
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return self;
 }
