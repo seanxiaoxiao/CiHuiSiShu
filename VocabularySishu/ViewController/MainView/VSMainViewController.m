@@ -41,6 +41,7 @@
 
     self.firstEnter = YES;
     self.controllers = [[NSMutableArray alloc] init];
+    self.view.clipsToBounds = YES;
 
     UIImage* backImage= [VSUtils fetchImg:@"NavBackButton"];
     CGRect frame = CGRectMake(0, 0, backImage.size.width, backImage.size.height);
