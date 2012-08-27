@@ -119,7 +119,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 53;
+    return 44;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -151,9 +151,9 @@
     }
 }
 
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-	if (([scrollView contentOffset].y + scrollView.frame.size.height) == [scrollView contentSize].height && ![self.activator isAnimating]) {
+	if ([scrollView contentOffset].y >= [scrollView contentSize].height - 130 && ![self.activator isAnimating]) {
         self.loading = YES;
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[historyLists count] inSection:0];
         NSArray *indexPaths = [[NSArray alloc] initWithObjects:indexPath, nil];

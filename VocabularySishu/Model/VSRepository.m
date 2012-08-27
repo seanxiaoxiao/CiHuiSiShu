@@ -114,4 +114,16 @@
     return @"";
 }
 
+- (NSString *)titleName
+{
+    NSRange range;
+    if ((range = [self.name rangeOfString:@"GRE"]).location != NSNotFound || (range = [self.name rangeOfString:@"TOEFL"]).location != NSNotFound || (range = [self.name rangeOfString:@"GMAT"]).location != NSNotFound || (range = [self.name rangeOfString:@"IELTS"]).location != NSNotFound) {
+        NSRange remainRange;
+        remainRange.location = range.length;
+        remainRange.length = [self.name length] - range.length;
+        return [NSString stringWithFormat:@"%@ %@", [self.name substringWithRange:range], [self.name substringWithRange:remainRange]];
+    }
+    return @"";
+}
+
 @end

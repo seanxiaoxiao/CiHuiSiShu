@@ -29,7 +29,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.title = self.repo.name;
+    self.title = [self.repo titleName];
     self.listViews = [[NSMutableArray alloc] init];
     
     UIImage* backImage= [VSUtils fetchImg:@"NavBackButton"];
