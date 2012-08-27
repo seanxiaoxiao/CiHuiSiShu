@@ -267,6 +267,12 @@
 		00B491A515EBC3E0004AFC6C /* UnitCHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B491A115EBC3E0004AFC6C /* UnitCHighLighted@2x.png */; };
 		00B491A615EBC3E0004AFC6C /* UnitCHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B491A115EBC3E0004AFC6C /* UnitCHighLighted@2x.png */; };
 		00B491A715EBC3E0004AFC6C /* UnitCHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B491A115EBC3E0004AFC6C /* UnitCHighLighted@2x.png */; };
+		00B491AA15EBDF9B004AFC6C /* ScoreDown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B491A815EBDF9B004AFC6C /* ScoreDown@2x.png */; };
+		00B491AB15EBDF9B004AFC6C /* ScoreDown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B491A815EBDF9B004AFC6C /* ScoreDown@2x.png */; };
+		00B491AC15EBDF9B004AFC6C /* ScoreDown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B491A815EBDF9B004AFC6C /* ScoreDown@2x.png */; };
+		00B491AD15EBDF9B004AFC6C /* ScoreUp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B491A915EBDF9B004AFC6C /* ScoreUp@2x.png */; };
+		00B491AE15EBDF9B004AFC6C /* ScoreUp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B491A915EBDF9B004AFC6C /* ScoreUp@2x.png */; };
+		00B491AF15EBDF9B004AFC6C /* ScoreUp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B491A915EBDF9B004AFC6C /* ScoreUp@2x.png */; };
 		00BDE55815CF9B9400BC205C /* VSNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0081185015BEFE220022B515 /* VSNavigationBar.m */; };
 		00BDE55915CF9B9400BC205C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00701E3D1553CBCE00D30018 /* main.m */; };
 		00BDE55A15CF9B9400BC205C /* VSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00701E411553CBCE00D30018 /* VSAppDelegate.m */; };
@@ -506,6 +512,8 @@
 		00B4919B15EB5610004AFC6C /* UnitSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UnitSelected@2x.png"; path = "Resources/Img/UnitSelected@2x.png"; sourceTree = "<group>"; };
 		00B491A015EBC3E0004AFC6C /* UnitC@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UnitC@2x.png"; path = "Resources/Img/UnitC@2x.png"; sourceTree = "<group>"; };
 		00B491A115EBC3E0004AFC6C /* UnitCHighLighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UnitCHighLighted@2x.png"; path = "Resources/Img/UnitCHighLighted@2x.png"; sourceTree = "<group>"; };
+		00B491A815EBDF9B004AFC6C /* ScoreDown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ScoreDown@2x.png"; path = "Resources/Img/ScoreDown@2x.png"; sourceTree = "<group>"; };
+		00B491A915EBDF9B004AFC6C /* ScoreUp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ScoreUp@2x.png"; path = "Resources/Img/ScoreUp@2x.png"; sourceTree = "<group>"; };
 		00BDE5A815CF9B9400BC205C /* VocabularySishu TOEFL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VocabularySishu TOEFL.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00C09AA415E2B05800AD33C3 /* VocabularySishu 1.1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "VocabularySishu 1.1.xcdatamodel"; sourceTree = "<group>"; };
 		00C42FE115BAFBC6006FF95E /* VSMeaningView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSMeaningView.h; path = ViewController/VocabularyListView/VSMeaningView.h; sourceTree = "<group>"; };
@@ -887,6 +895,8 @@
 		00B5A8BE1566886E00D20EB6 /* Img */ = {
 			isa = PBXGroup;
 			children = (
+				00B491A815EBDF9B004AFC6C /* ScoreDown@2x.png */,
+				00B491A915EBDF9B004AFC6C /* ScoreUp@2x.png */,
 				00B491A015EBC3E0004AFC6C /* UnitC@2x.png */,
 				00B491A115EBC3E0004AFC6C /* UnitCHighLighted@2x.png */,
 				00B4919B15EB5610004AFC6C /* UnitSelected@2x.png */,
@@ -1153,6 +1163,8 @@
 				00B4919E15EB5610004AFC6C /* UnitSelected@2x.png in Resources */,
 				00B491A415EBC3E0004AFC6C /* UnitC@2x.png in Resources */,
 				00B491A715EBC3E0004AFC6C /* UnitCHighLighted@2x.png in Resources */,
+				00B491AC15EBDF9B004AFC6C /* ScoreDown@2x.png in Resources */,
+				00B491AF15EBDF9B004AFC6C /* ScoreUp@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1226,6 +1238,8 @@
 				00B4919C15EB5610004AFC6C /* UnitSelected@2x.png in Resources */,
 				00B491A215EBC3E0004AFC6C /* UnitC@2x.png in Resources */,
 				00B491A515EBC3E0004AFC6C /* UnitCHighLighted@2x.png in Resources */,
+				00B491AA15EBDF9B004AFC6C /* ScoreDown@2x.png in Resources */,
+				00B491AD15EBDF9B004AFC6C /* ScoreUp@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1305,6 +1319,8 @@
 				00B4919D15EB5610004AFC6C /* UnitSelected@2x.png in Resources */,
 				00B491A315EBC3E0004AFC6C /* UnitC@2x.png in Resources */,
 				00B491A615EBC3E0004AFC6C /* UnitCHighLighted@2x.png in Resources */,
+				00B491AB15EBDF9B004AFC6C /* ScoreDown@2x.png in Resources */,
+				00B491AE15EBDF9B004AFC6C /* ScoreUp@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

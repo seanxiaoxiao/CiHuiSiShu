@@ -16,12 +16,14 @@
 
 @interface VSHistoryViewController : UIViewController<UITableViewDelegate, UITableViewDataSource> {
     IBOutlet UITableView *historyTable;
+    IBOutlet UIButton *startButton;
 }
 
 @property (nonatomic, retain) UIView *tableFooterView;
 @property (nonatomic, retain) UIActivityIndicatorView *activator;
 @property (nonatomic, retain) NSMutableArray *historyLists;
 @property (nonatomic, strong) UITableView *historyTable;
+@property (nonatomic, strong) UIButton *startButton;
 @property (nonatomic, assign) BOOL loading;
 
 - (IBAction)recite:(id)sender;

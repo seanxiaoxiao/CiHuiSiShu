@@ -20,6 +20,7 @@
 @synthesize tableFooterView;
 @synthesize activator;
 @synthesize loading;
+@synthesize startButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,14 +37,18 @@
 
     activator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     activator.center = CGPointMake(160, 30);
-
+    
+    if ([VSContext isFirstTime]) {
+        [self.startButton setTitle:@"开始背诵" forState:UIControlStateNormal];
+    }
+    else {
+        [self.startButton setTitle:@"继续背诵" forState:UIControlStateNormal];
+    }
     UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
     [backgroundImageView setFrame:self.view.frame];
     [self.view addSubview:backgroundImageView];
     [self.view sendSubviewToBack:backgroundImageView];
-    if ([VSContext isFirstTime]) {
-        [self doRepoSelect];
-    }
+    
 }
 
 - (void)viewDidUnload
@@ -52,13 +57,13 @@
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
     self.historyTable = nil;
+    self.startButton = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [[self navigationController] setNavigationBarHidden:NO animated:NO];
     self.title = @"词汇私塾";
-    
     UIImage* image= [VSUtils fetchImg:@"infoButton"];
     CGRect frame = CGRectMake(0, 0, image.size.width, image.size.height);
     UIButton* infoButton = [[UIButton alloc] initWithFrame:frame];

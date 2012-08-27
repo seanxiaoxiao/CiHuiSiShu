@@ -42,7 +42,7 @@
         self.inkBody = [[UIImageView alloc] initWithImage:self.inkBodyImage];
         self.inkFooter = [[UIImageView alloc] initWithImage:self.inkFooterImage];
 
-        self.wordRemainLabel = [[UILabel alloc] initWithFrame:CGRectMake(265, 22, 40, 20)];
+        self.wordRemainLabel = [[UILabel alloc] initWithFrame:CGRectMake(263, 22, 45, 20)];
         self.wordRemainLabel.backgroundColor = [UIColor clearColor];
         self.wordRemainLabel.font = [UIFont fontWithName:@"Dakota" size:20];
         self.wordRemainLabel.textAlignment = UITextAlignmentCenter;

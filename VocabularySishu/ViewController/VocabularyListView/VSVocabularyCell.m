@@ -28,6 +28,8 @@
 @synthesize clearShow;
 @synthesize clearContainer;
 @synthesize cellAccessoryImage;
+@synthesize scoreDownImage;
+@synthesize scoreUpImage;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -117,7 +119,8 @@
 - (void) clearVocabulry:(BOOL)clear
 {
     self.clearing = YES;
-    [UIView animateWithDuration:0.25f delay:0.0f options:UIViewAnimationCurveLinear 
+    [self scoreUp];
+    [UIView animateWithDuration:0.25f delay:0.0f options:UIViewAnimationCurveLinear
         animations:^{
             CGFloat width = clear ? 320 : 0;
             self.clearContainer.frame = CGRectMake(0, 0, width, VOCAVULARY_CELL_HEIGHT);
@@ -126,10 +129,6 @@
             self.clearing = NO;
             self.clearShow = NO;
             if (finished == YES && clear) {
-                NSMutableDictionary *orientationData = [[NSMutableDictionary alloc] init];
-                [orientationData setValue:self._vocabulary forKey:@"vocabulary"];
-                NSNotification *notification = [NSNotification notificationWithName:CLEAR_VOCABULRY object:nil userInfo:orientationData];
-                [[NSNotificationCenter defaultCenter] postNotification:notification];
             }
         }];
 }
@@ -163,6 +162,7 @@
         self.cellAccessoryImage.hidden = NO;
         [self._vocabulary forgot];
         [self._vocabulary seeSummaryStart];
+        [self scoreDown];
     }
     if (lastGestureX > 260) {
         [curlUpTimer invalidate];
@@ -172,8 +172,59 @@
     }
 }
 
+- (void) scoreDown
+{
+    self.scoreDownImage = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ScoreDown"]];
+    CGRect frame = self.scoreDownImage.frame;
+    frame.origin.y = 5;
+    self.scoreDownImage.frame = frame;
+
+    [self.contentView addSubview:self.scoreDownImage];
+    frame.origin.y = 20;
+    [UIView animateWithDuration:0.5f delay:0.0f options:UIViewAnimationCurveLinear
+        animations:^{
+            self.scoreDownImage.frame = frame;
+            self.scoreDownImage.alpha = 0;
+        }
+        completion:^(BOOL finished) {
+            [self.scoreDownImage removeFromSuperview];
+            self.scoreDownImage = nil;
+        }
+    ];
+}
+
+- (void) scoreUp
+{
+    self.scoreUpImage = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ScoreUp"]];
+    CGRect frame = self.scoreUpImage.frame;
+    frame.origin.y = 17;
+    frame.origin.x = 280;
+    self.scoreUpImage.frame = frame;
+    [self.contentView addSubview:self.scoreUpImage];
+
+    frame.origin.y = 2;
+    [UIView animateWithDuration:0.5f delay:0.0f options:UIViewAnimationCurveLinear
+        animations:^{
+            self.scoreUpImage.frame = frame;
+            self.scoreUpImage.alpha = 0;
+        }
+        completion:^(BOOL finished) {
+            [self.scoreUpImage removeFromSuperview];
+            self.scoreUpImage = nil;
+            NSMutableDictionary *orientationData = [[NSMutableDictionary alloc] init];
+            [orientationData setValue:self._vocabulary forKey:@"vocabulary"];
+            NSNotification *notification = [NSNotification notificationWithName:CLEAR_VOCABULRY object:nil userInfo:orientationData];
+            [[NSNotificationCenter defaultCenter] postNotification:notification];
+        }
+    ];
+}
+
 - (void) doCurlDown
 {
+    if (self.scoreDownImage != nil) {
+        [self.scoreDownImage removeFromSuperview];
+        self.scoreDownImage = nil;
+    }
     self.curling = YES;
     if (lastGestureX < 80) {
         lastGestureX = lastGestureX - 10;
