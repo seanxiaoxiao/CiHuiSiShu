@@ -175,35 +175,33 @@
 - (void) scoreDown
 {
     self.scoreDownImage = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ScoreDown"]];
-    CGRect frame = self.scoreDownImage.frame;
-    frame.origin.y = 5;
-    self.scoreDownImage.frame = frame;
-
     [self.contentView addSubview:self.scoreDownImage];
-    frame.origin.y = 20;
-    [UIView animateWithDuration:0.5f delay:0.0f options:UIViewAnimationCurveLinear
+	CGRect frame = self.scoreDownImage.frame;
+    frame.origin.y = 8;
+    self.scoreDownImage.frame = frame;
+    frame.origin.y = 28;
+    [UIView animateWithDuration:0.8f delay:0.0f options:UIViewAnimationCurveEaseIn
         animations:^{
             self.scoreDownImage.frame = frame;
             self.scoreDownImage.alpha = 0;
         }
-        completion:^(BOOL finished) {
-            [self.scoreDownImage removeFromSuperview];
-            self.scoreDownImage = nil;
-        }
-    ];
+		completion:^(BOOL finished) {
+			[self.scoreDownImage removeFromSuperview];
+			self.scoreDownImage = nil;
+		}
+	];
 }
 
 - (void) scoreUp
 {
     self.scoreUpImage = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ScoreUp"]];
+	[self.contentView addSubview:self.scoreUpImage];
     CGRect frame = self.scoreUpImage.frame;
-    frame.origin.y = 17;
-    frame.origin.x = 280;
+	frame.origin.x = 280;
+    frame.origin.y = 20;
     self.scoreUpImage.frame = frame;
-    [self.contentView addSubview:self.scoreUpImage];
-
-    frame.origin.y = 2;
-    [UIView animateWithDuration:0.5f delay:0.0f options:UIViewAnimationCurveLinear
+    frame.origin.y = 0;
+    [UIView animateWithDuration:0.8f delay:0.0f options:UIViewAnimationCurveEaseIn
         animations:^{
             self.scoreUpImage.frame = frame;
             self.scoreUpImage.alpha = 0;
