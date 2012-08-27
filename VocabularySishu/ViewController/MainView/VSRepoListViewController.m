@@ -30,7 +30,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.title = self.repo.name;
-
+    self.listViews = [[NSMutableArray alloc] init];
+    
     UIImage* backImage= [VSUtils fetchImg:@"NavBackButton"];
     CGRect frame = CGRectMake(0, 0, backImage.size.width, backImage.size.height);
     UIButton* backButton = [[UIButton alloc] initWithFrame:frame];
@@ -48,10 +49,10 @@
     int horizontalCount = 0;
     int width = 27.2;
     int height = 20;
-    VSContext *context = [VSContext getContext];
     for (VSList *list in listArray) {
         VSSingleListView *listView = [[VSSingleListView alloc] initWithFrame:CGRectMake(width, height, 50, 80)];
-        [listView initWithList:list andContext:context];
+        [listView initWithList:list];
+        [self.listViews addObject:listView];
         [self.scrollView addSubview:listView];
         width += 73.2;
         horizontalCount++;
@@ -65,6 +66,18 @@
         height += 70;
     }
     self.scrollView.contentSize = CGSizeMake(320, height);
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    VSContext *context = [VSContext getContext];
+    for (VSSingleListView *listView in self.listViews) {
+        [listView showStars];
+        if ([context.currentList isEqual:listView.theList]) {
+            [listView changeButtonImage];
+        }
+    }
 }
 
 - (void)viewDidUnload

@@ -18,8 +18,12 @@
 @property (nonatomic, retain) UILabel *listNameLabel;
 @property (nonatomic, retain) UIActivityIndicatorView *indicator;
 
-- (void)initWithList:(VSList *)list andContext:(VSContext *)ctx;
+- (void)initWithList:(VSList *)list;
 
 - (void)loadScore;
+
+- (void)changeButtonImage;
+
+- (void)showStars;
 
 @end

@@ -25,25 +25,19 @@
     return self;
 }
 
-- (void)initWithList:(VSList *)list andContext:(VSContext *)ctx
+- (void)initWithList:(VSList *)list
 {
     self.theList = list;
     UIImage *listImage = [VSUtils fetchImg:@"Unit"];
     UIImage *listHighlightImage = [VSUtils fetchImg:@"UnitHighLighted"];
     self.button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, listImage.size.width, listImage.size.height)];
     [self.button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    if (![ctx.currentList isEqual:self.theList]) {
-        [self.button setBackgroundImage:listImage forState:UIControlStateNormal];
-    }
-    else {
-        UIImage *listSelectedImage = [VSUtils fetchImg:@"UnitSelected"];
-        [self.button setBackgroundImage:listSelectedImage forState:UIControlStateNormal];
-    }
+    [self.button setBackgroundImage:listImage forState:UIControlStateNormal];
     [self.button setBackgroundImage:listHighlightImage forState:UIControlStateHighlighted];
     [self.button addTarget:self action:@selector(toList) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.button];
     
-    self.listNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 11, 46, 20)];
+    self.listNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 13, 46, 20)];
     self.listNameLabel.textColor = [UIColor blackColor];
     self.listNameLabel.alpha = 0.7f;
     self.listNameLabel.font = [UIFont fontWithName:@"TrebuchetMS" size:16];
@@ -59,16 +53,6 @@
     self.indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     self.indicator.center = CGPointMake(23, 45);
     [self addSubview:self.indicator];
-
-    int originX = 5;
-    int starCount = [self.theList rememberRate] / 0.33;
-
-    for (int i = 0; i < starCount; i++) {
-        UIImageView *starImage = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"StarSmall"]];
-        starImage.frame = CGRectMake(originX, 42, starImage.image.size.width, starImage.image.size.height);
-        originX += starImage.image.size.width ;
-        [self addSubview:starImage];
-    }
 }
 
 - (void)toList
@@ -76,8 +60,23 @@
     [VSUtils toGivenList:self.theList];
 }
 
-- (void)loadScore
+- (void)changeButtonImage
 {
+    UIImage *listSelectedImage = [VSUtils fetchImg:@"UnitSelected"];
+    [self.button setBackgroundImage:listSelectedImage forState:UIControlStateNormal];
+}
+
+- (void)showStars
+{
+    int originX = 5;
+    int starCount = [self.theList rememberRate] / 0.33;
+    
+    for (int i = 0; i < starCount; i++) {
+        UIImageView *starImage = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"StarSmall"]];
+        starImage.frame = CGRectMake(originX, 44, starImage.image.size.width, starImage.image.size.height);
+        originX += starImage.image.size.width ;
+        [self addSubview:starImage];
+    }
 }
 
 /*

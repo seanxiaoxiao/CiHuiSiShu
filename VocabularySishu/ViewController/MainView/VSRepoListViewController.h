@@ -19,5 +19,6 @@
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, retain) VSRepository *repo;
+@property (nonatomic, retain) NSMutableArray *listViews;
 
 @end
