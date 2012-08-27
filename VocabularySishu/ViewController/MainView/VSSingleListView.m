@@ -25,14 +25,20 @@
     return self;
 }
 
-- (void)initWithList:(VSList *)list
+- (void)initWithList:(VSList *)list andContext:(VSContext *)ctx
 {
     self.theList = list;
     UIImage *listImage = [VSUtils fetchImg:@"Unit"];
     UIImage *listHighlightImage = [VSUtils fetchImg:@"UnitHighLighted"];
     self.button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, listImage.size.width, listImage.size.height)];
     [self.button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [self.button setBackgroundImage:listImage forState:UIControlStateNormal];
+    if (![ctx.currentList isEqual:self.theList]) {
+        [self.button setBackgroundImage:listImage forState:UIControlStateNormal];
+    }
+    else {
+        UIImage *listSelectedImage = [VSUtils fetchImg:@"UnitSelected"];
+        [self.button setBackgroundImage:listSelectedImage forState:UIControlStateNormal];
+    }
     [self.button setBackgroundImage:listHighlightImage forState:UIControlStateHighlighted];
     [self.button addTarget:self action:@selector(toList) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.button];

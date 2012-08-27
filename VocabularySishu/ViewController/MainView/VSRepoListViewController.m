@@ -48,9 +48,10 @@
     int horizontalCount = 0;
     int width = 27.2;
     int height = 20;
+    VSContext *context = [VSContext getContext];
     for (VSList *list in listArray) {
         VSSingleListView *listView = [[VSSingleListView alloc] initWithFrame:CGRectMake(width, height, 50, 80)];
-        [listView initWithList:list];
+        [listView initWithList:list andContext:context];
         [self.scrollView addSubview:listView];
         width += 73.2;
         horizontalCount++;
@@ -59,6 +60,9 @@
             horizontalCount = 0;
             height += 70;
         }
+    }
+    if (horizontalCount != 0) {
+        height += 70;
     }
     self.scrollView.contentSize = CGSizeMake(320, height);
 }

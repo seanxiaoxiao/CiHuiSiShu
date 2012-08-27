@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "VSList.h"
+#import "VSContext.h"
 
 @interface VSSingleListView : UIView
 
@@ -17,7 +18,7 @@
 @property (nonatomic, retain) UILabel *listNameLabel;
 @property (nonatomic, retain) UIActivityIndicatorView *indicator;
 
-- (void)initWithList:(VSList *)list;
+- (void)initWithList:(VSList *)list andContext:(VSContext *)ctx;
 
 - (void)loadScore;
 
