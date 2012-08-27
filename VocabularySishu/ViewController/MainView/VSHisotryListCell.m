@@ -65,8 +65,13 @@
         [self.contentView addSubview:self.reciteLabel];
         [self.contentView addSubview:self.notRememberWellLabel];
         [self.contentView addSubview:self.detailImage];
-        
-        self.selectionStyle = UITableViewCellSelectionStyleNone;
+
+        self.viewSelected = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 53)];
+        UIImage *selectedImage = [VSUtils fetchImg:@"MenuButtonHighLighted"];
+        UIImageView *selectedImageView = [[UIImageView alloc] initWithImage:selectedImage];
+        selectedImageView.frame = CGRectMake(40, 8, 240, 42);
+        [self.viewSelected addSubview:selectedImageView];
+        self.selectedBackgroundView = self.viewSelected;
     }
     return self;
 }

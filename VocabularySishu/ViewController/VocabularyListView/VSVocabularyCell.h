@@ -29,6 +29,7 @@
 @property (nonatomic, assign) BOOL curling;
 @property (nonatomic, assign) BOOL clearing;
 @property (nonatomic, assign) BOOL clearShow;
+@property (nonatomic, assign) BOOL hadCurlUp;
 @property (nonatomic, assign) CGFloat lastGestureX;
 @property (nonatomic, retain) NSTimer *curlUpTimer;
 @property (nonatomic, retain) UIImageView *scoreDownImage;
