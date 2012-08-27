@@ -18,6 +18,7 @@
 @property (nonatomic, retain) UILabel *notRememberWellLabel;
 @property (nonatomic, retain) UIImageView *detailImage;
 @property (nonatomic, retain) VSList *list;
+@property (nonatomic, retain) UIView *viewSelected;
 @property (nonatomic, retain) NSNumberFormatter *numberFormatter;
 @property (nonatomic, retain) UIImageView *backgroundImage;
 

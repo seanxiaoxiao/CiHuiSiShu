@@ -16,6 +16,7 @@
 @synthesize list;
 @synthesize numberFormatter;
 @synthesize backgroundImage ;
+@synthesize viewSelected;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -24,8 +25,6 @@
         // Initialization code
         self.numberFormatter = [[NSNumberFormatter alloc] init];
         [self.numberFormatter setPositiveFormat:@"0.0%;0.0%-0.0%"];
-
-        self.selectionStyle = UITableViewCellSelectionStyleNone;
         
         self.dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(42, 16, 120, 30)];
         self.dateLabel.backgroundColor = [UIColor clearColor];
@@ -66,6 +65,10 @@
         [self.contentView addSubview:self.reciteLabel];
         [self.contentView addSubview:self.notRememberWellLabel];
         [self.contentView addSubview:self.detailImage];
+        
+        self.viewSelected = [[UIView alloc] initWithFrame:CGRectMake(20, 0, 200, 50)];
+        self.viewSelected.backgroundColor = [UIColor redColor];
+        [self setSelectedBackgroundView:viewSelected];
     }
     return self;
 }
