@@ -109,12 +109,7 @@
         vocabularyListViewController.currentList = list;
         vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
 
-        [UIView beginAnimations:nil context:NULL];
-        [UIView setAnimationCurve:UIViewAnimationTransitionCurlUp];
-        [UIView setAnimationDuration:0.5];
-        [navigationController pushViewController:vocabularyListViewController animated:NO];
-        [UIView setAnimationTransition:UIViewAnimationTransitionCurlUp forView:navigationController.view cache:NO];
-        [UIView commitAnimations];
+        [navigationController pushViewController:vocabularyListViewController animated:YES];
     }
 }
 
