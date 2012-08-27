@@ -41,17 +41,6 @@
     [backButton addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem* backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
     [self.navigationItem setLeftBarButtonItem:backButtonItem];
-    NSDictionary* infoDict = [[NSBundle mainBundle] infoDictionary];
-    NSString* versionNum = [infoDict objectForKey:@"CFBundleVersion"];
-    self.infoLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 260, 130)];
-    self.infoLabel.textAlignment = UITextAlignmentCenter;
-    self.infoLabel.font = [UIFont systemFontOfSize:12];
-    self.infoLabel.textColor = [UIColor colorWithWhite:0 alpha:0.7];
-    self.infoLabel.backgroundColor = [UIColor clearColor];
-    self.infoLabel.numberOfLines = 0;
-    self.infoLabel.text = [NSString stringWithFormat:@"词汇私塾\nVersion %@\nXiao Xiao -- Direct\nSu Shaowen -- Art\n©2012 GeFo Studio", versionNum];
-    
-    self.tableView.tableFooterView = self.infoLabel;
 }
 
 - (void)goBack
@@ -95,6 +84,14 @@
         return [contactContents count];
     }
     return 0;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
+	if ( section == CONTACT_SECTION ) {
+		NSString* versionNum = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+		return [NSString stringWithFormat:@"\n\n词汇私塾\nVersion %@\nXiao Xiao -- Direct\nSu Shaowen -- Art\n©2012 GeFo Studio", versionNum];
+	}
+    return nil;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
