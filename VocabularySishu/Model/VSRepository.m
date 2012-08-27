@@ -92,6 +92,11 @@
     }
 }
 
+- (BOOL)isCategoryRepo
+{
+    return [self.name rangeOfString:@"分类"].location != NSNotFound;
+}
+
 - (UIColor *)repoNameColor
 {
     return [UIColor colorWithHue:50.0/360.0 saturation:0.6 brightness:1 alpha:0.9];

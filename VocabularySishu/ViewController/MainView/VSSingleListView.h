@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "VSList.h"
 #import "VSContext.h"
+#import "VSRepository.h"
 
 @interface VSSingleListView : UIView
 
@@ -21,8 +22,6 @@
 @property (nonatomic, retain) NSMutableArray *stars;
 
 - (void)initWithList:(VSList *)list;
-
-- (void)loadScore;
 
 - (void)selectList;
 

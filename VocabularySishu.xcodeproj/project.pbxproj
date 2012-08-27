@@ -261,6 +261,12 @@
 		00B4919C15EB5610004AFC6C /* UnitSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B4919B15EB5610004AFC6C /* UnitSelected@2x.png */; };
 		00B4919D15EB5610004AFC6C /* UnitSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B4919B15EB5610004AFC6C /* UnitSelected@2x.png */; };
 		00B4919E15EB5610004AFC6C /* UnitSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B4919B15EB5610004AFC6C /* UnitSelected@2x.png */; };
+		00B491A215EBC3E0004AFC6C /* UnitC@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B491A015EBC3E0004AFC6C /* UnitC@2x.png */; };
+		00B491A315EBC3E0004AFC6C /* UnitC@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B491A015EBC3E0004AFC6C /* UnitC@2x.png */; };
+		00B491A415EBC3E0004AFC6C /* UnitC@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B491A015EBC3E0004AFC6C /* UnitC@2x.png */; };
+		00B491A515EBC3E0004AFC6C /* UnitCHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B491A115EBC3E0004AFC6C /* UnitCHighLighted@2x.png */; };
+		00B491A615EBC3E0004AFC6C /* UnitCHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B491A115EBC3E0004AFC6C /* UnitCHighLighted@2x.png */; };
+		00B491A715EBC3E0004AFC6C /* UnitCHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B491A115EBC3E0004AFC6C /* UnitCHighLighted@2x.png */; };
 		00BDE55815CF9B9400BC205C /* VSNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0081185015BEFE220022B515 /* VSNavigationBar.m */; };
 		00BDE55915CF9B9400BC205C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00701E3D1553CBCE00D30018 /* main.m */; };
 		00BDE55A15CF9B9400BC205C /* VSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00701E411553CBCE00D30018 /* VSAppDelegate.m */; };
@@ -498,6 +504,8 @@
 		00AE80EF158B1318000CE7EA /* VSConfigurationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSConfigurationViewController.m; path = ViewController/ConfigurationView/VSConfigurationViewController.m; sourceTree = "<group>"; };
 		00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSConfigurationViewController.xib; path = ViewController/ConfigurationView/VSConfigurationViewController.xib; sourceTree = "<group>"; };
 		00B4919B15EB5610004AFC6C /* UnitSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UnitSelected@2x.png"; path = "Resources/Img/UnitSelected@2x.png"; sourceTree = "<group>"; };
+		00B491A015EBC3E0004AFC6C /* UnitC@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UnitC@2x.png"; path = "Resources/Img/UnitC@2x.png"; sourceTree = "<group>"; };
+		00B491A115EBC3E0004AFC6C /* UnitCHighLighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UnitCHighLighted@2x.png"; path = "Resources/Img/UnitCHighLighted@2x.png"; sourceTree = "<group>"; };
 		00BDE5A815CF9B9400BC205C /* VocabularySishu TOEFL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VocabularySishu TOEFL.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00C09AA415E2B05800AD33C3 /* VocabularySishu 1.1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "VocabularySishu 1.1.xcdatamodel"; sourceTree = "<group>"; };
 		00C42FE115BAFBC6006FF95E /* VSMeaningView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSMeaningView.h; path = ViewController/VocabularyListView/VSMeaningView.h; sourceTree = "<group>"; };
@@ -879,6 +887,8 @@
 		00B5A8BE1566886E00D20EB6 /* Img */ = {
 			isa = PBXGroup;
 			children = (
+				00B491A015EBC3E0004AFC6C /* UnitC@2x.png */,
+				00B491A115EBC3E0004AFC6C /* UnitCHighLighted@2x.png */,
 				00B4919B15EB5610004AFC6C /* UnitSelected@2x.png */,
 				0045251015E7572000935B34 /* MenuButtonHighLighted@2x.png */,
 				00CBF0D815E9F333001588A3 /* UnitHighLighted@2x.png */,
@@ -1141,6 +1151,8 @@
 				0045251315E7572000935B34 /* MenuButtonHighLighted@2x.png in Resources */,
 				00CBF0DB15E9F333001588A3 /* UnitHighLighted@2x.png in Resources */,
 				00B4919E15EB5610004AFC6C /* UnitSelected@2x.png in Resources */,
+				00B491A415EBC3E0004AFC6C /* UnitC@2x.png in Resources */,
+				00B491A715EBC3E0004AFC6C /* UnitCHighLighted@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1212,6 +1224,8 @@
 				0045251115E7572000935B34 /* MenuButtonHighLighted@2x.png in Resources */,
 				00CBF0D915E9F333001588A3 /* UnitHighLighted@2x.png in Resources */,
 				00B4919C15EB5610004AFC6C /* UnitSelected@2x.png in Resources */,
+				00B491A215EBC3E0004AFC6C /* UnitC@2x.png in Resources */,
+				00B491A515EBC3E0004AFC6C /* UnitCHighLighted@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1289,6 +1303,8 @@
 				0045251215E7572000935B34 /* MenuButtonHighLighted@2x.png in Resources */,
 				00CBF0DA15E9F333001588A3 /* UnitHighLighted@2x.png in Resources */,
 				00B4919D15EB5610004AFC6C /* UnitSelected@2x.png in Resources */,
+				00B491A315EBC3E0004AFC6C /* UnitC@2x.png in Resources */,
+				00B491A615EBC3E0004AFC6C /* UnitCHighLighted@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

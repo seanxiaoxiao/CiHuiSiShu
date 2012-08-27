@@ -32,8 +32,17 @@
     self.theList = list;
     self.selected = NO;
     self.stars = [[NSMutableArray alloc] init];
-    UIImage *listImage = [VSUtils fetchImg:@"Unit"];
-    UIImage *listHighlightImage = [VSUtils fetchImg:@"UnitHighLighted"];
+    UIImage *listImage = nil;
+    UIImage *listHighlightImage = nil;
+    
+    if ([self.theList.repository isCategoryRepo]) {
+        listImage = [VSUtils fetchImg:@"UnitC"];
+        listHighlightImage = [VSUtils fetchImg:@"UnitCHighLighted"];
+    }
+    else {
+        listImage = [VSUtils fetchImg:@"Unit"];
+        listHighlightImage = [VSUtils fetchImg:@"UnitHighLighted"];
+    }
     self.button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, listImage.size.width, listImage.size.height)];
     [self.button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [self.button setBackgroundImage:listImage forState:UIControlStateNormal];
@@ -41,10 +50,18 @@
     [self.button addTarget:self action:@selector(toList) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.button];
     
-    self.listNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 13, 46, 20)];
+    self.listNameLabel = nil;
+    if ([self.theList.repository isCategoryRepo]) {
+        self.listNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(9, 13, 60, 20)];
+        self.listNameLabel.font = [UIFont fontWithName:@"TrebuchetMS" size:12];
+        self.listNameLabel.lineBreakMode = UILineBreakModeMiddleTruncation;
+    }
+    else {
+        self.listNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 13, 46, 20)];
+        self.listNameLabel.font = [UIFont fontWithName:@"TrebuchetMS" size:16];
+    }
     self.listNameLabel.textColor = [UIColor blackColor];
     self.listNameLabel.alpha = 0.7f;
-    self.listNameLabel.font = [UIFont fontWithName:@"TrebuchetMS" size:16];
     self.listNameLabel.shadowOffset = CGSizeMake(0, 1);
     self.listNameLabel.shadowColor = [UIColor colorWithWhite:1 alpha:0.6];
     self.listNameLabel.minimumFontSize = 12;
@@ -66,7 +83,13 @@
 
 - (void)selectList
 {
-    UIImage *listSelectedImage = [VSUtils fetchImg:@"UnitSelected"];
+    UIImage *listSelectedImage = nil;
+    if ([self.theList.repository isCategoryRepo]) {
+        listSelectedImage = [VSUtils fetchImg:@"UnitCHighLighted"];
+    }
+    else {
+        listSelectedImage = [VSUtils fetchImg:@"UnitSelected"];
+    }
     [self.button setBackgroundImage:listSelectedImage forState:UIControlStateNormal];
     self.selected = YES;
 }
@@ -74,7 +97,13 @@
 - (void)unselectList
 {
     self.selected = NO;
-    UIImage *listImage = [VSUtils fetchImg:@"Unit"];
+    UIImage *listImage = nil;
+    if ([self.theList.repository isCategoryRepo]) {
+        listImage = [VSUtils fetchImg:@"UnitC"];
+    }
+    else {
+        listImage = [VSUtils fetchImg:@"Unit"];
+    }
     [self.button setBackgroundImage:listImage forState:UIControlStateNormal];
 }
 
@@ -85,12 +114,18 @@
     }
     self.stars = [[NSMutableArray alloc] init];
     int originX = 5;
+    if ([self.theList.repository isCategoryRepo]) {
+        originX = 8;
+    }
     int starCount = [self.theList rememberRate] / 0.33;
     
     for (int i = 0; i < starCount; i++) {
         UIImageView *starImage = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"StarSmall"]];
         starImage.frame = CGRectMake(originX, 44, starImage.image.size.width, starImage.image.size.height);
-        originX += starImage.image.size.width ;
+        originX += starImage.image.size.width;
+        if ([self.theList.repository isCategoryRepo]) {
+            originX += 12;
+        }
         [self addSubview:starImage];
         [stars addObject:starImage];
     }

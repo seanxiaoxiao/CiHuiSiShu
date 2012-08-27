@@ -48,18 +48,29 @@
     NSArray *listArray = [self.repo orderedList];
     int horizontalCount = 0;
     int width = 27.2;
+    int widthIncr = 73.2;
     int height = 20;
+    int countInRow = 4;
+    if ([self.repo isCategoryRepo]) {
+        width = 21.15;
+        widthIncr = 99.15;
+        height = 20;
+        countInRow = 3;
+    }
     for (VSList *list in listArray) {
         VSSingleListView *listView = [[VSSingleListView alloc] initWithFrame:CGRectMake(width, height, 50, 80)];
         [listView initWithList:list];
         [self.listViews addObject:listView];
         [self.scrollView addSubview:listView];
-        width += 73.2;
+        width += widthIncr;
         horizontalCount++;
-        if (horizontalCount == 4) {
+        if (horizontalCount == countInRow) {
             width = 27.2;
             horizontalCount = 0;
             height += 70;
+            if ([self.repo isCategoryRepo]) {
+                width = 21.15;
+            }
         }
     }
     if (horizontalCount != 0) {

@@ -42,6 +42,8 @@
 
 - (NSString *)displayName;
 
+- (BOOL)isCategoryRepo;
+
 @end
 
 @interface VSRepository (CoreDataGeneratedAccessors)
