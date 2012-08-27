@@ -17,6 +17,7 @@
 @synthesize summaryContainerView;
 @synthesize clearImage;
 @synthesize curlUp;
+@synthesize hadCurlUp;
 @synthesize tapeBodyImage;
 @synthesize tapeHeadImage;
 @synthesize tapeTailImage;
@@ -119,7 +120,9 @@
 - (void) clearVocabulry:(BOOL)clear
 {
     self.clearing = YES;
-    [self scoreUp];
+    if (!hadCurlUp) {
+        [self scoreUp];
+    }
     [UIView animateWithDuration:0.25f delay:0.0f options:UIViewAnimationCurveLinear
         animations:^{
             CGFloat width = clear ? 320 : 0;
@@ -129,6 +132,10 @@
             self.clearing = NO;
             self.clearShow = NO;
             if (finished == YES && clear) {
+                NSMutableDictionary *orientationData = [[NSMutableDictionary alloc] init];
+                [orientationData setValue:self._vocabulary forKey:@"vocabulary"];
+                NSNotification *notification = [NSNotification notificationWithName:CLEAR_VOCABULRY object:nil userInfo:orientationData];
+                [[NSNotificationCenter defaultCenter] postNotification:notification];
             }
         }];
 }
@@ -160,6 +167,7 @@
         self.curling = NO;
         self.curlUp = YES;
         self.cellAccessoryImage.hidden = NO;
+        self.hadCurlUp = YES;
         [self._vocabulary forgot];
         [self._vocabulary seeSummaryStart];
         [self scoreDown];
@@ -209,10 +217,6 @@
         completion:^(BOOL finished) {
             [self.scoreUpImage removeFromSuperview];
             self.scoreUpImage = nil;
-            NSMutableDictionary *orientationData = [[NSMutableDictionary alloc] init];
-            [orientationData setValue:self._vocabulary forKey:@"vocabulary"];
-            NSNotification *notification = [NSNotification notificationWithName:CLEAR_VOCABULRY object:nil userInfo:orientationData];
-            [[NSNotificationCenter defaultCenter] postNotification:notification];
         }
     ];
 }
@@ -297,6 +301,7 @@
     self.curling = NO;
     self.clearing = NO;
     self.clearShow = NO;
+    self.hadCurlUp = NO;
     self.clearContainer.frame = CGRectMake(0, 0, 0, VOCAVULARY_CELL_HEIGHT);
 }
 
