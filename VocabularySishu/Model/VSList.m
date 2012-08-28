@@ -349,7 +349,10 @@
 
 - (NSString *)titleName
 {
-    if ([self.repository isCategoryRepo]) {
+    if ([self isHistoryList]) {
+        return self.name;
+    }
+    else if ([self.repository isCategoryRepo]) {
         return self.name;
     }
     else {
