@@ -359,6 +359,9 @@
 		00FF701315D1676F0043BA91 /* VSHisotryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF701215D1676F0043BA91 /* VSHisotryListCell.m */; };
 		00FF701415D1676F0043BA91 /* VSHisotryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF701215D1676F0043BA91 /* VSHisotryListCell.m */; };
 		00FF701515D1676F0043BA91 /* VSHisotryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF701215D1676F0043BA91 /* VSHisotryListCell.m */; };
+		6437436415ED3063001106FA /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6437436015ED3063001106FA /* icon.png */; };
+		6437436615ED3063001106FA /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6437436115ED3063001106FA /* icon@2x.png */; };
+		6437436815ED3063001106FA /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 6437436215ED3063001106FA /* iTunesArtwork */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -550,6 +553,9 @@
 		00FF6FF915D0BACB0043BA91 /* VSScoreBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSScoreBoardView.m; path = ViewController/VocabularyListView/VSScoreBoardView.m; sourceTree = "<group>"; };
 		00FF701115D1676F0043BA91 /* VSHisotryListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSHisotryListCell.h; path = ViewController/MainView/VSHisotryListCell.h; sourceTree = "<group>"; };
 		00FF701215D1676F0043BA91 /* VSHisotryListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSHisotryListCell.m; path = ViewController/MainView/VSHisotryListCell.m; sourceTree = "<group>"; };
+		6437436015ED3063001106FA /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		6437436115ED3063001106FA /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		6437436215ED3063001106FA /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -678,6 +684,9 @@
 		00701E201553CBCE00D30018 = {
 			isa = PBXGroup;
 			children = (
+				6437436015ED3063001106FA /* icon.png */,
+				6437436115ED3063001106FA /* icon@2x.png */,
+				6437436215ED3063001106FA /* iTunesArtwork */,
 				00701E371553CBCE00D30018 /* VocabularySishu */,
 				00701E531553CBCE00D30018 /* VocabularySishuTests */,
 				00701E2E1553CBCE00D30018 /* Frameworks */,
@@ -1165,6 +1174,9 @@
 				00B491A715EBC3E0004AFC6C /* UnitCHighLighted@2x.png in Resources */,
 				00B491AC15EBDF9B004AFC6C /* ScoreDown@2x.png in Resources */,
 				00B491AF15EBDF9B004AFC6C /* ScoreUp@2x.png in Resources */,
+				6437436415ED3063001106FA /* icon.png in Resources */,
+				6437436615ED3063001106FA /* icon@2x.png in Resources */,
+				6437436815ED3063001106FA /* iTunesArtwork in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1329,14 +1341,14 @@
 /* Begin PBXShellScriptBuildPhase section */
 		00201E2915CFBAD30089B8FA /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = ./Crashlytics.framework/run;
 		};
@@ -1355,14 +1367,14 @@
 		};
 		00BDE5A215CF9B9400BC205C /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = ./Crashlytics.framework/run;
 		};
