@@ -35,20 +35,13 @@
     [super viewDidLoad];
     loading = NO;
 
-    activator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    activator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     activator.center = CGPointMake(160, 30);
     
-    if ([VSContext isFirstTime]) {
-        [self.startButton setTitle:@"开始背诵" forState:UIControlStateNormal];
-    }
-    else {
-        [self.startButton setTitle:@"继续背诵" forState:UIControlStateNormal];
-    }
     UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
     [backgroundImageView setFrame:self.view.frame];
     [self.view addSubview:backgroundImageView];
     [self.view sendSubviewToBack:backgroundImageView];
-    
 }
 
 - (void)viewDidUnload
@@ -69,11 +62,16 @@
     UIButton* infoButton = [[UIButton alloc] initWithFrame:frame];
     [infoButton setBackgroundImage:image forState:UIControlStateNormal];
     [infoButton addTarget:self action:@selector(toConfigurationView:) forControlEvents:UIControlEventTouchUpInside];
-    
     UIBarButtonItem* infoButtonItem = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
     [self.navigationItem setRightBarButtonItem:infoButtonItem];
 
-    
+    if ([VSContext isFirstTime]) {
+        [self.startButton setTitle:@"开始背诵" forState:UIControlStateNormal];
+    }
+    else {
+        [self.startButton setTitle:@"继续背诵" forState:UIControlStateNormal];
+    }
+
     self.historyLists = [NSMutableArray arrayWithArray:[VSList lastestHistoryList]];
     [self.historyTable reloadData];
 }

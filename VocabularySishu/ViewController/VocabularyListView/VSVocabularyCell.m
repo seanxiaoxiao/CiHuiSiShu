@@ -120,7 +120,7 @@
 - (void) clearVocabulry:(BOOL)clear
 {
     self.clearing = YES;
-    if (!hadCurlUp) {
+    if (clear && !hadCurlUp) {
         [self scoreUp];
     }
     [UIView animateWithDuration:0.25f delay:0.0f options:UIViewAnimationCurveLinear

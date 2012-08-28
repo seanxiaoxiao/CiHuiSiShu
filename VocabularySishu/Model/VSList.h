@@ -79,6 +79,8 @@
 
 - (NSString *)displayName;
 
+- (NSString *)titleName;
+
 @end
 
 @interface VSList (CoreDataGeneratedAccessors)

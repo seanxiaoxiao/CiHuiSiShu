@@ -347,4 +347,14 @@
     }
 }
 
+- (NSString *)titleName
+{
+    if ([self.repository isCategoryRepo]) {
+        return self.name;
+    }
+    else {
+        return [NSString stringWithFormat:@"%@ %@", self.repository.name, self.order];
+    }
+}
+
 @end

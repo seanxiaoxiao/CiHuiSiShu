@@ -52,7 +52,7 @@
         }
         [currentList process];
         self.selectedIndex = -1;
-        self.title = self.currentList.name;
+        self.title = [self.currentList titleName];
         NSArray *vocabularies = [self.currentList vocabulariesToRecite];
         self.headerView = [[VSVocabularyListHeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
         [self.headerView setWordRemains:[vocabularies count]];
