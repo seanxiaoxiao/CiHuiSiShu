@@ -1397,7 +1397,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = ./Crashlytics.framework/run;
+			shellScript = "./Crashlytics.framework/run 89e2516487b822e3169f0a4c5a8d24c6aebea788";
 		};
 		00701E491553CBCE00D30018 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1423,7 +1423,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = ./Crashlytics.framework/run;
+			shellScript = "./Crashlytics.framework/run 89e2516487b822e3169f0a4c5a8d24c6aebea788";
 		};
 		00D6778415AD534300EF152D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1436,7 +1436,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = ./Crashlytics.framework/run;
+			shellScript = "./Crashlytics.framework/run 89e2516487b822e3169f0a4c5a8d24c6aebea788";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1628,7 +1628,10 @@
 		00201E2D15CFBAD30089B8FA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = (
+					armv7,
+					armv6,
+				);
 				BUNDLE_NAME = "VocabularySishu-GRE";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1651,7 +1654,10 @@
 		00201E2E15CFBAD30089B8FA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = (
+					armv7,
+					armv6,
+				);
 				BUNDLE_NAME = "VocabularySishu-GRE";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1725,7 +1731,10 @@
 		00701E5F1553CBCE00D30018 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = (
+					armv7,
+					armv6,
+				);
 				BUNDLE_NAME = "VocabularySishu-Full";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1748,7 +1757,10 @@
 		00701E601553CBCE00D30018 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = (
+					armv7,
+					armv6,
+				);
 				BUNDLE_NAME = "VocabularySishu-Full";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1807,7 +1819,10 @@
 		00BDE5A615CF9B9400BC205C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = (
+					armv7,
+					armv6,
+				);
 				BUNDLE_NAME = "VocabularySishu-TOEFL";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1831,7 +1846,10 @@
 		00BDE5A715CF9B9400BC205C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = (
+					armv7,
+					armv6,
+				);
 				BUNDLE_NAME = "VocabularySishu-TOEFL";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
