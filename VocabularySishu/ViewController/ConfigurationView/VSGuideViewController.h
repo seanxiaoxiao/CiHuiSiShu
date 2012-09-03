@@ -7,9 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VSUtils.h"
 
-@interface VSGuideViewController : UIViewController
+@interface VSGuideViewController : UIViewController<UIScrollViewDelegate> {
+    IBOutlet UIPageControl *pageControl;
+    IBOutlet UIScrollView *scrollView;
+}
 
--(IBAction)exitGuide:(id)sender;
+@property (nonatomic, assign) BOOL pageControlUsed;
+@property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) UIPageControl *pageControl;
+@property (nonatomic, retain) UIButton *exitButton;
+
+- (void)exitGuide;
+
+- (IBAction)changePage:(id)sender;
 
 @end

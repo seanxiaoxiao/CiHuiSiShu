@@ -198,6 +198,18 @@
 		0046409115591DBD007E5FA9 /* VSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046409015591DBD007E5FA9 /* VSUtils.m */; };
 		0046409215591DBD007E5FA9 /* VSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046409015591DBD007E5FA9 /* VSUtils.m */; };
 		0046409315591FD1007E5FA9 /* VSVocabularyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408115590E0B007E5FA9 /* VSVocabularyViewController.xib */; };
+		00533E3215F3DA81004777F1 /* GuidePage1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00533E2C15F3DA81004777F1 /* GuidePage1@2x.png */; };
+		00533E3315F3DA81004777F1 /* GuidePage2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00533E2D15F3DA81004777F1 /* GuidePage2@2x.png */; };
+		00533E3415F3DA81004777F1 /* GuidePage3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00533E2E15F3DA81004777F1 /* GuidePage3@2x.png */; };
+		00533E3515F3DA81004777F1 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 00533E2F15F3DA81004777F1 /* icon.png */; };
+		00533E3615F3DA81004777F1 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00533E3015F3DA81004777F1 /* icon@2x.png */; };
+		00533E3715F3DA81004777F1 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 00533E3115F3DA81004777F1 /* iTunesArtwork */; };
+		00533E3A15F42915004777F1 /* TipsBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 00533E3915F42915004777F1 /* TipsBubble.m */; };
+		00533E3B15F42915004777F1 /* TipsBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 00533E3915F42915004777F1 /* TipsBubble.m */; };
+		00533E3C15F42915004777F1 /* TipsBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 00533E3915F42915004777F1 /* TipsBubble.m */; };
+		00533E4115F43672004777F1 /* GuidePage1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00533E3E15F43672004777F1 /* GuidePage1@2x.png */; };
+		00533E4215F43672004777F1 /* GuidePage2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00533E3F15F43672004777F1 /* GuidePage2@2x.png */; };
+		00533E4315F43672004777F1 /* GuidePage3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00533E4015F43672004777F1 /* GuidePage3@2x.png */; };
 		006B4CDE15E3638C00711C64 /* VSGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 006B4CDC15E3638B00711C64 /* VSGuideViewController.m */; };
 		006B4CDF15E3638C00711C64 /* VSGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 006B4CDC15E3638B00711C64 /* VSGuideViewController.m */; };
 		006B4CE015E3638C00711C64 /* VSGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 006B4CDC15E3638B00711C64 /* VSGuideViewController.m */; };
@@ -359,9 +371,6 @@
 		00FF701315D1676F0043BA91 /* VSHisotryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF701215D1676F0043BA91 /* VSHisotryListCell.m */; };
 		00FF701415D1676F0043BA91 /* VSHisotryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF701215D1676F0043BA91 /* VSHisotryListCell.m */; };
 		00FF701515D1676F0043BA91 /* VSHisotryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF701215D1676F0043BA91 /* VSHisotryListCell.m */; };
-		6437436415ED3063001106FA /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6437436015ED3063001106FA /* icon.png */; };
-		6437436615ED3063001106FA /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6437436115ED3063001106FA /* icon@2x.png */; };
-		6437436815ED3063001106FA /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 6437436215ED3063001106FA /* iTunesArtwork */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -436,6 +445,17 @@
 		0046408C155916FA007E5FA9 /* VSHistoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSHistoryViewController.xib; path = ViewController/MainView/VSHistoryViewController.xib; sourceTree = "<group>"; };
 		0046408F15591DBD007E5FA9 /* VSUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSUtils.h; path = Utils/VSUtils.h; sourceTree = "<group>"; };
 		0046409015591DBD007E5FA9 /* VSUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSUtils.m; path = Utils/VSUtils.m; sourceTree = "<group>"; };
+		00533E2C15F3DA81004777F1 /* GuidePage1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GuidePage1@2x.png"; path = "Resources/Img/GRE/GuidePage1@2x.png"; sourceTree = "<group>"; };
+		00533E2D15F3DA81004777F1 /* GuidePage2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GuidePage2@2x.png"; path = "Resources/Img/GRE/GuidePage2@2x.png"; sourceTree = "<group>"; };
+		00533E2E15F3DA81004777F1 /* GuidePage3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GuidePage3@2x.png"; path = "Resources/Img/GRE/GuidePage3@2x.png"; sourceTree = "<group>"; };
+		00533E2F15F3DA81004777F1 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Resources/Img/GRE/icon.png; sourceTree = "<group>"; };
+		00533E3015F3DA81004777F1 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "Resources/Img/GRE/icon@2x.png"; sourceTree = "<group>"; };
+		00533E3115F3DA81004777F1 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; name = iTunesArtwork; path = Resources/Img/GRE/iTunesArtwork; sourceTree = "<group>"; };
+		00533E3815F42915004777F1 /* TipsBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TipsBubble.h; path = Generic/TipsBubble.h; sourceTree = "<group>"; };
+		00533E3915F42915004777F1 /* TipsBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TipsBubble.m; path = Generic/TipsBubble.m; sourceTree = "<group>"; };
+		00533E3E15F43672004777F1 /* GuidePage1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GuidePage1@2x.png"; path = "Resources/Img/TOEFL/GuidePage1@2x.png"; sourceTree = "<group>"; };
+		00533E3F15F43672004777F1 /* GuidePage2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GuidePage2@2x.png"; path = "Resources/Img/TOEFL/GuidePage2@2x.png"; sourceTree = "<group>"; };
+		00533E4015F43672004777F1 /* GuidePage3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GuidePage3@2x.png"; path = "Resources/Img/TOEFL/GuidePage3@2x.png"; sourceTree = "<group>"; };
 		006B4CDB15E3638B00711C64 /* VSGuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSGuideViewController.h; path = ViewController/ConfigurationView/VSGuideViewController.h; sourceTree = "<group>"; };
 		006B4CDC15E3638B00711C64 /* VSGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSGuideViewController.m; path = ViewController/ConfigurationView/VSGuideViewController.m; sourceTree = "<group>"; };
 		006B4CDD15E3638B00711C64 /* VSGuideViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSGuideViewController.xib; path = ViewController/ConfigurationView/VSGuideViewController.xib; sourceTree = "<group>"; };
@@ -553,9 +573,6 @@
 		00FF6FF915D0BACB0043BA91 /* VSScoreBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSScoreBoardView.m; path = ViewController/VocabularyListView/VSScoreBoardView.m; sourceTree = "<group>"; };
 		00FF701115D1676F0043BA91 /* VSHisotryListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSHisotryListCell.h; path = ViewController/MainView/VSHisotryListCell.h; sourceTree = "<group>"; };
 		00FF701215D1676F0043BA91 /* VSHisotryListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSHisotryListCell.m; path = ViewController/MainView/VSHisotryListCell.m; sourceTree = "<group>"; };
-		6437436015ED3063001106FA /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		6437436115ED3063001106FA /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
-		6437436215ED3063001106FA /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -681,12 +698,32 @@
 			name = VocabularyView;
 			sourceTree = "<group>";
 		};
+		00533E2B15F3DA66004777F1 /* GRE */ = {
+			isa = PBXGroup;
+			children = (
+				00533E2C15F3DA81004777F1 /* GuidePage1@2x.png */,
+				00533E2D15F3DA81004777F1 /* GuidePage2@2x.png */,
+				00533E2E15F3DA81004777F1 /* GuidePage3@2x.png */,
+				00533E2F15F3DA81004777F1 /* icon.png */,
+				00533E3015F3DA81004777F1 /* icon@2x.png */,
+				00533E3115F3DA81004777F1 /* iTunesArtwork */,
+			);
+			name = GRE;
+			sourceTree = "<group>";
+		};
+		00533E3D15F43668004777F1 /* TOEFL */ = {
+			isa = PBXGroup;
+			children = (
+				00533E3E15F43672004777F1 /* GuidePage1@2x.png */,
+				00533E3F15F43672004777F1 /* GuidePage2@2x.png */,
+				00533E4015F43672004777F1 /* GuidePage3@2x.png */,
+			);
+			name = TOEFL;
+			sourceTree = "<group>";
+		};
 		00701E201553CBCE00D30018 = {
 			isa = PBXGroup;
 			children = (
-				6437436015ED3063001106FA /* icon.png */,
-				6437436115ED3063001106FA /* icon@2x.png */,
-				6437436215ED3063001106FA /* iTunesArtwork */,
 				00701E371553CBCE00D30018 /* VocabularySishu */,
 				00701E531553CBCE00D30018 /* VocabularySishuTests */,
 				00701E2E1553CBCE00D30018 /* Frameworks */,
@@ -867,6 +904,8 @@
 		0081184E15BEFDFF0022B515 /* Generic */ = {
 			isa = PBXGroup;
 			children = (
+				00533E3815F42915004777F1 /* TipsBubble.h */,
+				00533E3915F42915004777F1 /* TipsBubble.m */,
 				0081184F15BEFE220022B515 /* VSNavigationBar.h */,
 				0081185015BEFE220022B515 /* VSNavigationBar.m */,
 			);
@@ -904,6 +943,8 @@
 		00B5A8BE1566886E00D20EB6 /* Img */ = {
 			isa = PBXGroup;
 			children = (
+				00533E3D15F43668004777F1 /* TOEFL */,
+				00533E2B15F3DA66004777F1 /* GRE */,
 				00B491A815EBDF9B004AFC6C /* ScoreDown@2x.png */,
 				00B491A915EBDF9B004AFC6C /* ScoreUp@2x.png */,
 				00B491A015EBC3E0004AFC6C /* UnitC@2x.png */,
@@ -1174,9 +1215,12 @@
 				00B491A715EBC3E0004AFC6C /* UnitCHighLighted@2x.png in Resources */,
 				00B491AC15EBDF9B004AFC6C /* ScoreDown@2x.png in Resources */,
 				00B491AF15EBDF9B004AFC6C /* ScoreUp@2x.png in Resources */,
-				6437436415ED3063001106FA /* icon.png in Resources */,
-				6437436615ED3063001106FA /* icon@2x.png in Resources */,
-				6437436815ED3063001106FA /* iTunesArtwork in Resources */,
+				00533E3215F3DA81004777F1 /* GuidePage1@2x.png in Resources */,
+				00533E3315F3DA81004777F1 /* GuidePage2@2x.png in Resources */,
+				00533E3415F3DA81004777F1 /* GuidePage3@2x.png in Resources */,
+				00533E3515F3DA81004777F1 /* icon.png in Resources */,
+				00533E3615F3DA81004777F1 /* icon@2x.png in Resources */,
+				00533E3715F3DA81004777F1 /* iTunesArtwork in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1333,6 +1377,9 @@
 				00B491A615EBC3E0004AFC6C /* UnitCHighLighted@2x.png in Resources */,
 				00B491AB15EBDF9B004AFC6C /* ScoreDown@2x.png in Resources */,
 				00B491AE15EBDF9B004AFC6C /* ScoreUp@2x.png in Resources */,
+				00533E4115F43672004777F1 /* GuidePage1@2x.png in Resources */,
+				00533E4215F43672004777F1 /* GuidePage2@2x.png in Resources */,
+				00533E4315F43672004777F1 /* GuidePage3@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1438,6 +1485,7 @@
 				00C4FE3D15D3FAF6000B9849 /* VSSingleListView.m in Sources */,
 				00E83B3215DAC42F005BE3AF /* VSClipView.m in Sources */,
 				006B4CE015E3638C00711C64 /* VSGuideViewController.m in Sources */,
+				00533E3C15F42915004777F1 /* TipsBubble.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1485,6 +1533,7 @@
 				00C4FE3B15D3FAF6000B9849 /* VSSingleListView.m in Sources */,
 				00E83B3015DAC42F005BE3AF /* VSClipView.m in Sources */,
 				006B4CDE15E3638C00711C64 /* VSGuideViewController.m in Sources */,
+				00533E3A15F42915004777F1 /* TipsBubble.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1542,6 +1591,7 @@
 				00C4FE3C15D3FAF6000B9849 /* VSSingleListView.m in Sources */,
 				00E83B3115DAC42F005BE3AF /* VSClipView.m in Sources */,
 				006B4CDF15E3638C00711C64 /* VSGuideViewController.m in Sources */,
+				00533E3B15F42915004777F1 /* TipsBubble.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

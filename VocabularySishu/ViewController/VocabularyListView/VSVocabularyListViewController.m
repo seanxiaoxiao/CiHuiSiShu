@@ -34,6 +34,8 @@
 @synthesize scoreBoardView;
 @synthesize blockView;
 @synthesize exitButton;
+@synthesize vocabularyActionBubble;
+@synthesize detailBubble;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -70,6 +72,11 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(nextList) name:NEXT_LIST object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideScoreBoard) name:CLOSE_POPUP object:nil];
         
+        if (![[NSUserDefaults standardUserDefaults] boolForKey:@"showActionBubble"] ) {
+            vocabularyActionBubble = [[TipsBubble alloc] initWithTips:@"记住单词，向右划掉。\n忘记单词，左划查看意思" width:155 popupFrom:tipsBubblePopupFromLowerCenter];
+            vocabularyActionBubble.center = CGPointMake(160, 35);
+            [self.view addSubview:vocabularyActionBubble];
+        }
         __autoreleasing UIGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanning:)];
         panGesture.delegate = self;
         [self.view addGestureRecognizer:panGesture];
@@ -217,6 +224,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [self dismissDetailBubble];
     VSVocabularyCell* cell = (VSVocabularyCell *)[self.tableView cellForRowAtIndexPath:indexPath];
     if (cell.curlUp && scoreBoardView == nil) {
         VSVocabulary *selectedVocabulary = ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:indexPath.row]).vocabulary;
@@ -320,6 +328,10 @@
 - (void)stopDragging:(UIPanGestureRecognizer *)gestureRecognizer
 {
     if (draggedCell != nil) {
+        
+        [self dismissActionBubble];
+        [self dismissDetailBubble];
+        
         CGPoint point = [gestureRecognizer locationInView:self.tableView];
         CGPoint translation = [gestureRecognizer translationInView:draggedCell];
         
@@ -330,10 +342,16 @@
         }
         else if (!draggedCell.curlUp && !draggedCell.clearing && translation.x < 0) {
             [draggedCell curlUp:point.x];
+            if (![[NSUserDefaults standardUserDefaults] boolForKey:@"showDetailBubble"] ) {
+                detailBubble = [[TipsBubble alloc] initWithTips:@"更多信息，点击这里" width:145 popupFrom:tipsBubblePopupFromLowerRight];
+                detailBubble.center = CGPointMake(155, draggedCell.frame.origin.y - 20);
+                [self.view addSubview:detailBubble];
+            }
         }
         else if (draggedCell.curlUp && !draggedCell.clearing && translation.x > 0) {
             [draggedCell curlDown:point.x - 60];
         }
+        
     }
 }
 
@@ -451,6 +469,25 @@
     [VSUtils toNextList:self.currentList];
 }
 
+- (void)dismissActionBubble
+{
+    if (vocabularyActionBubble != nil) {
+        [vocabularyActionBubble removeFromSuperview];
+        vocabularyActionBubble = nil;
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"showActionBubble"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+}
+
+- (void)dismissDetailBubble
+{
+    if (detailBubble != nil) {
+        [detailBubble removeFromSuperview];
+        detailBubble = nil;
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"showDetailBubble"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+}
 
 
 @end

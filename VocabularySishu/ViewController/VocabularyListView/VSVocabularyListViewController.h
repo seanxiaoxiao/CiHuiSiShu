@@ -16,6 +16,7 @@
 #import "VSSummaryView.h"
 #import "VSVocabularyCell.h"
 #import "VSScoreBoardView.h"
+#import "TipsBubble.h"
 
 @class VSAlertDelegate;
 
@@ -35,5 +36,7 @@
 @property (nonatomic, strong) VSScoreBoardView *scoreBoardView;
 @property (nonatomic, strong) UIButton *exitButton;
 @property (nonatomic, strong) UIView *blockView;
+@property (nonatomic, retain) TipsBubble *vocabularyActionBubble;
+@property (nonatomic, retain) TipsBubble *detailBubble;
 
 @end
