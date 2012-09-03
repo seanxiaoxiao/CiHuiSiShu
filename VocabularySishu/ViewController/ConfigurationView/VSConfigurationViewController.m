@@ -183,7 +183,7 @@
 
 - (void)voteOnAppStore
 {
-    [ [ UIApplication sharedApplication ] openURL: [ NSURL URLWithString: [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@", @"12345"] ] ];
+    [ [ UIApplication sharedApplication ] openURL: [ NSURL URLWithString: [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@", @"558382812"] ] ];
 }
 
 - (void)sendFeedbackFrom:(UIViewController *)controller
