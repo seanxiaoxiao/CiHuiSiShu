@@ -1659,8 +1659,8 @@
 					armv6,
 				);
 				BUNDLE_NAME = "VocabularySishu-GRE";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: SHAO WEN SU";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SHAO WEN SU";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -1670,8 +1670,8 @@
 				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "VocabularySishu GRE";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "4D89C15B-F01C-4BA4-9738-1B85083EE2DC";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4D89C15B-F01C-4BA4-9738-1B85083EE2DC";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
