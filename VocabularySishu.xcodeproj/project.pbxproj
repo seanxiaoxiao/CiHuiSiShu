@@ -1153,6 +1153,7 @@
 				00201E0915CFBAD30089B8FA /* VSHistoryViewController.xib in Resources */,
 				00201E0A15CFBAD30089B8FA /* VSVocabularyViewController.xib in Resources */,
 				00201E0B15CFBAD30089B8FA /* VSVocabularyListViewController.xib in Resources */,
+				00533E3415F3DA81004777F1 /* GuidePage3@2x.png in Resources */,
 				00201E0C15CFBAD30089B8FA /* Meaning.html in Resources */,
 				00201E1015CFBAD30089B8FA /* VSConfigurationViewController.xib in Resources */,
 				00201E4A15CFCDD00089B8FA /* Vocabularies.txt in Resources */,
@@ -1217,7 +1218,6 @@
 				00B491AF15EBDF9B004AFC6C /* ScoreUp@2x.png in Resources */,
 				00533E3215F3DA81004777F1 /* GuidePage1@2x.png in Resources */,
 				00533E3315F3DA81004777F1 /* GuidePage2@2x.png in Resources */,
-				00533E3415F3DA81004777F1 /* GuidePage3@2x.png in Resources */,
 				00533E3515F3DA81004777F1 /* icon.png in Resources */,
 				00533E3615F3DA81004777F1 /* icon@2x.png in Resources */,
 				00533E3715F3DA81004777F1 /* iTunesArtwork in Resources */,
@@ -1317,6 +1317,7 @@
 				00BDE58315CF9B9400BC205C /* VSVocabularyViewController.xib in Resources */,
 				00BDE58415CF9B9400BC205C /* VSVocabularyListViewController.xib in Resources */,
 				00BDE58515CF9B9400BC205C /* Meaning.html in Resources */,
+				00533E4315F43672004777F1 /* GuidePage3@2x.png in Resources */,
 				006B4CE215E3638C00711C64 /* VSGuideViewController.xib in Resources */,
 				00BDE58915CF9B9400BC205C /* VSConfigurationViewController.xib in Resources */,
 				00FF6FD615CFD4D70043BA91 /* WebsterMeaning.txt in Resources */,
@@ -1379,7 +1380,6 @@
 				00B491AE15EBDF9B004AFC6C /* ScoreUp@2x.png in Resources */,
 				00533E4115F43672004777F1 /* GuidePage1@2x.png in Resources */,
 				00533E4215F43672004777F1 /* GuidePage2@2x.png in Resources */,
-				00533E4315F43672004777F1 /* GuidePage3@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
