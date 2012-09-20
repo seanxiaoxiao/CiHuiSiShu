@@ -29,7 +29,7 @@
 
 - (void) updateProgress:(double)progress;
 
-- (void) setWordRemains:(int)wordRemain;
+- (void) setWordRemains:(int)_wordRemain;
 
 - (void) decrWordRemain;
 

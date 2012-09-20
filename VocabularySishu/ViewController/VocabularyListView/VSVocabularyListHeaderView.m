@@ -23,6 +23,7 @@
 @synthesize inkNeckImage;
 @synthesize wordRemainLabel;
 @synthesize remainBackground;
+@synthesize wordRemain;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -97,9 +98,9 @@
         }];
 }
 
-- (void) setWordRemains:(int)wordRemain
+- (void) setWordRemains:(int)_wordRemain
 {
-    self.wordRemain = wordRemain;
+    self.wordRemain = _wordRemain;
     self.wordRemainLabel.text = [NSString stringWithFormat:@"%d", self.wordRemain];
 }
 

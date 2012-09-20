@@ -299,9 +299,7 @@ NSMutableDictionary *vocabularyMap;
     [file closeFile];
     SBJsonParser *parser = [[SBJsonParser alloc] init];
     NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    
-    DDFileReader * reader = [[DDFileReader alloc] initWithFilePath:repoData];
-    
+        
     NSArray *lines = [jsonString componentsSeparatedByString:@"\n"];
     for (NSString *line in lines) {
         __autoreleasing NSArray *info = [line componentsSeparatedByString:@"\t"];
@@ -328,7 +326,7 @@ NSMutableDictionary *vocabularyMap;
             order = order + 1;
         }
     }
-    reader = nil;
+
     [VSUtils saveEntity];
     NSLog(@"Finish before saving 4");
 }

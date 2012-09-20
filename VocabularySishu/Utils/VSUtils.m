@@ -8,6 +8,7 @@
 
 #import "VSUtils.h"
 #import "VSAppDelegate.h"
+#import <sys/xattr.h>
 
 @implementation VSUtils
 
@@ -82,8 +83,8 @@
 
 + (void)copySQLite
 {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES); 
-    NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"VocabularySishu.sqlite"]; 
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"VocabularySishu.sqlite"];
     NSString *urlString = [NSString stringWithFormat:@"file://%@", filePath];
     NSURL* storeURL = [NSURL URLWithString:urlString];
     if (![[NSFileManager defaultManager] fileExistsAtPath:[storeURL path]]) {
@@ -95,6 +96,7 @@
         }
     }
 }
+
 
 + (void)toGivenList:(VSList *)list
 {
