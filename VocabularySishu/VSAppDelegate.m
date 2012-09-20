@@ -154,8 +154,7 @@
     }
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
     NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"VocabularySishu.sqlite"];
-    NSString *urlString = [NSString stringWithFormat:@"file://%@", filePath];
-    NSURL* storeURL = [NSURL URLWithString:urlString];
+    NSURL* storeURL = [NSURL fileURLWithPath:filePath];
     
     NSError *error = nil;
     NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
