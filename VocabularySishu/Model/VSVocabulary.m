@@ -102,7 +102,7 @@
     NSRange r;
     r.location = 0;
     r.length = 1;
-    NSString *urlString = [NSString stringWithFormat:@"%@/%@/%@.mp3", VSS_RESOURCE_SERVICE, [self.spell substringWithRange:r], self.spell];
+    NSString *urlString = [NSString stringWithFormat:@"%@/%@/%@.mp3", VSS_RESOURCE_SERVICE, [[self.spell substringWithRange:r] lowercaseString], [self.spell stringByReplacingOccurrencesOfString:@" " withString:@"%20"]];
     return [NSURL URLWithString:urlString];
 }
 

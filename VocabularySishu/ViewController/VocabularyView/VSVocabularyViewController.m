@@ -255,7 +255,7 @@
     self.request = [ASIHTTPRequest requestWithURL:[self.vocabulary audioURL]];
     [request setDownloadCache:[ASIDownloadCache sharedCache]];
     [request setCachePolicy:ASIAskServerIfModifiedCachePolicy|ASIFallbackToCacheIfLoadFailsCachePolicy];
-    [request setSecondsToCache:60*60*24*30];
+    [request setSecondsToCache:60 * 60 * 24 * 30];
     [request addRequestHeader:@"User-Agent" value:@"ASIHTTPRequest"];
     [self.request setDelegate:self];
     [request startAsynchronous];
