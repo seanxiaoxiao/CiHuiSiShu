@@ -31,6 +31,7 @@
 #define LONGTERM_EXPIRE_INTERVAL 18 * 60 * 60;
 #define SHORTTERM_EXPIRE_INTERVAL 5 * 60 * 60;
 #define NOTIFICATION_DENY 60 * 60;
+#define VSS_RESOURCE_SERVICE @"http://ec2-184-169-238-194.us-west-1.compute.amazonaws.com/sound"
 
 #define VOCAVULARY_CELL_HEIGHT 56
 

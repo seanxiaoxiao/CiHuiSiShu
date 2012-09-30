@@ -13,14 +13,15 @@
 #import "VSVocabulary.h"
 #import "VSMeaning.h"
 #import "VSWebsterMeaning.h"
+#import "Reachability.h"
 
+@class ASIHTTPRequest;
 
 @interface VSVocabularyViewController : UIViewController<AVAudioPlayerDelegate> {
     IBOutlet UILabel *vocabularyLabel;
     IBOutlet UILabel *phoneticLabel;
     IBOutlet UILabel *etymologyLabel;
     IBOutlet UILabel *etymologyContentLabel;
-    IBOutlet UIButton *playButton;
     IBOutlet UILabel *imageLabel;
     IBOutlet UIImageView *vocabularyImageView;
     IBOutlet UILabel *mwLabel;
@@ -41,7 +42,6 @@
 @property (nonatomic, strong) UILabel *mwLabel;
 @property (nonatomic, retain) AVAudioPlayer *audioPlayer;
 @property (nonatomic, strong) UIImageView *backgroundImage;
-
-- (IBAction)play:(id)sender;
+@property (retain, nonatomic) ASIHTTPRequest *request;
 
 @end

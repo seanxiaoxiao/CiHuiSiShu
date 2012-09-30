@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "VSVocabulary.h"
-#import "VSMeaningView.h"
 #import "VSVocabularyListHeaderView.h"
 #import "VSConstant.h"
 #import "VSList.h"

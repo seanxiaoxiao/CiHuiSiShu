@@ -7,7 +7,6 @@
 //
 
 #import "VSDataUtil.h"
-#import "DDFileReader.h"
 
 NSMutableDictionary *repoMap;
 NSMutableDictionary *vocabularyMap;

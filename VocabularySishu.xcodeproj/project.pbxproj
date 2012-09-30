@@ -145,8 +145,6 @@
 		00201DF715CFBAD30089B8FA /* VSConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AE80EF158B1318000CE7EA /* VSConfigurationViewController.m */; };
 		00201DF815CFBAD30089B8FA /* VSReviewPlan.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A9E7AF15A08699009832BA /* VSReviewPlan.m */; };
 		00201DF915CFBAD30089B8FA /* NSMutableArrayShuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = 009A86FF15A1A82900F7869D /* NSMutableArrayShuffling.m */; };
-		00201DFA15CFBAD30089B8FA /* DDFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D6779115ADD03900EF152D /* DDFileReader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		00201DFB15CFBAD30089B8FA /* VSMeaningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C42FE215BAFBC6006FF95E /* VSMeaningView.m */; };
 		00201DFC15CFBAD30089B8FA /* VSSummaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C42FE815BB096F006FF95E /* VSSummaryView.m */; };
 		00201DFD15CFBAD30089B8FA /* VSVocabulary.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4300015BBFC44006FF95E /* VSVocabulary.m */; };
 		00201DFE15CFBAD30089B8FA /* VSVocabularyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 009BB48515CAAFF2008E5B2B /* VSVocabularyCell.m */; };
@@ -167,6 +165,39 @@
 		00201E4A15CFCDD00089B8FA /* Vocabularies.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00201E3515CFC3560089B8FA /* Vocabularies.txt */; };
 		00201E4B15CFCDD00089B8FA /* Lists.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00201E3615CFC3560089B8FA /* Lists.txt */; };
 		00201E4C15CFCDD00089B8FA /* Repos.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00201E3715CFC3560089B8FA /* Repos.txt */; };
+		002DBFA21618AB6E00E788EA /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF8F1618AB6E00E788EA /* ASIAuthenticationDialog.m */; };
+		002DBFA31618AB6E00E788EA /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF8F1618AB6E00E788EA /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		002DBFA41618AB6E00E788EA /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF8F1618AB6E00E788EA /* ASIAuthenticationDialog.m */; };
+		002DBFA51618AB6E00E788EA /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF921618AB6E00E788EA /* ASIDataCompressor.m */; };
+		002DBFA61618AB6E00E788EA /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF921618AB6E00E788EA /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		002DBFA71618AB6E00E788EA /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF921618AB6E00E788EA /* ASIDataCompressor.m */; };
+		002DBFA81618AB6E00E788EA /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF941618AB6E00E788EA /* ASIDataDecompressor.m */; };
+		002DBFA91618AB6E00E788EA /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF941618AB6E00E788EA /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		002DBFAA1618AB6E00E788EA /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF941618AB6E00E788EA /* ASIDataDecompressor.m */; };
+		002DBFAB1618AB6E00E788EA /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF961618AB6E00E788EA /* ASIDownloadCache.m */; };
+		002DBFAC1618AB6E00E788EA /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF961618AB6E00E788EA /* ASIDownloadCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		002DBFAD1618AB6E00E788EA /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF961618AB6E00E788EA /* ASIDownloadCache.m */; };
+		002DBFAE1618AB6E00E788EA /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF981618AB6E00E788EA /* ASIFormDataRequest.m */; };
+		002DBFAF1618AB6E00E788EA /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF981618AB6E00E788EA /* ASIFormDataRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		002DBFB01618AB6E00E788EA /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF981618AB6E00E788EA /* ASIFormDataRequest.m */; };
+		002DBFB11618AB6E00E788EA /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF9A1618AB6E00E788EA /* ASIHTTPRequest.m */; };
+		002DBFB21618AB6E00E788EA /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF9A1618AB6E00E788EA /* ASIHTTPRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		002DBFB31618AB6E00E788EA /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF9A1618AB6E00E788EA /* ASIHTTPRequest.m */; };
+		002DBFB41618AB6E00E788EA /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF9E1618AB6E00E788EA /* ASIInputStream.m */; };
+		002DBFB51618AB6E00E788EA /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF9E1618AB6E00E788EA /* ASIInputStream.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		002DBFB61618AB6E00E788EA /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF9E1618AB6E00E788EA /* ASIInputStream.m */; };
+		002DBFB71618AB6E00E788EA /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBFA01618AB6E00E788EA /* ASINetworkQueue.m */; };
+		002DBFB81618AB6E00E788EA /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBFA01618AB6E00E788EA /* ASINetworkQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		002DBFB91618AB6E00E788EA /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBFA01618AB6E00E788EA /* ASINetworkQueue.m */; };
+		002DBFBC1618B2E700E788EA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002DBFBA1618B2DC00E788EA /* CFNetwork.framework */; };
+		002DBFBD1618B2E900E788EA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002DBFBA1618B2DC00E788EA /* CFNetwork.framework */; };
+		002DBFBE1618B2EC00E788EA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002DBFBA1618B2DC00E788EA /* CFNetwork.framework */; };
+		002DBFC01618B40500E788EA /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002DBFBF1618B40500E788EA /* MobileCoreServices.framework */; };
+		002DBFC11618B41300E788EA /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002DBFBF1618B40500E788EA /* MobileCoreServices.framework */; };
+		002DBFC21618B41700E788EA /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002DBFBF1618B40500E788EA /* MobileCoreServices.framework */; };
+		002DBFC41618B44100E788EA /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 002DBFC31618B44100E788EA /* libz.dylib */; };
+		002DBFC51618B44A00E788EA /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 002DBFC31618B44100E788EA /* libz.dylib */; };
+		002DBFC61618B44F00E788EA /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 002DBFC31618B44100E788EA /* libz.dylib */; };
 		0044C13B15D371E20022154A /* VSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0044C13915D371E20022154A /* VSMainViewController.m */; };
 		0044C13C15D371E20022154A /* VSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0044C13915D371E20022154A /* VSMainViewController.m */; };
 		0044C13D15D371E20022154A /* VSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0044C13915D371E20022154A /* VSMainViewController.m */; };
@@ -242,6 +273,15 @@
 		0073A69B1568A0B200B80422 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6951568A0B200B80422 /* SBJsonWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0073A6BE156A5FF700B80422 /* VSVocabularyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6BC156A5FF700B80422 /* VSVocabularyListViewController.m */; };
 		0073A6BF156A5FF700B80422 /* VSVocabularyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */; };
+		008D5DAB161810160046240B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 008D5DAA161810160046240B /* Reachability.m */; };
+		008D5DAC161810160046240B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 008D5DAA161810160046240B /* Reachability.m */; };
+		008D5DAD161810160046240B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 008D5DAA161810160046240B /* Reachability.m */; };
+		008D5DB4161812260046240B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D5DB2161812140046240B /* SystemConfiguration.framework */; };
+		008D5DB5161812290046240B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D5DB2161812140046240B /* SystemConfiguration.framework */; };
+		008D5DB61618122B0046240B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D5DB2161812140046240B /* SystemConfiguration.framework */; };
+		008D5DB8161814780046240B /* SoundButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 008D5DB7161814780046240B /* SoundButton@2x.png */; };
+		008D5DB9161814780046240B /* SoundButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 008D5DB7161814780046240B /* SoundButton@2x.png */; };
+		008D5DBA161814780046240B /* SoundButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 008D5DB7161814780046240B /* SoundButton@2x.png */; };
 		009397D215D7F6D3009AE73E /* VocabularySishu.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 009397D115D7F6D3009AE73E /* VocabularySishu.sqlite */; };
 		009397D515D82B7A009AE73E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009397D415D82B79009AE73E /* MessageUI.framework */; };
 		009397D615D82C5E009AE73E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009397D415D82B79009AE73E /* MessageUI.framework */; };
@@ -312,8 +352,6 @@
 		00BDE57015CF9B9400BC205C /* VSConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AE80EF158B1318000CE7EA /* VSConfigurationViewController.m */; };
 		00BDE57115CF9B9400BC205C /* VSReviewPlan.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A9E7AF15A08699009832BA /* VSReviewPlan.m */; };
 		00BDE57215CF9B9400BC205C /* NSMutableArrayShuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = 009A86FF15A1A82900F7869D /* NSMutableArrayShuffling.m */; };
-		00BDE57315CF9B9400BC205C /* DDFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D6779115ADD03900EF152D /* DDFileReader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		00BDE57415CF9B9400BC205C /* VSMeaningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C42FE215BAFBC6006FF95E /* VSMeaningView.m */; };
 		00BDE57515CF9B9400BC205C /* VSSummaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C42FE815BB096F006FF95E /* VSSummaryView.m */; };
 		00BDE57615CF9B9400BC205C /* VSVocabulary.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4300015BBFC44006FF95E /* VSVocabulary.m */; };
 		00BDE57715CF9B9400BC205C /* VSVocabularyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 009BB48515CAAFF2008E5B2B /* VSVocabularyCell.m */; };
@@ -330,7 +368,6 @@
 		00BDE58415CF9B9400BC205C /* VSVocabularyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */; };
 		00BDE58515CF9B9400BC205C /* Meaning.html in Resources */ = {isa = PBXBuildFile; fileRef = 00A006F8156B3BDF00D24418 /* Meaning.html */; };
 		00BDE58915CF9B9400BC205C /* VSConfigurationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */; };
-		00C42FE315BAFBC6006FF95E /* VSMeaningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C42FE215BAFBC6006FF95E /* VSMeaningView.m */; };
 		00C42FE915BB096F006FF95E /* VSSummaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C42FE815BB096F006FF95E /* VSSummaryView.m */; };
 		00C4300115BBFC44006FF95E /* VSVocabulary.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4300015BBFC44006FF95E /* VSVocabulary.m */; };
 		00C4FE3B15D3FAF6000B9849 /* VSSingleListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4FE3A15D3FAF6000B9849 /* VSSingleListView.m */; };
@@ -340,7 +377,6 @@
 		00CBF0DA15E9F333001588A3 /* UnitHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00CBF0D815E9F333001588A3 /* UnitHighLighted@2x.png */; };
 		00CBF0DB15E9F333001588A3 /* UnitHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00CBF0D815E9F333001588A3 /* UnitHighLighted@2x.png */; };
 		00D6778815AD542E00EF152D /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D6778715AD542E00EF152D /* Crashlytics.framework */; };
-		00D6779215ADD03900EF152D /* DDFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D6779115ADD03900EF152D /* DDFileReader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		00E25A6F15C052F2006402B2 /* VSNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0081185015BEFE220022B515 /* VSNavigationBar.m */; };
 		00E83B3015DAC42F005BE3AF /* VSClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E83B2F15DAC42F005BE3AF /* VSClipView.m */; };
 		00E83B3115DAC42F005BE3AF /* VSClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E83B2F15DAC42F005BE3AF /* VSClipView.m */; };
@@ -426,6 +462,29 @@
 		00201E3515CFC3560089B8FA /* Vocabularies.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Vocabularies.txt; path = Resources/Data/GRE/Vocabularies.txt; sourceTree = "<group>"; };
 		00201E3615CFC3560089B8FA /* Lists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Lists.txt; path = Resources/Data/GRE/Lists.txt; sourceTree = "<group>"; };
 		00201E3715CFC3560089B8FA /* Repos.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Repos.txt; path = Resources/Data/GRE/Repos.txt; sourceTree = "<group>"; };
+		002DBF8E1618AB6E00E788EA /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIAuthenticationDialog.h; path = Libs/ASIHTTPRequest/ASIAuthenticationDialog.h; sourceTree = "<group>"; };
+		002DBF8F1618AB6E00E788EA /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIAuthenticationDialog.m; path = Libs/ASIHTTPRequest/ASIAuthenticationDialog.m; sourceTree = "<group>"; };
+		002DBF901618AB6E00E788EA /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASICacheDelegate.h; path = Libs/ASIHTTPRequest/ASICacheDelegate.h; sourceTree = "<group>"; };
+		002DBF911618AB6E00E788EA /* ASIDataCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIDataCompressor.h; path = Libs/ASIHTTPRequest/ASIDataCompressor.h; sourceTree = "<group>"; };
+		002DBF921618AB6E00E788EA /* ASIDataCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIDataCompressor.m; path = Libs/ASIHTTPRequest/ASIDataCompressor.m; sourceTree = "<group>"; };
+		002DBF931618AB6E00E788EA /* ASIDataDecompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIDataDecompressor.h; path = Libs/ASIHTTPRequest/ASIDataDecompressor.h; sourceTree = "<group>"; };
+		002DBF941618AB6E00E788EA /* ASIDataDecompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIDataDecompressor.m; path = Libs/ASIHTTPRequest/ASIDataDecompressor.m; sourceTree = "<group>"; };
+		002DBF951618AB6E00E788EA /* ASIDownloadCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIDownloadCache.h; path = Libs/ASIHTTPRequest/ASIDownloadCache.h; sourceTree = "<group>"; };
+		002DBF961618AB6E00E788EA /* ASIDownloadCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIDownloadCache.m; path = Libs/ASIHTTPRequest/ASIDownloadCache.m; sourceTree = "<group>"; };
+		002DBF971618AB6E00E788EA /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIFormDataRequest.h; path = Libs/ASIHTTPRequest/ASIFormDataRequest.h; sourceTree = "<group>"; };
+		002DBF981618AB6E00E788EA /* ASIFormDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIFormDataRequest.m; path = Libs/ASIHTTPRequest/ASIFormDataRequest.m; sourceTree = "<group>"; };
+		002DBF991618AB6E00E788EA /* ASIHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIHTTPRequest.h; path = Libs/ASIHTTPRequest/ASIHTTPRequest.h; sourceTree = "<group>"; };
+		002DBF9A1618AB6E00E788EA /* ASIHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIHTTPRequest.m; path = Libs/ASIHTTPRequest/ASIHTTPRequest.m; sourceTree = "<group>"; };
+		002DBF9B1618AB6E00E788EA /* ASIHTTPRequestConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIHTTPRequestConfig.h; path = Libs/ASIHTTPRequest/ASIHTTPRequestConfig.h; sourceTree = "<group>"; };
+		002DBF9C1618AB6E00E788EA /* ASIHTTPRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIHTTPRequestDelegate.h; path = Libs/ASIHTTPRequest/ASIHTTPRequestDelegate.h; sourceTree = "<group>"; };
+		002DBF9D1618AB6E00E788EA /* ASIInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIInputStream.h; path = Libs/ASIHTTPRequest/ASIInputStream.h; sourceTree = "<group>"; };
+		002DBF9E1618AB6E00E788EA /* ASIInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIInputStream.m; path = Libs/ASIHTTPRequest/ASIInputStream.m; sourceTree = "<group>"; };
+		002DBF9F1618AB6E00E788EA /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASINetworkQueue.h; path = Libs/ASIHTTPRequest/ASINetworkQueue.h; sourceTree = "<group>"; };
+		002DBFA01618AB6E00E788EA /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASINetworkQueue.m; path = Libs/ASIHTTPRequest/ASINetworkQueue.m; sourceTree = "<group>"; };
+		002DBFA11618AB6E00E788EA /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIProgressDelegate.h; path = Libs/ASIHTTPRequest/ASIProgressDelegate.h; sourceTree = "<group>"; };
+		002DBFBA1618B2DC00E788EA /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		002DBFBF1618B40500E788EA /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		002DBFC31618B44100E788EA /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		0044C13815D371E20022154A /* VSMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSMainViewController.h; path = ViewController/MainView/VSMainViewController.h; sourceTree = "<group>"; };
 		0044C13915D371E20022154A /* VSMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSMainViewController.m; path = ViewController/MainView/VSMainViewController.m; sourceTree = "<group>"; };
 		0044C14115D3723F0022154A /* VSRepoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSRepoViewController.h; path = ViewController/MainView/VSRepoViewController.h; sourceTree = "<group>"; };
@@ -498,6 +557,10 @@
 		0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSVocabularyListViewController.xib; path = ViewController/VocabularyListView/VSVocabularyListViewController.xib; sourceTree = "<group>"; };
 		0081184F15BEFE220022B515 /* VSNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSNavigationBar.h; path = Generic/VSNavigationBar.h; sourceTree = "<group>"; };
 		0081185015BEFE220022B515 /* VSNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSNavigationBar.m; path = Generic/VSNavigationBar.m; sourceTree = "<group>"; };
+		008D5DA9161810160046240B /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = Utils/Reachability.h; sourceTree = "<group>"; };
+		008D5DAA161810160046240B /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = Utils/Reachability.m; sourceTree = "<group>"; };
+		008D5DB2161812140046240B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		008D5DB7161814780046240B /* SoundButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "SoundButton@2x.png"; path = "Resources/Img/SoundButton@2x.png"; sourceTree = "<group>"; };
 		009397D115D7F6D3009AE73E /* VocabularySishu.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = VocabularySishu.sqlite; path = Resources/Data/FULL/VocabularySishu.sqlite; sourceTree = "<group>"; };
 		009397D415D82B79009AE73E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		009A86FE15A1A82900F7869D /* NSMutableArrayShuffling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSMutableArrayShuffling.h; path = Utils/NSMutableArrayShuffling.h; sourceTree = "<group>"; };
@@ -539,8 +602,6 @@
 		00B491A915EBDF9B004AFC6C /* ScoreUp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ScoreUp@2x.png"; path = "Resources/Img/ScoreUp@2x.png"; sourceTree = "<group>"; };
 		00BDE5A815CF9B9400BC205C /* VocabularySishu TOEFL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VocabularySishu TOEFL.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00C09AA415E2B05800AD33C3 /* VocabularySishu 1.1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "VocabularySishu 1.1.xcdatamodel"; sourceTree = "<group>"; };
-		00C42FE115BAFBC6006FF95E /* VSMeaningView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSMeaningView.h; path = ViewController/VocabularyListView/VSMeaningView.h; sourceTree = "<group>"; };
-		00C42FE215BAFBC6006FF95E /* VSMeaningView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSMeaningView.m; path = ViewController/VocabularyListView/VSMeaningView.m; sourceTree = "<group>"; };
 		00C42FE715BB096F006FF95E /* VSSummaryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSSummaryView.h; path = ViewController/VocabularyListView/VSSummaryView.h; sourceTree = "<group>"; };
 		00C42FE815BB096F006FF95E /* VSSummaryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSSummaryView.m; path = ViewController/VocabularyListView/VSSummaryView.m; sourceTree = "<group>"; };
 		00C4300015BBFC44006FF95E /* VSVocabulary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSVocabulary.m; path = Model/VSVocabulary.m; sourceTree = "<group>"; };
@@ -549,8 +610,6 @@
 		00C4FE3A15D3FAF6000B9849 /* VSSingleListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSSingleListView.m; path = ViewController/MainView/VSSingleListView.m; sourceTree = "<group>"; };
 		00CBF0D815E9F333001588A3 /* UnitHighLighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UnitHighLighted@2x.png"; path = "Resources/Img/UnitHighLighted@2x.png"; sourceTree = "<group>"; };
 		00D6778715AD542E00EF152D /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
-		00D6779015ADD03900EF152D /* DDFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDFileReader.h; path = Utils/DDFileReader.h; sourceTree = "<group>"; };
-		00D6779115ADD03900EF152D /* DDFileReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDFileReader.m; path = Utils/DDFileReader.m; sourceTree = "<group>"; };
 		00E83B2E15DAC42F005BE3AF /* VSClipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSClipView.h; path = ViewController/MainView/VSClipView.h; sourceTree = "<group>"; };
 		00E83B2F15DAC42F005BE3AF /* VSClipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSClipView.m; path = ViewController/MainView/VSClipView.m; sourceTree = "<group>"; };
 		00FF1B0F15E407AC005B9E51 /* SeparatorDots@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "SeparatorDots@2x.png"; path = "Resources/Img/SeparatorDots@2x.png"; sourceTree = "<group>"; };
@@ -582,8 +641,12 @@
 			files = (
 				00201E0015CFBAD30089B8FA /* AVFoundation.framework in Frameworks */,
 				009397D515D82B7A009AE73E /* MessageUI.framework in Frameworks */,
+				002DBFC11618B41300E788EA /* MobileCoreServices.framework in Frameworks */,
+				008D5DB61618122B0046240B /* SystemConfiguration.framework in Frameworks */,
+				002DBFC61618B44F00E788EA /* libz.dylib in Frameworks */,
 				00201E0115CFBAD30089B8FA /* QuartzCore.framework in Frameworks */,
 				00201E0215CFBAD30089B8FA /* UIKit.framework in Frameworks */,
+				002DBFBD1618B2E900E788EA /* CFNetwork.framework in Frameworks */,
 				00201E0315CFBAD30089B8FA /* Foundation.framework in Frameworks */,
 				00201E0415CFBAD30089B8FA /* CoreGraphics.framework in Frameworks */,
 				00201E0515CFBAD30089B8FA /* CoreData.framework in Frameworks */,
@@ -597,6 +660,10 @@
 			files = (
 				00A1AFAD1586192400310669 /* AVFoundation.framework in Frameworks */,
 				009397D715D82C61009AE73E /* MessageUI.framework in Frameworks */,
+				008D5DB4161812260046240B /* SystemConfiguration.framework in Frameworks */,
+				002DBFBE1618B2EC00E788EA /* CFNetwork.framework in Frameworks */,
+				002DBFC21618B41700E788EA /* MobileCoreServices.framework in Frameworks */,
+				002DBFC41618B44100E788EA /* libz.dylib in Frameworks */,
 				00A00703156D15F200D24418 /* QuartzCore.framework in Frameworks */,
 				00701E301553CBCE00D30018 /* UIKit.framework in Frameworks */,
 				00701E321553CBCE00D30018 /* Foundation.framework in Frameworks */,
@@ -623,8 +690,12 @@
 			files = (
 				00BDE57915CF9B9400BC205C /* AVFoundation.framework in Frameworks */,
 				009397D615D82C5E009AE73E /* MessageUI.framework in Frameworks */,
+				008D5DB5161812290046240B /* SystemConfiguration.framework in Frameworks */,
+				002DBFC01618B40500E788EA /* MobileCoreServices.framework in Frameworks */,
+				002DBFC51618B44A00E788EA /* libz.dylib in Frameworks */,
 				00BDE57A15CF9B9400BC205C /* QuartzCore.framework in Frameworks */,
 				00BDE57B15CF9B9400BC205C /* UIKit.framework in Frameworks */,
+				002DBFBC1618B2E700E788EA /* CFNetwork.framework in Frameworks */,
 				00BDE57C15CF9B9400BC205C /* Foundation.framework in Frameworks */,
 				00BDE57D15CF9B9400BC205C /* CoreGraphics.framework in Frameworks */,
 				00BDE57E15CF9B9400BC205C /* CoreData.framework in Frameworks */,
@@ -638,6 +709,8 @@
 		000B08961553D58E00E7A850 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				008D5DA9161810160046240B /* Reachability.h */,
+				008D5DAA161810160046240B /* Reachability.m */,
 				00A9E7AE15A08699009832BA /* VSReviewPlan.h */,
 				00A9E7AF15A08699009832BA /* VSReviewPlan.m */,
 				0046408F15591DBD007E5FA9 /* VSUtils.h */,
@@ -650,10 +723,35 @@
 				009AFBFA1588982300293F6A /* VSAlertDelegate.m */,
 				009A86FE15A1A82900F7869D /* NSMutableArrayShuffling.h */,
 				009A86FF15A1A82900F7869D /* NSMutableArrayShuffling.m */,
-				00D6779015ADD03900EF152D /* DDFileReader.h */,
-				00D6779115ADD03900EF152D /* DDFileReader.m */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		002DBF8C1618AB5E00E788EA /* ASIHTTPRequest */ = {
+			isa = PBXGroup;
+			children = (
+				002DBF8E1618AB6E00E788EA /* ASIAuthenticationDialog.h */,
+				002DBF8F1618AB6E00E788EA /* ASIAuthenticationDialog.m */,
+				002DBF901618AB6E00E788EA /* ASICacheDelegate.h */,
+				002DBF911618AB6E00E788EA /* ASIDataCompressor.h */,
+				002DBF921618AB6E00E788EA /* ASIDataCompressor.m */,
+				002DBF931618AB6E00E788EA /* ASIDataDecompressor.h */,
+				002DBF941618AB6E00E788EA /* ASIDataDecompressor.m */,
+				002DBF951618AB6E00E788EA /* ASIDownloadCache.h */,
+				002DBF961618AB6E00E788EA /* ASIDownloadCache.m */,
+				002DBF971618AB6E00E788EA /* ASIFormDataRequest.h */,
+				002DBF981618AB6E00E788EA /* ASIFormDataRequest.m */,
+				002DBF991618AB6E00E788EA /* ASIHTTPRequest.h */,
+				002DBF9A1618AB6E00E788EA /* ASIHTTPRequest.m */,
+				002DBF9B1618AB6E00E788EA /* ASIHTTPRequestConfig.h */,
+				002DBF9C1618AB6E00E788EA /* ASIHTTPRequestDelegate.h */,
+				002DBF9D1618AB6E00E788EA /* ASIInputStream.h */,
+				002DBF9E1618AB6E00E788EA /* ASIInputStream.m */,
+				002DBF9F1618AB6E00E788EA /* ASINetworkQueue.h */,
+				002DBFA01618AB6E00E788EA /* ASINetworkQueue.m */,
+				002DBFA11618AB6E00E788EA /* ASIProgressDelegate.h */,
+			);
+			name = ASIHTTPRequest;
 			sourceTree = "<group>";
 		};
 		004524FE15E7488B00935B34 /* Font */ = {
@@ -745,6 +843,10 @@
 		00701E2E1553CBCE00D30018 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				002DBFC31618B44100E788EA /* libz.dylib */,
+				002DBFBF1618B40500E788EA /* MobileCoreServices.framework */,
+				002DBFBA1618B2DC00E788EA /* CFNetwork.framework */,
+				008D5DB2161812140046240B /* SystemConfiguration.framework */,
 				009397D415D82B79009AE73E /* MessageUI.framework */,
 				00D6778715AD542E00EF152D /* Crashlytics.framework */,
 				00A1AFAC1586192400310669 /* AVFoundation.framework */,
@@ -855,6 +957,7 @@
 		0073A68715689FB400B80422 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				002DBF8C1618AB5E00E788EA /* ASIHTTPRequest */,
 				0073A6881568A0B200B80422 /* SBJSON */,
 			);
 			name = Libs;
@@ -884,8 +987,6 @@
 		0073A6B2156A47C100B80422 /* VocabularyListView */ = {
 			isa = PBXGroup;
 			children = (
-				00C42FE115BAFBC6006FF95E /* VSMeaningView.h */,
-				00C42FE215BAFBC6006FF95E /* VSMeaningView.m */,
 				0073A6BB156A5FF700B80422 /* VSVocabularyListViewController.h */,
 				0073A6BC156A5FF700B80422 /* VSVocabularyListViewController.m */,
 				0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */,
@@ -953,6 +1054,7 @@
 				0045251015E7572000935B34 /* MenuButtonHighLighted@2x.png */,
 				00CBF0D815E9F333001588A3 /* UnitHighLighted@2x.png */,
 				00AC5E4915E4BBFB00150402 /* PopupClose@2x.png */,
+				008D5DB7161814780046240B /* SoundButton@2x.png */,
 				00AC5E4A15E4BBFB00150402 /* PopupCloseHighLighted@2x.png */,
 				000E582F15E40C9900B7AB04 /* BookBlack@2x.png */,
 				000E583015E40C9900B7AB04 /* BookLake@2x.png */,
@@ -1221,6 +1323,7 @@
 				00533E3515F3DA81004777F1 /* icon.png in Resources */,
 				00533E3615F3DA81004777F1 /* icon@2x.png in Resources */,
 				00533E3715F3DA81004777F1 /* iTunesArtwork in Resources */,
+				008D5DBA161814780046240B /* SoundButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1296,6 +1399,7 @@
 				00B491A515EBC3E0004AFC6C /* UnitCHighLighted@2x.png in Resources */,
 				00B491AA15EBDF9B004AFC6C /* ScoreDown@2x.png in Resources */,
 				00B491AD15EBDF9B004AFC6C /* ScoreUp@2x.png in Resources */,
+				008D5DB8161814780046240B /* SoundButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1380,6 +1484,7 @@
 				00B491AE15EBDF9B004AFC6C /* ScoreUp@2x.png in Resources */,
 				00533E4115F43672004777F1 /* GuidePage1@2x.png in Resources */,
 				00533E4215F43672004777F1 /* GuidePage2@2x.png in Resources */,
+				008D5DB9161814780046240B /* SoundButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1472,8 +1577,6 @@
 				00201DF715CFBAD30089B8FA /* VSConfigurationViewController.m in Sources */,
 				00201DF815CFBAD30089B8FA /* VSReviewPlan.m in Sources */,
 				00201DF915CFBAD30089B8FA /* NSMutableArrayShuffling.m in Sources */,
-				00201DFA15CFBAD30089B8FA /* DDFileReader.m in Sources */,
-				00201DFB15CFBAD30089B8FA /* VSMeaningView.m in Sources */,
 				00201DFC15CFBAD30089B8FA /* VSSummaryView.m in Sources */,
 				00201DFD15CFBAD30089B8FA /* VSVocabulary.m in Sources */,
 				00201DFE15CFBAD30089B8FA /* VSVocabularyCell.m in Sources */,
@@ -1486,6 +1589,15 @@
 				00E83B3215DAC42F005BE3AF /* VSClipView.m in Sources */,
 				006B4CE015E3638C00711C64 /* VSGuideViewController.m in Sources */,
 				00533E3C15F42915004777F1 /* TipsBubble.m in Sources */,
+				008D5DAD161810160046240B /* Reachability.m in Sources */,
+				002DBFA41618AB6E00E788EA /* ASIAuthenticationDialog.m in Sources */,
+				002DBFA71618AB6E00E788EA /* ASIDataCompressor.m in Sources */,
+				002DBFAA1618AB6E00E788EA /* ASIDataDecompressor.m in Sources */,
+				002DBFAD1618AB6E00E788EA /* ASIDownloadCache.m in Sources */,
+				002DBFB01618AB6E00E788EA /* ASIFormDataRequest.m in Sources */,
+				002DBFB31618AB6E00E788EA /* ASIHTTPRequest.m in Sources */,
+				002DBFB61618AB6E00E788EA /* ASIInputStream.m in Sources */,
+				002DBFB91618AB6E00E788EA /* ASINetworkQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1520,8 +1632,6 @@
 				00AE80F1158B1318000CE7EA /* VSConfigurationViewController.m in Sources */,
 				00A9E7B015A08699009832BA /* VSReviewPlan.m in Sources */,
 				009A870015A1A82900F7869D /* NSMutableArrayShuffling.m in Sources */,
-				00D6779215ADD03900EF152D /* DDFileReader.m in Sources */,
-				00C42FE315BAFBC6006FF95E /* VSMeaningView.m in Sources */,
 				00C42FE915BB096F006FF95E /* VSSummaryView.m in Sources */,
 				00C4300115BBFC44006FF95E /* VSVocabulary.m in Sources */,
 				009BB48615CAAFF2008E5B2B /* VSVocabularyCell.m in Sources */,
@@ -1534,6 +1644,15 @@
 				00E83B3015DAC42F005BE3AF /* VSClipView.m in Sources */,
 				006B4CDE15E3638C00711C64 /* VSGuideViewController.m in Sources */,
 				00533E3A15F42915004777F1 /* TipsBubble.m in Sources */,
+				008D5DAB161810160046240B /* Reachability.m in Sources */,
+				002DBFA21618AB6E00E788EA /* ASIAuthenticationDialog.m in Sources */,
+				002DBFA51618AB6E00E788EA /* ASIDataCompressor.m in Sources */,
+				002DBFA81618AB6E00E788EA /* ASIDataDecompressor.m in Sources */,
+				002DBFAB1618AB6E00E788EA /* ASIDownloadCache.m in Sources */,
+				002DBFAE1618AB6E00E788EA /* ASIFormDataRequest.m in Sources */,
+				002DBFB11618AB6E00E788EA /* ASIHTTPRequest.m in Sources */,
+				002DBFB41618AB6E00E788EA /* ASIInputStream.m in Sources */,
+				002DBFB71618AB6E00E788EA /* ASINetworkQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1578,8 +1697,6 @@
 				00BDE57015CF9B9400BC205C /* VSConfigurationViewController.m in Sources */,
 				00BDE57115CF9B9400BC205C /* VSReviewPlan.m in Sources */,
 				00BDE57215CF9B9400BC205C /* NSMutableArrayShuffling.m in Sources */,
-				00BDE57315CF9B9400BC205C /* DDFileReader.m in Sources */,
-				00BDE57415CF9B9400BC205C /* VSMeaningView.m in Sources */,
 				00BDE57515CF9B9400BC205C /* VSSummaryView.m in Sources */,
 				00BDE57615CF9B9400BC205C /* VSVocabulary.m in Sources */,
 				00BDE57715CF9B9400BC205C /* VSVocabularyCell.m in Sources */,
@@ -1592,6 +1709,15 @@
 				00E83B3115DAC42F005BE3AF /* VSClipView.m in Sources */,
 				006B4CDF15E3638C00711C64 /* VSGuideViewController.m in Sources */,
 				00533E3B15F42915004777F1 /* TipsBubble.m in Sources */,
+				008D5DAC161810160046240B /* Reachability.m in Sources */,
+				002DBFA31618AB6E00E788EA /* ASIAuthenticationDialog.m in Sources */,
+				002DBFA61618AB6E00E788EA /* ASIDataCompressor.m in Sources */,
+				002DBFA91618AB6E00E788EA /* ASIDataDecompressor.m in Sources */,
+				002DBFAC1618AB6E00E788EA /* ASIDownloadCache.m in Sources */,
+				002DBFAF1618AB6E00E788EA /* ASIFormDataRequest.m in Sources */,
+				002DBFB21618AB6E00E788EA /* ASIHTTPRequest.m in Sources */,
+				002DBFB51618AB6E00E788EA /* ASIInputStream.m in Sources */,
+				002DBFB81618AB6E00E788EA /* ASINetworkQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

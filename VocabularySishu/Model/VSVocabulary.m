@@ -83,11 +83,6 @@
     return url != nil ? [UIImage imageWithData:[NSData dataWithContentsOfURL:url]] : nil;
 }
 
-- (BOOL)hasAudioLink
-{
-    return self.audioLink != nil && [self.audioLink length] > 0;
-}
-
 - (NSArray *)orderedMeanings
 {
     NSSortDescriptor *sortOrderDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
@@ -100,6 +95,15 @@
     NSSortDescriptor *sortOrderDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
     NSArray *sortDescriptors = [NSArray arrayWithObjects:sortOrderDescriptor, nil];
     return [[self.websterMeanings allObjects] sortedArrayUsingDescriptors:sortDescriptors];
+}
+
+- (NSURL *)audioURL
+{
+    NSRange r;
+    r.location = 0;
+    r.length = 1;
+    NSString *urlString = [NSString stringWithFormat:@"%@/%@/%@.mp3", VSS_RESOURCE_SERVICE, [self.spell substringWithRange:r], self.spell];
+    return [NSURL URLWithString:urlString];
 }
 
 + (NSArray *)allVocabularies

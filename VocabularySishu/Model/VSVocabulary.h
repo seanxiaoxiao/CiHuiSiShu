@@ -41,13 +41,13 @@
 
 - (BOOL)rememberWell;
 
-- (BOOL)hasAudioLink;
-
 - (NSArray *)orderedMeanings;
 
 - (NSArray *)orderedWMMeanings;
 
 + (NSArray *)allVocabularies;
+
+- (NSURL *)audioURL;
 
 @end
 
