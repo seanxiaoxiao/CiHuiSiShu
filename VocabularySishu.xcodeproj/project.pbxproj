@@ -826,7 +826,6 @@
 				004524FE15E7488B00935B34 /* Font */,
 				00701E6B1553CE8C00D30018 /* ViewController */,
 				0081184E15BEFDFF0022B515 /* Generic */,
-				00A1AFA41585FD2400310669 /* Audio */,
 				0073A68715689FB400B80422 /* Libs */,
 				0073A68115689DA900B80422 /* Data */,
 				00B5A8BE1566886E00D20EB6 /* Img */,
@@ -969,13 +968,6 @@
 				0081185015BEFE220022B515 /* VSNavigationBar.m */,
 			);
 			name = Generic;
-			sourceTree = "<group>";
-		};
-		00A1AFA41585FD2400310669 /* Audio */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Audio;
 			sourceTree = "<group>";
 		};
 		00AE80EC158B12A9000CE7EA /* ConfigurationView */ = {
