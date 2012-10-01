@@ -159,12 +159,8 @@
 		00201E0915CFBAD30089B8FA /* VSHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408C155916FA007E5FA9 /* VSHistoryViewController.xib */; };
 		00201E0A15CFBAD30089B8FA /* VSVocabularyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408115590E0B007E5FA9 /* VSVocabularyViewController.xib */; };
 		00201E0B15CFBAD30089B8FA /* VSVocabularyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */; };
-		00201E0C15CFBAD30089B8FA /* Meaning.html in Resources */ = {isa = PBXBuildFile; fileRef = 00A006F8156B3BDF00D24418 /* Meaning.html */; };
 		00201E1015CFBAD30089B8FA /* VSConfigurationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */; };
 		00201E3315CFBF9C0089B8FA /* VocabularySishu.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00201E3215CFBF9C0089B8FA /* VocabularySishu.sqlite */; };
-		00201E4A15CFCDD00089B8FA /* Vocabularies.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00201E3515CFC3560089B8FA /* Vocabularies.txt */; };
-		00201E4B15CFCDD00089B8FA /* Lists.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00201E3615CFC3560089B8FA /* Lists.txt */; };
-		00201E4C15CFCDD00089B8FA /* Repos.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00201E3715CFC3560089B8FA /* Repos.txt */; };
 		002DBFA21618AB6E00E788EA /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF8F1618AB6E00E788EA /* ASIAuthenticationDialog.m */; };
 		002DBFA31618AB6E00E788EA /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF8F1618AB6E00E788EA /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		002DBFA41618AB6E00E788EA /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF8F1618AB6E00E788EA /* ASIAuthenticationDialog.m */; };
@@ -289,7 +285,6 @@
 		009A870015A1A82900F7869D /* NSMutableArrayShuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = 009A86FF15A1A82900F7869D /* NSMutableArrayShuffling.m */; };
 		009AFBFB1588982300293F6A /* VSAlertDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 009AFBFA1588982300293F6A /* VSAlertDelegate.m */; };
 		009BB48615CAAFF2008E5B2B /* VSVocabularyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 009BB48515CAAFF2008E5B2B /* VSVocabularyCell.m */; };
-		00A006F9156B3BDF00D24418 /* Meaning.html in Resources */ = {isa = PBXBuildFile; fileRef = 00A006F8156B3BDF00D24418 /* Meaning.html */; };
 		00A006FC156B3D6D00D24418 /* VSConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A006FB156B3D6D00D24418 /* VSConstant.m */; };
 		00A00703156D15F200D24418 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A00702156D15F200D24418 /* QuartzCore.framework */; };
 		00A0071D156E3A7B00D24418 /* VSContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A0071C156E3A7B00D24418 /* VSContext.m */; };
@@ -366,7 +361,6 @@
 		00BDE58215CF9B9400BC205C /* VSHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408C155916FA007E5FA9 /* VSHistoryViewController.xib */; };
 		00BDE58315CF9B9400BC205C /* VSVocabularyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408115590E0B007E5FA9 /* VSVocabularyViewController.xib */; };
 		00BDE58415CF9B9400BC205C /* VSVocabularyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */; };
-		00BDE58515CF9B9400BC205C /* Meaning.html in Resources */ = {isa = PBXBuildFile; fileRef = 00A006F8156B3BDF00D24418 /* Meaning.html */; };
 		00BDE58915CF9B9400BC205C /* VSConfigurationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */; };
 		00C42FE915BB096F006FF95E /* VSSummaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C42FE815BB096F006FF95E /* VSSummaryView.m */; };
 		00C4300115BBFC44006FF95E /* VSVocabulary.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4300015BBFC44006FF95E /* VSVocabulary.m */; };
@@ -384,22 +378,6 @@
 		00FF1B1015E407AC005B9E51 /* SeparatorDots@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF1B0F15E407AC005B9E51 /* SeparatorDots@2x.png */; };
 		00FF1B1115E407AC005B9E51 /* SeparatorDots@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF1B0F15E407AC005B9E51 /* SeparatorDots@2x.png */; };
 		00FF1B1215E407AC005B9E51 /* SeparatorDots@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF1B0F15E407AC005B9E51 /* SeparatorDots@2x.png */; };
-		00FF6FD015CFD2DF0043BA91 /* mw-2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FCE15CFD2DF0043BA91 /* mw-2.txt */; };
-		00FF6FD115CFD2DF0043BA91 /* mw-1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FCF15CFD2DF0043BA91 /* mw-1.txt */; };
-		00FF6FD315CFD48A0043BA91 /* Meaning.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FD215CFD48A0043BA91 /* Meaning.txt */; };
-		00FF6FD415CFD48A0043BA91 /* Meaning.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FD215CFD48A0043BA91 /* Meaning.txt */; };
-		00FF6FD515CFD48A0043BA91 /* Meaning.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FD215CFD48A0043BA91 /* Meaning.txt */; };
-		00FF6FD615CFD4D70043BA91 /* WebsterMeaning.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FC915CFD0150043BA91 /* WebsterMeaning.txt */; };
-		00FF6FD715CFD4D90043BA91 /* Vocabularies.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FCA15CFD0150043BA91 /* Vocabularies.txt */; };
-		00FF6FD815CFD4DA0043BA91 /* Lists.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FCB15CFD0150043BA91 /* Lists.txt */; };
-		00FF6FD915CFD4DB0043BA91 /* Repos.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FCC15CFD0150043BA91 /* Repos.txt */; };
-		00FF6FE015CFDA0A0043BA91 /* mw-4.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FDA15CFDA0A0043BA91 /* mw-4.txt */; };
-		00FF6FE115CFDA0A0043BA91 /* mw-3.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FDB15CFDA0A0043BA91 /* mw-3.txt */; };
-		00FF6FE215CFDA0A0043BA91 /* mw-2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FDC15CFDA0A0043BA91 /* mw-2.txt */; };
-		00FF6FE315CFDA0A0043BA91 /* mw-1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FDD15CFDA0A0043BA91 /* mw-1.txt */; };
-		00FF6FE415CFDA0A0043BA91 /* Lists.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FDE15CFDA0A0043BA91 /* Lists.txt */; };
-		00FF6FE515CFDA0A0043BA91 /* Repos.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FDF15CFDA0A0043BA91 /* Repos.txt */; };
-		00FF6FE715CFDC4B0043BA91 /* Vocabularies.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FE615CFDC4B0043BA91 /* Vocabularies.txt */; };
 		00FF6FE915D0AC940043BA91 /* VocabularySishu.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FE815D0AC940043BA91 /* VocabularySishu.sqlite */; };
 		00FF6FFA15D0BACB0043BA91 /* VSScoreBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF6FF915D0BACB0043BA91 /* VSScoreBoardView.m */; };
 		00FF6FFB15D0BACB0043BA91 /* VSScoreBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF6FF915D0BACB0043BA91 /* VSScoreBoardView.m */; };
@@ -459,9 +437,6 @@
 		000E585315E40C9900B7AB04 /* Unit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Unit@2x.png"; path = "Resources/Img/Unit@2x.png"; sourceTree = "<group>"; };
 		00201E2F15CFBAD30089B8FA /* VocabularySishu GRE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VocabularySishu GRE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00201E3215CFBF9C0089B8FA /* VocabularySishu.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = VocabularySishu.sqlite; path = Resources/Data/TOEFL/VocabularySishu.sqlite; sourceTree = "<group>"; };
-		00201E3515CFC3560089B8FA /* Vocabularies.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Vocabularies.txt; path = Resources/Data/GRE/Vocabularies.txt; sourceTree = "<group>"; };
-		00201E3615CFC3560089B8FA /* Lists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Lists.txt; path = Resources/Data/GRE/Lists.txt; sourceTree = "<group>"; };
-		00201E3715CFC3560089B8FA /* Repos.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Repos.txt; path = Resources/Data/GRE/Repos.txt; sourceTree = "<group>"; };
 		002DBF8E1618AB6E00E788EA /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIAuthenticationDialog.h; path = Libs/ASIHTTPRequest/ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		002DBF8F1618AB6E00E788EA /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIAuthenticationDialog.m; path = Libs/ASIHTTPRequest/ASIAuthenticationDialog.m; sourceTree = "<group>"; };
 		002DBF901618AB6E00E788EA /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASICacheDelegate.h; path = Libs/ASIHTTPRequest/ASICacheDelegate.h; sourceTree = "<group>"; };
@@ -569,7 +544,6 @@
 		009AFBFA1588982300293F6A /* VSAlertDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSAlertDelegate.m; path = Utils/VSAlertDelegate.m; sourceTree = "<group>"; };
 		009BB48415CAAFF2008E5B2B /* VSVocabularyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSVocabularyCell.h; path = ViewController/VocabularyListView/VSVocabularyCell.h; sourceTree = "<group>"; };
 		009BB48515CAAFF2008E5B2B /* VSVocabularyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSVocabularyCell.m; path = ViewController/VocabularyListView/VSVocabularyCell.m; sourceTree = "<group>"; };
-		00A006F8156B3BDF00D24418 /* Meaning.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = Meaning.html; path = Resources/Template/Meaning.html; sourceTree = "<group>"; };
 		00A006FA156B3D6D00D24418 /* VSConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSConstant.h; path = Utils/VSConstant.h; sourceTree = "<group>"; };
 		00A006FB156B3D6D00D24418 /* VSConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSConstant.m; path = Utils/VSConstant.m; sourceTree = "<group>"; };
 		00A00702156D15F200D24418 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -613,20 +587,6 @@
 		00E83B2E15DAC42F005BE3AF /* VSClipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSClipView.h; path = ViewController/MainView/VSClipView.h; sourceTree = "<group>"; };
 		00E83B2F15DAC42F005BE3AF /* VSClipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSClipView.m; path = ViewController/MainView/VSClipView.m; sourceTree = "<group>"; };
 		00FF1B0F15E407AC005B9E51 /* SeparatorDots@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "SeparatorDots@2x.png"; path = "Resources/Img/SeparatorDots@2x.png"; sourceTree = "<group>"; };
-		00FF6FC915CFD0150043BA91 /* WebsterMeaning.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = WebsterMeaning.txt; path = Resources/Data/TOEFL/WebsterMeaning.txt; sourceTree = "<group>"; };
-		00FF6FCA15CFD0150043BA91 /* Vocabularies.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = Vocabularies.txt; path = Resources/Data/TOEFL/Vocabularies.txt; sourceTree = "<group>"; };
-		00FF6FCB15CFD0150043BA91 /* Lists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = Lists.txt; path = Resources/Data/TOEFL/Lists.txt; sourceTree = "<group>"; };
-		00FF6FCC15CFD0150043BA91 /* Repos.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = Repos.txt; path = Resources/Data/TOEFL/Repos.txt; sourceTree = "<group>"; };
-		00FF6FCE15CFD2DF0043BA91 /* mw-2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "mw-2.txt"; path = "Resources/Data/GRE/mw-2.txt"; sourceTree = "<group>"; };
-		00FF6FCF15CFD2DF0043BA91 /* mw-1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "mw-1.txt"; path = "Resources/Data/GRE/mw-1.txt"; sourceTree = "<group>"; };
-		00FF6FD215CFD48A0043BA91 /* Meaning.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Meaning.txt; path = Resources/Data/Meaning.txt; sourceTree = "<group>"; };
-		00FF6FDA15CFDA0A0043BA91 /* mw-4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "mw-4.txt"; path = "Resources/Data/FULL/mw-4.txt"; sourceTree = "<group>"; };
-		00FF6FDB15CFDA0A0043BA91 /* mw-3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "mw-3.txt"; path = "Resources/Data/FULL/mw-3.txt"; sourceTree = "<group>"; };
-		00FF6FDC15CFDA0A0043BA91 /* mw-2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "mw-2.txt"; path = "Resources/Data/FULL/mw-2.txt"; sourceTree = "<group>"; };
-		00FF6FDD15CFDA0A0043BA91 /* mw-1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "mw-1.txt"; path = "Resources/Data/FULL/mw-1.txt"; sourceTree = "<group>"; };
-		00FF6FDE15CFDA0A0043BA91 /* Lists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Lists.txt; path = Resources/Data/FULL/Lists.txt; sourceTree = "<group>"; };
-		00FF6FDF15CFDA0A0043BA91 /* Repos.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Repos.txt; path = Resources/Data/FULL/Repos.txt; sourceTree = "<group>"; };
-		00FF6FE615CFDC4B0043BA91 /* Vocabularies.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Vocabularies.txt; path = Resources/Data/FULL/Vocabularies.txt; sourceTree = "<group>"; };
 		00FF6FE815D0AC940043BA91 /* VocabularySishu.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = VocabularySishu.sqlite; path = Resources/Data/GRE/VocabularySishu.sqlite; sourceTree = "<group>"; };
 		00FF6FF815D0BACA0043BA91 /* VSScoreBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSScoreBoardView.h; path = ViewController/VocabularyListView/VSScoreBoardView.h; sourceTree = "<group>"; };
 		00FF6FF915D0BACB0043BA91 /* VSScoreBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSScoreBoardView.m; path = ViewController/VocabularyListView/VSScoreBoardView.m; sourceTree = "<group>"; };
@@ -867,7 +827,6 @@
 				00701E6B1553CE8C00D30018 /* ViewController */,
 				0081184E15BEFDFF0022B515 /* Generic */,
 				00A1AFA41585FD2400310669 /* Audio */,
-				00A006F6156B3B8800D24418 /* Template */,
 				0073A68715689FB400B80422 /* Libs */,
 				0073A68115689DA900B80422 /* Data */,
 				00B5A8BE1566886E00D20EB6 /* Img */,
@@ -946,7 +905,6 @@
 		0073A68115689DA900B80422 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				00FF6FD215CFD48A0043BA91 /* Meaning.txt */,
 				00BDE55515CF9B8500BC205C /* FULL */,
 				00BDE55415CF9B7C00BC205C /* TOEFL */,
 				00BDE55215CF9B7300BC205C /* GRE */,
@@ -1011,14 +969,6 @@
 				0081185015BEFE220022B515 /* VSNavigationBar.m */,
 			);
 			name = Generic;
-			sourceTree = "<group>";
-		};
-		00A006F6156B3B8800D24418 /* Template */ = {
-			isa = PBXGroup;
-			children = (
-				00A006F8156B3BDF00D24418 /* Meaning.html */,
-			);
-			name = Template;
 			sourceTree = "<group>";
 		};
 		00A1AFA41585FD2400310669 /* Audio */ = {
@@ -1103,12 +1053,7 @@
 		00BDE55215CF9B7300BC205C /* GRE */ = {
 			isa = PBXGroup;
 			children = (
-				00201E3515CFC3560089B8FA /* Vocabularies.txt */,
-				00FF6FCE15CFD2DF0043BA91 /* mw-2.txt */,
 				00FF6FE815D0AC940043BA91 /* VocabularySishu.sqlite */,
-				00FF6FCF15CFD2DF0043BA91 /* mw-1.txt */,
-				00201E3615CFC3560089B8FA /* Lists.txt */,
-				00201E3715CFC3560089B8FA /* Repos.txt */,
 			);
 			name = GRE;
 			sourceTree = "<group>";
@@ -1116,10 +1061,6 @@
 		00BDE55415CF9B7C00BC205C /* TOEFL */ = {
 			isa = PBXGroup;
 			children = (
-				00FF6FC915CFD0150043BA91 /* WebsterMeaning.txt */,
-				00FF6FCA15CFD0150043BA91 /* Vocabularies.txt */,
-				00FF6FCB15CFD0150043BA91 /* Lists.txt */,
-				00FF6FCC15CFD0150043BA91 /* Repos.txt */,
 				00201E3215CFBF9C0089B8FA /* VocabularySishu.sqlite */,
 			);
 			name = TOEFL;
@@ -1129,13 +1070,6 @@
 			isa = PBXGroup;
 			children = (
 				009397D115D7F6D3009AE73E /* VocabularySishu.sqlite */,
-				00FF6FE615CFDC4B0043BA91 /* Vocabularies.txt */,
-				00FF6FDA15CFDA0A0043BA91 /* mw-4.txt */,
-				00FF6FDB15CFDA0A0043BA91 /* mw-3.txt */,
-				00FF6FDC15CFDA0A0043BA91 /* mw-2.txt */,
-				00FF6FDD15CFDA0A0043BA91 /* mw-1.txt */,
-				00FF6FDE15CFDA0A0043BA91 /* Lists.txt */,
-				00FF6FDF15CFDA0A0043BA91 /* Repos.txt */,
 			);
 			name = FULL;
 			sourceTree = "<group>";
@@ -1256,14 +1190,7 @@
 				00201E0A15CFBAD30089B8FA /* VSVocabularyViewController.xib in Resources */,
 				00201E0B15CFBAD30089B8FA /* VSVocabularyListViewController.xib in Resources */,
 				00533E3415F3DA81004777F1 /* GuidePage3@2x.png in Resources */,
-				00201E0C15CFBAD30089B8FA /* Meaning.html in Resources */,
 				00201E1015CFBAD30089B8FA /* VSConfigurationViewController.xib in Resources */,
-				00201E4A15CFCDD00089B8FA /* Vocabularies.txt in Resources */,
-				00201E4B15CFCDD00089B8FA /* Lists.txt in Resources */,
-				00201E4C15CFCDD00089B8FA /* Repos.txt in Resources */,
-				00FF6FD015CFD2DF0043BA91 /* mw-2.txt in Resources */,
-				00FF6FD115CFD2DF0043BA91 /* mw-1.txt in Resources */,
-				00FF6FD515CFD48A0043BA91 /* Meaning.txt in Resources */,
 				00FF6FE915D0AC940043BA91 /* VocabularySishu.sqlite in Resources */,
 				0044C15115D397630022154A /* VSMainViewController.xib in Resources */,
 				0044C15A15D3B70F0022154A /* VSRepoListViewController.xib in Resources */,
@@ -1332,21 +1259,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				00701E3C1553CBCE00D30018 /* InfoPlist.strings in Resources */,
-				00FF6FE315CFDA0A0043BA91 /* mw-1.txt in Resources */,
 				0046408E155916FA007E5FA9 /* VSHistoryViewController.xib in Resources */,
 				0044C14F15D397630022154A /* VSMainViewController.xib in Resources */,
-				00FF6FE215CFDA0A0043BA91 /* mw-2.txt in Resources */,
 				0046409315591FD1007E5FA9 /* VSVocabularyViewController.xib in Resources */,
-				00FF6FE115CFDA0A0043BA91 /* mw-3.txt in Resources */,
 				0044C15815D3B70F0022154A /* VSRepoListViewController.xib in Resources */,
-				00FF6FE015CFDA0A0043BA91 /* mw-4.txt in Resources */,
 				0073A6BF156A5FF700B80422 /* VSVocabularyListViewController.xib in Resources */,
-				00A006F9156B3BDF00D24418 /* Meaning.html in Resources */,
 				00AE80F2158B1318000CE7EA /* VSConfigurationViewController.xib in Resources */,
-				00FF6FD315CFD48A0043BA91 /* Meaning.txt in Resources */,
-				00FF6FE415CFDA0A0043BA91 /* Lists.txt in Resources */,
-				00FF6FE515CFDA0A0043BA91 /* Repos.txt in Resources */,
-				00FF6FE715CFDC4B0043BA91 /* Vocabularies.txt in Resources */,
 				009397D215D7F6D3009AE73E /* VocabularySishu.sqlite in Resources */,
 				006B4CE115E3638C00711C64 /* VSGuideViewController.xib in Resources */,
 				006B4CE515E3F3B100711C64 /* Menu@2x.png in Resources */,
@@ -1420,16 +1338,10 @@
 				00BDE58215CF9B9400BC205C /* VSHistoryViewController.xib in Resources */,
 				00BDE58315CF9B9400BC205C /* VSVocabularyViewController.xib in Resources */,
 				00BDE58415CF9B9400BC205C /* VSVocabularyListViewController.xib in Resources */,
-				00BDE58515CF9B9400BC205C /* Meaning.html in Resources */,
 				00533E4315F43672004777F1 /* GuidePage3@2x.png in Resources */,
 				006B4CE215E3638C00711C64 /* VSGuideViewController.xib in Resources */,
 				00BDE58915CF9B9400BC205C /* VSConfigurationViewController.xib in Resources */,
-				00FF6FD615CFD4D70043BA91 /* WebsterMeaning.txt in Resources */,
-				00FF6FD915CFD4DB0043BA91 /* Repos.txt in Resources */,
-				00FF6FD815CFD4DA0043BA91 /* Lists.txt in Resources */,
-				00FF6FD715CFD4D90043BA91 /* Vocabularies.txt in Resources */,
 				00201E3315CFBF9C0089B8FA /* VocabularySishu.sqlite in Resources */,
-				00FF6FD415CFD48A0043BA91 /* Meaning.txt in Resources */,
 				0044C15015D397630022154A /* VSMainViewController.xib in Resources */,
 				0044C15915D3B70F0022154A /* VSRepoListViewController.xib in Resources */,
 				006B4CE615E3F3B100711C64 /* Menu@2x.png in Resources */,
