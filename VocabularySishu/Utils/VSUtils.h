@@ -46,4 +46,6 @@
 
 + (void)showGuidPage;
 
++ (void)openSeries;
+
 @end

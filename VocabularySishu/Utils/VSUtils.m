@@ -201,4 +201,11 @@
     [navigationController pushViewController:guideViewController animated:NO];
 }
 
++ (void)openSeries
+{
+    NSString *search = @"词汇私塾";
+    NSString *sstring = [NSString stringWithFormat:@"http://ax.search.itunes.apple.com/WebObjects/MZSearch.woa/wa/search?media=software&term=%@", [search stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    [[UIApplication sharedApplication] openURL: [NSURL URLWithString:sstring]];
+}
+
 @end

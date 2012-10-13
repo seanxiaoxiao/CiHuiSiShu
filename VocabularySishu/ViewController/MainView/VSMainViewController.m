@@ -55,9 +55,14 @@
     [backgroundImageView setFrame:self.view.frame];
     [self.view addSubview:backgroundImageView];
     [self.view sendSubviewToBack:backgroundImageView];
+
     self.allRepos = [VSRepository allRepos];
+    int count = [self.allRepos count];
+    #ifdef TRIAL
+        count++;
+    #endif
     scrollView.pagingEnabled = YES;
-    scrollView.contentSize = CGSizeMake(205 * [self.allRepos count], scrollView.frame.size.height);
+    scrollView.contentSize = CGSizeMake(205 * count, scrollView.frame.size.height);
     scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.showsVerticalScrollIndicator = NO;
     scrollView.alwaysBounceVertical = NO;
@@ -84,8 +89,19 @@
             selected = i;
         }
     }
+    
+    #ifdef TRIAL
+        CGRect moreFrame = CGRectMake([allRepos count] * 205, 0, 205, 416);
+        VSRepoViewController *controller = [[VSRepoViewController alloc] initWithNibName:nil bundle:nil];
+        [controllers addObject:controller];
+        VSRepository *currentRepo = nil;
+        [controller initWithCurrentRepo:currentRepo];
+        controller.view.frame = moreFrame;
+        [self.scrollView addSubview:controller.view];
+    #endif
 
-    pageControl.numberOfPages = [self.allRepos count];
+
+    pageControl.numberOfPages = count;
     pageControl.currentPage = 0;
     
     if (selected != -1) {

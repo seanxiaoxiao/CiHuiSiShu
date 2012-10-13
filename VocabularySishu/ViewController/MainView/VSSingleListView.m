@@ -67,7 +67,12 @@
     self.listNameLabel.minimumFontSize = 12;
     self.listNameLabel.adjustsFontSizeToFitWidth = YES;
     self.listNameLabel.backgroundColor = [UIColor clearColor];
-    self.listNameLabel.text = [theList displayName];
+    if (self.theList == nil) {
+        self.listNameLabel.text = @"更多";
+    }
+    else {
+        self.listNameLabel.text = [theList displayName];
+    }
     [self.listNameLabel setTextAlignment:UITextAlignmentCenter];
     [self addSubview:listNameLabel];
     
@@ -78,7 +83,12 @@
 
 - (void)toList
 {
-    [VSUtils toGivenList:self.theList];
+    if (self.theList) {
+        [VSUtils toGivenList:self.theList];
+    }
+    else {
+        [VSUtils openSeries];
+    }
 }
 
 - (void)selectList

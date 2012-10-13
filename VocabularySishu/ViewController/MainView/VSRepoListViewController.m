@@ -73,6 +73,12 @@
             }
         }
     }
+    #ifdef TRIAL
+    VSSingleListView *listView = [[VSSingleListView alloc] initWithFrame:CGRectMake(width, height, 50, 80)];
+    [listView initWithList:nil];
+    [self.scrollView addSubview:listView];
+    
+    #endif
     if (horizontalCount != 0) {
         height += 70;
     }
