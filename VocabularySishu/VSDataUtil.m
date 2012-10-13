@@ -333,6 +333,7 @@ NSMutableDictionary *vocabularyMap;
 
 + (void)initData
 {
+    NSLog(@"Finish init data");
     NSDate *dateStarted = [[NSDate alloc] init];
     [VSDataUtil clearEntities:@"VSContext"];
     NSLog(@"Vocabulary");
@@ -345,7 +346,7 @@ NSMutableDictionary *vocabularyMap;
     [VSDataUtil initMeanings];
     NSLog(@"MWMeaning");
     [VSDataUtil clearEntities:@"VSWebsterMeaning"];
-    //[VSDataUtil initFullMWMeanings];
+    [VSDataUtil initFullMWMeanings];
 
     NSLog(@"Time elapse %f in import all", [dateStarted timeIntervalSinceNow]);
 
