@@ -7,6 +7,7 @@
 //
 
 #import "VSVocabularyCell.h"
+#import "MobClick.h"
 
 @implementation VSVocabularyCell
 
@@ -182,6 +183,7 @@
 
 - (void) scoreDown
 {
+    [MobClick event:EVENT_FORGET];
     self.scoreDownImage = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ScoreDown"]];
     [self.contentView addSubview:self.scoreDownImage];
 	CGRect frame = self.scoreDownImage.frame;
@@ -202,6 +204,7 @@
 
 - (void) scoreUp
 {
+    [MobClick event:EVENT_REMEMBER];
     self.scoreUpImage = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ScoreUp"]];
 	[self.contentView addSubview:self.scoreUpImage];
     CGRect frame = self.scoreUpImage.frame;

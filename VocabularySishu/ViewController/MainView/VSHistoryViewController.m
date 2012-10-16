@@ -8,6 +8,8 @@
 
 #import "VSHistoryViewController.h"
 #import "VSVocabularyListViewController.h"
+#import "MobClick.h"
+#import "VSConstant.h"
 
 @interface VSHistoryViewController ()
 
@@ -73,6 +75,9 @@
     }
 
     self.historyLists = [NSMutableArray arrayWithArray:[VSList lastestHistoryList]];
+    #ifdef TRIAL
+    [self.historyLists insertObject:@"购买完整版" atIndex:0];
+    #endif
     [self.historyTable reloadData];
 }
 
@@ -85,6 +90,7 @@
 
 - (IBAction)recite:(id)sender
 {
+    [MobClick event:EVENT_ENTER_LIST];
     VSVocabularyListViewController *vocabularyListViewController = [VSVocabularyListViewController alloc];
     VSContext *context = [VSContext getContext];
     VSList *list = context.currentList;
@@ -102,7 +108,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [MobClick event:EVENT_ENTER_HISTORY];
     VSVocabularyListViewController *vocabularyListViewController = [VSVocabularyListViewController alloc];
+    id obj = [historyLists objectAtIndex:indexPath.row];
+    if ([obj isKindOfClass:[NSString class]]) {
+        [VSUtils openSeries];
+        return;
+    }
     VSList *selectedList = [historyLists objectAtIndex:indexPath.row];
     vocabularyListViewController.currentList = selectedList;
     vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
@@ -129,13 +141,22 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row != [historyLists count]) {
-        VSList *list = [historyLists objectAtIndex:indexPath.row];
+        id obj = [historyLists objectAtIndex:indexPath.row];
         NSString *CellIdentifier = @"ListCell";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        if (cell == nil) {
-            cell = [[VSHisotryListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        if ([obj isKindOfClass:[NSString class]]) {
+            if (cell == nil) {
+                cell = [[VSHisotryListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+            }
+            [((VSHisotryListCell *)(cell)) initWithLabel:(NSString *) obj];
         }
-        [((VSHisotryListCell *)(cell)) initWithList:list andRow:indexPath.row];
+        else {
+            VSList *list = [historyLists objectAtIndex:indexPath.row];
+            if (cell == nil) {
+                cell = [[VSHisotryListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+            }
+            [((VSHisotryListCell *)(cell)) initWithList:list andRow:indexPath.row];
+        }
         return cell;
     }
     else {
@@ -180,7 +201,7 @@
     [self.historyTable endUpdates];
 }
 
-- (void) addMoreList
+- (void)addMoreList
 {
     NSDate *lastCreatedDate = ((VSList *)[self.historyLists objectAtIndex:[self.historyLists count] - 1]).createdDate;
     [self.historyLists addObjectsFromArray:[VSList historyListBefore:lastCreatedDate]];

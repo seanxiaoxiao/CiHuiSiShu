@@ -9,6 +9,7 @@
 #import "VSAppDelegate.h"
 #import "VSNavigationBar.h"
 #import <Crashlytics/Crashlytics.h>
+#import "MobClick.h"
 
 @implementation VSAppDelegate
 
@@ -23,6 +24,8 @@
 {
     [Crashlytics startWithAPIKey:@"89e2516487b822e3169f0a4c5a8d24c6aebea788"];
     [VSUtils copySQLite];
+    [MobClick startWithAppkey:STATISTIC_API_KEY];
+
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     // Override point for customization after application launch.

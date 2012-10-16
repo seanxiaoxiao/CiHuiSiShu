@@ -206,6 +206,12 @@
 		00533E4115F43672004777F1 /* GuidePage1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00533E3E15F43672004777F1 /* GuidePage1@2x.png */; };
 		00533E4215F43672004777F1 /* GuidePage2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00533E3F15F43672004777F1 /* GuidePage2@2x.png */; };
 		00533E4315F43672004777F1 /* GuidePage3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00533E4015F43672004777F1 /* GuidePage3@2x.png */; };
+		0059664A162C7D5A0010C669 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00596648162C7D5A0010C669 /* libMobClickLibrary.a */; };
+		0059664B162C7D5A0010C669 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00596648162C7D5A0010C669 /* libMobClickLibrary.a */; };
+		0059664C162C7D5A0010C669 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00596648162C7D5A0010C669 /* libMobClickLibrary.a */; };
+		0059664D162C7D5A0010C669 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00596648162C7D5A0010C669 /* libMobClickLibrary.a */; };
+		0059664F162C88E00010C669 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0059664E162C88E00010C669 /* libz.dylib */; };
+		00596650162CB0F80010C669 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0059664E162C88E00010C669 /* libz.dylib */; };
 		006B4CDE15E3638C00711C64 /* VSGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 006B4CDC15E3638B00711C64 /* VSGuideViewController.m */; };
 		006B4CDF15E3638C00711C64 /* VSGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 006B4CDC15E3638B00711C64 /* VSGuideViewController.m */; };
 		006B4CE015E3638C00711C64 /* VSGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 006B4CDC15E3638B00711C64 /* VSGuideViewController.m */; };
@@ -548,6 +554,9 @@
 		00533E3E15F43672004777F1 /* GuidePage1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GuidePage1@2x.png"; path = "Resources/Img/TOEFL/GuidePage1@2x.png"; sourceTree = "<group>"; };
 		00533E3F15F43672004777F1 /* GuidePage2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GuidePage2@2x.png"; path = "Resources/Img/TOEFL/GuidePage2@2x.png"; sourceTree = "<group>"; };
 		00533E4015F43672004777F1 /* GuidePage3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GuidePage3@2x.png"; path = "Resources/Img/TOEFL/GuidePage3@2x.png"; sourceTree = "<group>"; };
+		00596648162C7D5A0010C669 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMobClickLibrary.a; path = Libs/Statistics/libMobClickLibrary.a; sourceTree = "<group>"; };
+		00596649162C7D5A0010C669 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MobClick.h; path = Libs/Statistics/MobClick.h; sourceTree = "<group>"; };
+		0059664E162C88E00010C669 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		006B4CDB15E3638B00711C64 /* VSGuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSGuideViewController.h; path = ViewController/ConfigurationView/VSGuideViewController.h; sourceTree = "<group>"; };
 		006B4CDC15E3638B00711C64 /* VSGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSGuideViewController.m; path = ViewController/ConfigurationView/VSGuideViewController.m; sourceTree = "<group>"; };
 		006B4CDD15E3638B00711C64 /* VSGuideViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSGuideViewController.xib; path = ViewController/ConfigurationView/VSGuideViewController.xib; sourceTree = "<group>"; };
@@ -674,6 +683,8 @@
 				00201E0415CFBAD30089B8FA /* CoreGraphics.framework in Frameworks */,
 				00201E0515CFBAD30089B8FA /* CoreData.framework in Frameworks */,
 				00201E0615CFBAD30089B8FA /* Crashlytics.framework in Frameworks */,
+				0059664C162C7D5A0010C669 /* libMobClickLibrary.a in Frameworks */,
+				00596650162CB0F80010C669 /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -689,6 +700,7 @@
 				00701E341553CBCE00D30018 /* CoreGraphics.framework in Frameworks */,
 				00701E361553CBCE00D30018 /* CoreData.framework in Frameworks */,
 				00D6778815AD542E00EF152D /* Crashlytics.framework in Frameworks */,
+				0059664A162C7D5A0010C669 /* libMobClickLibrary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -710,11 +722,13 @@
 				00B2502B1628E19200311E52 /* AVFoundation.framework in Frameworks */,
 				00B2502C1628E19200311E52 /* MessageUI.framework in Frameworks */,
 				00B2502D1628E19200311E52 /* QuartzCore.framework in Frameworks */,
+				0059664F162C88E00010C669 /* libz.dylib in Frameworks */,
 				00B2502E1628E19200311E52 /* UIKit.framework in Frameworks */,
 				00B2502F1628E19200311E52 /* Foundation.framework in Frameworks */,
 				00B250301628E19200311E52 /* CoreGraphics.framework in Frameworks */,
 				00B250311628E19200311E52 /* CoreData.framework in Frameworks */,
 				00B250321628E19200311E52 /* Crashlytics.framework in Frameworks */,
+				0059664D162C7D5A0010C669 /* libMobClickLibrary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -730,6 +744,7 @@
 				00BDE57D15CF9B9400BC205C /* CoreGraphics.framework in Frameworks */,
 				00BDE57E15CF9B9400BC205C /* CoreData.framework in Frameworks */,
 				00BDE57F15CF9B9400BC205C /* Crashlytics.framework in Frameworks */,
+				0059664B162C7D5A0010C669 /* libMobClickLibrary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -822,6 +837,15 @@
 			name = TOEFL;
 			sourceTree = "<group>";
 		};
+		00596646162C7CB90010C669 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				00596648162C7D5A0010C669 /* libMobClickLibrary.a */,
+				00596649162C7D5A0010C669 /* MobClick.h */,
+			);
+			name = Statistics;
+			sourceTree = "<group>";
+		};
 		00701E201553CBCE00D30018 = {
 			isa = PBXGroup;
 			children = (
@@ -847,6 +871,7 @@
 		00701E2E1553CBCE00D30018 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0059664E162C88E00010C669 /* libz.dylib */,
 				009397D415D82B79009AE73E /* MessageUI.framework */,
 				00D6778715AD542E00EF152D /* Crashlytics.framework */,
 				00A1AFAC1586192400310669 /* AVFoundation.framework */,
@@ -956,6 +981,7 @@
 		0073A68715689FB400B80422 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				00596646162C7CB90010C669 /* Statistics */,
 				0073A6881568A0B200B80422 /* SBJSON */,
 			);
 			name = Libs;
@@ -1868,6 +1894,10 @@
 				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
 				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/VocabularySishu/Libs/Statistics\"",
+				);
 				PRODUCT_NAME = "VocabularySishu GRE";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -1894,6 +1924,10 @@
 				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
 				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/VocabularySishu/Libs/Statistics\"",
+				);
 				PRODUCT_NAME = "VocabularySishu GRE";
 				PROVISIONING_PROFILE = "4D89C15B-F01C-4BA4-9738-1B85083EE2DC";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4D89C15B-F01C-4BA4-9738-1B85083EE2DC";
@@ -1971,6 +2005,10 @@
 				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
 				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/VocabularySishu/Libs/Statistics\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -1997,6 +2035,10 @@
 				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
 				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/VocabularySishu/Libs/Statistics\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -2063,6 +2105,10 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/VocabularySishu/VocabularySishu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/VocabularySishu/Libs/Statistics\"",
+				);
 				PRODUCT_NAME = "VocabularySishu Trial";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -2090,6 +2136,10 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "TRIAL=1";
 				INFOPLIST_FILE = "$(SRCROOT)/VocabularySishu/VocabularySishu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/VocabularySishu/Libs/Statistics\"",
+				);
 				PRODUCT_NAME = "VocabularySishu Trial";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -2116,6 +2166,10 @@
 				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
 				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/VocabularySishu/Libs/Statistics\"",
+				);
 				New_Setting = "";
 				PRODUCT_NAME = "VocabularySishu TOEFL";
 				PROVISIONING_PROFILE = "";
@@ -2143,6 +2197,10 @@
 				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
 				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/VocabularySishu/Libs/Statistics\"",
+				);
 				New_Setting = "";
 				PRODUCT_NAME = "VocabularySishu TOEFL";
 				PROVISIONING_PROFILE = "";

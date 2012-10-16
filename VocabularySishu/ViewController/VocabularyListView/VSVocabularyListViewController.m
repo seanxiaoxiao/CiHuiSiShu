@@ -12,6 +12,7 @@
 #import "VSContext.h"
 #import "VSListVocabulary.h"
 #import "VSMeaning.h"
+#import "MobClick.h"
 
 
 @interface VSVocabularyListViewController ()
@@ -227,6 +228,7 @@
     [self dismissDetailBubble];
     VSVocabularyCell* cell = (VSVocabularyCell *)[self.tableView cellForRowAtIndexPath:indexPath];
     if (cell.curlUp && scoreBoardView == nil) {
+        [MobClick event:EVENT_ENTER_DETAIL];
         VSVocabulary *selectedVocabulary = ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:indexPath.row]).vocabulary;
         VSVocabularyViewController *detailViewController = [[VSVocabularyViewController alloc] initWithNibName:@"VSVocabularyViewController" bundle:nil];
         detailViewController.vocabulary = selectedVocabulary;
@@ -407,6 +409,7 @@
 - (void)showHideScoreBoard
 {
     if (scoreBoardView == nil) {
+        [MobClick event:EVENT_SHOW_SCORE];
         CGRect modalRect = CGRectMake(50, 105, 200, 170);
         scoreBoardView = [[VSScoreBoardView alloc] initWithFrame:modalRect];
         CATransition *applicationLoadViewIn =[CATransition animation];
@@ -455,6 +458,7 @@
 
 - (void)doRestart
 {
+    [MobClick event:EVENT_RETRY];
     [self.currentList clearVocabularyStatus];
     [VSUtils reloadCurrentList:self.currentList];
 }
@@ -466,6 +470,7 @@
 
 - (void)doNextList
 {
+    [MobClick event:EVENT_NEXT_LIST];
     [VSUtils toNextList:self.currentList];
 }
 
