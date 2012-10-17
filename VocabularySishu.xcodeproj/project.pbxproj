@@ -59,7 +59,6 @@
 		000E588815E40C9900B7AB04 /* InkNeck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583F15E40C9900B7AB04 /* InkNeck@2x.png */; };
 		000E588915E40C9900B7AB04 /* InkNeck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583F15E40C9900B7AB04 /* InkNeck@2x.png */; };
 		000E588A15E40C9900B7AB04 /* ListBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584015E40C9900B7AB04 /* ListBG@2x.png */; };
-		000E588B15E40C9900B7AB04 /* ListBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584015E40C9900B7AB04 /* ListBG@2x.png */; };
 		000E588C15E40C9900B7AB04 /* ListBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584015E40C9900B7AB04 /* ListBG@2x.png */; };
 		000E588D15E40C9900B7AB04 /* Menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584115E40C9900B7AB04 /* Menu@2x.png */; };
 		000E588E15E40C9900B7AB04 /* Menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584115E40C9900B7AB04 /* Menu@2x.png */; };
@@ -212,6 +211,10 @@
 		0059664D162C7D5A0010C669 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00596648162C7D5A0010C669 /* libMobClickLibrary.a */; };
 		0059664F162C88E00010C669 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0059664E162C88E00010C669 /* libz.dylib */; };
 		00596650162CB0F80010C669 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0059664E162C88E00010C669 /* libz.dylib */; };
+		00627B19162D209800086C35 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00627B16162D209800086C35 /* icon@2x.png */; };
+		00627B1A162D209800086C35 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 00627B17162D209800086C35 /* icon.png */; };
+		00627B1B162D209800086C35 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 00627B18162D209800086C35 /* iTunesArtwork.png */; };
+		00627B1D162D20D100086C35 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0059664E162C88E00010C669 /* libz.dylib */; };
 		006B4CDE15E3638C00711C64 /* VSGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 006B4CDC15E3638B00711C64 /* VSGuideViewController.m */; };
 		006B4CDF15E3638C00711C64 /* VSGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 006B4CDC15E3638B00711C64 /* VSGuideViewController.m */; };
 		006B4CE015E3638C00711C64 /* VSGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 006B4CDC15E3638B00711C64 /* VSGuideViewController.m */; };
@@ -251,6 +254,7 @@
 		00757DF71628F44D00CED0E8 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00757DF11628F44D00CED0E8 /* icon@2x.png */; };
 		00757DF81628F44D00CED0E8 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 00757DF21628F44D00CED0E8 /* iTunesArtwork */; };
 		00757E021628F9D300CED0E8 /* VocabularySishu.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00757E011628F9D300CED0E8 /* VocabularySishu.sqlite */; };
+		00840AA8162D32920047DC7E /* ListBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00840AA7162D32920047DC7E /* ListBG@2x.png */; };
 		009397D515D82B7A009AE73E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009397D415D82B79009AE73E /* MessageUI.framework */; };
 		009397D615D82C5E009AE73E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009397D415D82B79009AE73E /* MessageUI.framework */; };
 		009397D715D82C61009AE73E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009397D415D82B79009AE73E /* MessageUI.framework */; };
@@ -557,6 +561,9 @@
 		00596648162C7D5A0010C669 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMobClickLibrary.a; path = Libs/Statistics/libMobClickLibrary.a; sourceTree = "<group>"; };
 		00596649162C7D5A0010C669 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MobClick.h; path = Libs/Statistics/MobClick.h; sourceTree = "<group>"; };
 		0059664E162C88E00010C669 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		00627B16162D209800086C35 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "Resources/Img/TOEFL/icon@2x.png"; sourceTree = "<group>"; };
+		00627B17162D209800086C35 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Resources/Img/TOEFL/icon.png; sourceTree = "<group>"; };
+		00627B18162D209800086C35 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iTunesArtwork.png; path = Resources/Img/TOEFL/iTunesArtwork.png; sourceTree = "<group>"; };
 		006B4CDB15E3638B00711C64 /* VSGuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSGuideViewController.h; path = ViewController/ConfigurationView/VSGuideViewController.h; sourceTree = "<group>"; };
 		006B4CDC15E3638B00711C64 /* VSGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSGuideViewController.m; path = ViewController/ConfigurationView/VSGuideViewController.m; sourceTree = "<group>"; };
 		006B4CDD15E3638B00711C64 /* VSGuideViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSGuideViewController.xib; path = ViewController/ConfigurationView/VSGuideViewController.xib; sourceTree = "<group>"; };
@@ -606,6 +613,7 @@
 		00757E011628F9D300CED0E8 /* VocabularySishu.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = VocabularySishu.sqlite; path = Resources/Data/TRIAL/VocabularySishu.sqlite; sourceTree = "<group>"; };
 		0081184F15BEFE220022B515 /* VSNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSNavigationBar.h; path = Generic/VSNavigationBar.h; sourceTree = "<group>"; };
 		0081185015BEFE220022B515 /* VSNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSNavigationBar.m; path = Generic/VSNavigationBar.m; sourceTree = "<group>"; };
+		00840AA7162D32920047DC7E /* ListBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ListBG@2x.png"; path = "Resources/Img/TOEFL/ListBG@2x.png"; sourceTree = "<group>"; };
 		009397D115D7F6D3009AE73E /* VocabularySishu.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = VocabularySishu.sqlite; path = Resources/Data/FULL/VocabularySishu.sqlite; sourceTree = "<group>"; };
 		009397D415D82B79009AE73E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		009A86FE15A1A82900F7869D /* NSMutableArrayShuffling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSMutableArrayShuffling.h; path = Utils/NSMutableArrayShuffling.h; sourceTree = "<group>"; };
@@ -740,6 +748,7 @@
 				009397D615D82C5E009AE73E /* MessageUI.framework in Frameworks */,
 				00BDE57A15CF9B9400BC205C /* QuartzCore.framework in Frameworks */,
 				00BDE57B15CF9B9400BC205C /* UIKit.framework in Frameworks */,
+				00627B1D162D20D100086C35 /* libz.dylib in Frameworks */,
 				00BDE57C15CF9B9400BC205C /* Foundation.framework in Frameworks */,
 				00BDE57D15CF9B9400BC205C /* CoreGraphics.framework in Frameworks */,
 				00BDE57E15CF9B9400BC205C /* CoreData.framework in Frameworks */,
@@ -830,6 +839,10 @@
 		00533E3D15F43668004777F1 /* TOEFL */ = {
 			isa = PBXGroup;
 			children = (
+				00627B16162D209800086C35 /* icon@2x.png */,
+				00840AA7162D32920047DC7E /* ListBG@2x.png */,
+				00627B17162D209800086C35 /* icon.png */,
+				00627B18162D209800086C35 /* iTunesArtwork.png */,
 				00533E3E15F43672004777F1 /* GuidePage1@2x.png */,
 				00533E3F15F43672004777F1 /* GuidePage2@2x.png */,
 				00533E4015F43672004777F1 /* GuidePage3@2x.png */,
@@ -1537,7 +1550,6 @@
 				000E588215E40C9900B7AB04 /* InkFooter@2x.png in Resources */,
 				000E588515E40C9900B7AB04 /* InkHeader@2x.png in Resources */,
 				000E588815E40C9900B7AB04 /* InkNeck@2x.png in Resources */,
-				000E588B15E40C9900B7AB04 /* ListBG@2x.png in Resources */,
 				000E588E15E40C9900B7AB04 /* Menu@2x.png in Resources */,
 				000E589115E40C9900B7AB04 /* NavBackButton@2x.png in Resources */,
 				000E589415E40C9900B7AB04 /* Navigation@2x.png in Resources */,
@@ -1550,6 +1562,7 @@
 				000E58A915E40C9900B7AB04 /* SeparatorLine@2x.png in Resources */,
 				000E58AC15E40C9900B7AB04 /* Star@2x.png in Resources */,
 				000E58AF15E40C9900B7AB04 /* StarNone@2x.png in Resources */,
+				00840AA8162D32920047DC7E /* ListBG@2x.png in Resources */,
 				000E58B215E40C9900B7AB04 /* StarSmall@2x.png in Resources */,
 				000E58B515E40C9900B7AB04 /* TapeBody@2x.png in Resources */,
 				000E58B815E40C9900B7AB04 /* TapeHead@2x.png in Resources */,
@@ -1570,6 +1583,9 @@
 				00B491AE15EBDF9B004AFC6C /* ScoreUp@2x.png in Resources */,
 				00533E4115F43672004777F1 /* GuidePage1@2x.png in Resources */,
 				00533E4215F43672004777F1 /* GuidePage2@2x.png in Resources */,
+				00627B19162D209800086C35 /* icon@2x.png in Resources */,
+				00627B1A162D209800086C35 /* icon.png in Resources */,
+				00627B1B162D209800086C35 /* iTunesArtwork.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
