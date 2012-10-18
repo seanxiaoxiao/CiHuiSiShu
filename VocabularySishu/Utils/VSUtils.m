@@ -203,9 +203,7 @@
 
 + (void)openSeries
 {
-    NSString *search = @"词汇私塾";
-    NSString *sstring = [NSString stringWithFormat:@"http://ax.search.itunes.apple.com/WebObjects/MZSearch.woa/wa/search?media=software&term=%@", [search stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-    [[UIApplication sharedApplication] openURL: [NSURL URLWithString:sstring]];
+    [ [ UIApplication sharedApplication ] openURL: [ NSURL URLWithString: [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@", GRE_APP_ID] ] ];
 }
 
 @end

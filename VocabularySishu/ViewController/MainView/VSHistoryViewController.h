@@ -14,7 +14,7 @@
 #import "VSMainViewController.h"
 #import "VSContext.h"
 
-@interface VSHistoryViewController : UIViewController<UITableViewDelegate, UITableViewDataSource> {
+@interface VSHistoryViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate> {
     IBOutlet UITableView *historyTable;
     IBOutlet UIButton *startButton;
 }

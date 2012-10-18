@@ -73,16 +73,45 @@
             }
         }
     }
-    #ifdef TRIAL
-    VSSingleListView *listView = [[VSSingleListView alloc] initWithFrame:CGRectMake(width, height, 50, 80)];
-    [listView initWithList:nil];
-    [self.scrollView addSubview:listView];
-    
-    #endif
     if (horizontalCount != 0) {
         height += 70;
     }
     self.scrollView.contentSize = CGSizeMake(320, height);
+    
+    #ifdef TRIAL
+        UIImage *listBottomImage = [VSUtils fetchImg:@"List-Bottom"];
+        UIImageView *listBottomImageView = [[UIImageView alloc] initWithImage:listBottomImage];
+        listBottomImageView.frame = CGRectMake(0, 416 - listBottomImage.size.height, listBottomImage.size.width, listBottomImage.size.height);
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toAppStore)];
+        [listBottomImageView addGestureRecognizer:tap];
+        listBottomImageView.userInteractionEnabled = YES;
+    
+        [self.view addSubview:listBottomImageView];
+        [self.view bringSubviewToFront:listBottomImageView];
+        UILabel *promoLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 375, 200, 16)];
+        promoLabel.text = @"Buy It NOW!";
+        promoLabel.font = [UIFont systemFontOfSize:16];
+        promoLabel.backgroundColor = [UIColor clearColor];
+        promoLabel.textColor = [UIColor whiteColor];
+        promoLabel.numberOfLines = 0;
+        [self.view addSubview:promoLabel];
+        [self.view bringSubviewToFront:promoLabel];
+    
+        UILabel *promoLabelSecnd = [[UILabel alloc] initWithFrame:CGRectMake(15, 390, 200, 20)];
+        promoLabelSecnd.text = @"Seeking for C to Z，立即购买完整版";
+        promoLabelSecnd.font = [UIFont systemFontOfSize:12];
+        promoLabelSecnd.backgroundColor = [UIColor clearColor];
+        promoLabelSecnd.textColor = [UIColor whiteColor];
+        promoLabelSecnd.numberOfLines = 0;
+        [self.view addSubview:promoLabelSecnd];
+        [self.view bringSubviewToFront:promoLabelSecnd];
+    
+    #endif
+}
+
+- (void)toAppStore
+{
+    [VSUtils openSeries];
 }
 
 - (void)viewWillAppear:(BOOL)animated

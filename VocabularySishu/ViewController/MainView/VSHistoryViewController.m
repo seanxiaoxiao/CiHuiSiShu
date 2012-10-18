@@ -44,6 +44,27 @@
     [backgroundImageView setFrame:self.view.frame];
     [self.view addSubview:backgroundImageView];
     [self.view sendSubviewToBack:backgroundImageView];
+    
+    
+#ifdef TRIAL
+    UIImage *promoImage = [VSUtils fetchImg:@"MainPromo"];
+    UIImageView *promo = [[UIImageView alloc] initWithImage:promoImage];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toAppStore)];
+    [promo addGestureRecognizer:tap];
+    promo.userInteractionEnabled = YES;
+    promo.frame = CGRectMake(0, 177, promoImage.size.width, promoImage.size.height);
+    [self.view addSubview:promo];
+    [self.view bringSubviewToFront:promo];
+    
+    CGRect tableFrame = self.historyTable.frame;
+    self.historyTable.frame = CGRectMake(tableFrame.origin.x, tableFrame.origin.y + 50, tableFrame.size.width, tableFrame.size.height - 50);
+
+#endif
+}
+
+- (void)toAppStore
+{
+    [VSUtils openSeries];
 }
 
 - (void)viewDidUnload
@@ -66,18 +87,15 @@
     [infoButton addTarget:self action:@selector(toConfigurationView:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem* infoButtonItem = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
     [self.navigationItem setRightBarButtonItem:infoButtonItem];
-
+    
     if ([VSContext isFirstTime]) {
         [self.startButton setTitle:@"开始背诵" forState:UIControlStateNormal];
     }
     else {
         [self.startButton setTitle:@"继续背诵" forState:UIControlStateNormal];
     }
-
     self.historyLists = [NSMutableArray arrayWithArray:[VSList lastestHistoryList]];
-    #ifdef TRIAL
-    [self.historyLists insertObject:@"购买完整版" atIndex:0];
-    #endif
+    [self.historyLists addObjectsFromArray:[VSList lastestHistoryList]];
     [self.historyTable reloadData];
 }
 
@@ -141,22 +159,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row != [historyLists count]) {
-        id obj = [historyLists objectAtIndex:indexPath.row];
         NSString *CellIdentifier = @"ListCell";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        if ([obj isKindOfClass:[NSString class]]) {
-            if (cell == nil) {
-                cell = [[VSHisotryListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-            }
-            [((VSHisotryListCell *)(cell)) initWithLabel:(NSString *) obj];
+        VSList *list = [historyLists objectAtIndex:indexPath.row];
+        if (cell == nil) {
+            cell = [[VSHisotryListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         }
-        else {
-            VSList *list = [historyLists objectAtIndex:indexPath.row];
-            if (cell == nil) {
-                cell = [[VSHisotryListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-            }
-            [((VSHisotryListCell *)(cell)) initWithList:list andRow:indexPath.row];
-        }
+        [((VSHisotryListCell *)(cell)) initWithList:list andRow:indexPath.row];
         return cell;
     }
     else {

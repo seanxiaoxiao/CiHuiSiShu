@@ -36,7 +36,7 @@
         repoImage = [repo repoImage];
     }
     else {
-        repoImage = [VSUtils fetchImg:@"BookBlack"];
+        repoImage = [VSUtils fetchImg:@"BookPromo"];
     }
     self.repoButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, repoImage.size.width, repoImage.size.height)];
     center.y = 155;
@@ -54,8 +54,6 @@
         self.repoNameLabel.textColor = [self.repo repoNameColor];
     }
     else {
-        self.repoNameLabel.text = @"更多词库";
-        self.repoNameLabel.textColor = [UIColor colorWithHue:50.0/360.0 saturation:0.6 brightness:1 alpha:0.9];
     }
     self.repoNameLabel.backgroundColor = [UIColor clearColor];
     self.repoNameLabel.shadowColor = [UIColor colorWithWhite:0 alpha:0.6];
@@ -68,17 +66,22 @@
     if (self.repo) {
         self.infoLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 130, 40)];
         self.infoLabel.text = [NSString stringWithFormat:@"共%@个单词\n%d个单词列表", self.repo.wordsTotal, [self.repo.lists count]];
-        self.infoLabel.font = [UIFont boldSystemFontOfSize:14];
-        self.infoLabel.numberOfLines = 0;
-        self.infoLabel.backgroundColor = [UIColor clearColor];
-        self.infoLabel.textColor = [UIColor colorWithHue:48.0/360.0 saturation:0.4 brightness:1 alpha:0.9];
-        self.infoLabel.shadowColor = [UIColor colorWithWhite:0 alpha:0.4];
-        self.infoLabel.textAlignment = UITextAlignmentCenter;
-        self.infoLabel.shadowOffset = CGSizeMake(0, 1.5);
-        self.infoLabel.center = CGPointMake(self.view.center.x, 280);
-	
-        [self.view addSubview:self.infoLabel];
     }
+    else {
+        self.infoLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 135, 60)];
+        self.infoLabel.text = @"立即购买，可享受免费GeStudio北美留学咨询服务一次";
+    }
+
+    self.infoLabel.font = [UIFont boldSystemFontOfSize:14];
+    self.infoLabel.numberOfLines = 0;
+    self.infoLabel.backgroundColor = [UIColor clearColor];
+    self.infoLabel.textColor = [UIColor colorWithHue:48.0/360.0 saturation:0.4 brightness:1 alpha:0.9];
+    self.infoLabel.shadowColor = [UIColor colorWithWhite:0 alpha:0.4];
+    self.infoLabel.textAlignment = UITextAlignmentCenter;
+    self.infoLabel.shadowOffset = CGSizeMake(0, 1.5);
+    self.infoLabel.center = CGPointMake(self.view.center.x, 280);
+    [self.view addSubview:self.infoLabel];
+
 }
 
 

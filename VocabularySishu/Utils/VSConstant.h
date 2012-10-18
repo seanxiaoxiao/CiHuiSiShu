@@ -45,6 +45,7 @@
 #define EVENT_ENTER_DETAIL @"ENTER_DETAIL"
 
 #define VOCAVULARY_CELL_HEIGHT 56
+#define GRE_APP_ID @"558382812"
 
 @interface VSConstant : NSObject
 

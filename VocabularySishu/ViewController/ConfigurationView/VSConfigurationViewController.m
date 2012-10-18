@@ -183,7 +183,7 @@
 
 - (void)voteOnAppStore
 {
-    [ [ UIApplication sharedApplication ] openURL: [ NSURL URLWithString: [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@", @"558382812"] ] ];
+    [ [ UIApplication sharedApplication ] openURL: [ NSURL URLWithString: [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%d", APPID] ] ];
 }
 
 - (void)sendFeedbackFrom:(UIViewController *)controller
@@ -192,7 +192,7 @@
         UIDevice *device = [ UIDevice currentDevice ];
         MFMailComposeViewController *mailController =  [ [ MFMailComposeViewController alloc ] init ];
         mailController.mailComposeDelegate = self;
-        [ mailController setSubject: [ NSString stringWithFormat: @"Feedback - 词汇私塾 "]];// BUNDLE_DISPLAY_NAME, BUNDLE_VERSION, BUNDLE_BUILD_NUMBER ] ];
+        [ mailController setSubject: [ NSString stringWithFormat: @"Feedback - 词汇私塾 "]];
         [ mailController setToRecipients: [ NSArray arrayWithObject: EMAIL_SUPPORTING ] ];
         NSDictionary* infoDict = [[NSBundle mainBundle] infoDictionary];
         NSString* versionNum = [infoDict objectForKey:@"CFBundleVersion"];
