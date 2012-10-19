@@ -62,6 +62,7 @@
         [listView initWithList:list];
         [self.listViews addObject:listView];
         [self.scrollView addSubview:listView];
+        
         width += widthIncr;
         horizontalCount++;
         if (horizontalCount == countInRow) {
@@ -73,6 +74,36 @@
             }
         }
     }
+    
+    
+#ifdef TRIAL
+    for (int i = 0; i < 10; i++) {
+        UIImage *lockImage = [VSUtils fetchImg:@"LockList"];
+        UIImage *listImage = [VSUtils fetchImg:@"Unit"];
+        
+        UIImageView *lockImageView = [[UIImageView alloc] initWithImage:lockImage];
+        UIImageView *listImageView = [[UIImageView alloc] initWithImage:listImage];
+        lockImageView.frame = CGRectMake(width, height, lockImage.size.width, lockImage.size.height);
+        listImageView.frame = CGRectMake(width, height, listImage.size.width, listImage.size.height);
+        [self.scrollView addSubview:listImageView];
+        [self.scrollView addSubview:lockImageView];
+        
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toAppStore)];
+        [lockImageView addGestureRecognizer:tap];
+        lockImageView.userInteractionEnabled = YES;
+        
+        width += widthIncr;
+        horizontalCount++;
+        if (horizontalCount == countInRow) {
+            width = 27.2;
+            horizontalCount = 0;
+            height += 70;
+            if ([self.repo isCategoryRepo]) {
+                width = 21.15;
+            }
+        }
+    }
+#endif
     if (horizontalCount != 0) {
         height += 70;
     }
@@ -88,18 +119,18 @@
     
         [self.view addSubview:listBottomImageView];
         [self.view bringSubviewToFront:listBottomImageView];
-        UILabel *promoLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 375, 200, 16)];
+        UILabel *promoLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 379, 200, 16)];
         promoLabel.text = @"Buy It NOW!";
-        promoLabel.font = [UIFont systemFontOfSize:16];
+        promoLabel.font = [UIFont boldSystemFontOfSize:16];
         promoLabel.backgroundColor = [UIColor clearColor];
         promoLabel.textColor = [UIColor whiteColor];
         promoLabel.numberOfLines = 0;
         [self.view addSubview:promoLabel];
         [self.view bringSubviewToFront:promoLabel];
     
-        UILabel *promoLabelSecnd = [[UILabel alloc] initWithFrame:CGRectMake(15, 390, 200, 20)];
+        UILabel *promoLabelSecnd = [[UILabel alloc] initWithFrame:CGRectMake(15, 394, 200, 20)];
         promoLabelSecnd.text = @"Seeking for C to Z，立即购买完整版";
-        promoLabelSecnd.font = [UIFont systemFontOfSize:12];
+        promoLabelSecnd.font = [UIFont boldSystemFontOfSize:12];
         promoLabelSecnd.backgroundColor = [UIColor clearColor];
         promoLabelSecnd.textColor = [UIColor whiteColor];
         promoLabelSecnd.numberOfLines = 0;

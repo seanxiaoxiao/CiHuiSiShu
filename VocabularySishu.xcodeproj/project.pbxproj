@@ -119,7 +119,6 @@
 		000E58C515E40C9900B7AB04 /* Unit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E585315E40C9900B7AB04 /* Unit@2x.png */; };
 		0013FCA7162F0B1200E845E7 /* BookPromo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0013FCA6162F0B1200E845E7 /* BookPromo@2x.png */; };
 		0013FCAA162F115F00E845E7 /* List-Bottom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0013FCA9162F115F00E845E7 /* List-Bottom@2x.png */; };
-		0013FCAC162F18D900E845E7 /* MainPromo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0013FCAB162F18D900E845E7 /* MainPromo@2x.png */; };
 		00201DDF15CFBAD30089B8FA /* VSNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0081185015BEFE220022B515 /* VSNavigationBar.m */; };
 		00201DE015CFBAD30089B8FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00701E3D1553CBCE00D30018 /* main.m */; };
 		00201DE115CFBAD30089B8FA /* VSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00701E411553CBCE00D30018 /* VSAppDelegate.m */; };
@@ -165,6 +164,9 @@
 		00201E0B15CFBAD30089B8FA /* VSVocabularyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */; };
 		00201E1015CFBAD30089B8FA /* VSConfigurationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */; };
 		00201E3315CFBF9C0089B8FA /* VocabularySishu.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00201E3215CFBF9C0089B8FA /* VocabularySishu.sqlite */; };
+		00333FBC1631227C00F7871C /* LockList@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00333FBA1631227C00F7871C /* LockList@2x.png */; };
+		00333FBD1631227C00F7871C /* MainPromo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00333FBB1631227C00F7871C /* MainPromo@2x.png */; };
+		00333FBF1631345900F7871C /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 00333FBE1631345900F7871C /* iTunesArtwork */; };
 		0044C13B15D371E20022154A /* VSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0044C13915D371E20022154A /* VSMainViewController.m */; };
 		0044C13C15D371E20022154A /* VSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0044C13915D371E20022154A /* VSMainViewController.m */; };
 		0044C13D15D371E20022154A /* VSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0044C13915D371E20022154A /* VSMainViewController.m */; };
@@ -255,7 +257,6 @@
 		00757DF51628F44D00CED0E8 /* GuidePage2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00757DEF1628F44D00CED0E8 /* GuidePage2@2x.png */; };
 		00757DF61628F44D00CED0E8 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 00757DF01628F44D00CED0E8 /* icon.png */; };
 		00757DF71628F44D00CED0E8 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00757DF11628F44D00CED0E8 /* icon@2x.png */; };
-		00757DF81628F44D00CED0E8 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 00757DF21628F44D00CED0E8 /* iTunesArtwork */; };
 		00757E021628F9D300CED0E8 /* VocabularySishu.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00757E011628F9D300CED0E8 /* VocabularySishu.sqlite */; };
 		00840AA8162D32920047DC7E /* ListBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00840AA7162D32920047DC7E /* ListBG@2x.png */; };
 		009397D515D82B7A009AE73E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009397D415D82B79009AE73E /* MessageUI.framework */; };
@@ -531,9 +532,11 @@
 		000E585315E40C9900B7AB04 /* Unit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Unit@2x.png"; path = "Resources/Img/Unit@2x.png"; sourceTree = "<group>"; };
 		0013FCA6162F0B1200E845E7 /* BookPromo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BookPromo@2x.png"; path = "Resources/Img/TRIAL/BookPromo@2x.png"; sourceTree = "<group>"; };
 		0013FCA9162F115F00E845E7 /* List-Bottom@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "List-Bottom@2x.png"; path = "Resources/Img/TRIAL/List-Bottom@2x.png"; sourceTree = "<group>"; };
-		0013FCAB162F18D900E845E7 /* MainPromo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MainPromo@2x.png"; path = "Resources/Img/TRIAL/MainPromo@2x.png"; sourceTree = "<group>"; };
 		00201E2F15CFBAD30089B8FA /* VocabularySishu GRE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VocabularySishu GRE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00201E3215CFBF9C0089B8FA /* VocabularySishu.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = VocabularySishu.sqlite; path = Resources/Data/TOEFL/VocabularySishu.sqlite; sourceTree = "<group>"; };
+		00333FBA1631227C00F7871C /* LockList@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "LockList@2x.png"; path = "Resources/Img/TRIAL/LockList@2x.png"; sourceTree = "<group>"; };
+		00333FBB1631227C00F7871C /* MainPromo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MainPromo@2x.png"; path = "Resources/Img/TRIAL/MainPromo@2x.png"; sourceTree = "<group>"; };
+		00333FBE1631345900F7871C /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; name = iTunesArtwork; path = Resources/Img/TRIAL/iTunesArtwork; sourceTree = "<group>"; };
 		0044C13815D371E20022154A /* VSMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSMainViewController.h; path = ViewController/MainView/VSMainViewController.h; sourceTree = "<group>"; };
 		0044C13915D371E20022154A /* VSMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSMainViewController.m; path = ViewController/MainView/VSMainViewController.m; sourceTree = "<group>"; };
 		0044C14115D3723F0022154A /* VSRepoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSRepoViewController.h; path = ViewController/MainView/VSRepoViewController.h; sourceTree = "<group>"; };
@@ -615,7 +618,6 @@
 		00757DEF1628F44D00CED0E8 /* GuidePage2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GuidePage2@2x.png"; path = "Resources/Img/TRIAL/GuidePage2@2x.png"; sourceTree = "<group>"; };
 		00757DF01628F44D00CED0E8 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Resources/Img/TRIAL/icon.png; sourceTree = "<group>"; };
 		00757DF11628F44D00CED0E8 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "Resources/Img/TRIAL/icon@2x.png"; sourceTree = "<group>"; };
-		00757DF21628F44D00CED0E8 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; name = iTunesArtwork; path = Resources/Img/TRIAL/iTunesArtwork; sourceTree = "<group>"; };
 		00757E011628F9D300CED0E8 /* VocabularySishu.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = VocabularySishu.sqlite; path = Resources/Data/TRIAL/VocabularySishu.sqlite; sourceTree = "<group>"; };
 		0081184F15BEFE220022B515 /* VSNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSNavigationBar.h; path = Generic/VSNavigationBar.h; sourceTree = "<group>"; };
 		0081185015BEFE220022B515 /* VSNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSNavigationBar.m; path = Generic/VSNavigationBar.m; sourceTree = "<group>"; };
@@ -1051,14 +1053,15 @@
 			isa = PBXGroup;
 			children = (
 				00757DED1628F44D00CED0E8 /* GuidePage3@2x.png */,
-				0013FCAB162F18D900E845E7 /* MainPromo@2x.png */,
 				0013FCA9162F115F00E845E7 /* List-Bottom@2x.png */,
+				00333FBA1631227C00F7871C /* LockList@2x.png */,
+				00333FBB1631227C00F7871C /* MainPromo@2x.png */,
 				0013FCA6162F0B1200E845E7 /* BookPromo@2x.png */,
 				00757DEE1628F44D00CED0E8 /* GuidePage1@2x.png */,
 				00757DEF1628F44D00CED0E8 /* GuidePage2@2x.png */,
 				00757DF01628F44D00CED0E8 /* icon.png */,
 				00757DF11628F44D00CED0E8 /* icon@2x.png */,
-				00757DF21628F44D00CED0E8 /* iTunesArtwork */,
+				00333FBE1631345900F7871C /* iTunesArtwork */,
 			);
 			name = TRIAL;
 			sourceTree = "<group>";
@@ -1521,10 +1524,11 @@
 				00757DF51628F44D00CED0E8 /* GuidePage2@2x.png in Resources */,
 				00757DF61628F44D00CED0E8 /* icon.png in Resources */,
 				00757DF71628F44D00CED0E8 /* icon@2x.png in Resources */,
-				00757DF81628F44D00CED0E8 /* iTunesArtwork in Resources */,
 				00757E021628F9D300CED0E8 /* VocabularySishu.sqlite in Resources */,
 				0013FCA7162F0B1200E845E7 /* BookPromo@2x.png in Resources */,
-				0013FCAC162F18D900E845E7 /* MainPromo@2x.png in Resources */,
+				00333FBC1631227C00F7871C /* LockList@2x.png in Resources */,
+				00333FBD1631227C00F7871C /* MainPromo@2x.png in Resources */,
+				00333FBF1631345900F7871C /* iTunesArtwork in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

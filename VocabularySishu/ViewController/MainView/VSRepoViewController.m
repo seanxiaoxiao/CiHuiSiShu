@@ -67,11 +67,7 @@
         self.infoLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 130, 40)];
         self.infoLabel.text = [NSString stringWithFormat:@"共%@个单词\n%d个单词列表", self.repo.wordsTotal, [self.repo.lists count]];
     }
-    else {
-        self.infoLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 135, 60)];
-        self.infoLabel.text = @"立即购买，可享受免费GeStudio北美留学咨询服务一次";
-    }
-
+    
     self.infoLabel.font = [UIFont boldSystemFontOfSize:14];
     self.infoLabel.numberOfLines = 0;
     self.infoLabel.backgroundColor = [UIColor clearColor];

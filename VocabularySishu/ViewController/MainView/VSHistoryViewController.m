@@ -95,7 +95,6 @@
         [self.startButton setTitle:@"继续背诵" forState:UIControlStateNormal];
     }
     self.historyLists = [NSMutableArray arrayWithArray:[VSList lastestHistoryList]];
-    [self.historyLists addObjectsFromArray:[VSList lastestHistoryList]];
     [self.historyTable reloadData];
 }
 
