@@ -69,7 +69,7 @@
     }
     else {
         self.infoLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 0, 155, 80)];
-        self.infoLabel.text = @"马上去App Store下载,\n攻克GRE!\n早日踏上北美留学之路!";
+        self.infoLabel.text = @"攻克GRE,\n早日踏上北美留学之路!\n马上去 App Store\n下载私塾词汇完整版!";
     }
 
     self.infoLabel.font = [UIFont boldSystemFontOfSize:14];
