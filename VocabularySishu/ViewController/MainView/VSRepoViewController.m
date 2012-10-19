@@ -67,7 +67,11 @@
         self.infoLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 130, 40)];
         self.infoLabel.text = [NSString stringWithFormat:@"共%@个单词\n%d个单词列表", self.repo.wordsTotal, [self.repo.lists count]];
     }
-    
+    else {
+        self.infoLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 140, 80)];
+        self.infoLabel.text = @"马上去AppStore下载，攻克各种考试，早日踏上北美留学之路";
+    }
+
     self.infoLabel.font = [UIFont boldSystemFontOfSize:14];
     self.infoLabel.numberOfLines = 0;
     self.infoLabel.backgroundColor = [UIColor clearColor];
