@@ -192,7 +192,7 @@
         UIDevice *device = [ UIDevice currentDevice ];
         MFMailComposeViewController *mailController =  [ [ MFMailComposeViewController alloc ] init ];
         mailController.mailComposeDelegate = self;
-        [ mailController setSubject: [ NSString stringWithFormat: @"Feedback - 词汇私塾 "]];
+        [ mailController setSubject: [ NSString stringWithFormat: @"Feedback - 词汇私塾 体验版"]];
         [ mailController setToRecipients: [ NSArray arrayWithObject: EMAIL_SUPPORTING ] ];
         NSDictionary* infoDict = [[NSBundle mainBundle] infoDictionary];
         NSString* versionNum = [infoDict objectForKey:@"CFBundleVersion"];

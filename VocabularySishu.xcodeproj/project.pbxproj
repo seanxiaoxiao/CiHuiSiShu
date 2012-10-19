@@ -2134,7 +2134,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"APPID=558382812",
+					"APPID=571846099",
 					"TRIAL=1",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/VocabularySishu/VocabularySishu-Info.plist";
@@ -2168,7 +2168,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"APPID=558382812",
+					"APPID=571846099",
 					"TRIAL=1",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/VocabularySishu/VocabularySishu-Info.plist";
