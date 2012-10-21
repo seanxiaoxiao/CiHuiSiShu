@@ -8,17 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "VSVocabulary.h"
-#import "VSMeaningView.h"
 #import "VSVocabularyListHeaderView.h"
 #import "VSConstant.h"
 #import "VSList.h"
-#import "VSAlertDelegate.h"
 #import "VSSummaryView.h"
 #import "VSVocabularyCell.h"
 #import "VSScoreBoardView.h"
 #import "TipsBubble.h"
 
-@class VSAlertDelegate;
 
 @interface VSVocabularyListViewController : UITableViewController<UIGestureRecognizerDelegate>
 
@@ -31,7 +28,6 @@
 @property (nonatomic, assign) int selectedIndex;
 @property (nonatomic, strong) VSSummaryView *summaryView;
 @property (nonatomic, strong) UIAlertView *alertWhenFinish;
-@property (nonatomic, retain) VSAlertDelegate *alertDelegate;
 @property (nonatomic, strong) VSVocabularyCell *draggedCell;
 @property (nonatomic, strong) VSScoreBoardView *scoreBoardView;
 @property (nonatomic, strong) UIButton *exitButton;

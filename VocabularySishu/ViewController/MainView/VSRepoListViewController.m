@@ -7,6 +7,7 @@
 //
 
 #import "VSRepoListViewController.h"
+#import "VSUIUtils.h"
 
 @interface VSRepoListViewController ()
 
@@ -32,13 +33,7 @@
     self.title = [self.repo titleName];
     self.listViews = [[NSMutableArray alloc] init];
     
-    UIImage* backImage= [VSUtils fetchImg:@"NavBackButton"];
-    CGRect frame = CGRectMake(0, 0, backImage.size.width, backImage.size.height);
-    UIButton* backButton = [[UIButton alloc] initWithFrame:frame];
-    [backButton setBackgroundImage:backImage forState:UIControlStateNormal];
-    [backButton addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem* backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
-    [self.navigationItem setLeftBarButtonItem:backButtonItem];
+    [self.navigationItem setLeftBarButtonItem:[VSUIUtils makeBackButton:self selector:@selector(goBack)]];
 
     UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
     [backgroundImageView setFrame:self.view.frame];
