@@ -74,7 +74,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
 	if ( section == CONTACT_SECTION ) {
-		NSString* versionNum = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+		NSString* versionNum = [VSUtils getBundleVersion];
 		return [NSString stringWithFormat:@"\n\n词汇私塾\nVersion %@\nXiao Xiao -- Direct\nSu Shaowen -- Art\n©2012 GeFo Studio", versionNum];
 	}
     return nil;
@@ -130,20 +130,20 @@
 
 - (void)voteOnAppStore
 {
-    [ [ UIApplication sharedApplication ] openURL: [ NSURL URLWithString: [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%d", APPID] ] ];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%d", APPID]]];
 }
 
 - (void)sendFeedbackFrom:(UIViewController *)controller
 {
-    if ( [ MFMailComposeViewController canSendMail ] ) {
+    if ([MFMailComposeViewController canSendMail]) {
         UIDevice *device = [ UIDevice currentDevice ];
         MFMailComposeViewController *mailController =  [ [ MFMailComposeViewController alloc ] init ];
         mailController.mailComposeDelegate = self;
-        [ mailController setSubject: [ NSString stringWithFormat: @"Feedback - 词汇私塾 体验版"]];
-        [ mailController setToRecipients: [ NSArray arrayWithObject: EMAIL_SUPPORTING ] ];
-        NSDictionary* infoDict = [[NSBundle mainBundle] infoDictionary];
-        NSString* versionNum = [infoDict objectForKey:@"CFBundleVersion"];
-        NSString *appName = [infoDict objectForKey:@"CFBundleName"];
+        NSString *subject = [NSString stringWithFormat:@"Feedback - %@", [VSUtils getBundleName]];
+        [mailController setSubject:subject];
+        [mailController setToRecipients: [NSArray arrayWithObject: EMAIL_SUPPORTING]];
+        NSString *versionNum = [VSUtils getBundleVersion];
+        NSString *appName = [VSUtils getBundleName];
         [ mailController setMessageBody: [ NSString stringWithFormat: @"\n\n\n\n\n\nApp: %@\nVersion :%@\nDevice: %@\nSystem: %@\nMTS: %@\nWiFi:\nInternet:\n",appName, versionNum, [ device model ], [ device systemVersion ], IS_MULTITASKING_SUPPORTED ? @"Yes" : @"No" ] isHTML: NO ];
         [ controller presentModalViewController: mailController animated: YES ];
     } else {

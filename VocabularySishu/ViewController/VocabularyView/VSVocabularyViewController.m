@@ -186,7 +186,6 @@
     else {
         self.playButton.hidden = YES;        
     }
-
 }
 
 - (void)viewWillAppear:(BOOL)animated
