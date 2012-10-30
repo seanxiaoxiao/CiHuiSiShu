@@ -116,8 +116,6 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
     self.scrollView = nil;
     self.pageControl = nil;
 }
@@ -129,7 +127,6 @@
         return;
     }
 
-    // Switch the indicator when more than 50% of the previous/next page is visible
     CGFloat pageWidth = scrollView.frame.size.width;
     int page = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
     pageControl.currentPage = page;
@@ -155,14 +152,11 @@
 {
     int page = pageControl.currentPage;
 	
-    // load the visible page and the page on either side of it (to avoid flashes when the user starts scrolling)
-    // update the scroll view to the appropriate page
     CGRect frame = scrollView.frame;
     frame.origin.x = frame.size.width * page;
     frame.origin.y = 0;
     [scrollView scrollRectToVisible:frame animated:YES];
     
-	// Set the boolean used when scrolls originate from the UIPageControl. See scrollViewDidScroll: above.
     pageControlUsed = YES;
 }
 

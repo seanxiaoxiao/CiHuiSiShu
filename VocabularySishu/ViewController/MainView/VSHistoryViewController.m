@@ -49,7 +49,7 @@
 #ifdef TRIAL
     UIImage *promoImage = [VSUtils fetchImg:@"MainPromo"];
     UIImageView *promo = [[UIImageView alloc] initWithImage:promoImage];
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toAppStore)];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:[VSUtils class] action:@selector(openSeries)];
     [promo addGestureRecognizer:tap];
     promo.userInteractionEnabled = YES;
     promo.frame = CGRectMake(0, 177, promoImage.size.width, promoImage.size.height);
@@ -60,11 +60,6 @@
     self.historyTable.frame = CGRectMake(tableFrame.origin.x, tableFrame.origin.y + 50, tableFrame.size.width, tableFrame.size.height - 50);
 
 #endif
-}
-
-- (void)toAppStore
-{
-    [VSUtils openSeries];
 }
 
 - (void)viewDidUnload

@@ -83,7 +83,7 @@
         [self.scrollView addSubview:listImageView];
         [self.scrollView addSubview:lockImageView];
         
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toAppStore)];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:[VSUtils class] action:@selector(openSeries)];
         [lockImageView addGestureRecognizer:tap];
         lockImageView.userInteractionEnabled = YES;
         
@@ -108,7 +108,7 @@
         UIImage *listBottomImage = [VSUtils fetchImg:@"List-Bottom"];
         UIImageView *listBottomImageView = [[UIImageView alloc] initWithImage:listBottomImage];
         listBottomImageView.frame = CGRectMake(0, 416 - listBottomImage.size.height, listBottomImage.size.width, listBottomImage.size.height);
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toAppStore)];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:[VSUtils class] action:@selector(openSeries)];
         [listBottomImageView addGestureRecognizer:tap];
         listBottomImageView.userInteractionEnabled = YES;
     
@@ -135,11 +135,6 @@
     #endif
 }
 
-- (void)toAppStore
-{
-    [VSUtils openSeries];
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -158,8 +153,6 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (void)goBack

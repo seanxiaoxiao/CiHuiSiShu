@@ -28,10 +28,8 @@
 @synthesize summaryView;
 @synthesize touchPoint;
 @synthesize draggedCell;
-@synthesize rememberCount;
 @synthesize selectedIndex;
 @synthesize currentList;
-@synthesize alertWhenFinish;
 @synthesize scoreBoardView;
 @synthesize blockView;
 @synthesize exitButton;
@@ -54,20 +52,22 @@
             self.listToday = [VSList createAndGetHistoryList];
         }
         [currentList process];
+
         self.selectedIndex = -1;
         self.title = [self.currentList titleName];
+
         NSArray *vocabularies = [self.currentList vocabulariesToRecite];
         self.headerView = [[VSVocabularyListHeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
         [self.headerView setWordRemains:[vocabularies count]];
         [self.headerView updateProgress:[self.currentList finishProgress]];
         self.tableView.tableHeaderView = headerView;
+
         self.vocabulariesToRecite = [NSMutableArray arrayWithArray:vocabularies];
 
         UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
         [backgroundImageView setFrame:self.tableView.frame];
-
         self.tableView.backgroundView = backgroundImageView;
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showDetailView) name:SHOW_DETAIL_VIEW object:nil];
+
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clearVocabulary:) name:CLEAR_VOCABULRY object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(restart) name:RESTART_LIST object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(nextList) name:NEXT_LIST object:nil];
@@ -83,7 +83,7 @@
         [self.view addGestureRecognizer:panGesture];
 
         if ([self.vocabulariesToRecite count] == 0) {
-            [self showHideScoreBoard];
+            [self toggleScoreBoard];
         }
     }
     return self;
@@ -93,21 +93,23 @@
 {
     [super viewDidLoad];
     [self.navigationItem setLeftBarButtonItem:[VSUIUtils makeBackButton:self selector:@selector(backToMain)]];
-}
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
     UIView *rightView = [[UIView alloc] initWithFrame:CGRectMake(1, 0, 43, 44.01)];
     rightView.backgroundColor = [UIColor clearColor];
     UIImage *scoreBoardImage = [VSUtils fetchImg:@"ScoreBoardButton"];
     CGRect scoreBoardFrame = CGRectMake(0, 0, scoreBoardImage.size.width, scoreBoardImage.size.height);
     UIButton *scoreBoardButton = [[UIButton alloc] initWithFrame:scoreBoardFrame];
     [scoreBoardButton setBackgroundImage:scoreBoardImage forState:UIControlStateNormal];
-    [scoreBoardButton addTarget:self action:@selector(showHideScoreBoard) forControlEvents:UIControlEventTouchUpInside];
+    [scoreBoardButton addTarget:self action:@selector(toggleScoreBoard) forControlEvents:UIControlEventTouchUpInside];
     [rightView addSubview:scoreBoardButton];
-
+    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightView];
+
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
 }
 
 - (void)viewDidUnload
@@ -117,7 +119,6 @@
     self.headerView = nil;
     self.summaryView = nil;
     self.draggedCell = nil;
-    self.alertWhenFinish = nil;
     self.blockView = nil;
     self.scoreBoardView = nil;
     self.exitButton = nil;
@@ -176,7 +177,6 @@
     }
 }
 
-
 #pragma mark - Navigation Related
 - (void)backToMain
 {
@@ -184,7 +184,6 @@
         [self.navigationController popViewControllerAnimated:YES];
     }
 }
-
 
 #pragma mark - Gesture Related
 
@@ -204,6 +203,7 @@
     if (touchedCell == nil && draggedCell != nil) {
         return NO;
     }
+    //Horizontal Gesture.
     if (fabsf(translation.x) > fabsf(translation.y)) {
         return YES;
     }
@@ -270,7 +270,6 @@
 - (void)stopDragging:(UIPanGestureRecognizer *)gestureRecognizer
 {
     if (draggedCell != nil) {
-        
         [self dismissActionBubble];
         [self dismissDetailBubble];
         
@@ -317,7 +316,6 @@
         if (![self.currentList isHistoryList]) {
             [self.listToday addVocabulary:rememberedVocabulary.vocabulary];
         }
-        self.rememberCount++;
         [self.headerView updateProgress:[self.currentList finishProgress]];
         [self.headerView decrWordRemain];
         [vocabulariesToRecite removeObjectAtIndex:index];
@@ -342,38 +340,44 @@
 {
     if ([self.vocabulariesToRecite count] == 0) {
         [self.currentList finish];
-        [self showHideScoreBoard];
+        [self toggleScoreBoard];
     }
 }
 
-- (void)showHideScoreBoard
+- (void)toggleScoreBoard
 {
     if (scoreBoardView == nil) {
-        [MobClick event:EVENT_SHOW_SCORE];
-        CGRect modalRect = CGRectMake(50, 105, 200, 170);
-        scoreBoardView = [[VSScoreBoardView alloc] initWithFrame:modalRect];
-        CATransition *applicationLoadViewIn =[CATransition animation];
-        [applicationLoadViewIn setDuration:0.2f];
-        [applicationLoadViewIn setType:kCATransitionReveal];
-        [applicationLoadViewIn setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn]];
-        [[scoreBoardView layer] addAnimation:applicationLoadViewIn forKey:kCATransitionReveal];
-        [self.view addSubview:scoreBoardView];
-        [scoreBoardView performSelector:@selector(initWithList:) withObject:self.currentList afterDelay:0.5f];
-        exitButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [exitButton addTarget:self action:@selector(hideScoreBoard) forControlEvents:UIControlEventTouchUpInside];
-        [exitButton setTitle:@"" forState:UIControlStateNormal];
-        exitButton.frame = self.view.frame;
-        self.blockView = [[UIView alloc] initWithFrame:self.view.frame];
-        self.blockView.backgroundColor = [UIColor blackColor];
-        self.blockView.alpha = 0.1;
-        [self.view addSubview:self.blockView];
-        [self.view addSubview:exitButton];
-        [self.view bringSubviewToFront:scoreBoardView];
-        self.navigationController.navigationBar.userInteractionEnabled = NO;
+        [self showScroeBoard];
     }
     else {
         [self hideScoreBoard];
     }
+}
+
+- (void)showScroeBoard
+{
+    [MobClick event:EVENT_SHOW_SCORE];
+
+    CGRect modalRect = CGRectMake(50, 105, 200, 170);
+    scoreBoardView = [[VSScoreBoardView alloc] initWithFrame:modalRect];
+    CATransition *applicationLoadViewIn =[CATransition animation];
+    [applicationLoadViewIn setDuration:0.2f];
+    [applicationLoadViewIn setType:kCATransitionReveal];
+    [applicationLoadViewIn setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn]];
+    [[scoreBoardView layer] addAnimation:applicationLoadViewIn forKey:kCATransitionReveal];
+    [self.view addSubview:scoreBoardView];
+    [scoreBoardView performSelector:@selector(initWithList:) withObject:self.currentList afterDelay:0.5f];
+    exitButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [exitButton addTarget:self action:@selector(hideScoreBoard) forControlEvents:UIControlEventTouchUpInside];
+    [exitButton setTitle:@"" forState:UIControlStateNormal];
+    exitButton.frame = self.view.frame;
+    self.blockView = [[UIView alloc] initWithFrame:self.view.frame];
+    self.blockView.backgroundColor = [UIColor blackColor];
+    self.blockView.alpha = 0.1;
+    [self.view addSubview:self.blockView];
+    [self.view addSubview:exitButton];
+    [self.view bringSubviewToFront:scoreBoardView];
+    self.navigationController.navigationBar.userInteractionEnabled = NO;
 }
 
 - (void)hideScoreBoard
@@ -414,6 +418,8 @@
     [VSUtils toNextList:self.currentList];
 }
 
+#pragma mark - Bubble Dismiss
+
 - (void)dismissActionBubble
 {
     if (vocabularyActionBubble != nil) {
@@ -433,6 +439,5 @@
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
 }
-
 
 @end
