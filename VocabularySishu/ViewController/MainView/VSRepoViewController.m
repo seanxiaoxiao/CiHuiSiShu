@@ -71,12 +71,18 @@
         self.infoLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 0, 155, 80)];
         self.infoLabel.text = @"马上去App Store下载,\n攻克GRE!\n早日踏上北美留学之路!";
     }
+    
 
     self.infoLabel.font = [UIFont boldSystemFontOfSize:14];
     self.infoLabel.numberOfLines = 0;
     self.infoLabel.backgroundColor = [UIColor clearColor];
     self.infoLabel.textColor = [UIColor colorWithHue:48.0/360.0 saturation:0.4 brightness:1 alpha:0.9];
     self.infoLabel.shadowColor = [UIColor colorWithWhite:0 alpha:0.4];
+#ifdef TOEFL
+    self.infoLabel.textColor = [UIColor colorWithWhite:0 alpha:0.8];
+    self.infoLabel.shadowColor = [UIColor colorWithWhite:1 alpha:0.4];
+#endif
+
     self.infoLabel.textAlignment = UITextAlignmentCenter;
     self.infoLabel.shadowOffset = CGSizeMake(0, 1.5);
     self.infoLabel.center = CGPointMake(self.view.center.x, 280);
