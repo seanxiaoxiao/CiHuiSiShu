@@ -7,6 +7,7 @@
 //
 
 #import "VSVocabularyViewController.h"
+#import "VSUIUtils.h"
 
 @class VSVocabulary;
 
@@ -34,8 +35,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
-        
     }
     return self;
 }
@@ -43,16 +42,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    [self.view sendSubviewToBack:self.backgroundImage];
-    UIImage* backImage= [VSUtils fetchImg:@"NavBackButton"];
-    CGRect frame = CGRectMake(0, 0, backImage.size.width, backImage.size.height); 
-    UIButton* backButton = [[UIButton alloc] initWithFrame:frame]; 
-    [backButton setBackgroundImage:backImage forState:UIControlStateNormal]; 
-    [backButton addTarget:self action:@selector(backToList) forControlEvents:UIControlEventTouchUpInside];
     
-    UIBarButtonItem* backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton]; 
-    [self.navigationItem setLeftBarButtonItem:backButtonItem];
+    [self.view sendSubviewToBack:self.backgroundImage];
+    [self.navigationItem setLeftBarButtonItem:[VSUIUtils makeBackButton:self selector:@selector(backToList)]];
 
     self.vocabularyLabel.text = self.vocabulary.spell;
     [self.vocabularyLabel setTextAlignment:UITextAlignmentCenter];
@@ -194,7 +186,6 @@
     else {
         self.playButton.hidden = YES;        
     }
-
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -205,8 +196,7 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+    
     self.vocabularyLabel = nil;
     self.phoneticLabel = nil;
     self.etymologyLabel = nil;

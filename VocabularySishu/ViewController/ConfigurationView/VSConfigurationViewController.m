@@ -7,6 +7,7 @@
 //
 
 #import "VSConfigurationViewController.h"
+#import "VSUIUtils.h"
 
 @interface VSConfigurationViewController ()
 
@@ -28,19 +29,8 @@
 {
     [super viewDidLoad];
     self.title = @"设置";
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
     contactContents = [NSArray arrayWithObjects:@"给词汇私塾评分", @"意见反馈", nil];
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    UIImage* backImage= [VSUtils fetchImg:@"NavBackButton"];
-    CGRect frame = CGRectMake(0, 0, backImage.size.width, backImage.size.height);
-    UIButton* backButton = [[UIButton alloc] initWithFrame:frame];
-    [backButton setBackgroundImage:backImage forState:UIControlStateNormal];
-    [backButton addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem* backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
-    [self.navigationItem setLeftBarButtonItem:backButtonItem];
+    [self.navigationItem setLeftBarButtonItem:[VSUIUtils makeBackButton:self selector:@selector(goBack)]];
 }
 
 - (void)goBack
@@ -57,8 +47,6 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -70,13 +58,11 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
     return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
     if (GUIDE_SECTION == section) {
         return 1;
     }
@@ -88,7 +74,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
 	if ( section == CONTACT_SECTION ) {
-		NSString* versionNum = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+		NSString* versionNum = [VSUtils getBundleVersion];
 		return [NSString stringWithFormat:@"\n\n词汇私塾\nVersion %@\nXiao Xiao -- Direct\nSu Shaowen -- Art\n©2012 GeFo Studio", versionNum];
 	}
     return nil;
@@ -110,45 +96,6 @@
     }
     return cell;
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
@@ -183,20 +130,20 @@
 
 - (void)voteOnAppStore
 {
-    [ [ UIApplication sharedApplication ] openURL: [ NSURL URLWithString: [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%d", APPID] ] ];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%d", APPID]]];
 }
 
 - (void)sendFeedbackFrom:(UIViewController *)controller
 {
-    if ( [ MFMailComposeViewController canSendMail ] ) {
+    if ([MFMailComposeViewController canSendMail]) {
         UIDevice *device = [ UIDevice currentDevice ];
         MFMailComposeViewController *mailController =  [ [ MFMailComposeViewController alloc ] init ];
         mailController.mailComposeDelegate = self;
-        [ mailController setSubject: [ NSString stringWithFormat: @"Feedback - 词汇私塾 体验版"]];
-        [ mailController setToRecipients: [ NSArray arrayWithObject: EMAIL_SUPPORTING ] ];
-        NSDictionary* infoDict = [[NSBundle mainBundle] infoDictionary];
-        NSString* versionNum = [infoDict objectForKey:@"CFBundleVersion"];
-        NSString *appName = [infoDict objectForKey:@"CFBundleName"];
+        NSString *subject = [NSString stringWithFormat:@"Feedback - %@", [VSUtils getBundleName]];
+        [mailController setSubject:subject];
+        [mailController setToRecipients: [NSArray arrayWithObject: EMAIL_SUPPORTING]];
+        NSString *versionNum = [VSUtils getBundleVersion];
+        NSString *appName = [VSUtils getBundleName];
         [ mailController setMessageBody: [ NSString stringWithFormat: @"\n\n\n\n\n\nApp: %@\nVersion :%@\nDevice: %@\nSystem: %@\nMTS: %@\nWiFi:\nInternet:\n",appName, versionNum, [ device model ], [ device systemVersion ], IS_MULTITASKING_SUPPORTED ? @"Yes" : @"No" ] isHTML: NO ];
         [ controller presentModalViewController: mailController animated: YES ];
     } else {

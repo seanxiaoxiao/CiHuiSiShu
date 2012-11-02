@@ -53,8 +53,6 @@
         self.repoNameLabel.text = [self.repo displayName];
         self.repoNameLabel.textColor = [self.repo repoNameColor];
     }
-    else {
-    }
     self.repoNameLabel.backgroundColor = [UIColor clearColor];
     self.repoNameLabel.shadowColor = [UIColor colorWithWhite:0 alpha:0.6];
     self.repoNameLabel.shadowOffset = CGSizeMake(0, -1);
@@ -68,6 +66,7 @@
         self.infoLabel.text = [NSString stringWithFormat:@"共%@个单词\n%d个单词列表", self.repo.wordsTotal, [self.repo.lists count]];
     }
     else {
+        //For trial version
         self.infoLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 0, 155, 80)];
         self.infoLabel.text = @"攻克GRE,\n早日踏上北美留学之路!\n马上去 App Store\n下载私塾词汇完整版!";
     }

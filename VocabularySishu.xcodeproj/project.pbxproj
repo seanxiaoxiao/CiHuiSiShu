@@ -142,12 +142,9 @@
 		00201DF315CFBAD30089B8FA /* VSRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A00728156E3B9E00D24418 /* VSRepository.m */; };
 		00201DF415CFBAD30089B8FA /* VSWebsterMeaning.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A0072E156E3C4800D24418 /* VSWebsterMeaning.m */; };
 		00201DF515CFBAD30089B8FA /* VSVocabularyListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A00731156F7FEE00D24418 /* VSVocabularyListHeaderView.m */; };
-		00201DF615CFBAD30089B8FA /* VSAlertDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 009AFBFA1588982300293F6A /* VSAlertDelegate.m */; };
 		00201DF715CFBAD30089B8FA /* VSConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AE80EF158B1318000CE7EA /* VSConfigurationViewController.m */; };
 		00201DF815CFBAD30089B8FA /* VSReviewPlan.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A9E7AF15A08699009832BA /* VSReviewPlan.m */; };
 		00201DF915CFBAD30089B8FA /* NSMutableArrayShuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = 009A86FF15A1A82900F7869D /* NSMutableArrayShuffling.m */; };
-		00201DFA15CFBAD30089B8FA /* DDFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D6779115ADD03900EF152D /* DDFileReader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		00201DFB15CFBAD30089B8FA /* VSMeaningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C42FE215BAFBC6006FF95E /* VSMeaningView.m */; };
 		00201DFC15CFBAD30089B8FA /* VSSummaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C42FE815BB096F006FF95E /* VSSummaryView.m */; };
 		00201DFD15CFBAD30089B8FA /* VSVocabulary.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4300015BBFC44006FF95E /* VSVocabulary.m */; };
 		00201DFE15CFBAD30089B8FA /* VSVocabularyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 009BB48515CAAFF2008E5B2B /* VSVocabularyCell.m */; };
@@ -263,7 +260,6 @@
 		009397D615D82C5E009AE73E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009397D415D82B79009AE73E /* MessageUI.framework */; };
 		009397D715D82C61009AE73E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009397D415D82B79009AE73E /* MessageUI.framework */; };
 		009A870015A1A82900F7869D /* NSMutableArrayShuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = 009A86FF15A1A82900F7869D /* NSMutableArrayShuffling.m */; };
-		009AFBFB1588982300293F6A /* VSAlertDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 009AFBFA1588982300293F6A /* VSAlertDelegate.m */; };
 		009BB48615CAAFF2008E5B2B /* VSVocabularyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 009BB48515CAAFF2008E5B2B /* VSVocabularyCell.m */; };
 		00A006FC156B3D6D00D24418 /* VSConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A006FB156B3D6D00D24418 /* VSConstant.m */; };
 		00A00703156D15F200D24418 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A00702156D15F200D24418 /* QuartzCore.framework */; };
@@ -308,12 +304,9 @@
 		00B250151628E19200311E52 /* VSRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A00728156E3B9E00D24418 /* VSRepository.m */; };
 		00B250161628E19200311E52 /* VSWebsterMeaning.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A0072E156E3C4800D24418 /* VSWebsterMeaning.m */; };
 		00B250171628E19200311E52 /* VSVocabularyListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A00731156F7FEE00D24418 /* VSVocabularyListHeaderView.m */; };
-		00B250181628E19200311E52 /* VSAlertDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 009AFBFA1588982300293F6A /* VSAlertDelegate.m */; };
 		00B250191628E19200311E52 /* VSConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AE80EF158B1318000CE7EA /* VSConfigurationViewController.m */; };
 		00B2501A1628E19200311E52 /* VSReviewPlan.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A9E7AF15A08699009832BA /* VSReviewPlan.m */; };
 		00B2501B1628E19200311E52 /* NSMutableArrayShuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = 009A86FF15A1A82900F7869D /* NSMutableArrayShuffling.m */; };
-		00B2501C1628E19200311E52 /* DDFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D6779115ADD03900EF152D /* DDFileReader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		00B2501D1628E19200311E52 /* VSMeaningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C42FE215BAFBC6006FF95E /* VSMeaningView.m */; };
 		00B2501E1628E19200311E52 /* VSSummaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C42FE815BB096F006FF95E /* VSSummaryView.m */; };
 		00B2501F1628E19200311E52 /* VSVocabulary.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4300015BBFC44006FF95E /* VSVocabulary.m */; };
 		00B250201628E19200311E52 /* VSVocabularyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 009BB48515CAAFF2008E5B2B /* VSVocabularyCell.m */; };
@@ -431,12 +424,9 @@
 		00BDE56C15CF9B9400BC205C /* VSRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A00728156E3B9E00D24418 /* VSRepository.m */; };
 		00BDE56D15CF9B9400BC205C /* VSWebsterMeaning.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A0072E156E3C4800D24418 /* VSWebsterMeaning.m */; };
 		00BDE56E15CF9B9400BC205C /* VSVocabularyListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A00731156F7FEE00D24418 /* VSVocabularyListHeaderView.m */; };
-		00BDE56F15CF9B9400BC205C /* VSAlertDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 009AFBFA1588982300293F6A /* VSAlertDelegate.m */; };
 		00BDE57015CF9B9400BC205C /* VSConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AE80EF158B1318000CE7EA /* VSConfigurationViewController.m */; };
 		00BDE57115CF9B9400BC205C /* VSReviewPlan.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A9E7AF15A08699009832BA /* VSReviewPlan.m */; };
 		00BDE57215CF9B9400BC205C /* NSMutableArrayShuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = 009A86FF15A1A82900F7869D /* NSMutableArrayShuffling.m */; };
-		00BDE57315CF9B9400BC205C /* DDFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D6779115ADD03900EF152D /* DDFileReader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		00BDE57415CF9B9400BC205C /* VSMeaningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C42FE215BAFBC6006FF95E /* VSMeaningView.m */; };
 		00BDE57515CF9B9400BC205C /* VSSummaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C42FE815BB096F006FF95E /* VSSummaryView.m */; };
 		00BDE57615CF9B9400BC205C /* VSVocabulary.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4300015BBFC44006FF95E /* VSVocabulary.m */; };
 		00BDE57715CF9B9400BC205C /* VSVocabularyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 009BB48515CAAFF2008E5B2B /* VSVocabularyCell.m */; };
@@ -452,7 +442,6 @@
 		00BDE58315CF9B9400BC205C /* VSVocabularyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408115590E0B007E5FA9 /* VSVocabularyViewController.xib */; };
 		00BDE58415CF9B9400BC205C /* VSVocabularyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */; };
 		00BDE58915CF9B9400BC205C /* VSConfigurationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */; };
-		00C42FE315BAFBC6006FF95E /* VSMeaningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C42FE215BAFBC6006FF95E /* VSMeaningView.m */; };
 		00C42FE915BB096F006FF95E /* VSSummaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C42FE815BB096F006FF95E /* VSSummaryView.m */; };
 		00C4300115BBFC44006FF95E /* VSVocabulary.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4300015BBFC44006FF95E /* VSVocabulary.m */; };
 		00C4FE3B15D3FAF6000B9849 /* VSSingleListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4FE3A15D3FAF6000B9849 /* VSSingleListView.m */; };
@@ -462,7 +451,8 @@
 		00CBF0DA15E9F333001588A3 /* UnitHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00CBF0D815E9F333001588A3 /* UnitHighLighted@2x.png */; };
 		00CBF0DB15E9F333001588A3 /* UnitHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00CBF0D815E9F333001588A3 /* UnitHighLighted@2x.png */; };
 		00D6778815AD542E00EF152D /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D6778715AD542E00EF152D /* Crashlytics.framework */; };
-		00D6779215ADD03900EF152D /* DDFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D6779115ADD03900EF152D /* DDFileReader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		00D86E4416339BF700BF530A /* VSUIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D86E4316339BF700BF530A /* VSUIUtils.m */; };
+		00D86E4616339E7800BF530A /* VSUIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D86E4316339BF700BF530A /* VSUIUtils.m */; };
 		00E25A6F15C052F2006402B2 /* VSNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0081185015BEFE220022B515 /* VSNavigationBar.m */; };
 		00E83B3015DAC42F005BE3AF /* VSClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E83B2F15DAC42F005BE3AF /* VSClipView.m */; };
 		00E83B3115DAC42F005BE3AF /* VSClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E83B2F15DAC42F005BE3AF /* VSClipView.m */; };
@@ -627,8 +617,6 @@
 		009397D415D82B79009AE73E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		009A86FE15A1A82900F7869D /* NSMutableArrayShuffling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSMutableArrayShuffling.h; path = Utils/NSMutableArrayShuffling.h; sourceTree = "<group>"; };
 		009A86FF15A1A82900F7869D /* NSMutableArrayShuffling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSMutableArrayShuffling.m; path = Utils/NSMutableArrayShuffling.m; sourceTree = "<group>"; };
-		009AFBF91588982300293F6A /* VSAlertDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSAlertDelegate.h; path = Utils/VSAlertDelegate.h; sourceTree = "<group>"; };
-		009AFBFA1588982300293F6A /* VSAlertDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSAlertDelegate.m; path = Utils/VSAlertDelegate.m; sourceTree = "<group>"; };
 		009BB48415CAAFF2008E5B2B /* VSVocabularyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSVocabularyCell.h; path = ViewController/VocabularyListView/VSVocabularyCell.h; sourceTree = "<group>"; };
 		009BB48515CAAFF2008E5B2B /* VSVocabularyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSVocabularyCell.m; path = ViewController/VocabularyListView/VSVocabularyCell.m; sourceTree = "<group>"; };
 		00A006FA156B3D6D00D24418 /* VSConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSConstant.h; path = Utils/VSConstant.h; sourceTree = "<group>"; };
@@ -664,8 +652,6 @@
 		00B491A915EBDF9B004AFC6C /* ScoreUp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ScoreUp@2x.png"; path = "Resources/Img/ScoreUp@2x.png"; sourceTree = "<group>"; };
 		00BDE5A815CF9B9400BC205C /* VocabularySishu TOEFL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VocabularySishu TOEFL.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00C09AA415E2B05800AD33C3 /* VocabularySishu 1.1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "VocabularySishu 1.1.xcdatamodel"; sourceTree = "<group>"; };
-		00C42FE115BAFBC6006FF95E /* VSMeaningView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSMeaningView.h; path = ViewController/VocabularyListView/VSMeaningView.h; sourceTree = "<group>"; };
-		00C42FE215BAFBC6006FF95E /* VSMeaningView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSMeaningView.m; path = ViewController/VocabularyListView/VSMeaningView.m; sourceTree = "<group>"; };
 		00C42FE715BB096F006FF95E /* VSSummaryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSSummaryView.h; path = ViewController/VocabularyListView/VSSummaryView.h; sourceTree = "<group>"; };
 		00C42FE815BB096F006FF95E /* VSSummaryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSSummaryView.m; path = ViewController/VocabularyListView/VSSummaryView.m; sourceTree = "<group>"; };
 		00C4300015BBFC44006FF95E /* VSVocabulary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSVocabulary.m; path = Model/VSVocabulary.m; sourceTree = "<group>"; };
@@ -674,8 +660,8 @@
 		00C4FE3A15D3FAF6000B9849 /* VSSingleListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSSingleListView.m; path = ViewController/MainView/VSSingleListView.m; sourceTree = "<group>"; };
 		00CBF0D815E9F333001588A3 /* UnitHighLighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UnitHighLighted@2x.png"; path = "Resources/Img/UnitHighLighted@2x.png"; sourceTree = "<group>"; };
 		00D6778715AD542E00EF152D /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
-		00D6779015ADD03900EF152D /* DDFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDFileReader.h; path = Utils/DDFileReader.h; sourceTree = "<group>"; };
-		00D6779115ADD03900EF152D /* DDFileReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDFileReader.m; path = Utils/DDFileReader.m; sourceTree = "<group>"; };
+		00D86E4216339BF700BF530A /* VSUIUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSUIUtils.h; path = Utils/VSUIUtils.h; sourceTree = "<group>"; };
+		00D86E4316339BF700BF530A /* VSUIUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSUIUtils.m; path = Utils/VSUIUtils.m; sourceTree = "<group>"; };
 		00E83B2E15DAC42F005BE3AF /* VSClipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSClipView.h; path = ViewController/MainView/VSClipView.h; sourceTree = "<group>"; };
 		00E83B2F15DAC42F005BE3AF /* VSClipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSClipView.m; path = ViewController/MainView/VSClipView.m; sourceTree = "<group>"; };
 		00FF1B0F15E407AC005B9E51 /* SeparatorDots@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "SeparatorDots@2x.png"; path = "Resources/Img/SeparatorDots@2x.png"; sourceTree = "<group>"; };
@@ -781,12 +767,10 @@
 				0073A67815688F2800B80422 /* VSDataUtil.m */,
 				00A006FA156B3D6D00D24418 /* VSConstant.h */,
 				00A006FB156B3D6D00D24418 /* VSConstant.m */,
-				009AFBF91588982300293F6A /* VSAlertDelegate.h */,
-				009AFBFA1588982300293F6A /* VSAlertDelegate.m */,
 				009A86FE15A1A82900F7869D /* NSMutableArrayShuffling.h */,
 				009A86FF15A1A82900F7869D /* NSMutableArrayShuffling.m */,
-				00D6779015ADD03900EF152D /* DDFileReader.h */,
-				00D6779115ADD03900EF152D /* DDFileReader.m */,
+				00D86E4216339BF700BF530A /* VSUIUtils.h */,
+				00D86E4316339BF700BF530A /* VSUIUtils.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -1035,8 +1019,6 @@
 		0073A6B2156A47C100B80422 /* VocabularyListView */ = {
 			isa = PBXGroup;
 			children = (
-				00C42FE115BAFBC6006FF95E /* VSMeaningView.h */,
-				00C42FE215BAFBC6006FF95E /* VSMeaningView.m */,
 				0073A6BB156A5FF700B80422 /* VSVocabularyListViewController.h */,
 				0073A6BC156A5FF700B80422 /* VSVocabularyListViewController.m */,
 				0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */,
@@ -1707,12 +1689,9 @@
 				00201DF315CFBAD30089B8FA /* VSRepository.m in Sources */,
 				00201DF415CFBAD30089B8FA /* VSWebsterMeaning.m in Sources */,
 				00201DF515CFBAD30089B8FA /* VSVocabularyListHeaderView.m in Sources */,
-				00201DF615CFBAD30089B8FA /* VSAlertDelegate.m in Sources */,
 				00201DF715CFBAD30089B8FA /* VSConfigurationViewController.m in Sources */,
 				00201DF815CFBAD30089B8FA /* VSReviewPlan.m in Sources */,
 				00201DF915CFBAD30089B8FA /* NSMutableArrayShuffling.m in Sources */,
-				00201DFA15CFBAD30089B8FA /* DDFileReader.m in Sources */,
-				00201DFB15CFBAD30089B8FA /* VSMeaningView.m in Sources */,
 				00201DFC15CFBAD30089B8FA /* VSSummaryView.m in Sources */,
 				00201DFD15CFBAD30089B8FA /* VSVocabulary.m in Sources */,
 				00201DFE15CFBAD30089B8FA /* VSVocabularyCell.m in Sources */,
@@ -1755,12 +1734,9 @@
 				00A00729156E3B9E00D24418 /* VSRepository.m in Sources */,
 				00A0072F156E3C4800D24418 /* VSWebsterMeaning.m in Sources */,
 				00A00732156F7FEF00D24418 /* VSVocabularyListHeaderView.m in Sources */,
-				009AFBFB1588982300293F6A /* VSAlertDelegate.m in Sources */,
 				00AE80F1158B1318000CE7EA /* VSConfigurationViewController.m in Sources */,
 				00A9E7B015A08699009832BA /* VSReviewPlan.m in Sources */,
 				009A870015A1A82900F7869D /* NSMutableArrayShuffling.m in Sources */,
-				00D6779215ADD03900EF152D /* DDFileReader.m in Sources */,
-				00C42FE315BAFBC6006FF95E /* VSMeaningView.m in Sources */,
 				00C42FE915BB096F006FF95E /* VSSummaryView.m in Sources */,
 				00C4300115BBFC44006FF95E /* VSVocabulary.m in Sources */,
 				009BB48615CAAFF2008E5B2B /* VSVocabularyCell.m in Sources */,
@@ -1773,6 +1749,7 @@
 				00E83B3015DAC42F005BE3AF /* VSClipView.m in Sources */,
 				006B4CDE15E3638C00711C64 /* VSGuideViewController.m in Sources */,
 				00533E3A15F42915004777F1 /* TipsBubble.m in Sources */,
+				00D86E4416339BF700BF530A /* VSUIUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1811,14 +1788,12 @@
 				00B250131628E19200311E52 /* VSListVocabulary.m in Sources */,
 				00B250141628E19200311E52 /* VSMeaning.m in Sources */,
 				00B250151628E19200311E52 /* VSRepository.m in Sources */,
+				00D86E4616339E7800BF530A /* VSUIUtils.m in Sources */,
 				00B250161628E19200311E52 /* VSWebsterMeaning.m in Sources */,
 				00B250171628E19200311E52 /* VSVocabularyListHeaderView.m in Sources */,
-				00B250181628E19200311E52 /* VSAlertDelegate.m in Sources */,
 				00B250191628E19200311E52 /* VSConfigurationViewController.m in Sources */,
 				00B2501A1628E19200311E52 /* VSReviewPlan.m in Sources */,
 				00B2501B1628E19200311E52 /* NSMutableArrayShuffling.m in Sources */,
-				00B2501C1628E19200311E52 /* DDFileReader.m in Sources */,
-				00B2501D1628E19200311E52 /* VSMeaningView.m in Sources */,
 				00B2501E1628E19200311E52 /* VSSummaryView.m in Sources */,
 				00B2501F1628E19200311E52 /* VSVocabulary.m in Sources */,
 				00B250201628E19200311E52 /* VSVocabularyCell.m in Sources */,
@@ -1861,12 +1836,9 @@
 				00BDE56C15CF9B9400BC205C /* VSRepository.m in Sources */,
 				00BDE56D15CF9B9400BC205C /* VSWebsterMeaning.m in Sources */,
 				00BDE56E15CF9B9400BC205C /* VSVocabularyListHeaderView.m in Sources */,
-				00BDE56F15CF9B9400BC205C /* VSAlertDelegate.m in Sources */,
 				00BDE57015CF9B9400BC205C /* VSConfigurationViewController.m in Sources */,
 				00BDE57115CF9B9400BC205C /* VSReviewPlan.m in Sources */,
 				00BDE57215CF9B9400BC205C /* NSMutableArrayShuffling.m in Sources */,
-				00BDE57315CF9B9400BC205C /* DDFileReader.m in Sources */,
-				00BDE57415CF9B9400BC205C /* VSMeaningView.m in Sources */,
 				00BDE57515CF9B9400BC205C /* VSSummaryView.m in Sources */,
 				00BDE57615CF9B9400BC205C /* VSVocabulary.m in Sources */,
 				00BDE57715CF9B9400BC205C /* VSVocabularyCell.m in Sources */,

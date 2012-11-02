@@ -7,6 +7,7 @@
 //
 
 #import "VSRepoListViewController.h"
+#import "VSUIUtils.h"
 
 @interface VSRepoListViewController ()
 
@@ -32,13 +33,7 @@
     self.title = [self.repo titleName];
     self.listViews = [[NSMutableArray alloc] init];
     
-    UIImage* backImage= [VSUtils fetchImg:@"NavBackButton"];
-    CGRect frame = CGRectMake(0, 0, backImage.size.width, backImage.size.height);
-    UIButton* backButton = [[UIButton alloc] initWithFrame:frame];
-    [backButton setBackgroundImage:backImage forState:UIControlStateNormal];
-    [backButton addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem* backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
-    [self.navigationItem setLeftBarButtonItem:backButtonItem];
+    [self.navigationItem setLeftBarButtonItem:[VSUIUtils makeBackButton:self selector:@selector(goBack)]];
 
     UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
     [backgroundImageView setFrame:self.view.frame];
@@ -88,7 +83,7 @@
         [self.scrollView addSubview:listImageView];
         [self.scrollView addSubview:lockImageView];
         
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toAppStore)];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:[VSUtils class] action:@selector(openSeries)];
         [lockImageView addGestureRecognizer:tap];
         lockImageView.userInteractionEnabled = YES;
         
@@ -113,7 +108,7 @@
         UIImage *listBottomImage = [VSUtils fetchImg:@"List-Bottom"];
         UIImageView *listBottomImageView = [[UIImageView alloc] initWithImage:listBottomImage];
         listBottomImageView.frame = CGRectMake(0, 416 - listBottomImage.size.height, listBottomImage.size.width, listBottomImage.size.height);
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toAppStore)];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:[VSUtils class] action:@selector(openSeries)];
         [listBottomImageView addGestureRecognizer:tap];
         listBottomImageView.userInteractionEnabled = YES;
     
@@ -140,11 +135,6 @@
     #endif
 }
 
-- (void)toAppStore
-{
-    [VSUtils openSeries];
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -163,8 +153,6 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (void)goBack

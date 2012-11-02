@@ -70,6 +70,20 @@
     return [NSDate dateWithTimeInterval: -seconds sinceDate: date];
 }
 
++ (NSString *)getBundleName
+{
+    NSBundle *bundle = [NSBundle mainBundle];
+    NSDictionary *info = [bundle infoDictionary];
+    return [info objectForKey:@"CFBundleName"];
+}
+
++ (NSString *)getBundleVersion
+{
+    NSBundle *bundle = [NSBundle mainBundle];
+    NSDictionary *info = [bundle infoDictionary];
+    return [info objectForKey:@"CFBundleVersion"];
+}
+
 + (BOOL) vocabularySame:(VSVocabulary *)first with:(VSVocabulary *)second
 {
     return [first.spell isEqualToString:second.spell];
