@@ -14,7 +14,7 @@
 #import "VSMeaning.h"
 #import "MobClick.h"
 #import "VSUIUtils.h"
-
+#import "Appirater.h"
 
 @interface VSVocabularyListViewController ()
 
@@ -182,6 +182,9 @@
 {
     if (self.scoreBoardView == nil) {
         [self.navigationController popViewControllerAnimated:YES];
+#ifdef TRIAL
+        [Appirater userDidSignificantEvent:YES];
+#endif
     }
 }
 
@@ -341,6 +344,9 @@
     if ([self.vocabulariesToRecite count] == 0) {
         [self.currentList finish];
         [self toggleScoreBoard];
+#ifndef TRIAL
+        [Appirater userDidSignificantEvent:YES];
+#endif
     }
 }
 

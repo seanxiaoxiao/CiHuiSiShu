@@ -10,6 +10,7 @@
 #import "VSNavigationBar.h"
 #import <Crashlytics/Crashlytics.h>
 #import "MobClick.h"
+#import "Appirater.h"
 
 @implementation VSAppDelegate
 
@@ -25,6 +26,11 @@
     [Crashlytics startWithAPIKey:@"89e2516487b822e3169f0a4c5a8d24c6aebea788"];
     [VSUtils copySQLite];
     [MobClick startWithAppkey:STATISTIC_API_KEY];
+    [Appirater setAppId:[NSString stringWithFormat:@"%d", APPID]];    
+    [Appirater setDaysUntilPrompt:-1];
+    [Appirater setUsesUntilPrompt:-1];
+    [Appirater setSignificantEventsUntilPrompt:1];
+    [Appirater setTimeBeforeReminding:7];
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
@@ -42,6 +48,7 @@
         [[NSUserDefaults standardUserDefaults] synchronize];
         return YES;
     }
+    [Appirater appLaunched:YES];
     return YES;
 }
 
@@ -60,6 +67,7 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    [Appirater appEnteredForeground:YES];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application

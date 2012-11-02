@@ -46,7 +46,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-<<<<<<< HEAD
     // Do any additional setup after loading the view from its nib.
     [self.view sendSubviewToBack:self.backgroundImage];
     UIImage* backImage= [VSUtils fetchImg:@"NavBackButton"];
@@ -66,11 +65,9 @@
         UIBarButtonItem* playButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.playButton];
         [self.navigationItem setRightBarButtonItem:playButtonItem];        
     }
-=======
     
     [self.view sendSubviewToBack:self.backgroundImage];
     [self.navigationItem setLeftBarButtonItem:[VSUIUtils makeBackButton:self selector:@selector(backToList)]];
->>>>>>> trail-version
 
     self.vocabularyLabel.text = self.vocabulary.spell;
     [self.vocabularyLabel setTextAlignment:UITextAlignmentCenter];
@@ -206,16 +203,9 @@
     self.scrollView.scrollEnabled = YES;
     self.scrollView.contentSize = CGSizeMake(320, currentHeight + 20);
     
-<<<<<<< HEAD
     [ASIHTTPRequest setDefaultCache:[ASIDownloadCache sharedCache]];
-=======
-    if ([self.vocabulary hasAudioLink]) {
-        self.playButton.hidden = NO;
-    }
-    else {
-        self.playButton.hidden = YES;        
-    }
->>>>>>> trail-version
+    self.playButton.hidden = NO;
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
