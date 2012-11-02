@@ -8,6 +8,8 @@
 
 #import "VSHistoryViewController.h"
 #import "VSVocabularyListViewController.h"
+#import "MobClick.h"
+#import "VSConstant.h"
 
 @interface VSHistoryViewController ()
 
@@ -42,6 +44,22 @@
     [backgroundImageView setFrame:self.view.frame];
     [self.view addSubview:backgroundImageView];
     [self.view sendSubviewToBack:backgroundImageView];
+    
+    
+#ifdef TRIAL
+    UIImage *promoImage = [VSUtils fetchImg:@"MainPromo"];
+    UIImageView *promo = [[UIImageView alloc] initWithImage:promoImage];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:[VSUtils class] action:@selector(openSeries)];
+    [promo addGestureRecognizer:tap];
+    promo.userInteractionEnabled = YES;
+    promo.frame = CGRectMake(0, 177, promoImage.size.width, promoImage.size.height);
+    [self.view addSubview:promo];
+    [self.view bringSubviewToFront:promo];
+    
+    CGRect tableFrame = self.historyTable.frame;
+    self.historyTable.frame = CGRectMake(tableFrame.origin.x, tableFrame.origin.y + 50, tableFrame.size.width, tableFrame.size.height - 50);
+
+#endif
 }
 
 - (void)viewDidUnload
@@ -64,14 +82,13 @@
     [infoButton addTarget:self action:@selector(toConfigurationView:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem* infoButtonItem = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
     [self.navigationItem setRightBarButtonItem:infoButtonItem];
-
+    
     if ([VSContext isFirstTime]) {
         [self.startButton setTitle:@"开始背诵" forState:UIControlStateNormal];
     }
     else {
         [self.startButton setTitle:@"继续背诵" forState:UIControlStateNormal];
     }
-
     self.historyLists = [NSMutableArray arrayWithArray:[VSList lastestHistoryList]];
     [self.historyTable reloadData];
 }
@@ -85,6 +102,7 @@
 
 - (IBAction)recite:(id)sender
 {
+    [MobClick event:EVENT_ENTER_LIST];
     VSVocabularyListViewController *vocabularyListViewController = [VSVocabularyListViewController alloc];
     VSContext *context = [VSContext getContext];
     VSList *list = context.currentList;
@@ -102,7 +120,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [MobClick event:EVENT_ENTER_HISTORY];
     VSVocabularyListViewController *vocabularyListViewController = [VSVocabularyListViewController alloc];
+    id obj = [historyLists objectAtIndex:indexPath.row];
+    if ([obj isKindOfClass:[NSString class]]) {
+        [VSUtils openSeries];
+        return;
+    }
     VSList *selectedList = [historyLists objectAtIndex:indexPath.row];
     vocabularyListViewController.currentList = selectedList;
     vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
@@ -129,9 +153,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row != [historyLists count]) {
-        VSList *list = [historyLists objectAtIndex:indexPath.row];
         NSString *CellIdentifier = @"ListCell";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        VSList *list = [historyLists objectAtIndex:indexPath.row];
         if (cell == nil) {
             cell = [[VSHisotryListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         }
@@ -180,7 +204,7 @@
     [self.historyTable endUpdates];
 }
 
-- (void) addMoreList
+- (void)addMoreList
 {
     NSDate *lastCreatedDate = ((VSList *)[self.historyLists objectAtIndex:[self.historyLists count] - 1]).createdDate;
     [self.historyLists addObjectsFromArray:[VSList historyListBefore:lastCreatedDate]];

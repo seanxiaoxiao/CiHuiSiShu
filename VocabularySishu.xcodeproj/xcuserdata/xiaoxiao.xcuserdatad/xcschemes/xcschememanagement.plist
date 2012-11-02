@@ -14,6 +14,11 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>VocabularySishu copy.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>VocabularySishu.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -33,6 +38,11 @@
 			<true/>
 		</dict>
 		<key>00701E4A1553CBCE00D30018</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>00B24FFF1628E19200311E52</key>
 		<dict>
 			<key>primary</key>
 			<true/>

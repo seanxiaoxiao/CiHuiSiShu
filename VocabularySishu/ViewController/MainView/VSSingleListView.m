@@ -7,6 +7,7 @@
 //
 
 #import "VSSingleListView.h"
+#import "MobClick.h"
 
 @implementation VSSingleListView
 
@@ -67,7 +68,15 @@
     self.listNameLabel.minimumFontSize = 12;
     self.listNameLabel.adjustsFontSizeToFitWidth = YES;
     self.listNameLabel.backgroundColor = [UIColor clearColor];
-    self.listNameLabel.text = [theList displayName];
+    if (self.theList == nil) {
+        self.listNameLabel.frame = CGRectMake(0, 10, 46, 20);
+        self.listNameLabel.text = @"+";
+        self.listNameLabel.font = [UIFont fontWithName:@"TrebuchetMS" size:28];
+
+    }
+    else {
+        self.listNameLabel.text = [theList displayName];
+    }
     [self.listNameLabel setTextAlignment:UITextAlignmentCenter];
     [self addSubview:listNameLabel];
     
@@ -78,7 +87,13 @@
 
 - (void)toList
 {
-    [VSUtils toGivenList:self.theList];
+    if (self.theList) {
+        [MobClick event:EVENT_SELECT_LIST];
+        [VSUtils toGivenList:self.theList];
+    }
+    else {
+        [VSUtils openSeries];
+    }
 }
 
 - (void)selectList
@@ -131,13 +146,6 @@
     }
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
+
 
 @end

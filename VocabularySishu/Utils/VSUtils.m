@@ -70,6 +70,20 @@
     return [NSDate dateWithTimeInterval: -seconds sinceDate: date];
 }
 
++ (NSString *)getBundleName
+{
+    NSBundle *bundle = [NSBundle mainBundle];
+    NSDictionary *info = [bundle infoDictionary];
+    return [info objectForKey:@"CFBundleName"];
+}
+
++ (NSString *)getBundleVersion
+{
+    NSBundle *bundle = [NSBundle mainBundle];
+    NSDictionary *info = [bundle infoDictionary];
+    return [info objectForKey:@"CFBundleVersion"];
+}
+
 + (BOOL) vocabularySame:(VSVocabulary *)first with:(VSVocabulary *)second
 {
     return [first.spell isEqualToString:second.spell];
@@ -199,6 +213,11 @@
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     UINavigationController *navigationController = (UINavigationController *)window.rootViewController;
     [navigationController pushViewController:guideViewController animated:NO];
+}
+
++ (void)openSeries
+{
+    [ [ UIApplication sharedApplication ] openURL: [ NSURL URLWithString: [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@", GRE_APP_ID] ] ];
 }
 
 @end

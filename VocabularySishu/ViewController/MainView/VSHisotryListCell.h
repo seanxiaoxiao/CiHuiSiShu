@@ -24,4 +24,6 @@
 
 - (void)initWithList:(VSList *)theList andRow:(int)row;
 
+- (void)initWithLabel:(NSString *)title;
+
 @end

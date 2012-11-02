@@ -34,6 +34,10 @@
 
 + (NSDate *)getNow;
 
++ (NSString *)getBundleName;
+
++ (NSString *)getBundleVersion;
+
 + (void)copySQLite;
 
 + (void)toNextList:(VSList *)currentList;
@@ -45,5 +49,7 @@
 + (void)reloadCurrentList:(VSList *)currentList;
 
 + (void)showGuidPage;
+
++ (void)openSeries;
 
 @end

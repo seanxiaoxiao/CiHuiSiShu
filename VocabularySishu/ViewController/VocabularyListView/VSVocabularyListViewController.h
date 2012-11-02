@@ -11,13 +11,11 @@
 #import "VSVocabularyListHeaderView.h"
 #import "VSConstant.h"
 #import "VSList.h"
-#import "VSAlertDelegate.h"
 #import "VSSummaryView.h"
 #import "VSVocabularyCell.h"
 #import "VSScoreBoardView.h"
 #import "TipsBubble.h"
 
-@class VSAlertDelegate;
 
 @interface VSVocabularyListViewController : UITableViewController<UIGestureRecognizerDelegate>
 
@@ -25,17 +23,14 @@
 @property (nonatomic, strong) VSVocabularyListHeaderView *headerView;
 @property (nonatomic, retain) VSList *listToday;
 @property (nonatomic, retain) VSList *currentList;
-@property (nonatomic, assign) CGPoint touchPoint;
-@property (nonatomic, assign) int rememberCount;
-@property (nonatomic, assign) int selectedIndex;
 @property (nonatomic, strong) VSSummaryView *summaryView;
-@property (nonatomic, strong) UIAlertView *alertWhenFinish;
-@property (nonatomic, retain) VSAlertDelegate *alertDelegate;
 @property (nonatomic, strong) VSVocabularyCell *draggedCell;
 @property (nonatomic, strong) VSScoreBoardView *scoreBoardView;
 @property (nonatomic, strong) UIButton *exitButton;
 @property (nonatomic, strong) UIView *blockView;
 @property (nonatomic, retain) TipsBubble *vocabularyActionBubble;
 @property (nonatomic, retain) TipsBubble *detailBubble;
+@property (nonatomic, assign) CGPoint touchPoint;
+@property (nonatomic, assign) int selectedIndex;
 
 @end

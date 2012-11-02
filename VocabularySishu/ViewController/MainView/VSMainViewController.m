@@ -9,6 +9,7 @@
 #import "VSMainViewController.h"
 #import "VSConfigurationViewController.h"
 #import "VSClipView.h"
+#import "VSUIUtils.h"
 
 @interface VSMainViewController ()
 
@@ -36,28 +37,26 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
     self.title = @"选择词库";
 
     self.firstEnter = YES;
     self.controllers = [[NSMutableArray alloc] init];
     self.view.clipsToBounds = YES;
 
-    UIImage* backImage= [VSUtils fetchImg:@"NavBackButton"];
-    CGRect frame = CGRectMake(0, 0, backImage.size.width, backImage.size.height);
-    UIButton* backButton = [[UIButton alloc] initWithFrame:frame];
-    [backButton setBackgroundImage:backImage forState:UIControlStateNormal];
-    [backButton addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem* backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
-    [self.navigationItem setLeftBarButtonItem:backButtonItem];
+    [self.navigationItem setLeftBarButtonItem:[VSUIUtils makeBackButton:self selector:@selector(goBack)]];
     
     UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
     [backgroundImageView setFrame:self.view.frame];
     [self.view addSubview:backgroundImageView];
     [self.view sendSubviewToBack:backgroundImageView];
+
     self.allRepos = [VSRepository allRepos];
+    int count = [self.allRepos count];
+    #ifdef TRIAL
+        count++;
+    #endif
     scrollView.pagingEnabled = YES;
-    scrollView.contentSize = CGSizeMake(205 * [self.allRepos count], scrollView.frame.size.height);
+    scrollView.contentSize = CGSizeMake(205 * count, scrollView.frame.size.height);
     scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.showsVerticalScrollIndicator = NO;
     scrollView.alwaysBounceVertical = NO;
@@ -84,8 +83,19 @@
             selected = i;
         }
     }
+    
+    #ifdef TRIAL
+        CGRect moreFrame = CGRectMake([allRepos count] * 205, 0, 205, 416);
+        VSRepoViewController *controller = [[VSRepoViewController alloc] initWithNibName:nil bundle:nil];
+        [controllers addObject:controller];
+        VSRepository *currentRepo = nil;
+        [controller initWithCurrentRepo:currentRepo];
+        controller.view.frame = moreFrame;
+        [self.scrollView addSubview:controller.view];
+    #endif
 
-    pageControl.numberOfPages = [self.allRepos count];
+
+    pageControl.numberOfPages = count;
     pageControl.currentPage = 0;
     
     if (selected != -1) {
@@ -106,8 +116,6 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
     self.scrollView = nil;
     self.pageControl = nil;
 }
@@ -119,7 +127,6 @@
         return;
     }
 
-    // Switch the indicator when more than 50% of the previous/next page is visible
     CGFloat pageWidth = scrollView.frame.size.width;
     int page = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
     pageControl.currentPage = page;
@@ -145,14 +152,11 @@
 {
     int page = pageControl.currentPage;
 	
-    // load the visible page and the page on either side of it (to avoid flashes when the user starts scrolling)
-    // update the scroll view to the appropriate page
     CGRect frame = scrollView.frame;
     frame.origin.x = frame.size.width * page;
     frame.origin.y = 0;
     [scrollView scrollRectToVisible:frame animated:YES];
     
-	// Set the boolean used when scrolls originate from the UIPageControl. See scrollViewDidScroll: above.
     pageControlUsed = YES;
 }
 

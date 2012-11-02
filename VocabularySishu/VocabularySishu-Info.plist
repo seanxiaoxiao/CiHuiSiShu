@@ -27,7 +27,7 @@
 		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>
-	<string>org.seanxiaoxiao.${BUNDLE_NAME}</string>
+	<string>org.seanxiaoxiao.VocabularySishu-GRE-Free</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

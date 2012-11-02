@@ -85,6 +85,12 @@
     self.notRememberWellLabel.text = [NSString stringWithFormat:@"%@靠谱", formattedNumberString];
 }
 
+- (void)initWithLabel:(NSString *)title
+{
+    self.dateLabel.text = title;
+}
+
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];

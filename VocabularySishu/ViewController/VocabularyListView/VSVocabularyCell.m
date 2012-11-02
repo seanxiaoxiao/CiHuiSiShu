@@ -7,6 +7,7 @@
 //
 
 #import "VSVocabularyCell.h"
+#import "MobClick.h"
 
 @implementation VSVocabularyCell
 
@@ -132,6 +133,7 @@
             self.clearing = NO;
             self.clearShow = NO;
             if (finished == YES && clear) {
+                [MobClick event:EVENT_REMEMBER];
                 NSMutableDictionary *orientationData = [[NSMutableDictionary alloc] init];
                 [orientationData setValue:self._vocabulary forKey:@"vocabulary"];
                 NSNotification *notification = [NSNotification notificationWithName:CLEAR_VOCABULRY object:nil userInfo:orientationData];
@@ -170,6 +172,7 @@
         self.hadCurlUp = YES;
         [self._vocabulary forgot];
         [self._vocabulary seeSummaryStart];
+        [MobClick event:EVENT_FORGET];
         [self scoreDown];
     }
     if (lastGestureX > 260) {
@@ -308,7 +311,6 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
-    // Configure the view for the selected state
 }
 
 @end
