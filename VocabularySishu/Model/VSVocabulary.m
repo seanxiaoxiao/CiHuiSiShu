@@ -36,7 +36,6 @@
     }
     self.meet = [NSNumber numberWithInt:[self.meet intValue] + 1];
     [VSUtils saveEntity];
-    NSLog(@"Remember %@, meet %@, incr is %f, now remember is %@", self.meet, self.spell, incr, self.remember);
 }
 
 - (void)forgot
@@ -48,7 +47,6 @@
         self.remember = [NSNumber numberWithDouble:0];
     }
     [VSUtils saveEntity];
-    NSLog(@"Forget %@, meet %@, decr is %f, now remember is %@", self.meet, self.spell, decr, self.remember);
     self.seeSummaryTimes += 1;
     self.seeSummaryStart = [[NSDate alloc] init];
 }
@@ -61,7 +59,6 @@
     if ([self.remember doubleValue] < 0) {
         self.remember = [NSNumber numberWithDouble:0];
     }
-    NSLog(@"Finish Summary %@, meet %@, decr is %f, now remember is %@", self.meet, self.spell, decr, self.remember);
     [VSUtils saveEntity];
 }
 
@@ -79,7 +76,6 @@
 - (UIImage *)vocabularyImage
 {
     NSURL *url = [[NSBundle mainBundle] URLForResource:self.spell withExtension: @"jpg"];
-    NSLog(@"%@", url);
     return url != nil ? [UIImage imageWithData:[NSData dataWithContentsOfURL:url]] : nil;
 }
 

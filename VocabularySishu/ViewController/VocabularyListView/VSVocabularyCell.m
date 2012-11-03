@@ -130,16 +130,42 @@
             self.clearContainer.frame = CGRectMake(0, 0, width, VOCAVULARY_CELL_HEIGHT);
         }
         completion:^(BOOL finished) {
-            self.clearing = NO;
-            self.clearShow = NO;
             if (finished == YES && clear) {
-                [MobClick event:EVENT_REMEMBER];
-                NSMutableDictionary *orientationData = [[NSMutableDictionary alloc] init];
-                [orientationData setValue:self._vocabulary forKey:@"vocabulary"];
-                NSNotification *notification = [NSNotification notificationWithName:CLEAR_VOCABULRY object:nil userInfo:orientationData];
-                [[NSNotificationCenter defaultCenter] postNotification:notification];
+                [UIView animateWithDuration:0.1f delay:0.0f options:UIViewAnimationCurveEaseIn
+                    animations:^{
+                        self.vocabularyContainerView.alpha = 0;
+                        self.clearContainer.alpha = 0;
+                    }
+                    completion:^(BOOL finished) {
+                        self.summaryContainerView.alpha = 0;
+                        self.summaryContainerView.frame = CGRectMake(0, 0, 320, VOCAVULARY_CELL_HEIGHT);
+                        self.summaryLabel.frame = CGRectMake(35, 0, 250, VOCAVULARY_CELL_HEIGHT);
+                        [UIView animateWithDuration:0.3f delay:0.0f options:UIViewAnimationCurveEaseIn
+                            animations:^{
+                                self.summaryContainerView.alpha = 1;
+                            }
+                            completion:^(BOOL finished) {
+                                [self performSelector:@selector(removeCell) withObject:nil afterDelay:0.2];
+                            }];
+                         }
+                ];
+            }
+            else {
+                self.clearing = NO;
+                self.clearShow = NO;
             }
         }];
+}
+
+- (void) removeCell
+{
+    [MobClick event:EVENT_REMEMBER];
+    NSMutableDictionary *orientationData = [[NSMutableDictionary alloc] init];
+    [orientationData setValue:self._vocabulary forKey:@"vocabulary"];
+    NSNotification *notification = [NSNotification notificationWithName:CLEAR_VOCABULRY object:nil userInfo:orientationData];
+    [[NSNotificationCenter defaultCenter] postNotification:notification];
+    self.clearing = NO;
+    self.clearShow = NO;
 }
 
 - (void) curlUp:(CGFloat)gestureX
@@ -306,6 +332,9 @@
     self.clearShow = NO;
     self.hadCurlUp = NO;
     self.clearContainer.frame = CGRectMake(0, 0, 0, VOCAVULARY_CELL_HEIGHT);
+    self.summaryContainerView.frame = CGRectMake(0, 0, 0, VOCAVULARY_CELL_HEIGHT);
+    self.vocabularyContainerView.alpha = 1;
+    self.clearContainer.alpha = 1;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

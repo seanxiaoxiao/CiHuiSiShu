@@ -25,6 +25,7 @@
 {
     [Crashlytics startWithAPIKey:@"89e2516487b822e3169f0a4c5a8d24c6aebea788"];
     [VSUtils copySQLite];
+    NSLog(@"%@", STATISTIC_API_KEY);
     [MobClick startWithAppkey:STATISTIC_API_KEY];
     [Appirater setAppId:[NSString stringWithFormat:@"%d", APPID]];    
     [Appirater setDaysUntilPrompt:-1];

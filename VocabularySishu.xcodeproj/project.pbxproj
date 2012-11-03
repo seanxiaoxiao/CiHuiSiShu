@@ -1799,7 +1799,6 @@
 				00627B19162D209800086C35 /* icon@2x.png in Resources */,
 				00627B1A162D209800086C35 /* icon.png in Resources */,
 				00627B1B162D209800086C35 /* iTunesArtwork.png in Resources */,
-				00FF9C971640F51400788C4C /* PenBG@2x.png in Resources */,
 				00A4CF07164399FE00A94ADD /* AppiraterLocalizable.strings in Resources */,
 				00A4CF3B164399FE00A94ADD /* AppiraterLocalizable.strings in Resources */,
 				00A4CF3F164399FE00A94ADD /* AppiraterLocalizable.strings in Resources */,
@@ -2183,7 +2182,7 @@
 				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"APPID=558382812",
-					"TOEFL=1",
+					"GRE=1",
 				);
 				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
@@ -2217,7 +2216,7 @@
 				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"APPID=558382812",
-					"TOEFL=1",
+					"GRE=1",
 				);
 				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
