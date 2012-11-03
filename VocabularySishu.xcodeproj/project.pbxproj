@@ -480,7 +480,7 @@
 		00FF701315D1676F0043BA91 /* VSHisotryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF701215D1676F0043BA91 /* VSHisotryListCell.m */; };
 		00FF701415D1676F0043BA91 /* VSHisotryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF701215D1676F0043BA91 /* VSHisotryListCell.m */; };
 		00FF701515D1676F0043BA91 /* VSHisotryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF701215D1676F0043BA91 /* VSHisotryListCell.m */; };
-		00FF9C971640F51400788C4C /* PenBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF9C961640F51400788C4C /* PenBG@2x.png */; };
+		642D2AA71644DB3A00BE3A9E /* PenBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 642D2AA61644DB3A00BE3A9E /* PenBG@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -685,7 +685,7 @@
 		00FF6FF915D0BACB0043BA91 /* VSScoreBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSScoreBoardView.m; path = ViewController/VocabularyListView/VSScoreBoardView.m; sourceTree = "<group>"; };
 		00FF701115D1676F0043BA91 /* VSHisotryListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSHisotryListCell.h; path = ViewController/MainView/VSHisotryListCell.h; sourceTree = "<group>"; };
 		00FF701215D1676F0043BA91 /* VSHisotryListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSHisotryListCell.m; path = ViewController/MainView/VSHisotryListCell.m; sourceTree = "<group>"; };
-		00FF9C961640F51400788C4C /* PenBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "PenBG@2x.png"; path = "Resources/Img/TOEFL/PenBG@2x.png"; sourceTree = "<group>"; };
+		642D2AA61644DB3A00BE3A9E /* PenBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "PenBG@2x.png"; path = "Resources/Img/TOEFL/PenBG@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -849,11 +849,11 @@
 		00533E3D15F43668004777F1 /* TOEFL */ = {
 			isa = PBXGroup;
 			children = (
+				642D2AA61644DB3A00BE3A9E /* PenBG@2x.png */,
 				00627B16162D209800086C35 /* icon@2x.png */,
 				00840AA7162D32920047DC7E /* ListBG@2x.png */,
 				00627B17162D209800086C35 /* icon.png */,
 				00627B18162D209800086C35 /* iTunesArtwork.png */,
-				00FF9C961640F51400788C4C /* PenBG@2x.png */,
 				00533E3E15F43672004777F1 /* GuidePage1@2x.png */,
 				00533E3F15F43672004777F1 /* GuidePage2@2x.png */,
 				00533E4015F43672004777F1 /* GuidePage3@2x.png */,
@@ -1446,6 +1446,7 @@
 				00B491A515EBC3E0004AFC6C /* UnitCHighLighted@2x.png in Resources */,
 				00B491AA15EBDF9B004AFC6C /* ScoreDown@2x.png in Resources */,
 				00B491AD15EBDF9B004AFC6C /* ScoreUp@2x.png in Resources */,
+				642D2AA71644DB3A00BE3A9E /* PenBG@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1605,7 +1606,6 @@
 				00627B19162D209800086C35 /* icon@2x.png in Resources */,
 				00627B1A162D209800086C35 /* icon.png in Resources */,
 				00627B1B162D209800086C35 /* iTunesArtwork.png in Resources */,
-				00FF9C971640F51400788C4C /* PenBG@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2232,8 +2232,8 @@
 					armv6,
 				);
 				BUNDLE_NAME = "VocabularySishu-TOEFL";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: SHAO WEN SU";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SHAO WEN SU";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -2252,8 +2252,8 @@
 				);
 				New_Setting = "";
 				PRODUCT_NAME = "VocabularySishu TOEFL";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "C32FA1CC-E8C4-4862-A08F-FE61FF70D992";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C32FA1CC-E8C4-4862-A08F-FE61FF70D992";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
