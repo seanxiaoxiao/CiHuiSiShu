@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00B24FFF1628E19200311E52"
-               BuildableName = "VocabularySishu Trial.app"
+               BuildableName = "VocabularySishu GRE Free.app"
                BlueprintName = "VocabularySishu Trial"
                ReferencedContainer = "container:VocabularySishu.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "00B24FFF1628E19200311E52"
-            BuildableName = "VocabularySishu Trial.app"
+            BuildableName = "VocabularySishu GRE Free.app"
             BlueprintName = "VocabularySishu Trial"
             ReferencedContainer = "container:VocabularySishu.xcodeproj">
          </BuildableReference>
@@ -52,7 +52,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "00B24FFF1628E19200311E52"
-            BuildableName = "VocabularySishu Trial.app"
+            BuildableName = "VocabularySishu GRE Free.app"
             BlueprintName = "VocabularySishu Trial"
             ReferencedContainer = "container:VocabularySishu.xcodeproj">
          </BuildableReference>
@@ -70,7 +70,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "00B24FFF1628E19200311E52"
-            BuildableName = "VocabularySishu Trial.app"
+            BuildableName = "VocabularySishu GRE Free.app"
             BlueprintName = "VocabularySishu Trial"
             ReferencedContainer = "container:VocabularySishu.xcodeproj">
          </BuildableReference>

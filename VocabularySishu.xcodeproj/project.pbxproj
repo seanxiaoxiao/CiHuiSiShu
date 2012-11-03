@@ -537,7 +537,7 @@
 		00FF701315D1676F0043BA91 /* VSHisotryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF701215D1676F0043BA91 /* VSHisotryListCell.m */; };
 		00FF701415D1676F0043BA91 /* VSHisotryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF701215D1676F0043BA91 /* VSHisotryListCell.m */; };
 		00FF701515D1676F0043BA91 /* VSHisotryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF701215D1676F0043BA91 /* VSHisotryListCell.m */; };
-		00FF9C971640F51400788C4C /* PenBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF9C961640F51400788C4C /* PenBG@2x.png */; };
+		642D2AA71644DB3A00BE3A9E /* PenBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 642D2AA61644DB3A00BE3A9E /* PenBG@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -743,7 +743,7 @@
 		00AE80EE158B1318000CE7EA /* VSConfigurationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSConfigurationViewController.h; path = ViewController/ConfigurationView/VSConfigurationViewController.h; sourceTree = "<group>"; };
 		00AE80EF158B1318000CE7EA /* VSConfigurationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSConfigurationViewController.m; path = ViewController/ConfigurationView/VSConfigurationViewController.m; sourceTree = "<group>"; };
 		00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSConfigurationViewController.xib; path = ViewController/ConfigurationView/VSConfigurationViewController.xib; sourceTree = "<group>"; };
-		00B250751628E19200311E52 /* VocabularySishu Trial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VocabularySishu Trial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00B250751628E19200311E52 /* VocabularySishu GRE Free.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VocabularySishu GRE Free.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00B4919B15EB5610004AFC6C /* UnitSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UnitSelected@2x.png"; path = "Resources/Img/UnitSelected@2x.png"; sourceTree = "<group>"; };
 		00B491A015EBC3E0004AFC6C /* UnitC@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UnitC@2x.png"; path = "Resources/Img/UnitC@2x.png"; sourceTree = "<group>"; };
 		00B491A115EBC3E0004AFC6C /* UnitCHighLighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UnitCHighLighted@2x.png"; path = "Resources/Img/UnitCHighLighted@2x.png"; sourceTree = "<group>"; };
@@ -769,7 +769,7 @@
 		00FF6FF915D0BACB0043BA91 /* VSScoreBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSScoreBoardView.m; path = ViewController/VocabularyListView/VSScoreBoardView.m; sourceTree = "<group>"; };
 		00FF701115D1676F0043BA91 /* VSHisotryListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSHisotryListCell.h; path = ViewController/MainView/VSHisotryListCell.h; sourceTree = "<group>"; };
 		00FF701215D1676F0043BA91 /* VSHisotryListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSHisotryListCell.m; path = ViewController/MainView/VSHisotryListCell.m; sourceTree = "<group>"; };
-		00FF9C961640F51400788C4C /* PenBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "PenBG@2x.png"; path = "Resources/Img/TOEFL/PenBG@2x.png"; sourceTree = "<group>"; };
+		642D2AA61644DB3A00BE3A9E /* PenBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "PenBG@2x.png"; path = "Resources/Img/TOEFL/PenBG@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -972,11 +972,11 @@
 		00533E3D15F43668004777F1 /* TOEFL */ = {
 			isa = PBXGroup;
 			children = (
+				642D2AA61644DB3A00BE3A9E /* PenBG@2x.png */,
 				00627B16162D209800086C35 /* icon@2x.png */,
 				00840AA7162D32920047DC7E /* ListBG@2x.png */,
 				00627B17162D209800086C35 /* icon.png */,
 				00627B18162D209800086C35 /* iTunesArtwork.png */,
-				00FF9C961640F51400788C4C /* PenBG@2x.png */,
 				00533E3E15F43672004777F1 /* GuidePage1@2x.png */,
 				00533E3F15F43672004777F1 /* GuidePage2@2x.png */,
 				00533E4015F43672004777F1 /* GuidePage3@2x.png */,
@@ -1010,7 +1010,7 @@
 				00701E4B1553CBCE00D30018 /* VocabularySishuTests.octest */,
 				00BDE5A815CF9B9400BC205C /* VocabularySishu TOEFL.app */,
 				00201E2F15CFBAD30089B8FA /* VocabularySishu GRE.app */,
-				00B250751628E19200311E52 /* VocabularySishu Trial.app */,
+				00B250751628E19200311E52 /* VocabularySishu GRE Free.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1423,7 +1423,7 @@
 			);
 			name = "VocabularySishu Trial";
 			productName = VocabularySishu;
-			productReference = 00B250751628E19200311E52 /* VocabularySishu Trial.app */;
+			productReference = 00B250751628E19200311E52 /* VocabularySishu GRE Free.app */;
 			productType = "com.apple.product-type.application";
 		};
 		00BDE55615CF9B9400BC205C /* VocabularySishu TOEFL */ = {
@@ -1637,6 +1637,7 @@
 				00A4CF06164399FE00A94ADD /* AppiraterLocalizable.strings in Resources */,
 				00A4CF3A164399FE00A94ADD /* AppiraterLocalizable.strings in Resources */,
 				00A4CF3E164399FE00A94ADD /* AppiraterLocalizable.strings in Resources */,
+				642D2AA71644DB3A00BE3A9E /* PenBG@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2405,7 +2406,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/VocabularySishu/Libs/Statistics\"",
 				);
-				PRODUCT_NAME = "VocabularySishu Trial";
+				PRODUCT_NAME = "VocabularySishu GRE Free";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
@@ -2439,7 +2440,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/VocabularySishu/Libs/Statistics\"",
 				);
-				PRODUCT_NAME = "VocabularySishu Trial";
+				PRODUCT_NAME = "VocabularySishu GRE Free";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
@@ -2490,8 +2491,8 @@
 					armv6,
 				);
 				BUNDLE_NAME = "VocabularySishu-TOEFL";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: SHAO WEN SU";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SHAO WEN SU";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -2510,8 +2511,8 @@
 				);
 				New_Setting = "";
 				PRODUCT_NAME = "VocabularySishu TOEFL";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "C32FA1CC-E8C4-4862-A08F-FE61FF70D992";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C32FA1CC-E8C4-4862-A08F-FE61FF70D992";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
