@@ -656,7 +656,7 @@
 		00AE80EE158B1318000CE7EA /* VSConfigurationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSConfigurationViewController.h; path = ViewController/ConfigurationView/VSConfigurationViewController.h; sourceTree = "<group>"; };
 		00AE80EF158B1318000CE7EA /* VSConfigurationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSConfigurationViewController.m; path = ViewController/ConfigurationView/VSConfigurationViewController.m; sourceTree = "<group>"; };
 		00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSConfigurationViewController.xib; path = ViewController/ConfigurationView/VSConfigurationViewController.xib; sourceTree = "<group>"; };
-		00B250751628E19200311E52 /* VocabularySishu Trial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VocabularySishu Trial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00B250751628E19200311E52 /* VocabularySishu GRE Free.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VocabularySishu GRE Free.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00B4919B15EB5610004AFC6C /* UnitSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UnitSelected@2x.png"; path = "Resources/Img/UnitSelected@2x.png"; sourceTree = "<group>"; };
 		00B491A015EBC3E0004AFC6C /* UnitC@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UnitC@2x.png"; path = "Resources/Img/UnitC@2x.png"; sourceTree = "<group>"; };
 		00B491A115EBC3E0004AFC6C /* UnitCHighLighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UnitCHighLighted@2x.png"; path = "Resources/Img/UnitCHighLighted@2x.png"; sourceTree = "<group>"; };
@@ -887,7 +887,7 @@
 				00701E4B1553CBCE00D30018 /* VocabularySishuTests.octest */,
 				00BDE5A815CF9B9400BC205C /* VocabularySishu TOEFL.app */,
 				00201E2F15CFBAD30089B8FA /* VocabularySishu GRE.app */,
-				00B250751628E19200311E52 /* VocabularySishu Trial.app */,
+				00B250751628E19200311E52 /* VocabularySishu GRE Free.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1257,7 +1257,7 @@
 			);
 			name = "VocabularySishu Trial";
 			productName = VocabularySishu;
-			productReference = 00B250751628E19200311E52 /* VocabularySishu Trial.app */;
+			productReference = 00B250751628E19200311E52 /* VocabularySishu GRE Free.app */;
 			productType = "com.apple.product-type.application";
 		};
 		00BDE55615CF9B9400BC205C /* VocabularySishu TOEFL */ = {
@@ -2147,7 +2147,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/VocabularySishu/Libs/Statistics\"",
 				);
-				PRODUCT_NAME = "VocabularySishu Trial";
+				PRODUCT_NAME = "VocabularySishu GRE Free";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
@@ -2181,7 +2181,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/VocabularySishu/Libs/Statistics\"",
 				);
-				PRODUCT_NAME = "VocabularySishu Trial";
+				PRODUCT_NAME = "VocabularySishu GRE Free";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
