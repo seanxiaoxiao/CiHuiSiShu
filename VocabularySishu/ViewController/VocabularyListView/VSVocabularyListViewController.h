@@ -17,7 +17,9 @@
 #import "TipsBubble.h"
 
 
-@interface VSVocabularyListViewController : UITableViewController<UIGestureRecognizerDelegate>
+@interface VSVocabularyListViewController : UIViewController<UIGestureRecognizerDelegate> {
+    IBOutlet UITableView *tableView;
+}
 
 @property (nonatomic, retain) NSMutableArray *vocabulariesToRecite;
 @property (nonatomic, strong) VSVocabularyListHeaderView *headerView;
@@ -31,6 +33,10 @@
 @property (nonatomic, retain) TipsBubble *vocabularyActionBubble;
 @property (nonatomic, retain) TipsBubble *detailBubble;
 @property (nonatomic, assign) CGPoint touchPoint;
-@property (nonatomic, assign) int selectedIndex;
+@property (nonatomic, retain) UITableView *tableView;
+@property (nonatomic, retain) NSMutableDictionary *cellStatus;
+@property (nonatomic, assign) int clearingCount;
+
+- (IBAction)curlUp:(id)sender;
 
 @end

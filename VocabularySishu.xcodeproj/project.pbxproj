@@ -285,6 +285,10 @@
 		00757DF61628F44D00CED0E8 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 00757DF01628F44D00CED0E8 /* icon.png */; };
 		00757DF71628F44D00CED0E8 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00757DF11628F44D00CED0E8 /* icon@2x.png */; };
 		00757E021628F9D300CED0E8 /* VocabularySishu.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00757E011628F9D300CED0E8 /* VocabularySishu.sqlite */; };
+		00763F281645A03200CF7216 /* VSCellStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 00763F271645A03200CF7216 /* VSCellStatus.m */; };
+		00763F291645A03200CF7216 /* VSCellStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 00763F271645A03200CF7216 /* VSCellStatus.m */; };
+		00763F2A1645A03200CF7216 /* VSCellStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 00763F271645A03200CF7216 /* VSCellStatus.m */; };
+		00763F2B1645A03200CF7216 /* VSCellStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 00763F271645A03200CF7216 /* VSCellStatus.m */; };
 		00840AA8162D32920047DC7E /* ListBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00840AA7162D32920047DC7E /* ListBG@2x.png */; };
 		008D5DAB161810160046240B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 008D5DAA161810160046240B /* Reachability.m */; };
 		008D5DAC161810160046240B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 008D5DAA161810160046240B /* Reachability.m */; };
@@ -324,11 +328,9 @@
 		00A4CF09164399FE00A94ADD /* AppiraterLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00A4CEC8164399FE00A94ADD /* AppiraterLocalizable.strings */; };
 		00A4CF3A164399FE00A94ADD /* AppiraterLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00A4CEED164399FE00A94ADD /* AppiraterLocalizable.strings */; };
 		00A4CF3B164399FE00A94ADD /* AppiraterLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00A4CEED164399FE00A94ADD /* AppiraterLocalizable.strings */; };
-		00A4CF3C164399FE00A94ADD /* AppiraterLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00A4CEED164399FE00A94ADD /* AppiraterLocalizable.strings */; };
 		00A4CF3D164399FE00A94ADD /* AppiraterLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00A4CEED164399FE00A94ADD /* AppiraterLocalizable.strings */; };
 		00A4CF3E164399FE00A94ADD /* AppiraterLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00A4CEF0164399FE00A94ADD /* AppiraterLocalizable.strings */; };
 		00A4CF3F164399FE00A94ADD /* AppiraterLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00A4CEF0164399FE00A94ADD /* AppiraterLocalizable.strings */; };
-		00A4CF40164399FE00A94ADD /* AppiraterLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00A4CEF0164399FE00A94ADD /* AppiraterLocalizable.strings */; };
 		00A4CF41164399FE00A94ADD /* AppiraterLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00A4CEF0164399FE00A94ADD /* AppiraterLocalizable.strings */; };
 		00A4CF421643A3A000A94ADD /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF8F1618AB6E00E788EA /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		00A4CF431643A3A900A94ADD /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF921618AB6E00E788EA /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -527,6 +529,10 @@
 		00E83B3015DAC42F005BE3AF /* VSClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E83B2F15DAC42F005BE3AF /* VSClipView.m */; };
 		00E83B3115DAC42F005BE3AF /* VSClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E83B2F15DAC42F005BE3AF /* VSClipView.m */; };
 		00E83B3215DAC42F005BE3AF /* VSClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E83B2F15DAC42F005BE3AF /* VSClipView.m */; };
+		00EEF25E1648F4ED00BAEAC0 /* FDCurlViewControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EEF25D1648F4ED00BAEAC0 /* FDCurlViewControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		00EEF25F1648F4ED00BAEAC0 /* FDCurlViewControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EEF25D1648F4ED00BAEAC0 /* FDCurlViewControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		00EEF2601648F4ED00BAEAC0 /* FDCurlViewControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EEF25D1648F4ED00BAEAC0 /* FDCurlViewControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		00EEF2611648F4ED00BAEAC0 /* FDCurlViewControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EEF25D1648F4ED00BAEAC0 /* FDCurlViewControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		00FF1B1015E407AC005B9E51 /* SeparatorDots@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF1B0F15E407AC005B9E51 /* SeparatorDots@2x.png */; };
 		00FF1B1115E407AC005B9E51 /* SeparatorDots@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF1B0F15E407AC005B9E51 /* SeparatorDots@2x.png */; };
 		00FF1B1215E407AC005B9E51 /* SeparatorDots@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF1B0F15E407AC005B9E51 /* SeparatorDots@2x.png */; };
@@ -699,6 +705,8 @@
 		00757DF01628F44D00CED0E8 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Resources/Img/TRIAL/icon.png; sourceTree = "<group>"; };
 		00757DF11628F44D00CED0E8 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "Resources/Img/TRIAL/icon@2x.png"; sourceTree = "<group>"; };
 		00757E011628F9D300CED0E8 /* VocabularySishu.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = VocabularySishu.sqlite; path = Resources/Data/TRIAL/VocabularySishu.sqlite; sourceTree = "<group>"; };
+		00763F261645A03200CF7216 /* VSCellStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSCellStatus.h; path = ViewController/VocabularyListView/VSCellStatus.h; sourceTree = "<group>"; };
+		00763F271645A03200CF7216 /* VSCellStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSCellStatus.m; path = ViewController/VocabularyListView/VSCellStatus.m; sourceTree = "<group>"; };
 		0081184F15BEFE220022B515 /* VSNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSNavigationBar.h; path = Generic/VSNavigationBar.h; sourceTree = "<group>"; };
 		0081185015BEFE220022B515 /* VSNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSNavigationBar.m; path = Generic/VSNavigationBar.m; sourceTree = "<group>"; };
 		00840AA7162D32920047DC7E /* ListBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ListBG@2x.png"; path = "Resources/Img/TOEFL/ListBG@2x.png"; sourceTree = "<group>"; };
@@ -763,6 +771,8 @@
 		00D86E4316339BF700BF530A /* VSUIUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSUIUtils.m; path = Utils/VSUIUtils.m; sourceTree = "<group>"; };
 		00E83B2E15DAC42F005BE3AF /* VSClipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSClipView.h; path = ViewController/MainView/VSClipView.h; sourceTree = "<group>"; };
 		00E83B2F15DAC42F005BE3AF /* VSClipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSClipView.m; path = ViewController/MainView/VSClipView.m; sourceTree = "<group>"; };
+		00EEF25C1648F4ED00BAEAC0 /* FDCurlViewControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDCurlViewControl.h; sourceTree = "<group>"; };
+		00EEF25D1648F4ED00BAEAC0 /* FDCurlViewControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDCurlViewControl.m; sourceTree = "<group>"; };
 		00FF1B0F15E407AC005B9E51 /* SeparatorDots@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "SeparatorDots@2x.png"; path = "Resources/Img/SeparatorDots@2x.png"; sourceTree = "<group>"; };
 		00FF6FE815D0AC940043BA91 /* VocabularySishu.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = VocabularySishu.sqlite; path = Resources/Data/GRE/VocabularySishu.sqlite; sourceTree = "<group>"; };
 		00FF6FF815D0BACA0043BA91 /* VSScoreBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSScoreBoardView.h; path = ViewController/VocabularyListView/VSScoreBoardView.h; sourceTree = "<group>"; };
@@ -1130,6 +1140,7 @@
 		0073A68715689FB400B80422 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				00EEF25B1648F4ED00BAEAC0 /* FDViewControl */,
 				00A4CEB7164399EF00A94ADD /* appirater */,
 				002DBF8C1618AB5E00E788EA /* ASIHTTPRequest */,
 				00596646162C7CB90010C669 /* Statistics */,
@@ -1173,6 +1184,8 @@
 				009BB48515CAAFF2008E5B2B /* VSVocabularyCell.m */,
 				00FF6FF815D0BACA0043BA91 /* VSScoreBoardView.h */,
 				00FF6FF915D0BACB0043BA91 /* VSScoreBoardView.m */,
+				00763F261645A03200CF7216 /* VSCellStatus.h */,
+				00763F271645A03200CF7216 /* VSCellStatus.m */,
 			);
 			name = VocabularyListView;
 			sourceTree = "<group>";
@@ -1348,6 +1361,16 @@
 				009397D115D7F6D3009AE73E /* VocabularySishu.sqlite */,
 			);
 			name = FULL;
+			sourceTree = "<group>";
+		};
+		00EEF25B1648F4ED00BAEAC0 /* FDViewControl */ = {
+			isa = PBXGroup;
+			children = (
+				00EEF25C1648F4ED00BAEAC0 /* FDCurlViewControl.h */,
+				00EEF25D1648F4ED00BAEAC0 /* FDCurlViewControl.m */,
+			);
+			name = FDViewControl;
+			path = Libs/FDViewControl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1565,8 +1588,6 @@
 				00533E3715F3DA81004777F1 /* iTunesArtwork in Resources */,
 				008D5DBA161814780046240B /* SoundButton@2x.png in Resources */,
 				00A4CF08164399FE00A94ADD /* AppiraterLocalizable.strings in Resources */,
-				00A4CF3C164399FE00A94ADD /* AppiraterLocalizable.strings in Resources */,
-				00A4CF40164399FE00A94ADD /* AppiraterLocalizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1929,6 +1950,8 @@
 				002DBFB61618AB6E00E788EA /* ASIInputStream.m in Sources */,
 				002DBFB91618AB6E00E788EA /* ASINetworkQueue.m in Sources */,
 				00A4CEF4164399FE00A94ADD /* Appirater.m in Sources */,
+				00763F2A1645A03200CF7216 /* VSCellStatus.m in Sources */,
+				00EEF2601648F4ED00BAEAC0 /* FDCurlViewControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1985,6 +2008,8 @@
 				002DBFB71618AB6E00E788EA /* ASINetworkQueue.m in Sources */,
 				00D86E4416339BF700BF530A /* VSUIUtils.m in Sources */,
 				00A4CEF2164399FE00A94ADD /* Appirater.m in Sources */,
+				00763F281645A03200CF7216 /* VSCellStatus.m in Sources */,
+				00EEF25E1648F4ED00BAEAC0 /* FDCurlViewControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2051,6 +2076,8 @@
 				00A4CF4B1643A44500A94ADD /* Reachability.m in Sources */,
 				00B250291628E19200311E52 /* TipsBubble.m in Sources */,
 				00A4CEF5164399FE00A94ADD /* Appirater.m in Sources */,
+				00763F2B1645A03200CF7216 /* VSCellStatus.m in Sources */,
+				00EEF2611648F4ED00BAEAC0 /* FDCurlViewControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2107,6 +2134,8 @@
 				002DBFB51618AB6E00E788EA /* ASIInputStream.m in Sources */,
 				002DBFB81618AB6E00E788EA /* ASINetworkQueue.m in Sources */,
 				00A4CEF3164399FE00A94ADD /* Appirater.m in Sources */,
+				00763F291645A03200CF7216 /* VSCellStatus.m in Sources */,
+				00EEF25F1648F4ED00BAEAC0 /* FDCurlViewControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

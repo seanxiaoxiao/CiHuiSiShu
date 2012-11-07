@@ -32,6 +32,7 @@
 @synthesize cellAccessoryImage;
 @synthesize scoreDownImage;
 @synthesize scoreUpImage;
+@synthesize statusDictionary;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -179,6 +180,7 @@
 
 - (void) doCurlUp
 {
+    VSCellStatus *record = [self statusRecord];    
     self.curling = YES;
     if (lastGestureX < 170) {
         lastGestureX = lastGestureX - 20;
@@ -196,6 +198,7 @@
         self.curlUp = YES;
         self.cellAccessoryImage.hidden = NO;
         self.hadCurlUp = YES;
+        record.curlUp = YES;
         [self._vocabulary forgot];
         [self._vocabulary seeSummaryStart];
         [MobClick event:EVENT_FORGET];
@@ -252,6 +255,7 @@
 
 - (void) doCurlDown
 {
+    VSCellStatus *record = [self statusRecord];
     if (self.scoreDownImage != nil) {
         [self.scoreDownImage removeFromSuperview];
         self.scoreDownImage = nil;
@@ -275,9 +279,10 @@
     if (lastGestureX > 260) {
         [curlUpTimer invalidate];
         curlUpTimer = nil;
-        self.cellAccessoryImage.hidden = YES;
         self.curlUp = NO;
+        record.curlUp = NO;
         self.curling = NO;
+        self.cellAccessoryImage.hidden = YES;
         [self._vocabulary finishSummary];
     }
 }
@@ -326,20 +331,43 @@
 - (void) prepareForReuse
 {
     [super prepareForReuse];
-    self.curlUp = NO;
     self.curling = NO;
     self.clearing = NO;
     self.clearShow = NO;
-    self.hadCurlUp = NO;
-    self.clearContainer.frame = CGRectMake(0, 0, 0, VOCAVULARY_CELL_HEIGHT);
-    self.summaryContainerView.frame = CGRectMake(0, 0, 0, VOCAVULARY_CELL_HEIGHT);
     self.vocabularyContainerView.alpha = 1;
     self.clearContainer.alpha = 1;
+}
+
+- (void) resetStatus
+{
+    VSCellStatus *record = [self statusRecord];
+    
+    self.curlUp = record.curlUp;
+    self.hadCurlUp = record.curlUp;
+    
+    self.clearContainer.frame = CGRectMake(0, 0, 0, VOCAVULARY_CELL_HEIGHT);
+    if (self.curlUp) {
+        self.summaryContainerView.frame = CGRectMake(0, 0, 320, VOCAVULARY_CELL_HEIGHT);
+        [self dragSummary:-180];
+    }
+    else {
+        tapeTailImage.hidden = YES;
+        tapeHeadImage.hidden = YES;
+        tapeBodyImage.hidden = YES;
+        self.cellAccessoryImage.hidden = YES;
+        self.vocabularyContainerView.frame = CGRectMake(0, 0, 320, VOCAVULARY_CELL_HEIGHT);
+        self.summaryContainerView.frame = CGRectMake(0, 0, 0, VOCAVULARY_CELL_HEIGHT);
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
+}
+
+- (VSCellStatus *)statusRecord
+{
+    return [self.statusDictionary objectForKey:self._vocabulary.spell];
 }
 
 @end

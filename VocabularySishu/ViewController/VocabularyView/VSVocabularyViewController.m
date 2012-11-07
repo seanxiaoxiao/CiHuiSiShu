@@ -56,15 +56,15 @@
     UIBarButtonItem* backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
     [self.navigationItem setLeftBarButtonItem:backButtonItem];
     
-    if ([[Reachability reachabilityForInternetConnection] isReachableViaWiFi]) {
-        UIImage* playImage = [VSUtils fetchImg:@"SoundButton"];
-        CGRect playFrame = CGRectMake(0, 0, playImage.size.width, playImage.size.height);
-        self.playButton = [[UIButton alloc] initWithFrame:playFrame];
-        [self.playButton setBackgroundImage:playImage forState:UIControlStateNormal];
-        [self.playButton addTarget:self action:@selector(playAudio) forControlEvents:UIControlEventTouchUpInside];
-        UIBarButtonItem* playButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.playButton];
-        [self.navigationItem setRightBarButtonItem:playButtonItem];        
-    }
+//    if ([[Reachability reachabilityForInternetConnection] isReachableViaWiFi]) {
+//        UIImage* playImage = [VSUtils fetchImg:@"SoundButton"];
+//        CGRect playFrame = CGRectMake(0, 0, playImage.size.width, playImage.size.height);
+//        self.playButton = [[UIButton alloc] initWithFrame:playFrame];
+//        [self.playButton setBackgroundImage:playImage forState:UIControlStateNormal];
+//        [self.playButton addTarget:self action:@selector(playAudio) forControlEvents:UIControlEventTouchUpInside];
+//        UIBarButtonItem* playButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.playButton];
+//        [self.navigationItem setRightBarButtonItem:playButtonItem];        
+//    }
     
     [self.view sendSubviewToBack:self.backgroundImage];
     [self.navigationItem setLeftBarButtonItem:[VSUIUtils makeBackButton:self selector:@selector(backToList)]];

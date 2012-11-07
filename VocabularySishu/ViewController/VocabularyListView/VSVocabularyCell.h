@@ -10,6 +10,7 @@
 #import "VSUtils.h"
 #import "VSVocabulary.h"
 #import "VSConstant.h"
+#import "VSCellStatus.h"
 
 @interface VSVocabularyCell : UITableViewCell
 
@@ -34,6 +35,7 @@
 @property (nonatomic, retain) NSTimer *curlUpTimer;
 @property (nonatomic, retain) UIImageView *scoreDownImage;
 @property (nonatomic, retain) UIImageView *scoreUpImage;
+@property (nonatomic, retain) NSDictionary *statusDictionary;
 
 
 - (void) clearVocabulry:(BOOL)clear;
@@ -49,5 +51,7 @@
 - (void) initWithVocabulary:(VSVocabulary *)vocabulary;
 
 - (void) moveClearView:(CGFloat)gestureX;
+
+- (void) resetStatus;
 
 @end

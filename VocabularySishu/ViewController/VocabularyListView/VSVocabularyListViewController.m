@@ -15,6 +15,7 @@
 #import "MobClick.h"
 #import "VSUIUtils.h"
 #import "Appirater.h"
+#import "VSCellStatus.h"
 
 @interface VSVocabularyListViewController ()
 
@@ -28,21 +29,14 @@
 @synthesize summaryView;
 @synthesize touchPoint;
 @synthesize draggedCell;
-@synthesize selectedIndex;
 @synthesize currentList;
 @synthesize scoreBoardView;
 @synthesize blockView;
 @synthesize exitButton;
 @synthesize vocabularyActionBubble;
 @synthesize detailBubble;
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-    }
-    return self;
-}
+@synthesize tableView;
+@synthesize cellStatus;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -53,20 +47,28 @@
         }
         [currentList process];
 
-        self.selectedIndex = -1;
         self.title = [self.currentList titleName];
+        self.clearingCount = 0;
 
         NSArray *vocabularies = [self.currentList vocabulariesToRecite];
         self.headerView = [[VSVocabularyListHeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
         [self.headerView setWordRemains:[vocabularies count]];
         [self.headerView updateProgress:[self.currentList finishProgress]];
-        self.tableView.tableHeaderView = headerView;
+        [self.view addSubview:self.headerView];
 
         self.vocabulariesToRecite = [NSMutableArray arrayWithArray:vocabularies];
+        self.cellStatus = [[NSMutableDictionary alloc] init];
+        for (int i = 0; i < [self.vocabulariesToRecite count]; i++) {
+            VSListVocabulary *listVocabulary = [self.vocabulariesToRecite objectAtIndex:i];
+            VSCellStatus *status = [[VSCellStatus alloc] init];
+            status.curlUp = NO;
+            [self.cellStatus setObject:status forKey:listVocabulary.vocabulary.spell];
+        }
 
         UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
-        [backgroundImageView setFrame:self.tableView.frame];
-        self.tableView.backgroundView = backgroundImageView;
+        [backgroundImageView setFrame:self.view.frame];
+        [self.view addSubview:backgroundImageView];
+        [self.view sendSubviewToBack:backgroundImageView];
 
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clearVocabulary:) name:CLEAR_VOCABULRY object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(restart) name:RESTART_LIST object:nil];
@@ -143,8 +145,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    int count = 6 < [self.vocabulariesToRecite count] ? 6 : [self.vocabulariesToRecite count];
-    return count;
+    return [self.vocabulariesToRecite count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -152,14 +153,16 @@
     int vocabularyIndex = indexPath.row;
     VSListVocabulary *listVocabulary = [vocabulariesToRecite objectAtIndex:vocabularyIndex];
     NSString *CellIdentifier = @"VocabularyCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [VSVocabularyCell alloc];
         cell = [cell initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell.highlighted = NO;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        ((VSVocabularyCell *)cell).statusDictionary = cellStatus;
     }
     [((VSVocabularyCell *)cell) initWithVocabulary:listVocabulary.vocabulary];
+    [((VSVocabularyCell *)cell) resetStatus];
     return cell;
 }
 
@@ -247,6 +250,8 @@
         }
         CGPoint translation = [gestureRecognizer translationInView:draggedCell];
         if (!cell.curlUp && !draggedCell.curling && translation.x > 0 && !draggedCell.clearing) {
+            self.clearingCount++;
+            self.tableView.scrollEnabled = NO;
             [cell showClearView];
         }
     }
@@ -323,6 +328,10 @@
         [self.headerView decrWordRemain];
         [vocabulariesToRecite removeObjectAtIndex:index];
         [self updateVocabularyTable:index];
+        self.clearingCount--;
+        if (self.clearingCount == 0) {
+            self.tableView.scrollEnabled = YES;
+        }
         [self processAfterSwipe];
     }
 }
@@ -332,10 +341,6 @@
     [self.tableView beginUpdates];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
     [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    if ([self.vocabulariesToRecite count] > 5) {
-        NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:5 inSection:0];
-        [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }
     [self.tableView endUpdates];
 }
 
@@ -445,5 +450,14 @@
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
 }
+
+- (IBAction)curlUp:(id)sender
+{
+    VSVocabularyViewController * myModalVC = [[VSVocabularyViewController alloc] init];
+    [myModalVC setModalTransitionStyle:UIModalTransitionStylePartialCurl];
+    
+    [self presentModalViewController:myModalVC animated:YES];
+}
+
 
 @end
