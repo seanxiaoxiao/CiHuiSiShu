@@ -15,10 +15,11 @@
 #import "VSVocabularyCell.h"
 #import "VSScoreBoardView.h"
 #import "TipsBubble.h"
+#import "FDCurlViewControl.h"
 
-
-@interface VSVocabularyListViewController : UIViewController<UIGestureRecognizerDelegate> {
+@interface VSVocabularyListViewController : UIViewController<UIGestureRecognizerDelegate, FDCurlViewControlDelegate> {
     IBOutlet UITableView *tableView;
+    IBOutlet UIView *containerView;
 }
 
 @property (nonatomic, retain) NSMutableArray *vocabulariesToRecite;
@@ -36,6 +37,8 @@
 @property (nonatomic, retain) UITableView *tableView;
 @property (nonatomic, retain) NSMutableDictionary *cellStatus;
 @property (nonatomic, assign) int clearingCount;
+@property (nonatomic, strong) UIView *containerView;
+@property (nonatomic, retain) FDCurlViewControl *curlButton;
 
 - (IBAction)curlUp:(id)sender;
 

@@ -16,6 +16,7 @@
 #import "VSUIUtils.h"
 #import "Appirater.h"
 #import "VSCellStatus.h"
+#import "FDCurlViewControl.h"
 
 @interface VSVocabularyListViewController ()
 
@@ -37,6 +38,8 @@
 @synthesize detailBubble;
 @synthesize tableView;
 @synthesize cellStatus;
+@synthesize containerView;
+@synthesize curlButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -51,11 +54,6 @@
         self.clearingCount = 0;
 
         NSArray *vocabularies = [self.currentList vocabulariesToRecite];
-        self.headerView = [[VSVocabularyListHeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
-        [self.headerView setWordRemains:[vocabularies count]];
-        [self.headerView updateProgress:[self.currentList finishProgress]];
-        [self.view addSubview:self.headerView];
-
         self.vocabulariesToRecite = [NSMutableArray arrayWithArray:vocabularies];
         self.cellStatus = [[NSMutableDictionary alloc] init];
         for (int i = 0; i < [self.vocabulariesToRecite count]; i++) {
@@ -65,10 +63,17 @@
             [self.cellStatus setObject:status forKey:listVocabulary.vocabulary.spell];
         }
 
-        UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
-        [backgroundImageView setFrame:self.view.frame];
-        [self.view addSubview:backgroundImageView];
-        [self.view sendSubviewToBack:backgroundImageView];
+        [self.navigationItem setLeftBarButtonItem:[VSUIUtils makeBackButton:self selector:@selector(backToMain)]];
+        UIView *rightView = [[UIView alloc] initWithFrame:CGRectMake(1, 0, 43, 44.01)];
+        rightView.backgroundColor = [UIColor clearColor];
+        UIImage *scoreBoardImage = [VSUtils fetchImg:@"ScoreBoardButton"];
+        CGRect scoreBoardFrame = CGRectMake(0, 0, scoreBoardImage.size.width, scoreBoardImage.size.height);
+        UIButton *scoreBoardButton = [[UIButton alloc] initWithFrame:scoreBoardFrame];
+        [scoreBoardButton setBackgroundImage:scoreBoardImage forState:UIControlStateNormal];
+        [scoreBoardButton addTarget:self action:@selector(toggleScoreBoard) forControlEvents:UIControlEventTouchUpInside];
+        [rightView addSubview:scoreBoardButton];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightView];
+        
 
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clearVocabulary:) name:CLEAR_VOCABULRY object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(restart) name:RESTART_LIST object:nil];
@@ -94,19 +99,41 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.navigationItem setLeftBarButtonItem:[VSUIUtils makeBackButton:self selector:@selector(backToMain)]];
-
-    UIView *rightView = [[UIView alloc] initWithFrame:CGRectMake(1, 0, 43, 44.01)];
-    rightView.backgroundColor = [UIColor clearColor];
-    UIImage *scoreBoardImage = [VSUtils fetchImg:@"ScoreBoardButton"];
-    CGRect scoreBoardFrame = CGRectMake(0, 0, scoreBoardImage.size.width, scoreBoardImage.size.height);
-    UIButton *scoreBoardButton = [[UIButton alloc] initWithFrame:scoreBoardFrame];
-    [scoreBoardButton setBackgroundImage:scoreBoardImage forState:UIControlStateNormal];
-    [scoreBoardButton addTarget:self action:@selector(toggleScoreBoard) forControlEvents:UIControlEventTouchUpInside];
-    [rightView addSubview:scoreBoardButton];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightView];
+    self.headerView = [[VSVocabularyListHeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
+    [self.headerView setWordRemains:[vocabulariesToRecite count]];
+    [self.headerView updateProgress:[self.currentList finishProgress]];
+    [self.containerView addSubview:self.headerView];
+    
+    UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
+    [backgroundImageView setFrame:self.view.frame];
+    [self.view addSubview:backgroundImageView];
+    [self.view sendSubviewToBack:backgroundImageView];
 
+    UIImageView *containerBackgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
+    [containerBackgroundImageView setFrame:self.containerView.frame];
+    [self.containerView addSubview:containerBackgroundImageView];
+    [self.containerView sendSubviewToBack:containerBackgroundImageView];
+    
+    [self initCurlUp];
+}
+
+- (void) initCurlUp
+{
+    curlButton = [[FDCurlViewControl alloc] initWithFrame:CGRectMake(290.0f, 396.0f, 30.0f, 20.0f)];
+	[curlButton setAutoresizingMask:UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth];
+	[curlButton setHidesWhenAnimating:NO];
+	[curlButton setTargetView:self.containerView];
+    [self.containerView addSubview:curlButton];
+}
+
+- (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event {
+	for (UITouch *touch in touches) {
+		CGPoint point = [touch locationInView:self.view];
+		if (point.y < round(CGRectGetHeight(self.view.frame)/2.0f)) {
+			[curlButton curlViewDown];
+		}
+	}
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -124,6 +151,7 @@
     self.blockView = nil;
     self.scoreBoardView = nil;
     self.exitButton = nil;
+    self.containerView = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
