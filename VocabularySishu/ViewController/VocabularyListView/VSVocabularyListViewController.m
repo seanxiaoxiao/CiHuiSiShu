@@ -288,6 +288,9 @@
             CGFloat margin = translation.x;
             BOOL clear = fabs(margin) > 120;
             [draggedCell clearVocabulry:clear];
+            if (!clear) {
+                [self resetScroll];
+            }
         }
         else if (!draggedCell.curlUp && !draggedCell.clearing && translation.x < 0) {
             [draggedCell curlUp:point.x];
@@ -328,10 +331,7 @@
         [self.headerView decrWordRemain];
         [vocabulariesToRecite removeObjectAtIndex:index];
         [self updateVocabularyTable:index];
-        self.clearingCount--;
-        if (self.clearingCount == 0) {
-            self.tableView.scrollEnabled = YES;
-        }
+        [self resetScroll];
         [self processAfterSwipe];
     }
 }
@@ -352,6 +352,14 @@
 #ifndef TRIAL
         [Appirater userDidSignificantEvent:YES];
 #endif
+    }
+}
+
+- (void)resetScroll
+{
+    self.clearingCount--;
+    if (self.clearingCount == 0) {
+        self.tableView.scrollEnabled = YES;
     }
 }
 
