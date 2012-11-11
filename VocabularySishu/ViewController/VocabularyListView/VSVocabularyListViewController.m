@@ -117,7 +117,7 @@
     [self.containerView addSubview:containerBackgroundImageView];
     [self.containerView sendSubviewToBack:containerBackgroundImageView];
     
-    [self initCurlUp];
+    //[self initCurlUp];
 }
 
 - (void) initCurlUp
