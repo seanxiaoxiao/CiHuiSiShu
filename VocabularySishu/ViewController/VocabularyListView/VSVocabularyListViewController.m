@@ -14,7 +14,7 @@
 #import "VSMeaning.h"
 #import "MobClick.h"
 #import "VSUIUtils.h"
-#import "Appirater.h"
+#import "iRate.h"
 #import "VSCellStatus.h"
 
 @interface VSVocabularyListViewController ()
@@ -186,7 +186,7 @@
     if (self.scoreBoardView == nil) {
         [self.navigationController popViewControllerAnimated:YES];
 #ifdef TRIAL
-        [Appirater userDidSignificantEvent:YES];
+        [[iRate sharedInstance] logEvent:NO];
 #endif
     }
 }
@@ -350,7 +350,7 @@
         [self.currentList finish];
         [self toggleScoreBoard];
 #ifndef TRIAL
-        [Appirater userDidSignificantEvent:YES];
+        [[iRate sharedInstance] logEvent:NO];
 #endif
     }
 }

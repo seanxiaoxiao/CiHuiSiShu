@@ -116,7 +116,6 @@
     }
 }
 
-
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     if (section == GUIDE_SECTION) {
@@ -130,7 +129,7 @@
 
 - (void)voteOnAppStore
 {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%d", APPID]]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@", [VSUtils getAppId]]]];
 }
 
 - (void)sendFeedbackFrom:(UIViewController *)controller

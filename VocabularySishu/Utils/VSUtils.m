@@ -217,7 +217,28 @@
 
 + (void)openSeries
 {
-    [ [ UIApplication sharedApplication ] openURL: [ NSURL URLWithString: [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@", GRE_APP_ID] ] ];
+    [ [ UIApplication sharedApplication ] openURL: [ NSURL URLWithString: [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%d", 558382812] ] ];
+}
+
++ (NSString *)getUMengKey
+{
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"settings" ofType:@"plist"];
+    NSDictionary *settings = [[NSDictionary alloc] initWithContentsOfFile:path];
+    return [settings objectForKey:@"UMengKey"];
+}
+
++ (NSNumber *)getAppId
+{
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"settings" ofType:@"plist"];
+    NSDictionary *settings = [[NSDictionary alloc] initWithContentsOfFile:path];
+    return [settings objectForKey:@"AppID"];
+}
+
++ (NSString *)getBundleId
+{
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"settings" ofType:@"plist"];
+    NSDictionary *settings = [[NSDictionary alloc] initWithContentsOfFile:path];
+    return [settings objectForKey:@"BundleID"];
 }
 
 @end

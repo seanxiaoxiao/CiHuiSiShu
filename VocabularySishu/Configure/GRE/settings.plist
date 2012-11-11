@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ProductVersion</key>
+	<string>GRE</string>
+	<key>UMengKey</key>
+	<string>50935a65527015075d000007</string>
+	<key>BundleID</key>
+	<string>org.seanxiaoxiao.VocabularySishu-GRE</string>
+	<key>AppID</key>
+	<integer>558382812</integer>
+</dict>
+</plist>
