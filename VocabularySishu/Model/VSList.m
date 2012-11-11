@@ -22,6 +22,7 @@
 @dynamic status;
 @dynamic round;
 @dynamic rememberCount;
+@dynamic finishPlanDate;
 
 
 + (VSList *)createAndGetHistoryList

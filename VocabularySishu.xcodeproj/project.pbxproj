@@ -710,6 +710,7 @@
 		0081184F15BEFE220022B515 /* VSNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSNavigationBar.h; path = Generic/VSNavigationBar.h; sourceTree = "<group>"; };
 		0081185015BEFE220022B515 /* VSNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSNavigationBar.m; path = Generic/VSNavigationBar.m; sourceTree = "<group>"; };
 		00840AA7162D32920047DC7E /* ListBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ListBG@2x.png"; path = "Resources/Img/TOEFL/ListBG@2x.png"; sourceTree = "<group>"; };
+		0085A617164A3AC600D51762 /* VocabularySishu 1. 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VocabularySishu 1. 2.xcdatamodel"; sourceTree = "<group>"; };
 		008D5DA9161810160046240B /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = Utils/Reachability.h; sourceTree = "<group>"; };
 		008D5DAA161810160046240B /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = Utils/Reachability.m; sourceTree = "<group>"; };
 		008D5DB2161812140046240B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -2609,10 +2610,11 @@
 		00701E431553CBCE00D30018 /* VocabularySishu.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				0085A617164A3AC600D51762 /* VocabularySishu 1. 2.xcdatamodel */,
 				00C09AA415E2B05800AD33C3 /* VocabularySishu 1.1.xcdatamodel */,
 				00701E441553CBCE00D30018 /* VocabularySishu.xcdatamodel */,
 			);
-			currentVersion = 00C09AA415E2B05800AD33C3 /* VocabularySishu 1.1.xcdatamodel */;
+			currentVersion = 0085A617164A3AC600D51762 /* VocabularySishu 1. 2.xcdatamodel */;
 			path = VocabularySishu.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

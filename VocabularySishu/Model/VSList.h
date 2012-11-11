@@ -25,6 +25,7 @@
 @property (nonatomic, retain) NSNumber * rememberCount;
 @property (nonatomic, retain) NSSet *listVocabularies;
 @property (nonatomic, retain) VSRepository *repository;
+@property (nonatomic, retain) NSDate * finishPlanDate;
 @property (nonatomic, retain) NSNumber * round;
 
 + (VSList *)createAndGetHistoryList;

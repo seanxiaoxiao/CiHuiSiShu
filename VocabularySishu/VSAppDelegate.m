@@ -26,10 +26,10 @@
     [Crashlytics startWithAPIKey:@"89e2516487b822e3169f0a4c5a8d24c6aebea788"];
     [VSUtils copySQLite];
     [MobClick startWithAppkey:STATISTIC_API_KEY];
-    [Appirater setAppId:[NSString stringWithFormat:@"%d", APPID]];    
+    [Appirater setAppId:[NSString stringWithFormat:@"%d", APPID]];
+    [Appirater setSignificantEventsUntilPrompt:1];
     [Appirater setDaysUntilPrompt:-1];
     [Appirater setUsesUntilPrompt:-1];
-    [Appirater setSignificantEventsUntilPrompt:1];
     [Appirater setTimeBeforeReminding:7];
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -160,6 +160,7 @@
 // If the coordinator doesn't already exist, it is created and the application's store added to it.
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator
 {
+    
     if (__persistentStoreCoordinator != nil) {
         return __persistentStoreCoordinator;
     }

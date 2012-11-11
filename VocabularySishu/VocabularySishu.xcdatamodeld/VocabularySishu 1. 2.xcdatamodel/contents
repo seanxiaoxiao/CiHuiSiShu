@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="12C60" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="VSContext" representedClassName="VSContext" syncable="YES">
+        <relationship name="currentList" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="VSList" syncable="YES"/>
+        <relationship name="currentListVocabulary" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="VSListVocabulary" syncable="YES"/>
+        <relationship name="currentRepository" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="VSRepository" syncable="YES"/>
+    </entity>
+    <entity name="VSList" representedClassName="VSList" syncable="YES">
+        <attribute name="createdDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="finishPlanDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="lastSeeDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="rememberCount" optional="YES" attributeType="Integer 32" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="round" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" syncable="YES"/>
+        <relationship name="listVocabularies" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="VSListVocabulary" inverseName="list" inverseEntity="VSListVocabulary" syncable="YES"/>
+        <relationship name="repository" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VSRepository" inverseName="lists" inverseEntity="VSRepository" syncable="YES"/>
+    </entity>
+    <entity name="VSListVocabulary" representedClassName="VSListVocabulary" syncable="YES">
+        <attribute name="lastRememberStatus" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="lastStatus" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="list" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="VSList" inverseName="listVocabularies" inverseEntity="VSList" syncable="YES"/>
+        <relationship name="vocabulary" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="VSVocabulary" syncable="YES"/>
+    </entity>
+    <entity name="VSMeaning" representedClassName="VSMeaning" syncable="YES">
+        <attribute name="attribute" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="meaning" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="vocabulary" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="VSVocabulary" inverseName="meanings" inverseEntity="VSVocabulary" syncable="YES"/>
+    </entity>
+    <entity name="VSRepository" representedClassName="VSRepository" syncable="YES">
+        <attribute name="finishedRound" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="wordsTotal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="lists" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="VSList" inverseName="repository" inverseEntity="VSList" syncable="YES"/>
+    </entity>
+    <entity name="VSVocabulary" representedClassName="VSVocabulary" syncable="YES">
+        <attribute name="audioLink" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="etymology" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="meet" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="phonetic" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="remember" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="spell" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="meanings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="VSMeaning" inverseName="vocabulary" inverseEntity="VSMeaning" syncable="YES"/>
+        <relationship name="websterMeanings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="VSWebsterMeaning" inverseName="vocabulary" inverseEntity="VSWebsterMeaning" syncable="YES"/>
+    </entity>
+    <entity name="VSWebsterMeaning" representedClassName="VSWebsterMeaning" syncable="YES">
+        <attribute name="attribute" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="meaning" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="vocabulary" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="VSVocabulary" inverseName="websterMeanings" inverseEntity="VSVocabulary" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="VSContext" positionX="0" positionY="0" width="128" height="90"/>
+        <element name="VSList" positionX="0" positionY="0" width="128" height="210"/>
+        <element name="VSListVocabulary" positionX="0" positionY="0" width="128" height="120"/>
+        <element name="VSMeaning" positionX="0" positionY="0" width="128" height="105"/>
+        <element name="VSRepository" positionX="0" positionY="0" width="128" height="120"/>
+        <element name="VSVocabulary" positionX="0" positionY="0" width="128" height="195"/>
+        <element name="VSWebsterMeaning" positionX="0" positionY="0" width="128" height="105"/>
+    </elements>
+</model>
