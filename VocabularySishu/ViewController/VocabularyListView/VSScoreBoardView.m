@@ -172,9 +172,21 @@
         [self.notRememberWellTimer invalidate];
         self.notRememberWellTimer = nil;
         
-        int starCount = self.notRememberWellInList / 0.33;
+        int starCount = 0;
+        if (self.notRememberWellInList < 0.2) {
+            starCount = 0;
+        }
+        else if (self.notRememberWell < 0.4) {
+            starCount = 1;
+        }
+        else if (self.notRememberWell < 0.9) {
+            starCount = 2;
+        }
+        else {
+            starCount = 3;
+        }
+        
         int originX = 54;
-
         for (int i = 0; i < starCount; i++) {
             UIImageView *starImage = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"Star"]];
             starImage.frame = CGRectMake(originX, 12, starImage.image.size.width, starImage.image.size.height);
