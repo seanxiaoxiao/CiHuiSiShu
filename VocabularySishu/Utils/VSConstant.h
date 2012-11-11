@@ -33,16 +33,6 @@
 #define NOTIFICATION_DENY 60 * 60;
 #define VSS_RESOURCE_SERVICE @"http://ec2-184-169-238-194.us-west-1.compute.amazonaws.com/sound"
 
-#ifdef TOEFL
-    #define STATISTIC_API_KEY @"5090c2cb527015775b000002"
-#endif
-#ifdef TRIAL
-    #define STATISTIC_API_KEY @"507c3c3c5270151aa2000028"
-#endif
-#ifdef GRE
-    #define STATISTIC_API_KEY @"50935a65527015075d000007"
-#endif
-
 #define EVENT_ENTER_HISTORY @"ENTER_HISTORY"
 #define EVENT_ENTER_LIST @"ENTER_LIST"
 #define EVENT_SELECT_REPO @"SELECT_REPO"
@@ -55,7 +45,6 @@
 #define EVENT_ENTER_DETAIL @"ENTER_DETAIL"
 
 #define VOCAVULARY_CELL_HEIGHT 56
-#define GRE_APP_ID @"558382812"
 
 @interface VSConstant : NSObject
 

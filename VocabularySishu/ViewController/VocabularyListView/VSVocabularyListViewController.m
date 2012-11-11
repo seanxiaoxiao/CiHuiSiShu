@@ -14,7 +14,7 @@
 #import "VSMeaning.h"
 #import "MobClick.h"
 #import "VSUIUtils.h"
-#import "Appirater.h"
+#import "iRate.h"
 #import "VSCellStatus.h"
 #import "FDCurlViewControl.h"
 
@@ -216,7 +216,7 @@
     if (self.scoreBoardView == nil) {
         [self.navigationController popViewControllerAnimated:YES];
 #ifdef TRIAL
-        [Appirater userDidSignificantEvent:YES];
+        [[iRate sharedInstance] logEvent:NO];
 #endif
     }
 }
@@ -318,6 +318,9 @@
             CGFloat margin = translation.x;
             BOOL clear = fabs(margin) > 120;
             [draggedCell clearVocabulry:clear];
+            if (!clear) {
+                [self resetScroll];
+            }
         }
         else if (!draggedCell.curlUp && !draggedCell.clearing && translation.x < 0) {
             [draggedCell curlUp:point.x];
@@ -358,10 +361,7 @@
         [self.headerView decrWordRemain];
         [vocabulariesToRecite removeObjectAtIndex:index];
         [self updateVocabularyTable:index];
-        self.clearingCount--;
-        if (self.clearingCount == 0) {
-            self.tableView.scrollEnabled = YES;
-        }
+        [self resetScroll];
         [self processAfterSwipe];
     }
 }
@@ -380,8 +380,16 @@
         [self.currentList finish];
         [self toggleScoreBoard];
 #ifndef TRIAL
-        [Appirater userDidSignificantEvent:YES];
+        [[iRate sharedInstance] logEvent:NO];
 #endif
+    }
+}
+
+- (void)resetScroll
+{
+    self.clearingCount--;
+    if (self.clearingCount == 0) {
+        self.tableView.scrollEnabled = YES;
     }
 }
 

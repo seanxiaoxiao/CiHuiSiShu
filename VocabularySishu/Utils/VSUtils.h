@@ -52,4 +52,11 @@
 
 + (void)openSeries;
 
++ (NSString *)getUMengKey;
+
++ (NSNumber *)getAppId;
+
++ (NSString *)getBundleId;
+
+
 @end

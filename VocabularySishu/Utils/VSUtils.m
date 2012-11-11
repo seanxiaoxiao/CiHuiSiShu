@@ -217,7 +217,29 @@
 
 + (void)openSeries
 {
-    [ [ UIApplication sharedApplication ] openURL: [ NSURL URLWithString: [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@", GRE_APP_ID] ] ];
+    [ [ UIApplication sharedApplication ] openURL: [ NSURL URLWithString: [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%d", 558382812] ] ];
+//    [ [ UIApplication sharedApplication ] openURL: [ NSURL URLWithString: [NSString stringWithFormat:@"itms-apps://phobos.apple.com/WebObjects/MZSearch.woa/wa/search?lang=1&output=lm&term=%@&media=software", [@"词汇私塾" stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] ] ];
+}
+
++ (NSString *)getUMengKey
+{
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"settings" ofType:@"plist"];
+    NSDictionary *settings = [[NSDictionary alloc] initWithContentsOfFile:path];
+    return [settings objectForKey:@"UMengKey"];
+}
+
++ (NSNumber *)getAppId
+{
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"settings" ofType:@"plist"];
+    NSDictionary *settings = [[NSDictionary alloc] initWithContentsOfFile:path];
+    return [settings objectForKey:@"AppID"];
+}
+
++ (NSString *)getBundleId
+{
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"settings" ofType:@"plist"];
+    NSDictionary *settings = [[NSDictionary alloc] initWithContentsOfFile:path];
+    return [settings objectForKey:@"BundleID"];
 }
 
 @end

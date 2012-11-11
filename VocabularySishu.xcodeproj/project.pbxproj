@@ -60,9 +60,6 @@
 		000E588915E40C9900B7AB04 /* InkNeck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583F15E40C9900B7AB04 /* InkNeck@2x.png */; };
 		000E588A15E40C9900B7AB04 /* ListBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584015E40C9900B7AB04 /* ListBG@2x.png */; };
 		000E588C15E40C9900B7AB04 /* ListBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584015E40C9900B7AB04 /* ListBG@2x.png */; };
-		000E588D15E40C9900B7AB04 /* Menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584115E40C9900B7AB04 /* Menu@2x.png */; };
-		000E588E15E40C9900B7AB04 /* Menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584115E40C9900B7AB04 /* Menu@2x.png */; };
-		000E588F15E40C9900B7AB04 /* Menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584115E40C9900B7AB04 /* Menu@2x.png */; };
 		000E589015E40C9900B7AB04 /* NavBackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584215E40C9900B7AB04 /* NavBackButton@2x.png */; };
 		000E589115E40C9900B7AB04 /* NavBackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584215E40C9900B7AB04 /* NavBackButton@2x.png */; };
 		000E589215E40C9900B7AB04 /* NavBackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584215E40C9900B7AB04 /* NavBackButton@2x.png */; };
@@ -84,9 +81,6 @@
 		000E58A215E40C9900B7AB04 /* ScoreBoardPopup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584815E40C9900B7AB04 /* ScoreBoardPopup@2x.png */; };
 		000E58A315E40C9900B7AB04 /* ScoreBoardPopup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584815E40C9900B7AB04 /* ScoreBoardPopup@2x.png */; };
 		000E58A415E40C9900B7AB04 /* ScoreBoardPopup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584815E40C9900B7AB04 /* ScoreBoardPopup@2x.png */; };
-		000E58A515E40C9900B7AB04 /* SeparatorDots@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584915E40C9900B7AB04 /* SeparatorDots@2x.png */; };
-		000E58A615E40C9900B7AB04 /* SeparatorDots@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584915E40C9900B7AB04 /* SeparatorDots@2x.png */; };
-		000E58A715E40C9900B7AB04 /* SeparatorDots@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584915E40C9900B7AB04 /* SeparatorDots@2x.png */; };
 		000E58A815E40C9900B7AB04 /* SeparatorLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584A15E40C9900B7AB04 /* SeparatorLine@2x.png */; };
 		000E58A915E40C9900B7AB04 /* SeparatorLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584A15E40C9900B7AB04 /* SeparatorLine@2x.png */; };
 		000E58AA15E40C9900B7AB04 /* SeparatorLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584A15E40C9900B7AB04 /* SeparatorLine@2x.png */; };
@@ -318,20 +312,6 @@
 		00A4CEB41643919B00A94ADD /* VSUIUtils.m in Resources */ = {isa = PBXBuildFile; fileRef = 00D86E4316339BF700BF530A /* VSUIUtils.m */; };
 		00A4CEB51643971400A94ADD /* VSUIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D86E4316339BF700BF530A /* VSUIUtils.m */; };
 		00A4CEB61643982000A94ADD /* VSUIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D86E4316339BF700BF530A /* VSUIUtils.m */; };
-		00A4CEF2164399FE00A94ADD /* Appirater.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A4CEB9164399FE00A94ADD /* Appirater.m */; };
-		00A4CEF3164399FE00A94ADD /* Appirater.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A4CEB9164399FE00A94ADD /* Appirater.m */; };
-		00A4CEF4164399FE00A94ADD /* Appirater.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A4CEB9164399FE00A94ADD /* Appirater.m */; };
-		00A4CEF5164399FE00A94ADD /* Appirater.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A4CEB9164399FE00A94ADD /* Appirater.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		00A4CF06164399FE00A94ADD /* AppiraterLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00A4CEC8164399FE00A94ADD /* AppiraterLocalizable.strings */; };
-		00A4CF07164399FE00A94ADD /* AppiraterLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00A4CEC8164399FE00A94ADD /* AppiraterLocalizable.strings */; };
-		00A4CF08164399FE00A94ADD /* AppiraterLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00A4CEC8164399FE00A94ADD /* AppiraterLocalizable.strings */; };
-		00A4CF09164399FE00A94ADD /* AppiraterLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00A4CEC8164399FE00A94ADD /* AppiraterLocalizable.strings */; };
-		00A4CF3A164399FE00A94ADD /* AppiraterLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00A4CEED164399FE00A94ADD /* AppiraterLocalizable.strings */; };
-		00A4CF3B164399FE00A94ADD /* AppiraterLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00A4CEED164399FE00A94ADD /* AppiraterLocalizable.strings */; };
-		00A4CF3D164399FE00A94ADD /* AppiraterLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00A4CEED164399FE00A94ADD /* AppiraterLocalizable.strings */; };
-		00A4CF3E164399FE00A94ADD /* AppiraterLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00A4CEF0164399FE00A94ADD /* AppiraterLocalizable.strings */; };
-		00A4CF3F164399FE00A94ADD /* AppiraterLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00A4CEF0164399FE00A94ADD /* AppiraterLocalizable.strings */; };
-		00A4CF41164399FE00A94ADD /* AppiraterLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00A4CEF0164399FE00A94ADD /* AppiraterLocalizable.strings */; };
 		00A4CF421643A3A000A94ADD /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF8F1618AB6E00E788EA /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		00A4CF431643A3A900A94ADD /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF921618AB6E00E788EA /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		00A4CF441643A3AC00A94ADD /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF961618AB6E00E788EA /* ASIDownloadCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -428,7 +408,6 @@
 		00B250501628E19200311E52 /* InkHeader@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583E15E40C9900B7AB04 /* InkHeader@2x.png */; };
 		00B250511628E19200311E52 /* InkNeck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583F15E40C9900B7AB04 /* InkNeck@2x.png */; };
 		00B250521628E19200311E52 /* ListBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584015E40C9900B7AB04 /* ListBG@2x.png */; };
-		00B250531628E19200311E52 /* Menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584115E40C9900B7AB04 /* Menu@2x.png */; };
 		00B250541628E19200311E52 /* NavBackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584215E40C9900B7AB04 /* NavBackButton@2x.png */; };
 		00B250551628E19200311E52 /* Navigation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584315E40C9900B7AB04 /* Navigation@2x.png */; };
 		00B250561628E19200311E52 /* Next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584415E40C9900B7AB04 /* Next@2x.png */; };
@@ -436,7 +415,6 @@
 		00B250581628E19200311E52 /* PenFG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584615E40C9900B7AB04 /* PenFG@2x.png */; };
 		00B250591628E19200311E52 /* ScoreBoardButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584715E40C9900B7AB04 /* ScoreBoardButton@2x.png */; };
 		00B2505A1628E19200311E52 /* ScoreBoardPopup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584815E40C9900B7AB04 /* ScoreBoardPopup@2x.png */; };
-		00B2505B1628E19200311E52 /* SeparatorDots@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584915E40C9900B7AB04 /* SeparatorDots@2x.png */; };
 		00B2505C1628E19200311E52 /* SeparatorLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584A15E40C9900B7AB04 /* SeparatorLine@2x.png */; };
 		00B2505D1628E19200311E52 /* Star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584B15E40C9900B7AB04 /* Star@2x.png */; };
 		00B2505E1628E19200311E52 /* StarNone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584C15E40C9900B7AB04 /* StarNone@2x.png */; };
@@ -519,6 +497,20 @@
 		00C4FE3B15D3FAF6000B9849 /* VSSingleListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4FE3A15D3FAF6000B9849 /* VSSingleListView.m */; };
 		00C4FE3C15D3FAF6000B9849 /* VSSingleListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4FE3A15D3FAF6000B9849 /* VSSingleListView.m */; };
 		00C4FE3D15D3FAF6000B9849 /* VSSingleListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4FE3A15D3FAF6000B9849 /* VSSingleListView.m */; };
+		00CA9061164F62F600876164 /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00CA905E164F62F600876164 /* iRate.bundle */; };
+		00CA9062164F62F600876164 /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00CA905E164F62F600876164 /* iRate.bundle */; };
+		00CA9063164F62F600876164 /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00CA905E164F62F600876164 /* iRate.bundle */; };
+		00CA9064164F62F600876164 /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00CA905E164F62F600876164 /* iRate.bundle */; };
+		00CA9065164F62F600876164 /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CA9060164F62F600876164 /* iRate.m */; };
+		00CA9066164F62F600876164 /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CA9060164F62F600876164 /* iRate.m */; };
+		00CA9067164F62F600876164 /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CA9060164F62F600876164 /* iRate.m */; };
+		00CA9068164F62F600876164 /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CA9060164F62F600876164 /* iRate.m */; };
+		00CA906E164F6AF800876164 /* settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00CA906D164F6AF800876164 /* settings.plist */; };
+		00CA906F164F6AF800876164 /* settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00CA906D164F6AF800876164 /* settings.plist */; };
+		00CA9070164F6AF800876164 /* settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00CA906D164F6AF800876164 /* settings.plist */; };
+		00CA9071164F6AF800876164 /* settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00CA906D164F6AF800876164 /* settings.plist */; };
+		00CA9073164F6BD600876164 /* settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00CA9072164F6BD600876164 /* settings.plist */; };
+		00CA9075164F6BDF00876164 /* settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00CA9074164F6BDF00876164 /* settings.plist */; };
 		00CBF0D915E9F333001588A3 /* UnitHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00CBF0D815E9F333001588A3 /* UnitHighLighted@2x.png */; };
 		00CBF0DA15E9F333001588A3 /* UnitHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00CBF0D815E9F333001588A3 /* UnitHighLighted@2x.png */; };
 		00CBF0DB15E9F333001588A3 /* UnitHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00CBF0D815E9F333001588A3 /* UnitHighLighted@2x.png */; };
@@ -710,7 +702,7 @@
 		0081184F15BEFE220022B515 /* VSNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSNavigationBar.h; path = Generic/VSNavigationBar.h; sourceTree = "<group>"; };
 		0081185015BEFE220022B515 /* VSNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSNavigationBar.m; path = Generic/VSNavigationBar.m; sourceTree = "<group>"; };
 		00840AA7162D32920047DC7E /* ListBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ListBG@2x.png"; path = "Resources/Img/TOEFL/ListBG@2x.png"; sourceTree = "<group>"; };
-		0085A617164A3AC600D51762 /* VocabularySishu 1. 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VocabularySishu 1. 2.xcdatamodel"; sourceTree = "<group>"; };
+		0085A617164A3AC600D51762 /* VocabularySishu 1. 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "VocabularySishu 1. 2.xcdatamodel"; sourceTree = "<group>"; };
 		008D5DA9161810160046240B /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = Utils/Reachability.h; sourceTree = "<group>"; };
 		008D5DAA161810160046240B /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = Utils/Reachability.m; sourceTree = "<group>"; };
 		008D5DB2161812140046240B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -739,12 +731,6 @@
 		00A00730156F7FEE00D24418 /* VSVocabularyListHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSVocabularyListHeaderView.h; path = ViewController/VocabularyListView/VSVocabularyListHeaderView.h; sourceTree = "<group>"; };
 		00A00731156F7FEE00D24418 /* VSVocabularyListHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSVocabularyListHeaderView.m; path = ViewController/VocabularyListView/VSVocabularyListHeaderView.m; sourceTree = "<group>"; };
 		00A1AFAC1586192400310669 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		00A4CEB8164399FE00A94ADD /* Appirater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Appirater.h; path = Libs/appirater/Appirater.h; sourceTree = "<group>"; };
-		00A4CEB9164399FE00A94ADD /* Appirater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Appirater.m; path = Libs/appirater/Appirater.m; sourceTree = "<group>"; };
-		00A4CEBA164399FE00A94ADD /* AppiraterDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppiraterDelegate.h; path = Libs/appirater/AppiraterDelegate.h; sourceTree = "<group>"; };
-		00A4CEC9164399FE00A94ADD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = AppiraterLocalizable.strings; sourceTree = "<group>"; };
-		00A4CEEE164399FE00A94ADD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = AppiraterLocalizable.strings; sourceTree = "<group>"; };
-		00A4CEF1164399FE00A94ADD /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = AppiraterLocalizable.strings; sourceTree = "<group>"; };
 		00A9E7AE15A08699009832BA /* VSReviewPlan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSReviewPlan.h; path = Utils/VSReviewPlan.h; sourceTree = "<group>"; };
 		00A9E7AF15A08699009832BA /* VSReviewPlan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSReviewPlan.m; path = Utils/VSReviewPlan.m; sourceTree = "<group>"; };
 		00AC5E4915E4BBFB00150402 /* PopupClose@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "PopupClose@2x.png"; path = "Resources/Img/PopupClose@2x.png"; sourceTree = "<group>"; };
@@ -766,6 +752,12 @@
 		00C4300215BBFD2E006FF95E /* VSVocabulary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSVocabulary.h; path = Model/VSVocabulary.h; sourceTree = "<group>"; };
 		00C4FE3915D3FAF6000B9849 /* VSSingleListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSSingleListView.h; path = ViewController/MainView/VSSingleListView.h; sourceTree = "<group>"; };
 		00C4FE3A15D3FAF6000B9849 /* VSSingleListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSSingleListView.m; path = ViewController/MainView/VSSingleListView.m; sourceTree = "<group>"; };
+		00CA905E164F62F600876164 /* iRate.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = iRate.bundle; path = Libs/iRate/iRate.bundle; sourceTree = "<group>"; };
+		00CA905F164F62F600876164 /* iRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iRate.h; path = Libs/iRate/iRate.h; sourceTree = "<group>"; };
+		00CA9060164F62F600876164 /* iRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iRate.m; path = Libs/iRate/iRate.m; sourceTree = "<group>"; };
+		00CA906D164F6AF800876164 /* settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = settings.plist; sourceTree = "<group>"; };
+		00CA9072164F6BD600876164 /* settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = settings.plist; sourceTree = "<group>"; };
+		00CA9074164F6BDF00876164 /* settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = settings.plist; sourceTree = "<group>"; };
 		00CBF0D815E9F333001588A3 /* UnitHighLighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UnitHighLighted@2x.png"; path = "Resources/Img/UnitHighLighted@2x.png"; sourceTree = "<group>"; };
 		00D6778715AD542E00EF152D /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		00D86E4216339BF700BF530A /* VSUIUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSUIUtils.h; path = Utils/VSUIUtils.h; sourceTree = "<group>"; };
@@ -1049,6 +1041,7 @@
 		00701E371553CBCE00D30018 /* VocabularySishu */ = {
 			isa = PBXGroup;
 			children = (
+				00CA9069164F6A0400876164 /* Configure */,
 				004524FE15E7488B00935B34 /* Font */,
 				00701E6B1553CE8C00D30018 /* ViewController */,
 				0081184E15BEFDFF0022B515 /* Generic */,
@@ -1141,8 +1134,8 @@
 		0073A68715689FB400B80422 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				00CA905D164F62DC00876164 /* iRate */,
 				00EEF25B1648F4ED00BAEAC0 /* FDViewControl */,
-				00A4CEB7164399EF00A94ADD /* appirater */,
 				002DBF8C1618AB5E00E788EA /* ASIHTTPRequest */,
 				00596646162C7CB90010C669 /* Statistics */,
 				0073A6881568A0B200B80422 /* SBJSON */,
@@ -1217,46 +1210,6 @@
 				0081185015BEFE220022B515 /* VSNavigationBar.m */,
 			);
 			name = Generic;
-			sourceTree = "<group>";
-		};
-		00A4CEB7164399EF00A94ADD /* appirater */ = {
-			isa = PBXGroup;
-			children = (
-				00A4CEB8164399FE00A94ADD /* Appirater.h */,
-				00A4CEB9164399FE00A94ADD /* Appirater.m */,
-				00A4CEBA164399FE00A94ADD /* AppiraterDelegate.h */,
-				00A4CEC7164399FE00A94ADD /* en.lproj */,
-				00A4CEEC164399FE00A94ADD /* zh-Hans.lproj */,
-				00A4CEEF164399FE00A94ADD /* zh-Hant.lproj */,
-			);
-			name = appirater;
-			sourceTree = "<group>";
-		};
-		00A4CEC7164399FE00A94ADD /* en.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				00A4CEC8164399FE00A94ADD /* AppiraterLocalizable.strings */,
-			);
-			name = en.lproj;
-			path = Libs/appirater/en.lproj;
-			sourceTree = "<group>";
-		};
-		00A4CEEC164399FE00A94ADD /* zh-Hans.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				00A4CEED164399FE00A94ADD /* AppiraterLocalizable.strings */,
-			);
-			name = "zh-Hans.lproj";
-			path = "Libs/appirater/zh-Hans.lproj";
-			sourceTree = "<group>";
-		};
-		00A4CEEF164399FE00A94ADD /* zh-Hant.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				00A4CEF0164399FE00A94ADD /* AppiraterLocalizable.strings */,
-			);
-			name = "zh-Hant.lproj";
-			path = "Libs/appirater/zh-Hant.lproj";
 			sourceTree = "<group>";
 		};
 		00AE80EC158B12A9000CE7EA /* ConfigurationView */ = {
@@ -1362,6 +1315,50 @@
 				009397D115D7F6D3009AE73E /* VocabularySishu.sqlite */,
 			);
 			name = FULL;
+			sourceTree = "<group>";
+		};
+		00CA905D164F62DC00876164 /* iRate */ = {
+			isa = PBXGroup;
+			children = (
+				00CA905E164F62F600876164 /* iRate.bundle */,
+				00CA905F164F62F600876164 /* iRate.h */,
+				00CA9060164F62F600876164 /* iRate.m */,
+			);
+			name = iRate;
+			sourceTree = "<group>";
+		};
+		00CA9069164F6A0400876164 /* Configure */ = {
+			isa = PBXGroup;
+			children = (
+				00CA906A164F6ADD00876164 /* TRIAL */,
+				00CA906B164F6ADD00876164 /* TOEFL */,
+				00CA906C164F6ADD00876164 /* GRE */,
+			);
+			path = Configure;
+			sourceTree = "<group>";
+		};
+		00CA906A164F6ADD00876164 /* TRIAL */ = {
+			isa = PBXGroup;
+			children = (
+				00CA906D164F6AF800876164 /* settings.plist */,
+			);
+			path = TRIAL;
+			sourceTree = "<group>";
+		};
+		00CA906B164F6ADD00876164 /* TOEFL */ = {
+			isa = PBXGroup;
+			children = (
+				00CA9072164F6BD600876164 /* settings.plist */,
+			);
+			path = TOEFL;
+			sourceTree = "<group>";
+		};
+		00CA906C164F6ADD00876164 /* GRE */ = {
+			isa = PBXGroup;
+			children = (
+				00CA9074164F6BDF00876164 /* settings.plist */,
+			);
+			path = GRE;
 			sourceTree = "<group>";
 		};
 		00EEF25B1648F4ED00BAEAC0 /* FDViewControl */ = {
@@ -1475,7 +1472,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = VS;
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = douban;
 			};
 			buildConfigurationList = 00701E251553CBCE00D30018 /* Build configuration list for PBXProject "VocabularySishu" */;
@@ -1552,7 +1549,6 @@
 				000E588615E40C9900B7AB04 /* InkHeader@2x.png in Resources */,
 				000E588915E40C9900B7AB04 /* InkNeck@2x.png in Resources */,
 				000E588C15E40C9900B7AB04 /* ListBG@2x.png in Resources */,
-				000E588F15E40C9900B7AB04 /* Menu@2x.png in Resources */,
 				000E589215E40C9900B7AB04 /* NavBackButton@2x.png in Resources */,
 				000E589515E40C9900B7AB04 /* Navigation@2x.png in Resources */,
 				000E589815E40C9900B7AB04 /* Next@2x.png in Resources */,
@@ -1560,7 +1556,6 @@
 				000E589E15E40C9900B7AB04 /* PenFG@2x.png in Resources */,
 				000E58A115E40C9900B7AB04 /* ScoreBoardButton@2x.png in Resources */,
 				000E58A415E40C9900B7AB04 /* ScoreBoardPopup@2x.png in Resources */,
-				000E58A715E40C9900B7AB04 /* SeparatorDots@2x.png in Resources */,
 				000E58AA15E40C9900B7AB04 /* SeparatorLine@2x.png in Resources */,
 				000E58AD15E40C9900B7AB04 /* Star@2x.png in Resources */,
 				000E58B015E40C9900B7AB04 /* StarNone@2x.png in Resources */,
@@ -1575,6 +1570,7 @@
 				00AC5E5015E4BBFC00150402 /* PopupCloseHighLighted@2x.png in Resources */,
 				0045250B15E74FE700935B34 /* Dakota.ttf in Resources */,
 				0045250F15E750EA00935B34 /* Mark@2x.png in Resources */,
+				00CA9075164F6BDF00876164 /* settings.plist in Resources */,
 				0045251315E7572000935B34 /* MenuButtonHighLighted@2x.png in Resources */,
 				00CBF0DB15E9F333001588A3 /* UnitHighLighted@2x.png in Resources */,
 				00B4919E15EB5610004AFC6C /* UnitSelected@2x.png in Resources */,
@@ -1588,7 +1584,8 @@
 				00533E3615F3DA81004777F1 /* icon@2x.png in Resources */,
 				00533E3715F3DA81004777F1 /* iTunesArtwork in Resources */,
 				008D5DBA161814780046240B /* SoundButton@2x.png in Resources */,
-				00A4CF08164399FE00A94ADD /* AppiraterLocalizable.strings in Resources */,
+				00CA9063164F62F600876164 /* iRate.bundle in Resources */,
+				00CA9070164F6AF800876164 /* settings.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1625,7 +1622,6 @@
 				000E588415E40C9900B7AB04 /* InkHeader@2x.png in Resources */,
 				000E588715E40C9900B7AB04 /* InkNeck@2x.png in Resources */,
 				000E588A15E40C9900B7AB04 /* ListBG@2x.png in Resources */,
-				000E588D15E40C9900B7AB04 /* Menu@2x.png in Resources */,
 				000E589015E40C9900B7AB04 /* NavBackButton@2x.png in Resources */,
 				000E589315E40C9900B7AB04 /* Navigation@2x.png in Resources */,
 				000E589615E40C9900B7AB04 /* Next@2x.png in Resources */,
@@ -1633,7 +1629,6 @@
 				000E589C15E40C9900B7AB04 /* PenFG@2x.png in Resources */,
 				000E589F15E40C9900B7AB04 /* ScoreBoardButton@2x.png in Resources */,
 				000E58A215E40C9900B7AB04 /* ScoreBoardPopup@2x.png in Resources */,
-				000E58A515E40C9900B7AB04 /* SeparatorDots@2x.png in Resources */,
 				000E58A815E40C9900B7AB04 /* SeparatorLine@2x.png in Resources */,
 				000E58AB15E40C9900B7AB04 /* Star@2x.png in Resources */,
 				000E58AE15E40C9900B7AB04 /* StarNone@2x.png in Resources */,
@@ -1656,10 +1651,9 @@
 				00B491AA15EBDF9B004AFC6C /* ScoreDown@2x.png in Resources */,
 				00B491AD15EBDF9B004AFC6C /* ScoreUp@2x.png in Resources */,
 				008D5DB8161814780046240B /* SoundButton@2x.png in Resources */,
-				00A4CF06164399FE00A94ADD /* AppiraterLocalizable.strings in Resources */,
-				00A4CF3A164399FE00A94ADD /* AppiraterLocalizable.strings in Resources */,
-				00A4CF3E164399FE00A94ADD /* AppiraterLocalizable.strings in Resources */,
 				642D2AA71644DB3A00BE3A9E /* PenBG@2x.png in Resources */,
+				00CA9061164F62F600876164 /* iRate.bundle in Resources */,
+				00CA906E164F6AF800876164 /* settings.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1677,6 +1671,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00B250341628E19200311E52 /* InfoPlist.strings in Resources */,
+				00CA9071164F6AF800876164 /* settings.plist in Resources */,
 				00B250351628E19200311E52 /* VSHistoryViewController.xib in Resources */,
 				00B250361628E19200311E52 /* VSMainViewController.xib in Resources */,
 				00B250371628E19200311E52 /* VSVocabularyViewController.xib in Resources */,
@@ -1704,7 +1699,6 @@
 				00B250501628E19200311E52 /* InkHeader@2x.png in Resources */,
 				00B250511628E19200311E52 /* InkNeck@2x.png in Resources */,
 				00B250521628E19200311E52 /* ListBG@2x.png in Resources */,
-				00B250531628E19200311E52 /* Menu@2x.png in Resources */,
 				00B250541628E19200311E52 /* NavBackButton@2x.png in Resources */,
 				00B250551628E19200311E52 /* Navigation@2x.png in Resources */,
 				00B250561628E19200311E52 /* Next@2x.png in Resources */,
@@ -1712,7 +1706,6 @@
 				00B250581628E19200311E52 /* PenFG@2x.png in Resources */,
 				00B250591628E19200311E52 /* ScoreBoardButton@2x.png in Resources */,
 				00B2505A1628E19200311E52 /* ScoreBoardPopup@2x.png in Resources */,
-				00B2505B1628E19200311E52 /* SeparatorDots@2x.png in Resources */,
 				00B2505C1628E19200311E52 /* SeparatorLine@2x.png in Resources */,
 				00B2505D1628E19200311E52 /* Star@2x.png in Resources */,
 				00B2505E1628E19200311E52 /* StarNone@2x.png in Resources */,
@@ -1745,9 +1738,7 @@
 				00333FBC1631227C00F7871C /* LockList@2x.png in Resources */,
 				00333FBD1631227C00F7871C /* MainPromo@2x.png in Resources */,
 				00333FBF1631345900F7871C /* iTunesArtwork in Resources */,
-				00A4CF09164399FE00A94ADD /* AppiraterLocalizable.strings in Resources */,
-				00A4CF3D164399FE00A94ADD /* AppiraterLocalizable.strings in Resources */,
-				00A4CF41164399FE00A94ADD /* AppiraterLocalizable.strings in Resources */,
+				00CA9064164F62F600876164 /* iRate.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1784,15 +1775,14 @@
 				000E588215E40C9900B7AB04 /* InkFooter@2x.png in Resources */,
 				000E588515E40C9900B7AB04 /* InkHeader@2x.png in Resources */,
 				000E588815E40C9900B7AB04 /* InkNeck@2x.png in Resources */,
-				000E588E15E40C9900B7AB04 /* Menu@2x.png in Resources */,
 				000E589115E40C9900B7AB04 /* NavBackButton@2x.png in Resources */,
 				000E589415E40C9900B7AB04 /* Navigation@2x.png in Resources */,
 				000E589715E40C9900B7AB04 /* Next@2x.png in Resources */,
+				00CA9073164F6BD600876164 /* settings.plist in Resources */,
 				000E589A15E40C9900B7AB04 /* PenBG@2x.png in Resources */,
 				000E589D15E40C9900B7AB04 /* PenFG@2x.png in Resources */,
 				000E58A015E40C9900B7AB04 /* ScoreBoardButton@2x.png in Resources */,
 				000E58A315E40C9900B7AB04 /* ScoreBoardPopup@2x.png in Resources */,
-				000E58A615E40C9900B7AB04 /* SeparatorDots@2x.png in Resources */,
 				000E58A915E40C9900B7AB04 /* SeparatorLine@2x.png in Resources */,
 				000E58AC15E40C9900B7AB04 /* Star@2x.png in Resources */,
 				000E58AF15E40C9900B7AB04 /* StarNone@2x.png in Resources */,
@@ -1821,9 +1811,8 @@
 				00627B19162D209800086C35 /* icon@2x.png in Resources */,
 				00627B1A162D209800086C35 /* icon.png in Resources */,
 				00627B1B162D209800086C35 /* iTunesArtwork.png in Resources */,
-				00A4CF07164399FE00A94ADD /* AppiraterLocalizable.strings in Resources */,
-				00A4CF3B164399FE00A94ADD /* AppiraterLocalizable.strings in Resources */,
-				00A4CF3F164399FE00A94ADD /* AppiraterLocalizable.strings in Resources */,
+				00CA9062164F62F600876164 /* iRate.bundle in Resources */,
+				00CA906F164F6AF800876164 /* settings.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1950,9 +1939,9 @@
 				002DBFB31618AB6E00E788EA /* ASIHTTPRequest.m in Sources */,
 				002DBFB61618AB6E00E788EA /* ASIInputStream.m in Sources */,
 				002DBFB91618AB6E00E788EA /* ASINetworkQueue.m in Sources */,
-				00A4CEF4164399FE00A94ADD /* Appirater.m in Sources */,
 				00763F2A1645A03200CF7216 /* VSCellStatus.m in Sources */,
 				00EEF2601648F4ED00BAEAC0 /* FDCurlViewControl.m in Sources */,
+				00CA9067164F62F600876164 /* iRate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2008,9 +1997,9 @@
 				002DBFB41618AB6E00E788EA /* ASIInputStream.m in Sources */,
 				002DBFB71618AB6E00E788EA /* ASINetworkQueue.m in Sources */,
 				00D86E4416339BF700BF530A /* VSUIUtils.m in Sources */,
-				00A4CEF2164399FE00A94ADD /* Appirater.m in Sources */,
 				00763F281645A03200CF7216 /* VSCellStatus.m in Sources */,
 				00EEF25E1648F4ED00BAEAC0 /* FDCurlViewControl.m in Sources */,
+				00CA9065164F62F600876164 /* iRate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2076,9 +2065,9 @@
 				00B250281628E19200311E52 /* VSGuideViewController.m in Sources */,
 				00A4CF4B1643A44500A94ADD /* Reachability.m in Sources */,
 				00B250291628E19200311E52 /* TipsBubble.m in Sources */,
-				00A4CEF5164399FE00A94ADD /* Appirater.m in Sources */,
 				00763F2B1645A03200CF7216 /* VSCellStatus.m in Sources */,
 				00EEF2611648F4ED00BAEAC0 /* FDCurlViewControl.m in Sources */,
+				00CA9068164F62F600876164 /* iRate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2134,9 +2123,9 @@
 				002DBFB21618AB6E00E788EA /* ASIHTTPRequest.m in Sources */,
 				002DBFB51618AB6E00E788EA /* ASIInputStream.m in Sources */,
 				002DBFB81618AB6E00E788EA /* ASINetworkQueue.m in Sources */,
-				00A4CEF3164399FE00A94ADD /* Appirater.m in Sources */,
 				00763F291645A03200CF7216 /* VSCellStatus.m in Sources */,
 				00EEF25F1648F4ED00BAEAC0 /* FDCurlViewControl.m in Sources */,
+				00CA9066164F62F600876164 /* iRate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2167,30 +2156,6 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		00A4CEC8164399FE00A94ADD /* AppiraterLocalizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				00A4CEC9164399FE00A94ADD /* en */,
-			);
-			name = AppiraterLocalizable.strings;
-			sourceTree = "<group>";
-		};
-		00A4CEED164399FE00A94ADD /* AppiraterLocalizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				00A4CEEE164399FE00A94ADD /* zh-Hans */,
-			);
-			name = AppiraterLocalizable.strings;
-			sourceTree = "<group>";
-		};
-		00A4CEF0164399FE00A94ADD /* AppiraterLocalizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				00A4CEF1164399FE00A94ADD /* zh-Hant */,
-			);
-			name = AppiraterLocalizable.strings;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -2210,10 +2175,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"APPID=558382812",
-					"GRE=1",
-				);
+				GCC_PREPROCESSOR_DEFINITIONS = "GRE=1";
+				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				LIBRARY_SEARCH_PATHS = (
@@ -2244,10 +2207,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"APPID=558382812",
-					"GRE=1",
-				);
+				GCC_PREPROCESSOR_DEFINITIONS = "GRE=1";
+				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				LIBRARY_SEARCH_PATHS = (
@@ -2329,6 +2290,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				LIBRARY_SEARCH_PATHS = (
@@ -2359,6 +2321,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				LIBRARY_SEARCH_PATHS = (
@@ -2425,10 +2388,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"APPID=571846099",
-					"TRIAL=1",
-				);
+				GCC_PREPROCESSOR_DEFINITIONS = "TRIAL=1";
+				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/VocabularySishu/VocabularySishu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				LIBRARY_SEARCH_PATHS = (
@@ -2459,10 +2420,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"APPID=571846099",
-					"TRIAL=1",
-				);
+				GCC_PREPROCESSOR_DEFINITIONS = "TRIAL=1";
+				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/VocabularySishu/VocabularySishu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				LIBRARY_SEARCH_PATHS = (
@@ -2493,10 +2452,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"APPID=575093591",
-					"TOEFL=1",
-				);
+				GCC_PREPROCESSOR_DEFINITIONS = "TOEFL=1";
+				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				LIBRARY_SEARCH_PATHS = (
@@ -2528,10 +2485,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"APPID=575093591",
-					"TOEFL=1",
-				);
+				GCC_PREPROCESSOR_DEFINITIONS = "TOEFL=1";
+				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				LIBRARY_SEARCH_PATHS = (
