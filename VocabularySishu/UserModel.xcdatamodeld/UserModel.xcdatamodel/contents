@@ -1,11 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1810" systemVersion="12C54" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="12C60" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="VSAppRecord" representedClassName="VSAppRecord" syncable="YES">
+        <attribute name="migrated" optional="YES" attributeType="Boolean" syncable="YES"/>
+    </entity>
+    <entity name="VSListRecord" representedClassName="VSListRecord" syncable="YES">
+        <attribute name="createdDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="finishPlanDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rememberCount" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="round" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="VSListVocabularyRecord" representedClassName="VSListVocabularyRecord" syncable="YES">
+        <attribute name="lastRememberStatus" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="lastStatus" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="listRecord" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="VSListRecord" syncable="YES"/>
+        <relationship name="vocabularyRecord" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="VSVocabularyRecord" syncable="YES"/>
+    </entity>
     <entity name="VSVocabularyRecord" representedClassName="VSVocabularyRecord" syncable="YES">
         <attribute name="meet" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="remember" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="spell" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
+        <element name="VSAppRecord" positionX="160" positionY="192" width="128" height="60"/>
+        <element name="VSListRecord" positionX="160" positionY="192" width="128" height="135"/>
+        <element name="VSListVocabularyRecord" positionX="160" positionY="192" width="128" height="120"/>
         <element name="VSVocabularyRecord" positionX="160" positionY="192" width="128" height="90"/>
     </elements>
 </model>

@@ -37,6 +37,7 @@
     [Crashlytics startWithAPIKey:@"89e2516487b822e3169f0a4c5a8d24c6aebea788"];
     [VSUtils copySQLite];
     [MobClick startWithAppkey:[VSUtils getUMengKey]];
+    [VSDataUtil readWriteMigrate];
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
@@ -119,6 +120,7 @@
 
 - (void)saveContext
 {
+    NSLog(@"Save context");
     NSError *error = nil;
     NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
     if (managedObjectContext != nil) {
@@ -137,6 +139,7 @@
 // If the context doesn't already exist, it is created and bound to the persistent store coordinator for the application.
 - (NSManagedObjectContext *)managedObjectContext
 {
+    NSLog(@"Managed Object Context");
     if (__managedObjectContext != nil) {
         return __managedObjectContext;
     }
@@ -153,11 +156,17 @@
 // If the model doesn't already exist, it is created from the application's model.
 - (NSManagedObjectModel *)managedObjectModel
 {
+        NSLog(@"Managed Object Model");
     if (__managedObjectModel != nil) {
         return __managedObjectModel;
     }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"VocabularySishu" withExtension:@"momd"];
-    __managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+    NSURL *userModelURL = [[NSBundle mainBundle] URLForResource:@"UserModel" withExtension:@"momd"];
+    NSManagedObjectModel *userModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:userModelURL];
+
+    NSURL *systemModelURL = [[NSBundle mainBundle] URLForResource:@"VocabularySishu" withExtension:@"momd"];
+    NSManagedObjectModel *systemModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:systemModelURL];
+
+    __managedObjectModel = [NSManagedObjectModel modelByMergingModels:[NSArray arrayWithObjects:userModel, systemModel, nil]];
     return __managedObjectModel;
 }
 
@@ -165,21 +174,28 @@
 // If the coordinator doesn't already exist, it is created and the application's store added to it.
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator
 {
-    
     if (__persistentStoreCoordinator != nil) {
         return __persistentStoreCoordinator;
     }
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-    NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"VocabularySishu.sqlite"];
-    NSURL* storeURL = [NSURL fileURLWithPath:filePath];
     
+    NSArray *cachePaths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString *systemFilePath = [[cachePaths objectAtIndex:0] stringByAppendingPathComponent:@"VocabularySishu.sqlite"];
+    NSURL* systemStoreURL = [NSURL fileURLWithPath:systemFilePath];
+
+    NSArray *docPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *userFilePath = [[docPaths objectAtIndex:0] stringByAppendingPathComponent:@"UserModel.sqlite"];
+    NSURL* userStoreURL = [NSURL fileURLWithPath:userFilePath];
+
     NSError *error = nil;
     NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
                              [NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption,
                              [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];
 
     __persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    if (![__persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error]) {
+    
+    if (![__persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:userStoreURL options:options error:&error]) {
+    }
+    if (![__persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:systemStoreURL options:options error:&error]) {
         /*
          Replace this implementation with code to handle the error appropriately.
          
@@ -205,7 +221,7 @@
          */
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
-    }    
+    }
     
     return __persistentStoreCoordinator;
 }
@@ -240,7 +256,6 @@
 
     VSNavigationBar *navBar = (VSNavigationBar *)[customizedNavController navigationBar];
     [navBar updateBackgroundImage];
-
     
     return customizedNavController;
 }

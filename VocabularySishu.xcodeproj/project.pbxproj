@@ -111,6 +111,18 @@
 		000E58C315E40C9900B7AB04 /* Unit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E585315E40C9900B7AB04 /* Unit@2x.png */; };
 		000E58C415E40C9900B7AB04 /* Unit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E585315E40C9900B7AB04 /* Unit@2x.png */; };
 		000E58C515E40C9900B7AB04 /* Unit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E585315E40C9900B7AB04 /* Unit@2x.png */; };
+		000FEA541650B99E00644B63 /* VSAppRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 000FEA531650B99E00644B63 /* VSAppRecord.m */; };
+		000FEA551650B99E00644B63 /* VSAppRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 000FEA531650B99E00644B63 /* VSAppRecord.m */; };
+		000FEA561650B99E00644B63 /* VSAppRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 000FEA531650B99E00644B63 /* VSAppRecord.m */; };
+		000FEA571650B99E00644B63 /* VSAppRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 000FEA531650B99E00644B63 /* VSAppRecord.m */; };
+		000FEA5A1650BA3A00644B63 /* VSListVocabularyRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 000FEA591650BA3A00644B63 /* VSListVocabularyRecord.m */; };
+		000FEA5B1650BA3A00644B63 /* VSListVocabularyRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 000FEA591650BA3A00644B63 /* VSListVocabularyRecord.m */; };
+		000FEA5C1650BA3A00644B63 /* VSListVocabularyRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 000FEA591650BA3A00644B63 /* VSListVocabularyRecord.m */; };
+		000FEA5D1650BA3A00644B63 /* VSListVocabularyRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 000FEA591650BA3A00644B63 /* VSListVocabularyRecord.m */; };
+		000FEA601650BA7400644B63 /* VSVocabularyRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 000FEA5F1650BA7400644B63 /* VSVocabularyRecord.m */; };
+		000FEA611650BA7400644B63 /* VSVocabularyRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 000FEA5F1650BA7400644B63 /* VSVocabularyRecord.m */; };
+		000FEA621650BA7400644B63 /* VSVocabularyRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 000FEA5F1650BA7400644B63 /* VSVocabularyRecord.m */; };
+		000FEA631650BA7400644B63 /* VSVocabularyRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 000FEA5F1650BA7400644B63 /* VSVocabularyRecord.m */; };
 		0013FCA7162F0B1200E845E7 /* BookPromo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0013FCA6162F0B1200E845E7 /* BookPromo@2x.png */; };
 		0013FCAA162F115F00E845E7 /* List-Bottom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0013FCA9162F115F00E845E7 /* List-Bottom@2x.png */; };
 		00201DDF15CFBAD30089B8FA /* VSNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0081185015BEFE220022B515 /* VSNavigationBar.m */; };
@@ -154,7 +166,6 @@
 		00201E0A15CFBAD30089B8FA /* VSVocabularyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408115590E0B007E5FA9 /* VSVocabularyViewController.xib */; };
 		00201E0B15CFBAD30089B8FA /* VSVocabularyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */; };
 		00201E1015CFBAD30089B8FA /* VSConfigurationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */; };
-		00201E3315CFBF9C0089B8FA /* VocabularySishu.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00201E3215CFBF9C0089B8FA /* VocabularySishu.sqlite */; };
 		002DBFA21618AB6E00E788EA /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF8F1618AB6E00E788EA /* ASIAuthenticationDialog.m */; };
 		002DBFA31618AB6E00E788EA /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF8F1618AB6E00E788EA /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		002DBFA41618AB6E00E788EA /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF8F1618AB6E00E788EA /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -219,6 +230,7 @@
 		0046409115591DBD007E5FA9 /* VSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046409015591DBD007E5FA9 /* VSUtils.m */; };
 		0046409215591DBD007E5FA9 /* VSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046409015591DBD007E5FA9 /* VSUtils.m */; };
 		0046409315591FD1007E5FA9 /* VSVocabularyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408115590E0B007E5FA9 /* VSVocabularyViewController.xib */; };
+		004EA5A4161AA8AA000E4B0E /* VocabularySishu.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 004EA5A3161AA8AA000E4B0E /* VocabularySishu.sqlite */; };
 		00533E3215F3DA81004777F1 /* GuidePage1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00533E2C15F3DA81004777F1 /* GuidePage1@2x.png */; };
 		00533E3315F3DA81004777F1 /* GuidePage2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00533E2D15F3DA81004777F1 /* GuidePage2@2x.png */; };
 		00533E3415F3DA81004777F1 /* GuidePage3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00533E2E15F3DA81004777F1 /* GuidePage3@2x.png */; };
@@ -284,6 +296,14 @@
 		00763F2A1645A03200CF7216 /* VSCellStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 00763F271645A03200CF7216 /* VSCellStatus.m */; };
 		00763F2B1645A03200CF7216 /* VSCellStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 00763F271645A03200CF7216 /* VSCellStatus.m */; };
 		00840AA8162D32920047DC7E /* ListBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00840AA7162D32920047DC7E /* ListBG@2x.png */; };
+		008570701650341D003861DB /* UserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0085706E1650341D003861DB /* UserModel.xcdatamodeld */; };
+		008570711650341D003861DB /* UserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0085706E1650341D003861DB /* UserModel.xcdatamodeld */; };
+		008570721650341D003861DB /* UserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0085706E1650341D003861DB /* UserModel.xcdatamodeld */; };
+		008570731650341D003861DB /* UserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0085706E1650341D003861DB /* UserModel.xcdatamodeld */; };
+		0085707616509112003861DB /* VSListRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 0085707516509112003861DB /* VSListRecord.m */; };
+		0085707716509112003861DB /* VSListRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 0085707516509112003861DB /* VSListRecord.m */; };
+		0085707816509112003861DB /* VSListRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 0085707516509112003861DB /* VSListRecord.m */; };
+		0085707916509112003861DB /* VSListRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 0085707516509112003861DB /* VSListRecord.m */; };
 		008D5DAB161810160046240B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 008D5DAA161810160046240B /* Reachability.m */; };
 		008D5DAC161810160046240B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 008D5DAA161810160046240B /* Reachability.m */; };
 		008D5DAD161810160046240B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 008D5DAA161810160046240B /* Reachability.m */; };
@@ -586,10 +606,15 @@
 		000E585115E40C9900B7AB04 /* TimeLineCellDark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TimeLineCellDark@2x.png"; path = "Resources/Img/TimeLineCellDark@2x.png"; sourceTree = "<group>"; };
 		000E585215E40C9900B7AB04 /* TimeLineCellLight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TimeLineCellLight@2x.png"; path = "Resources/Img/TimeLineCellLight@2x.png"; sourceTree = "<group>"; };
 		000E585315E40C9900B7AB04 /* Unit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Unit@2x.png"; path = "Resources/Img/Unit@2x.png"; sourceTree = "<group>"; };
+		000FEA521650B99E00644B63 /* VSAppRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSAppRecord.h; path = Model/User/VSAppRecord.h; sourceTree = "<group>"; };
+		000FEA531650B99E00644B63 /* VSAppRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSAppRecord.m; path = Model/User/VSAppRecord.m; sourceTree = "<group>"; };
+		000FEA581650BA3A00644B63 /* VSListVocabularyRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSListVocabularyRecord.h; path = Model/User/VSListVocabularyRecord.h; sourceTree = "<group>"; };
+		000FEA591650BA3A00644B63 /* VSListVocabularyRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSListVocabularyRecord.m; path = Model/User/VSListVocabularyRecord.m; sourceTree = "<group>"; };
+		000FEA5E1650BA7400644B63 /* VSVocabularyRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSVocabularyRecord.h; path = Model/User/VSVocabularyRecord.h; sourceTree = "<group>"; };
+		000FEA5F1650BA7400644B63 /* VSVocabularyRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSVocabularyRecord.m; path = Model/User/VSVocabularyRecord.m; sourceTree = "<group>"; };
 		0013FCA6162F0B1200E845E7 /* BookPromo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BookPromo@2x.png"; path = "Resources/Img/TRIAL/BookPromo@2x.png"; sourceTree = "<group>"; };
 		0013FCA9162F115F00E845E7 /* List-Bottom@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "List-Bottom@2x.png"; path = "Resources/Img/TRIAL/List-Bottom@2x.png"; sourceTree = "<group>"; };
 		00201E2F15CFBAD30089B8FA /* VocabularySishu GRE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VocabularySishu GRE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		00201E3215CFBF9C0089B8FA /* VocabularySishu.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = VocabularySishu.sqlite; path = Resources/Data/TOEFL/VocabularySishu.sqlite; sourceTree = "<group>"; };
 		002DBF8E1618AB6E00E788EA /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIAuthenticationDialog.h; path = Libs/ASIHTTPRequest/ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		002DBF8F1618AB6E00E788EA /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIAuthenticationDialog.m; path = Libs/ASIHTTPRequest/ASIAuthenticationDialog.m; sourceTree = "<group>"; };
 		002DBF901618AB6E00E788EA /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASICacheDelegate.h; path = Libs/ASIHTTPRequest/ASICacheDelegate.h; sourceTree = "<group>"; };
@@ -634,6 +659,7 @@
 		0046408C155916FA007E5FA9 /* VSHistoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSHistoryViewController.xib; path = ViewController/MainView/VSHistoryViewController.xib; sourceTree = "<group>"; };
 		0046408F15591DBD007E5FA9 /* VSUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSUtils.h; path = Utils/VSUtils.h; sourceTree = "<group>"; };
 		0046409015591DBD007E5FA9 /* VSUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSUtils.m; path = Utils/VSUtils.m; sourceTree = "<group>"; };
+		004EA5A3161AA8AA000E4B0E /* VocabularySishu.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = VocabularySishu.sqlite; path = Resources/Data/TOEFL/VocabularySishu.sqlite; sourceTree = "<group>"; };
 		00533E2C15F3DA81004777F1 /* GuidePage1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GuidePage1@2x.png"; path = "Resources/Img/GRE/GuidePage1@2x.png"; sourceTree = "<group>"; };
 		00533E2D15F3DA81004777F1 /* GuidePage2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GuidePage2@2x.png"; path = "Resources/Img/GRE/GuidePage2@2x.png"; sourceTree = "<group>"; };
 		00533E2E15F3DA81004777F1 /* GuidePage3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GuidePage3@2x.png"; path = "Resources/Img/GRE/GuidePage3@2x.png"; sourceTree = "<group>"; };
@@ -702,6 +728,9 @@
 		0081184F15BEFE220022B515 /* VSNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSNavigationBar.h; path = Generic/VSNavigationBar.h; sourceTree = "<group>"; };
 		0081185015BEFE220022B515 /* VSNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSNavigationBar.m; path = Generic/VSNavigationBar.m; sourceTree = "<group>"; };
 		00840AA7162D32920047DC7E /* ListBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ListBG@2x.png"; path = "Resources/Img/TOEFL/ListBG@2x.png"; sourceTree = "<group>"; };
+		0085706F1650341D003861DB /* UserModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserModel.xcdatamodel; sourceTree = "<group>"; };
+		0085707416509112003861DB /* VSListRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSListRecord.h; path = Model/User/VSListRecord.h; sourceTree = "<group>"; };
+		0085707516509112003861DB /* VSListRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSListRecord.m; path = Model/User/VSListRecord.m; sourceTree = "<group>"; };
 		0085A617164A3AC600D51762 /* VocabularySishu 1. 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "VocabularySishu 1. 2.xcdatamodel"; sourceTree = "<group>"; };
 		008D5DA9161810160046240B /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = Utils/Reachability.h; sourceTree = "<group>"; };
 		008D5DAA161810160046240B /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = Utils/Reachability.m; sourceTree = "<group>"; };
@@ -959,6 +988,21 @@
 			name = VocabularyView;
 			sourceTree = "<group>";
 		};
+		004EA59D161A9DA5000E4B0E /* User */ = {
+			isa = PBXGroup;
+			children = (
+				000FEA5E1650BA7400644B63 /* VSVocabularyRecord.h */,
+				000FEA5F1650BA7400644B63 /* VSVocabularyRecord.m */,
+				000FEA581650BA3A00644B63 /* VSListVocabularyRecord.h */,
+				000FEA591650BA3A00644B63 /* VSListVocabularyRecord.m */,
+				000FEA521650B99E00644B63 /* VSAppRecord.h */,
+				000FEA531650B99E00644B63 /* VSAppRecord.m */,
+				0085707416509112003861DB /* VSListRecord.h */,
+				0085707516509112003861DB /* VSListRecord.m */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
 		00533E2B15F3DA66004777F1 /* GRE */ = {
 			isa = PBXGroup;
 			children = (
@@ -1052,6 +1096,7 @@
 				00701E641553CC1700D30018 /* Model */,
 				00701E401553CBCE00D30018 /* VSAppDelegate.h */,
 				00701E411553CBCE00D30018 /* VSAppDelegate.m */,
+				0085706E1650341D003861DB /* UserModel.xcdatamodeld */,
 				00701E431553CBCE00D30018 /* VocabularySishu.xcdatamodeld */,
 				00701E381553CBCE00D30018 /* Supporting Files */,
 			);
@@ -1091,6 +1136,7 @@
 		00701E641553CC1700D30018 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				004EA59D161A9DA5000E4B0E /* User */,
 				00C4300215BBFD2E006FF95E /* VSVocabulary.h */,
 				00C4300015BBFC44006FF95E /* VSVocabulary.m */,
 				00A0072D156E3C4800D24418 /* VSWebsterMeaning.h */,
@@ -1304,7 +1350,7 @@
 		00BDE55415CF9B7C00BC205C /* TOEFL */ = {
 			isa = PBXGroup;
 			children = (
-				00201E3215CFBF9C0089B8FA /* VocabularySishu.sqlite */,
+				004EA5A3161AA8AA000E4B0E /* VocabularySishu.sqlite */,
 			);
 			name = TOEFL;
 			sourceTree = "<group>";
@@ -1753,7 +1799,6 @@
 				00533E4315F43672004777F1 /* GuidePage3@2x.png in Resources */,
 				006B4CE215E3638C00711C64 /* VSGuideViewController.xib in Resources */,
 				00BDE58915CF9B9400BC205C /* VSConfigurationViewController.xib in Resources */,
-				00201E3315CFBF9C0089B8FA /* VocabularySishu.sqlite in Resources */,
 				0044C15015D397630022154A /* VSMainViewController.xib in Resources */,
 				0044C15915D3B70F0022154A /* VSRepoListViewController.xib in Resources */,
 				006B4CE615E3F3B100711C64 /* Menu@2x.png in Resources */,
@@ -1813,6 +1858,7 @@
 				00627B1B162D209800086C35 /* iTunesArtwork.png in Resources */,
 				00CA9062164F62F600876164 /* iRate.bundle in Resources */,
 				00CA906F164F6AF800876164 /* settings.plist in Resources */,
+				004EA5A4161AA8AA000E4B0E /* VocabularySishu.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1942,6 +1988,11 @@
 				00763F2A1645A03200CF7216 /* VSCellStatus.m in Sources */,
 				00EEF2601648F4ED00BAEAC0 /* FDCurlViewControl.m in Sources */,
 				00CA9067164F62F600876164 /* iRate.m in Sources */,
+				008570721650341D003861DB /* UserModel.xcdatamodeld in Sources */,
+				0085707816509112003861DB /* VSListRecord.m in Sources */,
+				000FEA561650B99E00644B63 /* VSAppRecord.m in Sources */,
+				000FEA5C1650BA3A00644B63 /* VSListVocabularyRecord.m in Sources */,
+				000FEA621650BA7400644B63 /* VSVocabularyRecord.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2000,6 +2051,11 @@
 				00763F281645A03200CF7216 /* VSCellStatus.m in Sources */,
 				00EEF25E1648F4ED00BAEAC0 /* FDCurlViewControl.m in Sources */,
 				00CA9065164F62F600876164 /* iRate.m in Sources */,
+				008570701650341D003861DB /* UserModel.xcdatamodeld in Sources */,
+				0085707616509112003861DB /* VSListRecord.m in Sources */,
+				000FEA541650B99E00644B63 /* VSAppRecord.m in Sources */,
+				000FEA5A1650BA3A00644B63 /* VSListVocabularyRecord.m in Sources */,
+				000FEA601650BA7400644B63 /* VSVocabularyRecord.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2068,6 +2124,11 @@
 				00763F2B1645A03200CF7216 /* VSCellStatus.m in Sources */,
 				00EEF2611648F4ED00BAEAC0 /* FDCurlViewControl.m in Sources */,
 				00CA9068164F62F600876164 /* iRate.m in Sources */,
+				008570731650341D003861DB /* UserModel.xcdatamodeld in Sources */,
+				0085707916509112003861DB /* VSListRecord.m in Sources */,
+				000FEA571650B99E00644B63 /* VSAppRecord.m in Sources */,
+				000FEA5D1650BA3A00644B63 /* VSListVocabularyRecord.m in Sources */,
+				000FEA631650BA7400644B63 /* VSVocabularyRecord.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2126,6 +2187,11 @@
 				00763F291645A03200CF7216 /* VSCellStatus.m in Sources */,
 				00EEF25F1648F4ED00BAEAC0 /* FDCurlViewControl.m in Sources */,
 				00CA9066164F62F600876164 /* iRate.m in Sources */,
+				008570711650341D003861DB /* UserModel.xcdatamodeld in Sources */,
+				0085707716509112003861DB /* VSListRecord.m in Sources */,
+				000FEA551650B99E00644B63 /* VSAppRecord.m in Sources */,
+				000FEA5B1650BA3A00644B63 /* VSListVocabularyRecord.m in Sources */,
+				000FEA611650BA7400644B63 /* VSVocabularyRecord.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2571,6 +2637,16 @@
 			);
 			currentVersion = 0085A617164A3AC600D51762 /* VocabularySishu 1. 2.xcdatamodel */;
 			path = VocabularySishu.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		0085706E1650341D003861DB /* UserModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0085706F1650341D003861DB /* UserModel.xcdatamodel */,
+			);
+			currentVersion = 0085706F1650341D003861DB /* UserModel.xcdatamodel */;
+			path = UserModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

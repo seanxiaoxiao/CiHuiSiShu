@@ -32,4 +32,6 @@
 
 + (void)fixData;
 
++ (void)readWriteMigrate;
+
 @end

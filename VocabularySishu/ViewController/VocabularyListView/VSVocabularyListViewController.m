@@ -53,8 +53,6 @@
         self.title = [self.currentList titleName];
         self.clearingCount = 0;
         
-        NSLog(@"%@", self.currentList.finishPlanDate);
-
         NSArray *vocabularies = [self.currentList vocabulariesToRecite];
         self.vocabulariesToRecite = [NSMutableArray arrayWithArray:vocabularies];
         self.cellStatus = [[NSMutableDictionary alloc] init];

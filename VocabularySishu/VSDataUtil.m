@@ -7,6 +7,10 @@
 //
 
 #import "VSDataUtil.h"
+#import "VSListRecord.h"
+#import "VSListVocabularyRecord.h"
+#import "VSVocabularyRecord.h"
+#import "VSAppRecord.h"
 
 NSMutableDictionary *repoMap;
 NSMutableDictionary *vocabularyMap;
@@ -449,9 +453,40 @@ NSMutableDictionary *vocabularyMap;
             }
         }
     }
-    
-    
 }
 
++ (void)readWriteMigrate
+{
+    [VSDataUtil clearEntities:@"VSListRecord"];
+    [VSDataUtil clearEntities:@"VSVocabularyRecord"];
+    [VSDataUtil clearEntities:@"VSListVocabularyRecord"];
+    [VSDataUtil clearEntities:@"VSAppRecord"];
+    
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"VSList" inManagedObjectContext:[VSUtils currentMOContext]];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDescription];
+    NSError *error = nil;
+    NSSortDescriptor *sortOrderDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObjects:sortOrderDescriptor, nil];
+    NSArray *allList = [[[VSUtils currentMOContext] executeFetchRequest:request error:&error] sortedArrayUsingDescriptors:sortDescriptors];
+
+    for (VSList *list in allList) {
+        VSListRecord *listRecord = [NSEntityDescription insertNewObjectForEntityForName:@"VSListRecord" inManagedObjectContext:[VSUtils currentMOContext]];
+        [listRecord initWithVSList:list];
+        NSArray *listVocabularies = [list allVocabularies];
+        for (VSListVocabulary *listVocabulary in listVocabularies) {
+            VSVocabulary *vocabulary = listVocabulary.vocabulary;
+            VSVocabularyRecord *vocabularyRecord = [NSEntityDescription insertNewObjectForEntityForName:@"VSVocabularyRecord" inManagedObjectContext:[VSUtils currentMOContext]];
+            [vocabularyRecord initWithVocabulary:vocabulary];
+            VSListVocabularyRecord *listVocabularyRecord = [NSEntityDescription insertNewObjectForEntityForName:@"VSListVocabularyRecord" inManagedObjectContext:[VSUtils currentMOContext]];
+            [listVocabularyRecord initWithListVocabulary:listVocabulary];
+            listVocabularyRecord.vocabularyRecord = vocabularyRecord;
+            listVocabularyRecord.listRecord = listRecord;
+        }
+    }
+    VSAppRecord *appRecord = [NSEntityDescription insertNewObjectForEntityForName:@"VSAppRecord" inManagedObjectContext:[VSUtils currentMOContext]];
+    appRecord.migrated = [NSNumber numberWithBool:YES];
+    [VSUtils saveEntity];
+}
 
 @end
