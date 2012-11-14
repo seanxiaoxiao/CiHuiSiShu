@@ -296,8 +296,9 @@
             [draggedCell curlUp:point.x];
             if (![[NSUserDefaults standardUserDefaults] boolForKey:@"showDetailBubble"] ) {
                 detailBubble = [[TipsBubble alloc] initWithTips:@"更多信息，点击这里" width:145 popupFrom:tipsBubblePopupFromLowerRight];
-                detailBubble.center = CGPointMake(155, draggedCell.frame.origin.y - 20);
+                detailBubble.center = CGPointMake(155, draggedCell.frame.origin.y + 40);
                 [self.view addSubview:detailBubble];
+                [self.view bringSubviewToFront:detailBubble];
             }
         }
         else if (draggedCell.curlUp && !draggedCell.clearing && translation.x > 0) {

@@ -60,9 +60,6 @@
 		000E588915E40C9900B7AB04 /* InkNeck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583F15E40C9900B7AB04 /* InkNeck@2x.png */; };
 		000E588A15E40C9900B7AB04 /* ListBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584015E40C9900B7AB04 /* ListBG@2x.png */; };
 		000E588C15E40C9900B7AB04 /* ListBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584015E40C9900B7AB04 /* ListBG@2x.png */; };
-		000E588D15E40C9900B7AB04 /* Menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584115E40C9900B7AB04 /* Menu@2x.png */; };
-		000E588E15E40C9900B7AB04 /* Menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584115E40C9900B7AB04 /* Menu@2x.png */; };
-		000E588F15E40C9900B7AB04 /* Menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584115E40C9900B7AB04 /* Menu@2x.png */; };
 		000E589015E40C9900B7AB04 /* NavBackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584215E40C9900B7AB04 /* NavBackButton@2x.png */; };
 		000E589115E40C9900B7AB04 /* NavBackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584215E40C9900B7AB04 /* NavBackButton@2x.png */; };
 		000E589215E40C9900B7AB04 /* NavBackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584215E40C9900B7AB04 /* NavBackButton@2x.png */; };
@@ -84,9 +81,6 @@
 		000E58A215E40C9900B7AB04 /* ScoreBoardPopup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584815E40C9900B7AB04 /* ScoreBoardPopup@2x.png */; };
 		000E58A315E40C9900B7AB04 /* ScoreBoardPopup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584815E40C9900B7AB04 /* ScoreBoardPopup@2x.png */; };
 		000E58A415E40C9900B7AB04 /* ScoreBoardPopup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584815E40C9900B7AB04 /* ScoreBoardPopup@2x.png */; };
-		000E58A515E40C9900B7AB04 /* SeparatorDots@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584915E40C9900B7AB04 /* SeparatorDots@2x.png */; };
-		000E58A615E40C9900B7AB04 /* SeparatorDots@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584915E40C9900B7AB04 /* SeparatorDots@2x.png */; };
-		000E58A715E40C9900B7AB04 /* SeparatorDots@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584915E40C9900B7AB04 /* SeparatorDots@2x.png */; };
 		000E58A815E40C9900B7AB04 /* SeparatorLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584A15E40C9900B7AB04 /* SeparatorLine@2x.png */; };
 		000E58A915E40C9900B7AB04 /* SeparatorLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584A15E40C9900B7AB04 /* SeparatorLine@2x.png */; };
 		000E58AA15E40C9900B7AB04 /* SeparatorLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584A15E40C9900B7AB04 /* SeparatorLine@2x.png */; };
@@ -414,7 +408,6 @@
 		00B250501628E19200311E52 /* InkHeader@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583E15E40C9900B7AB04 /* InkHeader@2x.png */; };
 		00B250511628E19200311E52 /* InkNeck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583F15E40C9900B7AB04 /* InkNeck@2x.png */; };
 		00B250521628E19200311E52 /* ListBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584015E40C9900B7AB04 /* ListBG@2x.png */; };
-		00B250531628E19200311E52 /* Menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584115E40C9900B7AB04 /* Menu@2x.png */; };
 		00B250541628E19200311E52 /* NavBackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584215E40C9900B7AB04 /* NavBackButton@2x.png */; };
 		00B250551628E19200311E52 /* Navigation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584315E40C9900B7AB04 /* Navigation@2x.png */; };
 		00B250561628E19200311E52 /* Next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584415E40C9900B7AB04 /* Next@2x.png */; };
@@ -422,7 +415,6 @@
 		00B250581628E19200311E52 /* PenFG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584615E40C9900B7AB04 /* PenFG@2x.png */; };
 		00B250591628E19200311E52 /* ScoreBoardButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584715E40C9900B7AB04 /* ScoreBoardButton@2x.png */; };
 		00B2505A1628E19200311E52 /* ScoreBoardPopup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584815E40C9900B7AB04 /* ScoreBoardPopup@2x.png */; };
-		00B2505B1628E19200311E52 /* SeparatorDots@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584915E40C9900B7AB04 /* SeparatorDots@2x.png */; };
 		00B2505C1628E19200311E52 /* SeparatorLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584A15E40C9900B7AB04 /* SeparatorLine@2x.png */; };
 		00B2505D1628E19200311E52 /* Star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584B15E40C9900B7AB04 /* Star@2x.png */; };
 		00B2505E1628E19200311E52 /* StarNone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584C15E40C9900B7AB04 /* StarNone@2x.png */; };
@@ -1479,7 +1471,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = VS;
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = douban;
 			};
 			buildConfigurationList = 00701E251553CBCE00D30018 /* Build configuration list for PBXProject "VocabularySishu" */;
@@ -1556,7 +1548,6 @@
 				000E588615E40C9900B7AB04 /* InkHeader@2x.png in Resources */,
 				000E588915E40C9900B7AB04 /* InkNeck@2x.png in Resources */,
 				000E588C15E40C9900B7AB04 /* ListBG@2x.png in Resources */,
-				000E588F15E40C9900B7AB04 /* Menu@2x.png in Resources */,
 				000E589215E40C9900B7AB04 /* NavBackButton@2x.png in Resources */,
 				000E589515E40C9900B7AB04 /* Navigation@2x.png in Resources */,
 				000E589815E40C9900B7AB04 /* Next@2x.png in Resources */,
@@ -1564,7 +1555,6 @@
 				000E589E15E40C9900B7AB04 /* PenFG@2x.png in Resources */,
 				000E58A115E40C9900B7AB04 /* ScoreBoardButton@2x.png in Resources */,
 				000E58A415E40C9900B7AB04 /* ScoreBoardPopup@2x.png in Resources */,
-				000E58A715E40C9900B7AB04 /* SeparatorDots@2x.png in Resources */,
 				000E58AA15E40C9900B7AB04 /* SeparatorLine@2x.png in Resources */,
 				000E58AD15E40C9900B7AB04 /* Star@2x.png in Resources */,
 				000E58B015E40C9900B7AB04 /* StarNone@2x.png in Resources */,
@@ -1631,7 +1621,6 @@
 				000E588415E40C9900B7AB04 /* InkHeader@2x.png in Resources */,
 				000E588715E40C9900B7AB04 /* InkNeck@2x.png in Resources */,
 				000E588A15E40C9900B7AB04 /* ListBG@2x.png in Resources */,
-				000E588D15E40C9900B7AB04 /* Menu@2x.png in Resources */,
 				000E589015E40C9900B7AB04 /* NavBackButton@2x.png in Resources */,
 				000E589315E40C9900B7AB04 /* Navigation@2x.png in Resources */,
 				000E589615E40C9900B7AB04 /* Next@2x.png in Resources */,
@@ -1639,7 +1628,6 @@
 				000E589C15E40C9900B7AB04 /* PenFG@2x.png in Resources */,
 				000E589F15E40C9900B7AB04 /* ScoreBoardButton@2x.png in Resources */,
 				000E58A215E40C9900B7AB04 /* ScoreBoardPopup@2x.png in Resources */,
-				000E58A515E40C9900B7AB04 /* SeparatorDots@2x.png in Resources */,
 				000E58A815E40C9900B7AB04 /* SeparatorLine@2x.png in Resources */,
 				000E58AB15E40C9900B7AB04 /* Star@2x.png in Resources */,
 				000E58AE15E40C9900B7AB04 /* StarNone@2x.png in Resources */,
@@ -1710,7 +1698,6 @@
 				00B250501628E19200311E52 /* InkHeader@2x.png in Resources */,
 				00B250511628E19200311E52 /* InkNeck@2x.png in Resources */,
 				00B250521628E19200311E52 /* ListBG@2x.png in Resources */,
-				00B250531628E19200311E52 /* Menu@2x.png in Resources */,
 				00B250541628E19200311E52 /* NavBackButton@2x.png in Resources */,
 				00B250551628E19200311E52 /* Navigation@2x.png in Resources */,
 				00B250561628E19200311E52 /* Next@2x.png in Resources */,
@@ -1718,7 +1705,6 @@
 				00B250581628E19200311E52 /* PenFG@2x.png in Resources */,
 				00B250591628E19200311E52 /* ScoreBoardButton@2x.png in Resources */,
 				00B2505A1628E19200311E52 /* ScoreBoardPopup@2x.png in Resources */,
-				00B2505B1628E19200311E52 /* SeparatorDots@2x.png in Resources */,
 				00B2505C1628E19200311E52 /* SeparatorLine@2x.png in Resources */,
 				00B2505D1628E19200311E52 /* Star@2x.png in Resources */,
 				00B2505E1628E19200311E52 /* StarNone@2x.png in Resources */,
@@ -1788,7 +1774,6 @@
 				000E588215E40C9900B7AB04 /* InkFooter@2x.png in Resources */,
 				000E588515E40C9900B7AB04 /* InkHeader@2x.png in Resources */,
 				000E588815E40C9900B7AB04 /* InkNeck@2x.png in Resources */,
-				000E588E15E40C9900B7AB04 /* Menu@2x.png in Resources */,
 				000E589115E40C9900B7AB04 /* NavBackButton@2x.png in Resources */,
 				000E589415E40C9900B7AB04 /* Navigation@2x.png in Resources */,
 				000E589715E40C9900B7AB04 /* Next@2x.png in Resources */,
@@ -1797,7 +1782,6 @@
 				000E589D15E40C9900B7AB04 /* PenFG@2x.png in Resources */,
 				000E58A015E40C9900B7AB04 /* ScoreBoardButton@2x.png in Resources */,
 				000E58A315E40C9900B7AB04 /* ScoreBoardPopup@2x.png in Resources */,
-				000E58A615E40C9900B7AB04 /* SeparatorDots@2x.png in Resources */,
 				000E58A915E40C9900B7AB04 /* SeparatorLine@2x.png in Resources */,
 				000E58AC15E40C9900B7AB04 /* Star@2x.png in Resources */,
 				000E58AF15E40C9900B7AB04 /* StarNone@2x.png in Resources */,
@@ -2191,6 +2175,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "GRE=1";
+				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				LIBRARY_SEARCH_PATHS = (
@@ -2222,6 +2207,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "GRE=1";
+				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				LIBRARY_SEARCH_PATHS = (
@@ -2303,6 +2289,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				LIBRARY_SEARCH_PATHS = (
@@ -2333,6 +2320,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				LIBRARY_SEARCH_PATHS = (
@@ -2400,6 +2388,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "TRIAL=1";
+				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/VocabularySishu/VocabularySishu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				LIBRARY_SEARCH_PATHS = (
@@ -2431,6 +2420,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "TRIAL=1";
+				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/VocabularySishu/VocabularySishu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				LIBRARY_SEARCH_PATHS = (
@@ -2462,6 +2452,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "TOEFL=1";
+				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				LIBRARY_SEARCH_PATHS = (
@@ -2494,6 +2485,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "TOEFL=1";
+				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				LIBRARY_SEARCH_PATHS = (
