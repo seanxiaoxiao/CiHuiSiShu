@@ -233,12 +233,18 @@
 
 - (NSArray *)vocabulariesToRecite
 {
+    NSError *error = nil;
     NSMutableArray *results = nil;
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(lastStatus!=1)"];
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"VSListVocabulary" inManagedObjectContext:[VSUtils currentMOContext]];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(list = %@ AND lastStatus != 1)", self];
+    [request setPredicate:predicate];
+    [request setRelationshipKeyPathsForPrefetching:[NSArray arrayWithObject:@"vocabulary"]];
+    [request setEntity:entityDescription];
     NSSortDescriptor *sortOrderDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
     NSSortDescriptor *sortStatusDescriptor = [[NSSortDescriptor alloc] initWithKey:@"lastStatus" ascending:YES];
     NSArray *sortDescriptors = [NSArray arrayWithObjects:sortOrderDescriptor, sortStatusDescriptor, nil];
-    results = [NSMutableArray arrayWithArray:[[self.listVocabularies filteredSetUsingPredicate:predicate] sortedArrayUsingDescriptors:sortDescriptors]];
+    results = [NSMutableArray arrayWithArray:[[[VSUtils currentMOContext] executeFetchRequest:request error:&error]sortedArrayUsingDescriptors:sortDescriptors]];
     [results shuffle];
     return results;
 }

@@ -139,7 +139,6 @@
 // If the context doesn't already exist, it is created and bound to the persistent store coordinator for the application.
 - (NSManagedObjectContext *)managedObjectContext
 {
-    NSLog(@"Managed Object Context");
     if (__managedObjectContext != nil) {
         return __managedObjectContext;
     }
@@ -156,7 +155,6 @@
 // If the model doesn't already exist, it is created from the application's model.
 - (NSManagedObjectModel *)managedObjectModel
 {
-        NSLog(@"Managed Object Model");
     if (__managedObjectModel != nil) {
         return __managedObjectModel;
     }

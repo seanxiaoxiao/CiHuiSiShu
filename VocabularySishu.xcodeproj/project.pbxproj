@@ -1876,7 +1876,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "./Crashlytics.framework/run 89e2516487b822e3169f0a4c5a8d24c6aebea788";
+			shellScript = "./Crashlytics.framework/run 89e2516487b822e3169f0a4c5a8d24c6aebea788 ";
 		};
 		00701E491553CBCE00D30018 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;

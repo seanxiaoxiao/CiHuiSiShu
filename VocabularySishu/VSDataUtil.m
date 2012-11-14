@@ -464,12 +464,13 @@ NSMutableDictionary *vocabularyMap;
     
     NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"VSList" inManagedObjectContext:[VSUtils currentMOContext]];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setRelationshipKeyPathsForPrefetching:[NSArray arrayWithObjects:@"listVocabularies", @"listVocabularies.vocabulary", nil]];
     [request setEntity:entityDescription];
     NSError *error = nil;
     NSSortDescriptor *sortOrderDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
     NSArray *sortDescriptors = [NSArray arrayWithObjects:sortOrderDescriptor, nil];
     NSArray *allList = [[[VSUtils currentMOContext] executeFetchRequest:request error:&error] sortedArrayUsingDescriptors:sortDescriptors];
-
+    
     for (VSList *list in allList) {
         VSListRecord *listRecord = [NSEntityDescription insertNewObjectForEntityForName:@"VSListRecord" inManagedObjectContext:[VSUtils currentMOContext]];
         [listRecord initWithVSList:list];
