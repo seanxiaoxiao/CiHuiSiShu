@@ -348,6 +348,7 @@
     self.clearContainer.frame = CGRectMake(0, 0, 0, VOCAVULARY_CELL_HEIGHT);
     if (self.curlUp) {
         self.summaryContainerView.frame = CGRectMake(0, 0, 320, VOCAVULARY_CELL_HEIGHT);
+        self.cellAccessoryImage.hidden = NO;
         [self dragSummary:-180];
     }
     else {

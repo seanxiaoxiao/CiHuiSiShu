@@ -203,12 +203,24 @@
 - (double)finishProgress
 {
     int rememberedCount = 0;
-    for (VSListVocabulary *listVocabulay in self.listVocabularies) {
+    for (VSListVocabulary *listVocabulay in [self allListVocabularies]) {
         if ([listVocabulay.lastStatus isEqualToNumber:[VSConstant VOCABULARY_LIST_STATUS_REMEMBERED]]) {
             rememberedCount++;
         }
     }
     return (double)(rememberedCount) / (double)([self.listVocabularies count]);
+}
+
+- (NSArray *)allListVocabularies
+{
+    NSError *error = nil;
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"VSListVocabulary" inManagedObjectContext:[VSUtils currentMOContext]];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(list = %@)", self];
+    [request setPredicate:predicate];
+    [request setEntity:entityDescription];
+    return [[VSUtils currentMOContext] executeFetchRequest:request error:&error];
+ 
 }
 
 - (void)process
