@@ -8,7 +8,6 @@
 
 #import "VSAppDelegate.h"
 #import "VSNavigationBar.h"
-#import <Crashlytics/Crashlytics.h>
 #import "MobClick.h"
 #import "iRate.h"
 
@@ -34,7 +33,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [Crashlytics startWithAPIKey:@"89e2516487b822e3169f0a4c5a8d24c6aebea788"];
     [VSUtils copySQLite];
 
     [MobClick startWithAppkey:[VSUtils getUMengKey]];
