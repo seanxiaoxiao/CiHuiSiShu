@@ -17,6 +17,7 @@
 @dynamic rememberCount;
 @dynamic round;
 @dynamic status;
+@dynamic type;
 
 - (void)initWithVSList:(VSList *)list
 {
@@ -26,6 +27,7 @@
     self.rememberCount = list.rememberCount;
     self.round = list.round;
     self.status = list.status;
+    self.type = list.type;
 }
 
 @end

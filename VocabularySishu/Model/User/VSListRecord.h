@@ -19,6 +19,7 @@
 @property (nonatomic, retain) NSNumber * rememberCount;
 @property (nonatomic, retain) NSNumber * round;
 @property (nonatomic, retain) NSNumber * status;
+@property (nonatomic, retain) NSNumber * type;
 
 - (void)initWithVSList: (VSList *)list;
 

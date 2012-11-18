@@ -10,6 +10,7 @@
         <attribute name="rememberCount" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="round" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="status" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
     </entity>
     <entity name="VSListVocabularyRecord" representedClassName="VSListVocabularyRecord" syncable="YES">
         <attribute name="lastRememberStatus" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -25,7 +26,7 @@
     </entity>
     <elements>
         <element name="VSAppRecord" positionX="160" positionY="192" width="128" height="60"/>
-        <element name="VSListRecord" positionX="160" positionY="192" width="128" height="135"/>
+        <element name="VSListRecord" positionX="160" positionY="192" width="128" height="150"/>
         <element name="VSListVocabularyRecord" positionX="160" positionY="192" width="128" height="120"/>
         <element name="VSVocabularyRecord" positionX="160" positionY="192" width="128" height="90"/>
     </elements>
