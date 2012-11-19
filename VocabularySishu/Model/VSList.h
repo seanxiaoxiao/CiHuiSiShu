@@ -23,7 +23,6 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * order;
 @property (nonatomic, retain) NSNumber * status;
-@property (nonatomic, retain) NSNumber * rememberCount;
 @property (nonatomic, retain) NSSet *listVocabularies;
 @property (nonatomic, retain) VSRepository *repository;
 @property (nonatomic, retain) NSDate * finishPlanDate;

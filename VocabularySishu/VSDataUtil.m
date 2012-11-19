@@ -429,17 +429,6 @@ NSMutableDictionary *vocabularyMap;
     }
 }
 
-+ (void)migrateData
-{
-    NSArray* repos = [VSRepository allRepos];
-    for (VSRepository *repo in repos) {
-        repo.wordsTotal = [NSNumber numberWithInt:[repo wordsInRepo]];
-        for (VSList *list in [repo lists]) {
-            list.rememberCount = [NSNumber numberWithInt:0];
-        }
-    }
-    [VSUtils saveEntity];
-}
 
 + (void)fixData
 {

@@ -27,7 +27,6 @@
     self.createdDate = list.createdDate;
     self.finishPlanDate = list.finishPlanDate;
     self.name = list.name;
-    self.rememberCount = list.rememberCount;
     self.round = list.round;
     self.status = list.status;
     self.type = list.type;
@@ -207,7 +206,7 @@
 
 - (double)rememberRate
 {
-    return [self.rememberCount doubleValue] / (double)([self.listVocabularies count]);
+    return 1 - [self notWellRate];
 }
 
 - (VSList *)getList

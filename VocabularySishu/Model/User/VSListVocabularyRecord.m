@@ -28,12 +28,8 @@
 
 - (void)remembered
 {
-    self.lastStatus = [VSConstant VOCABULARY_LIST_STATUS_REMEMBERED];
-    
+    self.lastStatus = [VSConstant VOCABULARY_LIST_STATUS_REMEMBERED];    
     self.lastRememberStatus = [self.vocabularyRecord rememberWell] ? [VSConstant REMEMBER_STATUS_GOOD] : [VSConstant REMEMBER_STATUS_BAD];
-    if ([self.lastRememberStatus isEqualToNumber:[VSConstant REMEMBER_STATUS_GOOD]]) {
-        self.listRecord.rememberCount = [NSNumber numberWithInt:([self.listRecord.rememberCount integerValue] + 1)];
-    }
     [VSUtils saveEntity];
 }
 

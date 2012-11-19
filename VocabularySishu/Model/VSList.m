@@ -22,7 +22,6 @@
 @dynamic repository;
 @dynamic status;
 @dynamic round;
-@dynamic rememberCount;
 @dynamic finishPlanDate;
 @synthesize listRecord;
 
@@ -31,31 +30,6 @@
 {
     return [VSListRecord createAndGetHistoryListRecord];
 }
-
-+ (VSList *)createAndGetShortTermReviewList
-{
-    VSList *shortTermList = [NSEntityDescription insertNewObjectForEntityForName:@"VSList" inManagedObjectContext:[VSUtils currentMOContext]];
-    shortTermList.order = [NSNumber numberWithInt:-1];
-    shortTermList.type = [VSConstant LIST_TYPE_SHORTTERM_REVIEW];
-    shortTermList.repository = nil;
-    shortTermList.createdDate = [VSUtils getNow];
-    shortTermList.status = [VSConstant LIST_STATUS_NEW];
-    [VSUtils saveEntity];
-    return shortTermList;
-}
-
-+ (VSList *)createAndGetLongTermReviewList
-{
-    VSList *longTermList = [NSEntityDescription insertNewObjectForEntityForName:@"VSList" inManagedObjectContext:[VSUtils currentMOContext]];
-    longTermList.order = [NSNumber numberWithInt:-1];
-    longTermList.type = [VSConstant LIST_TYPE_LONGTERM_REVIEW];
-    longTermList.repository = nil;
-    longTermList.createdDate = [VSUtils getNow];
-    longTermList.status = [VSConstant LIST_STATUS_NEW];
-    [VSUtils saveEntity];
-    return longTermList;    
-}
-
 
 + (VSList *)firstList
 {
