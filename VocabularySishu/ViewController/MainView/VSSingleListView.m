@@ -8,6 +8,7 @@
 
 #import "VSSingleListView.h"
 #import "MobClick.h"
+#import "VSListRecord.h"
 
 @implementation VSSingleListView
 
@@ -132,7 +133,7 @@
     if ([self.theList.repository isCategoryRepo]) {
         originX = 8;
     }
-    int starCount = [self.theList rememberRate] / 0.33;
+    int starCount = [self.theList.listRecord rememberRate] / 0.33;
     
     for (int i = 0; i < starCount; i++) {
         UIImageView *starImage = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"StarSmall"]];

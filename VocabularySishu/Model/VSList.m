@@ -10,6 +10,7 @@
 #import "VSListVocabulary.h"
 #import "VSRepository.h"
 #import "VSConstant.h"
+#import "VSListRecord.h"
 
 @implementation VSList
 
@@ -23,39 +24,12 @@
 @dynamic round;
 @dynamic rememberCount;
 @dynamic finishPlanDate;
+@synthesize listRecord;
 
 
-+ (VSList *)createAndGetHistoryList
++ (VSListRecord *)createAndGetHistoryList
 {
-    __autoreleasing NSError *error = nil;
-    NSEntityDescription *listDescription = [NSEntityDescription entityForName:@"VSList" inManagedObjectContext:[VSUtils currentMOContext]];
-    NSFetchRequest *listRequest = [[NSFetchRequest alloc] init];
-    [listRequest setEntity:listDescription];
-    NSDate *now = [VSUtils getNow];
-    NSPredicate *datePredicate = [NSPredicate predicateWithFormat:@"(createdDate >= %@ AND createdDate <= %@)", [NSDate dateWithTimeInterval:-24 * 60 * 60 sinceDate:now], now];
-    NSPredicate *isHistoryPredicate = [NSPredicate predicateWithFormat:@"(type = 1)"];
-    [listRequest setPredicate:isHistoryPredicate];
-    [listRequest setPredicate:datePredicate];
-    NSArray *results = [[VSUtils currentMOContext] executeFetchRequest:listRequest error:&error];
-    if ([results count] > 0) {
-        return [results objectAtIndex:0];
-    }
-    else {
-        NSDate *today = [VSUtils getToday];
-        VSList *listForToday = [NSEntityDescription insertNewObjectForEntityForName:@"VSList" inManagedObjectContext:[VSUtils currentMOContext]];
-        NSDate *rightNow = [[NSDate alloc] init];
-        NSCalendar *nowCalendar = [NSCalendar currentCalendar];
-        NSDateComponents *nowComponents = [nowCalendar components:(NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:rightNow];
-        listForToday.name = [NSString stringWithFormat:@"%d月%d日", [nowComponents month], [nowComponents day ]];
-        listForToday.order = [NSNumber numberWithInt:-1];
-        listForToday.type = [VSConstant LIST_TYPE_HISTORY];
-        listForToday.repository = nil;
-        listForToday.createdDate = today;
-        listForToday.status = [VSConstant LIST_STATUS_NEW];
-        listForToday.round = [NSNumber numberWithInt:0];
-        [VSUtils saveEntity];
-        return listForToday;
-    }
+    return [VSListRecord createAndGetHistoryListRecord];
 }
 
 + (VSList *)createAndGetShortTermReviewList
@@ -98,24 +72,7 @@
 
 + (NSArray *)lastestHistoryList
 {
-    __autoreleasing NSError *error = nil;
-    NSEntityDescription *listDescription = [NSEntityDescription entityForName:@"VSList" inManagedObjectContext:[VSUtils currentMOContext]];
-    NSFetchRequest *listRequest = [[NSFetchRequest alloc] init];
-    [listRequest setEntity:listDescription];
-    [listRequest setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"createdDate" ascending:NO]]];
-    NSPredicate *isHistoryPredicate = [NSPredicate predicateWithFormat:@"(type = 1)"];
-    [listRequest setPredicate:isHistoryPredicate];
-    NSArray *tempResult = [[VSUtils currentMOContext] executeFetchRequest:listRequest error:&error];
-    NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:[tempResult count]];
-    for (VSList *list in tempResult) {
-        if ([list.listVocabularies count] > 0) {
-            [result addObject:list];
-        }
-        if ([result count] == 4) {
-            break;
-        }
-    }
-    return result;
+    return [VSListRecord lastestHistoryList];
 }
 
 + (NSArray *)historyListBefore:(NSDate *)startAt
@@ -178,14 +135,6 @@
     }
 }
 
-+ (void)recitedVocabulary:(VSVocabulary *)vocabulary
-{
-    VSList *listForToday = [VSList createAndGetHistoryList];
-    if (![listForToday hasVocabulary:vocabulary]) {
-        [VSListVocabulary create:listForToday withVocabulary:vocabulary];
-    }
-}
-
 - (BOOL)hasVocabulary:(VSVocabulary *)theVocabulary
 {
     for (VSListVocabulary *listVocabualry in self.listVocabularies) {
@@ -196,77 +145,19 @@
     return NO;
 }
 
-- (BOOL)isHistoryList
-{
-    return [self.type intValue] == 1;
-}
-
-- (double)finishProgress
-{
-    int rememberedCount = 0;
-    for (VSListVocabulary *listVocabulay in self.listVocabularies) {
-        if ([listVocabulay.lastStatus isEqualToNumber:[VSConstant VOCABULARY_LIST_STATUS_REMEMBERED]]) {
-            rememberedCount++;
-        }
-    }
-    return (double)(rememberedCount) / (double)([self.listVocabularies count]);
-}
-
-- (void)process
-{
-    __autoreleasing NSError *error = nil;
-    self.status = [VSConstant LIST_STATUS_PROCESSING];
-    if (![[VSUtils currentMOContext] save:&error]) {
-        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-    }
-}
-
-- (void)finish
-{
-    __autoreleasing NSError *error = nil;
-    self.status = [VSConstant LIST_STATUS_FINISH];
-    self.round = [NSNumber numberWithInt:[self.round intValue] + 1];
-    if (![[VSUtils currentMOContext] save:&error]) {
-        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-    }
-}
-
-- (NSArray *)vocabulariesToRecite
-{
-    NSError *error = nil;
-    NSMutableArray *results = nil;
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"VSListVocabulary" inManagedObjectContext:[VSUtils currentMOContext]];
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(list = %@ AND lastStatus != 1)", self];
-    [request setPredicate:predicate];
-    [request setRelationshipKeyPathsForPrefetching:[NSArray arrayWithObject:@"vocabulary"]];
-    [request setEntity:entityDescription];
-    NSSortDescriptor *sortOrderDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
-    NSSortDescriptor *sortStatusDescriptor = [[NSSortDescriptor alloc] initWithKey:@"lastStatus" ascending:YES];
-    NSArray *sortDescriptors = [NSArray arrayWithObjects:sortOrderDescriptor, sortStatusDescriptor, nil];
-    results = [NSMutableArray arrayWithArray:[[[VSUtils currentMOContext] executeFetchRequest:request error:&error]sortedArrayUsingDescriptors:sortDescriptors]];
-    [results shuffle];
-    return results;
-}
 
 - (NSArray *)allVocabularies
 {
-    NSSortDescriptor *sortOrderDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
-    NSArray *sortDescriptors = [NSArray arrayWithObjects:sortOrderDescriptor, nil];
-    return [[self.listVocabularies allObjects] sortedArrayUsingDescriptors:sortDescriptors];
+    NSError *error = nil;
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"VSListVocabulary" inManagedObjectContext:[VSUtils currentMOContext]];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(list = %@)", self];
+    [request setPredicate:predicate];
+    [request setRelationshipKeyPathsForPrefetching:[NSArray arrayWithObject:@"vocabulary"]];
+    [request setEntity:entityDescription];
+    return [[VSUtils currentMOContext] executeFetchRequest:request error:&error];
 }
 
-- (void)addVocabulary:(VSVocabulary *)vocabulary
-{
-    for (VSListVocabulary *listVocabulary in self.listVocabularies) {
-        if ([VSUtils vocabularySame:vocabulary with:listVocabulary.vocabulary]) {
-            listVocabulary.lastRememberStatus = [vocabulary rememberWell] ? [VSConstant REMEMBER_STATUS_GOOD] : [VSConstant REMEMBER_STATUS_BAD];
-            [VSUtils saveEntity];
-            return;
-        }
-    }
-    [VSListVocabulary create:self withVocabulary:vocabulary];
-}
 
 - (VSList *)nextList
 {
@@ -292,29 +183,6 @@
     return [results count] > 0 ? [results objectAtIndex:0] : nil;
 }
 
-
-- (void)clearVocabularyStatus
-{
-    for (VSListVocabulary *listVocabualry in self.listVocabularies) {
-        listVocabualry.lastStatus = [VSConstant VOCABULARY_LIST_STATUS_NEW];
-        listVocabualry.lastRememberStatus = nil;
-    }
-    self.rememberCount = [NSNumber numberWithInt:0];
-    [VSUtils saveEntity];
-}
-
-- (BOOL)shortTermExpire
-{
-    NSDate *now = [VSUtils getNow];
-    return [[VSConstant LIST_TYPE_SHORTTERM_REVIEW] isEqualToNumber:self.type] && -[self.createdDate timeIntervalSinceDate:now] >= SHORTTERM_EXPIRE_INTERVAL;
-}
-
-- (BOOL)longTermExpire
-{
-    NSDate *now = [VSUtils getNow];
-    return [[VSConstant LIST_TYPE_LONGTERM_REVIEW] isEqualToNumber:self.type] && -[self.createdDate timeIntervalSinceDate:now] >= LONGTERM_EXPIRE_INTERVAL;
-}
-
 - (BOOL)isFirst
 {
     return [self.order intValue] == 1;
@@ -325,21 +193,6 @@
     return [self.order intValue] == [[self.repository lists] count];
 }
 
-- (double)notWellRate
-{
-    int notWellCount = 0;
-    for (VSListVocabulary *listVocabulay in self.listVocabularies) {
-        if (![listVocabulay.vocabulary rememberWell]) {
-            notWellCount++;
-        }
-    }
-    return [self.listVocabularies count] == 0 ? 0.0 : (double)(notWellCount) / (double)([self.listVocabularies count]);
-}
-
-- (double)rememberRate
-{
-    return [self.rememberCount doubleValue] / (double)([self.listVocabularies count]);
-}
 
 - (NSString *)displayName
 {
@@ -367,4 +220,19 @@
     }
 }
 
+- (void)initListRecord
+{
+    if (![self isHistoryList]) {
+        VSListRecord *record = [VSListRecord findByListName:self.name];
+        if (record == nil) {
+            record = [VSListRecord createdListRecord:self];
+        }
+        self.listRecord = record;
+    }
+}
+
+- (BOOL)isHistoryList
+{
+    return [self.type intValue] == 1;
+}
 @end

@@ -17,6 +17,9 @@
 #import "iRate.h"
 #import "VSCellStatus.h"
 #import "FDCurlViewControl.h"
+#import "VSListRecord.h"
+#import "VSListVocabularyRecord.h"
+#import "VSVocabularyRecord.h"
 
 @interface VSVocabularyListViewController ()
 
@@ -31,6 +34,7 @@
 @synthesize touchPoint;
 @synthesize draggedCell;
 @synthesize currentList;
+@synthesize currentListRecord;
 @synthesize scoreBoardView;
 @synthesize blockView;
 @synthesize exitButton;
@@ -45,22 +49,22 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        if (![currentList isHistoryList]) {
+        if (![currentListRecord isHistoryList]) {
             self.listToday = [VSList createAndGetHistoryList];
         }
-        [currentList process];
+        [currentListRecord process];
 
-        self.title = [self.currentList titleName];
+        self.title = [self getTitle];
         self.clearingCount = 0;
         
-        NSArray *vocabularies = [self.currentList vocabulariesToRecite];
+        NSArray *vocabularies = [self.currentListRecord vocabulariesToRecite];
         self.vocabulariesToRecite = [NSMutableArray arrayWithArray:vocabularies];
         self.cellStatus = [[NSMutableDictionary alloc] init];
         for (int i = 0; i < [self.vocabulariesToRecite count]; i++) {
-            VSListVocabulary *listVocabulary = [self.vocabulariesToRecite objectAtIndex:i];
+            VSListVocabularyRecord *listVocabulary = [self.vocabulariesToRecite objectAtIndex:i];
             VSCellStatus *status = [[VSCellStatus alloc] init];
             status.curlUp = NO;
-            [self.cellStatus setObject:status forKey:listVocabulary.vocabulary.spell];
+            [self.cellStatus setObject:status forKey:listVocabulary.vocabularyRecord.spell];
         }
 
         [self.navigationItem setLeftBarButtonItem:[VSUIUtils makeBackButton:self selector:@selector(backToMain)]];
@@ -101,7 +105,7 @@
     
     self.headerView = [[VSVocabularyListHeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
     [self.headerView setWordRemains:[vocabulariesToRecite count]];
-    [self.headerView updateProgress:[self.currentList finishProgress]];
+    [self.headerView updateProgress:[self.currentListRecord finishProgress]];
     [self.containerView addSubview:self.headerView];
     
     UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
@@ -178,7 +182,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     int vocabularyIndex = indexPath.row;
-    VSListVocabulary *listVocabulary = [vocabulariesToRecite objectAtIndex:vocabularyIndex];
+    VSListVocabularyRecord *listVocabularyRecord = [vocabulariesToRecite objectAtIndex:vocabularyIndex];
     NSString *CellIdentifier = @"VocabularyCell";
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
@@ -188,7 +192,7 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         ((VSVocabularyCell *)cell).statusDictionary = cellStatus;
     }
-    [((VSVocabularyCell *)cell) initWithVocabulary:listVocabulary.vocabulary];
+    [((VSVocabularyCell *)cell) initWithVocabulary:listVocabularyRecord.vocabularyRecord];
     [((VSVocabularyCell *)cell) resetStatus];
     return cell;
 }
@@ -200,7 +204,7 @@
     VSVocabularyCell* cell = (VSVocabularyCell *)[self.tableView cellForRowAtIndexPath:indexPath];
     if (cell.curlUp && scoreBoardView == nil) {
         [MobClick event:EVENT_ENTER_DETAIL];
-        VSVocabulary *selectedVocabulary = ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:indexPath.row]).vocabulary;
+        VSVocabulary *selectedVocabulary = [((VSListVocabularyRecord *)[self.vocabulariesToRecite objectAtIndex:indexPath.row]).vocabularyRecord getVocabulary];
         VSVocabularyViewController *detailViewController = [[VSVocabularyViewController alloc] initWithNibName:@"VSVocabularyViewController" bundle:nil];
         detailViewController.vocabulary = selectedVocabulary;
         [self.navigationController pushViewController:detailViewController animated:YES];
@@ -274,6 +278,7 @@
         VSVocabularyCell* cell = (VSVocabularyCell *)[self.tableView cellForRowAtIndexPath:indexPath];
         if(cell != nil) {
             draggedCell = cell;
+            [cell initBeforeCurlup];
         }
         CGPoint translation = [gestureRecognizer translationInView:draggedCell];
         if (!cell.curlUp && !draggedCell.curling && translation.x > 0 && !draggedCell.clearing) {
@@ -340,21 +345,21 @@
 {
     @synchronized(self) {
         int index = -1;
-        VSVocabulary *vocabulary = [notification.userInfo objectForKey:@"vocabulary"];
-        for (int i = 0 ; i < [self.vocabulariesToRecite count]; i++) {
-            VSListVocabulary *listVocabulary = [self.vocabulariesToRecite objectAtIndex:i];
-            if ([listVocabulary.vocabulary isEqual:vocabulary]) {
+        VSVocabularyRecord *vocabularyRecord = [notification.userInfo objectForKey:@"vocabulary"];
+        for (int i = 0; i < [self.vocabulariesToRecite count]; i++) {
+            VSListVocabularyRecord *listVocabulary = [self.vocabulariesToRecite objectAtIndex:i];
+            if ([listVocabulary.vocabularyRecord isEqual:vocabularyRecord]) {
                 index = i;
                 break;
             }
         }
-        VSListVocabulary *rememberedVocabulary = [vocabulariesToRecite objectAtIndex:index];
-        [rememberedVocabulary.vocabulary remembered];
+        VSListVocabularyRecord *rememberedVocabulary = [vocabulariesToRecite objectAtIndex:index];
+        [rememberedVocabulary.vocabularyRecord remembered];
         [rememberedVocabulary remembered];
-        if (![self.currentList isHistoryList]) {
-            [self.listToday addVocabulary:rememberedVocabulary.vocabulary];
+        if (![self.currentListRecord isHistoryList]) {
+            [self.listToday addVocabulary:rememberedVocabulary.vocabularyRecord];
         }
-        [self.headerView updateProgress:[self.currentList finishProgress]];
+        [self.headerView updateProgress:[self.currentListRecord finishProgress]];
         [self.headerView decrWordRemain];
         [vocabulariesToRecite removeObjectAtIndex:index];
         [self updateVocabularyTable:index];
@@ -374,7 +379,7 @@
 - (void)processAfterSwipe
 {
     if ([self.vocabulariesToRecite count] == 0) {
-        [self.currentList finish];
+        [self.currentListRecord finish];
         [self toggleScoreBoard];
 #ifndef TRIAL
         [[iRate sharedInstance] logEvent:NO];
@@ -412,7 +417,7 @@
     [applicationLoadViewIn setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn]];
     [[scoreBoardView layer] addAnimation:applicationLoadViewIn forKey:kCATransitionReveal];
     [self.view addSubview:scoreBoardView];
-    [scoreBoardView performSelector:@selector(initWithList:) withObject:self.currentList afterDelay:0.5f];
+    [scoreBoardView performSelector:@selector(initWithList:) withObject:self.currentListRecord afterDelay:0.5f];
     exitButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [exitButton addTarget:self action:@selector(hideScoreBoard) forControlEvents:UIControlEventTouchUpInside];
     [exitButton setTitle:@"" forState:UIControlStateNormal];
@@ -449,8 +454,8 @@
 - (void)doRestart
 {
     [MobClick event:EVENT_RETRY];
-    [self.currentList clearVocabularyStatus];
-    [VSUtils reloadCurrentList:self.currentList];
+    [self.currentListRecord clearVocabularyStatus];
+    [VSUtils reloadCurrentList:self.currentListRecord];
 }
 
 - (void)nextList
@@ -462,6 +467,16 @@
 {
     [MobClick event:EVENT_NEXT_LIST];
     [VSUtils toNextList:self.currentList];
+}
+
+- (NSString *)getTitle
+{
+    if (currentList != nil) {
+        return [currentList titleName];
+    }
+    else {
+        return currentListRecord.name;
+    }
 }
 
 #pragma mark - Bubble Dismiss

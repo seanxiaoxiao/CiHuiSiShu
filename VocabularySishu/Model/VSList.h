@@ -14,6 +14,7 @@
 #import "NSMutableArrayShuffling.h"
 
 @class VSListVocabulary, VSRepository, VSVocabulary;
+@class VSListRecord;
 
 @interface VSList : NSManagedObject
 
@@ -27,32 +28,17 @@
 @property (nonatomic, retain) VSRepository *repository;
 @property (nonatomic, retain) NSDate * finishPlanDate;
 @property (nonatomic, retain) NSNumber * round;
+@property (nonatomic, retain) VSListRecord * listRecord;
 
-+ (VSList *)createAndGetHistoryList;
++ (VSListRecord *)createAndGetHistoryList;
 
 + (NSArray *)lastestHistoryList;
 
 + (NSArray *)historyListBefore:(NSDate *)startAt;
 
-+ (VSList *)latestLongTermReviewList;
-
-+ (VSList *)latestShortTermReviewList;
-
-+ (VSList *)createAndGetShortTermReviewList;
-
-+ (VSList *)createAndGetLongTermReviewList;
-
-+ (void)recitedVocabulary:(VSVocabulary *)vocabulary;
-
 + (VSList *)firstList;
 
-- (double)finishProgress;
-
-- (NSArray *)vocabulariesToRecite;
-
 - (NSArray *)allVocabularies;
-
-- (void)addVocabulary:(VSVocabulary *)vocabulary;
 
 - (BOOL)isHistoryList;
 
@@ -60,27 +46,15 @@
 
 - (VSList *)previousList;
 
-- (void)process;
-
-- (void)finish;
-
-- (void)clearVocabularyStatus;
-
-- (BOOL)shortTermExpire;
-
-- (BOOL)longTermExpire;
-
 - (BOOL)isFirst;
 
 - (BOOL)isLast;
 
-- (double)notWellRate;
-
-- (double)rememberRate;
-
 - (NSString *)displayName;
 
 - (NSString *)titleName;
+
+- (void)initListRecord;
 
 @end
 

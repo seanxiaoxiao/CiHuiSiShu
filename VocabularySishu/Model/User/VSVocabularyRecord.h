@@ -17,6 +17,21 @@
 @property (nonatomic, retain) NSNumber * remember;
 @property (nonatomic, retain) NSString * spell;
 
+@property (nonatomic, retain) NSDate *seeSummaryStart;
+@property (nonatomic, assign) int seeSummaryTimes;
+
 - (void) initWithVocabulary:(VSVocabulary *)vocabulary;
+
+- (VSVocabulary *)getVocabulary;
+
+- (void)seeSummary;
+
+- (void)remembered;
+
+- (void)forgot;
+
+- (void)finishSummary;
+
+- (BOOL)rememberWell;
 
 @end

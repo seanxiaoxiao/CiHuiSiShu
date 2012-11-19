@@ -149,7 +149,6 @@
 		00201DF415CFBAD30089B8FA /* VSWebsterMeaning.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A0072E156E3C4800D24418 /* VSWebsterMeaning.m */; };
 		00201DF515CFBAD30089B8FA /* VSVocabularyListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A00731156F7FEE00D24418 /* VSVocabularyListHeaderView.m */; };
 		00201DF715CFBAD30089B8FA /* VSConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AE80EF158B1318000CE7EA /* VSConfigurationViewController.m */; };
-		00201DF815CFBAD30089B8FA /* VSReviewPlan.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A9E7AF15A08699009832BA /* VSReviewPlan.m */; };
 		00201DF915CFBAD30089B8FA /* NSMutableArrayShuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = 009A86FF15A1A82900F7869D /* NSMutableArrayShuffling.m */; };
 		00201DFC15CFBAD30089B8FA /* VSSummaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C42FE815BB096F006FF95E /* VSSummaryView.m */; };
 		00201DFD15CFBAD30089B8FA /* VSVocabulary.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4300015BBFC44006FF95E /* VSVocabulary.m */; };
@@ -344,8 +343,6 @@
 		00A4CF4B1643A44500A94ADD /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 008D5DAA161810160046240B /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		00A4CF4C1643A47300A94ADD /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002DBFBF1618B40500E788EA /* MobileCoreServices.framework */; };
 		00A4CF4D1643A4BF00A94ADD /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF941618AB6E00E788EA /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		00A9E7B015A08699009832BA /* VSReviewPlan.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A9E7AF15A08699009832BA /* VSReviewPlan.m */; };
-		00A9E7B115A08699009832BA /* VSReviewPlan.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A9E7AF15A08699009832BA /* VSReviewPlan.m */; };
 		00AC5E4B15E4BBFC00150402 /* PopupClose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AC5E4915E4BBFB00150402 /* PopupClose@2x.png */; };
 		00AC5E4C15E4BBFC00150402 /* PopupClose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AC5E4915E4BBFB00150402 /* PopupClose@2x.png */; };
 		00AC5E4D15E4BBFC00150402 /* PopupClose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AC5E4915E4BBFB00150402 /* PopupClose@2x.png */; };
@@ -378,7 +375,6 @@
 		00B250161628E19200311E52 /* VSWebsterMeaning.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A0072E156E3C4800D24418 /* VSWebsterMeaning.m */; };
 		00B250171628E19200311E52 /* VSVocabularyListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A00731156F7FEE00D24418 /* VSVocabularyListHeaderView.m */; };
 		00B250191628E19200311E52 /* VSConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AE80EF158B1318000CE7EA /* VSConfigurationViewController.m */; };
-		00B2501A1628E19200311E52 /* VSReviewPlan.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A9E7AF15A08699009832BA /* VSReviewPlan.m */; };
 		00B2501B1628E19200311E52 /* NSMutableArrayShuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = 009A86FF15A1A82900F7869D /* NSMutableArrayShuffling.m */; };
 		00B2501E1628E19200311E52 /* VSSummaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C42FE815BB096F006FF95E /* VSSummaryView.m */; };
 		00B2501F1628E19200311E52 /* VSVocabulary.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4300015BBFC44006FF95E /* VSVocabulary.m */; };
@@ -495,7 +491,6 @@
 		00BDE56D15CF9B9400BC205C /* VSWebsterMeaning.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A0072E156E3C4800D24418 /* VSWebsterMeaning.m */; };
 		00BDE56E15CF9B9400BC205C /* VSVocabularyListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A00731156F7FEE00D24418 /* VSVocabularyListHeaderView.m */; };
 		00BDE57015CF9B9400BC205C /* VSConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AE80EF158B1318000CE7EA /* VSConfigurationViewController.m */; };
-		00BDE57115CF9B9400BC205C /* VSReviewPlan.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A9E7AF15A08699009832BA /* VSReviewPlan.m */; };
 		00BDE57215CF9B9400BC205C /* NSMutableArrayShuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = 009A86FF15A1A82900F7869D /* NSMutableArrayShuffling.m */; };
 		00BDE57515CF9B9400BC205C /* VSSummaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C42FE815BB096F006FF95E /* VSSummaryView.m */; };
 		00BDE57615CF9B9400BC205C /* VSVocabulary.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4300015BBFC44006FF95E /* VSVocabulary.m */; };
@@ -760,8 +755,6 @@
 		00A00730156F7FEE00D24418 /* VSVocabularyListHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSVocabularyListHeaderView.h; path = ViewController/VocabularyListView/VSVocabularyListHeaderView.h; sourceTree = "<group>"; };
 		00A00731156F7FEE00D24418 /* VSVocabularyListHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSVocabularyListHeaderView.m; path = ViewController/VocabularyListView/VSVocabularyListHeaderView.m; sourceTree = "<group>"; };
 		00A1AFAC1586192400310669 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		00A9E7AE15A08699009832BA /* VSReviewPlan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSReviewPlan.h; path = Utils/VSReviewPlan.h; sourceTree = "<group>"; };
-		00A9E7AF15A08699009832BA /* VSReviewPlan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSReviewPlan.m; path = Utils/VSReviewPlan.m; sourceTree = "<group>"; };
 		00AC5E4915E4BBFB00150402 /* PopupClose@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "PopupClose@2x.png"; path = "Resources/Img/PopupClose@2x.png"; sourceTree = "<group>"; };
 		00AC5E4A15E4BBFB00150402 /* PopupCloseHighLighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "PopupCloseHighLighted@2x.png"; path = "Resources/Img/PopupCloseHighLighted@2x.png"; sourceTree = "<group>"; };
 		00AE80EE158B1318000CE7EA /* VSConfigurationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSConfigurationViewController.h; path = ViewController/ConfigurationView/VSConfigurationViewController.h; sourceTree = "<group>"; };
@@ -903,8 +896,6 @@
 			children = (
 				008D5DA9161810160046240B /* Reachability.h */,
 				008D5DAA161810160046240B /* Reachability.m */,
-				00A9E7AE15A08699009832BA /* VSReviewPlan.h */,
-				00A9E7AF15A08699009832BA /* VSReviewPlan.m */,
 				0046408F15591DBD007E5FA9 /* VSUtils.h */,
 				0046409015591DBD007E5FA9 /* VSUtils.m */,
 				0073A67715688F2800B80422 /* VSDataUtil.h */,
@@ -1961,7 +1952,6 @@
 				00201DF415CFBAD30089B8FA /* VSWebsterMeaning.m in Sources */,
 				00201DF515CFBAD30089B8FA /* VSVocabularyListHeaderView.m in Sources */,
 				00201DF715CFBAD30089B8FA /* VSConfigurationViewController.m in Sources */,
-				00201DF815CFBAD30089B8FA /* VSReviewPlan.m in Sources */,
 				00201DF915CFBAD30089B8FA /* NSMutableArrayShuffling.m in Sources */,
 				00201DFC15CFBAD30089B8FA /* VSSummaryView.m in Sources */,
 				00201DFD15CFBAD30089B8FA /* VSVocabulary.m in Sources */,
@@ -2024,7 +2014,6 @@
 				00A0072F156E3C4800D24418 /* VSWebsterMeaning.m in Sources */,
 				00A00732156F7FEF00D24418 /* VSVocabularyListHeaderView.m in Sources */,
 				00AE80F1158B1318000CE7EA /* VSConfigurationViewController.m in Sources */,
-				00A9E7B015A08699009832BA /* VSReviewPlan.m in Sources */,
 				009A870015A1A82900F7869D /* NSMutableArrayShuffling.m in Sources */,
 				00C42FE915BB096F006FF95E /* VSSummaryView.m in Sources */,
 				00C4300115BBFC44006FF95E /* VSVocabulary.m in Sources */,
@@ -2065,7 +2054,6 @@
 			files = (
 				00701E5B1553CBCE00D30018 /* VocabularySishuTests.m in Sources */,
 				0046409215591DBD007E5FA9 /* VSUtils.m in Sources */,
-				00A9E7B115A08699009832BA /* VSReviewPlan.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2098,7 +2086,6 @@
 				00B250161628E19200311E52 /* VSWebsterMeaning.m in Sources */,
 				00B250171628E19200311E52 /* VSVocabularyListHeaderView.m in Sources */,
 				00B250191628E19200311E52 /* VSConfigurationViewController.m in Sources */,
-				00B2501A1628E19200311E52 /* VSReviewPlan.m in Sources */,
 				00B2501B1628E19200311E52 /* NSMutableArrayShuffling.m in Sources */,
 				00B2501E1628E19200311E52 /* VSSummaryView.m in Sources */,
 				00B2501F1628E19200311E52 /* VSVocabulary.m in Sources */,
@@ -2161,7 +2148,6 @@
 				00BDE56D15CF9B9400BC205C /* VSWebsterMeaning.m in Sources */,
 				00BDE56E15CF9B9400BC205C /* VSVocabularyListHeaderView.m in Sources */,
 				00BDE57015CF9B9400BC205C /* VSConfigurationViewController.m in Sources */,
-				00BDE57115CF9B9400BC205C /* VSReviewPlan.m in Sources */,
 				00BDE57215CF9B9400BC205C /* NSMutableArrayShuffling.m in Sources */,
 				00BDE57515CF9B9400BC205C /* VSSummaryView.m in Sources */,
 				00BDE57615CF9B9400BC205C /* VSVocabulary.m in Sources */,

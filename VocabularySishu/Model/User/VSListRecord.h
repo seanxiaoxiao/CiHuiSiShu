@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
-
-@class VSList;
+#import "VSList.h"
+#import "VSVocabularyRecord.h"
 
 @interface VSListRecord : NSManagedObject
 
@@ -20,7 +20,36 @@
 @property (nonatomic, retain) NSNumber * round;
 @property (nonatomic, retain) NSNumber * status;
 @property (nonatomic, retain) NSNumber * type;
+@property (nonatomic, retain) NSSet * listVocabularies;
 
 - (void)initWithVSList: (VSList *)list;
+
+- (VSList *)getList;
+
++ (VSListRecord *)createAndGetHistoryListRecord;
+
++ (VSListRecord *)findByListName: (NSString *)listName;
+
++ (VSListRecord *)createdListRecord: (VSList *)list;
+
++ (NSArray *)lastestHistoryList;
+
+- (double)notWellRate;
+
+- (BOOL)isHistoryList;
+
+- (void)process;
+
+- (NSArray *)vocabulariesToRecite;
+
+- (double)finishProgress;
+
+- (void)finish;
+
+- (void)addVocabulary:(VSVocabularyRecord *)vocabulary;
+
+- (void)clearVocabularyStatus;
+
+- (double)rememberRate;
 
 @end

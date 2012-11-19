@@ -10,6 +10,7 @@
 #import "VSVocabularyListViewController.h"
 #import "MobClick.h"
 #import "VSConstant.h"
+#import "VSListRecord.h"
 
 @interface VSHistoryViewController ()
 
@@ -58,7 +59,6 @@
     
     CGRect tableFrame = self.historyTable.frame;
     self.historyTable.frame = CGRectMake(tableFrame.origin.x, tableFrame.origin.y + 50, tableFrame.size.width, tableFrame.size.height - 50);
-
 #endif
 }
 
@@ -82,7 +82,7 @@
     [infoButton addTarget:self action:@selector(toConfigurationView:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem* infoButtonItem = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
     [self.navigationItem setRightBarButtonItem:infoButtonItem];
-    
+
     if ([VSContext isFirstTime]) {
         [self.startButton setTitle:@"开始背诵" forState:UIControlStateNormal];
     }
@@ -106,7 +106,9 @@
     VSVocabularyListViewController *vocabularyListViewController = [VSVocabularyListViewController alloc];
     VSContext *context = [VSContext getContext];
     VSList *list = context.currentList;
+    [list initListRecord];
     vocabularyListViewController.currentList = list;
+    vocabularyListViewController.currentListRecord = list.listRecord;
     vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
     [self.navigationController pushViewController:vocabularyListViewController animated:YES];
 }
@@ -127,15 +129,14 @@
         [VSUtils openSeries];
         return;
     }
-    VSList *selectedList = [historyLists objectAtIndex:indexPath.row];
-    vocabularyListViewController.currentList = selectedList;
+    VSListRecord *selectedList = [historyLists objectAtIndex:indexPath.row];
+    vocabularyListViewController.currentListRecord = selectedList;
     vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
     [self.navigationController pushViewController:vocabularyListViewController animated:YES];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
     return 1;
 }
 
@@ -146,7 +147,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-
     return loading ? [self.historyLists count] + 1 : [self.historyLists count];
 }
 
@@ -155,7 +155,7 @@
     if (indexPath.row != [historyLists count]) {
         NSString *CellIdentifier = @"ListCell";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        VSList *list = [historyLists objectAtIndex:indexPath.row];
+        VSListRecord *list = [historyLists objectAtIndex:indexPath.row];
         if (cell == nil) {
             cell = [[VSHisotryListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         }

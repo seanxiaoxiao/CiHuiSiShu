@@ -26,4 +26,32 @@
     self.order = listVocabulary.order;
 }
 
+- (void)remembered
+{
+    self.lastStatus = [VSConstant VOCABULARY_LIST_STATUS_REMEMBERED];
+    
+    self.lastRememberStatus = [self.vocabularyRecord rememberWell] ? [VSConstant REMEMBER_STATUS_GOOD] : [VSConstant REMEMBER_STATUS_BAD];
+    if ([self.lastRememberStatus isEqualToNumber:[VSConstant REMEMBER_STATUS_GOOD]]) {
+        self.listRecord.rememberCount = [NSNumber numberWithInt:([self.listRecord.rememberCount integerValue] + 1)];
+    }
+    [VSUtils saveEntity];
+}
+
+
++ (void)create:(VSListRecord *)theList withVocabulary:(VSVocabularyRecord *)theVocabulary
+{
+    int newOrder = [theList.listVocabularies count];
+    VSListVocabularyRecord *newRecord = [NSEntityDescription insertNewObjectForEntityForName:@"VSListVocabularyRecord" inManagedObjectContext:[VSUtils currentMOContext]];
+    newRecord.lastStatus = [VSConstant VOCABULARY_LIST_STATUS_NEW];
+    newRecord.order = [NSNumber numberWithInt:newOrder];
+    newRecord.listRecord = theList;
+    newRecord.vocabularyRecord = theVocabulary;
+    if ([theList isHistoryList]) {
+        newRecord.lastRememberStatus = [theVocabulary rememberWell] ? [VSConstant REMEMBER_STATUS_GOOD] : [VSConstant REMEMBER_STATUS_BAD];
+    }
+    [VSUtils saveEntity];
+}
+
+
+
 @end

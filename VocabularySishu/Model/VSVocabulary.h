@@ -12,6 +12,7 @@
 
 @class VSMeaning;
 @class VSWebsterMeaning;
+@class VSVocabularyRecord;
 
 @interface VSVocabulary : NSManagedObject
 
@@ -25,29 +26,17 @@
 @property (nonatomic, retain) NSString * summary;
 @property (nonatomic, retain) NSSet *meanings;
 @property (nonatomic, retain) NSSet *websterMeanings;
-@property (nonatomic, retain) NSDate *seeSummaryStart;
 @property (nonatomic, retain) NSDate *lastSeeDate;
-@property (nonatomic, assign) int seeSummaryTimes;
-
-- (void)remembered;
-
-- (void)forgot;
-
-- (void)finishSummary;
-
-- (void)seeSummary;
 
 - (UIImage *)vocabularyImage;
-
-- (BOOL)rememberWell;
 
 - (NSArray *)orderedMeanings;
 
 - (NSArray *)orderedWMMeanings;
 
-+ (NSArray *)allVocabularies;
-
 - (NSURL *)audioURL;
+
+- (VSVocabularyRecord *)getVocabularyRecord;
 
 @end
 

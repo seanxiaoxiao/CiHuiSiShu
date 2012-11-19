@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/CAAnimation.h>
 #import <QuartzCore/CAMediaTimingFunction.h>
-#import "VSList.h"
+#import "VSListRecord.h"
 #import "VSUtils.h"
 
 @interface VSScoreBoardView : UIView
@@ -21,7 +21,7 @@
 @property (nonatomic, retain) UIButton *closeButton;
 @property (nonatomic, retain) UILabel *notWellLabel;
 @property (nonatomic, retain) UILabel *notWellRateLabel;
-@property (nonatomic, retain) VSList *_list;
+@property (nonatomic, retain) VSListRecord *_list;
 @property (nonatomic, assign) double notRememberWell;
 @property (nonatomic, assign) double notRememberWellStep;
 @property (nonatomic, assign) double notRememberWellInList;

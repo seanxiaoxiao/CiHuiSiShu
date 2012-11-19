@@ -24,8 +24,9 @@
 
 @property (nonatomic, retain) NSMutableArray *vocabulariesToRecite;
 @property (nonatomic, strong) VSVocabularyListHeaderView *headerView;
-@property (nonatomic, retain) VSList *listToday;
+@property (nonatomic, retain) VSListRecord *listToday;
 @property (nonatomic, retain) VSList *currentList;
+@property (nonatomic, retain) VSListRecord *currentListRecord;
 @property (nonatomic, strong) VSSummaryView *summaryView;
 @property (nonatomic, strong) VSVocabularyCell *draggedCell;
 @property (nonatomic, strong) VSScoreBoardView *scoreBoardView;
