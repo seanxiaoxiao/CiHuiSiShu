@@ -14,4 +14,6 @@
 
 @property (nonatomic, retain) NSNumber * migrated;
 
++ (VSAppRecord *)getAppRecord;
+
 @end

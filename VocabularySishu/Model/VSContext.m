@@ -42,7 +42,8 @@
             NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
         }
         return context;
-    }}
+    }
+}
 
 
 + (BOOL)isFirstTime

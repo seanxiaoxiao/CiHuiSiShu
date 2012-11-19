@@ -11,6 +11,7 @@
 #import <Crashlytics/Crashlytics.h>
 #import "MobClick.h"
 #import "iRate.h"
+#import "VSAppRecord.h"
 
 @implementation VSAppDelegate
 
@@ -37,7 +38,9 @@
     [Crashlytics startWithAPIKey:@"89e2516487b822e3169f0a4c5a8d24c6aebea788"];
     [VSUtils copySQLite];
     [MobClick startWithAppkey:[VSUtils getUMengKey]];
-    //[VSDataUtil readWriteMigrate];
+    if ([[VSAppRecord getAppRecord].migrated isEqualToNumber:[NSNumber numberWithBool:NO]]) {
+        [VSDataUtil readWriteMigrate];
+    }
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
