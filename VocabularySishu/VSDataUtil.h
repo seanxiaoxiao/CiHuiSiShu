@@ -28,8 +28,6 @@
 
 + (void)initFullMWMeanings;
 
-+ (void)migrateData;
-
 + (void)fixData;
 
 + (void)readWriteMigrate;

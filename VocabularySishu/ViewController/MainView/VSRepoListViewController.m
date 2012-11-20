@@ -150,6 +150,12 @@
     }
 }
 
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+}
+
 - (void)viewDidUnload
 {
     [super viewDidUnload];

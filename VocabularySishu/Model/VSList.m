@@ -209,4 +209,11 @@
 {
     return [self.type intValue] == 1;
 }
+
+- (VSListRecord *)getListRecord
+{
+    VSListRecord *record = [VSListRecord findByListName:self.name];
+    return record;
+}
+
 @end

@@ -55,6 +55,8 @@
 
 - (void)initListRecord;
 
+- (VSListRecord *)getListRecord;
+
 @end
 
 @interface VSList (CoreDataGeneratedAccessors)

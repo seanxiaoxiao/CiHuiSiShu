@@ -133,7 +133,20 @@
     if ([self.theList.repository isCategoryRepo]) {
         originX = 8;
     }
-    int starCount = [self.theList.listRecord rememberRate] / 0.33;
+    double rememberRate = [[self.theList getListRecord] rememberRate];
+    int starCount = 0;
+    if (rememberRate < 0.2) {
+        starCount = 0;
+    }
+    else if (rememberRate < 0.4) {
+        starCount = 1;
+    }
+    else if (rememberRate < 0.9) {
+        starCount = 2;
+    }
+    else {
+        starCount = 3;
+    }
     
     for (int i = 0; i < starCount; i++) {
         UIImageView *starImage = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"StarSmall"]];
