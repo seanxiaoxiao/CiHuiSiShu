@@ -119,7 +119,6 @@
     return NO;
 }
 
-
 - (NSArray *)allVocabularies
 {
     NSError *error = nil;
