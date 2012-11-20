@@ -187,7 +187,7 @@
 
 - (void) doCurlUp
 {
-    VSCellStatus *record = [self statusRecord];    
+    VSCellStatus *record = [self statusRecord];
     self.curling = YES;
     if (lastGestureX < 170) {
         lastGestureX = lastGestureX - 20;
@@ -375,7 +375,7 @@
 
 - (VSCellStatus *)statusRecord
 {
-    return [self.statusDictionary objectForKey:self._vocabulary.spell];
+    return [self.statusDictionary objectForKey:self.vocabularyRecord.spell];
 }
 
 @end
