@@ -145,7 +145,7 @@
     }
 }
 
-- (NSArray *)vocabulariesToRecite
+- (NSMutableArray *)vocabulariesToRecite
 {
     NSError *error = nil;
     NSMutableArray *results = nil;
@@ -176,8 +176,15 @@
     __autoreleasing NSError *error = nil;
     self.status = [VSConstant LIST_STATUS_FINISH];
     self.round = [NSNumber numberWithInt:[self.round intValue] + 1];
+    self.finishPlanDate = nil;
     if (![[VSUtils currentMOContext] save:&error]) {
         NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    }
+    NSArray *notifications = [[UIApplication sharedApplication] scheduledLocalNotifications];
+    for (UILocalNotification *notification in notifications) {
+        if ([[notification.userInfo objectForKey:@"ListRecordName"] isEqual:self.name]) {
+            [[UIApplication sharedApplication] cancelLocalNotification:notification];
+        }
     }
 }
 
@@ -224,5 +231,104 @@
     return nil;
 }
 
+- (void)setPlanFinishDate:(int)daysToFinish
+{
+    NSDate *now = [[NSDate alloc] init];
+    self.finishPlanDate = [now dateByAddingTimeInterval:daysToFinish * 24 * 60 * 60];
+    [VSUtils saveEntity];
+    for (int i = 0; i < daysToFinish; i++) {
+        [self scheduleNoonNotification:i];
+        [self scheduleNightNotification:i];
+    }
+}
+
+- (void)scheduleNoonNotification:(int)dayToFinish {
+    UILocalNotification *localNotif = [[UILocalNotification alloc] init];
+    if (localNotif == nil) {
+        return;
+    }
+    NSDate *now = [[NSDate alloc] init];
+    now = [now dateByAddingTimeInterval:dayToFinish * 24 * 60 * 60];
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSHourCalendarUnit fromDate:now];
+    int hour = [components hour];
+    if (hour >= 12) {
+        now = [now dateByAddingTimeInterval:24 * 60 * 60];
+    }
+    components = [[NSCalendar currentCalendar] components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:now];
+    int month = [components month];
+    int day = [components day];
+    int year = [components year];
+    
+    NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
+    NSDateComponents *dateComps = [[NSDateComponents alloc] init];
+    [dateComps setYear:year];
+    [dateComps setMonth:month];
+    [dateComps setDay:day];
+    [dateComps setHour:12];
+    [dateComps setMinute:0];
+    [dateComps setSecond:0];
+    NSDate *fireDate = [calendar dateFromComponents:dateComps];
+        
+    localNotif.fireDate = fireDate;
+    localNotif.timeZone = [NSTimeZone defaultTimeZone];
+    localNotif.alertBody = [NSString stringWithFormat:@"刚吃过午饭，我们继续把 %@ 中剩下的单词搞定吧！", self.name];
+    localNotif.applicationIconBadgeNumber = 1;
+
+    NSDictionary *infoDict = [NSDictionary dictionaryWithObject:self.name forKey:@"ListRecordName"];
+    localNotif.userInfo = infoDict;
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
+
+}
+
+- (void)scheduleNightNotification:(int)dayToFinish {
+    UILocalNotification *localNotif = [[UILocalNotification alloc] init];
+    if (localNotif == nil) {
+        return;
+    }
+    
+    NSDate *now = [[NSDate alloc] init];
+    now = [now dateByAddingTimeInterval:dayToFinish * 24 * 60 * 60];
+    
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSHourCalendarUnit fromDate:now];
+    
+    int hour = [components hour];
+    if (hour >= 21) {
+        now = [now dateByAddingTimeInterval:24 * 60 * 60];
+    }
+    components = [[NSCalendar currentCalendar] components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:now];
+    int month = [components month];
+    int day = [components day];
+    int year = [components year];
+    
+    NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
+    NSDateComponents *dateComps = [[NSDateComponents alloc] init];
+    [dateComps setYear:year];
+    [dateComps setMonth:month];
+    [dateComps setDay:day];
+    [dateComps setHour:21];
+    [dateComps setMinute:0];
+    [dateComps setSecond:0];
+    NSDate *fireDate = [calendar dateFromComponents:dateComps];
+    
+    localNotif.fireDate = fireDate;
+    localNotif.timeZone = [NSTimeZone defaultTimeZone];
+    localNotif.alertBody = [NSString stringWithFormat:@"睡觉前，%@ 中还有没背完的单词，刷掉几个吧！", self.name];
+    localNotif.applicationIconBadgeNumber = 1;
+    
+    NSDictionary *infoDict = [NSDictionary dictionaryWithObject:self.name forKey:@"ListRecordName"];
+    localNotif.userInfo = infoDict;
+    
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
+    
+}
+
+- (void)resetFinishPlanDate
+{
+    NSDate *now = [[NSDate alloc] init];
+    if ([now compare:self.finishPlanDate] == NSOrderedDescending) {
+        self.finishPlanDate = nil;
+        [VSUtils saveEntity];
+    }
+}
 
 @end

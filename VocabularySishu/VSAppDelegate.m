@@ -11,6 +11,7 @@
 #import "MobClick.h"
 #import "iRate.h"
 #import "VSAppRecord.h"
+#import "VSListRecord.h"
 
 @implementation VSAppDelegate
 
@@ -57,6 +58,19 @@
         return YES;
     }
     
+    UILocalNotification *localNotif = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
+    if (localNotif && [localNotif.userInfo valueForKey:@"ListRecordName"] != nil) {
+        NSString *name = [localNotif.userInfo objectForKey:@"ListRecordName"];
+        VSListRecord* listRecord = [VSListRecord findByListName:name];
+        application.applicationIconBadgeNumber -= 1;
+        VSVocabularyListViewController *vocabularyListViewController = [VSVocabularyListViewController alloc];
+        vocabularyListViewController.currentList = [listRecord getList];
+        vocabularyListViewController.currentListRecord = listRecord;
+        vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
+        [navigationController pushViewController:vocabularyListViewController animated:NO];
+        [application cancelLocalNotification:localNotif];
+    }
+    
     return YES;
 }
 
@@ -90,15 +104,7 @@
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
-    if (application.applicationState == UIApplicationStateActive) {
-        [application cancelLocalNotification:notification];
-        NSDate *now = [[NSDate alloc] init];
-        NSTimeInterval interval = NOTIFICATION_DENY;
-        notification.fireDate = [now dateByAddingTimeInterval:interval];
-        notification.timeZone = [NSTimeZone defaultTimeZone];
-        [[UIApplication sharedApplication] scheduleLocalNotification:notification];
-    }
-    else {
+    if (application.applicationState != UIApplicationStateActive) {
         [self handleNotification:application withNotification:notification];
     }
 }
@@ -107,13 +113,14 @@
 {
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     NSDictionary *data = notification.userInfo;
-    if ([data valueForKey:@"list_id"] != nil) {
+    if ([data valueForKey:@"ListRecordName"] != nil) {
+        NSString *name = [notification.userInfo objectForKey:@"ListRecordName"];
+        VSListRecord* listRecord = [VSListRecord findByListName:name];
+        application.applicationIconBadgeNumber -= 1;
         VSVocabularyListViewController *vocabularyListViewController = [VSVocabularyListViewController alloc];
-        NSURL *listId = [NSURL URLWithString:[data valueForKey:@"list_id"]];
-        NSManagedObjectID *managedObjectId = [[VSUtils currentMOContext].persistentStoreCoordinator managedObjectIDForURIRepresentation:listId];
-        vocabularyListViewController.currentList = (VSList *)[VSUtils get:managedObjectId];
+        vocabularyListViewController.currentList = [listRecord getList];
+        vocabularyListViewController.currentListRecord = listRecord;
         vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
-        [navigationController popToRootViewControllerAnimated:NO];
         [navigationController pushViewController:vocabularyListViewController animated:NO];
         [application cancelLocalNotification:notification];
     }

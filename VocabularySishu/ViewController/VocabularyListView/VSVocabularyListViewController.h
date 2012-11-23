@@ -17,9 +17,11 @@
 #import "TipsBubble.h"
 #import "FDCurlViewControl.h"
 
-@interface VSVocabularyListViewController : UIViewController<UIGestureRecognizerDelegate, FDCurlViewControlDelegate> {
+@interface VSVocabularyListViewController : UIViewController<UIGestureRecognizerDelegate, FDCurlViewControlDelegate, UIPickerViewDataSource, UIPickerViewDelegate> {
     IBOutlet UITableView *tableView;
     IBOutlet UIView *containerView;
+    IBOutlet UIButton *planFinishButton;
+    IBOutlet UILabel *planFinishLabel;
 }
 
 @property (nonatomic, retain) NSMutableArray *vocabulariesToRecite;
@@ -40,6 +42,10 @@
 @property (nonatomic, assign) int clearingCount;
 @property (nonatomic, strong) UIView *containerView;
 @property (nonatomic, retain) FDCurlViewControl *curlButton;
+@property (nonatomic, strong) UIButton *planFinishButton;
+@property (nonatomic, retain) NSArray *days;
+@property (nonatomic, retain) UIPickerView *pickerView;
+@property (nonatomic, strong) UILabel *planFinishLabel;
 
 - (IBAction)curlUp:(id)sender;
 

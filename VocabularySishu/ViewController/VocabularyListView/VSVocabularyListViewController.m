@@ -44,6 +44,10 @@
 @synthesize cellStatus;
 @synthesize containerView;
 @synthesize curlButton;
+@synthesize planFinishButton;
+@synthesize days;
+@synthesize pickerView;
+@synthesize planFinishLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -53,12 +57,12 @@
             self.listToday = [VSList createAndGetHistoryList];
         }
         [currentListRecord process];
+        [currentListRecord resetFinishPlanDate];
 
         self.title = [self getTitle];
         self.clearingCount = 0;
         
-        NSArray *vocabularies = [self.currentListRecord vocabulariesToRecite];
-        self.vocabulariesToRecite = [NSMutableArray arrayWithArray:vocabularies];
+        self.vocabulariesToRecite = [self.currentListRecord vocabulariesToRecite];;
         self.cellStatus = [[NSMutableDictionary alloc] init];
         for (int i = 0; i < [self.vocabulariesToRecite count]; i++) {
             VSListVocabularyRecord *listVocabulary = [self.vocabulariesToRecite objectAtIndex:i];
@@ -66,37 +70,72 @@
             status.curlUp = NO;
             [self.cellStatus setObject:status forKey:listVocabulary.vocabularyRecord.spell];
         }
+        
+        days = [[NSArray alloc] initWithObjects:@"1天内完成", @"2天内完成", @"3天内完成", nil];
 
         [self.navigationItem setLeftBarButtonItem:[VSUIUtils makeBackButton:self selector:@selector(backToMain)]];
-        UIView *rightView = [[UIView alloc] initWithFrame:CGRectMake(1, 0, 43, 44.01)];
-        rightView.backgroundColor = [UIColor clearColor];
-        UIImage *scoreBoardImage = [VSUtils fetchImg:@"ScoreBoardButton"];
-        CGRect scoreBoardFrame = CGRectMake(0, 0, scoreBoardImage.size.width, scoreBoardImage.size.height);
-        UIButton *scoreBoardButton = [[UIButton alloc] initWithFrame:scoreBoardFrame];
-        [scoreBoardButton setBackgroundImage:scoreBoardImage forState:UIControlStateNormal];
-        [scoreBoardButton addTarget:self action:@selector(toggleScoreBoard) forControlEvents:UIControlEventTouchUpInside];
-        [rightView addSubview:scoreBoardButton];
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightView];
-
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clearVocabulary:) name:CLEAR_VOCABULRY object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(restart) name:RESTART_LIST object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(nextList) name:NEXT_LIST object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideScoreBoard) name:CLOSE_POPUP object:nil];
-        
-        if (![[NSUserDefaults standardUserDefaults] boolForKey:@"showActionBubble"] ) {
-            vocabularyActionBubble = [[TipsBubble alloc] initWithTips:@"记住单词，向右划掉。\n忘记单词，左划查看意思" width:155 popupFrom:tipsBubblePopupFromLowerCenter];
-            vocabularyActionBubble.center = CGPointMake(160, 35);
-            [self.view addSubview:vocabularyActionBubble];
-        }
-        __autoreleasing UIGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanning:)];
-        panGesture.delegate = self;
-        [self.view addGestureRecognizer:panGesture];
+        [self initRightButton];
+        [self initNotifications];
+        [self initBubbles];
+        [self initGestures];
+        [self initPickerView];
+        [self drawPlanFinishLabel];
 
         if ([self.vocabulariesToRecite count] == 0) {
             [self toggleScoreBoard];
         }
+        
     }
     return self;
+}
+
+- (void) initRightButton
+{
+    UIView *rightView = [[UIView alloc] initWithFrame:CGRectMake(1, 0, 43, 44.01)];
+    rightView.backgroundColor = [UIColor clearColor];
+    UIImage *scoreBoardImage = [VSUtils fetchImg:@"ScoreBoardButton"];
+    CGRect scoreBoardFrame = CGRectMake(0, 0, scoreBoardImage.size.width, scoreBoardImage.size.height);
+    UIButton *scoreBoardButton = [[UIButton alloc] initWithFrame:scoreBoardFrame];
+    [scoreBoardButton setBackgroundImage:scoreBoardImage forState:UIControlStateNormal];
+    [scoreBoardButton addTarget:self action:@selector(toggleScoreBoard) forControlEvents:UIControlEventTouchUpInside];
+    [rightView addSubview:scoreBoardButton];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightView];
+}
+
+- (void) initNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clearVocabulary:) name:CLEAR_VOCABULRY object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(restart) name:RESTART_LIST object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(nextList) name:NEXT_LIST object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideScoreBoard) name:CLOSE_POPUP object:nil];
+}
+
+- (void) initBubbles
+{
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"showActionBubble"] ) {
+        vocabularyActionBubble = [[TipsBubble alloc] initWithTips:@"记住单词，向右划掉。\n忘记单词，左划查看意思" width:155 popupFrom:tipsBubblePopupFromLowerCenter];
+        vocabularyActionBubble.center = CGPointMake(160, 35);
+        [self.view addSubview:vocabularyActionBubble];
+    }
+}
+
+- (void) initGestures
+{
+    __autoreleasing UIGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanning:)];
+    panGesture.delegate = self;
+    [self.view addGestureRecognizer:panGesture];
+}
+
+- (void) initPickerView
+{
+    pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 296, 320, 120)];
+    pickerView.delegate = self;
+    pickerView.dataSource = self;
+    pickerView.backgroundColor = [UIColor clearColor];
+    pickerView.showsSelectionIndicator = YES;
+    pickerView.hidden = YES;
+    
+    [self.view addSubview:pickerView];
 }
 
 - (void)viewDidLoad
@@ -118,7 +157,7 @@
     [self.containerView addSubview:containerBackgroundImageView];
     [self.containerView sendSubviewToBack:containerBackgroundImageView];
     
-    //[self initCurlUp];
+    [self initCurlUp];
 }
 
 - (void) initCurlUp
@@ -128,6 +167,52 @@
 	[curlButton setHidesWhenAnimating:NO];
 	[curlButton setTargetView:self.containerView];
     [self.containerView addSubview:curlButton];
+    
+    UIImage *normalButtonImage = [VSUtils fetchImg:@"ButtonBT"];
+    UIImage *highlightButtonImage = [VSUtils fetchImg:@"ButtonBTHighLighted"];
+
+    [self.planFinishButton setBackgroundImage:normalButtonImage forState:UIControlStateNormal];
+    [self.planFinishButton setBackgroundImage:highlightButtonImage forState:UIControlStateHighlighted];
+    [self.planFinishButton setTitle:@"设置完成背诵时间" forState:UIControlStateNormal];
+    
+    [self.planFinishButton addTarget:self action:@selector(popupView) forControlEvents:UIControlEventTouchUpInside];
+    [self.planFinishButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    self.planFinishButton.titleLabel.font = [UIFont boldSystemFontOfSize:15];
+    self.planFinishButton.titleLabel.shadowOffset = CGSizeMake(0, -1);
+    self.planFinishButton.titleLabel.shadowColor = [UIColor blackColor];
+}
+
+- (void) drawPlanFinishLabel
+{
+    if (self.currentListRecord.finishPlanDate != nil) {
+        self.planFinishLabel.hidden = NO;
+        self.planFinishButton.hidden = YES;
+        NSDateComponents *components = [[NSCalendar currentCalendar] components:NSDayCalendarUnit | NSMonthCalendarUnit fromDate:self.currentListRecord.finishPlanDate];
+        int month = [components month];
+        int day = [components day];
+        self.planFinishLabel.text = [NSString stringWithFormat:@"计划背诵完成时间为%d月%d日\n加油吧同学！", month, day];
+    }
+    else {
+        [self.planFinishButton setTitle:@"设置完成背诵时间" forState:UIControlStateNormal];
+        self.planFinishButton.hidden = NO;
+        self.planFinishLabel.hidden = YES;
+    }
+}
+
+- (void) popupView
+{
+    if (self.pickerView.hidden) {
+        self.pickerView.hidden = NO;
+        [self.pickerView selectRow:0 inComponent:0 animated:YES];
+        [self.planFinishButton setTitle:@"就这个时间" forState:UIControlStateNormal];
+    }
+    else {
+        self.pickerView.hidden = YES;
+        int daysToFinish = [self.pickerView selectedRowInComponent:0] + 1;
+        [self.currentListRecord setPlanFinishDate:daysToFinish];
+        [self drawPlanFinishLabel];
+        [self.planFinishButton setTitle:@"设置完成背诵时间" forState:UIControlStateNormal];
+    }
 }
 
 - (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event {
@@ -135,6 +220,7 @@
 		CGPoint point = [touch locationInView:self.view];
 		if (point.y < round(CGRectGetHeight(self.view.frame)/2.0f)) {
 			[curlButton curlViewDown];
+            self.pickerView.hidden = YES;
 		}
 	}
 }
@@ -209,6 +295,32 @@
         detailViewController.vocabulary = selectedVocabulary;
         [self.navigationController pushViewController:detailViewController animated:YES];
     }
+}
+
+#pragma mark - Picker view delegate
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView;
+{
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component;
+{
+    return [days count];
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{    
+    return [days objectAtIndex:row];
+}
+
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
+{
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 37)];
+    label.text = [days objectAtIndex:row];
+    label.textAlignment = UITextAlignmentCenter;
+    label.backgroundColor = [UIColor clearColor];
+    label.font = [UIFont boldSystemFontOfSize:16];
+    return label;
 }
 
 #pragma mark - Navigation Related

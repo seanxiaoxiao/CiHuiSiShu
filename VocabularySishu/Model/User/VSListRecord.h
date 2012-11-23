@@ -40,7 +40,7 @@
 
 - (void)process;
 
-- (NSArray *)vocabulariesToRecite;
+- (NSMutableArray *)vocabulariesToRecite;
 
 - (double)finishProgress;
 
@@ -51,5 +51,9 @@
 - (void)clearVocabularyStatus;
 
 - (double)rememberRate;
+
+- (void)setPlanFinishDate:(int)daysToFinish;
+
+- (void)resetFinishPlanDate;
 
 @end
