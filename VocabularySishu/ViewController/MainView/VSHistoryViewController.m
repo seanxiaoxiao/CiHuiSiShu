@@ -35,7 +35,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    loading = NO;
+    self.loading = NO;
 
     activator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     activator.center = CGPointMake(160, 30);
@@ -58,15 +58,14 @@
     
     CGRect tableFrame = self.historyTable.frame;
     self.historyTable.frame = CGRectMake(tableFrame.origin.x, tableFrame.origin.y + 50, tableFrame.size.width, tableFrame.size.height - 50);
-
 #endif
+
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+
     self.historyTable = nil;
     self.startButton = nil;
 }
@@ -122,11 +121,6 @@
 {
     [MobClick event:EVENT_ENTER_HISTORY];
     VSVocabularyListViewController *vocabularyListViewController = [VSVocabularyListViewController alloc];
-    id obj = [historyLists objectAtIndex:indexPath.row];
-    if ([obj isKindOfClass:[NSString class]]) {
-        [VSUtils openSeries];
-        return;
-    }
     VSList *selectedList = [historyLists objectAtIndex:indexPath.row];
     vocabularyListViewController.currentList = selectedList;
     vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
@@ -135,7 +129,6 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
     return 1;
 }
 
@@ -146,7 +139,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-
     return loading ? [self.historyLists count] + 1 : [self.historyLists count];
 }
 
@@ -175,14 +167,27 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-	if ([scrollView contentOffset].y >= [scrollView contentSize].height - 130 && ![self.activator isAnimating]) {
+    CGPoint offset = scrollView.contentOffset;
+    CGRect bounds = scrollView.bounds;
+    CGSize size = scrollView.contentSize;
+    UIEdgeInsets inset = scrollView.contentInset;
+    float y = offset.y + bounds.size.height - inset.bottom;
+    float h = size.height;
+
+    float reload_distance = 50;
+    if (y > h + reload_distance && !self.loading) {
         self.loading = YES;
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[historyLists count] inSection:0];
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[self.historyLists count] inSection:0];
         NSArray *indexPaths = [[NSArray alloc] initWithObjects:indexPath, nil];
-        [self.historyTable insertRowsAtIndexPaths: indexPaths withRowAnimation:UITableViewRowAnimationBottom];
+        [self.historyTable beginUpdates];
+        [self.historyTable insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationBottom];
+        [self.historyTable endUpdates];
         [self.activator startAnimating];
-        [self performSelector:@selector(stopAnimatingFooter) withObject:nil afterDelay:0.5];
-	}
+
+        if (self.loading) {
+            [self performSelector:@selector(stopAnimatingFooter) withObject:nil afterDelay:0.5];
+        }
+    }
 }
 
 - (void) stopAnimatingFooter
@@ -190,11 +195,13 @@
     int indexStart = [historyLists count];
     [self.activator stopAnimating];
     self.loading = NO;
+    
+    [self addMoreList];
+    
     [self.historyTable beginUpdates];
     NSIndexPath *deleteIndexPath = [NSIndexPath indexPathForRow:indexStart inSection:0];
     NSArray *deleteIndexPaths = [[NSArray alloc] initWithObjects:deleteIndexPath, nil];
     [self.historyTable deleteRowsAtIndexPaths:deleteIndexPaths withRowAnimation:UITableViewRowAnimationBottom];
-    [self addMoreList];
     int indexEnd = [historyLists count];
     NSMutableArray *insertIndexPaths = [[NSMutableArray alloc] init];
     for (int i = 0; i < indexEnd - indexStart; i++) {
@@ -206,8 +213,10 @@
 
 - (void)addMoreList
 {
-    NSDate *lastCreatedDate = ((VSList *)[self.historyLists objectAtIndex:[self.historyLists count] - 1]).createdDate;
-    [self.historyLists addObjectsFromArray:[VSList historyListBefore:lastCreatedDate]];
+    if ([self.historyLists count] > 0) {
+        NSDate *lastCreatedDate = ((VSList *)[self.historyLists objectAtIndex:[self.historyLists count] - 1]).createdDate;
+        [self.historyLists addObjectsFromArray:[VSList historyListBefore:lastCreatedDate]];
+    }
 }
 
 - (void)reloadHistory
