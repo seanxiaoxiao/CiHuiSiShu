@@ -7,6 +7,10 @@
 //
 
 #import "VSDataUtil.h"
+#import "VSListRecord.h"
+#import "VSListVocabularyRecord.h"
+#import "VSVocabularyRecord.h"
+#import "VSAppRecord.h"
 
 NSMutableDictionary *repoMap;
 NSMutableDictionary *vocabularyMap;
@@ -425,17 +429,6 @@ NSMutableDictionary *vocabularyMap;
     }
 }
 
-+ (void)migrateData
-{
-    NSArray* repos = [VSRepository allRepos];
-    for (VSRepository *repo in repos) {
-        repo.wordsTotal = [NSNumber numberWithInt:[repo wordsInRepo]];
-        for (VSList *list in [repo lists]) {
-            list.rememberCount = [NSNumber numberWithInt:0];
-        }
-    }
-    [VSUtils saveEntity];
-}
 
 + (void)fixData
 {
@@ -449,9 +442,52 @@ NSMutableDictionary *vocabularyMap;
             }
         }
     }
-    
-    
 }
 
++ (void)readWriteMigrate
+{
+    NSDate *beforeDelete = [[NSDate alloc] init];
+
+    [VSDataUtil clearEntities:@"VSListRecord"];
+    [VSDataUtil clearEntities:@"VSVocabularyRecord"];
+    [VSDataUtil clearEntities:@"VSListVocabularyRecord"];
+    [VSDataUtil clearEntities:@"VSAppRecord"];
+    
+    NSDate *then = [[NSDate alloc] init];
+    NSLog(@"Delete time is: %f", [then timeIntervalSinceDate:beforeDelete]);
+    
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"VSList" inManagedObjectContext:[VSUtils currentMOContext]];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setRelationshipKeyPathsForPrefetching:[NSArray arrayWithObjects:@"listVocabularies", @"listVocabularies.vocabulary", nil]];
+    NSPredicate *isHistoryPredicate = [NSPredicate predicateWithFormat:@"(type = 1)"];
+    [request setPredicate:isHistoryPredicate];
+    [request setEntity:entityDescription];
+    NSError *error = nil;
+    NSArray *allList = [[VSUtils currentMOContext] executeFetchRequest:request error:&error];
+    
+    for (VSList *list in allList) {
+        if ([list isHistoryList]) {
+            VSListRecord *listRecord = [NSEntityDescription insertNewObjectForEntityForName:@"VSListRecord" inManagedObjectContext:[VSUtils currentMOContext]];
+            [listRecord initWithVSList:list];
+            NSArray *listVocabularies = [list allVocabularies];
+            for (VSListVocabulary *listVocabulary in listVocabularies) {
+                VSVocabulary *vocabulary = listVocabulary.vocabulary;
+                VSVocabularyRecord *vocabularyRecord = [NSEntityDescription insertNewObjectForEntityForName:@"VSVocabularyRecord" inManagedObjectContext:[VSUtils currentMOContext]];
+                [vocabularyRecord initWithVocabulary:vocabulary];
+                VSListVocabularyRecord *listVocabularyRecord = [NSEntityDescription insertNewObjectForEntityForName:@"VSListVocabularyRecord" inManagedObjectContext:[VSUtils currentMOContext]];
+                [listVocabularyRecord initWithListVocabulary:listVocabulary];
+                listVocabularyRecord.vocabularyRecord = vocabularyRecord;
+                listVocabularyRecord.listRecord = listRecord;
+            }
+        }
+    }
+    VSAppRecord *appRecord = [NSEntityDescription insertNewObjectForEntityForName:@"VSAppRecord" inManagedObjectContext:[VSUtils currentMOContext]];
+    appRecord.migrated = [NSNumber numberWithBool:YES];
+    NSDate *now = [[NSDate alloc] init];
+    NSLog(@"Process time is: %f", [now timeIntervalSinceDate:then]);
+    [VSUtils saveEntity];
+    NSDate *anotherNow = [[NSDate alloc] init];
+    NSLog(@"Saving time is: %f", [anotherNow timeIntervalSinceDate:now]);
+}
 
 @end

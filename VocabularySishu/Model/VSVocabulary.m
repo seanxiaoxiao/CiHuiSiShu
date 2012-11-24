@@ -23,55 +23,6 @@
 @dynamic summary;
 @dynamic audioLink;
 @dynamic lastSeeDate;
-@synthesize seeSummaryStart;
-@synthesize seeSummaryTimes;
-
-- (void)remembered
-{
-    double meet = [self.meet doubleValue];
-    double incr = 12 * pow(M_E, meet / (meet + 6));
-    self.remember = [NSNumber numberWithDouble:[self.remember doubleValue] + incr];
-    if ([self.remember doubleValue] > 100) {
-        self.remember = [NSNumber numberWithDouble:100];
-    }
-    self.meet = [NSNumber numberWithInt:[self.meet intValue] + 1];
-    [VSUtils saveEntity];
-}
-
-- (void)forgot
-{
-    double meet = [self.meet doubleValue];
-    double decr = 40 * pow(M_E, (-3 * meet) / (meet + 1) - 3 * self.seeSummaryTimes);
-    self.remember = [NSNumber numberWithDouble:[self.remember doubleValue] - decr];
-    if ([self.remember doubleValue] < 0) {
-        self.remember = [NSNumber numberWithDouble:0];
-    }
-    [VSUtils saveEntity];
-    self.seeSummaryTimes += 1;
-    self.seeSummaryStart = [[NSDate alloc] init];
-}
-
-- (void)finishSummary
-{
-    NSTimeInterval elapse = -[self.seeSummaryStart timeIntervalSinceNow];
-    double decr = 4 / self.seeSummaryTimes * pow(M_E, elapse / 10);
-    self.remember = [NSNumber numberWithDouble:[self.remember doubleValue] - decr];
-    if ([self.remember doubleValue] < 0) {
-        self.remember = [NSNumber numberWithDouble:0];
-    }
-    [VSUtils saveEntity];
-}
-
-- (void)seeSummary
-{
-    self.seeSummaryStart = [[NSDate alloc] init];
-}
-
-- (BOOL)rememberWell
-{
-    return [self.remember intValue] > 60;
-}
-
 
 - (UIImage *)vocabularyImage
 {
@@ -102,13 +53,17 @@
     return [NSURL URLWithString:urlString];
 }
 
-+ (NSArray *)allVocabularies
+- (VSVocabularyRecord *)getVocabularyRecord
 {
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"VSVocabulary" inManagedObjectContext:[VSUtils currentMOContext]];
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    [request setEntity:entityDescription];
     NSError *error = nil;
-    return [[VSUtils currentMOContext] executeFetchRequest:request error:&error];
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"VSVocabularyRecord" inManagedObjectContext:[VSUtils currentMOContext]];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(spell = %@)", self.spell];
+    [request setPredicate:predicate];
+    [request setEntity:entityDescription];
+    NSArray *results = [[VSUtils currentMOContext] executeFetchRequest:request error:&error];
+    return [results objectAtIndex:0];
 }
+
 
 @end

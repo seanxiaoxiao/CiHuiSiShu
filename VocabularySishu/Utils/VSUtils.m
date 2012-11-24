@@ -121,8 +121,10 @@
     if (list != nil) {
         [context fixCurrentList:list];
         [context fixRepository:list.repository];
+        [list initListRecord];
         VSVocabularyListViewController *vocabularyListViewController = [VSVocabularyListViewController alloc];
         vocabularyListViewController.currentList = list;
+        vocabularyListViewController.currentListRecord = list.listRecord;
         vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
 
         [navigationController pushViewController:vocabularyListViewController animated:YES];
@@ -135,11 +137,13 @@
     UINavigationController *navigationController = (UINavigationController *)window.rootViewController;
     
     VSList *nextList = [currentList nextList];
+    [nextList initListRecord];
     VSContext *context = [VSContext getContext];
     if (nextList != nil) {
         [context fixCurrentList:nextList];
         VSVocabularyListViewController *vocabularyListViewController = [VSVocabularyListViewController alloc];
         vocabularyListViewController.currentList = nextList;
+        vocabularyListViewController.currentListRecord = nextList.listRecord;
         vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
 
         [UIView beginAnimations:nil context:NULL];
@@ -162,11 +166,13 @@
     UINavigationController *navigationController = (UINavigationController *)window.rootViewController;
     
     VSList *nextList = [currentList previousList];
+    [nextList initListRecord];
     VSContext *context = [VSContext getContext];
     if (nextList != nil) {
         [context fixCurrentList:nextList];
         VSVocabularyListViewController *vocabularyListViewController = [VSVocabularyListViewController alloc];
         vocabularyListViewController.currentList = nextList;
+        vocabularyListViewController.currentListRecord = nextList.listRecord;
         vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
         
         [UIView beginAnimations:nil context:NULL];
@@ -183,14 +189,15 @@
     }
 }
 
-+ (void)reloadCurrentList:(VSList *)currentList
++ (void)reloadCurrentList:(VSListRecord *)currentListRecord
 {
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     UINavigationController *navigationController = (UINavigationController *)window.rootViewController;
     
-    if (currentList != nil) {
+    if (currentListRecord != nil) {
         VSVocabularyListViewController *vocabularyListViewController = [VSVocabularyListViewController alloc];
-        vocabularyListViewController.currentList = currentList;
+        vocabularyListViewController.currentList = [currentListRecord getList];
+        vocabularyListViewController.currentListRecord = currentListRecord;
         vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
         
         [UIView beginAnimations:nil context:NULL];

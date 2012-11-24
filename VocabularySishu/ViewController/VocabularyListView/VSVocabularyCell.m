@@ -112,11 +112,18 @@
 }
 
 
-- (void) initWithVocabulary:(VSVocabulary *)vocabulary
+- (void) initWithVocabulary:(VSVocabularyRecord *)vocabularyRecord
 {
-    self._vocabulary = vocabulary;
-    self.vocabularyLabel.text = self._vocabulary.spell;
-    self.summaryLabel.text = self._vocabulary.summary;
+    self.vocabularyRecord = vocabularyRecord;
+    self.vocabularyLabel.text = self.vocabularyRecord.spell;
+}
+
+- (void) initBeforeCurlup
+{
+    if (self._vocabulary == nil) {
+        self._vocabulary = [self.vocabularyRecord getVocabulary];
+        self.summaryLabel.text = self._vocabulary.summary;
+    }
 }
 
 - (void) clearVocabulry:(BOOL)clear
@@ -162,7 +169,7 @@
 {
     [MobClick event:EVENT_REMEMBER];
     NSMutableDictionary *orientationData = [[NSMutableDictionary alloc] init];
-    [orientationData setValue:self._vocabulary forKey:@"vocabulary"];
+    [orientationData setValue:self.vocabularyRecord forKey:@"vocabulary"];
     NSNotification *notification = [NSNotification notificationWithName:CLEAR_VOCABULRY object:nil userInfo:orientationData];
     [[NSNotificationCenter defaultCenter] postNotification:notification];
     self.clearing = NO;
@@ -180,7 +187,7 @@
 
 - (void) doCurlUp
 {
-    VSCellStatus *record = [self statusRecord];    
+    VSCellStatus *record = [self statusRecord];
     self.curling = YES;
     if (lastGestureX < 170) {
         lastGestureX = lastGestureX - 20;
@@ -199,8 +206,8 @@
         self.cellAccessoryImage.hidden = NO;
         self.hadCurlUp = YES;
         record.curlUp = YES;
-        [self._vocabulary forgot];
-        [self._vocabulary seeSummaryStart];
+        [self.vocabularyRecord forgot];
+        [self.vocabularyRecord seeSummaryStart];
         [MobClick event:EVENT_FORGET];
         [self scoreDown];
     }
@@ -283,7 +290,7 @@
         record.curlUp = NO;
         self.curling = NO;
         self.cellAccessoryImage.hidden = YES;
-        [self._vocabulary finishSummary];
+        [self.vocabularyRecord finishSummary];
     }
 }
 
@@ -368,7 +375,7 @@
 
 - (VSCellStatus *)statusRecord
 {
-    return [self.statusDictionary objectForKey:self._vocabulary.spell];
+    return [self.statusDictionary objectForKey:self.vocabularyRecord.spell];
 }
 
 @end

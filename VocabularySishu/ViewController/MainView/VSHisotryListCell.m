@@ -7,6 +7,7 @@
 //
 
 #import "VSHisotryListCell.h"
+#import "VSListRecord.h"
 
 @implementation VSHisotryListCell
 @synthesize dateLabel;
@@ -76,7 +77,7 @@
     return self;
 }
 
-- (void)initWithList:(VSList *)theList andRow:(int)row
+- (void)initWithList:(VSListRecord *)theList andRow:(int)row
 {
     self.list = theList;
     self.dateLabel.text = self.list.name;

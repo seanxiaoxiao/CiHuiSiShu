@@ -111,7 +111,7 @@
     [[NSNotificationCenter defaultCenter] postNotification:notification];    
 }
 
-- (void)initWithList:(VSList *)list
+- (void)initWithList:(VSListRecord *)list
 {
     self._list = list;
     self.notRememberWellInList = [self._list rememberRate];

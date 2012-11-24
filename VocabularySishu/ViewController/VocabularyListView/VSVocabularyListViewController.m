@@ -16,6 +16,10 @@
 #import "VSUIUtils.h"
 #import "iRate.h"
 #import "VSCellStatus.h"
+#import "FDCurlViewControl.h"
+#import "VSListRecord.h"
+#import "VSListVocabularyRecord.h"
+#import "VSVocabularyRecord.h"
 
 @interface VSVocabularyListViewController ()
 
@@ -30,6 +34,7 @@
 @synthesize touchPoint;
 @synthesize draggedCell;
 @synthesize currentList;
+@synthesize currentListRecord;
 @synthesize scoreBoardView;
 @synthesize blockView;
 @synthesize exitButton;
@@ -37,65 +42,55 @@
 @synthesize detailBubble;
 @synthesize tableView;
 @synthesize cellStatus;
+@synthesize containerView;
+@synthesize curlButton;
+@synthesize planFinishButton;
+@synthesize days;
+@synthesize pickerView;
+@synthesize planFinishLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        if (![currentList isHistoryList]) {
+        if (![currentListRecord isHistoryList]) {
             self.listToday = [VSList createAndGetHistoryList];
         }
-        [currentList process];
+        [currentListRecord process];
+        [currentListRecord resetFinishPlanDate];
 
-        self.title = [self.currentList titleName];
+        self.title = [self getTitle];
         self.clearingCount = 0;
-
-        NSArray *vocabularies = [self.currentList vocabulariesToRecite];
-        self.headerView = [[VSVocabularyListHeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
-        [self.headerView setWordRemains:[vocabularies count]];
-        [self.headerView updateProgress:[self.currentList finishProgress]];
-        [self.view addSubview:self.headerView];
-
-        self.vocabulariesToRecite = [NSMutableArray arrayWithArray:vocabularies];
+        
+        self.vocabulariesToRecite = [self.currentListRecord vocabulariesToRecite];;
         self.cellStatus = [[NSMutableDictionary alloc] init];
         for (int i = 0; i < [self.vocabulariesToRecite count]; i++) {
-            VSListVocabulary *listVocabulary = [self.vocabulariesToRecite objectAtIndex:i];
+            VSListVocabularyRecord *listVocabulary = [self.vocabulariesToRecite objectAtIndex:i];
             VSCellStatus *status = [[VSCellStatus alloc] init];
             status.curlUp = NO;
-            [self.cellStatus setObject:status forKey:listVocabulary.vocabulary.spell];
+            [self.cellStatus setObject:status forKey:listVocabulary.vocabularyRecord.spell];
         }
-
-        UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
-        [backgroundImageView setFrame:self.view.frame];
-        [self.view addSubview:backgroundImageView];
-        [self.view sendSubviewToBack:backgroundImageView];
-
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clearVocabulary:) name:CLEAR_VOCABULRY object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(restart) name:RESTART_LIST object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(nextList) name:NEXT_LIST object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideScoreBoard) name:CLOSE_POPUP object:nil];
         
-        if (![[NSUserDefaults standardUserDefaults] boolForKey:@"showActionBubble"] ) {
-            vocabularyActionBubble = [[TipsBubble alloc] initWithTips:@"记住单词，向右划掉。\n忘记单词，左划查看意思" width:155 popupFrom:tipsBubblePopupFromLowerCenter];
-            vocabularyActionBubble.center = CGPointMake(160, 35);
-            [self.view addSubview:vocabularyActionBubble];
-        }
-        __autoreleasing UIGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanning:)];
-        panGesture.delegate = self;
-        [self.view addGestureRecognizer:panGesture];
+        days = [[NSArray alloc] initWithObjects:@"1天内完成", @"2天内完成", @"3天内完成", nil];
+
+        [self.navigationItem setLeftBarButtonItem:[VSUIUtils makeBackButton:self selector:@selector(backToMain)]];
+        [self initRightButton];
+        [self initNotifications];
+        [self initBubbles];
+        [self initGestures];
+        [self initPickerView];
+        [self drawPlanFinishLabel];
 
         if ([self.vocabulariesToRecite count] == 0) {
             [self toggleScoreBoard];
         }
+        
     }
     return self;
 }
 
-- (void)viewDidLoad
+- (void) initRightButton
 {
-    [super viewDidLoad];
-    [self.navigationItem setLeftBarButtonItem:[VSUIUtils makeBackButton:self selector:@selector(backToMain)]];
-
     UIView *rightView = [[UIView alloc] initWithFrame:CGRectMake(1, 0, 43, 44.01)];
     rightView.backgroundColor = [UIColor clearColor];
     UIImage *scoreBoardImage = [VSUtils fetchImg:@"ScoreBoardButton"];
@@ -104,9 +99,130 @@
     [scoreBoardButton setBackgroundImage:scoreBoardImage forState:UIControlStateNormal];
     [scoreBoardButton addTarget:self action:@selector(toggleScoreBoard) forControlEvents:UIControlEventTouchUpInside];
     [rightView addSubview:scoreBoardButton];
-    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightView];
+}
 
+- (void) initNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clearVocabulary:) name:CLEAR_VOCABULRY object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(restart) name:RESTART_LIST object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(nextList) name:NEXT_LIST object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideScoreBoard) name:CLOSE_POPUP object:nil];
+}
+
+- (void) initBubbles
+{
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"showActionBubble"] ) {
+        vocabularyActionBubble = [[TipsBubble alloc] initWithTips:@"记住单词，向右划掉。\n忘记单词，左划查看意思" width:155 popupFrom:tipsBubblePopupFromLowerCenter];
+        vocabularyActionBubble.center = CGPointMake(160, 35);
+        [self.view addSubview:vocabularyActionBubble];
+    }
+}
+
+- (void) initGestures
+{
+    __autoreleasing UIGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanning:)];
+    panGesture.delegate = self;
+    [self.view addGestureRecognizer:panGesture];
+}
+
+- (void) initPickerView
+{
+    pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 296, 320, 120)];
+    pickerView.delegate = self;
+    pickerView.dataSource = self;
+    pickerView.backgroundColor = [UIColor clearColor];
+    pickerView.showsSelectionIndicator = YES;
+    pickerView.hidden = YES;
+    
+    [self.view addSubview:pickerView];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    self.headerView = [[VSVocabularyListHeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
+    [self.headerView setWordRemains:[vocabulariesToRecite count]];
+    [self.headerView updateProgress:[self.currentListRecord finishProgress]];
+    [self.containerView addSubview:self.headerView];
+    
+    UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
+    [backgroundImageView setFrame:self.view.frame];
+    [self.view addSubview:backgroundImageView];
+    [self.view sendSubviewToBack:backgroundImageView];
+
+    UIImageView *containerBackgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
+    [containerBackgroundImageView setFrame:self.containerView.frame];
+    [self.containerView addSubview:containerBackgroundImageView];
+    [self.containerView sendSubviewToBack:containerBackgroundImageView];
+    
+    [self initCurlUp];
+}
+
+- (void) initCurlUp
+{
+    curlButton = [[FDCurlViewControl alloc] initWithFrame:CGRectMake(290.0f, 396.0f, 30.0f, 20.0f)];
+	[curlButton setAutoresizingMask:UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth];
+	[curlButton setHidesWhenAnimating:NO];
+	[curlButton setTargetView:self.containerView];
+    [self.containerView addSubview:curlButton];
+    
+    UIImage *normalButtonImage = [VSUtils fetchImg:@"ButtonBT"];
+    UIImage *highlightButtonImage = [VSUtils fetchImg:@"ButtonBTHighLighted"];
+
+    [self.planFinishButton setBackgroundImage:normalButtonImage forState:UIControlStateNormal];
+    [self.planFinishButton setBackgroundImage:highlightButtonImage forState:UIControlStateHighlighted];
+    [self.planFinishButton setTitle:@"设置完成背诵时间" forState:UIControlStateNormal];
+    
+    [self.planFinishButton addTarget:self action:@selector(popupView) forControlEvents:UIControlEventTouchUpInside];
+    [self.planFinishButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    self.planFinishButton.titleLabel.font = [UIFont boldSystemFontOfSize:15];
+    self.planFinishButton.titleLabel.shadowOffset = CGSizeMake(0, -1);
+    self.planFinishButton.titleLabel.shadowColor = [UIColor blackColor];
+}
+
+- (void) drawPlanFinishLabel
+{
+    if (self.currentListRecord.finishPlanDate != nil) {
+        self.planFinishLabel.hidden = NO;
+        self.planFinishButton.hidden = YES;
+        NSDateComponents *components = [[NSCalendar currentCalendar] components:NSDayCalendarUnit | NSMonthCalendarUnit fromDate:self.currentListRecord.finishPlanDate];
+        int month = [components month];
+        int day = [components day];
+        self.planFinishLabel.text = [NSString stringWithFormat:@"计划背诵完成时间为%d月%d日\n加油吧同学！", month, day];
+    }
+    else {
+        [self.planFinishButton setTitle:@"设置完成背诵时间" forState:UIControlStateNormal];
+        self.planFinishButton.hidden = NO;
+        self.planFinishLabel.hidden = YES;
+    }
+}
+
+- (void) popupView
+{
+    if (self.pickerView.hidden) {
+        self.pickerView.hidden = NO;
+        [self.pickerView selectRow:0 inComponent:0 animated:YES];
+        [self.planFinishButton setTitle:@"就这个时间" forState:UIControlStateNormal];
+    }
+    else {
+        self.pickerView.hidden = YES;
+        int daysToFinish = [self.pickerView selectedRowInComponent:0] + 1;
+        [self.currentListRecord setPlanFinishDate:daysToFinish];
+        [self drawPlanFinishLabel];
+        [self.planFinishButton setTitle:@"设置完成背诵时间" forState:UIControlStateNormal];
+    }
+}
+
+- (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event {
+	for (UITouch *touch in touches) {
+		CGPoint point = [touch locationInView:self.view];
+		if (point.y < round(CGRectGetHeight(self.view.frame)/2.0f)) {
+			[curlButton curlViewDown];
+            self.pickerView.hidden = YES;
+		}
+	}
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -124,6 +240,7 @@
     self.blockView = nil;
     self.scoreBoardView = nil;
     self.exitButton = nil;
+    self.containerView = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -151,7 +268,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     int vocabularyIndex = indexPath.row;
-    VSListVocabulary *listVocabulary = [vocabulariesToRecite objectAtIndex:vocabularyIndex];
+    VSListVocabularyRecord *listVocabularyRecord = [vocabulariesToRecite objectAtIndex:vocabularyIndex];
     NSString *CellIdentifier = @"VocabularyCell";
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
@@ -161,7 +278,7 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         ((VSVocabularyCell *)cell).statusDictionary = cellStatus;
     }
-    [((VSVocabularyCell *)cell) initWithVocabulary:listVocabulary.vocabulary];
+    [((VSVocabularyCell *)cell) initWithVocabulary:listVocabularyRecord.vocabularyRecord];
     [((VSVocabularyCell *)cell) resetStatus];
     return cell;
 }
@@ -173,11 +290,37 @@
     VSVocabularyCell* cell = (VSVocabularyCell *)[self.tableView cellForRowAtIndexPath:indexPath];
     if (cell.curlUp && scoreBoardView == nil) {
         [MobClick event:EVENT_ENTER_DETAIL];
-        VSVocabulary *selectedVocabulary = ((VSListVocabulary *)[self.vocabulariesToRecite objectAtIndex:indexPath.row]).vocabulary;
+        VSVocabulary *selectedVocabulary = [((VSListVocabularyRecord *)[self.vocabulariesToRecite objectAtIndex:indexPath.row]).vocabularyRecord getVocabulary];
         VSVocabularyViewController *detailViewController = [[VSVocabularyViewController alloc] initWithNibName:@"VSVocabularyViewController" bundle:nil];
         detailViewController.vocabulary = selectedVocabulary;
         [self.navigationController pushViewController:detailViewController animated:YES];
     }
+}
+
+#pragma mark - Picker view delegate
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView;
+{
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component;
+{
+    return [days count];
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{    
+    return [days objectAtIndex:row];
+}
+
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
+{
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 37)];
+    label.text = [days objectAtIndex:row];
+    label.textAlignment = UITextAlignmentCenter;
+    label.backgroundColor = [UIColor clearColor];
+    label.font = [UIFont boldSystemFontOfSize:16];
+    return label;
 }
 
 #pragma mark - Navigation Related
@@ -247,6 +390,7 @@
         VSVocabularyCell* cell = (VSVocabularyCell *)[self.tableView cellForRowAtIndexPath:indexPath];
         if(cell != nil) {
             draggedCell = cell;
+            [cell initBeforeCurlup];
         }
         CGPoint translation = [gestureRecognizer translationInView:draggedCell];
         if (!cell.curlUp && !draggedCell.curling && translation.x > 0 && !draggedCell.clearing) {
@@ -314,21 +458,21 @@
 {
     @synchronized(self) {
         int index = -1;
-        VSVocabulary *vocabulary = [notification.userInfo objectForKey:@"vocabulary"];
-        for (int i = 0 ; i < [self.vocabulariesToRecite count]; i++) {
-            VSListVocabulary *listVocabulary = [self.vocabulariesToRecite objectAtIndex:i];
-            if ([listVocabulary.vocabulary isEqual:vocabulary]) {
+        VSVocabularyRecord *vocabularyRecord = [notification.userInfo objectForKey:@"vocabulary"];
+        for (int i = 0; i < [self.vocabulariesToRecite count]; i++) {
+            VSListVocabularyRecord *listVocabulary = [self.vocabulariesToRecite objectAtIndex:i];
+            if ([listVocabulary.vocabularyRecord isEqual:vocabularyRecord]) {
                 index = i;
                 break;
             }
         }
-        VSListVocabulary *rememberedVocabulary = [vocabulariesToRecite objectAtIndex:index];
-        [rememberedVocabulary.vocabulary remembered];
+        VSListVocabularyRecord *rememberedVocabulary = [vocabulariesToRecite objectAtIndex:index];
+        [rememberedVocabulary.vocabularyRecord remembered];
         [rememberedVocabulary remembered];
-        if (![self.currentList isHistoryList]) {
-            [self.listToday addVocabulary:rememberedVocabulary.vocabulary];
+        if (![self.currentListRecord isHistoryList]) {
+            [self.listToday addVocabulary:rememberedVocabulary.vocabularyRecord];
         }
-        [self.headerView updateProgress:[self.currentList finishProgress]];
+        [self.headerView updateProgress:[self.currentListRecord finishProgress]];
         [self.headerView decrWordRemain];
         [vocabulariesToRecite removeObjectAtIndex:index];
         [self updateVocabularyTable:index];
@@ -348,7 +492,7 @@
 - (void)processAfterSwipe
 {
     if ([self.vocabulariesToRecite count] == 0) {
-        [self.currentList finish];
+        [self.currentListRecord finish];
         [self toggleScoreBoard];
 #ifndef TRIAL
         [[iRate sharedInstance] logEvent:NO];
@@ -386,7 +530,7 @@
     [applicationLoadViewIn setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn]];
     [[scoreBoardView layer] addAnimation:applicationLoadViewIn forKey:kCATransitionReveal];
     [self.view addSubview:scoreBoardView];
-    [scoreBoardView performSelector:@selector(initWithList:) withObject:self.currentList afterDelay:0.5f];
+    [scoreBoardView performSelector:@selector(initWithList:) withObject:self.currentListRecord afterDelay:0.5f];
     exitButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [exitButton addTarget:self action:@selector(hideScoreBoard) forControlEvents:UIControlEventTouchUpInside];
     [exitButton setTitle:@"" forState:UIControlStateNormal];
@@ -423,8 +567,8 @@
 - (void)doRestart
 {
     [MobClick event:EVENT_RETRY];
-    [self.currentList clearVocabularyStatus];
-    [VSUtils reloadCurrentList:self.currentList];
+    [self.currentListRecord clearVocabularyStatus];
+    [VSUtils reloadCurrentList:self.currentListRecord];
 }
 
 - (void)nextList
@@ -436,6 +580,16 @@
 {
     [MobClick event:EVENT_NEXT_LIST];
     [VSUtils toNextList:self.currentList];
+}
+
+- (NSString *)getTitle
+{
+    if (currentList != nil) {
+        return [currentList titleName];
+    }
+    else {
+        return currentListRecord.name;
+    }
 }
 
 #pragma mark - Bubble Dismiss

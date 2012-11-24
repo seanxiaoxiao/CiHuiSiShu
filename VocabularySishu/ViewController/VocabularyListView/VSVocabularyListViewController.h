@@ -15,16 +15,20 @@
 #import "VSVocabularyCell.h"
 #import "VSScoreBoardView.h"
 #import "TipsBubble.h"
+#import "FDCurlViewControl.h"
 
-
-@interface VSVocabularyListViewController : UIViewController<UIGestureRecognizerDelegate> {
+@interface VSVocabularyListViewController : UIViewController<UIGestureRecognizerDelegate, FDCurlViewControlDelegate, UIPickerViewDataSource, UIPickerViewDelegate> {
     IBOutlet UITableView *tableView;
+    IBOutlet UIView *containerView;
+    IBOutlet UIButton *planFinishButton;
+    IBOutlet UILabel *planFinishLabel;
 }
 
 @property (nonatomic, retain) NSMutableArray *vocabulariesToRecite;
 @property (nonatomic, strong) VSVocabularyListHeaderView *headerView;
-@property (nonatomic, retain) VSList *listToday;
+@property (nonatomic, retain) VSListRecord *listToday;
 @property (nonatomic, retain) VSList *currentList;
+@property (nonatomic, retain) VSListRecord *currentListRecord;
 @property (nonatomic, strong) VSSummaryView *summaryView;
 @property (nonatomic, strong) VSVocabularyCell *draggedCell;
 @property (nonatomic, strong) VSScoreBoardView *scoreBoardView;
@@ -36,6 +40,12 @@
 @property (nonatomic, retain) UITableView *tableView;
 @property (nonatomic, retain) NSMutableDictionary *cellStatus;
 @property (nonatomic, assign) int clearingCount;
+@property (nonatomic, strong) UIView *containerView;
+@property (nonatomic, retain) FDCurlViewControl *curlButton;
+@property (nonatomic, strong) UIButton *planFinishButton;
+@property (nonatomic, retain) NSArray *days;
+@property (nonatomic, retain) UIPickerView *pickerView;
+@property (nonatomic, strong) UILabel *planFinishLabel;
 
 - (IBAction)curlUp:(id)sender;
 

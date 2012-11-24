@@ -13,6 +13,7 @@
 #import "VSGuideViewController.h"
 
 @class VSVocabulary;
+@class VSListRecord;
 
 @interface VSUtils : NSObject
 
@@ -46,7 +47,7 @@
 
 + (void)toGivenList:(VSList *)list;
 
-+ (void)reloadCurrentList:(VSList *)currentList;
++ (void)reloadCurrentList:(VSListRecord *)currentListRecord;
 
 + (void)showGuidPage;
 

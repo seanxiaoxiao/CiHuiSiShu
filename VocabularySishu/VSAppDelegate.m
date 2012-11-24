@@ -10,6 +10,8 @@
 #import "VSNavigationBar.h"
 #import "MobClick.h"
 #import "iRate.h"
+#import "VSAppRecord.h"
+#import "VSListRecord.h"
 
 @implementation VSAppDelegate
 
@@ -34,8 +36,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [VSUtils copySQLite];
-
     [MobClick startWithAppkey:[VSUtils getUMengKey]];
+    if ([[VSAppRecord getAppRecord].migrated isEqualToNumber:[NSNumber numberWithBool:NO]]) {
+        [VSDataUtil readWriteMigrate];
+    }
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
@@ -52,6 +56,19 @@
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"initialized"];
         [[NSUserDefaults standardUserDefaults] synchronize];
         return YES;
+    }
+    
+    UILocalNotification *localNotif = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
+    if (localNotif && [localNotif.userInfo valueForKey:@"ListRecordName"] != nil) {
+        NSString *name = [localNotif.userInfo objectForKey:@"ListRecordName"];
+        VSListRecord* listRecord = [VSListRecord findByListName:name];
+        application.applicationIconBadgeNumber -= 1;
+        VSVocabularyListViewController *vocabularyListViewController = [VSVocabularyListViewController alloc];
+        vocabularyListViewController.currentList = [listRecord getList];
+        vocabularyListViewController.currentListRecord = listRecord;
+        vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
+        [navigationController pushViewController:vocabularyListViewController animated:NO];
+        [application cancelLocalNotification:localNotif];
     }
     
     return YES;
@@ -87,15 +104,7 @@
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
-    if (application.applicationState == UIApplicationStateActive) {
-        [application cancelLocalNotification:notification];
-        NSDate *now = [[NSDate alloc] init];
-        NSTimeInterval interval = NOTIFICATION_DENY;
-        notification.fireDate = [now dateByAddingTimeInterval:interval];
-        notification.timeZone = [NSTimeZone defaultTimeZone];
-        [[UIApplication sharedApplication] scheduleLocalNotification:notification];
-    }
-    else {
+    if (application.applicationState != UIApplicationStateActive) {
         [self handleNotification:application withNotification:notification];
     }
 }
@@ -104,13 +113,14 @@
 {
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     NSDictionary *data = notification.userInfo;
-    if ([data valueForKey:@"list_id"] != nil) {
+    if ([data valueForKey:@"ListRecordName"] != nil) {
+        NSString *name = [notification.userInfo objectForKey:@"ListRecordName"];
+        VSListRecord* listRecord = [VSListRecord findByListName:name];
+        application.applicationIconBadgeNumber -= 1;
         VSVocabularyListViewController *vocabularyListViewController = [VSVocabularyListViewController alloc];
-        NSURL *listId = [NSURL URLWithString:[data valueForKey:@"list_id"]];
-        NSManagedObjectID *managedObjectId = [[VSUtils currentMOContext].persistentStoreCoordinator managedObjectIDForURIRepresentation:listId];
-        vocabularyListViewController.currentList = (VSList *)[VSUtils get:managedObjectId];
+        vocabularyListViewController.currentList = [listRecord getList];
+        vocabularyListViewController.currentListRecord = listRecord;
         vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
-        [navigationController popToRootViewControllerAnimated:NO];
         [navigationController pushViewController:vocabularyListViewController animated:NO];
         [application cancelLocalNotification:notification];
     }
@@ -118,6 +128,7 @@
 
 - (void)saveContext
 {
+    NSLog(@"Save context");
     NSError *error = nil;
     NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
     if (managedObjectContext != nil) {
@@ -155,8 +166,13 @@
     if (__managedObjectModel != nil) {
         return __managedObjectModel;
     }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"VocabularySishu" withExtension:@"momd"];
-    __managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+    NSURL *userModelURL = [[NSBundle mainBundle] URLForResource:@"UserModel" withExtension:@"momd"];
+    NSManagedObjectModel *userModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:userModelURL];
+
+    NSURL *systemModelURL = [[NSBundle mainBundle] URLForResource:@"VocabularySishu" withExtension:@"momd"];
+    NSManagedObjectModel *systemModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:systemModelURL];
+
+    __managedObjectModel = [NSManagedObjectModel modelByMergingModels:[NSArray arrayWithObjects:userModel, systemModel, nil]];
     return __managedObjectModel;
 }
 
@@ -167,43 +183,31 @@
     if (__persistentStoreCoordinator != nil) {
         return __persistentStoreCoordinator;
     }
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-    NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"VocabularySishu.sqlite"];
-    NSURL* storeURL = [NSURL fileURLWithPath:filePath];
     
+    NSArray *cachePaths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString *systemFilePath = [[cachePaths objectAtIndex:0] stringByAppendingPathComponent:@"VocabularySishu.sqlite"];
+
+    NSURL* systemStoreURL = [NSURL fileURLWithPath:systemFilePath];
+
+    NSArray *docPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *userFilePath = [[docPaths objectAtIndex:0] stringByAppendingPathComponent:@"UserModel.sqlite"];
+    NSURL* userStoreURL = [NSURL fileURLWithPath:userFilePath];
+
     NSError *error = nil;
     NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
                              [NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption,
                              [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];
 
     __persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    if (![__persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error]) {
-        /*
-         Replace this implementation with code to handle the error appropriately.
-         
-         abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
-         
-         Typical reasons for an error here include:
-         * The persistent store is not accessible;
-         * The schema for the persistent store is incompatible with current managed object model.
-         Check the error message to determine what the actual problem was.
-         
-         
-         If the persistent store is not accessible, there is typically something wrong with the file path. Often, a file URL is pointing into the application's resources directory instead of a writeable directory.
-         
-         If you encounter schema incompatibility errors during development, you can reduce their frequency by:
-         * Simply deleting the existing store:
-         [[NSFileManager defaultManager] removeItemAtURL:storeURL error:nil]
-         
-         * Performing automatic lightweight migration by passing the following dictionary as the options parameter: 
-         [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption, [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];
-         
-         Lightweight migration will only work for a limited set of schema changes; consult "Core Data Model Versioning and Data Migration Programming Guide" for details.
-         
-         */
+    
+    if (![__persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:userStoreURL options:options error:&error]) {
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
-    }    
+    }
+    if (![__persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:systemStoreURL options:options error:&error]) {
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
     
     return __persistentStoreCoordinator;
 }
@@ -238,7 +242,6 @@
 
     VSNavigationBar *navBar = (VSNavigationBar *)[customizedNavController navigationBar];
     [navBar updateBackgroundImage];
-
     
     return customizedNavController;
 }
