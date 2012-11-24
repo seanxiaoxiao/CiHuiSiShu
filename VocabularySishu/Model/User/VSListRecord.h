@@ -32,6 +32,8 @@
 
 + (VSListRecord *)createdListRecord: (VSList *)list;
 
++ (NSArray *)historyListBefore:(NSDate *)startAt;
+
 + (NSArray *)lastestHistoryList;
 
 - (double)notWellRate;

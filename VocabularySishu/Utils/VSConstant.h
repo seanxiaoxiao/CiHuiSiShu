@@ -44,6 +44,12 @@
 #define EVENT_NEXT_LIST @"NEXT_LIST"
 #define EVENT_ENTER_DETAIL @"ENTER_DETAIL"
 
+#ifdef TRIAL
+    #define HISTORY_ITEM_COUNT 3
+#else
+    #define HISTORY_ITEM_COUNT 4
+#endif
+
 #define VOCAVULARY_CELL_HEIGHT 56
 
 @interface VSConstant : NSObject

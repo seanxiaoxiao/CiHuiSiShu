@@ -70,11 +70,35 @@
     NSFetchRequest *listRequest = [[NSFetchRequest alloc] init];
     [listRequest setEntity:listDescription];
     [listRequest setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"createdDate" ascending:NO]]];
-    NSPredicate *isHistoryPredicate = [NSPredicate predicateWithFormat:@"(type = 1)"];
-    [listRequest setPredicate:isHistoryPredicate];
+//    NSPredicate *isHistoryPredicate = [NSPredicate predicateWithFormat:@"(type = 1)"];
+//    [listRequest setPredicate:isHistoryPredicate];
     NSArray *tempResult = [[VSUtils currentMOContext] executeFetchRequest:listRequest error:&error];
     NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:[tempResult count]];
     for (VSListRecord *list in tempResult) {
+        if ([list.listVocabularies count] > 0) {
+            [result addObject:list];
+        }
+        if ([result count] == 4) {
+            break;
+        }
+    }
+    return result;
+}
+
++ (NSArray *)historyListBefore:(NSDate *)startAt
+{
+    __autoreleasing NSError *error = nil;
+    NSEntityDescription *listDescription = [NSEntityDescription entityForName:@"VSListRecord" inManagedObjectContext:[VSUtils currentMOContext]];
+    NSFetchRequest *listRequest = [[NSFetchRequest alloc] init];
+    [listRequest setEntity:listDescription];
+    [listRequest setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"createdDate" ascending:NO]]];
+//    NSPredicate *createDatePredicate = [NSPredicate predicateWithFormat:@"(createdDate < %@)", startAt];
+    NSPredicate *isHistoryPredicate = [NSPredicate predicateWithFormat:@"(type = 1)"];
+    [listRequest setPredicate:isHistoryPredicate];
+//    [listRequest setPredicate:createDatePredicate];
+    NSArray *tempResult = [[VSUtils currentMOContext] executeFetchRequest:listRequest error:&error];
+    NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:[tempResult count]];
+    for (VSList *list in tempResult) {
         if ([list.listVocabularies count] > 0) {
             [result addObject:list];
         }
@@ -171,6 +195,8 @@
     return (double)(rememberedCount) / (double)([self.listVocabularies count]);
 }
 
+
+
 - (void)finish
 {
     __autoreleasing NSError *error = nil;
@@ -199,6 +225,7 @@
     }
     [VSListVocabularyRecord create:self withVocabulary:vocabulary];
 }
+
 
 
 - (void)clearVocabularyStatus

@@ -25,6 +25,7 @@
 @property (nonatomic, strong) UITableView *historyTable;
 @property (nonatomic, strong) UIButton *startButton;
 @property (nonatomic, assign) BOOL loading;
+@property (nonatomic, assign) CGFloat lastOffset;
 
 - (IBAction)recite:(id)sender;
 

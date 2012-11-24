@@ -37,6 +37,7 @@
 {
     [super viewDidLoad];
     self.loading = NO;
+    self.lastOffset = 0;
 
     activator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     activator.center = CGPointMake(160, 30);
@@ -168,17 +169,13 @@
     }
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
 {
+    if ([self.historyLists count] < HISTORY_ITEM_COUNT) {
+        return;
+    }
     CGPoint offset = scrollView.contentOffset;
-    CGRect bounds = scrollView.bounds;
-    CGSize size = scrollView.contentSize;
-    UIEdgeInsets inset = scrollView.contentInset;
-    float y = offset.y + bounds.size.height - inset.bottom;
-    float h = size.height;
-
-    float reload_distance = 50;
-    if (y > h + reload_distance && !self.loading) {
+    if (offset.y > [self.historyLists count] * 44 - 10 && velocity.y > 0 && !self.loading) {
         self.loading = YES;
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[self.historyLists count] inSection:0];
         NSArray *indexPaths = [[NSArray alloc] initWithObjects:indexPath, nil];
@@ -186,7 +183,7 @@
         [self.historyTable insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationBottom];
         [self.historyTable endUpdates];
         [self.activator startAnimating];
-
+        
         if (self.loading) {
             [self performSelector:@selector(stopAnimatingFooter) withObject:nil afterDelay:0.5];
         }
@@ -217,7 +214,7 @@
 - (void)addMoreList
 {
     if ([self.historyLists count] > 0) {
-        NSDate *lastCreatedDate = ((VSList *)[self.historyLists objectAtIndex:[self.historyLists count] - 1]).createdDate;
+        NSDate *lastCreatedDate = ((VSListRecord *)[self.historyLists objectAtIndex:[self.historyLists count] - 1]).createdDate;
         [self.historyLists addObjectsFromArray:[VSList historyListBefore:lastCreatedDate]];
     }
 }
