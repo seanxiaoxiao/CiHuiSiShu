@@ -71,15 +71,18 @@
             [self.cellStatus setObject:status forKey:listVocabulary.vocabularyRecord.spell];
         }
         
-        days = [[NSArray alloc] initWithObjects:@"1天内完成", @"2天内完成", @"3天内完成", nil];
-
         [self.navigationItem setLeftBarButtonItem:[VSUIUtils makeBackButton:self selector:@selector(backToMain)]];
         [self initRightButton];
         [self initNotifications];
         [self initBubbles];
         [self initGestures];
-        [self initPickerView];
-        [self drawPlanFinishLabel];
+
+        if (![currentListRecord isHistoryList]) {
+            days = [[NSArray alloc] initWithObjects:@"1天内完成", @"2天内完成", @"3天内完成", nil];
+            [self initCurlUp];
+            [self initPickerView];
+            [self drawPlanFinishLabel];
+        }
 
         if ([self.vocabulariesToRecite count] == 0) {
             [self toggleScoreBoard];
@@ -156,8 +159,6 @@
     [containerBackgroundImageView setFrame:self.containerView.frame];
     [self.containerView addSubview:containerBackgroundImageView];
     [self.containerView sendSubviewToBack:containerBackgroundImageView];
-    
-    [self initCurlUp];
 }
 
 - (void) initCurlUp
