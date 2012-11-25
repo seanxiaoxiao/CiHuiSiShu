@@ -33,6 +33,11 @@
     [VSUtils saveEntity];
 }
 
+- (void)revert
+{
+    self.lastStatus = [VSConstant VOCABULARY_LIST_STATUS_NEW];
+    [VSUtils saveEntity];
+}
 
 + (void)create:(VSListRecord *)theList withVocabulary:(VSVocabularyRecord *)theVocabulary
 {

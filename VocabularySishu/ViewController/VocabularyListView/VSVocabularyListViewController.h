@@ -16,12 +16,14 @@
 #import "VSScoreBoardView.h"
 #import "TipsBubble.h"
 #import "FDCurlViewControl.h"
+#import "VSRememberedList.h"
 
 @interface VSVocabularyListViewController : UIViewController<UIGestureRecognizerDelegate, FDCurlViewControlDelegate, UIPickerViewDataSource, UIPickerViewDelegate> {
     IBOutlet UITableView *tableView;
     IBOutlet UIView *containerView;
     IBOutlet UIButton *planFinishButton;
     IBOutlet UILabel *planFinishLabel;
+    IBOutlet UIButton *revertButton;
 }
 
 @property (nonatomic, retain) NSMutableArray *vocabulariesToRecite;
@@ -46,7 +48,11 @@
 @property (nonatomic, retain) NSArray *days;
 @property (nonatomic, retain) UIPickerView *pickerView;
 @property (nonatomic, strong) UILabel *planFinishLabel;
+@property (nonatomic, strong) UIButton *revertButton;
+@property (nonatomic, retain) VSRememberedList *rememberedList;
 
 - (IBAction)curlUp:(id)sender;
+
+- (IBAction)revertToken:(id)sender;
 
 @end

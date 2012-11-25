@@ -27,4 +27,6 @@
 
 - (void)remembered;
 
+- (void)revert;
+
 @end

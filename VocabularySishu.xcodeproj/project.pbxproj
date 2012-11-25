@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0004A7E9166187F900BE9FE0 /* VSRememberedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0004A7E8166187F900BE9FE0 /* VSRememberedList.m */; };
+		0004A7EA166187F900BE9FE0 /* VSRememberedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0004A7E8166187F900BE9FE0 /* VSRememberedList.m */; };
+		0004A7EB166187F900BE9FE0 /* VSRememberedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0004A7E8166187F900BE9FE0 /* VSRememberedList.m */; };
+		0004A7EC166187F900BE9FE0 /* VSRememberedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0004A7E8166187F900BE9FE0 /* VSRememberedList.m */; };
 		000E585715E40C9900B7AB04 /* BookBlack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E582F15E40C9900B7AB04 /* BookBlack@2x.png */; };
 		000E585815E40C9900B7AB04 /* BookBlack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E582F15E40C9900B7AB04 /* BookBlack@2x.png */; };
 		000E585915E40C9900B7AB04 /* BookBlack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E582F15E40C9900B7AB04 /* BookBlack@2x.png */; };
@@ -560,6 +564,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0004A7E7166187F900BE9FE0 /* VSRememberedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSRememberedList.h; path = ViewController/VocabularyListView/VSRememberedList.h; sourceTree = "<group>"; };
+		0004A7E8166187F900BE9FE0 /* VSRememberedList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSRememberedList.m; path = ViewController/VocabularyListView/VSRememberedList.m; sourceTree = "<group>"; };
 		000E582F15E40C9900B7AB04 /* BookBlack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BookBlack@2x.png"; path = "Resources/Img/BookBlack@2x.png"; sourceTree = "<group>"; };
 		000E583015E40C9900B7AB04 /* BookLake@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BookLake@2x.png"; path = "Resources/Img/BookLake@2x.png"; sourceTree = "<group>"; };
 		000E583115E40C9900B7AB04 /* BookRed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BookRed@2x.png"; path = "Resources/Img/BookRed@2x.png"; sourceTree = "<group>"; };
@@ -1207,6 +1213,8 @@
 				00FF6FF915D0BACB0043BA91 /* VSScoreBoardView.m */,
 				00763F261645A03200CF7216 /* VSCellStatus.h */,
 				00763F271645A03200CF7216 /* VSCellStatus.m */,
+				0004A7E7166187F900BE9FE0 /* VSRememberedList.h */,
+				0004A7E8166187F900BE9FE0 /* VSRememberedList.m */,
 			);
 			name = VocabularyListView;
 			sourceTree = "<group>";
@@ -1917,6 +1925,7 @@
 				000FEA561650B99E00644B63 /* VSAppRecord.m in Sources */,
 				000FEA5C1650BA3A00644B63 /* VSListVocabularyRecord.m in Sources */,
 				000FEA621650BA7400644B63 /* VSVocabularyRecord.m in Sources */,
+				0004A7EB166187F900BE9FE0 /* VSRememberedList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1979,6 +1988,7 @@
 				000FEA541650B99E00644B63 /* VSAppRecord.m in Sources */,
 				000FEA5A1650BA3A00644B63 /* VSListVocabularyRecord.m in Sources */,
 				000FEA601650BA7400644B63 /* VSVocabularyRecord.m in Sources */,
+				0004A7E9166187F900BE9FE0 /* VSRememberedList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2050,6 +2060,7 @@
 				000FEA571650B99E00644B63 /* VSAppRecord.m in Sources */,
 				000FEA5D1650BA3A00644B63 /* VSListVocabularyRecord.m in Sources */,
 				000FEA631650BA7400644B63 /* VSVocabularyRecord.m in Sources */,
+				0004A7EC166187F900BE9FE0 /* VSRememberedList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2112,6 +2123,7 @@
 				000FEA551650B99E00644B63 /* VSAppRecord.m in Sources */,
 				000FEA5B1650BA3A00644B63 /* VSListVocabularyRecord.m in Sources */,
 				000FEA611650BA7400644B63 /* VSVocabularyRecord.m in Sources */,
+				0004A7EA166187F900BE9FE0 /* VSRememberedList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

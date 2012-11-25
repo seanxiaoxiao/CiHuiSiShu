@@ -20,6 +20,7 @@
 #import "VSListRecord.h"
 #import "VSListVocabularyRecord.h"
 #import "VSVocabularyRecord.h"
+#import "VSRememberedList.h"
 
 @interface VSVocabularyListViewController ()
 
@@ -48,6 +49,8 @@
 @synthesize days;
 @synthesize pickerView;
 @synthesize planFinishLabel;
+@synthesize revertButton;
+@synthesize rememberedList;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -70,6 +73,7 @@
             status.curlUp = NO;
             [self.cellStatus setObject:status forKey:listVocabulary.vocabularyRecord.spell];
         }
+        self.rememberedList = [[VSRememberedList alloc] init];
         
         [self.navigationItem setLeftBarButtonItem:[VSUIUtils makeBackButton:self selector:@selector(backToMain)]];
         [self initRightButton];
@@ -77,9 +81,11 @@
         [self initBubbles];
         [self initGestures];
 
+        [self initCurlUp];
+        [self initRevertButton];
         if (![currentListRecord isHistoryList]) {
             days = [[NSArray alloc] initWithObjects:@"1天内完成", @"2天内完成", @"3天内完成", nil];
-            [self initCurlUp];
+            [self initPlanFinishButton];
             [self initPickerView];
             [self drawPlanFinishLabel];
         }
@@ -144,6 +150,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+   
+    [self updateRevertButton];
     
     self.headerView = [[VSVocabularyListHeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
     [self.headerView setWordRemains:[vocabulariesToRecite count]];
@@ -169,9 +177,13 @@
 	[curlButton setTargetView:self.containerView];
     [self.containerView addSubview:curlButton];
     
+}
+
+- (void) initPlanFinishButton
+{
     UIImage *normalButtonImage = [VSUtils fetchImg:@"ButtonBT"];
     UIImage *highlightButtonImage = [VSUtils fetchImg:@"ButtonBTHighLighted"];
-
+ 
     [self.planFinishButton setBackgroundImage:normalButtonImage forState:UIControlStateNormal];
     [self.planFinishButton setBackgroundImage:highlightButtonImage forState:UIControlStateHighlighted];
     [self.planFinishButton setTitle:@"设置完成背诵时间" forState:UIControlStateNormal];
@@ -181,6 +193,22 @@
     self.planFinishButton.titleLabel.font = [UIFont boldSystemFontOfSize:15];
     self.planFinishButton.titleLabel.shadowOffset = CGSizeMake(0, -1);
     self.planFinishButton.titleLabel.shadowColor = [UIColor blackColor];
+
+}
+
+
+- (void) initRevertButton
+{
+    UIImage *normalButtonImage = [VSUtils fetchImg:@"ButtonBT"];
+    UIImage *highlightButtonImage = [VSUtils fetchImg:@"ButtonBTHighLighted"];
+    
+    [self.revertButton setBackgroundImage:normalButtonImage forState:UIControlStateNormal];
+    [self.revertButton setBackgroundImage:highlightButtonImage forState:UIControlStateHighlighted];
+    [self.revertButton setTitle:@"反悔上一个单词" forState:UIControlStateNormal];
+    [self.revertButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    self.revertButton.titleLabel.font = [UIFont boldSystemFontOfSize:15];
+    self.revertButton.titleLabel.shadowOffset = CGSizeMake(0, -1);
+    self.revertButton.titleLabel.shadowColor = [UIColor blackColor];
 }
 
 - (void) drawPlanFinishLabel
@@ -242,6 +270,10 @@
     self.scoreBoardView = nil;
     self.exitButton = nil;
     self.containerView = nil;
+    self.planFinishButton = nil;
+    self.planFinishLabel = nil;
+    self.revertButton = nil;
+    self.rememberedList = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -473,6 +505,8 @@
         if (![self.currentListRecord isHistoryList]) {
             [self.listToday addVocabulary:rememberedVocabulary.vocabularyRecord];
         }
+        [self.rememberedList addNewToken:index withRecord:rememberedVocabulary];
+        [self updateRevertButton];
         [self.headerView updateProgress:[self.currentListRecord finishProgress]];
         [self.headerView decrWordRemain];
         [vocabulariesToRecite removeObjectAtIndex:index];
@@ -488,6 +522,16 @@
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
     [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     [self.tableView endUpdates];
+}
+
+- (void)updateRevertButton
+{
+    if ([self.rememberedList isEmpty]) {
+        self.revertButton.hidden = YES;
+    }
+    else {
+        self.revertButton.hidden = NO;
+    }
 }
 
 - (void)processAfterSwipe
@@ -623,5 +667,21 @@
     [self presentModalViewController:myModalVC animated:YES];
 }
 
+- (IBAction)revertToken:(id)sender
+{
+    [curlButton curlViewDown];
+    VSRememberedToken *token = [self.rememberedList popToken];
+    [token.record revert];
+    [self.vocabulariesToRecite insertObject:token.record atIndex:token.index];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:token.index inSection:0];
+    [self.tableView beginUpdates];
+    [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationTop];
+    [self.tableView endUpdates];
+    
+    [self.headerView setWordRemains:[vocabulariesToRecite count]];
+    [self.headerView updateProgress:[self.currentListRecord finishProgress]];
+    [self updateRevertButton];
+    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:token.index inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+}
 
 @end
