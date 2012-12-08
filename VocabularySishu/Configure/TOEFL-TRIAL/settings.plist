@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ProductVersion</key>
+	<string>TOEFL TRIAL</string>
+	<key>UMengKey</key>
+	<string>50c1978e527015517b0000ba</string>
+	<key>BundleID</key>
+	<string>org.seanxiaoxiao.VocabularySishu-TOEFL-TRIAL</string>
+	<key>AppID</key>
+	<real>558</real>
+</dict>
+</plist>

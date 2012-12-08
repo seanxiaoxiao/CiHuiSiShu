@@ -67,8 +67,13 @@
     }
     else {
         //For trial version
+#ifdef TOEFL
+        self.infoLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 0, 155, 80)];
+        self.infoLabel.text = @"攻克TOEFL,\n早日踏上北美留学之路!\n马上去 App Store\n下载私塾词汇完整版!";
+#else
         self.infoLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 0, 155, 80)];
         self.infoLabel.text = @"攻克GRE,\n早日踏上北美留学之路!\n马上去 App Store\n下载私塾词汇完整版!";
+#endif
     }
     
 
