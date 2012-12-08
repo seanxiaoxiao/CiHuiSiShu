@@ -18,6 +18,7 @@
 @property (nonatomic, retain) UILabel *infoLabel;
 @property (nonatomic, retain) VSRepository *repo;
 @property (nonatomic, retain) UILabel *repoNameLabel;
+@property (nonatomic, retain) UIActivityIndicatorView *indicator;
 
 - (void)initWithCurrentRepo:(VSRepository *)current;
 

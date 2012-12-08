@@ -17,6 +17,7 @@
 @synthesize repoButton;
 @synthesize infoLabel;
 @synthesize repoNameLabel;
+@synthesize indicator;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -42,8 +43,17 @@
     center.y = 155;
     [self.repoButton setBackgroundImage:repoImage forState:UIControlStateNormal];
     self.repoButton.center = center;
-    [self.repoButton addTarget:self action:@selector(enterRepos) forControlEvents:UIControlEventTouchUpInside];
+    [self.repoButton addTarget:self action:@selector(clickRepos) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.repoButton];
+    
+    self.indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    self.indicator.frame = CGRectMake(0, 0, 24, 24);
+    CGPoint indicatorCenter = self.view.center;
+    indicatorCenter.y = 145;
+    indicatorCenter.x += 5;
+    self.indicator.center = indicatorCenter;
+    [self.view addSubview:self.indicator];
+    [self.view bringSubviewToFront:self.indicator];
     
     self.repoNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(128, 102, 80, 80)];
     self.repoNameLabel.numberOfLines = 0;
@@ -70,7 +80,6 @@
         self.infoLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 0, 155, 80)];
         self.infoLabel.text = @"攻克GRE,\n早日踏上北美留学之路!\n马上去 App Store\n下载私塾词汇完整版!";
     }
-    
 
     self.infoLabel.font = [UIFont boldSystemFontOfSize:14];
     self.infoLabel.numberOfLines = 0;
@@ -86,9 +95,7 @@
     self.infoLabel.shadowOffset = CGSizeMake(0, 1.5);
     self.infoLabel.center = CGPointMake(self.view.center.x, 280);
     [self.view addSubview:self.infoLabel];
-
 }
-
 
 - (void)viewDidUnload
 {
@@ -97,6 +104,7 @@
     self.repoButton = nil;
     self.infoLabel = nil;
     self.repoNameLabel = nil;
+    self.indicator = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -104,18 +112,25 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (void)enterRepos
+- (void)clickRepos
 {
     if (self.repo) {
-        VSRepoListViewController *controller = [[VSRepoListViewController alloc] initWithNibName:@"VSRepoListViewController" bundle:nil];
-        [controller initWithRepo:repo];
-        UIWindow *window = [UIApplication sharedApplication].keyWindow;
-        UINavigationController *navigationController = (UINavigationController *)window.rootViewController;
-        [navigationController pushViewController:controller animated:YES];
+        [self.indicator startAnimating];
+        [self performSelector:@selector(enterRepos) withObject:self afterDelay:0.2];
     }
     else {
         [VSUtils openSeries];
     }
+}
+
+- (void)enterRepos
+{
+    VSRepoListViewController *controller = [[VSRepoListViewController alloc] initWithNibName:@"VSRepoListViewController" bundle:nil];
+    [controller initWithRepo:repo];
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    UINavigationController *navigationController = (UINavigationController *)window.rootViewController;
+    [navigationController pushViewController:controller animated:YES];
+    [self.indicator stopAnimating];
 }
 
 - (void)initWithCurrentRepo:(VSRepository *)current
