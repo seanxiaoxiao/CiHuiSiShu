@@ -11,6 +11,141 @@
 		0004A7EA166187F900BE9FE0 /* VSRememberedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0004A7E8166187F900BE9FE0 /* VSRememberedList.m */; };
 		0004A7EB166187F900BE9FE0 /* VSRememberedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0004A7E8166187F900BE9FE0 /* VSRememberedList.m */; };
 		0004A7EC166187F900BE9FE0 /* VSRememberedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0004A7E8166187F900BE9FE0 /* VSRememberedList.m */; };
+		000870A11675A0F600042A38 /* VSNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0081185015BEFE220022B515 /* VSNavigationBar.m */; };
+		000870A21675A0F600042A38 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00701E3D1553CBCE00D30018 /* main.m */; };
+		000870A31675A0F600042A38 /* VSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00701E411553CBCE00D30018 /* VSAppDelegate.m */; };
+		000870A41675A0F600042A38 /* VocabularySishu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00701E431553CBCE00D30018 /* VocabularySishu.xcdatamodeld */; };
+		000870A51675A0F600042A38 /* VSVocabularyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046408015590E0B007E5FA9 /* VSVocabularyViewController.m */; };
+		000870A61675A0F600042A38 /* VSHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046408B155916FA007E5FA9 /* VSHistoryViewController.m */; };
+		000870A71675A0F600042A38 /* VSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046409015591DBD007E5FA9 /* VSUtils.m */; };
+		000870A81675A0F600042A38 /* VSDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A67815688F2800B80422 /* VSDataUtil.m */; };
+		000870A91675A0F600042A38 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A68B1568A0B200B80422 /* NSObject+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		000870AA1675A0F600042A38 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A68D1568A0B200B80422 /* NSString+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		000870AB1675A0F600042A38 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A68F1568A0B200B80422 /* SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		000870AC1675A0F600042A38 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6911568A0B200B80422 /* SBJsonBase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		000870AD1675A0F600042A38 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6931568A0B200B80422 /* SBJsonParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		000870AE1675A0F600042A38 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6951568A0B200B80422 /* SBJsonWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		000870AF1675A0F600042A38 /* VSVocabularyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6BC156A5FF700B80422 /* VSVocabularyListViewController.m */; };
+		000870B01675A0F600042A38 /* VSConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A006FB156B3D6D00D24418 /* VSConstant.m */; };
+		000870B11675A0F600042A38 /* VSContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A0071C156E3A7B00D24418 /* VSContext.m */; };
+		000870B21675A0F600042A38 /* VSList.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A0071F156E3A8F00D24418 /* VSList.m */; };
+		000870B31675A0F600042A38 /* VSListVocabulary.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A00722156E3AF400D24418 /* VSListVocabulary.m */; };
+		000870B41675A0F600042A38 /* VSMeaning.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A00725156E3B0500D24418 /* VSMeaning.m */; };
+		000870B51675A0F600042A38 /* VSRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A00728156E3B9E00D24418 /* VSRepository.m */; };
+		000870B61675A0F600042A38 /* VSWebsterMeaning.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A0072E156E3C4800D24418 /* VSWebsterMeaning.m */; };
+		000870B71675A0F600042A38 /* VSVocabularyListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A00731156F7FEE00D24418 /* VSVocabularyListHeaderView.m */; };
+		000870B81675A0F600042A38 /* VSConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AE80EF158B1318000CE7EA /* VSConfigurationViewController.m */; };
+		000870B91675A0F600042A38 /* NSMutableArrayShuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = 009A86FF15A1A82900F7869D /* NSMutableArrayShuffling.m */; };
+		000870BA1675A0F600042A38 /* VSSummaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C42FE815BB096F006FF95E /* VSSummaryView.m */; };
+		000870BB1675A0F600042A38 /* VSVocabulary.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4300015BBFC44006FF95E /* VSVocabulary.m */; };
+		000870BC1675A0F600042A38 /* VSVocabularyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 009BB48515CAAFF2008E5B2B /* VSVocabularyCell.m */; };
+		000870BD1675A0F600042A38 /* VSScoreBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF6FF915D0BACB0043BA91 /* VSScoreBoardView.m */; };
+		000870BE1675A0F600042A38 /* VSHisotryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF701215D1676F0043BA91 /* VSHisotryListCell.m */; };
+		000870BF1675A0F600042A38 /* VSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0044C13915D371E20022154A /* VSMainViewController.m */; };
+		000870C01675A0F600042A38 /* VSRepoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0044C14215D3723F0022154A /* VSRepoViewController.m */; };
+		000870C11675A0F600042A38 /* VSRepoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0044C15315D3B70F0022154A /* VSRepoListViewController.m */; };
+		000870C21675A0F600042A38 /* VSSingleListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4FE3A15D3FAF6000B9849 /* VSSingleListView.m */; };
+		000870C31675A0F600042A38 /* VSClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E83B2F15DAC42F005BE3AF /* VSClipView.m */; };
+		000870C41675A0F600042A38 /* VSGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 006B4CDC15E3638B00711C64 /* VSGuideViewController.m */; };
+		000870C51675A0F600042A38 /* TipsBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 00533E3915F42915004777F1 /* TipsBubble.m */; };
+		000870C61675A0F600042A38 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 008D5DAA161810160046240B /* Reachability.m */; };
+		000870C71675A0F600042A38 /* VSUIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D86E4316339BF700BF530A /* VSUIUtils.m */; };
+		000870C81675A0F600042A38 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF8F1618AB6E00E788EA /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		000870C91675A0F600042A38 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF921618AB6E00E788EA /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		000870CA1675A0F600042A38 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF941618AB6E00E788EA /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		000870CB1675A0F600042A38 /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF961618AB6E00E788EA /* ASIDownloadCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		000870CC1675A0F600042A38 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF981618AB6E00E788EA /* ASIFormDataRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		000870CD1675A0F600042A38 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF9A1618AB6E00E788EA /* ASIHTTPRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		000870CE1675A0F600042A38 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF9E1618AB6E00E788EA /* ASIInputStream.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		000870CF1675A0F600042A38 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBFA01618AB6E00E788EA /* ASINetworkQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		000870D01675A0F600042A38 /* VSCellStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 00763F271645A03200CF7216 /* VSCellStatus.m */; };
+		000870D11675A0F600042A38 /* FDCurlViewControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EEF25D1648F4ED00BAEAC0 /* FDCurlViewControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		000870D21675A0F600042A38 /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CA9060164F62F600876164 /* iRate.m */; };
+		000870D31675A0F600042A38 /* UserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0085706E1650341D003861DB /* UserModel.xcdatamodeld */; };
+		000870D41675A0F600042A38 /* VSListRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 0085707516509112003861DB /* VSListRecord.m */; };
+		000870D51675A0F600042A38 /* VSAppRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 000FEA531650B99E00644B63 /* VSAppRecord.m */; };
+		000870D61675A0F600042A38 /* VSListVocabularyRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 000FEA591650BA3A00644B63 /* VSListVocabularyRecord.m */; };
+		000870D71675A0F600042A38 /* VSVocabularyRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 000FEA5F1650BA7400644B63 /* VSVocabularyRecord.m */; };
+		000870D81675A0F600042A38 /* VSRememberedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0004A7E8166187F900BE9FE0 /* VSRememberedList.m */; };
+		000870DA1675A0F600042A38 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A1AFAC1586192400310669 /* AVFoundation.framework */; };
+		000870DB1675A0F600042A38 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009397D415D82B79009AE73E /* MessageUI.framework */; };
+		000870DC1675A0F600042A38 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002DBFBF1618B40500E788EA /* MobileCoreServices.framework */; };
+		000870DD1675A0F600042A38 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D5DB2161812140046240B /* SystemConfiguration.framework */; };
+		000870DE1675A0F600042A38 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A00702156D15F200D24418 /* QuartzCore.framework */; };
+		000870DF1675A0F600042A38 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00701E2F1553CBCE00D30018 /* UIKit.framework */; };
+		000870E01675A0F600042A38 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002DBFBA1618B2DC00E788EA /* CFNetwork.framework */; };
+		000870E11675A0F600042A38 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00701E311553CBCE00D30018 /* Foundation.framework */; };
+		000870E21675A0F600042A38 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00701E331553CBCE00D30018 /* CoreGraphics.framework */; };
+		000870E31675A0F600042A38 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00701E351553CBCE00D30018 /* CoreData.framework */; };
+		000870E41675A0F600042A38 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00596648162C7D5A0010C669 /* libMobClickLibrary.a */; };
+		000870E51675A0F600042A38 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0059664E162C88E00010C669 /* libz.dylib */; };
+		000870E71675A0F600042A38 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00701E3A1553CBCE00D30018 /* InfoPlist.strings */; };
+		000870E81675A0F600042A38 /* VSHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408C155916FA007E5FA9 /* VSHistoryViewController.xib */; };
+		000870E91675A0F600042A38 /* VSVocabularyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408115590E0B007E5FA9 /* VSVocabularyViewController.xib */; };
+		000870EA1675A0F600042A38 /* VSVocabularyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */; };
+		000870EC1675A0F600042A38 /* VSConfigurationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */; };
+		000870EE1675A0F600042A38 /* VSMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0044C14E15D397630022154A /* VSMainViewController.xib */; };
+		000870EF1675A0F600042A38 /* VSRepoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0044C15415D3B70F0022154A /* VSRepoListViewController.xib */; };
+		000870F01675A0F600042A38 /* VSGuideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006B4CDD15E3638B00711C64 /* VSGuideViewController.xib */; };
+		000870F11675A0F600042A38 /* VSUIUtils.m in Resources */ = {isa = PBXBuildFile; fileRef = 00D86E4316339BF700BF530A /* VSUIUtils.m */; };
+		000870F21675A0F600042A38 /* Menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 006B4CE415E3F3B100711C64 /* Menu@2x.png */; };
+		000870F31675A0F600042A38 /* SeparatorDots@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF1B0F15E407AC005B9E51 /* SeparatorDots@2x.png */; };
+		000870F41675A0F600042A38 /* BookBlack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E582F15E40C9900B7AB04 /* BookBlack@2x.png */; };
+		000870F51675A0F600042A38 /* BookLake@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583015E40C9900B7AB04 /* BookLake@2x.png */; };
+		000870F61675A0F600042A38 /* BookRed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583115E40C9900B7AB04 /* BookRed@2x.png */; };
+		000870F71675A0F600042A38 /* ButtonBT@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583215E40C9900B7AB04 /* ButtonBT@2x.png */; };
+		000870F81675A0F600042A38 /* ButtonBTHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583315E40C9900B7AB04 /* ButtonBTHighLighted@2x.png */; };
+		000870F91675A0F600042A38 /* CellAccessory@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583415E40C9900B7AB04 /* CellAccessory@2x.png */; };
+		000870FA1675A0F600042A38 /* CellBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583515E40C9900B7AB04 /* CellBG@2x.png */; };
+		000870FB1675A0F600042A38 /* CellClear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583615E40C9900B7AB04 /* CellClear@2x.png */; };
+		000870FC1675A0F600042A38 /* CellLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583715E40C9900B7AB04 /* CellLine@2x.png */; };
+		000870FD1675A0F600042A38 /* CellSummary@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583815E40C9900B7AB04 /* CellSummary@2x.png */; };
+		000870FE1675A0F600042A38 /* DetailsBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583915E40C9900B7AB04 /* DetailsBG@2x.png */; };
+		000870FF1675A0F600042A38 /* DetailsHeader@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583A15E40C9900B7AB04 /* DetailsHeader@2x.png */; };
+		000871001675A0F600042A38 /* infoButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583B15E40C9900B7AB04 /* infoButton@2x.png */; };
+		000871011675A0F600042A38 /* InkBody@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583C15E40C9900B7AB04 /* InkBody@2x.png */; };
+		000871021675A0F600042A38 /* InkFooter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583D15E40C9900B7AB04 /* InkFooter@2x.png */; };
+		000871031675A0F600042A38 /* InkHeader@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583E15E40C9900B7AB04 /* InkHeader@2x.png */; };
+		000871041675A0F600042A38 /* InkNeck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583F15E40C9900B7AB04 /* InkNeck@2x.png */; };
+		000871051675A0F600042A38 /* ListBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584015E40C9900B7AB04 /* ListBG@2x.png */; };
+		000871061675A0F600042A38 /* NavBackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584215E40C9900B7AB04 /* NavBackButton@2x.png */; };
+		000871071675A0F600042A38 /* Navigation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584315E40C9900B7AB04 /* Navigation@2x.png */; };
+		000871081675A0F600042A38 /* Next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584415E40C9900B7AB04 /* Next@2x.png */; };
+		000871091675A0F600042A38 /* PenBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584515E40C9900B7AB04 /* PenBG@2x.png */; };
+		0008710A1675A0F600042A38 /* PenFG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584615E40C9900B7AB04 /* PenFG@2x.png */; };
+		0008710B1675A0F600042A38 /* ScoreBoardButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584715E40C9900B7AB04 /* ScoreBoardButton@2x.png */; };
+		0008710C1675A0F600042A38 /* ScoreBoardPopup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584815E40C9900B7AB04 /* ScoreBoardPopup@2x.png */; };
+		0008710D1675A0F600042A38 /* SeparatorLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584A15E40C9900B7AB04 /* SeparatorLine@2x.png */; };
+		0008710E1675A0F600042A38 /* Star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584B15E40C9900B7AB04 /* Star@2x.png */; };
+		0008710F1675A0F600042A38 /* StarNone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584C15E40C9900B7AB04 /* StarNone@2x.png */; };
+		000871101675A0F600042A38 /* StarSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584D15E40C9900B7AB04 /* StarSmall@2x.png */; };
+		000871111675A0F600042A38 /* TapeBody@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584E15E40C9900B7AB04 /* TapeBody@2x.png */; };
+		000871121675A0F600042A38 /* TapeHead@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584F15E40C9900B7AB04 /* TapeHead@2x.png */; };
+		000871131675A0F600042A38 /* TapeTail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E585015E40C9900B7AB04 /* TapeTail@2x.png */; };
+		000871141675A0F600042A38 /* TimeLineCellDark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E585115E40C9900B7AB04 /* TimeLineCellDark@2x.png */; };
+		000871151675A0F600042A38 /* TimeLineCellLight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E585215E40C9900B7AB04 /* TimeLineCellLight@2x.png */; };
+		000871161675A0F600042A38 /* Unit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E585315E40C9900B7AB04 /* Unit@2x.png */; };
+		000871171675A0F600042A38 /* PopupClose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AC5E4915E4BBFB00150402 /* PopupClose@2x.png */; };
+		000871181675A0F600042A38 /* PopupCloseHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AC5E4A15E4BBFB00150402 /* PopupCloseHighLighted@2x.png */; };
+		000871191675A0F600042A38 /* Dakota.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0045250815E74FE700935B34 /* Dakota.ttf */; };
+		0008711A1675A0F600042A38 /* Mark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0045250C15E750EA00935B34 /* Mark@2x.png */; };
+		0008711C1675A0F600042A38 /* MenuButtonHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0045251015E7572000935B34 /* MenuButtonHighLighted@2x.png */; };
+		0008711D1675A0F600042A38 /* UnitHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00CBF0D815E9F333001588A3 /* UnitHighLighted@2x.png */; };
+		0008711E1675A0F600042A38 /* UnitSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B4919B15EB5610004AFC6C /* UnitSelected@2x.png */; };
+		0008711F1675A0F600042A38 /* UnitC@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B491A015EBC3E0004AFC6C /* UnitC@2x.png */; };
+		000871201675A0F600042A38 /* UnitCHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B491A115EBC3E0004AFC6C /* UnitCHighLighted@2x.png */; };
+		000871211675A0F600042A38 /* ScoreDown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B491A815EBDF9B004AFC6C /* ScoreDown@2x.png */; };
+		000871221675A0F600042A38 /* ScoreUp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B491A915EBDF9B004AFC6C /* ScoreUp@2x.png */; };
+		000871281675A0F600042A38 /* SoundButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 008D5DB7161814780046240B /* SoundButton@2x.png */; };
+		000871291675A0F600042A38 /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00CA905E164F62F600876164 /* iRate.bundle */; };
+		000871341675A14400042A38 /* settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 000871331675A14400042A38 /* settings.plist */; };
+		000871501675AEA900042A38 /* GuidePage1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0008714A1675AEA900042A38 /* GuidePage1@2x.png */; };
+		000871511675AEA900042A38 /* GuidePage2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0008714B1675AEA900042A38 /* GuidePage2@2x.png */; };
+		000871521675AEA900042A38 /* GuidePage3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0008714C1675AEA900042A38 /* GuidePage3@2x.png */; };
+		000871531675AEA900042A38 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0008714D1675AEA900042A38 /* icon.png */; };
+		000871541675AEA900042A38 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0008714E1675AEA900042A38 /* icon@2x.png */; };
+		000871551675AEA900042A38 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 0008714F1675AEA900042A38 /* iTunesArtwork */; };
+		00087160167671E400042A38 /* VocabularySishu.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0008715F167671E400042A38 /* VocabularySishu.sqlite */; };
 		000E585715E40C9900B7AB04 /* BookBlack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E582F15E40C9900B7AB04 /* BookBlack@2x.png */; };
 		000E585815E40C9900B7AB04 /* BookBlack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E582F15E40C9900B7AB04 /* BookBlack@2x.png */; };
 		000E585915E40C9900B7AB04 /* BookBlack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E582F15E40C9900B7AB04 /* BookBlack@2x.png */; };
@@ -604,7 +739,6 @@
 		00CA9068164F62F600876164 /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CA9060164F62F600876164 /* iRate.m */; };
 		00CA906E164F6AF800876164 /* settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00CA906D164F6AF800876164 /* settings.plist */; };
 		00CA906F164F6AF800876164 /* settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00CA906D164F6AF800876164 /* settings.plist */; };
-		00CA9070164F6AF800876164 /* settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00CA906D164F6AF800876164 /* settings.plist */; };
 		00CA9071164F6AF800876164 /* settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00CA906D164F6AF800876164 /* settings.plist */; };
 		00CA9073164F6BD600876164 /* settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00CA9072164F6BD600876164 /* settings.plist */; };
 		00CA9075164F6BDF00876164 /* settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00CA9074164F6BDF00876164 /* settings.plist */; };
@@ -706,6 +840,15 @@
 /* Begin PBXFileReference section */
 		0004A7E7166187F900BE9FE0 /* VSRememberedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSRememberedList.h; path = ViewController/VocabularyListView/VSRememberedList.h; sourceTree = "<group>"; };
 		0004A7E8166187F900BE9FE0 /* VSRememberedList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSRememberedList.m; path = ViewController/VocabularyListView/VSRememberedList.m; sourceTree = "<group>"; };
+		0008712E1675A0F600042A38 /* VocabularySishu CET4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VocabularySishu CET4.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		000871331675A14400042A38 /* settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = settings.plist; sourceTree = "<group>"; };
+		0008714A1675AEA900042A38 /* GuidePage1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GuidePage1@2x.png"; sourceTree = "<group>"; };
+		0008714B1675AEA900042A38 /* GuidePage2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GuidePage2@2x.png"; sourceTree = "<group>"; };
+		0008714C1675AEA900042A38 /* GuidePage3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GuidePage3@2x.png"; sourceTree = "<group>"; };
+		0008714D1675AEA900042A38 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		0008714E1675AEA900042A38 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		0008714F1675AEA900042A38 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
+		0008715F167671E400042A38 /* VocabularySishu.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = VocabularySishu.sqlite; sourceTree = "<group>"; };
 		000E582F15E40C9900B7AB04 /* BookBlack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BookBlack@2x.png"; path = "Resources/Img/BookBlack@2x.png"; sourceTree = "<group>"; };
 		000E583015E40C9900B7AB04 /* BookLake@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BookLake@2x.png"; path = "Resources/Img/BookLake@2x.png"; sourceTree = "<group>"; };
 		000E583115E40C9900B7AB04 /* BookRed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BookRed@2x.png"; path = "Resources/Img/BookRed@2x.png"; sourceTree = "<group>"; };
@@ -950,6 +1093,25 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		000870D91675A0F600042A38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				000870DA1675A0F600042A38 /* AVFoundation.framework in Frameworks */,
+				000870DB1675A0F600042A38 /* MessageUI.framework in Frameworks */,
+				000870DC1675A0F600042A38 /* MobileCoreServices.framework in Frameworks */,
+				000870DD1675A0F600042A38 /* SystemConfiguration.framework in Frameworks */,
+				000870DE1675A0F600042A38 /* QuartzCore.framework in Frameworks */,
+				000870DF1675A0F600042A38 /* UIKit.framework in Frameworks */,
+				000870E01675A0F600042A38 /* CFNetwork.framework in Frameworks */,
+				000870E11675A0F600042A38 /* Foundation.framework in Frameworks */,
+				000870E21675A0F600042A38 /* CoreGraphics.framework in Frameworks */,
+				000870E31675A0F600042A38 /* CoreData.framework in Frameworks */,
+				000870E41675A0F600042A38 /* libMobClickLibrary.a in Frameworks */,
+				000870E51675A0F600042A38 /* libz.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		00201DFF15CFBAD30089B8FA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1058,6 +1220,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		000871321675A14400042A38 /* CET4 */ = {
+			isa = PBXGroup;
+			children = (
+				000871331675A14400042A38 /* settings.plist */,
+			);
+			path = CET4;
+			sourceTree = "<group>";
+		};
+		000871491675AEA900042A38 /* CET4 */ = {
+			isa = PBXGroup;
+			children = (
+				0008714A1675AEA900042A38 /* GuidePage1@2x.png */,
+				0008714B1675AEA900042A38 /* GuidePage2@2x.png */,
+				0008714C1675AEA900042A38 /* GuidePage3@2x.png */,
+				0008714D1675AEA900042A38 /* icon.png */,
+				0008714E1675AEA900042A38 /* icon@2x.png */,
+				0008714F1675AEA900042A38 /* iTunesArtwork */,
+			);
+			name = CET4;
+			path = Resources/Img/CET4;
+			sourceTree = "<group>";
+		};
+		000871561676684A00042A38 /* CET4 */ = {
+			isa = PBXGroup;
+			children = (
+				0008715F167671E400042A38 /* VocabularySishu.sqlite */,
+			);
+			name = CET4;
+			path = Resources/Data/CET4;
+			sourceTree = "<group>";
+		};
 		000B08961553D58E00E7A850 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -1217,6 +1410,7 @@
 				00201E2F15CFBAD30089B8FA /* VocabularySishu GRE.app */,
 				00B250751628E19200311E52 /* VocabularySishu GRE Free.app */,
 				0082430E1671BF1400FF1631 /* VocabularySishu TOEFL Trial.app */,
+				0008712E1675A0F600042A38 /* VocabularySishu CET4.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1327,6 +1521,7 @@
 		0073A68115689DA900B80422 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				000871561676684A00042A38 /* CET4 */,
 				00DBAB1A1671C973009B572F /* TOEFL-TRIAL */,
 				00B24FFD1628E12400311E52 /* TRIAL */,
 				00BDE55515CF9B8500BC205C /* FULL */,
@@ -1467,6 +1662,7 @@
 		00B5A8BE1566886E00D20EB6 /* Img */ = {
 			isa = PBXGroup;
 			children = (
+				000871491675AEA900042A38 /* CET4 */,
 				008243151671C1A000FF1631 /* TOEFL-TRIAL */,
 				00757DEC1628F40E00CED0E8 /* TRIAL */,
 				00533E3D15F43668004777F1 /* TOEFL */,
@@ -1562,6 +1758,7 @@
 		00CA9069164F6A0400876164 /* Configure */ = {
 			isa = PBXGroup;
 			children = (
+				000871321675A14400042A38 /* CET4 */,
 				008243121671C00600FF1631 /* TOEFL-TRIAL */,
 				00CA906A164F6ADD00876164 /* TRIAL */,
 				00CA906B164F6ADD00876164 /* TOEFL */,
@@ -1616,6 +1813,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0008709F1675A0F600042A38 /* VocabularySishu CET4 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0008712B1675A0F600042A38 /* Build configuration list for PBXNativeTarget "VocabularySishu CET4" */;
+			buildPhases = (
+				000870A01675A0F600042A38 /* Sources */,
+				000870D91675A0F600042A38 /* Frameworks */,
+				000870E61675A0F600042A38 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "VocabularySishu CET4";
+			productName = VocabularySishu;
+			productReference = 0008712E1675A0F600042A38 /* VocabularySishu CET4.app */;
+			productType = "com.apple.product-type.application";
+		};
 		00201DDD15CFBAD30089B8FA /* VocabularySishu GRE */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00201E2C15CFBAD30089B8FA /* Build configuration list for PBXNativeTarget "VocabularySishu GRE" */;
@@ -1765,11 +1979,86 @@
 				00201DDD15CFBAD30089B8FA /* VocabularySishu GRE */,
 				00B24FFF1628E19200311E52 /* VocabularySishu Trial */,
 				0082427E1671BF1400FF1631 /* VocabularySishu TOEFL Trial */,
+				0008709F1675A0F600042A38 /* VocabularySishu CET4 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		000870E61675A0F600042A38 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				000870E71675A0F600042A38 /* InfoPlist.strings in Resources */,
+				000870E81675A0F600042A38 /* VSHistoryViewController.xib in Resources */,
+				000870E91675A0F600042A38 /* VSVocabularyViewController.xib in Resources */,
+				000870EA1675A0F600042A38 /* VSVocabularyListViewController.xib in Resources */,
+				000870EC1675A0F600042A38 /* VSConfigurationViewController.xib in Resources */,
+				000870EE1675A0F600042A38 /* VSMainViewController.xib in Resources */,
+				000870EF1675A0F600042A38 /* VSRepoListViewController.xib in Resources */,
+				000870F01675A0F600042A38 /* VSGuideViewController.xib in Resources */,
+				000870F11675A0F600042A38 /* VSUIUtils.m in Resources */,
+				000870F21675A0F600042A38 /* Menu@2x.png in Resources */,
+				000870F31675A0F600042A38 /* SeparatorDots@2x.png in Resources */,
+				000870F41675A0F600042A38 /* BookBlack@2x.png in Resources */,
+				000870F51675A0F600042A38 /* BookLake@2x.png in Resources */,
+				000870F61675A0F600042A38 /* BookRed@2x.png in Resources */,
+				000870F71675A0F600042A38 /* ButtonBT@2x.png in Resources */,
+				000870F81675A0F600042A38 /* ButtonBTHighLighted@2x.png in Resources */,
+				000870F91675A0F600042A38 /* CellAccessory@2x.png in Resources */,
+				000870FA1675A0F600042A38 /* CellBG@2x.png in Resources */,
+				000870FB1675A0F600042A38 /* CellClear@2x.png in Resources */,
+				000870FC1675A0F600042A38 /* CellLine@2x.png in Resources */,
+				000870FD1675A0F600042A38 /* CellSummary@2x.png in Resources */,
+				000870FE1675A0F600042A38 /* DetailsBG@2x.png in Resources */,
+				000870FF1675A0F600042A38 /* DetailsHeader@2x.png in Resources */,
+				000871001675A0F600042A38 /* infoButton@2x.png in Resources */,
+				000871011675A0F600042A38 /* InkBody@2x.png in Resources */,
+				000871021675A0F600042A38 /* InkFooter@2x.png in Resources */,
+				000871031675A0F600042A38 /* InkHeader@2x.png in Resources */,
+				000871041675A0F600042A38 /* InkNeck@2x.png in Resources */,
+				000871051675A0F600042A38 /* ListBG@2x.png in Resources */,
+				000871061675A0F600042A38 /* NavBackButton@2x.png in Resources */,
+				000871071675A0F600042A38 /* Navigation@2x.png in Resources */,
+				000871081675A0F600042A38 /* Next@2x.png in Resources */,
+				000871091675A0F600042A38 /* PenBG@2x.png in Resources */,
+				0008710A1675A0F600042A38 /* PenFG@2x.png in Resources */,
+				0008710B1675A0F600042A38 /* ScoreBoardButton@2x.png in Resources */,
+				0008710C1675A0F600042A38 /* ScoreBoardPopup@2x.png in Resources */,
+				0008710D1675A0F600042A38 /* SeparatorLine@2x.png in Resources */,
+				0008710E1675A0F600042A38 /* Star@2x.png in Resources */,
+				0008710F1675A0F600042A38 /* StarNone@2x.png in Resources */,
+				000871101675A0F600042A38 /* StarSmall@2x.png in Resources */,
+				000871111675A0F600042A38 /* TapeBody@2x.png in Resources */,
+				000871121675A0F600042A38 /* TapeHead@2x.png in Resources */,
+				000871131675A0F600042A38 /* TapeTail@2x.png in Resources */,
+				000871141675A0F600042A38 /* TimeLineCellDark@2x.png in Resources */,
+				000871151675A0F600042A38 /* TimeLineCellLight@2x.png in Resources */,
+				000871161675A0F600042A38 /* Unit@2x.png in Resources */,
+				000871171675A0F600042A38 /* PopupClose@2x.png in Resources */,
+				000871181675A0F600042A38 /* PopupCloseHighLighted@2x.png in Resources */,
+				000871191675A0F600042A38 /* Dakota.ttf in Resources */,
+				0008711A1675A0F600042A38 /* Mark@2x.png in Resources */,
+				0008711C1675A0F600042A38 /* MenuButtonHighLighted@2x.png in Resources */,
+				0008711D1675A0F600042A38 /* UnitHighLighted@2x.png in Resources */,
+				0008711E1675A0F600042A38 /* UnitSelected@2x.png in Resources */,
+				0008711F1675A0F600042A38 /* UnitC@2x.png in Resources */,
+				000871201675A0F600042A38 /* UnitCHighLighted@2x.png in Resources */,
+				000871211675A0F600042A38 /* ScoreDown@2x.png in Resources */,
+				000871221675A0F600042A38 /* ScoreUp@2x.png in Resources */,
+				000871281675A0F600042A38 /* SoundButton@2x.png in Resources */,
+				000871291675A0F600042A38 /* iRate.bundle in Resources */,
+				000871341675A14400042A38 /* settings.plist in Resources */,
+				000871501675AEA900042A38 /* GuidePage1@2x.png in Resources */,
+				000871511675AEA900042A38 /* GuidePage2@2x.png in Resources */,
+				000871521675AEA900042A38 /* GuidePage3@2x.png in Resources */,
+				000871531675AEA900042A38 /* icon.png in Resources */,
+				000871541675AEA900042A38 /* icon@2x.png in Resources */,
+				000871551675AEA900042A38 /* iTunesArtwork in Resources */,
+				00087160167671E400042A38 /* VocabularySishu.sqlite in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		00201E0715CFBAD30089B8FA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1841,7 +2130,6 @@
 				00533E3715F3DA81004777F1 /* iTunesArtwork in Resources */,
 				008D5DBA161814780046240B /* SoundButton@2x.png in Resources */,
 				00CA9063164F62F600876164 /* iRate.bundle in Resources */,
-				00CA9070164F6AF800876164 /* settings.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2170,6 +2458,69 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		000870A01675A0F600042A38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				000870A11675A0F600042A38 /* VSNavigationBar.m in Sources */,
+				000870A21675A0F600042A38 /* main.m in Sources */,
+				000870A31675A0F600042A38 /* VSAppDelegate.m in Sources */,
+				000870A41675A0F600042A38 /* VocabularySishu.xcdatamodeld in Sources */,
+				000870A51675A0F600042A38 /* VSVocabularyViewController.m in Sources */,
+				000870A61675A0F600042A38 /* VSHistoryViewController.m in Sources */,
+				000870A71675A0F600042A38 /* VSUtils.m in Sources */,
+				000870A81675A0F600042A38 /* VSDataUtil.m in Sources */,
+				000870A91675A0F600042A38 /* NSObject+SBJSON.m in Sources */,
+				000870AA1675A0F600042A38 /* NSString+SBJSON.m in Sources */,
+				000870AB1675A0F600042A38 /* SBJSON.m in Sources */,
+				000870AC1675A0F600042A38 /* SBJsonBase.m in Sources */,
+				000870AD1675A0F600042A38 /* SBJsonParser.m in Sources */,
+				000870AE1675A0F600042A38 /* SBJsonWriter.m in Sources */,
+				000870AF1675A0F600042A38 /* VSVocabularyListViewController.m in Sources */,
+				000870B01675A0F600042A38 /* VSConstant.m in Sources */,
+				000870B11675A0F600042A38 /* VSContext.m in Sources */,
+				000870B21675A0F600042A38 /* VSList.m in Sources */,
+				000870B31675A0F600042A38 /* VSListVocabulary.m in Sources */,
+				000870B41675A0F600042A38 /* VSMeaning.m in Sources */,
+				000870B51675A0F600042A38 /* VSRepository.m in Sources */,
+				000870B61675A0F600042A38 /* VSWebsterMeaning.m in Sources */,
+				000870B71675A0F600042A38 /* VSVocabularyListHeaderView.m in Sources */,
+				000870B81675A0F600042A38 /* VSConfigurationViewController.m in Sources */,
+				000870B91675A0F600042A38 /* NSMutableArrayShuffling.m in Sources */,
+				000870BA1675A0F600042A38 /* VSSummaryView.m in Sources */,
+				000870BB1675A0F600042A38 /* VSVocabulary.m in Sources */,
+				000870BC1675A0F600042A38 /* VSVocabularyCell.m in Sources */,
+				000870BD1675A0F600042A38 /* VSScoreBoardView.m in Sources */,
+				000870BE1675A0F600042A38 /* VSHisotryListCell.m in Sources */,
+				000870BF1675A0F600042A38 /* VSMainViewController.m in Sources */,
+				000870C01675A0F600042A38 /* VSRepoViewController.m in Sources */,
+				000870C11675A0F600042A38 /* VSRepoListViewController.m in Sources */,
+				000870C21675A0F600042A38 /* VSSingleListView.m in Sources */,
+				000870C31675A0F600042A38 /* VSClipView.m in Sources */,
+				000870C41675A0F600042A38 /* VSGuideViewController.m in Sources */,
+				000870C51675A0F600042A38 /* TipsBubble.m in Sources */,
+				000870C61675A0F600042A38 /* Reachability.m in Sources */,
+				000870C71675A0F600042A38 /* VSUIUtils.m in Sources */,
+				000870C81675A0F600042A38 /* ASIAuthenticationDialog.m in Sources */,
+				000870C91675A0F600042A38 /* ASIDataCompressor.m in Sources */,
+				000870CA1675A0F600042A38 /* ASIDataDecompressor.m in Sources */,
+				000870CB1675A0F600042A38 /* ASIDownloadCache.m in Sources */,
+				000870CC1675A0F600042A38 /* ASIFormDataRequest.m in Sources */,
+				000870CD1675A0F600042A38 /* ASIHTTPRequest.m in Sources */,
+				000870CE1675A0F600042A38 /* ASIInputStream.m in Sources */,
+				000870CF1675A0F600042A38 /* ASINetworkQueue.m in Sources */,
+				000870D01675A0F600042A38 /* VSCellStatus.m in Sources */,
+				000870D11675A0F600042A38 /* FDCurlViewControl.m in Sources */,
+				000870D21675A0F600042A38 /* iRate.m in Sources */,
+				000870D31675A0F600042A38 /* UserModel.xcdatamodeld in Sources */,
+				000870D41675A0F600042A38 /* VSListRecord.m in Sources */,
+				000870D51675A0F600042A38 /* VSAppRecord.m in Sources */,
+				000870D61675A0F600042A38 /* VSListVocabularyRecord.m in Sources */,
+				000870D71675A0F600042A38 /* VSVocabularyRecord.m in Sources */,
+				000870D81675A0F600042A38 /* VSRememberedList.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		00201DDE15CFBAD30089B8FA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2524,6 +2875,64 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0008712C1675A0F600042A38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUNDLE_NAME = "VocabularySishu-CET4";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "CET4=1";
+				GCC_THUMB_SUPPORT = NO;
+				INFOPLIST_FILE = "$(SRCROOT)/VocabularySishu/VocabularySishu-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/VocabularySishu/Libs/Statistics\"",
+				);
+				PRODUCT_NAME = "VocabularySishu CET4";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0008712D1675A0F600042A38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUNDLE_NAME = "VocabularySishu-CET4";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "CET4=1";
+				GCC_THUMB_SUPPORT = NO;
+				INFOPLIST_FILE = "$(SRCROOT)/VocabularySishu/VocabularySishu-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/VocabularySishu/Libs/Statistics\"",
+				);
+				PRODUCT_NAME = "VocabularySishu CET4";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 		00201E2D15CFBAD30089B8FA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2916,6 +3325,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0008712B1675A0F600042A38 /* Build configuration list for PBXNativeTarget "VocabularySishu CET4" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0008712C1675A0F600042A38 /* Debug */,
+				0008712D1675A0F600042A38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		00201E2C15CFBAD30089B8FA /* Build configuration list for PBXNativeTarget "VocabularySishu GRE" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

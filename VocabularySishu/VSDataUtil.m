@@ -116,10 +116,10 @@ NSMutableDictionary *vocabularyMap;
         NSDictionary *vocabularyInfo = [parser objectWithString:[vocabularies objectAtIndex:i]];
         VSVocabulary *vocabulary = [NSEntityDescription insertNewObjectForEntityForName:@"VSVocabulary" inManagedObjectContext:[VSUtils currentMOContext]];
         vocabulary.spell = [vocabularyInfo objectForKey:@"spell"];
-        vocabulary.phonetic = [vocabularyInfo objectForKey:@"phonetic"];
-        vocabulary.etymology = [vocabularyInfo objectForKey:@"etymology"];
-        vocabulary.type = [vocabularyInfo objectForKey:@"type"];        
-        vocabulary.audioLink = [vocabularyInfo objectForKey:@"audioLink"];
+        vocabulary.phonetic = [vocabularyInfo objectForKey:@"phonetic"];        
+//        vocabulary.etymology = [vocabularyInfo objectForKey:@"etymology"];
+//        vocabulary.type = [vocabularyInfo objectForKey:@"type"];
+//        vocabulary.audioLink = [vocabularyInfo objectForKey:@"audioLink"];
         vocabulary.summary = [vocabularyInfo objectForKey:@"summary"];
         vocabulary.meet = [NSNumber numberWithInt:0];
         vocabulary.remember = [NSNumber numberWithInt:50];
@@ -347,9 +347,9 @@ NSMutableDictionary *vocabularyMap;
     [VSDataUtil initRepoList];
     NSLog(@"Meaning");
     [VSDataUtil initMeanings];
-    NSLog(@"MWMeaning");
-    [VSDataUtil clearEntities:@"VSWebsterMeaning"];
-    [VSDataUtil initFullMWMeanings];
+//    NSLog(@"MWMeaning");
+//    [VSDataUtil clearEntities:@"VSWebsterMeaning"];
+//    [VSDataUtil initFullMWMeanings];
 
     NSLog(@"Time elapse %f in import all", [dateStarted timeIntervalSinceNow]);
 
