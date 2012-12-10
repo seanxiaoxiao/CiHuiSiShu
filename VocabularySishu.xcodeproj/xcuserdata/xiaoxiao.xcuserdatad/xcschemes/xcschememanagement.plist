@@ -9,10 +9,20 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>VocabularySishu TOEFL Trial.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>VocabularySishu TOEFL.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
+		</dict>
+		<key>VocabularySishu TRIAL.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 		<key>VocabularySishu copy.xcscheme</key>
 		<dict>
@@ -38,6 +48,11 @@
 			<true/>
 		</dict>
 		<key>00701E4A1553CBCE00D30018</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0082427E1671BF1400FF1631</key>
 		<dict>
 			<key>primary</key>
 			<true/>
