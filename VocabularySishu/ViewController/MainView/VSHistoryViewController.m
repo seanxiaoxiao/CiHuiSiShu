@@ -176,7 +176,6 @@
     }
     CGPoint offset = scrollView.contentOffset;
     if (offset.y > (scrollView.contentSize.height - scrollView.frame.size.height) + 40 && velocity.y > 0 && !self.loading) {
-        NSLog(@"Begin loading");
         self.loading = YES;
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[self.historyLists count] inSection:0];
         NSArray *indexPaths = [[NSArray alloc] initWithObjects:indexPath, nil];

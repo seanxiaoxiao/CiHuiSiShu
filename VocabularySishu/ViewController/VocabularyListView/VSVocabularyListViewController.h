@@ -50,6 +50,7 @@
 @property (nonatomic, strong) UILabel *planFinishLabel;
 @property (nonatomic, strong) UIButton *revertButton;
 @property (nonatomic, retain) VSRememberedList *rememberedList;
+@property (nonatomic, assign) BOOL inRevert;
 
 - (IBAction)curlUp:(id)sender;
 

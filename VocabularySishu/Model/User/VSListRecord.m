@@ -297,10 +297,11 @@
     localNotif.fireDate = fireDate;
     localNotif.timeZone = [NSTimeZone defaultTimeZone];
     localNotif.alertBody = [NSString stringWithFormat:@"刚吃过午饭，我们继续把 %@ 中剩下的单词搞定吧！", self.name];
-    localNotif.applicationIconBadgeNumber = 1;
-
+    localNotif.applicationIconBadgeNumber = 0;
+    
     NSDictionary *infoDict = [NSDictionary dictionaryWithObject:self.name forKey:@"ListRecordName"];
     localNotif.userInfo = infoDict;
+    
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
 
 }
@@ -338,8 +339,7 @@
     localNotif.fireDate = fireDate;
     localNotif.timeZone = [NSTimeZone defaultTimeZone];
     localNotif.alertBody = [NSString stringWithFormat:@"睡觉前，%@ 中还有没背完的单词，刷掉几个吧！", self.name];
-    localNotif.applicationIconBadgeNumber = 1;
-    
+    localNotif.applicationIconBadgeNumber = 0;
     NSDictionary *infoDict = [NSDictionary dictionaryWithObject:self.name forKey:@"ListRecordName"];
     localNotif.userInfo = infoDict;
     
