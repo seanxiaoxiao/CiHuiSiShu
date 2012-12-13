@@ -15,8 +15,9 @@
 #define CONTACT_SECTION 1
 #define GUIDE_SECTION 0
 #define GUIDE 0
-#define RATEUS 0
-#define FEADBACK 1
+#define MORE 0
+#define RATEUS 1
+#define FEADBACK 2
 #define EMAIL_SUPPORTING @"vss@gefostudio.com"
 
 #define IS_IOS5_AND_PLUS			( [ [ [ UIDevice currentDevice ] systemVersion ] compare: @"5.0" options: NSNumericSearch ] != NSOrderedAscending )

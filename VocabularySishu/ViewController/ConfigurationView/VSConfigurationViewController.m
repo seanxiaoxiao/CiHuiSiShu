@@ -8,6 +8,7 @@
 
 #import "VSConfigurationViewController.h"
 #import "VSUIUtils.h"
+#import "VSUtils.h"
 
 @interface VSConfigurationViewController ()
 
@@ -29,7 +30,7 @@
 {
     [super viewDidLoad];
     self.title = @"设置";
-    contactContents = [NSArray arrayWithObjects:@"给词汇私塾评分", @"意见反馈", nil];
+    contactContents = [NSArray arrayWithObjects:@"更多系列", @"给词汇私塾评分", @"意见反馈", nil];
     [self.navigationItem setLeftBarButtonItem:[VSUIUtils makeBackButton:self selector:@selector(goBack)]];
 }
 
@@ -75,7 +76,7 @@
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
 	if ( section == CONTACT_SECTION ) {
 		NSString* versionNum = [VSUtils getBundleVersion];
-		return [NSString stringWithFormat:@"\n\n词汇私塾\nVersion %@\nXiao Xiao -- Direct\nSu Shaowen -- Art\n©2012 GeFo Studio", versionNum];
+		return [NSString stringWithFormat:@"词汇私塾\nVersion %@\nXiao Xiao -- Direct\nSu Shaowen -- Art\n©2012 GeFo Studio", versionNum];
 	}
     return nil;
 }
@@ -107,7 +108,10 @@
         }
     }
     else if (indexPath.section == CONTACT_SECTION) {
-        if (indexPath.row == RATEUS) {
+        if (indexPath.row == MORE) {
+            [VSUtils openSeries];
+        }
+        else if (indexPath.row == RATEUS) {
             [self voteOnAppStore];
         }
         else if (indexPath.row == FEADBACK) {
