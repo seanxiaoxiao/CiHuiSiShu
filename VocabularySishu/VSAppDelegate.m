@@ -40,6 +40,7 @@
     if ([[VSAppRecord getAppRecord].migrated isEqualToNumber:[NSNumber numberWithBool:NO]]) {
         [VSDataUtil readWriteMigrate];
     }
+    [VSUtils addBarronAndSelectedGRE];
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
@@ -51,7 +52,6 @@
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"initialized"] ) {
-        [VSDataUtil fixData];
         [VSUtils showGuidPage];
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"initialized"];
         [[NSUserDefaults standardUserDefaults] synchronize];
