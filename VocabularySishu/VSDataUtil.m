@@ -31,6 +31,34 @@ NSMutableDictionary *vocabularyMap;
     }
 }
 
++ (void)updateRepoData
+{
+    NSArray *existedRepo = [VSRepository allRepos];
+    for (int i = 0; i < [existedRepo count]; i++) {
+        if (i != 0) {
+            VSRepository *repo = [existedRepo objectAtIndex:i];
+            repo.order = [NSNumber numberWithInt:[repo.order integerValue] + 2];
+        }
+    }
+    NSBundle *bundle = [NSBundle mainBundle];
+    NSString *repoData = [bundle pathForResource:@"Repos-updates" ofType:@"txt"];
+    NSFileHandle* file = [NSFileHandle fileHandleForReadingAtPath:repoData];
+    NSData* data = [file readDataToEndOfFile];
+    [file closeFile];
+    SBJsonParser *parser = [[SBJsonParser alloc] init];
+    NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSArray *repoArray = [parser objectWithString:jsonString];
+    for (int i = 0; i < [repoArray count]; i++) {
+        VSRepository *repo = [NSEntityDescription insertNewObjectForEntityForName:@"VSRepository" inManagedObjectContext:[VSUtils currentMOContext]];
+        repo.name = [repoArray objectAtIndex:i];
+        NSLog(@"name is %@", repo.name);
+        repo.order = [NSNumber numberWithInt:(i + 1)];
+        repo.finishedRound = [NSNumber numberWithInt:0];
+        [repoMap setValue:repo forKey:repo.name];
+    }
+    [VSUtils saveEntity];
+}
+
 + (void)initRepoData
 {
     NSDate *dateStarted = [[NSDate alloc] init];
@@ -117,7 +145,7 @@ NSMutableDictionary *vocabularyMap;
         VSVocabulary *vocabulary = [NSEntityDescription insertNewObjectForEntityForName:@"VSVocabulary" inManagedObjectContext:[VSUtils currentMOContext]];
         vocabulary.spell = [vocabularyInfo objectForKey:@"spell"];
         vocabulary.phonetic = [vocabularyInfo objectForKey:@"phonetic"];        
-//        vocabulary.etymology = [vocabularyInfo objectForKey:@"etymology"];
+        vocabulary.etymology = [vocabularyInfo objectForKey:@"etymology"];
 //        vocabulary.type = [vocabularyInfo objectForKey:@"type"];
 //        vocabulary.audioLink = [vocabularyInfo objectForKey:@"audioLink"];
         vocabulary.summary = [vocabularyInfo objectForKey:@"summary"];
