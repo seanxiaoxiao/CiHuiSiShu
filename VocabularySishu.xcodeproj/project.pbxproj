@@ -145,7 +145,6 @@
 		000871531675AEA900042A38 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0008714D1675AEA900042A38 /* icon.png */; };
 		000871541675AEA900042A38 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0008714E1675AEA900042A38 /* icon@2x.png */; };
 		000871551675AEA900042A38 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 0008714F1675AEA900042A38 /* iTunesArtwork */; };
-		00087160167671E400042A38 /* VocabularySishu.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0008715F167671E400042A38 /* VocabularySishu.sqlite */; };
 		000E585715E40C9900B7AB04 /* BookBlack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E582F15E40C9900B7AB04 /* BookBlack@2x.png */; };
 		000E585815E40C9900B7AB04 /* BookBlack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E582F15E40C9900B7AB04 /* BookBlack@2x.png */; };
 		000E585915E40C9900B7AB04 /* BookBlack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E582F15E40C9900B7AB04 /* BookBlack@2x.png */; };
@@ -250,6 +249,7 @@
 		000E58C315E40C9900B7AB04 /* Unit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E585315E40C9900B7AB04 /* Unit@2x.png */; };
 		000E58C415E40C9900B7AB04 /* Unit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E585315E40C9900B7AB04 /* Unit@2x.png */; };
 		000E58C515E40C9900B7AB04 /* Unit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E585315E40C9900B7AB04 /* Unit@2x.png */; };
+		000E679D1680435C00B4303F /* VocabularySishu.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 000E679C1680435C00B4303F /* VocabularySishu.sqlite */; };
 		000FEA541650B99E00644B63 /* VSAppRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 000FEA531650B99E00644B63 /* VSAppRecord.m */; };
 		000FEA551650B99E00644B63 /* VSAppRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 000FEA531650B99E00644B63 /* VSAppRecord.m */; };
 		000FEA561650B99E00644B63 /* VSAppRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 000FEA531650B99E00644B63 /* VSAppRecord.m */; };
@@ -848,7 +848,6 @@
 		0008714D1675AEA900042A38 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		0008714E1675AEA900042A38 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		0008714F1675AEA900042A38 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
-		0008715F167671E400042A38 /* VocabularySishu.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = VocabularySishu.sqlite; sourceTree = "<group>"; };
 		000E582F15E40C9900B7AB04 /* BookBlack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BookBlack@2x.png"; path = "Resources/Img/BookBlack@2x.png"; sourceTree = "<group>"; };
 		000E583015E40C9900B7AB04 /* BookLake@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BookLake@2x.png"; path = "Resources/Img/BookLake@2x.png"; sourceTree = "<group>"; };
 		000E583115E40C9900B7AB04 /* BookRed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BookRed@2x.png"; path = "Resources/Img/BookRed@2x.png"; sourceTree = "<group>"; };
@@ -886,6 +885,7 @@
 		000E585115E40C9900B7AB04 /* TimeLineCellDark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TimeLineCellDark@2x.png"; path = "Resources/Img/TimeLineCellDark@2x.png"; sourceTree = "<group>"; };
 		000E585215E40C9900B7AB04 /* TimeLineCellLight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TimeLineCellLight@2x.png"; path = "Resources/Img/TimeLineCellLight@2x.png"; sourceTree = "<group>"; };
 		000E585315E40C9900B7AB04 /* Unit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Unit@2x.png"; path = "Resources/Img/Unit@2x.png"; sourceTree = "<group>"; };
+		000E679C1680435C00B4303F /* VocabularySishu.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = VocabularySishu.sqlite; sourceTree = "<group>"; };
 		000FEA521650B99E00644B63 /* VSAppRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSAppRecord.h; path = Model/User/VSAppRecord.h; sourceTree = "<group>"; };
 		000FEA531650B99E00644B63 /* VSAppRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSAppRecord.m; path = Model/User/VSAppRecord.m; sourceTree = "<group>"; };
 		000FEA581650BA3A00644B63 /* VSListVocabularyRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSListVocabularyRecord.h; path = Model/User/VSListVocabularyRecord.h; sourceTree = "<group>"; };
@@ -1245,7 +1245,7 @@
 		000871561676684A00042A38 /* CET4 */ = {
 			isa = PBXGroup;
 			children = (
-				0008715F167671E400042A38 /* VocabularySishu.sqlite */,
+				000E679C1680435C00B4303F /* VocabularySishu.sqlite */,
 			);
 			name = CET4;
 			path = Resources/Data/CET4;
@@ -2055,7 +2055,7 @@
 				000871531675AEA900042A38 /* icon.png in Resources */,
 				000871541675AEA900042A38 /* icon@2x.png in Resources */,
 				000871551675AEA900042A38 /* iTunesArtwork in Resources */,
-				00087160167671E400042A38 /* VocabularySishu.sqlite in Resources */,
+				000E679D1680435C00B4303F /* VocabularySishu.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
