@@ -126,7 +126,7 @@
         return @"用户指南";
     }
     else if (section == CONTACT_SECTION) {
-        return @"联系我们";
+        return @"更多";
     }
     return @"";
 }

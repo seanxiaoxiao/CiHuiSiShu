@@ -82,9 +82,10 @@
         [self initBubbles];
         [self initGestures];
 
-        [self initCurlUp];
-        [self initRevertButton];
         if (![currentListRecord isHistoryList]) {
+            [self initCurlUp];
+//            [self initRevertButton];
+
             days = [[NSArray alloc] initWithObjects:@"1天内完成", @"2天内完成", @"3天内完成", nil];
             [self initPlanFinishButton];
             [self initPickerView];
@@ -138,7 +139,7 @@
 
 - (void) initPickerView
 {
-    pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 296, 320, 120)];
+    pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 256, 320, 120)];
     pickerView.delegate = self;
     pickerView.dataSource = self;
     pickerView.backgroundColor = [UIColor clearColor];
@@ -158,11 +159,11 @@
     [self.headerView setWordRemains:[vocabulariesToRecite count]];
     [self.headerView updateProgress:[self.currentListRecord finishProgress]];
     [self.containerView addSubview:self.headerView];
-    
-    UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
-    [backgroundImageView setFrame:self.view.frame];
-    [self.view addSubview:backgroundImageView];
-    [self.view sendSubviewToBack:backgroundImageView];
+//    
+//    UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
+//    [backgroundImageView setFrame:self.view.frame];
+//    [self.view addSubview:backgroundImageView];
+//    [self.view sendSubviewToBack:backgroundImageView];
 
     UIImageView *containerBackgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
     [containerBackgroundImageView setFrame:self.containerView.frame];
