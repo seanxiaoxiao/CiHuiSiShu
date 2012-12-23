@@ -88,7 +88,7 @@
         [self.startButton setTitle:@"开始背诵" forState:UIControlStateNormal];
     }
     else {
-        NSString *continueTitle = [NSString stringWithFormat:@"继续背诵 (%@)", [[VSContext getContext].currentList titleName]];
+        NSString *continueTitle = [NSString stringWithFormat:@"继续背诵 (%@)", [[VSContext getContext].currentList subName]];
         [self.startButton setTitle:continueTitle forState:UIControlStateNormal];
     }
     self.historyLists = [NSMutableArray arrayWithArray:[VSList lastestHistoryList]];

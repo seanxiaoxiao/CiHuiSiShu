@@ -186,11 +186,12 @@
 - (NSString *)subName
 {
     NSRange range;
-    if ((range = [self.name rangeOfString:@"GRE"]).location != NSNotFound || (range = [self.name rangeOfString:@"TOEFL"]).location != NSNotFound || (range = [self.name rangeOfString:@"GMAT"]).location != NSNotFound || (range = [self.name rangeOfString:@"IELTS"]).location != NSNotFound || (range = [self.name rangeOfString:@"四级"]).location != NSNotFound || (range = [self.name rangeOfString:@"六级"]).location != NSNotFound) {
+    NSString *titleName = [self titleName];
+    if ((range = [titleName rangeOfString:@"GRE"]).location != NSNotFound || (range = [titleName rangeOfString:@"TOEFL"]).location != NSNotFound || (range = [titleName rangeOfString:@"GMAT"]).location != NSNotFound || (range = [titleName rangeOfString:@"IELTS"]).location != NSNotFound || (range = [titleName rangeOfString:@"四级"]).location != NSNotFound || (range = [titleName rangeOfString:@"六级"]).location != NSNotFound) {
         NSRange remainRange;
         remainRange.location = range.length;
-        remainRange.length = [self.name length] - range.length;
-        return [NSString stringWithFormat:@"%@", [self.name substringWithRange:remainRange]];
+        remainRange.length = [titleName length] - range.length;
+        return [NSString stringWithFormat:@"%@", [titleName substringWithRange:remainRange]];
     }
     return @"";
 }
