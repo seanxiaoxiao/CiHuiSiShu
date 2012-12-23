@@ -40,8 +40,9 @@
 					<object class="IBUIButton" id="197758809">
 						<reference key="NSNextResponder" ref="520045364"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{90, 210}, {140, 44}}</string>
+						<string key="NSFrame">{{90, 290}, {140, 44}}</string>
 						<reference key="NSSuperview" ref="520045364"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="634996637"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
@@ -75,6 +76,7 @@
 						<int key="NSvFlags">-2147483356</int>
 						<string key="NSFrame">{{100, 303}, {120, 44}}</string>
 						<reference key="NSSuperview" ref="520045364"/>
+						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -94,6 +96,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{50, 246}, {220, 42}}</string>
 						<reference key="NSSuperview" ref="520045364"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="197758809"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
@@ -134,6 +137,7 @@
 								<int key="NSvFlags">274</int>
 								<string key="NSFrame">{{0, 60}, {320, 336}}</string>
 								<reference key="NSSuperview" ref="961863339"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="498020440"/>
 								<object class="NSColor" key="IBUIBackgroundColor" id="294116813">
 									<int key="NSColorSpace">3</int>
@@ -155,6 +159,7 @@
 						</array>
 						<string key="NSFrameSize">{320, 416}</string>
 						<reference key="NSSuperview" ref="520045364"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="873029372"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="294116813"/>
@@ -163,6 +168,7 @@
 				</array>
 				<string key="NSFrameSize">{320, 416}</string>
 				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="961863339"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<object class="NSColor" key="IBUIBackgroundColor">
@@ -4718,7 +4724,61 @@ AAgAAAAIAAIACAACAAAAAgAAAAEAAQABAAE</bytes>
 			<nil key="sourceID"/>
 			<int key="maxID">28</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes"/>
+		<object class="IBClassDescriber" key="IBDocument.Classes">
+			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<object class="IBPartialClassDescription">
+					<string key="className">VSVocabularyListViewController</string>
+					<string key="superclassName">UIViewController</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="curlUp:">id</string>
+						<string key="revertToken:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="curlUp:">
+							<string key="name">curlUp:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="revertToken:">
+							<string key="name">revertToken:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="containerView">UIView</string>
+						<string key="planFinishButton">UIButton</string>
+						<string key="planFinishLabel">UILabel</string>
+						<string key="revertButton">UIButton</string>
+						<string key="tableView">UITableView</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="containerView">
+							<string key="name">containerView</string>
+							<string key="candidateClassName">UIView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="planFinishButton">
+							<string key="name">planFinishButton</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="planFinishLabel">
+							<string key="name">planFinishLabel</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="revertButton">
+							<string key="name">revertButton</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="tableView">
+							<string key="name">tableView</string>
+							<string key="candidateClassName">UITableView</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/VSVocabularyListViewController.h</string>
+					</object>
+				</object>
+			</array>
+		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>

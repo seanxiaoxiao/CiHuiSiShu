@@ -57,6 +57,10 @@
 
 - (VSListRecord *)getListRecord;
 
+- (NSString *)repoCategory;
+
+- (NSString *)subName;
+
 @end
 
 @interface VSList (CoreDataGeneratedAccessors)

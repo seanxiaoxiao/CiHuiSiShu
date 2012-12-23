@@ -63,7 +63,6 @@
         [currentListRecord process];
         [currentListRecord resetFinishPlanDate];
 
-        self.title = [self getTitle];
         self.clearingCount = 0;
         
         self.vocabulariesToRecite = [self.currentListRecord vocabulariesToRecite];;
@@ -98,6 +97,37 @@
         
     }
     return self;
+}
+
+- (void) initTitle
+{
+    UIView *headerLabels = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 44)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 4, 200, 20)];
+    label.backgroundColor = [UIColor clearColor];
+    label.font = [UIFont boldSystemFontOfSize: 18.0f];
+    label.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.1];
+    label.textAlignment = UITextAlignmentCenter;
+    label.shadowOffset = CGSizeMake(0, -1);
+    label.textColor = [UIColor colorWithHue:0 saturation:0 brightness:0.8 alpha:1];
+    UILabel *subLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 24, 200, 18)];
+    subLabel.backgroundColor = [UIColor clearColor];
+    subLabel.font = [UIFont boldSystemFontOfSize: 12.0f];
+    subLabel.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.1];
+    subLabel.textAlignment = UITextAlignmentCenter;
+    subLabel.textColor = [UIColor colorWithHue:0 saturation:0 brightness:0.8 alpha:1];
+    subLabel.shadowOffset = CGSizeMake(0, -1);
+    [headerLabels addSubview:label];
+    [headerLabels addSubview:subLabel];
+    self.navigationItem.titleView = headerLabels;
+    
+    if (currentList != nil) {
+        label.text = [currentList repoCategory];
+        subLabel.text = [currentList subName];
+    }
+    else {
+        label.text = @"复习";
+        subLabel.text = currentListRecord.name;
+    }
 }
 
 - (void) initRightButton
@@ -152,18 +182,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   
+
+    [self initTitle];
     [self updateRevertButton];
     
     self.headerView = [[VSVocabularyListHeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
     [self.headerView setWordRemains:[vocabulariesToRecite count]];
     [self.headerView updateProgress:[self.currentListRecord finishProgress]];
     [self.containerView addSubview:self.headerView];
-//    
-//    UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
-//    [backgroundImageView setFrame:self.view.frame];
-//    [self.view addSubview:backgroundImageView];
-//    [self.view sendSubviewToBack:backgroundImageView];
 
     UIImageView *containerBackgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
     [containerBackgroundImageView setFrame:self.containerView.frame];
@@ -179,7 +205,6 @@
 	[curlButton setTargetView:self.containerView];
     curlButton.delegate = self;
     [self.containerView addSubview:curlButton];
-    
 }
 
 - (void) initPlanFinishButton
@@ -235,6 +260,13 @@
     if (self.pickerView.hidden) {
         self.pickerView.hidden = NO;
         [self.planFinishButton setTitle:@"就这个时间" forState:UIControlStateNormal];
+        [UIView animateWithDuration:0.2f delay:0.0f options:UIViewAnimationCurveLinear
+                animations:^{
+                self.planFinishButton.frame = CGRectMake(90, 210, 140, 44);
+                }
+                completion:^(BOOL finished) {
+                }
+        ];
     }
     else {
         self.pickerView.hidden = YES;
@@ -243,6 +275,13 @@
         [self.currentListRecord setPlanFinishDate:daysToFinish];
         [self drawPlanFinishLabel];
         [self.planFinishButton setTitle:@"设置完成背诵时间" forState:UIControlStateNormal];
+        [UIView animateWithDuration:0.2f delay:0.0f options:UIViewAnimationCurveLinear
+                         animations:^{
+                             self.planFinishButton.frame = CGRectMake(90, 290, 140, 44);
+                         }
+                         completion:^(BOOL finished) {
+                         }
+         ];
     }
 }
 
@@ -491,7 +530,6 @@
         else if (draggedCell.curlUp && !draggedCell.clearing && translation.x > 0) {
             [draggedCell curlDown:point.x - 60];
         }
-        
     }
 }
 
@@ -638,16 +676,6 @@
     [VSUtils toNextList:self.currentList];
 }
 
-- (NSString *)getTitle
-{
-    if (currentList != nil) {
-        return [currentList titleName];
-    }
-    else {
-        return currentListRecord.name;
-    }
-}
-
 #pragma mark - Bubble Dismiss
 
 - (void)dismissActionBubble
@@ -688,6 +716,13 @@
 - (void)curlViewControlWillCurlViewDown:(FDCurlViewControl *)control
 {
     self.pickerView.hidden = YES;
+    [UIView animateWithDuration:0.2f delay:0.0f options:UIViewAnimationCurveLinear
+                     animations:^{
+                         self.planFinishButton.frame = CGRectMake(90, 290, 140, 44);
+                     }
+                     completion:^(BOOL finished) {
+                     }
+     ];
 }
 
 - (void)curlViewControlDidCurlViewDown:(FDCurlViewControl *)control
