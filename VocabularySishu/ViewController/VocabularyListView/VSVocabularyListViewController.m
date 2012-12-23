@@ -105,7 +105,7 @@
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 4, 200, 20)];
     label.backgroundColor = [UIColor clearColor];
     label.font = [UIFont boldSystemFontOfSize: 18.0f];
-    label.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.1];
+    label.shadowColor = [UIColor colorWithWhite:0 alpha:1];
     label.textAlignment = UITextAlignmentCenter;
     label.shadowOffset = CGSizeMake(0, -1);
     label.textColor = [UIColor colorWithHue:0 saturation:0 brightness:0.8 alpha:1];
@@ -114,7 +114,7 @@
     subLabel.font = [UIFont boldSystemFontOfSize: 12.0f];
     subLabel.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.1];
     subLabel.textAlignment = UITextAlignmentCenter;
-    subLabel.textColor = [UIColor colorWithHue:0 saturation:0 brightness:0.8 alpha:1];
+    subLabel.textColor = [UIColor colorWithHue:0 saturation:0 brightness:0.7 alpha:1];
     subLabel.shadowOffset = CGSizeMake(0, -1);
     [headerLabels addSubview:label];
     [headerLabels addSubview:subLabel];
