@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
+		<key>VocabularySishu CET6.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 		<key>VocabularySishu GRE.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -73,6 +78,11 @@
 			<true/>
 		</dict>
 		<key>00BDE55615CF9B9400BC205C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>00C8D39D168586CC00CA3880</key>
 		<dict>
 			<key>primary</key>
 			<true/>

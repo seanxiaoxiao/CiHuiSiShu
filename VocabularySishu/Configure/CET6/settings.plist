@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ProductVersion</key>
+	<string>CET6</string>
+	<key>UMengKey</key>
+	<string>50d54f4252701556bf000083</string>
+	<key>BundleID</key>
+	<string>org.seanxiaoxiao.VocabularySishu-CET6</string>
+	<key>AppID</key>
+	<real>558</real>
+</dict>
+</plist>
