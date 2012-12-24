@@ -184,7 +184,6 @@
     [toolBar setItems:[NSArray arrayWithObjects:btnCancel, prompt, btnConfirm, nil]];
     
     [pickerAreaView addSubview:toolBar];
-    NSLog (@"Height for picker view is %f", pickerAreaView.frame.size.height);
 
 }
 
@@ -192,8 +191,7 @@
 {
     int daysToFinish = [self.pickerView selectedRowInComponent:0] + 1;
     [self.currentListRecord setPlanFinishDate:daysToFinish];
-    NSNotification *notification = [NSNotification notificationWithName:SET_PLAN_FINISH_DATE object:nil userInfo:nil];
-    [[NSNotificationCenter defaultCenter] postNotification:notification];
+    [self.headerView startTimer];
     [self dismissPickerArea];
 }
 
@@ -202,6 +200,7 @@
     [UIView animateWithDuration:0.3 animations:^() {
         pickerAreaView.frame = CGRectMake(0, 420, 320, 164);
     }];
+    [self.view becomeFirstResponder];
 }
 
 - (void)showPickerArea
@@ -209,6 +208,7 @@
     [UIView animateWithDuration:0.3 animations:^() {
         pickerAreaView.frame = CGRectMake(0, 212, 320, 164);
     }];
+    [self.headerView becomeFirstResponder];
 }
 
 - (void)viewDidLoad
@@ -470,7 +470,7 @@
             [draggedCell curlUp:point.x];
             if (![[NSUserDefaults standardUserDefaults] boolForKey:@"showDetailBubble"] ) {
                 detailBubble = [[TipsBubble alloc] initWithTips:@"更多信息，点击这里" width:145 popupFrom:tipsBubblePopupFromLowerRight];
-                detailBubble.center = CGPointMake(155, draggedCell.frame.origin.y + 40);
+                detailBubble.center = CGPointMake(155, draggedCell.frame.origin.y);
                 [self.view addSubview:detailBubble];
                 [self.view bringSubviewToFront:detailBubble];
             }

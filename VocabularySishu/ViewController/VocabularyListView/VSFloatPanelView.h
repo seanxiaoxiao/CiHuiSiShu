@@ -28,4 +28,6 @@
 
 - (void)updateWordsCount;
 
+- (void)startTimer;
+
 @end

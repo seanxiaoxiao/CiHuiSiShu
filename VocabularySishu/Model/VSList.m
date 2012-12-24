@@ -116,7 +116,8 @@
 - (VSList *)nextList
 {
     int allListsCount = [self.repository.lists count];
-    NSNumber *nextOrder = [NSNumber numberWithInt:([self.order intValue] + 1) % allListsCount];
+    
+    NSNumber *nextOrder = [self.order intValue] + 1 == allListsCount + 1 ? [NSNumber numberWithInt:1] : [NSNumber numberWithInt:([self.order intValue] + 1)];
     
     NSPredicate *orderPredicate = [NSPredicate predicateWithFormat:@"(order = %@)", nextOrder];
     NSPredicate *historyPredicate = [NSPredicate predicateWithFormat:@"(type = 0)"];

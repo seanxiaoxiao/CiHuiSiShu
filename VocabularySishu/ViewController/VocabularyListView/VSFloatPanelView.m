@@ -77,8 +77,6 @@
         else {
             [self stopTimer];
         }
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(startTimer) name:SET_PLAN_FINISH_DATE object:nil];
-
     }
     return self;
 }
