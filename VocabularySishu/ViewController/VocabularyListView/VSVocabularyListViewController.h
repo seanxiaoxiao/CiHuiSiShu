@@ -41,6 +41,7 @@
 @property (nonatomic, retain) UIPickerView *pickerView;
 @property (nonatomic, retain) VSRememberedList *rememberedList;
 @property (nonatomic, retain) UIView *pickerAreaView;
+@property (nonatomic, retain) UILabel *promptLabel;
 
 
 @end

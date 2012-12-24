@@ -514,6 +514,34 @@
 		0085707716509112003861DB /* VSListRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 0085707516509112003861DB /* VSListRecord.m */; };
 		0085707816509112003861DB /* VSListRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 0085707516509112003861DB /* VSListRecord.m */; };
 		0085707916509112003861DB /* VSListRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 0085707516509112003861DB /* VSListRecord.m */; };
+		0087E71316881B7000B0E95F /* FloatBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0087E71216881B7000B0E95F /* FloatBar@2x.png */; };
+		0087E71416881B7000B0E95F /* FloatBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0087E71216881B7000B0E95F /* FloatBar@2x.png */; };
+		0087E71516881B7000B0E95F /* FloatBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0087E71216881B7000B0E95F /* FloatBar@2x.png */; };
+		0087E71616881B7000B0E95F /* FloatBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0087E71216881B7000B0E95F /* FloatBar@2x.png */; };
+		0087E71716881B7000B0E95F /* FloatBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0087E71216881B7000B0E95F /* FloatBar@2x.png */; };
+		0087E71816881B7000B0E95F /* FloatBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0087E71216881B7000B0E95F /* FloatBar@2x.png */; };
+		0087E71916881B7000B0E95F /* FloatBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0087E71216881B7000B0E95F /* FloatBar@2x.png */; };
+		0087E72E16881D0000B0E95F /* FloatBarTimer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0087E72B16881D0000B0E95F /* FloatBarTimer@2x.png */; };
+		0087E72F16881D0000B0E95F /* FloatBarTimer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0087E72B16881D0000B0E95F /* FloatBarTimer@2x.png */; };
+		0087E73016881D0000B0E95F /* FloatBarTimer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0087E72B16881D0000B0E95F /* FloatBarTimer@2x.png */; };
+		0087E73116881D0000B0E95F /* FloatBarTimer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0087E72B16881D0000B0E95F /* FloatBarTimer@2x.png */; };
+		0087E73216881D0000B0E95F /* FloatBarTimer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0087E72B16881D0000B0E95F /* FloatBarTimer@2x.png */; };
+		0087E73316881D0000B0E95F /* FloatBarTimer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0087E72B16881D0000B0E95F /* FloatBarTimer@2x.png */; };
+		0087E73416881D0000B0E95F /* FloatBarTimer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0087E72B16881D0000B0E95F /* FloatBarTimer@2x.png */; };
+		0087E73516881D0000B0E95F /* FloatBarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0087E72C16881D0000B0E95F /* FloatBarButton@2x.png */; };
+		0087E73616881D0000B0E95F /* FloatBarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0087E72C16881D0000B0E95F /* FloatBarButton@2x.png */; };
+		0087E73716881D0000B0E95F /* FloatBarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0087E72C16881D0000B0E95F /* FloatBarButton@2x.png */; };
+		0087E73816881D0000B0E95F /* FloatBarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0087E72C16881D0000B0E95F /* FloatBarButton@2x.png */; };
+		0087E73916881D0000B0E95F /* FloatBarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0087E72C16881D0000B0E95F /* FloatBarButton@2x.png */; };
+		0087E73A16881D0000B0E95F /* FloatBarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0087E72C16881D0000B0E95F /* FloatBarButton@2x.png */; };
+		0087E73B16881D0000B0E95F /* FloatBarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0087E72C16881D0000B0E95F /* FloatBarButton@2x.png */; };
+		0087E73C16881D0000B0E95F /* FloatBarButtonHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0087E72D16881D0000B0E95F /* FloatBarButtonHighLighted@2x.png */; };
+		0087E73D16881D0000B0E95F /* FloatBarButtonHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0087E72D16881D0000B0E95F /* FloatBarButtonHighLighted@2x.png */; };
+		0087E73E16881D0000B0E95F /* FloatBarButtonHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0087E72D16881D0000B0E95F /* FloatBarButtonHighLighted@2x.png */; };
+		0087E73F16881D0000B0E95F /* FloatBarButtonHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0087E72D16881D0000B0E95F /* FloatBarButtonHighLighted@2x.png */; };
+		0087E74016881D0000B0E95F /* FloatBarButtonHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0087E72D16881D0000B0E95F /* FloatBarButtonHighLighted@2x.png */; };
+		0087E74116881D0000B0E95F /* FloatBarButtonHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0087E72D16881D0000B0E95F /* FloatBarButtonHighLighted@2x.png */; };
+		0087E74216881D0000B0E95F /* FloatBarButtonHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0087E72D16881D0000B0E95F /* FloatBarButtonHighLighted@2x.png */; };
 		008D5DAB161810160046240B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 008D5DAA161810160046240B /* Reachability.m */; };
 		008D5DAC161810160046240B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 008D5DAA161810160046240B /* Reachability.m */; };
 		008D5DAD161810160046240B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 008D5DAA161810160046240B /* Reachability.m */; };
@@ -1148,6 +1176,10 @@
 		0085707416509112003861DB /* VSListRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSListRecord.h; path = Model/User/VSListRecord.h; sourceTree = "<group>"; };
 		0085707516509112003861DB /* VSListRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSListRecord.m; path = Model/User/VSListRecord.m; sourceTree = "<group>"; };
 		0085A617164A3AC600D51762 /* VocabularySishu 1. 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "VocabularySishu 1. 2.xcdatamodel"; sourceTree = "<group>"; };
+		0087E71216881B7000B0E95F /* FloatBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "FloatBar@2x.png"; path = "Resources/Img/FloatBar@2x.png"; sourceTree = "<group>"; };
+		0087E72B16881D0000B0E95F /* FloatBarTimer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "FloatBarTimer@2x.png"; path = "Resources/Img/FloatBarTimer@2x.png"; sourceTree = "<group>"; };
+		0087E72C16881D0000B0E95F /* FloatBarButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "FloatBarButton@2x.png"; path = "Resources/Img/FloatBarButton@2x.png"; sourceTree = "<group>"; };
+		0087E72D16881D0000B0E95F /* FloatBarButtonHighLighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "FloatBarButtonHighLighted@2x.png"; path = "Resources/Img/FloatBarButtonHighLighted@2x.png"; sourceTree = "<group>"; };
 		008D5DA9161810160046240B /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = Utils/Reachability.h; sourceTree = "<group>"; };
 		008D5DAA161810160046240B /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = Utils/Reachability.m; sourceTree = "<group>"; };
 		008D5DB2161812140046240B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -1811,6 +1843,10 @@
 		00B5A8BE1566886E00D20EB6 /* Img */ = {
 			isa = PBXGroup;
 			children = (
+				0087E72B16881D0000B0E95F /* FloatBarTimer@2x.png */,
+				0087E72C16881D0000B0E95F /* FloatBarButton@2x.png */,
+				0087E72D16881D0000B0E95F /* FloatBarButtonHighLighted@2x.png */,
+				0087E71216881B7000B0E95F /* FloatBar@2x.png */,
 				00C8D43B1685963A00CA3880 /* CET6 */,
 				000871491675AEA900042A38 /* CET4 */,
 				008243151671C1A000FF1631 /* TOEFL-TRIAL */,
@@ -2245,6 +2281,10 @@
 				000871541675AEA900042A38 /* icon@2x.png in Resources */,
 				000871551675AEA900042A38 /* iTunesArtwork in Resources */,
 				000E679D1680435C00B4303F /* VocabularySishu.sqlite in Resources */,
+				0087E71816881B7000B0E95F /* FloatBar@2x.png in Resources */,
+				0087E73316881D0000B0E95F /* FloatBarTimer@2x.png in Resources */,
+				0087E73A16881D0000B0E95F /* FloatBarButton@2x.png in Resources */,
+				0087E74116881D0000B0E95F /* FloatBarButtonHighLighted@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2318,6 +2358,10 @@
 				00533E3715F3DA81004777F1 /* iTunesArtwork in Resources */,
 				008D5DBA161814780046240B /* SoundButton@2x.png in Resources */,
 				00CA9063164F62F600876164 /* iRate.bundle in Resources */,
+				0087E71516881B7000B0E95F /* FloatBar@2x.png in Resources */,
+				0087E73016881D0000B0E95F /* FloatBarTimer@2x.png in Resources */,
+				0087E73716881D0000B0E95F /* FloatBarButton@2x.png in Resources */,
+				0087E73E16881D0000B0E95F /* FloatBarButtonHighLighted@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2385,6 +2429,10 @@
 				642D2AA71644DB3A00BE3A9E /* PenBG@2x.png in Resources */,
 				00CA9061164F62F600876164 /* iRate.bundle in Resources */,
 				00CA906E164F6AF800876164 /* settings.plist in Resources */,
+				0087E71316881B7000B0E95F /* FloatBar@2x.png in Resources */,
+				0087E72E16881D0000B0E95F /* FloatBarTimer@2x.png in Resources */,
+				0087E73516881D0000B0E95F /* FloatBarButton@2x.png in Resources */,
+				0087E73C16881D0000B0E95F /* FloatBarButtonHighLighted@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2472,6 +2520,10 @@
 				00F7B02F1671D2E000F9FB14 /* List-Bottom@2x.png in Resources */,
 				00DBAAE61671C61B009B572F /* PenBG@2x.png in Resources */,
 				00F7B02E1671D28100F9FB14 /* VocabularySishu.sqlite in Resources */,
+				0087E71716881B7000B0E95F /* FloatBar@2x.png in Resources */,
+				0087E73216881D0000B0E95F /* FloatBarTimer@2x.png in Resources */,
+				0087E73916881D0000B0E95F /* FloatBarButton@2x.png in Resources */,
+				0087E74016881D0000B0E95F /* FloatBarButtonHighLighted@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2547,6 +2599,10 @@
 				00333FBD1631227C00F7871C /* MainPromo@2x.png in Resources */,
 				00333FBF1631345900F7871C /* iTunesArtwork in Resources */,
 				00CA9064164F62F600876164 /* iRate.bundle in Resources */,
+				0087E71616881B7000B0E95F /* FloatBar@2x.png in Resources */,
+				0087E73116881D0000B0E95F /* FloatBarTimer@2x.png in Resources */,
+				0087E73816881D0000B0E95F /* FloatBarButton@2x.png in Resources */,
+				0087E73F16881D0000B0E95F /* FloatBarButtonHighLighted@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2620,6 +2676,10 @@
 				00CA906F164F6AF800876164 /* settings.plist in Resources */,
 				004EA5A4161AA8AA000E4B0E /* VocabularySishu.sqlite in Resources */,
 				00C8D4561686F10A00CA3880 /* itunesArtWork in Resources */,
+				0087E71416881B7000B0E95F /* FloatBar@2x.png in Resources */,
+				0087E72F16881D0000B0E95F /* FloatBarTimer@2x.png in Resources */,
+				0087E73616881D0000B0E95F /* FloatBarButton@2x.png in Resources */,
+				0087E73D16881D0000B0E95F /* FloatBarButtonHighLighted@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2693,6 +2753,10 @@
 				00C8D4461685963A00CA3880 /* icon@2x.png in Resources */,
 				00C8D4471685963A00CA3880 /* iTunesArtwork in Resources */,
 				00C8D45416859B2B00CA3880 /* VocabularySishu.sqlite in Resources */,
+				0087E71916881B7000B0E95F /* FloatBar@2x.png in Resources */,
+				0087E73416881D0000B0E95F /* FloatBarTimer@2x.png in Resources */,
+				0087E73B16881D0000B0E95F /* FloatBarButton@2x.png in Resources */,
+				0087E74216881D0000B0E95F /* FloatBarButtonHighLighted@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

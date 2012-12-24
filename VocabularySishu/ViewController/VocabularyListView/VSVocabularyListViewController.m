@@ -46,6 +46,7 @@
 @synthesize days;
 @synthesize pickerView;
 @synthesize pickerAreaView;
+@synthesize promptLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -75,7 +76,7 @@
         [self initBubbles];
         [self initGestures];
 
-        days = [[NSArray alloc] initWithObjects:@"1天内完成", @"2天内完成", @"3天内完成", nil];
+        days = [[NSArray alloc] initWithObjects:@"一天内完成", @"两天内完成", @"三天内完成", nil];
         [self initPickerView];
         
         if ([self.vocabulariesToRecite count] == 0) {
@@ -166,10 +167,10 @@
     
     [self.view addSubview:pickerAreaView];
     
-    UILabel *promptLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 11, 170, 21)];
+    promptLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 11, 170, 21)];
     [promptLabel setBackgroundColor:[UIColor clearColor]];
     [promptLabel setTextColor:[UIColor colorWithHue:0 saturation:0 brightness:0.8 alpha:1]];
-    [promptLabel setText:@"1天内背诵完列表中剩余单词"];
+    promptLabel.text = @"1天内背诵完列表中剩余单词";
     [promptLabel setTextAlignment:UITextAlignmentCenter];
     [promptLabel setFont:[UIFont systemFontOfSize:12]];
     UIBarButtonItem *prompt = [[UIBarButtonItem alloc] initWithCustomView:promptLabel];
@@ -179,7 +180,7 @@
     
     UIBarButtonItem *btnConfirm = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(selectPlanFinishTime)];
     UIBarButtonItem *btnCancel = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismissPickerArea)];
-    [toolBar setItems:[NSArray arrayWithObjects:prompt, btnConfirm, btnCancel, nil]];
+    [toolBar setItems:[NSArray arrayWithObjects:btnCancel, prompt, btnConfirm, nil]];
     
     [pickerAreaView addSubview:toolBar];
 
@@ -189,6 +190,8 @@
 {
     int daysToFinish = [self.pickerView selectedRowInComponent:0] + 1;
     [self.currentListRecord setPlanFinishDate:daysToFinish];
+    NSNotification *notification = [NSNotification notificationWithName:SET_PLAN_FINISH_DATE object:nil userInfo:nil];
+    [[NSNotificationCenter defaultCenter] postNotification:notification];
     [self dismissPickerArea];
 }
 
@@ -199,13 +202,20 @@
     }];
 }
 
+- (void)showPickerArea
+{
+    [UIView animateWithDuration:0.3 animations:^() {
+        pickerAreaView.alpha = 1;
+    }];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
     [self initTitle];
     
-    self.headerView = [[VSFloatPanelView alloc] initWithFrame:CGRectMake(0, 0, 320, 44) withListRecord:self.currentListRecord];
+    self.headerView = [[VSFloatPanelView alloc] initWithFrame:CGRectMake(0, 0, 320, 80) withListRecord:self.currentListRecord];
     self.headerView.wordsRemain = [vocabulariesToRecite count];
     [self.headerView updateWordsCount];
     self.headerView.backgroundColor = [UIColor clearColor];
@@ -215,6 +225,9 @@
     [containerBackgroundImageView setFrame:self.view.frame];
     [self.view addSubview:containerBackgroundImageView];
     [self.view sendSubviewToBack:containerBackgroundImageView];
+    
+    UIView *tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 63)];
+    self.tableView.tableHeaderView = tableHeaderView;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -324,6 +337,11 @@
     return label;
 }
 
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    self.promptLabel.text = [NSString stringWithFormat:@"%d天内背诵完列表中剩余单词", row + 1];
+}
+
 #pragma mark - Navigation Related
 - (void)backToMain
 {
@@ -334,6 +352,7 @@
 #endif
     }
 }
+
 
 #pragma mark - Gesture Related
 

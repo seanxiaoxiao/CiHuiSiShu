@@ -13,7 +13,6 @@
 @interface VSFloatPanelView : UIView
 
 @property (nonatomic, retain) UIImageView *backgroundImageView;
-@property (nonatomic, retain) UIImageView *wordsCountImageView;
 @property (nonatomic, retain) UILabel *wordsCountLabel;
 @property (nonatomic, retain) UIButton *planFinishButton;
 @property (nonatomic, retain) UIImageView *countDownImageView;

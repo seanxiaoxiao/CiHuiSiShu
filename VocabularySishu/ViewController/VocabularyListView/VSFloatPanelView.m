@@ -13,7 +13,6 @@
 @implementation VSFloatPanelView
 
 @synthesize backgroundImageView;
-@synthesize wordsCountImageView;
 @synthesize wordsCountLabel;
 @synthesize planFinishButton;
 @synthesize countDownImageView;
@@ -32,34 +31,43 @@
         self.record = listRecord;
         [self.record resetFinishPlanDate];
         
-        UIImage *backgroundImage = [VSUtils fetchImg:@""];
+        UIImage *backgroundImage = [VSUtils fetchImg:@"FloatBar"];
         self.backgroundImageView = [[UIImageView alloc] initWithImage:backgroundImage];
         self.backgroundImageView.frame = CGRectMake(0, 0, backgroundImage.size.width, backgroundImage.size.height);
+        self.backgroundImageView.center = self.center;
         [self addSubview:backgroundImageView];
-        
-        UIImage *wordsCountImage = [VSUtils fetchImg:@""];
-        self.wordsCountImageView = [[UIImageView alloc] initWithImage:wordsCountImage];
-        self.wordsCountImageView.frame = CGRectMake(20, 10, wordsCountImage.size.width, wordsCountImage.size.height);
-        [self addSubview:self.wordsCountImageView];
-        
-        self.wordsCountLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, 100, 44)];
+
+        self.wordsCountLabel = [[UILabel alloc] initWithFrame:CGRectMake(65, 26, 100, 15)];
+        self.wordsCountLabel.textColor = [UIColor colorWithHue:0 saturation:0 brightness:0.7 alpha:1];
+        self.wordsCountLabel.shadowColor = [UIColor colorWithHue:0 saturation:0 brightness:0.5 alpha:1];
+        self.wordsCountLabel.shadowOffset = CGSizeMake(0, -1);
         self.wordsCountLabel.backgroundColor = [UIColor clearColor];
+        self.wordsCountLabel.font = [UIFont boldSystemFontOfSize:15];
         [self addSubview:self.wordsCountLabel];
         
-        UIImage *planButtonImage = [VSUtils fetchImg:@""];
-        CGRect planButtonFrame = CGRectMake(150, 10, planButtonImage.size.width, planButtonImage.size.height);
+        UIImage *planButtonImage = [VSUtils fetchImg:@"FloatBarButton"];
+        UIImage *planButtonHighLightedImage = [VSUtils fetchImg:@"FloatBarButtonHighLighted"];
+        CGRect planButtonFrame = CGRectMake(180, 16, planButtonImage.size.width, planButtonImage.size.height);
         self.planFinishButton = [[UIButton alloc] initWithFrame:planButtonFrame];
-        self.planFinishButton.titleLabel.text = @"设定背诵完成期限";
+        [self.planFinishButton setTitle:@"计划完成时间" forState:UIControlStateNormal];
         [planFinishButton setBackgroundImage:planButtonImage forState:UIControlStateNormal];
+        [planFinishButton setBackgroundImage:planButtonHighLightedImage forState:UIControlStateHighlighted];
         [planFinishButton addTarget:self action:@selector(showPickerView) forControlEvents:UIControlEventTouchUpInside];
+        self.planFinishButton.titleLabel.font = [UIFont boldSystemFontOfSize:15];
+
         [self addSubview:self.planFinishButton];
  
-        UIImage *countDownImage = [VSUtils fetchImg:@""];
+        UIImage *countDownImage = [VSUtils fetchImg:@"FloatBarTimer"];
         self.countDownImageView = [[UIImageView alloc] initWithImage:countDownImage];
-        self.countDownImageView.frame = CGRectMake(120, 10, countDownImage.size.width, countDownImage.size.height);
+        self.countDownImageView.frame = CGRectMake(155, 22, countDownImage.size.width, countDownImage.size.height);
         [self addSubview:self.countDownImageView];
 
-        self.countDownTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 10, 200, 44)];
+        self.countDownTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(185, 26, 170, 15)];
+        self.countDownTimeLabel.backgroundColor = [UIColor clearColor];
+        self.countDownTimeLabel.textColor = [UIColor colorWithHue:0 saturation:0 brightness:0.7 alpha:1];
+        self.countDownTimeLabel.shadowColor = [UIColor colorWithHue:0 saturation:0 brightness:0.5 alpha:1];
+        self.countDownTimeLabel.shadowOffset = CGSizeMake(0, -1);
+        self.countDownTimeLabel.font = [UIFont boldSystemFontOfSize:15];
         [self addSubview:self.countDownTimeLabel];
         
         self.wordsTotal = [self.record wordsTotal];
@@ -70,6 +78,8 @@
         else {
             [self stopTimer];
         }
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(startTimer) name:SET_PLAN_FINISH_DATE object:nil];
+
     }
     return self;
 }
@@ -112,17 +122,17 @@
 
 - (void)updateWordsCount
 {
-    self.wordsCountLabel.text = [NSString stringWithFormat:@"%d/%d", self.wordsRemain, self.wordsTotal];
+    self.wordsCountLabel.text = [NSString stringWithFormat:@"%d / %d", self.wordsRemain, self.wordsTotal];
 }
 
 - (void)updateCountDownTime
 {
     NSDate *now = [[NSDate alloc] init];
     NSTimeInterval timeToFinish = [self.record.finishPlanDate timeIntervalSinceDate:now];
-    double hour = timeToFinish / 60 / 60;
-    double minute = timeToFinish / 60 / 60 / 60;
-    double second = (int)timeToFinish / 60 / 60 % 60;
-    self.countDownTimeLabel.text = [NSString stringWithFormat:@"%f小时%f分%f秒", hour, minute, second];
+    int hour = timeToFinish / 60 / 60;
+    int minute = (int)timeToFinish % (60 * 60) / 60;
+    int second = (int)timeToFinish % (60 * 60) % 60;
+    self.countDownTimeLabel.text = [NSString stringWithFormat:@"%02d小时%02d分%02d秒", hour, minute, second];
     if (hour == 0 && minute == 0 && second == 0) {
         [self stopTimer];
     }

@@ -19,12 +19,7 @@
 #define NEXT_LIST @"next_list"
 #define HIDE_SCOREBOARD @"hide_scoreboard"
 #define CLOSE_POPUP @"close_popup"
-
-#define SHOW_TORECITE @"show_torecite"
-#define SHOW_CANNOTREMEMBERWELL @"show_cannotrememberwell"
-#define SHOW_OFTENFORGET @"show_oftenforget"
-#define SHOW_EASYTOFORGET @"show_easytoforget"
-#define SHOW_ALL @"show_all"
+#define SET_PLAN_FINISH_DATE @"set_plan_finish_date"
 
 #define SHORTTERM_REVIEW_INTERVAL 8 * 60 * 60;
 #define LONGTERM_REVIEW_INTERVAL 1 * 24 * 60 * 60;
