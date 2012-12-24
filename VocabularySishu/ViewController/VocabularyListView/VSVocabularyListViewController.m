@@ -136,6 +136,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(restart) name:RESTART_LIST object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(nextList) name:NEXT_LIST object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideScoreBoard) name:CLOSE_POPUP object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showPickerArea) name:SHOW_PICKER object:nil];
 }
 
 - (void) initBubbles
@@ -156,7 +157,7 @@
 
 - (void) initPickerView
 {
-    pickerAreaView = [[UIView alloc] initWithFrame:CGRectMake(0, 212, 320, 164)];
+    pickerAreaView = [[UIView alloc] initWithFrame:CGRectMake(0, 420, 320, 164)];
     pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 44, 320, 120)];
     pickerView.delegate = self;
     pickerView.dataSource = self;
@@ -170,7 +171,7 @@
     promptLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 11, 170, 21)];
     [promptLabel setBackgroundColor:[UIColor clearColor]];
     [promptLabel setTextColor:[UIColor colorWithHue:0 saturation:0 brightness:0.8 alpha:1]];
-    promptLabel.text = @"1天内背诵完列表中剩余单词";
+    promptLabel.text = @"一天内背诵完列表中剩余单词";
     [promptLabel setTextAlignment:UITextAlignmentCenter];
     [promptLabel setFont:[UIFont systemFontOfSize:12]];
     UIBarButtonItem *prompt = [[UIBarButtonItem alloc] initWithCustomView:promptLabel];
@@ -183,6 +184,7 @@
     [toolBar setItems:[NSArray arrayWithObjects:btnCancel, prompt, btnConfirm, nil]];
     
     [pickerAreaView addSubview:toolBar];
+    NSLog (@"Height for picker view is %f", pickerAreaView.frame.size.height);
 
 }
 
@@ -198,14 +200,14 @@
 - (void)dismissPickerArea
 {
     [UIView animateWithDuration:0.3 animations:^() {
-        pickerAreaView.alpha = 0;
+        pickerAreaView.frame = CGRectMake(0, 420, 320, 164);
     }];
 }
 
 - (void)showPickerArea
 {
     [UIView animateWithDuration:0.3 animations:^() {
-        pickerAreaView.alpha = 1;
+        pickerAreaView.frame = CGRectMake(0, 212, 320, 164);
     }];
 }
 
@@ -339,7 +341,15 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    self.promptLabel.text = [NSString stringWithFormat:@"%d天内背诵完列表中剩余单词", row + 1];
+    if (row == 0) {
+        self.promptLabel.text = @"一天内背诵完列表中剩余单词";
+    }
+    else if (row == 1) {
+        self.promptLabel.text = @"两天内背诵完列表中剩余单词";
+    }
+    else {
+        self.promptLabel.text = @"三天内背诵完列表中剩余单词";
+    }
 }
 
 #pragma mark - Navigation Related
