@@ -44,6 +44,8 @@
 
 - (NSMutableArray *)vocabulariesToRecite;
 
+- (int)wordsTotal;
+
 - (double)finishProgress;
 
 - (void)finish;

@@ -16,11 +16,11 @@
 #import "VSUIUtils.h"
 #import "iRate.h"
 #import "VSCellStatus.h"
-#import "FDCurlViewControl.h"
 #import "VSListRecord.h"
 #import "VSListVocabularyRecord.h"
 #import "VSVocabularyRecord.h"
 #import "VSRememberedList.h"
+#import "VSFloatPanelView.h"
 
 @interface VSVocabularyListViewController ()
 
@@ -43,15 +43,9 @@
 @synthesize detailBubble;
 @synthesize tableView;
 @synthesize cellStatus;
-@synthesize containerView;
-@synthesize curlButton;
-@synthesize planFinishButton;
 @synthesize days;
 @synthesize pickerView;
-@synthesize planFinishLabel;
-@synthesize revertButton;
-@synthesize rememberedList;
-@synthesize inRevert;
+@synthesize pickerAreaView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -81,20 +75,12 @@
         [self initBubbles];
         [self initGestures];
 
-        if (![currentListRecord isHistoryList]) {
-            [self initCurlUp];
-//            [self initRevertButton];
-
-            days = [[NSArray alloc] initWithObjects:@"1天内完成", @"2天内完成", @"3天内完成", nil];
-            [self initPlanFinishButton];
-            [self initPickerView];
-            [self drawPlanFinishLabel];
-        }
-
+        days = [[NSArray alloc] initWithObjects:@"1天内完成", @"2天内完成", @"3天内完成", nil];
+        [self initPickerView];
+        
         if ([self.vocabulariesToRecite count] == 0) {
             [self toggleScoreBoard];
         }
-        
     }
     return self;
 }
@@ -169,14 +155,48 @@
 
 - (void) initPickerView
 {
-    pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 256, 320, 120)];
+    pickerAreaView = [[UIView alloc] initWithFrame:CGRectMake(0, 212, 320, 164)];
+    pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 44, 320, 120)];
     pickerView.delegate = self;
     pickerView.dataSource = self;
     pickerView.backgroundColor = [UIColor clearColor];
     pickerView.showsSelectionIndicator = YES;
-    pickerView.hidden = YES;
     
-    [self.view addSubview:pickerView];
+    [pickerAreaView addSubview:pickerView];
+    
+    [self.view addSubview:pickerAreaView];
+    
+    UILabel *promptLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 11, 170, 21)];
+    [promptLabel setBackgroundColor:[UIColor clearColor]];
+    [promptLabel setTextColor:[UIColor colorWithHue:0 saturation:0 brightness:0.8 alpha:1]];
+    [promptLabel setText:@"1天内背诵完列表中剩余单词"];
+    [promptLabel setTextAlignment:UITextAlignmentCenter];
+    [promptLabel setFont:[UIFont systemFontOfSize:12]];
+    UIBarButtonItem *prompt = [[UIBarButtonItem alloc] initWithCustomView:promptLabel];
+    
+    UIToolbar *toolBar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 44)];
+    toolBar.barStyle = UIBarStyleBlackTranslucent;
+    
+    UIBarButtonItem *btnConfirm = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(selectPlanFinishTime)];
+    UIBarButtonItem *btnCancel = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismissPickerArea)];
+    [toolBar setItems:[NSArray arrayWithObjects:prompt, btnConfirm, btnCancel, nil]];
+    
+    [pickerAreaView addSubview:toolBar];
+
+}
+
+- (void)selectPlanFinishTime
+{
+    int daysToFinish = [self.pickerView selectedRowInComponent:0] + 1;
+    [self.currentListRecord setPlanFinishDate:daysToFinish];
+    [self dismissPickerArea];
+}
+
+- (void)dismissPickerArea
+{
+    [UIView animateWithDuration:0.3 animations:^() {
+        pickerAreaView.alpha = 0;
+    }];
 }
 
 - (void)viewDidLoad
@@ -184,114 +204,17 @@
     [super viewDidLoad];
 
     [self initTitle];
-    [self updateRevertButton];
     
-    self.headerView = [[VSVocabularyListHeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
-    [self.headerView setWordRemains:[vocabulariesToRecite count]];
-    [self.headerView updateProgress:[self.currentListRecord finishProgress]];
-    [self.containerView addSubview:self.headerView];
+    self.headerView = [[VSFloatPanelView alloc] initWithFrame:CGRectMake(0, 0, 320, 44) withListRecord:self.currentListRecord];
+    self.headerView.wordsRemain = [vocabulariesToRecite count];
+    [self.headerView updateWordsCount];
+    self.headerView.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:self.headerView];
 
     UIImageView *containerBackgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
-    [containerBackgroundImageView setFrame:self.containerView.frame];
-    [self.containerView addSubview:containerBackgroundImageView];
-    [self.containerView sendSubviewToBack:containerBackgroundImageView];
-}
-
-- (void) initCurlUp
-{
-    curlButton = [[FDCurlViewControl alloc] initWithFrame:CGRectMake(290.0f, 396.0f, 30.0f, 20.0f)];
-	[curlButton setAutoresizingMask:UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth];
-	[curlButton setHidesWhenAnimating:NO];
-	[curlButton setTargetView:self.containerView];
-    curlButton.delegate = self;
-    [self.containerView addSubview:curlButton];
-}
-
-- (void) initPlanFinishButton
-{
-    UIImage *normalButtonImage = [VSUtils fetchImg:@"ButtonBT"];
-    UIImage *highlightButtonImage = [VSUtils fetchImg:@"ButtonBTHighLighted"];
- 
-    [self.planFinishButton setBackgroundImage:normalButtonImage forState:UIControlStateNormal];
-    [self.planFinishButton setBackgroundImage:highlightButtonImage forState:UIControlStateHighlighted];
-    [self.planFinishButton setTitle:@"设置完成背诵时间" forState:UIControlStateNormal];
-    
-    [self.planFinishButton addTarget:self action:@selector(touchFinishPlan) forControlEvents:UIControlEventTouchUpInside];
-    [self.planFinishButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    self.planFinishButton.titleLabel.font = [UIFont boldSystemFontOfSize:15];
-    self.planFinishButton.titleLabel.shadowOffset = CGSizeMake(0, -1);
-    self.planFinishButton.titleLabel.shadowColor = [UIColor blackColor];
-}
-
-
-- (void) initRevertButton
-{
-    UIImage *normalButtonImage = [VSUtils fetchImg:@"ButtonBT"];
-    UIImage *highlightButtonImage = [VSUtils fetchImg:@"ButtonBTHighLighted"];
-    
-    [self.revertButton setBackgroundImage:normalButtonImage forState:UIControlStateNormal];
-    [self.revertButton setBackgroundImage:highlightButtonImage forState:UIControlStateHighlighted];
-    [self.revertButton setTitle:@"反悔上一个单词" forState:UIControlStateNormal];
-    [self.revertButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    self.revertButton.titleLabel.font = [UIFont boldSystemFontOfSize:15];
-    self.revertButton.titleLabel.shadowOffset = CGSizeMake(0, -1);
-    self.revertButton.titleLabel.shadowColor = [UIColor blackColor];
-}
-
-- (void) drawPlanFinishLabel
-{
-    if (self.currentListRecord.finishPlanDate != nil) {
-        self.planFinishLabel.hidden = NO;
-        self.planFinishButton.hidden = YES;
-        NSDateComponents *components = [[NSCalendar currentCalendar] components:NSDayCalendarUnit | NSMonthCalendarUnit fromDate:self.currentListRecord.finishPlanDate];
-        int month = [components month];
-        int day = [components day];
-        self.planFinishLabel.text = [NSString stringWithFormat:@"计划背诵完成时间为%d月%d日\n加油吧同学！", month, day];
-    }
-    else {
-        [self.planFinishButton setTitle:@"设置完成背诵时间" forState:UIControlStateNormal];
-        self.planFinishButton.hidden = NO;
-        self.planFinishLabel.hidden = YES;
-    }
-}
-
-- (void) touchFinishPlan
-{
-    if (self.pickerView.hidden) {
-        self.pickerView.hidden = NO;
-        [self.planFinishButton setTitle:@"就这个时间" forState:UIControlStateNormal];
-        [UIView animateWithDuration:0.2f delay:0.0f options:UIViewAnimationCurveLinear
-                animations:^{
-                self.planFinishButton.frame = CGRectMake(90, 210, 140, 44);
-                }
-                completion:^(BOOL finished) {
-                }
-        ];
-    }
-    else {
-        self.pickerView.hidden = YES;
-        [MobClick event:EVENT_SET_FINISH_PLAN];
-        int daysToFinish = [self.pickerView selectedRowInComponent:0] + 1;
-        [self.currentListRecord setPlanFinishDate:daysToFinish];
-        [self drawPlanFinishLabel];
-        [self.planFinishButton setTitle:@"设置完成背诵时间" forState:UIControlStateNormal];
-        [UIView animateWithDuration:0.2f delay:0.0f options:UIViewAnimationCurveLinear
-                         animations:^{
-                             self.planFinishButton.frame = CGRectMake(90, 290, 140, 44);
-                         }
-                         completion:^(BOOL finished) {
-                         }
-         ];
-    }
-}
-
-- (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event {
-	for (UITouch *touch in touches) {
-		CGPoint point = [touch locationInView:self.view];
-		if (point.y < round(CGRectGetHeight(self.view.frame)/2.0f)) {
-			[curlButton curlViewDown];
-		}
-	}
+    [containerBackgroundImageView setFrame:self.view.frame];
+    [self.view addSubview:containerBackgroundImageView];
+    [self.view sendSubviewToBack:containerBackgroundImageView];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -309,10 +232,6 @@
     self.blockView = nil;
     self.scoreBoardView = nil;
     self.exitButton = nil;
-    self.containerView = nil;
-    self.planFinishButton = nil;
-    self.planFinishLabel = nil;
-    self.revertButton = nil;
     self.rememberedList = nil;
 }
 
@@ -356,7 +275,8 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
     cell.alpha = 0;
     [UIView animateWithDuration:0.2
                      animations:^{
@@ -408,7 +328,6 @@
 - (void)backToMain
 {
     if (self.scoreBoardView == nil) {
-        self.curlButton.delegate = nil;
         [self.navigationController popViewControllerAnimated:YES];
 #ifdef TRIAL
         [[iRate sharedInstance] logEvent:NO];
@@ -554,9 +473,7 @@
             [self.listToday addVocabulary:rememberedVocabulary.vocabularyRecord];
         }
         [self.rememberedList addNewToken:index withRecord:rememberedVocabulary];
-        [self updateRevertButton];
-        [self.headerView updateProgress:[self.currentListRecord finishProgress]];
-        [self.headerView decrWordRemain];
+        [self.headerView clearWord];
         [vocabulariesToRecite removeObjectAtIndex:index];
         [self updateVocabularyTable:index];
         [self resetScroll];
@@ -570,17 +487,6 @@
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
     [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     [self.tableView endUpdates];
-}
-
-- (void)updateRevertButton
-{
-    if ([self.rememberedList isEmpty]) {
-        self.revertButton.hidden = YES;
-    }
-    else {
-        self.revertButton.hidden = NO;
-    }
-    inRevert = NO;
 }
 
 - (void)processAfterSwipe
@@ -698,51 +604,7 @@
     }
 }
 
-- (IBAction)curlUp:(id)sender
-{
-    VSVocabularyViewController * myModalVC = [[VSVocabularyViewController alloc] init];
-    [myModalVC setModalTransitionStyle:UIModalTransitionStylePartialCurl];
-    
-    [self presentModalViewController:myModalVC animated:YES];
-}
 
-- (IBAction)revertToken:(id)sender
-{
-    [MobClick event:EVENT_REVERT_TOKEN];
-    inRevert = YES;
-    [curlButton curlViewDown];
-}
 
-- (void)curlViewControlWillCurlViewDown:(FDCurlViewControl *)control
-{
-    self.pickerView.hidden = YES;
-    [UIView animateWithDuration:0.2f delay:0.0f options:UIViewAnimationCurveLinear
-                     animations:^{
-                         self.planFinishButton.frame = CGRectMake(90, 290, 140, 44);
-                     }
-                     completion:^(BOOL finished) {
-                     }
-     ];
-}
-
-- (void)curlViewControlDidCurlViewDown:(FDCurlViewControl *)control
-{
-    [self.planFinishButton setTitle:@"设置完成背诵时间" forState:UIControlStateNormal];
-    if (inRevert) {
-        VSRememberedToken *token = [self.rememberedList popToken];
-        [token.record revert];
-        [self.vocabulariesToRecite insertObject:token.record atIndex:token.index];
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:token.index inSection:0];
-        [self.tableView beginUpdates];
-        [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        [self.tableView endUpdates];
-        
-        [self.headerView setWordRemains:[vocabulariesToRecite count]];
-        [self.headerView updateProgress:[self.currentListRecord finishProgress]];
-        [self updateRevertButton];
-        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:token.index inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
-        inRevert = NO;
-    }
-}
 
 @end

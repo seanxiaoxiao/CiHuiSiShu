@@ -184,6 +184,11 @@
     return results;
 }
 
+- (int)wordsTotal
+{
+    return [self.listVocabularies count];
+}
+
 - (double)finishProgress
 {
     int rememberedCount = 0;

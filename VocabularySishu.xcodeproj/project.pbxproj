@@ -59,7 +59,6 @@
 		000870CE1675A0F600042A38 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF9E1618AB6E00E788EA /* ASIInputStream.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		000870CF1675A0F600042A38 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBFA01618AB6E00E788EA /* ASINetworkQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		000870D01675A0F600042A38 /* VSCellStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 00763F271645A03200CF7216 /* VSCellStatus.m */; };
-		000870D11675A0F600042A38 /* FDCurlViewControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EEF25D1648F4ED00BAEAC0 /* FDCurlViewControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		000870D21675A0F600042A38 /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CA9060164F62F600876164 /* iRate.m */; };
 		000870D31675A0F600042A38 /* UserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0085706E1650341D003861DB /* UserModel.xcdatamodeld */; };
 		000870D41675A0F600042A38 /* VSListRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 0085707516509112003861DB /* VSListRecord.m */; };
@@ -127,7 +126,6 @@
 		000871161675A0F600042A38 /* Unit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E585315E40C9900B7AB04 /* Unit@2x.png */; };
 		000871171675A0F600042A38 /* PopupClose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AC5E4915E4BBFB00150402 /* PopupClose@2x.png */; };
 		000871181675A0F600042A38 /* PopupCloseHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AC5E4A15E4BBFB00150402 /* PopupCloseHighLighted@2x.png */; };
-		000871191675A0F600042A38 /* Dakota.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0045250815E74FE700935B34 /* Dakota.ttf */; };
 		0008711A1675A0F600042A38 /* Mark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0045250C15E750EA00935B34 /* Mark@2x.png */; };
 		0008711C1675A0F600042A38 /* MenuButtonHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0045251015E7572000935B34 /* MenuButtonHighLighted@2x.png */; };
 		0008711D1675A0F600042A38 /* UnitHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00CBF0D815E9F333001588A3 /* UnitHighLighted@2x.png */; };
@@ -351,9 +349,6 @@
 		0044C15815D3B70F0022154A /* VSRepoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0044C15415D3B70F0022154A /* VSRepoListViewController.xib */; };
 		0044C15915D3B70F0022154A /* VSRepoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0044C15415D3B70F0022154A /* VSRepoListViewController.xib */; };
 		0044C15A15D3B70F0022154A /* VSRepoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0044C15415D3B70F0022154A /* VSRepoListViewController.xib */; };
-		0045250915E74FE700935B34 /* Dakota.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0045250815E74FE700935B34 /* Dakota.ttf */; };
-		0045250A15E74FE700935B34 /* Dakota.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0045250815E74FE700935B34 /* Dakota.ttf */; };
-		0045250B15E74FE700935B34 /* Dakota.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0045250815E74FE700935B34 /* Dakota.ttf */; };
 		0045250D15E750EA00935B34 /* Mark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0045250C15E750EA00935B34 /* Mark@2x.png */; };
 		0045250E15E750EA00935B34 /* Mark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0045250C15E750EA00935B34 /* Mark@2x.png */; };
 		0045250F15E750EA00935B34 /* Mark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0045250C15E750EA00935B34 /* Mark@2x.png */; };
@@ -479,7 +474,6 @@
 		008242AD1671BF1400FF1631 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 008D5DAA161810160046240B /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		008242AE1671BF1400FF1631 /* TipsBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 00533E3915F42915004777F1 /* TipsBubble.m */; };
 		008242AF1671BF1400FF1631 /* VSCellStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 00763F271645A03200CF7216 /* VSCellStatus.m */; };
-		008242B01671BF1400FF1631 /* FDCurlViewControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EEF25D1648F4ED00BAEAC0 /* FDCurlViewControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		008242B11671BF1400FF1631 /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CA9060164F62F600876164 /* iRate.m */; };
 		008242B21671BF1400FF1631 /* UserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0085706E1650341D003861DB /* UserModel.xcdatamodeld */; };
 		008242B31671BF1400FF1631 /* VSListRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 0085707516509112003861DB /* VSListRecord.m */; };
@@ -508,7 +502,6 @@
 		008242CC1671BF1400FF1631 /* VSVocabularyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */; };
 		008242CD1671BF1400FF1631 /* VSConfigurationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */; };
 		008242CE1671BF1400FF1631 /* VSGuideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006B4CDD15E3638B00711C64 /* VSGuideViewController.xib */; };
-		008242F61671BF1400FF1631 /* Dakota.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0045250815E74FE700935B34 /* Dakota.ttf */; };
 		008243091671BF1400FF1631 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 00333FBE1631345900F7871C /* iTunesArtwork */; };
 		0082430A1671BF1400FF1631 /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00CA905E164F62F600876164 /* iRate.bundle */; };
 		008243141671C09700FF1631 /* settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 008243131671C09700FF1631 /* settings.plist */; };
@@ -660,7 +653,6 @@
 		00B250651628E19200311E52 /* Unit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E585315E40C9900B7AB04 /* Unit@2x.png */; };
 		00B250661628E19200311E52 /* PopupClose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AC5E4915E4BBFB00150402 /* PopupClose@2x.png */; };
 		00B250671628E19200311E52 /* PopupCloseHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AC5E4A15E4BBFB00150402 /* PopupCloseHighLighted@2x.png */; };
-		00B250681628E19200311E52 /* Dakota.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0045250815E74FE700935B34 /* Dakota.ttf */; };
 		00B250691628E19200311E52 /* Mark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0045250C15E750EA00935B34 /* Mark@2x.png */; };
 		00B2506A1628E19200311E52 /* MenuButtonHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0045251015E7572000935B34 /* MenuButtonHighLighted@2x.png */; };
 		00B2506B1628E19200311E52 /* UnitHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00CBF0D815E9F333001588A3 /* UnitHighLighted@2x.png */; };
@@ -776,7 +768,6 @@
 		00C8D3CC168586CC00CA3880 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF9E1618AB6E00E788EA /* ASIInputStream.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		00C8D3CD168586CC00CA3880 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBFA01618AB6E00E788EA /* ASINetworkQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		00C8D3CE168586CC00CA3880 /* VSCellStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 00763F271645A03200CF7216 /* VSCellStatus.m */; };
-		00C8D3CF168586CC00CA3880 /* FDCurlViewControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EEF25D1648F4ED00BAEAC0 /* FDCurlViewControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		00C8D3D0168586CC00CA3880 /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CA9060164F62F600876164 /* iRate.m */; };
 		00C8D3D1168586CC00CA3880 /* UserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0085706E1650341D003861DB /* UserModel.xcdatamodeld */; };
 		00C8D3D2168586CC00CA3880 /* VSListRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 0085707516509112003861DB /* VSListRecord.m */; };
@@ -844,7 +835,6 @@
 		00C8D412168586CC00CA3880 /* Unit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E585315E40C9900B7AB04 /* Unit@2x.png */; };
 		00C8D413168586CC00CA3880 /* PopupClose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AC5E4915E4BBFB00150402 /* PopupClose@2x.png */; };
 		00C8D414168586CC00CA3880 /* PopupCloseHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AC5E4A15E4BBFB00150402 /* PopupCloseHighLighted@2x.png */; };
-		00C8D415168586CC00CA3880 /* Dakota.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0045250815E74FE700935B34 /* Dakota.ttf */; };
 		00C8D416168586CC00CA3880 /* Mark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0045250C15E750EA00935B34 /* Mark@2x.png */; };
 		00C8D417168586CC00CA3880 /* MenuButtonHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0045251015E7572000935B34 /* MenuButtonHighLighted@2x.png */; };
 		00C8D418168586CC00CA3880 /* UnitHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00CBF0D815E9F333001588A3 /* UnitHighLighted@2x.png */; };
@@ -864,6 +854,13 @@
 		00C8D4471685963A00CA3880 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 00C8D4411685963A00CA3880 /* iTunesArtwork */; };
 		00C8D45416859B2B00CA3880 /* VocabularySishu.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00C8D45316859B2B00CA3880 /* VocabularySishu.sqlite */; };
 		00C8D4561686F10A00CA3880 /* itunesArtWork in Resources */ = {isa = PBXBuildFile; fileRef = 00C8D4551686F10A00CA3880 /* itunesArtWork */; };
+		00C8D4591687914B00CA3880 /* VSFloatPanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C8D4581687914B00CA3880 /* VSFloatPanelView.m */; };
+		00C8D45A1687914B00CA3880 /* VSFloatPanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C8D4581687914B00CA3880 /* VSFloatPanelView.m */; };
+		00C8D45B1687914B00CA3880 /* VSFloatPanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C8D4581687914B00CA3880 /* VSFloatPanelView.m */; };
+		00C8D45C1687914B00CA3880 /* VSFloatPanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C8D4581687914B00CA3880 /* VSFloatPanelView.m */; };
+		00C8D45D1687914B00CA3880 /* VSFloatPanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C8D4581687914B00CA3880 /* VSFloatPanelView.m */; };
+		00C8D45E1687914B00CA3880 /* VSFloatPanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C8D4581687914B00CA3880 /* VSFloatPanelView.m */; };
+		00C8D45F1687914B00CA3880 /* VSFloatPanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C8D4581687914B00CA3880 /* VSFloatPanelView.m */; };
 		00CA9061164F62F600876164 /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00CA905E164F62F600876164 /* iRate.bundle */; };
 		00CA9062164F62F600876164 /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00CA905E164F62F600876164 /* iRate.bundle */; };
 		00CA9063164F62F600876164 /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00CA905E164F62F600876164 /* iRate.bundle */; };
@@ -943,10 +940,6 @@
 		00E83B3015DAC42F005BE3AF /* VSClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E83B2F15DAC42F005BE3AF /* VSClipView.m */; };
 		00E83B3115DAC42F005BE3AF /* VSClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E83B2F15DAC42F005BE3AF /* VSClipView.m */; };
 		00E83B3215DAC42F005BE3AF /* VSClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E83B2F15DAC42F005BE3AF /* VSClipView.m */; };
-		00EEF25E1648F4ED00BAEAC0 /* FDCurlViewControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EEF25D1648F4ED00BAEAC0 /* FDCurlViewControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		00EEF25F1648F4ED00BAEAC0 /* FDCurlViewControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EEF25D1648F4ED00BAEAC0 /* FDCurlViewControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		00EEF2601648F4ED00BAEAC0 /* FDCurlViewControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EEF25D1648F4ED00BAEAC0 /* FDCurlViewControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		00EEF2611648F4ED00BAEAC0 /* FDCurlViewControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EEF25D1648F4ED00BAEAC0 /* FDCurlViewControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		00F7B02E1671D28100F9FB14 /* VocabularySishu.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00F7B02D1671D28100F9FB14 /* VocabularySishu.sqlite */; };
 		00F7B02F1671D2E000F9FB14 /* List-Bottom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0013FCA9162F115F00E845E7 /* List-Bottom@2x.png */; };
 		00FF1B1015E407AC005B9E51 /* SeparatorDots@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF1B0F15E407AC005B9E51 /* SeparatorDots@2x.png */; };
@@ -1063,7 +1056,6 @@
 		0044C15215D3B70E0022154A /* VSRepoListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSRepoListViewController.h; path = ViewController/MainView/VSRepoListViewController.h; sourceTree = "<group>"; };
 		0044C15315D3B70F0022154A /* VSRepoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSRepoListViewController.m; path = ViewController/MainView/VSRepoListViewController.m; sourceTree = "<group>"; };
 		0044C15415D3B70F0022154A /* VSRepoListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSRepoListViewController.xib; path = ViewController/MainView/VSRepoListViewController.xib; sourceTree = "<group>"; };
-		0045250815E74FE700935B34 /* Dakota.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Dakota.ttf; path = Resources/Font/Dakota.ttf; sourceTree = "<group>"; };
 		0045250C15E750EA00935B34 /* Mark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Mark@2x.png"; path = "Resources/Img/Mark@2x.png"; sourceTree = "<group>"; };
 		0045251015E7572000935B34 /* MenuButtonHighLighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MenuButtonHighLighted@2x.png"; path = "Resources/Img/MenuButtonHighLighted@2x.png"; sourceTree = "<group>"; };
 		0046407F15590E0B007E5FA9 /* VSVocabularyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSVocabularyViewController.h; path = ViewController/VocabularyView/VSVocabularyViewController.h; sourceTree = "<group>"; };
@@ -1213,6 +1205,8 @@
 		00C8D4411685963A00CA3880 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		00C8D45316859B2B00CA3880 /* VocabularySishu.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = VocabularySishu.sqlite; sourceTree = "<group>"; };
 		00C8D4551686F10A00CA3880 /* itunesArtWork */ = {isa = PBXFileReference; lastKnownFileType = file; name = itunesArtWork; path = Resources/Img/TOEFL/itunesArtWork; sourceTree = "<group>"; };
+		00C8D4571687914A00CA3880 /* VSFloatPanelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSFloatPanelView.h; path = ViewController/VocabularyListView/VSFloatPanelView.h; sourceTree = "<group>"; };
+		00C8D4581687914B00CA3880 /* VSFloatPanelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSFloatPanelView.m; path = ViewController/VocabularyListView/VSFloatPanelView.m; sourceTree = "<group>"; };
 		00CA905E164F62F600876164 /* iRate.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = iRate.bundle; path = Libs/iRate/iRate.bundle; sourceTree = "<group>"; };
 		00CA905F164F62F600876164 /* iRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iRate.h; path = Libs/iRate/iRate.h; sourceTree = "<group>"; };
 		00CA9060164F62F600876164 /* iRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iRate.m; path = Libs/iRate/iRate.m; sourceTree = "<group>"; };
@@ -1224,8 +1218,6 @@
 		00D86E4316339BF700BF530A /* VSUIUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSUIUtils.m; path = Utils/VSUIUtils.m; sourceTree = "<group>"; };
 		00E83B2E15DAC42F005BE3AF /* VSClipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSClipView.h; path = ViewController/MainView/VSClipView.h; sourceTree = "<group>"; };
 		00E83B2F15DAC42F005BE3AF /* VSClipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSClipView.m; path = ViewController/MainView/VSClipView.m; sourceTree = "<group>"; };
-		00EEF25C1648F4ED00BAEAC0 /* FDCurlViewControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDCurlViewControl.h; sourceTree = "<group>"; };
-		00EEF25D1648F4ED00BAEAC0 /* FDCurlViewControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDCurlViewControl.m; sourceTree = "<group>"; };
 		00F7B02D1671D28100F9FB14 /* VocabularySishu.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = VocabularySishu.sqlite; sourceTree = "<group>"; };
 		00FF1B0F15E407AC005B9E51 /* SeparatorDots@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "SeparatorDots@2x.png"; path = "Resources/Img/SeparatorDots@2x.png"; sourceTree = "<group>"; };
 		00FF6FE815D0AC940043BA91 /* VocabularySishu.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = VocabularySishu.sqlite; path = Resources/Data/GRE/VocabularySishu.sqlite; sourceTree = "<group>"; };
@@ -1460,14 +1452,6 @@
 			name = ASIHTTPRequest;
 			sourceTree = "<group>";
 		};
-		004524FE15E7488B00935B34 /* Font */ = {
-			isa = PBXGroup;
-			children = (
-				0045250815E74FE700935B34 /* Dakota.ttf */,
-			);
-			name = Font;
-			sourceTree = "<group>";
-		};
 		0046407715590CC8007E5FA9 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1602,7 +1586,6 @@
 			isa = PBXGroup;
 			children = (
 				00CA9069164F6A0400876164 /* Configure */,
-				004524FE15E7488B00935B34 /* Font */,
 				00701E6B1553CE8C00D30018 /* ViewController */,
 				0081184E15BEFDFF0022B515 /* Generic */,
 				0073A68715689FB400B80422 /* Libs */,
@@ -1700,7 +1683,6 @@
 			isa = PBXGroup;
 			children = (
 				00CA905D164F62DC00876164 /* iRate */,
-				00EEF25B1648F4ED00BAEAC0 /* FDViewControl */,
 				002DBF8C1618AB5E00E788EA /* ASIHTTPRequest */,
 				00596646162C7CB90010C669 /* Statistics */,
 				0073A6881568A0B200B80422 /* SBJSON */,
@@ -1747,6 +1729,8 @@
 				00763F271645A03200CF7216 /* VSCellStatus.m */,
 				0004A7E7166187F900BE9FE0 /* VSRememberedList.h */,
 				0004A7E8166187F900BE9FE0 /* VSRememberedList.m */,
+				00C8D4571687914A00CA3880 /* VSFloatPanelView.h */,
+				00C8D4581687914B00CA3880 /* VSFloatPanelView.m */,
 			);
 			name = VocabularyListView;
 			sourceTree = "<group>";
@@ -1998,16 +1982,6 @@
 			path = "Resources/Data/TOEFL-TRIAL";
 			sourceTree = "<group>";
 		};
-		00EEF25B1648F4ED00BAEAC0 /* FDViewControl */ = {
-			isa = PBXGroup;
-			children = (
-				00EEF25C1648F4ED00BAEAC0 /* FDCurlViewControl.h */,
-				00EEF25D1648F4ED00BAEAC0 /* FDCurlViewControl.m */,
-			);
-			name = FDViewControl;
-			path = Libs/FDViewControl;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2253,7 +2227,6 @@
 				000871161675A0F600042A38 /* Unit@2x.png in Resources */,
 				000871171675A0F600042A38 /* PopupClose@2x.png in Resources */,
 				000871181675A0F600042A38 /* PopupCloseHighLighted@2x.png in Resources */,
-				000871191675A0F600042A38 /* Dakota.ttf in Resources */,
 				0008711A1675A0F600042A38 /* Mark@2x.png in Resources */,
 				0008711C1675A0F600042A38 /* MenuButtonHighLighted@2x.png in Resources */,
 				0008711D1675A0F600042A38 /* UnitHighLighted@2x.png in Resources */,
@@ -2329,7 +2302,6 @@
 				000E58C515E40C9900B7AB04 /* Unit@2x.png in Resources */,
 				00AC5E4D15E4BBFC00150402 /* PopupClose@2x.png in Resources */,
 				00AC5E5015E4BBFC00150402 /* PopupCloseHighLighted@2x.png in Resources */,
-				0045250B15E74FE700935B34 /* Dakota.ttf in Resources */,
 				0045250F15E750EA00935B34 /* Mark@2x.png in Resources */,
 				00CA9075164F6BDF00876164 /* settings.plist in Resources */,
 				0045251315E7572000935B34 /* MenuButtonHighLighted@2x.png in Resources */,
@@ -2401,7 +2373,6 @@
 				000E58C315E40C9900B7AB04 /* Unit@2x.png in Resources */,
 				00AC5E4B15E4BBFC00150402 /* PopupClose@2x.png in Resources */,
 				00AC5E4E15E4BBFC00150402 /* PopupCloseHighLighted@2x.png in Resources */,
-				0045250915E74FE700935B34 /* Dakota.ttf in Resources */,
 				0045250D15E750EA00935B34 /* Mark@2x.png in Resources */,
 				0045251115E7572000935B34 /* MenuButtonHighLighted@2x.png in Resources */,
 				00CBF0D915E9F333001588A3 /* UnitHighLighted@2x.png in Resources */,
@@ -2439,7 +2410,6 @@
 				008242CC1671BF1400FF1631 /* VSVocabularyListViewController.xib in Resources */,
 				008242CD1671BF1400FF1631 /* VSConfigurationViewController.xib in Resources */,
 				008242CE1671BF1400FF1631 /* VSGuideViewController.xib in Resources */,
-				008242F61671BF1400FF1631 /* Dakota.ttf in Resources */,
 				008243091671BF1400FF1631 /* iTunesArtwork in Resources */,
 				00DBAAF01671C635009B572F /* UnitHighLighted@2x.png in Resources */,
 				00DBAAF41671C63A009B572F /* BookBlack@2x.png in Resources */,
@@ -2557,7 +2527,6 @@
 				00B250651628E19200311E52 /* Unit@2x.png in Resources */,
 				00B250661628E19200311E52 /* PopupClose@2x.png in Resources */,
 				00B250671628E19200311E52 /* PopupCloseHighLighted@2x.png in Resources */,
-				00B250681628E19200311E52 /* Dakota.ttf in Resources */,
 				00B250691628E19200311E52 /* Mark@2x.png in Resources */,
 				00B2506A1628E19200311E52 /* MenuButtonHighLighted@2x.png in Resources */,
 				00B2506B1628E19200311E52 /* UnitHighLighted@2x.png in Resources */,
@@ -2634,7 +2603,6 @@
 				000E58C415E40C9900B7AB04 /* Unit@2x.png in Resources */,
 				00AC5E4C15E4BBFC00150402 /* PopupClose@2x.png in Resources */,
 				00AC5E4F15E4BBFC00150402 /* PopupCloseHighLighted@2x.png in Resources */,
-				0045250A15E74FE700935B34 /* Dakota.ttf in Resources */,
 				0045250E15E750EA00935B34 /* Mark@2x.png in Resources */,
 				0045251215E7572000935B34 /* MenuButtonHighLighted@2x.png in Resources */,
 				00CBF0DA15E9F333001588A3 /* UnitHighLighted@2x.png in Resources */,
@@ -2707,7 +2675,6 @@
 				00C8D412168586CC00CA3880 /* Unit@2x.png in Resources */,
 				00C8D413168586CC00CA3880 /* PopupClose@2x.png in Resources */,
 				00C8D414168586CC00CA3880 /* PopupCloseHighLighted@2x.png in Resources */,
-				00C8D415168586CC00CA3880 /* Dakota.ttf in Resources */,
 				00C8D416168586CC00CA3880 /* Mark@2x.png in Resources */,
 				00C8D417168586CC00CA3880 /* MenuButtonHighLighted@2x.png in Resources */,
 				00C8D418168586CC00CA3880 /* UnitHighLighted@2x.png in Resources */,
@@ -2800,7 +2767,6 @@
 				000870CE1675A0F600042A38 /* ASIInputStream.m in Sources */,
 				000870CF1675A0F600042A38 /* ASINetworkQueue.m in Sources */,
 				000870D01675A0F600042A38 /* VSCellStatus.m in Sources */,
-				000870D11675A0F600042A38 /* FDCurlViewControl.m in Sources */,
 				000870D21675A0F600042A38 /* iRate.m in Sources */,
 				000870D31675A0F600042A38 /* UserModel.xcdatamodeld in Sources */,
 				000870D41675A0F600042A38 /* VSListRecord.m in Sources */,
@@ -2808,6 +2774,7 @@
 				000870D61675A0F600042A38 /* VSListVocabularyRecord.m in Sources */,
 				000870D71675A0F600042A38 /* VSVocabularyRecord.m in Sources */,
 				000870D81675A0F600042A38 /* VSRememberedList.m in Sources */,
+				00C8D45E1687914B00CA3880 /* VSFloatPanelView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2863,7 +2830,6 @@
 				002DBFB61618AB6E00E788EA /* ASIInputStream.m in Sources */,
 				002DBFB91618AB6E00E788EA /* ASINetworkQueue.m in Sources */,
 				00763F2A1645A03200CF7216 /* VSCellStatus.m in Sources */,
-				00EEF2601648F4ED00BAEAC0 /* FDCurlViewControl.m in Sources */,
 				00CA9067164F62F600876164 /* iRate.m in Sources */,
 				008570721650341D003861DB /* UserModel.xcdatamodeld in Sources */,
 				0085707816509112003861DB /* VSListRecord.m in Sources */,
@@ -2871,6 +2837,7 @@
 				000FEA5C1650BA3A00644B63 /* VSListVocabularyRecord.m in Sources */,
 				000FEA621650BA7400644B63 /* VSVocabularyRecord.m in Sources */,
 				0004A7EB166187F900BE9FE0 /* VSRememberedList.m in Sources */,
+				00C8D45B1687914B00CA3880 /* VSFloatPanelView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2926,7 +2893,6 @@
 				002DBFB71618AB6E00E788EA /* ASINetworkQueue.m in Sources */,
 				00D86E4416339BF700BF530A /* VSUIUtils.m in Sources */,
 				00763F281645A03200CF7216 /* VSCellStatus.m in Sources */,
-				00EEF25E1648F4ED00BAEAC0 /* FDCurlViewControl.m in Sources */,
 				00CA9065164F62F600876164 /* iRate.m in Sources */,
 				008570701650341D003861DB /* UserModel.xcdatamodeld in Sources */,
 				0085707616509112003861DB /* VSListRecord.m in Sources */,
@@ -2934,6 +2900,7 @@
 				000FEA5A1650BA3A00644B63 /* VSListVocabularyRecord.m in Sources */,
 				000FEA601650BA7400644B63 /* VSVocabularyRecord.m in Sources */,
 				0004A7E9166187F900BE9FE0 /* VSRememberedList.m in Sources */,
+				00C8D4591687914B00CA3880 /* VSFloatPanelView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2998,7 +2965,6 @@
 				008242AD1671BF1400FF1631 /* Reachability.m in Sources */,
 				008242AE1671BF1400FF1631 /* TipsBubble.m in Sources */,
 				008242AF1671BF1400FF1631 /* VSCellStatus.m in Sources */,
-				008242B01671BF1400FF1631 /* FDCurlViewControl.m in Sources */,
 				008242B11671BF1400FF1631 /* iRate.m in Sources */,
 				008242B21671BF1400FF1631 /* UserModel.xcdatamodeld in Sources */,
 				008242B31671BF1400FF1631 /* VSListRecord.m in Sources */,
@@ -3006,6 +2972,7 @@
 				008242B51671BF1400FF1631 /* VSListVocabularyRecord.m in Sources */,
 				008242B61671BF1400FF1631 /* VSVocabularyRecord.m in Sources */,
 				008242B71671BF1400FF1631 /* VSRememberedList.m in Sources */,
+				00C8D45D1687914B00CA3880 /* VSFloatPanelView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3061,7 +3028,6 @@
 				00A4CF4B1643A44500A94ADD /* Reachability.m in Sources */,
 				00B250291628E19200311E52 /* TipsBubble.m in Sources */,
 				00763F2B1645A03200CF7216 /* VSCellStatus.m in Sources */,
-				00EEF2611648F4ED00BAEAC0 /* FDCurlViewControl.m in Sources */,
 				00CA9068164F62F600876164 /* iRate.m in Sources */,
 				008570731650341D003861DB /* UserModel.xcdatamodeld in Sources */,
 				0085707916509112003861DB /* VSListRecord.m in Sources */,
@@ -3069,6 +3035,7 @@
 				000FEA5D1650BA3A00644B63 /* VSListVocabularyRecord.m in Sources */,
 				000FEA631650BA7400644B63 /* VSVocabularyRecord.m in Sources */,
 				0004A7EC166187F900BE9FE0 /* VSRememberedList.m in Sources */,
+				00C8D45C1687914B00CA3880 /* VSFloatPanelView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3124,7 +3091,6 @@
 				002DBFB51618AB6E00E788EA /* ASIInputStream.m in Sources */,
 				002DBFB81618AB6E00E788EA /* ASINetworkQueue.m in Sources */,
 				00763F291645A03200CF7216 /* VSCellStatus.m in Sources */,
-				00EEF25F1648F4ED00BAEAC0 /* FDCurlViewControl.m in Sources */,
 				00CA9066164F62F600876164 /* iRate.m in Sources */,
 				008570711650341D003861DB /* UserModel.xcdatamodeld in Sources */,
 				0085707716509112003861DB /* VSListRecord.m in Sources */,
@@ -3132,6 +3098,7 @@
 				000FEA5B1650BA3A00644B63 /* VSListVocabularyRecord.m in Sources */,
 				000FEA611650BA7400644B63 /* VSVocabularyRecord.m in Sources */,
 				0004A7EA166187F900BE9FE0 /* VSRememberedList.m in Sources */,
+				00C8D45A1687914B00CA3880 /* VSFloatPanelView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3187,7 +3154,6 @@
 				00C8D3CC168586CC00CA3880 /* ASIInputStream.m in Sources */,
 				00C8D3CD168586CC00CA3880 /* ASINetworkQueue.m in Sources */,
 				00C8D3CE168586CC00CA3880 /* VSCellStatus.m in Sources */,
-				00C8D3CF168586CC00CA3880 /* FDCurlViewControl.m in Sources */,
 				00C8D3D0168586CC00CA3880 /* iRate.m in Sources */,
 				00C8D3D1168586CC00CA3880 /* UserModel.xcdatamodeld in Sources */,
 				00C8D3D2168586CC00CA3880 /* VSListRecord.m in Sources */,
@@ -3195,6 +3161,7 @@
 				00C8D3D4168586CC00CA3880 /* VSListVocabularyRecord.m in Sources */,
 				00C8D3D5168586CC00CA3880 /* VSVocabularyRecord.m in Sources */,
 				00C8D3D6168586CC00CA3880 /* VSRememberedList.m in Sources */,
+				00C8D45F1687914B00CA3880 /* VSFloatPanelView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
