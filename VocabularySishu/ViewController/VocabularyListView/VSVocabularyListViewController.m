@@ -157,8 +157,8 @@
 
 - (void) initPickerView
 {
-    pickerAreaView = [[UIView alloc] initWithFrame:CGRectMake(0, 420, 320, 164)];
-    pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 44, 320, 120)];
+    pickerAreaView = [[UIView alloc] initWithFrame:CGRectMake(0, 420, 320, 204)];
+    pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 44, 320, 160)];
     pickerView.delegate = self;
     pickerView.dataSource = self;
     pickerView.backgroundColor = [UIColor clearColor];
@@ -168,7 +168,7 @@
     
     [self.view addSubview:pickerAreaView];
     
-    promptLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 11, 170, 21)];
+    promptLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 11, 200, 21)];
     [promptLabel setBackgroundColor:[UIColor clearColor]];
     [promptLabel setTextColor:[UIColor colorWithHue:0 saturation:0 brightness:0.8 alpha:1]];
     promptLabel.text = @"一天内背诵完列表中剩余单词";
@@ -179,8 +179,8 @@
     UIToolbar *toolBar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 44)];
     toolBar.barStyle = UIBarStyleBlackTranslucent;
     
-    UIBarButtonItem *btnConfirm = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(selectPlanFinishTime)];
-    UIBarButtonItem *btnCancel = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismissPickerArea)];
+    UIBarButtonItem *btnConfirm = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonSystemItemEdit target:self action:@selector(selectPlanFinishTime)];
+    UIBarButtonItem *btnCancel = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonSystemItemCancel target:self action:@selector(dismissPickerArea)];
     [toolBar setItems:[NSArray arrayWithObjects:btnCancel, prompt, btnConfirm, nil]];
     
     [pickerAreaView addSubview:toolBar];
@@ -198,17 +198,15 @@
 - (void)dismissPickerArea
 {
     [UIView animateWithDuration:0.3 animations:^() {
-        pickerAreaView.frame = CGRectMake(0, 420, 320, 164);
+        pickerAreaView.frame = CGRectMake(0, 420, 320, 204);
     }];
-    [self.view becomeFirstResponder];
 }
 
 - (void)showPickerArea
 {
     [UIView animateWithDuration:0.3 animations:^() {
-        pickerAreaView.frame = CGRectMake(0, 212, 320, 164);
+        pickerAreaView.frame = CGRectMake(0, 212, 320, 204);
     }];
-    [self.headerView becomeFirstResponder];
 }
 
 - (void)viewDidLoad
