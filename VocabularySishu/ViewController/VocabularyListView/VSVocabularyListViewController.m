@@ -19,8 +19,8 @@
 #import "VSListRecord.h"
 #import "VSListVocabularyRecord.h"
 #import "VSVocabularyRecord.h"
-#import "VSRememberedList.h"
 #import "VSFloatPanelView.h"
+#import "VSVocabularyPlayer.h"
 
 @interface VSVocabularyListViewController ()
 
@@ -68,7 +68,6 @@
             status.curlUp = NO;
             [self.cellStatus setObject:status forKey:listVocabulary.vocabularyRecord.spell];
         }
-        self.rememberedList = [[VSRememberedList alloc] init];
         
         [self.navigationItem setLeftBarButtonItem:[VSUIUtils makeBackButton:self selector:@selector(backToMain)]];
         [self initRightButton];
@@ -245,7 +244,6 @@
     self.blockView = nil;
     self.scoreBoardView = nil;
     self.exitButton = nil;
-    self.rememberedList = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -466,6 +464,11 @@
         }
         else if (!draggedCell.curlUp && !draggedCell.clearing && translation.x < 0) {
             [draggedCell curlUp:point.x];
+            NSIndexPath* indexPath = [self.tableView indexPathForRowAtPoint:point];
+            VSVocabulary *record = [[[vocabulariesToRecite objectAtIndex:indexPath.row] vocabularyRecord] getVocabulary];
+            __autoreleasing VSVocabularyPlayer *player = [VSVocabularyPlayer getPlayer];
+            [player play:record];
+
             if (![[NSUserDefaults standardUserDefaults] boolForKey:@"showDetailBubble"] ) {
                 detailBubble = [[TipsBubble alloc] initWithTips:@"更多信息，点击这里" width:145 popupFrom:tipsBubblePopupFromLowerRight];
                 detailBubble.center = CGPointMake(155, draggedCell.frame.origin.y);
@@ -499,7 +502,6 @@
         if (![self.currentListRecord isHistoryList]) {
             [self.listToday addVocabulary:rememberedVocabulary.vocabularyRecord];
         }
-        [self.rememberedList addNewToken:index withRecord:rememberedVocabulary];
         [self.headerView clearWord];
         [vocabulariesToRecite removeObjectAtIndex:index];
         [self updateVocabularyTable:index];

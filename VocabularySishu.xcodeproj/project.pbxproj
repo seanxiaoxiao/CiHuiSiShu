@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0004A7E9166187F900BE9FE0 /* VSRememberedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0004A7E8166187F900BE9FE0 /* VSRememberedList.m */; };
-		0004A7EA166187F900BE9FE0 /* VSRememberedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0004A7E8166187F900BE9FE0 /* VSRememberedList.m */; };
-		0004A7EB166187F900BE9FE0 /* VSRememberedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0004A7E8166187F900BE9FE0 /* VSRememberedList.m */; };
-		0004A7EC166187F900BE9FE0 /* VSRememberedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0004A7E8166187F900BE9FE0 /* VSRememberedList.m */; };
 		000870A11675A0F600042A38 /* VSNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0081185015BEFE220022B515 /* VSNavigationBar.m */; };
 		000870A21675A0F600042A38 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00701E3D1553CBCE00D30018 /* main.m */; };
 		000870A31675A0F600042A38 /* VSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00701E411553CBCE00D30018 /* VSAppDelegate.m */; };
@@ -65,7 +61,6 @@
 		000870D51675A0F600042A38 /* VSAppRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 000FEA531650B99E00644B63 /* VSAppRecord.m */; };
 		000870D61675A0F600042A38 /* VSListVocabularyRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 000FEA591650BA3A00644B63 /* VSListVocabularyRecord.m */; };
 		000870D71675A0F600042A38 /* VSVocabularyRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 000FEA5F1650BA7400644B63 /* VSVocabularyRecord.m */; };
-		000870D81675A0F600042A38 /* VSRememberedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0004A7E8166187F900BE9FE0 /* VSRememberedList.m */; };
 		000870DA1675A0F600042A38 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A1AFAC1586192400310669 /* AVFoundation.framework */; };
 		000870DB1675A0F600042A38 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009397D415D82B79009AE73E /* MessageUI.framework */; };
 		000870DC1675A0F600042A38 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002DBFBF1618B40500E788EA /* MobileCoreServices.framework */; };
@@ -480,7 +475,6 @@
 		008242B41671BF1400FF1631 /* VSAppRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 000FEA531650B99E00644B63 /* VSAppRecord.m */; };
 		008242B51671BF1400FF1631 /* VSListVocabularyRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 000FEA591650BA3A00644B63 /* VSListVocabularyRecord.m */; };
 		008242B61671BF1400FF1631 /* VSVocabularyRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 000FEA5F1650BA7400644B63 /* VSVocabularyRecord.m */; };
-		008242B71671BF1400FF1631 /* VSRememberedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0004A7E8166187F900BE9FE0 /* VSRememberedList.m */; };
 		008242B91671BF1400FF1631 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002DBFBF1618B40500E788EA /* MobileCoreServices.framework */; };
 		008242BA1671BF1400FF1631 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D5DB2161812140046240B /* SystemConfiguration.framework */; };
 		008242BB1671BF1400FF1631 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002DBFBA1618B2DC00E788EA /* CFNetwork.framework */; };
@@ -557,6 +551,13 @@
 		009397D715D82C61009AE73E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009397D415D82B79009AE73E /* MessageUI.framework */; };
 		009A870015A1A82900F7869D /* NSMutableArrayShuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = 009A86FF15A1A82900F7869D /* NSMutableArrayShuffling.m */; };
 		009BB48615CAAFF2008E5B2B /* VSVocabularyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 009BB48515CAAFF2008E5B2B /* VSVocabularyCell.m */; };
+		009E7850168ADD6F00578392 /* VSVocabularyPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 009E784F168ADD6F00578392 /* VSVocabularyPlayer.m */; };
+		009E7851168ADD6F00578392 /* VSVocabularyPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 009E784F168ADD6F00578392 /* VSVocabularyPlayer.m */; };
+		009E7852168ADD6F00578392 /* VSVocabularyPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 009E784F168ADD6F00578392 /* VSVocabularyPlayer.m */; };
+		009E7853168ADD6F00578392 /* VSVocabularyPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 009E784F168ADD6F00578392 /* VSVocabularyPlayer.m */; };
+		009E7854168ADD6F00578392 /* VSVocabularyPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 009E784F168ADD6F00578392 /* VSVocabularyPlayer.m */; };
+		009E7855168ADD6F00578392 /* VSVocabularyPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 009E784F168ADD6F00578392 /* VSVocabularyPlayer.m */; };
+		009E7856168ADD6F00578392 /* VSVocabularyPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 009E784F168ADD6F00578392 /* VSVocabularyPlayer.m */; };
 		00A006FC156B3D6D00D24418 /* VSConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A006FB156B3D6D00D24418 /* VSConstant.m */; };
 		00A00703156D15F200D24418 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A00702156D15F200D24418 /* QuartzCore.framework */; };
 		00A0071D156E3A7B00D24418 /* VSContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A0071C156E3A7B00D24418 /* VSContext.m */; };
@@ -802,7 +803,6 @@
 		00C8D3D3168586CC00CA3880 /* VSAppRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 000FEA531650B99E00644B63 /* VSAppRecord.m */; };
 		00C8D3D4168586CC00CA3880 /* VSListVocabularyRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 000FEA591650BA3A00644B63 /* VSListVocabularyRecord.m */; };
 		00C8D3D5168586CC00CA3880 /* VSVocabularyRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 000FEA5F1650BA7400644B63 /* VSVocabularyRecord.m */; };
-		00C8D3D6168586CC00CA3880 /* VSRememberedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0004A7E8166187F900BE9FE0 /* VSRememberedList.m */; };
 		00C8D3D8168586CC00CA3880 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A1AFAC1586192400310669 /* AVFoundation.framework */; };
 		00C8D3D9168586CC00CA3880 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009397D415D82B79009AE73E /* MessageUI.framework */; };
 		00C8D3DA168586CC00CA3880 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002DBFBF1618B40500E788EA /* MobileCoreServices.framework */; };
@@ -994,8 +994,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0004A7E7166187F900BE9FE0 /* VSRememberedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSRememberedList.h; path = ViewController/VocabularyListView/VSRememberedList.h; sourceTree = "<group>"; };
-		0004A7E8166187F900BE9FE0 /* VSRememberedList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSRememberedList.m; path = ViewController/VocabularyListView/VSRememberedList.m; sourceTree = "<group>"; };
 		0008712E1675A0F600042A38 /* VocabularySishu CET4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VocabularySishu CET4.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		000871331675A14400042A38 /* settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = settings.plist; sourceTree = "<group>"; };
 		0008714A1675AEA900042A38 /* GuidePage1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GuidePage1@2x.png"; sourceTree = "<group>"; };
@@ -1190,6 +1188,8 @@
 		009A86FF15A1A82900F7869D /* NSMutableArrayShuffling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSMutableArrayShuffling.m; path = Utils/NSMutableArrayShuffling.m; sourceTree = "<group>"; };
 		009BB48415CAAFF2008E5B2B /* VSVocabularyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSVocabularyCell.h; path = ViewController/VocabularyListView/VSVocabularyCell.h; sourceTree = "<group>"; };
 		009BB48515CAAFF2008E5B2B /* VSVocabularyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSVocabularyCell.m; path = ViewController/VocabularyListView/VSVocabularyCell.m; sourceTree = "<group>"; };
+		009E784E168ADD6F00578392 /* VSVocabularyPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSVocabularyPlayer.h; path = Utils/VSVocabularyPlayer.h; sourceTree = "<group>"; };
+		009E784F168ADD6F00578392 /* VSVocabularyPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSVocabularyPlayer.m; path = Utils/VSVocabularyPlayer.m; sourceTree = "<group>"; };
 		00A006FA156B3D6D00D24418 /* VSConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSConstant.h; path = Utils/VSConstant.h; sourceTree = "<group>"; };
 		00A006FB156B3D6D00D24418 /* VSConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSConstant.m; path = Utils/VSConstant.m; sourceTree = "<group>"; };
 		00A00702156D15F200D24418 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -1453,6 +1453,8 @@
 				009A86FF15A1A82900F7869D /* NSMutableArrayShuffling.m */,
 				00D86E4216339BF700BF530A /* VSUIUtils.h */,
 				00D86E4316339BF700BF530A /* VSUIUtils.m */,
+				009E784E168ADD6F00578392 /* VSVocabularyPlayer.h */,
+				009E784F168ADD6F00578392 /* VSVocabularyPlayer.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -1759,8 +1761,6 @@
 				00FF6FF915D0BACB0043BA91 /* VSScoreBoardView.m */,
 				00763F261645A03200CF7216 /* VSCellStatus.h */,
 				00763F271645A03200CF7216 /* VSCellStatus.m */,
-				0004A7E7166187F900BE9FE0 /* VSRememberedList.h */,
-				0004A7E8166187F900BE9FE0 /* VSRememberedList.m */,
 				00C8D4571687914A00CA3880 /* VSFloatPanelView.h */,
 				00C8D4581687914B00CA3880 /* VSFloatPanelView.m */,
 			);
@@ -2837,8 +2837,8 @@
 				000870D51675A0F600042A38 /* VSAppRecord.m in Sources */,
 				000870D61675A0F600042A38 /* VSListVocabularyRecord.m in Sources */,
 				000870D71675A0F600042A38 /* VSVocabularyRecord.m in Sources */,
-				000870D81675A0F600042A38 /* VSRememberedList.m in Sources */,
 				00C8D45E1687914B00CA3880 /* VSFloatPanelView.m in Sources */,
+				009E7855168ADD6F00578392 /* VSVocabularyPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2900,8 +2900,8 @@
 				000FEA561650B99E00644B63 /* VSAppRecord.m in Sources */,
 				000FEA5C1650BA3A00644B63 /* VSListVocabularyRecord.m in Sources */,
 				000FEA621650BA7400644B63 /* VSVocabularyRecord.m in Sources */,
-				0004A7EB166187F900BE9FE0 /* VSRememberedList.m in Sources */,
 				00C8D45B1687914B00CA3880 /* VSFloatPanelView.m in Sources */,
+				009E7852168ADD6F00578392 /* VSVocabularyPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2963,8 +2963,8 @@
 				000FEA541650B99E00644B63 /* VSAppRecord.m in Sources */,
 				000FEA5A1650BA3A00644B63 /* VSListVocabularyRecord.m in Sources */,
 				000FEA601650BA7400644B63 /* VSVocabularyRecord.m in Sources */,
-				0004A7E9166187F900BE9FE0 /* VSRememberedList.m in Sources */,
 				00C8D4591687914B00CA3880 /* VSFloatPanelView.m in Sources */,
+				009E7850168ADD6F00578392 /* VSVocabularyPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3035,8 +3035,8 @@
 				008242B41671BF1400FF1631 /* VSAppRecord.m in Sources */,
 				008242B51671BF1400FF1631 /* VSListVocabularyRecord.m in Sources */,
 				008242B61671BF1400FF1631 /* VSVocabularyRecord.m in Sources */,
-				008242B71671BF1400FF1631 /* VSRememberedList.m in Sources */,
 				00C8D45D1687914B00CA3880 /* VSFloatPanelView.m in Sources */,
+				009E7854168ADD6F00578392 /* VSVocabularyPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3098,8 +3098,8 @@
 				000FEA571650B99E00644B63 /* VSAppRecord.m in Sources */,
 				000FEA5D1650BA3A00644B63 /* VSListVocabularyRecord.m in Sources */,
 				000FEA631650BA7400644B63 /* VSVocabularyRecord.m in Sources */,
-				0004A7EC166187F900BE9FE0 /* VSRememberedList.m in Sources */,
 				00C8D45C1687914B00CA3880 /* VSFloatPanelView.m in Sources */,
+				009E7853168ADD6F00578392 /* VSVocabularyPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3161,8 +3161,8 @@
 				000FEA551650B99E00644B63 /* VSAppRecord.m in Sources */,
 				000FEA5B1650BA3A00644B63 /* VSListVocabularyRecord.m in Sources */,
 				000FEA611650BA7400644B63 /* VSVocabularyRecord.m in Sources */,
-				0004A7EA166187F900BE9FE0 /* VSRememberedList.m in Sources */,
 				00C8D45A1687914B00CA3880 /* VSFloatPanelView.m in Sources */,
+				009E7851168ADD6F00578392 /* VSVocabularyPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3224,8 +3224,8 @@
 				00C8D3D3168586CC00CA3880 /* VSAppRecord.m in Sources */,
 				00C8D3D4168586CC00CA3880 /* VSListVocabularyRecord.m in Sources */,
 				00C8D3D5168586CC00CA3880 /* VSVocabularyRecord.m in Sources */,
-				00C8D3D6168586CC00CA3880 /* VSRememberedList.m in Sources */,
 				00C8D45F1687914B00CA3880 /* VSFloatPanelView.m in Sources */,
+				009E7856168ADD6F00578392 /* VSVocabularyPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

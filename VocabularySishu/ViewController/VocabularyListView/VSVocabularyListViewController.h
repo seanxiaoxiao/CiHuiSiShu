@@ -15,7 +15,6 @@
 #import "VSVocabularyCell.h"
 #import "VSScoreBoardView.h"
 #import "TipsBubble.h"
-#import "VSRememberedList.h"
 
 @interface VSVocabularyListViewController : UIViewController<UIGestureRecognizerDelegate, UIPickerViewDataSource, UIPickerViewDelegate> {
     IBOutlet UITableView *tableView;
@@ -39,9 +38,7 @@
 @property (nonatomic, assign) int clearingCount;
 @property (nonatomic, retain) NSArray *days;
 @property (nonatomic, retain) UIPickerView *pickerView;
-@property (nonatomic, retain) VSRememberedList *rememberedList;
 @property (nonatomic, retain) UIView *pickerAreaView;
 @property (nonatomic, retain) UILabel *promptLabel;
-
 
 @end
