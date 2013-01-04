@@ -114,7 +114,6 @@
 
 - (void) initWithVocabulary:(VSVocabularyRecord *)vocabularyRecord
 {
-    NSLog(@"%@", vocabularyRecord.spell);
     self.vocabularyRecord = vocabularyRecord;
     self.vocabularyLabel.text = self.vocabularyRecord.spell;
 }
