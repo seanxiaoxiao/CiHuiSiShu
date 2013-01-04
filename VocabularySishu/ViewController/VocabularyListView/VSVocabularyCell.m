@@ -114,16 +114,15 @@
 
 - (void) initWithVocabulary:(VSVocabularyRecord *)vocabularyRecord
 {
+    NSLog(@"%@", vocabularyRecord.spell);
     self.vocabularyRecord = vocabularyRecord;
     self.vocabularyLabel.text = self.vocabularyRecord.spell;
 }
 
 - (void) initBeforeCurlup
 {
-    if (self._vocabulary == nil) {
-        self._vocabulary = [self.vocabularyRecord getVocabulary];
-        self.summaryLabel.text = self._vocabulary.summary;
-    }
+    self._vocabulary = [self.vocabularyRecord getVocabulary];
+    self.summaryLabel.text = self._vocabulary.summary;
 }
 
 - (void) clearVocabulry:(BOOL)clear
@@ -348,12 +347,13 @@
 - (void) resetStatus
 {
     VSCellStatus *record = [self statusRecord];
-    
     self.curlUp = record.curlUp;
     self.hadCurlUp = record.curlUp;
     
     self.clearContainer.frame = CGRectMake(0, 0, 0, VOCAVULARY_CELL_HEIGHT);
     if (self.curlUp) {
+        self._vocabulary = [self.vocabularyRecord getVocabulary];
+        self.summaryLabel.text = self._vocabulary.summary;
         self.summaryContainerView.frame = CGRectMake(0, 0, 320, VOCAVULARY_CELL_HEIGHT);
         self.cellAccessoryImage.hidden = NO;
         [self dragSummary:-180];
