@@ -27,6 +27,7 @@
 @property (nonatomic, retain) NSSet *meanings;
 @property (nonatomic, retain) NSSet *websterMeanings;
 @property (nonatomic, retain) NSDate *lastSeeDate;
+@property (nonatomic, retain) VSVocabularyRecord *record;
 
 - (UIImage *)vocabularyImage;
 
