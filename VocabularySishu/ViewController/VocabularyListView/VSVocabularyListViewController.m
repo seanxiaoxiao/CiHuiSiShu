@@ -132,6 +132,7 @@
 - (void) initNotifications
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clearVocabulary:) name:CLEAR_VOCABULRY object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playVocabulary:) name:PLAY_VOCABULARY object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(restart) name:RESTART_LIST object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(nextList) name:NEXT_LIST object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideScoreBoard) name:CLOSE_POPUP object:nil];
@@ -464,11 +465,6 @@
         }
         else if (!draggedCell.curlUp && !draggedCell.clearing && translation.x < 0) {
             [draggedCell curlUp:point.x];
-            NSIndexPath* indexPath = [self.tableView indexPathForRowAtPoint:point];
-            VSVocabulary *record = [[[vocabulariesToRecite objectAtIndex:indexPath.row] vocabularyRecord] getVocabulary];
-            __autoreleasing VSVocabularyPlayer *player = [VSVocabularyPlayer getPlayer];
-            [player play:record];
-
             if (![[NSUserDefaults standardUserDefaults] boolForKey:@"showDetailBubble"] ) {
                 detailBubble = [[TipsBubble alloc] initWithTips:@"更多信息，点击这里" width:145 popupFrom:tipsBubblePopupFromLowerRight];
                 detailBubble.center = CGPointMake(155, draggedCell.frame.origin.y);
@@ -633,6 +629,13 @@
     }
 }
 
+
+- (void)playVocabulary:(NSNotification *)notification
+{
+    VSVocabularyRecord *vocabularyRecord = [notification.userInfo objectForKey:@"vocabulary"];
+    __autoreleasing VSVocabularyPlayer *player = [VSVocabularyPlayer getPlayer];
+    [player play:[vocabularyRecord getVocabulary]];
+}
 
 
 
