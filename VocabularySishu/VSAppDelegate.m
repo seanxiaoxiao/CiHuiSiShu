@@ -40,7 +40,10 @@
     if ([[VSAppRecord getAppRecord].migrated isEqualToNumber:[NSNumber numberWithBool:NO]]) {
         [VSDataUtil readWriteMigrate];
     }
-    [VSUtils addBarronAndSelectedGRE];
+    NSLog(@"%@", [VSUtils getBundleName]);
+    if ([[VSUtils getBundleVersion] isEqualToString:@"1.3"]) {
+        [VSUtils addBarronAndSelectedGRE];
+    }
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
