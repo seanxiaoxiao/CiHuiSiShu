@@ -25,6 +25,15 @@
 @dynamic lastSeeDate;
 @synthesize record;
 
++ (NSArray *)allRecords
+{
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"VSVocabulary" inManagedObjectContext:[VSUtils currentMOContext]];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDescription];
+    NSError *error = nil;
+    return [[VSUtils currentMOContext] executeFetchRequest:request error:&error];
+}
+
 - (UIImage *)vocabularyImage
 {
     NSURL *url = [[NSBundle mainBundle] URLForResource:self.spell withExtension: @"jpg"];
