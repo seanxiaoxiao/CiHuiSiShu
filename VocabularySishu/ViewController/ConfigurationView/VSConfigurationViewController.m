@@ -9,7 +9,7 @@
 #import "VSConfigurationViewController.h"
 #import "VSUIUtils.h"
 #import "VSUtils.h"
-#import "VSAppRecord.h"
+#import "VSContext.h"
 
 @interface VSConfigurationViewController ()
 
@@ -107,7 +107,7 @@
         toggleSwitch = [[UISwitch alloc] init];
         cell.accessoryView = [[UIView alloc] initWithFrame:toggleSwitch.frame];
         [cell.accessoryView addSubview:toggleSwitch];
-        toggleSwitch.on = [[VSAppRecord getAppRecord].playAfterOpen boolValue];
+        toggleSwitch.on = [[VSContext getContext].playAfterOpen boolValue];
         [toggleSwitch addTarget:self action:@selector(playAfterOpenPushed) forControlEvents:UIControlEventValueChanged];
 
     }
@@ -116,8 +116,8 @@
 
 - (void)playAfterOpenPushed
 {
-    VSAppRecord *appRecord = [VSAppRecord getAppRecord];
-    appRecord.playAfterOpen = [NSNumber numberWithBool:toggleSwitch.on];
+    VSContext *context = [VSContext getContext];
+    context.playAfterOpen = [NSNumber numberWithBool:toggleSwitch.on];
     [VSUtils saveEntity];
 }
 

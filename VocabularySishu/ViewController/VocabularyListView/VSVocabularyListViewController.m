@@ -21,7 +21,6 @@
 #import "VSVocabularyRecord.h"
 #import "VSFloatPanelView.h"
 #import "VSVocabularyPlayer.h"
-#import "VSAppRecord.h"
 
 @interface VSVocabularyListViewController ()
 
@@ -633,7 +632,7 @@
 
 - (void)playVocabulary:(NSNotification *)notification
 {
-    if ([[VSAppRecord getAppRecord].playAfterOpen boolValue]) {
+    if ([[VSContext getContext].playAfterOpen boolValue]) {
         VSVocabularyRecord *vocabularyRecord = [notification.userInfo objectForKey:@"vocabulary"];
         __autoreleasing VSVocabularyPlayer *player = [VSVocabularyPlayer getPlayer];
         [player play:[vocabularyRecord getVocabulary]];

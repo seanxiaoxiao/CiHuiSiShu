@@ -26,9 +26,9 @@
         <attribute name="spell" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="VSAppRecord" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="VSListRecord" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="VSListVocabularyRecord" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="VSVocabularyRecord" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="VSAppRecord" positionX="0" positionY="0" width="128" height="60"/>
+        <element name="VSListRecord" positionX="0" positionY="0" width="128" height="165"/>
+        <element name="VSListVocabularyRecord" positionX="0" positionY="0" width="128" height="120"/>
+        <element name="VSVocabularyRecord" positionX="0" positionY="0" width="128" height="90"/>
     </elements>
 </model>
