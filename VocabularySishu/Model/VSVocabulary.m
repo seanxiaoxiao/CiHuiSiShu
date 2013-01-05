@@ -23,6 +23,7 @@
 @dynamic summary;
 @dynamic audioLink;
 @dynamic lastSeeDate;
+@synthesize record;
 
 - (UIImage *)vocabularyImage
 {
@@ -55,14 +56,17 @@
 
 - (VSVocabularyRecord *)getVocabularyRecord
 {
-    NSError *error = nil;
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"VSVocabularyRecord" inManagedObjectContext:[VSUtils currentMOContext]];
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(spell = %@)", self.spell];
-    [request setPredicate:predicate];
-    [request setEntity:entityDescription];
-    NSArray *results = [[VSUtils currentMOContext] executeFetchRequest:request error:&error];
-    return [results objectAtIndex:0];
+    if (self.record == nil) {
+        NSError *error = nil;
+        NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"VSVocabularyRecord" inManagedObjectContext:[VSUtils currentMOContext]];
+        NSFetchRequest *request = [[NSFetchRequest alloc] init];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(spell = %@)", self.spell];
+        [request setPredicate:predicate];
+        [request setEntity:entityDescription];
+        NSArray *results = [[VSUtils currentMOContext] executeFetchRequest:request error:&error];
+        self.record = [results objectAtIndex:0];
+    }
+    return self.record;
 }
 
 

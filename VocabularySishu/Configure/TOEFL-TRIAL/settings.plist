@@ -7,8 +7,8 @@
 	<key>UMengKey</key>
 	<string>50c1978e527015517b0000ba</string>
 	<key>BundleID</key>
-	<string>org.seanxiaoxiao.VocabularySishu-TOEFL-TRIAL</string>
+	<string>org.seanxiaoxiao.VocabularySishu-TOEFL-Trial</string>
 	<key>AppID</key>
-	<real>558</real>
+	<integer>590380170</integer>
 </dict>
 </plist>
