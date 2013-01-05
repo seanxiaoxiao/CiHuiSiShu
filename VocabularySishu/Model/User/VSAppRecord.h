@@ -13,6 +13,7 @@
 @interface VSAppRecord : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * migrated;
+@property (nonatomic, retain) NSNumber * playAfterOpen;
 
 + (VSAppRecord *)getAppRecord;
 

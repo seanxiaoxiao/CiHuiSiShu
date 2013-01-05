@@ -61,8 +61,8 @@ static VSVocabularyPlayer *player = nil;
 
 - (void)requestFailed:(ASIHTTPRequest *)request
 {
-    NSError *error = [self.request error];
-    NSLog(@"%@", [error localizedDescription]);
+//    NSError *error = [self.request error];
+//    NSLog(@"%@", [error localizedDescription]);
 }
 
 

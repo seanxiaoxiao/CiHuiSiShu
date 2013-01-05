@@ -9,6 +9,7 @@
 #import "VSConfigurationViewController.h"
 #import "VSUIUtils.h"
 #import "VSUtils.h"
+#import "VSAppRecord.h"
 
 @interface VSConfigurationViewController ()
 
@@ -17,6 +18,7 @@
 @implementation VSConfigurationViewController
 @synthesize contactContents;
 @synthesize infoLabel;
+@synthesize toggleSwitch;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -59,7 +61,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -69,6 +71,9 @@
     }
     else if (CONTACT_SECTION == section) {
         return [contactContents count];
+    }
+    else if (SETTING_SECTION == section) {
+        return 1;
     }
     return 0;
 }
@@ -95,7 +100,25 @@
     else if (CONTACT_SECTION == indexPath.section) {
         cell.textLabel.text = [contactContents objectAtIndex:indexPath.row];
     }
+    else if (SETTING_SECTION == indexPath.section) {
+        cell.textLabel.text = @"翻开后发音（Wifi）";
+        cell.textLabel.textAlignment = UITextAlignmentLeft;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        toggleSwitch = [[UISwitch alloc] init];
+        cell.accessoryView = [[UIView alloc] initWithFrame:toggleSwitch.frame];
+        [cell.accessoryView addSubview:toggleSwitch];
+        toggleSwitch.on = [[VSAppRecord getAppRecord].playAfterOpen boolValue];
+        [toggleSwitch addTarget:self action:@selector(playAfterOpenPushed) forControlEvents:UIControlEventValueChanged];
+
+    }
     return cell;
+}
+
+- (void)playAfterOpenPushed
+{
+    VSAppRecord *appRecord = [VSAppRecord getAppRecord];
+    appRecord.playAfterOpen = [NSNumber numberWithBool:toggleSwitch.on];
+    [VSUtils saveEntity];
 }
 
 #pragma mark - Table view delegate
@@ -127,6 +150,9 @@
     }
     else if (section == CONTACT_SECTION) {
         return @"更多";
+    }
+    else if (section == SETTING_SECTION) {
+        return @"设置";
     }
     return @"";
 }

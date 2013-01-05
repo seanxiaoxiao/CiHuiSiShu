@@ -12,6 +12,7 @@
 @implementation VSAppRecord
 
 @dynamic migrated;
+@dynamic playAfterOpen;
 
 + (VSAppRecord *)getAppRecord
 {

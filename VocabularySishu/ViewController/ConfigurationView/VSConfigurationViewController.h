@@ -12,8 +12,9 @@
 #import "VSList.h"
 #import "VSContext.h"
 
-#define CONTACT_SECTION 1
-#define GUIDE_SECTION 0
+#define CONTACT_SECTION 2
+#define GUIDE_SECTION 1
+#define SETTING_SECTION 0
 #define GUIDE 0
 #define MORE 0
 #define RATEUS 1
@@ -30,5 +31,6 @@
 
 @property (nonatomic, retain) NSArray *contactContents;
 @property (nonatomic, retain) UILabel *infoLabel;
+@property (nonatomic, retain) UISwitch *toggleSwitch;
 
 @end

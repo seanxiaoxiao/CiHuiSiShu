@@ -1074,6 +1074,7 @@
 		00333FBA1631227C00F7871C /* LockList@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "LockList@2x.png"; path = "Resources/Img/TRIAL/LockList@2x.png"; sourceTree = "<group>"; };
 		00333FBB1631227C00F7871C /* MainPromo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MainPromo@2x.png"; path = "Resources/Img/TRIAL/MainPromo@2x.png"; sourceTree = "<group>"; };
 		00333FBE1631345900F7871C /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; name = iTunesArtwork; path = Resources/Img/TRIAL/iTunesArtwork; sourceTree = "<group>"; };
+		00421964169808EE006993E5 /* UserModel1.1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = UserModel1.1.xcdatamodel; sourceTree = "<group>"; };
 		0044C13815D371E20022154A /* VSMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSMainViewController.h; path = ViewController/MainView/VSMainViewController.h; sourceTree = "<group>"; };
 		0044C13915D371E20022154A /* VSMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSMainViewController.m; path = ViewController/MainView/VSMainViewController.m; sourceTree = "<group>"; };
 		0044C14115D3723F0022154A /* VSRepoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSRepoViewController.h; path = ViewController/MainView/VSRepoViewController.h; sourceTree = "<group>"; };
@@ -3866,9 +3867,10 @@
 		0085706E1650341D003861DB /* UserModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				00421964169808EE006993E5 /* UserModel1.1.xcdatamodel */,
 				0085706F1650341D003861DB /* UserModel.xcdatamodel */,
 			);
-			currentVersion = 0085706F1650341D003861DB /* UserModel.xcdatamodel */;
+			currentVersion = 00421964169808EE006993E5 /* UserModel1.1.xcdatamodel */;
 			path = UserModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

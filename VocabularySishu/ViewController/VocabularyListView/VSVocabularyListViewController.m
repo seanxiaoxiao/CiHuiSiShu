@@ -21,6 +21,7 @@
 #import "VSVocabularyRecord.h"
 #import "VSFloatPanelView.h"
 #import "VSVocabularyPlayer.h"
+#import "VSAppRecord.h"
 
 @interface VSVocabularyListViewController ()
 
@@ -301,7 +302,7 @@
 {
     [self dismissDetailBubble];
     VSVocabularyCell* cell = (VSVocabularyCell *)[self.tableView cellForRowAtIndexPath:indexPath];
-    if (cell.curlUp && scoreBoardView == nil) {
+    if (cell.curlUp && !cell.curling && scoreBoardView == nil) {
         [MobClick event:EVENT_ENTER_DETAIL];
         VSVocabulary *selectedVocabulary = [((VSListVocabularyRecord *)[self.vocabulariesToRecite objectAtIndex:indexPath.row]).vocabularyRecord getVocabulary];
         VSVocabularyViewController *detailViewController = [[VSVocabularyViewController alloc] initWithNibName:@"VSVocabularyViewController" bundle:nil];
@@ -472,7 +473,7 @@
                 [self.view bringSubviewToFront:detailBubble];
             }
         }
-        else if (draggedCell.curlUp && !draggedCell.clearing && translation.x > 0) {
+        else if (draggedCell.curlUp && !draggedCell.clearing) {
             [draggedCell curlDown:point.x - 60];
         }
     }
@@ -632,9 +633,11 @@
 
 - (void)playVocabulary:(NSNotification *)notification
 {
-    VSVocabularyRecord *vocabularyRecord = [notification.userInfo objectForKey:@"vocabulary"];
-    __autoreleasing VSVocabularyPlayer *player = [VSVocabularyPlayer getPlayer];
-    [player play:[vocabularyRecord getVocabulary]];
+    if ([[VSAppRecord getAppRecord].playAfterOpen boolValue]) {
+        VSVocabularyRecord *vocabularyRecord = [notification.userInfo objectForKey:@"vocabulary"];
+        __autoreleasing VSVocabularyPlayer *player = [VSVocabularyPlayer getPlayer];
+        [player play:[vocabularyRecord getVocabulary]];
+    }
 }
 
 

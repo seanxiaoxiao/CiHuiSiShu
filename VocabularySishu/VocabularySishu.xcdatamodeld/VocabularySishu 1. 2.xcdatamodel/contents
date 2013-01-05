@@ -57,7 +57,7 @@
         <relationship name="vocabulary" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="VSVocabulary" inverseName="websterMeanings" inverseEntity="VSVocabulary" syncable="YES"/>
     </entity>
     <elements>
-        <element name="VSContext" positionX="0" positionY="0" width="128" height="90"/>
+        <element name="VSContext" positionX="0" positionY="0" width="128" height="105"/>
         <element name="VSList" positionX="0" positionY="0" width="128" height="210"/>
         <element name="VSListVocabulary" positionX="0" positionY="0" width="128" height="120"/>
         <element name="VSMeaning" positionX="0" positionY="0" width="128" height="105"/>
