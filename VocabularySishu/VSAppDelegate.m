@@ -46,10 +46,12 @@
     [VSUtils copySQLite];
     [MobClick startWithAppkey:[VSUtils getUMengKey]];
     [self initEnv];
+    
     if ([[VSAppRecord getAppRecord].migrated isEqualToNumber:[NSNumber numberWithBool:NO]]) {
         [VSDataUtil readWriteMigrate];
     }
-    if ([[VSUtils getBundleVersion] isEqualToString:@"1.3"] && [[VSUtils getBundleName] isEqualToString:@"VocabularySishu GRE"]) {
+    
+    if ([[VSUtils getBundleName] isEqualToString:@"VocabularySishu GRE"]) {
         [VSUtils addBarronAndSelectedGRE];
     }
 

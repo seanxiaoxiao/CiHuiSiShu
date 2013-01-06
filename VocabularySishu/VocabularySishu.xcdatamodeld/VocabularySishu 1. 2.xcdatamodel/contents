@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="12C60" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="VSContext" representedClassName="VSContext" syncable="YES">
-        <attribute name="playAfterOpen" optional="YES" attributeType="Boolean" syncable="YES"/>
         <relationship name="currentList" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="VSList" syncable="YES"/>
         <relationship name="currentListVocabulary" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="VSListVocabulary" syncable="YES"/>
         <relationship name="currentRepository" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="VSRepository" syncable="YES"/>
@@ -58,7 +57,7 @@
         <relationship name="vocabulary" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="VSVocabulary" inverseName="websterMeanings" inverseEntity="VSVocabulary" syncable="YES"/>
     </entity>
     <elements>
-        <element name="VSContext" positionX="0" positionY="0" width="128" height="105"/>
+        <element name="VSContext" positionX="0" positionY="0" width="128" height="90"/>
         <element name="VSList" positionX="0" positionY="0" width="128" height="210"/>
         <element name="VSListVocabulary" positionX="0" positionY="0" width="128" height="120"/>
         <element name="VSMeaning" positionX="0" positionY="0" width="128" height="105"/>
