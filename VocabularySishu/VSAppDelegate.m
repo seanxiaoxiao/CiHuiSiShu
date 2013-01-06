@@ -33,10 +33,19 @@
     [iRate sharedInstance].remindPeriod = 5;
 }
 
+- (void)initEnv
+{
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"playAfterOpen"] == nil) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"playAfterOpen"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [VSUtils copySQLite];
     [MobClick startWithAppkey:[VSUtils getUMengKey]];
+    [self initEnv];
     if ([[VSAppRecord getAppRecord].migrated isEqualToNumber:[NSNumber numberWithBool:NO]]) {
         [VSDataUtil readWriteMigrate];
     }

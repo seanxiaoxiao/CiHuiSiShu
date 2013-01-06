@@ -632,7 +632,7 @@
 
 - (void)playVocabulary:(NSNotification *)notification
 {
-    if ([[VSContext getContext].playAfterOpen boolValue]) {
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"playAfterOpen"]) {
         VSVocabularyRecord *vocabularyRecord = [notification.userInfo objectForKey:@"vocabulary"];
         __autoreleasing VSVocabularyPlayer *player = [VSVocabularyPlayer getPlayer];
         [player play:[vocabularyRecord getVocabulary]];

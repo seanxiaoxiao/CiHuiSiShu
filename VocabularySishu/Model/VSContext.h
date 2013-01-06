@@ -18,7 +18,6 @@
 @property (nonatomic, retain) VSList *currentList;
 @property (nonatomic, retain) VSListVocabulary *currentListVocabulary;
 @property (nonatomic, retain) VSRepository *currentRepository;
-@property (nonatomic, retain) NSNumber * playAfterOpen;
 
 
 + (VSContext *)getContext;

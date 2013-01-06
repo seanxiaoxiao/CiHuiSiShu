@@ -107,7 +107,7 @@
         toggleSwitch = [[UISwitch alloc] init];
         cell.accessoryView = [[UIView alloc] initWithFrame:toggleSwitch.frame];
         [cell.accessoryView addSubview:toggleSwitch];
-        toggleSwitch.on = [[VSContext getContext].playAfterOpen boolValue];
+        toggleSwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"playAfterOpen"];
         [toggleSwitch addTarget:self action:@selector(playAfterOpenPushed) forControlEvents:UIControlEventValueChanged];
 
     }
@@ -116,9 +116,8 @@
 
 - (void)playAfterOpenPushed
 {
-    VSContext *context = [VSContext getContext];
-    context.playAfterOpen = [NSNumber numberWithBool:toggleSwitch.on];
-    [VSUtils saveEntity];
+    [[NSUserDefaults standardUserDefaults] setBool:toggleSwitch.on forKey:@"playAfterOpen"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 #pragma mark - Table view delegate

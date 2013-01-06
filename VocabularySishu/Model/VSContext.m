@@ -17,7 +17,6 @@
 @dynamic currentList;
 @dynamic currentListVocabulary;
 @dynamic currentRepository;
-@dynamic playAfterOpen;
 
 + (VSContext *)getContext
 {

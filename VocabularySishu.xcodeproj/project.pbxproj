@@ -1210,7 +1210,6 @@
 		00A1AFAC1586192400310669 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		00AC5E4915E4BBFB00150402 /* PopupClose@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "PopupClose@2x.png"; path = "Resources/Img/PopupClose@2x.png"; sourceTree = "<group>"; };
 		00AC5E4A15E4BBFB00150402 /* PopupCloseHighLighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "PopupCloseHighLighted@2x.png"; path = "Resources/Img/PopupCloseHighLighted@2x.png"; sourceTree = "<group>"; };
-		00ADF72516981C280012C3E8 /* VocabularySishu 1. 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VocabularySishu 1. 3.xcdatamodel"; sourceTree = "<group>"; };
 		00AE80EE158B1318000CE7EA /* VSConfigurationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSConfigurationViewController.h; path = ViewController/ConfigurationView/VSConfigurationViewController.h; sourceTree = "<group>"; };
 		00AE80EF158B1318000CE7EA /* VSConfigurationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSConfigurationViewController.m; path = ViewController/ConfigurationView/VSConfigurationViewController.m; sourceTree = "<group>"; };
 		00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSConfigurationViewController.xib; path = ViewController/ConfigurationView/VSConfigurationViewController.xib; sourceTree = "<group>"; };
@@ -3855,12 +3854,11 @@
 		00701E431553CBCE00D30018 /* VocabularySishu.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				00ADF72516981C280012C3E8 /* VocabularySishu 1. 3.xcdatamodel */,
 				0085A617164A3AC600D51762 /* VocabularySishu 1. 2.xcdatamodel */,
 				00C09AA415E2B05800AD33C3 /* VocabularySishu 1.1.xcdatamodel */,
 				00701E441553CBCE00D30018 /* VocabularySishu.xcdatamodel */,
 			);
-			currentVersion = 00ADF72516981C280012C3E8 /* VocabularySishu 1. 3.xcdatamodel */;
+			currentVersion = 0085A617164A3AC600D51762 /* VocabularySishu 1. 2.xcdatamodel */;
 			path = VocabularySishu.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
