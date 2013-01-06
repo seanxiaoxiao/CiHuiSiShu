@@ -113,7 +113,7 @@
     }
 }
 
-+ (void)addBarronAndSelectedGRE
++ (BOOL)addBarronAndSelectedGRE
 {
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"BarronAndSelectedGRE"]) {
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
@@ -127,7 +127,9 @@
         }
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"BarronAndSelectedGRE"];
         [[NSUserDefaults standardUserDefaults] synchronize];
+        return YES;
     }
+    return NO;
 }
 
 + (void)migrateNewLists
