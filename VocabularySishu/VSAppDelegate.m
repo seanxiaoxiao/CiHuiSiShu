@@ -63,8 +63,10 @@
                                      [NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption,
                                      [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];
             
-            __persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-            
+            NSPersistentStore * existedStore = [__persistentStoreCoordinator persistentStoreForURL:(NSURL *)systemStoreURL];
+            if (![__persistentStoreCoordinator removePersistentStore:existedStore error:&error]) {
+                NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            }
             
             if (![__persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:systemStoreURL options:options error:&error]) {
                 NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
