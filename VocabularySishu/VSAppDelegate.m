@@ -41,6 +41,29 @@
     }
 }
 
+- (void)reloadSystemData
+{
+    NSArray *cachePaths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString *systemFilePath = [[cachePaths objectAtIndex:0] stringByAppendingPathComponent:@"VocabularySishu.sqlite"];
+    
+    NSURL* systemStoreURL = [NSURL fileURLWithPath:systemFilePath];
+    
+    NSError *error = nil;
+    NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
+                             [NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption,
+                             [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];
+    
+    NSPersistentStore * existedStore = [__persistentStoreCoordinator persistentStoreForURL:(NSURL *)systemStoreURL];
+    if (![__persistentStoreCoordinator removePersistentStore:existedStore error:&error]) {
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+    }
+    
+    if (![__persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:systemStoreURL options:options error:&error]) {
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [VSUtils copySQLite];
@@ -53,25 +76,7 @@
     
     if ([[VSUtils getBundleName] isEqualToString:@"VocabularySishu GRE"]) {
         if ([VSUtils addBarronAndSelectedGRE]) {
-            NSArray *cachePaths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-            NSString *systemFilePath = [[cachePaths objectAtIndex:0] stringByAppendingPathComponent:@"VocabularySishu.sqlite"];
-            
-            NSURL* systemStoreURL = [NSURL fileURLWithPath:systemFilePath];
-            
-            NSError *error = nil;
-            NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
-                                     [NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption,
-                                     [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];
-            
-            NSPersistentStore * existedStore = [__persistentStoreCoordinator persistentStoreForURL:(NSURL *)systemStoreURL];
-            if (![__persistentStoreCoordinator removePersistentStore:existedStore error:&error]) {
-                NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            }
-            
-            if (![__persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:systemStoreURL options:options error:&error]) {
-                NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-                abort();
-            }
+            [self reloadSystemData];
         }
     }
 
