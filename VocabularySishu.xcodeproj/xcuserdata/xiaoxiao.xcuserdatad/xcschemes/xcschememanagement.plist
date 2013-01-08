@@ -19,6 +19,11 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>VocabularySishu IELTS.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
 		<key>VocabularySishu TOEFL Trial.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -53,6 +58,21 @@
 			<true/>
 		</dict>
 		<key>00201DDD15CFBAD30089B8FA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>002D4C36169CACE1009C4F8E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>002D4CCB169CADC2009C4F8E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>002D4D5F169CADDF009C4F8E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
