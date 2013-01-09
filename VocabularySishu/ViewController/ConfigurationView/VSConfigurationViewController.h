@@ -12,10 +12,13 @@
 #import "VSList.h"
 #import "VSContext.h"
 
-#define CONTACT_SECTION 2
-#define GUIDE_SECTION 1
+#define CONTACT_SECTION 3
+#define GUIDE_SECTION 2
 #define SETTING_SECTION 0
+#define SHARE_SECTION 1
 #define GUIDE 0
+#define SHARE_TO 0
+#define ACCOUNT_MANAGE 1
 #define MORE 0
 #define RATEUS 1
 #define FEADBACK 2
@@ -30,6 +33,7 @@
 @interface VSConfigurationViewController : UITableViewController<MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate>
 
 @property (nonatomic, retain) NSArray *contactContents;
+@property (nonatomic, retain) NSArray *shareContents;
 @property (nonatomic, retain) UILabel *infoLabel;
 @property (nonatomic, retain) UISwitch *toggleSwitch;
 

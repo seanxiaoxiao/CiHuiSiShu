@@ -10,6 +10,8 @@
 #import "VSUIUtils.h"
 #import "VSUtils.h"
 #import "VSContext.h"
+#import "UMSocialData.h"
+#import "UMSocialControllerService.h"
 
 @interface VSConfigurationViewController ()
 
@@ -19,6 +21,7 @@
 @synthesize contactContents;
 @synthesize infoLabel;
 @synthesize toggleSwitch;
+@synthesize shareContents;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -33,6 +36,7 @@
     [super viewDidLoad];
     self.title = @"设置";
     contactContents = [NSArray arrayWithObjects:@"更多系列", @"给词汇私塾评分", @"意见反馈", nil];
+    shareContents = [NSArray arrayWithObjects:@"分享到", @"账号中心", nil];
     [self.navigationItem setLeftBarButtonItem:[VSUIUtils makeBackButton:self selector:@selector(goBack)]];
 }
 
@@ -61,13 +65,16 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 3;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (GUIDE_SECTION == section) {
         return 1;
+    }
+    else if (SHARE_SECTION == section) {
+        return [shareContents count];
     }
     else if (CONTACT_SECTION == section) {
         return [contactContents count];
@@ -96,6 +103,9 @@
     }
     if (GUIDE_SECTION == indexPath.section) {
         cell.textLabel.text = @"使用向导";
+    }
+    else if (SHARE_SECTION == indexPath.section) {
+        cell.textLabel.text = [shareContents objectAtIndex:indexPath.row];
     }
     else if (CONTACT_SECTION == indexPath.section) {
         cell.textLabel.text = [contactContents objectAtIndex:indexPath.row];
@@ -129,6 +139,14 @@
             [VSUtils showGuidPage];
         }
     }
+    else if (indexPath.section == SHARE_SECTION) {
+        if (indexPath.row == SHARE_TO) {
+            [self share];
+        }
+        else if (indexPath.row == ACCOUNT_MANAGE) {
+            [self accountManage];
+        }
+    }
     else if (indexPath.section == CONTACT_SECTION) {
         if (indexPath.row == MORE) {
             [VSUtils openSeries];
@@ -142,10 +160,31 @@
     }
 }
 
+- (void)accountManage
+{
+    UMSocialControllerService *socialControllerService = [[UMSocialControllerService alloc] initWithUMSocialData:[UMSocialData defaultData]];
+    UINavigationController *accountViewController =[socialControllerService getSocialAccountController];
+    [self presentModalViewController:accountViewController animated:YES];
+}
+
+- (void)share
+{
+    UMSocialData *socialData = [[UMSocialData alloc] initWithIdentifier:@"test"];
+    socialData.shareText = @"寡人正在使用 词汇私塾 背单词，众爱卿也来亲自试一下 https://itunes.apple.com/us/app/ci-hui-si-shu-gre-bei-dan/id558382812";
+    socialData.shareImage = [UIImage imageNamed:@"icon.png"];
+    UMSocialControllerService *socialControllerService = [[UMSocialControllerService alloc] initWithUMSocialData:socialData];
+    UINavigationController *shareListController = [socialControllerService getSocialShareListController];
+    [self presentModalViewController:shareListController animated:YES];
+
+}
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     if (section == GUIDE_SECTION) {
         return @"用户指南";
+    }
+    else if (section == SHARE_SECTION) {
+        return @"分享";
     }
     else if (section == CONTACT_SECTION) {
         return @"更多";
