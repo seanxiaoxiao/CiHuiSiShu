@@ -401,7 +401,6 @@
 		002D4DEC169CADDF009C4F8E /* FloatBarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0087E72C16881D0000B0E95F /* FloatBarButton@2x.png */; };
 		002D4DED169CADDF009C4F8E /* FloatBarButtonHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0087E72D16881D0000B0E95F /* FloatBarButtonHighLighted@2x.png */; };
 		002D4E01169CB0E3009C4F8E /* settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 002D4E00169CB0E3009C4F8E /* settings.plist */; };
-		002D4E05169CB284009C4F8E /* VocabularySishu.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 002D4E04169CB284009C4F8E /* VocabularySishu.sqlite */; };
 		002D4E0D169CB2CE009C4F8E /* GuidePage1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 002D4E07169CB2CE009C4F8E /* GuidePage1@2x.png */; };
 		002D4E0E169CB2CE009C4F8E /* GuidePage2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 002D4E08169CB2CE009C4F8E /* GuidePage2@2x.png */; };
 		002D4E0F169CB2CE009C4F8E /* GuidePage3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 002D4E09169CB2CE009C4F8E /* GuidePage3@2x.png */; };
@@ -598,6 +597,7 @@
 		006B4CE515E3F3B100711C64 /* Menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 006B4CE415E3F3B100711C64 /* Menu@2x.png */; };
 		006B4CE615E3F3B100711C64 /* Menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 006B4CE415E3F3B100711C64 /* Menu@2x.png */; };
 		006B4CE715E3F3B100711C64 /* Menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 006B4CE415E3F3B100711C64 /* Menu@2x.png */; };
+		006F9A8E169F82070077A391 /* VocabularySishu.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 006F9A8D169F82070077A391 /* VocabularySishu.sqlite */; };
 		00701E301553CBCE00D30018 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00701E2F1553CBCE00D30018 /* UIKit.framework */; };
 		00701E321553CBCE00D30018 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00701E311553CBCE00D30018 /* Foundation.framework */; };
 		00701E341553CBCE00D30018 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00701E331553CBCE00D30018 /* CoreGraphics.framework */; };
@@ -1236,13 +1236,12 @@
 		002D4C20169C08DD009C4F8E /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		002D4DF1169CADDF009C4F8E /* VocabularySishu IELTS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VocabularySishu IELTS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		002D4E00169CB0E3009C4F8E /* settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = settings.plist; sourceTree = "<group>"; };
-		002D4E04169CB284009C4F8E /* VocabularySishu.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = VocabularySishu.sqlite; sourceTree = "<group>"; };
 		002D4E07169CB2CE009C4F8E /* GuidePage1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GuidePage1@2x.png"; sourceTree = "<group>"; };
 		002D4E08169CB2CE009C4F8E /* GuidePage2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GuidePage2@2x.png"; sourceTree = "<group>"; };
 		002D4E09169CB2CE009C4F8E /* GuidePage3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GuidePage3@2x.png"; sourceTree = "<group>"; };
 		002D4E0A169CB2CE009C4F8E /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		002D4E0B169CB2CE009C4F8E /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
-		002D4E0C169CB2CE009C4F8E /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
+		002D4E0C169CB2CE009C4F8E /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = text; path = iTunesArtwork; sourceTree = "<group>"; };
 		002D4E1E169CDAAF009C4F8E /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		002D4E1F169CDAAF009C4F8E /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		002D4E20169CDAAF009C4F8E /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -1339,6 +1338,7 @@
 		006B4CDC15E3638B00711C64 /* VSGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSGuideViewController.m; path = ViewController/ConfigurationView/VSGuideViewController.m; sourceTree = "<group>"; };
 		006B4CDD15E3638B00711C64 /* VSGuideViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSGuideViewController.xib; path = ViewController/ConfigurationView/VSGuideViewController.xib; sourceTree = "<group>"; };
 		006B4CE415E3F3B100711C64 /* Menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Menu@2x.png"; path = "Resources/Img/Menu@2x.png"; sourceTree = "<group>"; };
+		006F9A8D169F82070077A391 /* VocabularySishu.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = VocabularySishu.sqlite; sourceTree = "<group>"; };
 		00701E2B1553CBCE00D30018 /* VocabularySishu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VocabularySishu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00701E2F1553CBCE00D30018 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		00701E311553CBCE00D30018 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -1731,7 +1731,7 @@
 		002D4E03169CB284009C4F8E /* IELTS */ = {
 			isa = PBXGroup;
 			children = (
-				002D4E04169CB284009C4F8E /* VocabularySishu.sqlite */,
+				006F9A8D169F82070077A391 /* VocabularySishu.sqlite */,
 			);
 			name = IELTS;
 			path = Resources/Data/IELTS;
@@ -2834,7 +2834,6 @@
 				002D4DEC169CADDF009C4F8E /* FloatBarButton@2x.png in Resources */,
 				002D4DED169CADDF009C4F8E /* FloatBarButtonHighLighted@2x.png in Resources */,
 				002D4E01169CB0E3009C4F8E /* settings.plist in Resources */,
-				002D4E05169CB284009C4F8E /* VocabularySishu.sqlite in Resources */,
 				002D4E0D169CB2CE009C4F8E /* GuidePage1@2x.png in Resources */,
 				002D4E0E169CB2CE009C4F8E /* GuidePage2@2x.png in Resources */,
 				002D4E0F169CB2CE009C4F8E /* GuidePage3@2x.png in Resources */,
@@ -2849,6 +2848,7 @@
 				002D4E8D169CDAAF009C4F8E /* UMSnsAccountViewController.xib in Resources */,
 				002D4E94169CDAAF009C4F8E /* UMSShareListController.xib in Resources */,
 				002D4EA2169CDAAF009C4F8E /* UMSocialSDKResources.bundle in Resources */,
+				006F9A8E169F82070077A391 /* VocabularySishu.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

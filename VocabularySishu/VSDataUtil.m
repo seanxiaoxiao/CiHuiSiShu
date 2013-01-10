@@ -487,7 +487,8 @@ NSMutableDictionary *vocabularyMap;
 //    NSLog(@"MWMeaning");
 //    [VSDataUtil clearEntities:@"VSWebsterMeaning"];
 //    [VSDataUtil initFullMWMeanings];
-
+    
+    [VSDataUtil fixData];
     NSLog(@"Time elapse %f in import all", [dateStarted timeIntervalSinceNow]);
 }
 
@@ -590,6 +591,7 @@ NSMutableDictionary *vocabularyMap;
             }
         }
     }
+    [VSUtils saveEntity];
 }
 
 + (void)readWriteMigrate
