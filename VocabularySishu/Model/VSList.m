@@ -181,7 +181,7 @@
     if ((range = [self.name rangeOfString:@"GRE"]).location != NSNotFound || (range = [self.name rangeOfString:@"TOEFL"]).location != NSNotFound || (range = [self.name rangeOfString:@"GMAT"]).location != NSNotFound || (range = [self.name rangeOfString:@"IELTS"]).location != NSNotFound || (range = [self.name rangeOfString:@"四级"]).location != NSNotFound || (range = [self.name rangeOfString:@"六级"]).location != NSNotFound) {
         return [NSString stringWithFormat:@"%@", [self.name substringWithRange:range]];
     }
-    return @"";
+    return self.repository.name;
 }
 
 - (NSString *)subName
@@ -194,7 +194,7 @@
         remainRange.length = [titleName length] - range.length;
         return [NSString stringWithFormat:@"%@", [titleName substringWithRange:remainRange]];
     }
-    return @"";
+    return titleName;
 }
 
 - (void)initListRecord

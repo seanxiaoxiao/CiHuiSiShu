@@ -474,15 +474,10 @@ NSMutableDictionary *vocabularyMap;
 
 + (void)readWriteMigrate
 {
-    NSDate *beforeDelete = [[NSDate alloc] init];
-
     [VSDataUtil clearEntities:@"VSListRecord"];
     [VSDataUtil clearEntities:@"VSVocabularyRecord"];
     [VSDataUtil clearEntities:@"VSListVocabularyRecord"];
     [VSDataUtil clearEntities:@"VSAppRecord"];
-    
-    NSDate *then = [[NSDate alloc] init];
-    NSLog(@"Delete time is: %f", [then timeIntervalSinceDate:beforeDelete]);
     
     NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"VSList" inManagedObjectContext:[VSUtils currentMOContext]];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
@@ -511,11 +506,7 @@ NSMutableDictionary *vocabularyMap;
     }
     VSAppRecord *appRecord = [NSEntityDescription insertNewObjectForEntityForName:@"VSAppRecord" inManagedObjectContext:[VSUtils currentMOContext]];
     appRecord.migrated = [NSNumber numberWithBool:YES];
-    NSDate *now = [[NSDate alloc] init];
-    NSLog(@"Process time is: %f", [now timeIntervalSinceDate:then]);
     [VSUtils saveEntity];
-    NSDate *anotherNow = [[NSDate alloc] init];
-    NSLog(@"Saving time is: %f", [anotherNow timeIntervalSinceDate:now]);
 }
 
 @end

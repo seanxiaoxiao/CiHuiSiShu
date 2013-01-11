@@ -178,7 +178,7 @@
 {
     lastGestureX = gestureX;
     if (curlUpTimer != nil) {
-        curlUpTimer = nil;
+        return;
     }
     curlUpTimer = [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(doCurlUp) userInfo:nil repeats:YES];
 }
@@ -266,11 +266,11 @@
         self.scoreDownImage = nil;
     }
     self.curling = YES;
-    if (lastGestureX < 80) {
+    if (lastGestureX < 60) {
         lastGestureX = lastGestureX - 10;
         [self dragSummary:lastGestureX];
     }
-    if (lastGestureX >= 80) {
+    if (lastGestureX >= 60) {
         lastGestureX = lastGestureX + 20;
         [self dragSummary:lastGestureX];
     }
@@ -279,12 +279,13 @@
         [curlUpTimer invalidate];
         curlUpTimer = nil;
         self.curling = NO;
+        self.curlUp = YES;
+        record.curlUp = YES;
         self.cellAccessoryImage.hidden = NO;
     }
     if (lastGestureX > 260) {
         [curlUpTimer invalidate];
         curlUpTimer = nil;
-        self.curlUp = NO;
         record.curlUp = NO;
         self.curling = NO;
         self.cellAccessoryImage.hidden = YES;
@@ -294,6 +295,7 @@
 
 - (void) curlDown:(CGFloat)gestureX
 {
+    self.curlUp = NO;
     lastGestureX = gestureX;
     curlUpTimer = [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(doCurlDown) userInfo:nil repeats:YES];
 }

@@ -17,7 +17,7 @@
 
 @synthesize seeSummaryStart;
 @synthesize seeSummaryTimes;
-
+@synthesize cacheVocabulary;
 
 - (void) initWithVocabulary:(VSVocabulary *)vocabulary
 {
@@ -28,14 +28,17 @@
 
 - (VSVocabulary *)getVocabulary
 {
-    NSError *error = nil;
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"VSVocabulary" inManagedObjectContext:[VSUtils currentMOContext]];
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(spell = %@)", self.spell];
-    [request setPredicate:predicate];
-    [request setEntity:entityDescription];
-    NSArray *results = [[VSUtils currentMOContext] executeFetchRequest:request error:&error];
-    return [results objectAtIndex:0];
+    if (cacheVocabulary == nil) {
+        NSError *error = nil;
+        NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"VSVocabulary" inManagedObjectContext:[VSUtils currentMOContext]];
+        NSFetchRequest *request = [[NSFetchRequest alloc] init];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(spell = %@)", self.spell];
+        [request setPredicate:predicate];
+        [request setEntity:entityDescription];
+        NSArray *results = [[VSUtils currentMOContext] executeFetchRequest:request error:&error];
+        cacheVocabulary = [results objectAtIndex:0];
+    }
+    return cacheVocabulary;
 }
 
 - (void)remembered

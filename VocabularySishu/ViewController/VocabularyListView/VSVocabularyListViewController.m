@@ -302,7 +302,7 @@
 {
     [self dismissDetailBubble];
     VSVocabularyCell* cell = (VSVocabularyCell *)[self.tableView cellForRowAtIndexPath:indexPath];
-    if (cell.curlUp && scoreBoardView == nil) {
+    if (cell.curlUp && !cell.curling && scoreBoardView == nil) {
         [MobClick event:EVENT_ENTER_DETAIL];
         VSVocabulary *selectedVocabulary = [((VSListVocabularyRecord *)[self.vocabulariesToRecite objectAtIndex:indexPath.row]).vocabularyRecord getVocabulary];
         VSVocabularyViewController *detailViewController = [[VSVocabularyViewController alloc] initWithNibName:@"VSVocabularyViewController" bundle:nil];
@@ -473,7 +473,7 @@
                 [self.view bringSubviewToFront:detailBubble];
             }
         }
-        else if (draggedCell.curlUp && !draggedCell.clearing && translation.x > 0) {
+        else if (draggedCell.curlUp && !draggedCell.clearing) {
             [draggedCell curlDown:point.x - 60];
         }
     }
