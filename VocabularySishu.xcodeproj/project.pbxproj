@@ -3351,8 +3351,8 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				BUNDLE_NAME = "VocabularySishu-GRE";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: SHAO WEN SU";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SHAO WEN SU";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -3368,8 +3368,8 @@
 					"\"$(SRCROOT)/VocabularySishu/Libs/Statistics\"",
 				);
 				PRODUCT_NAME = "VocabularySishu GRE";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "E90CD11D-E363-4012-AAB3-2FFDD7A8C6FD";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E90CD11D-E363-4012-AAB3-2FFDD7A8C6FD";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
@@ -3561,8 +3561,8 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				BUNDLE_NAME = "VocabularySishu-TOEFL-Trial";
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: SHAO WEN SU";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SHAO WEN SU";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -3581,8 +3581,8 @@
 					"\"$(SRCROOT)/VocabularySishu/Libs/Statistics\"",
 				);
 				PRODUCT_NAME = "VocabularySishu TOEFL Trial";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "8396AD10-D7B7-41C6-BF89-F453248998D1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8396AD10-D7B7-41C6-BF89-F453248998D1";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
@@ -3622,8 +3622,8 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				BUNDLE_NAME = "VocabularySishu-Trial";
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: SHAO WEN SU";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SHAO WEN SU";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -3639,8 +3639,8 @@
 					"\"$(SRCROOT)/VocabularySishu/Libs/Statistics\"",
 				);
 				PRODUCT_NAME = "VocabularySishu GRE Free";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "B7D29BDA-1017-4C0B-80FE-C789FE79D49C";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B7D29BDA-1017-4C0B-80FE-C789FE79D49C";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
