@@ -21,6 +21,7 @@ static VSVocabularyPlayer *player = nil;
 + (VSVocabularyPlayer *)getPlayer
 {
     if (player == nil) {
+        [ASIHTTPRequest setShouldUpdateNetworkActivityIndicator:NO];
         [ASIHTTPRequest setDefaultCache:[ASIDownloadCache sharedCache]];
         player = [[VSVocabularyPlayer alloc] init];
     }
