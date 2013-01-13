@@ -106,7 +106,6 @@
 		000871021675A0F600042A38 /* InkFooter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583D15E40C9900B7AB04 /* InkFooter@2x.png */; };
 		000871031675A0F600042A38 /* InkHeader@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583E15E40C9900B7AB04 /* InkHeader@2x.png */; };
 		000871041675A0F600042A38 /* InkNeck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583F15E40C9900B7AB04 /* InkNeck@2x.png */; };
-		000871051675A0F600042A38 /* ListBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584015E40C9900B7AB04 /* ListBG@2x.png */; };
 		000871061675A0F600042A38 /* NavBackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584215E40C9900B7AB04 /* NavBackButton@2x.png */; };
 		000871071675A0F600042A38 /* Navigation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584315E40C9900B7AB04 /* Navigation@2x.png */; };
 		000871081675A0F600042A38 /* Next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584415E40C9900B7AB04 /* Next@2x.png */; };
@@ -965,6 +964,7 @@
 		00DBAB181671C668009B572F /* TimeLineCellLight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E585215E40C9900B7AB04 /* TimeLineCellLight@2x.png */; };
 		00DBAB191671C66A009B572F /* Unit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E585315E40C9900B7AB04 /* Unit@2x.png */; };
 		00E25A6F15C052F2006402B2 /* VSNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0081185015BEFE220022B515 /* VSNavigationBar.m */; };
+		00E71BA116A1427D00978BED /* ListBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00E71BA016A1427D00978BED /* ListBG@2x.png */; };
 		00E83B3015DAC42F005BE3AF /* VSClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E83B2F15DAC42F005BE3AF /* VSClipView.m */; };
 		00E83B3115DAC42F005BE3AF /* VSClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E83B2F15DAC42F005BE3AF /* VSClipView.m */; };
 		00E83B3215DAC42F005BE3AF /* VSClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E83B2F15DAC42F005BE3AF /* VSClipView.m */; };
@@ -1248,6 +1248,7 @@
 		00CBF0D815E9F333001588A3 /* UnitHighLighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UnitHighLighted@2x.png"; path = "Resources/Img/UnitHighLighted@2x.png"; sourceTree = "<group>"; };
 		00D86E4216339BF700BF530A /* VSUIUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSUIUtils.h; path = Utils/VSUIUtils.h; sourceTree = "<group>"; };
 		00D86E4316339BF700BF530A /* VSUIUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSUIUtils.m; path = Utils/VSUIUtils.m; sourceTree = "<group>"; };
+		00E71BA016A1427D00978BED /* ListBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ListBG@2x.png"; sourceTree = "<group>"; };
 		00E83B2E15DAC42F005BE3AF /* VSClipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSClipView.h; path = ViewController/MainView/VSClipView.h; sourceTree = "<group>"; };
 		00E83B2F15DAC42F005BE3AF /* VSClipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSClipView.m; path = ViewController/MainView/VSClipView.m; sourceTree = "<group>"; };
 		00F7B02D1671D28100F9FB14 /* VocabularySishu.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = VocabularySishu.sqlite; sourceTree = "<group>"; };
@@ -1418,6 +1419,7 @@
 		000871491675AEA900042A38 /* CET4 */ = {
 			isa = PBXGroup;
 			children = (
+				00E71BA016A1427D00978BED /* ListBG@2x.png */,
 				0008714A1675AEA900042A38 /* GuidePage1@2x.png */,
 				0008714B1675AEA900042A38 /* GuidePage2@2x.png */,
 				0008714C1675AEA900042A38 /* GuidePage3@2x.png */,
@@ -2243,7 +2245,6 @@
 				000871021675A0F600042A38 /* InkFooter@2x.png in Resources */,
 				000871031675A0F600042A38 /* InkHeader@2x.png in Resources */,
 				000871041675A0F600042A38 /* InkNeck@2x.png in Resources */,
-				000871051675A0F600042A38 /* ListBG@2x.png in Resources */,
 				000871061675A0F600042A38 /* NavBackButton@2x.png in Resources */,
 				000871071675A0F600042A38 /* Navigation@2x.png in Resources */,
 				000871081675A0F600042A38 /* Next@2x.png in Resources */,
@@ -2285,6 +2286,7 @@
 				0087E73316881D0000B0E95F /* FloatBarTimer@2x.png in Resources */,
 				0087E73A16881D0000B0E95F /* FloatBarButton@2x.png in Resources */,
 				0087E74116881D0000B0E95F /* FloatBarButtonHighLighted@2x.png in Resources */,
+				00E71BA116A1427D00978BED /* ListBG@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
