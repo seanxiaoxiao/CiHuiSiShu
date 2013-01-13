@@ -86,7 +86,6 @@
 		000870EE1675A0F600042A38 /* VSMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0044C14E15D397630022154A /* VSMainViewController.xib */; };
 		000870EF1675A0F600042A38 /* VSRepoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0044C15415D3B70F0022154A /* VSRepoListViewController.xib */; };
 		000870F01675A0F600042A38 /* VSGuideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006B4CDD15E3638B00711C64 /* VSGuideViewController.xib */; };
-		000870F11675A0F600042A38 /* VSUIUtils.m in Resources */ = {isa = PBXBuildFile; fileRef = 00D86E4316339BF700BF530A /* VSUIUtils.m */; };
 		000870F21675A0F600042A38 /* Menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 006B4CE415E3F3B100711C64 /* Menu@2x.png */; };
 		000870F31675A0F600042A38 /* SeparatorDots@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF1B0F15E407AC005B9E51 /* SeparatorDots@2x.png */; };
 		000870F41675A0F600042A38 /* BookBlack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E582F15E40C9900B7AB04 /* BookBlack@2x.png */; };
@@ -473,7 +472,6 @@
 		0046409115591DBD007E5FA9 /* VSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046409015591DBD007E5FA9 /* VSUtils.m */; };
 		0046409215591DBD007E5FA9 /* VSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046409015591DBD007E5FA9 /* VSUtils.m */; };
 		0046409315591FD1007E5FA9 /* VSVocabularyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408115590E0B007E5FA9 /* VSVocabularyViewController.xib */; };
-		004CE32216A26941004ABA63 /* VSVocabularyListViewController.m in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6BC156A5FF700B80422 /* VSVocabularyListViewController.m */; };
 		004CE32516A26AB3004ABA63 /* VSRememberedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0004A7E8166187F900BE9FE0 /* VSRememberedList.m */; };
 		004EA5A4161AA8AA000E4B0E /* VocabularySishu.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 004EA5A3161AA8AA000E4B0E /* VocabularySishu.sqlite */; };
 		00533E3215F3DA81004777F1 /* GuidePage1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00533E2C15F3DA81004777F1 /* GuidePage1@2x.png */; };
@@ -680,7 +678,6 @@
 		00A0072F156E3C4800D24418 /* VSWebsterMeaning.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A0072E156E3C4800D24418 /* VSWebsterMeaning.m */; };
 		00A00732156F7FEF00D24418 /* VSVocabularyListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A00731156F7FEE00D24418 /* VSVocabularyListHeaderView.m */; };
 		00A1AFAD1586192400310669 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A1AFAC1586192400310669 /* AVFoundation.framework */; };
-		00A4CEB41643919B00A94ADD /* VSUIUtils.m in Resources */ = {isa = PBXBuildFile; fileRef = 00D86E4316339BF700BF530A /* VSUIUtils.m */; };
 		00A4CEB51643971400A94ADD /* VSUIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D86E4316339BF700BF530A /* VSUIUtils.m */; };
 		00A4CEB61643982000A94ADD /* VSUIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D86E4316339BF700BF530A /* VSUIUtils.m */; };
 		00A4CF421643A3A000A94ADD /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF8F1618AB6E00E788EA /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -930,7 +927,6 @@
 		00C8D3EA168586CC00CA3880 /* VSMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0044C14E15D397630022154A /* VSMainViewController.xib */; };
 		00C8D3EB168586CC00CA3880 /* VSRepoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0044C15415D3B70F0022154A /* VSRepoListViewController.xib */; };
 		00C8D3EC168586CC00CA3880 /* VSGuideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006B4CDD15E3638B00711C64 /* VSGuideViewController.xib */; };
-		00C8D3ED168586CC00CA3880 /* VSUIUtils.m in Resources */ = {isa = PBXBuildFile; fileRef = 00D86E4316339BF700BF530A /* VSUIUtils.m */; };
 		00C8D3EE168586CC00CA3880 /* Menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 006B4CE415E3F3B100711C64 /* Menu@2x.png */; };
 		00C8D3EF168586CC00CA3880 /* SeparatorDots@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF1B0F15E407AC005B9E51 /* SeparatorDots@2x.png */; };
 		00C8D3F0168586CC00CA3880 /* BookBlack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E582F15E40C9900B7AB04 /* BookBlack@2x.png */; };
@@ -2387,10 +2383,8 @@
 				000870EE1675A0F600042A38 /* VSMainViewController.xib in Resources */,
 				000870EF1675A0F600042A38 /* VSRepoListViewController.xib in Resources */,
 				000870F01675A0F600042A38 /* VSGuideViewController.xib in Resources */,
-				000870F11675A0F600042A38 /* VSUIUtils.m in Resources */,
 				000870F21675A0F600042A38 /* Menu@2x.png in Resources */,
 				000870F31675A0F600042A38 /* SeparatorDots@2x.png in Resources */,
-				004CE32216A26941004ABA63 /* VSVocabularyListViewController.m in Resources */,
 				000870F41675A0F600042A38 /* BookBlack@2x.png in Resources */,
 				000870F51675A0F600042A38 /* BookLake@2x.png in Resources */,
 				000870F61675A0F600042A38 /* BookRed@2x.png in Resources */,
@@ -2461,7 +2455,6 @@
 				0044C15115D397630022154A /* VSMainViewController.xib in Resources */,
 				0044C15A15D3B70F0022154A /* VSRepoListViewController.xib in Resources */,
 				006B4CE315E3638C00711C64 /* VSGuideViewController.xib in Resources */,
-				00A4CEB41643919B00A94ADD /* VSUIUtils.m in Resources */,
 				006B4CE715E3F3B100711C64 /* Menu@2x.png in Resources */,
 				00FF1B1215E407AC005B9E51 /* SeparatorDots@2x.png in Resources */,
 				000E585915E40C9900B7AB04 /* BookBlack@2x.png in Resources */,
@@ -2892,7 +2885,6 @@
 				00C8D3EA168586CC00CA3880 /* VSMainViewController.xib in Resources */,
 				00C8D3EB168586CC00CA3880 /* VSRepoListViewController.xib in Resources */,
 				00C8D3EC168586CC00CA3880 /* VSGuideViewController.xib in Resources */,
-				00C8D3ED168586CC00CA3880 /* VSUIUtils.m in Resources */,
 				00C8D3EE168586CC00CA3880 /* Menu@2x.png in Resources */,
 				00C8D3EF168586CC00CA3880 /* SeparatorDots@2x.png in Resources */,
 				00C8D3F0168586CC00CA3880 /* BookBlack@2x.png in Resources */,
