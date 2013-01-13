@@ -102,10 +102,6 @@
 		000870FE1675A0F600042A38 /* DetailsBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583915E40C9900B7AB04 /* DetailsBG@2x.png */; };
 		000870FF1675A0F600042A38 /* DetailsHeader@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583A15E40C9900B7AB04 /* DetailsHeader@2x.png */; };
 		000871001675A0F600042A38 /* infoButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583B15E40C9900B7AB04 /* infoButton@2x.png */; };
-		000871011675A0F600042A38 /* (null) in Resources */ = {isa = PBXBuildFile; };
-		000871021675A0F600042A38 /* (null) in Resources */ = {isa = PBXBuildFile; };
-		000871031675A0F600042A38 /* (null) in Resources */ = {isa = PBXBuildFile; };
-		000871041675A0F600042A38 /* (null) in Resources */ = {isa = PBXBuildFile; };
 		000871051675A0F600042A38 /* ListBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584015E40C9900B7AB04 /* ListBG@2x.png */; };
 		000871061675A0F600042A38 /* NavBackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584215E40C9900B7AB04 /* NavBackButton@2x.png */; };
 		000871071675A0F600042A38 /* Navigation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584315E40C9900B7AB04 /* Navigation@2x.png */; };
@@ -361,7 +357,6 @@
 		002D4DAF169CADDF009C4F8E /* VSMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0044C14E15D397630022154A /* VSMainViewController.xib */; };
 		002D4DB0169CADDF009C4F8E /* VSRepoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0044C15415D3B70F0022154A /* VSRepoListViewController.xib */; };
 		002D4DB1169CADDF009C4F8E /* VSGuideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006B4CDD15E3638B00711C64 /* VSGuideViewController.xib */; };
-		002D4DB2169CADDF009C4F8E /* VSUIUtils.m in Resources */ = {isa = PBXBuildFile; fileRef = 00D86E4316339BF700BF530A /* VSUIUtils.m */; };
 		002D4DB3169CADDF009C4F8E /* Menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 006B4CE415E3F3B100711C64 /* Menu@2x.png */; };
 		002D4DB4169CADDF009C4F8E /* SeparatorDots@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF1B0F15E407AC005B9E51 /* SeparatorDots@2x.png */; };
 		002D4DB5169CADDF009C4F8E /* BookBlack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E582F15E40C9900B7AB04 /* BookBlack@2x.png */; };
@@ -478,6 +473,8 @@
 		0046409115591DBD007E5FA9 /* VSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046409015591DBD007E5FA9 /* VSUtils.m */; };
 		0046409215591DBD007E5FA9 /* VSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046409015591DBD007E5FA9 /* VSUtils.m */; };
 		0046409315591FD1007E5FA9 /* VSVocabularyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408115590E0B007E5FA9 /* VSVocabularyViewController.xib */; };
+		004CE32216A26941004ABA63 /* VSVocabularyListViewController.m in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6BC156A5FF700B80422 /* VSVocabularyListViewController.m */; };
+		004CE32516A26AB3004ABA63 /* VSRememberedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0004A7E8166187F900BE9FE0 /* VSRememberedList.m */; };
 		004EA5A4161AA8AA000E4B0E /* VocabularySishu.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 004EA5A3161AA8AA000E4B0E /* VocabularySishu.sqlite */; };
 		00533E3215F3DA81004777F1 /* GuidePage1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00533E2C15F3DA81004777F1 /* GuidePage1@2x.png */; };
 		00533E3315F3DA81004777F1 /* GuidePage2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00533E2D15F3DA81004777F1 /* GuidePage2@2x.png */; };
@@ -2393,6 +2390,7 @@
 				000870F11675A0F600042A38 /* VSUIUtils.m in Resources */,
 				000870F21675A0F600042A38 /* Menu@2x.png in Resources */,
 				000870F31675A0F600042A38 /* SeparatorDots@2x.png in Resources */,
+				004CE32216A26941004ABA63 /* VSVocabularyListViewController.m in Resources */,
 				000870F41675A0F600042A38 /* BookBlack@2x.png in Resources */,
 				000870F51675A0F600042A38 /* BookLake@2x.png in Resources */,
 				000870F61675A0F600042A38 /* BookRed@2x.png in Resources */,
@@ -2406,10 +2404,6 @@
 				000870FE1675A0F600042A38 /* DetailsBG@2x.png in Resources */,
 				000870FF1675A0F600042A38 /* DetailsHeader@2x.png in Resources */,
 				000871001675A0F600042A38 /* infoButton@2x.png in Resources */,
-				000871011675A0F600042A38 /* (null) in Resources */,
-				000871021675A0F600042A38 /* (null) in Resources */,
-				000871031675A0F600042A38 /* (null) in Resources */,
-				000871041675A0F600042A38 /* (null) in Resources */,
 				000871051675A0F600042A38 /* ListBG@2x.png in Resources */,
 				000871061675A0F600042A38 /* NavBackButton@2x.png in Resources */,
 				000871071675A0F600042A38 /* Navigation@2x.png in Resources */,
@@ -2536,7 +2530,6 @@
 				002D4DAF169CADDF009C4F8E /* VSMainViewController.xib in Resources */,
 				002D4DB0169CADDF009C4F8E /* VSRepoListViewController.xib in Resources */,
 				002D4DB1169CADDF009C4F8E /* VSGuideViewController.xib in Resources */,
-				002D4DB2169CADDF009C4F8E /* VSUIUtils.m in Resources */,
 				002D4DB3169CADDF009C4F8E /* Menu@2x.png in Resources */,
 				002D4DB4169CADDF009C4F8E /* SeparatorDots@2x.png in Resources */,
 				002D4DB5169CADDF009C4F8E /* BookBlack@2x.png in Resources */,
@@ -3136,6 +3129,7 @@
 				002D4D7B169CADDF009C4F8E /* VSVocabulary.m in Sources */,
 				002D4D7C169CADDF009C4F8E /* VSVocabularyCell.m in Sources */,
 				002D4D7D169CADDF009C4F8E /* VSScoreBoardView.m in Sources */,
+				004CE32516A26AB3004ABA63 /* VSRememberedList.m in Sources */,
 				002D4D7E169CADDF009C4F8E /* VSHisotryListCell.m in Sources */,
 				002D4D7F169CADDF009C4F8E /* VSMainViewController.m in Sources */,
 				002D4D80169CADDF009C4F8E /* VSRepoViewController.m in Sources */,
