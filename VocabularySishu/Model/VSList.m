@@ -154,6 +154,9 @@
     if (([self.name rangeOfString:@"TOEFL分类-"].location) != NSNotFound) {
         return [self.name substringFromIndex:[self.name rangeOfString:@"TOEFL分类-"].length];
     }
+    else if (([self.name rangeOfString:@"IELTS分类-"].location) != NSNotFound) {
+        return [self.name substringFromIndex:[self.name rangeOfString:@"IELTS分类-"].length];
+    }
     else if ([self.repository.name rangeOfString:@"分类"].location == NSNotFound) {
         return [self.order stringValue];
     }
