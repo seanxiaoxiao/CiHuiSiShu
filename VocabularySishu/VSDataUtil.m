@@ -33,6 +33,7 @@ NSMutableDictionary *vocabularyMap;
 
 + (void)updateRepoData
 {
+    repoMap = [[NSMutableDictionary alloc] init];
     NSArray *existedRepo = [VSRepository allRepos];
     for (int i = 0; i < [existedRepo count]; i++) {
         if (i != 0) {
@@ -55,6 +56,114 @@ NSMutableDictionary *vocabularyMap;
         repo.order = [NSNumber numberWithInt:(i + 1)];
         repo.finishedRound = [NSNumber numberWithInt:0];
         [repoMap setValue:repo forKey:repo.name];
+    }
+    [VSUtils saveEntity];
+}
+
++ (void)updateVocabularyData
+{
+    NSDate *dateStarted = [[NSDate alloc] init];
+    
+    NSBundle *bundle = [NSBundle mainBundle];
+    NSString *repoData = [bundle pathForResource:@"Vocabularies-update" ofType:@"txt"];
+    NSFileHandle* file = [NSFileHandle fileHandleForReadingAtPath:repoData];
+    NSData* data = [file readDataToEndOfFile];
+    [file closeFile];
+    SBJsonParser *parser = [[SBJsonParser alloc] init];
+    NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    
+    NSArray *vocabularies = [jsonString componentsSeparatedByString:@"\n"];
+    for (int i = 0; i < [vocabularies count]; i++) {
+        NSDictionary *vocabularyInfo = [parser objectWithString:[vocabularies objectAtIndex:i]];
+        VSVocabulary *vocabulary = [NSEntityDescription insertNewObjectForEntityForName:@"VSVocabulary" inManagedObjectContext:[VSUtils currentMOContext]];
+        vocabulary.spell = [vocabularyInfo objectForKey:@"spell"];
+        vocabulary.phonetic = [vocabularyInfo objectForKey:@"phonetic"];
+        vocabulary.etymology = [vocabularyInfo objectForKey:@"etymology"];
+        vocabulary.summary = [vocabularyInfo objectForKey:@"summary"];
+        vocabulary.meet = [NSNumber numberWithInt:0];
+        vocabulary.remember = [NSNumber numberWithInt:50];
+    }
+    [VSUtils saveEntity];
+    vocabularyMap = [[NSMutableDictionary alloc] init];
+    NSArray *allVocabulary = [VSVocabulary allRecords];
+    for (VSVocabulary *record in allVocabulary) {
+        [vocabularyMap setObject:record forKey:record.spell];
+    }
+    
+    NSLog(@"Time elapse %f in import vocabulary", [dateStarted timeIntervalSinceNow]);
+}
+
++ (void)updateMeaningData
+{
+    NSBundle *bundle = [NSBundle mainBundle];
+    NSString *repoData = [bundle pathForResource:@"Meaning-update" ofType:@"txt"];
+    NSFileHandle* file = [NSFileHandle fileHandleForReadingAtPath:repoData];
+    NSData* data = [file readDataToEndOfFile];
+    [file closeFile];
+    NSString *content = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSArray *lines = [content componentsSeparatedByString:@"\n"];
+    SBJsonParser *parser = [[SBJsonParser alloc] init];
+    for (NSString *line in lines) {
+        NSArray *info = [line componentsSeparatedByString:@"::"];
+        __autoreleasing NSString *spell = [info objectAtIndex:0];
+        NSString *jsonString = [info objectAtIndex:1];
+        NSArray *meaningArray = [parser objectWithString:jsonString];
+        int order = 0;
+        VSVocabulary *vocabulary = [vocabularyMap objectForKey:spell];
+        if (vocabulary == nil) {
+            continue;
+        }
+        for (NSDictionary *meaningInfo in meaningArray) {
+            __autoreleasing NSString *attr = [meaningInfo objectForKey:@"attribute"];
+            __autoreleasing NSString *meaningContent = [meaningInfo objectForKey:@"meaning"];
+            if ([attr length] == 0 || [meaningContent length] == 0) {
+                continue;
+            }
+            VSMeaning *meaning = [NSEntityDescription insertNewObjectForEntityForName:@"VSMeaning" inManagedObjectContext:[VSUtils currentMOContext]];
+            meaning.vocabulary = vocabulary;
+            meaning.attribute = attr;
+            meaning.meaning = meaningContent;
+            meaning.order = [NSNumber numberWithInt:order];
+            order = order + 1;
+        }
+    }
+    [VSUtils saveEntity];
+}
+
++ (void)updateListData
+{
+    NSBundle *bundle = [NSBundle mainBundle];
+    NSString *repoData = [bundle pathForResource:@"Lists-update" ofType:@"txt"];
+    NSFileHandle* file = [NSFileHandle fileHandleForReadingAtPath:repoData];
+    NSData* data = [file readDataToEndOfFile];
+    [file closeFile];
+    SBJsonParser *parser = [[SBJsonParser alloc] init];
+    NSString *contentString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSArray *contentArray = [contentString componentsSeparatedByString:@"\n"];
+    for (NSString *jsonString in contentArray) {
+        NSArray *datas = [parser objectWithString:jsonString];
+        for (NSDictionary *data in datas) {
+            VSRepository *repository = [repoMap objectForKey:[data objectForKey:@"repoName"]];
+            VSList *list = [NSEntityDescription insertNewObjectForEntityForName:@"VSList" inManagedObjectContext:[VSUtils currentMOContext]];
+            list.name = [data objectForKey:@"name"];
+            list.order = [data objectForKey:@"order"];
+            list.repository = repository;
+            list.type = [VSConstant LIST_TYPE_NORMAL];
+            list.status = [VSConstant LIST_STATUS_NEW];
+            list.round = [NSNumber numberWithInt:0];
+            NSArray *vocabularies = [data objectForKey:@"vocabularyList"];
+            for (int i = 0; i < [vocabularies count]; i++) {
+                VSVocabulary *vocabulary = [vocabularyMap objectForKey:[vocabularies objectAtIndex:i]];
+                if (vocabulary == nil) {
+                    continue;
+                }
+                VSListVocabulary *listVocabulary = [NSEntityDescription insertNewObjectForEntityForName:@"VSListVocabulary" inManagedObjectContext:[VSUtils currentMOContext]];
+                listVocabulary.vocabulary = [vocabularyMap objectForKey:[vocabularies objectAtIndex:i]];
+                listVocabulary.list = list;
+                listVocabulary.order = [NSNumber numberWithInt:i];
+                listVocabulary.lastStatus = [VSConstant VOCABULARY_LIST_STATUS_NEW];
+            }
+        }
     }
     [VSUtils saveEntity];
 }
@@ -378,9 +487,21 @@ NSMutableDictionary *vocabularyMap;
 //    NSLog(@"MWMeaning");
 //    [VSDataUtil clearEntities:@"VSWebsterMeaning"];
 //    [VSDataUtil initFullMWMeanings];
-
+    
+    [VSDataUtil fixData];
     NSLog(@"Time elapse %f in import all", [dateStarted timeIntervalSinceNow]);
+}
 
++ (void)updateData
+{
+    NSLog(@"Vocabulary");
+    [VSDataUtil updateVocabularyData];
+    NSLog(@"Repo");
+    [VSDataUtil updateRepoData];
+    NSLog(@"Repo List");
+    [VSDataUtil updateListData];
+    NSLog(@"Meaning");
+    [VSDataUtil updateMeaningData];
 }
 
 + (void)initFullMWMeanings
@@ -470,6 +591,7 @@ NSMutableDictionary *vocabularyMap;
             }
         }
     }
+    [VSUtils saveEntity];
 }
 
 + (void)readWriteMigrate

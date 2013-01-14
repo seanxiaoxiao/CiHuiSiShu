@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <AVFoundation/AVFoundation.h>
 #import "VSUtils.h"
 #import "VSList.h"
 #import "VSVocabulary.h"
@@ -15,9 +14,7 @@
 #import "VSWebsterMeaning.h"
 #import "Reachability.h"
 
-@class ASIHTTPRequest;
-
-@interface VSVocabularyViewController : UIViewController<AVAudioPlayerDelegate> {
+@interface VSVocabularyViewController : UIViewController {
     IBOutlet UILabel *vocabularyLabel;
     IBOutlet UILabel *phoneticLabel;
     IBOutlet UILabel *etymologyLabel;
@@ -35,13 +32,10 @@
 @property (nonatomic, strong) UILabel *etymologyContentLabel;
 @property (nonatomic, strong) UIButton *playButton;
 @property (nonatomic, strong) VSVocabulary *vocabulary;
-@property (nonatomic, strong) AVAudioPlayer *player;
 @property (nonatomic, strong) UILabel *imageLabel;
 @property (nonatomic, strong) UIImageView *vocabularyImageView;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UILabel *mwLabel;
-@property (nonatomic, retain) AVAudioPlayer *audioPlayer;
 @property (nonatomic, strong) UIImageView *backgroundImage;
-@property (retain, nonatomic) ASIHTTPRequest *request;
 
 @end

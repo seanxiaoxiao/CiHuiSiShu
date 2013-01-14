@@ -160,6 +160,9 @@
     else if ([self.repository.name rangeOfString:@"分类"].location == NSNotFound) {
         return [self.order stringValue];
     }
+    else if ([self.repository.name rangeOfString:@"IELTS分类-"].location == NSNotFound) {
+            return [self.name substringFromIndex:[self.name rangeOfString:@"IELTS分类-"].length];
+    }
     else {
         return self.name;
     }
@@ -181,7 +184,7 @@
 - (NSString *)repoCategory
 {
     NSRange range;
-    if ((range = [self.name rangeOfString:@"GRE"]).location != NSNotFound || (range = [self.name rangeOfString:@"TOEFL"]).location != NSNotFound || (range = [self.name rangeOfString:@"GMAT"]).location != NSNotFound || (range = [self.name rangeOfString:@"IELTS"]).location != NSNotFound || (range = [self.name rangeOfString:@"四级"]).location != NSNotFound || (range = [self.name rangeOfString:@"六级"]).location != NSNotFound) {
+    if ((range = [self.name rangeOfString:@"GRE"]).location != NSNotFound || (range = [self.name rangeOfString:@"TOEFL"]).location != NSNotFound || (range = [self.name rangeOfString:@"GMAT"]).location != NSNotFound || (range = [self.name rangeOfString:@"IELTS"]).location != NSNotFound || (range = [self.name rangeOfString:@"四级"]).location != NSNotFound || (range = [self.name rangeOfString:@"六级"]).location != NSNotFound ) {
         return [NSString stringWithFormat:@"%@", [self.name substringWithRange:range]];
     }
     return self.repository.name;

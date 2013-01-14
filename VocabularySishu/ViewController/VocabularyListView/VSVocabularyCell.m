@@ -207,6 +207,10 @@
         [self.vocabularyRecord forgot];
         [self.vocabularyRecord seeSummaryStart];
         [MobClick event:EVENT_FORGET];
+        NSMutableDictionary *orientationData = [[NSMutableDictionary alloc] init];
+        [orientationData setValue:self.vocabularyRecord forKey:@"vocabulary"];
+        NSNotification *notification = [NSNotification notificationWithName:PLAY_VOCABULARY object:nil userInfo:orientationData];
+        [[NSNotificationCenter defaultCenter] postNotification:notification];
         [self scoreDown];
     }
     if (lastGestureX > 260) {

@@ -9,6 +9,10 @@
 	<key>BundleID</key>
 	<string>org.seanxiaoxiao.VocabularySishu-IELTS</string>
 	<key>AppID</key>
+<<<<<<< HEAD
 	<integer>593309202</integer>
+=======
+	<integer>558382812</integer>
+>>>>>>> social
 </dict>
 </plist>

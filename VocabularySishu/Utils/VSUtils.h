@@ -59,5 +59,6 @@
 
 + (NSString *)getBundleId;
 
++ (BOOL)addBarronAndSelectedGRE;
 
 @end

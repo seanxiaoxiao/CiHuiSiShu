@@ -19,8 +19,8 @@
 #import "VSListRecord.h"
 #import "VSListVocabularyRecord.h"
 #import "VSVocabularyRecord.h"
-#import "VSRememberedList.h"
 #import "VSFloatPanelView.h"
+#import "VSVocabularyPlayer.h"
 
 @interface VSVocabularyListViewController ()
 
@@ -68,7 +68,6 @@
             status.curlUp = NO;
             [self.cellStatus setObject:status forKey:listVocabulary.vocabularyRecord.spell];
         }
-        self.rememberedList = [[VSRememberedList alloc] init];
         
         [self.navigationItem setLeftBarButtonItem:[VSUIUtils makeBackButton:self selector:@selector(backToMain)]];
         [self initRightButton];
@@ -133,6 +132,7 @@
 - (void) initNotifications
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clearVocabulary:) name:CLEAR_VOCABULRY object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playVocabulary:) name:PLAY_VOCABULARY object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(restart) name:RESTART_LIST object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(nextList) name:NEXT_LIST object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideScoreBoard) name:CLOSE_POPUP object:nil];
@@ -245,7 +245,6 @@
     self.blockView = nil;
     self.scoreBoardView = nil;
     self.exitButton = nil;
-    self.rememberedList = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -499,7 +498,6 @@
         if (![self.currentListRecord isHistoryList]) {
             [self.listToday addVocabulary:rememberedVocabulary.vocabularyRecord];
         }
-        [self.rememberedList addNewToken:index withRecord:rememberedVocabulary];
         [self.headerView clearWord];
         [vocabulariesToRecite removeObjectAtIndex:index];
         [self updateVocabularyTable:index];
@@ -631,6 +629,15 @@
     }
 }
 
+
+- (void)playVocabulary:(NSNotification *)notification
+{
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"playAfterOpen"]) {
+        VSVocabularyRecord *vocabularyRecord = [notification.userInfo objectForKey:@"vocabulary"];
+        __autoreleasing VSVocabularyPlayer *player = [VSVocabularyPlayer getPlayer];
+        [player play:[vocabularyRecord getVocabulary]];
+    }
+}
 
 
 

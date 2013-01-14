@@ -12,6 +12,7 @@
 #import "iRate.h"
 #import "VSAppRecord.h"
 #import "VSListRecord.h"
+#import "UMSocialControllerService.h"
 
 @implementation VSAppDelegate
 
@@ -33,12 +34,61 @@
     [iRate sharedInstance].remindPeriod = 5;
 }
 
+- (NSArray *)shareToPlatforms
+{
+    NSArray *shareToArray = [NSArray arrayWithObjects: UMShareToSina, UMShareToDouban, UMShareToRenren, UMShareToTencent, nil];
+    return shareToArray;
+}
+
+- (void)initEnv
+{
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"playAfterOpen"] == nil) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"playAfterOpen"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+}
+
+- (void)reloadSystemData
+{
+    NSArray *cachePaths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString *systemFilePath = [[cachePaths objectAtIndex:0] stringByAppendingPathComponent:@"VocabularySishu.sqlite"];
+    
+    NSURL* systemStoreURL = [NSURL fileURLWithPath:systemFilePath];
+    
+    NSError *error = nil;
+    NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
+                             [NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption,
+                             [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];
+    
+    NSPersistentStore * existedStore = [__persistentStoreCoordinator persistentStoreForURL:(NSURL *)systemStoreURL];
+    if (![__persistentStoreCoordinator removePersistentStore:existedStore error:&error]) {
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+    }
+    
+    if (![__persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:systemStoreURL options:options error:&error]) {
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [VSUtils copySQLite];
+    [UMSocialData setAppKey:[VSUtils getUMengKey]];
+    [UMSocialControllerService setSocialConfigDelegate:self];
     [MobClick startWithAppkey:[VSUtils getUMengKey]];
+    
+    [VSUtils copySQLite];
+
+    [self initEnv];
+    
     if ([[VSAppRecord getAppRecord].migrated isEqualToNumber:[NSNumber numberWithBool:NO]]) {
         [VSDataUtil readWriteMigrate];
+    }
+    
+    if ([[VSUtils getBundleName] isEqualToString:@"VocabularySishu GRE"]) {
+        if ([VSUtils addBarronAndSelectedGRE]) {
+            [self reloadSystemData];
+        }
     }
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -51,7 +101,6 @@
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"initialized"] ) {
-        [VSDataUtil fixData];
         [VSUtils showGuidPage];
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"initialized"];
         [[NSUserDefaults standardUserDefaults] synchronize];

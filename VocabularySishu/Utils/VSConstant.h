@@ -15,6 +15,7 @@
 #define FINISH_LOADING_MEANING_NOTIFICATION @"finish_loading_meaning_notification"
 #define SHOW_DETAIL_VIEW @"show_detail_view"
 #define CLEAR_VOCABULRY @"clear_vocabulary"
+#define PLAY_VOCABULARY @"play_vocabulary"
 #define RESTART_LIST @"restart_list"
 #define NEXT_LIST @"next_list"
 #define HIDE_SCOREBOARD @"hide_scoreboard"
@@ -27,7 +28,7 @@
 #define LONGTERM_EXPIRE_INTERVAL 18 * 60 * 60;
 #define SHORTTERM_EXPIRE_INTERVAL 5 * 60 * 60;
 #define NOTIFICATION_DENY 60 * 60;
-#define VSS_RESOURCE_SERVICE @"http://ec2-184-169-238-194.us-west-1.compute.amazonaws.com/sound"
+#define VSS_RESOURCE_SERVICE @"http://www.gefostudio.com/vss/audio"
 
 #define EVENT_ENTER_HISTORY @"ENTER_HISTORY"
 #define EVENT_ENTER_LIST @"ENTER_LIST"

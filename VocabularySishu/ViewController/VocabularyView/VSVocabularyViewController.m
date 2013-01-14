@@ -8,9 +8,8 @@
 
 #import "VSVocabularyViewController.h"
 #import "Reachability.h"
-#import "ASIHTTPRequest.h"
-#import "ASIDownloadCache.h"
 #import "VSUIUtils.h"
+#import "VSVocabularyPlayer.h"
 
 @class VSVocabulary;
 
@@ -25,14 +24,11 @@
 @synthesize vocabulary;
 @synthesize etymologyLabel;
 @synthesize etymologyContentLabel;
-@synthesize player;
 @synthesize imageLabel;
 @synthesize vocabularyImageView;
 @synthesize scrollView;
 @synthesize mwLabel;
-@synthesize audioPlayer;
 @synthesize backgroundImage;
-@synthesize request;
 @synthesize playButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -56,15 +52,15 @@
     UIBarButtonItem* backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
     [self.navigationItem setLeftBarButtonItem:backButtonItem];
     
-//    if ([[Reachability reachabilityForInternetConnection] isReachableViaWiFi]) {
-//        UIImage* playImage = [VSUtils fetchImg:@"SoundButton"];
-//        CGRect playFrame = CGRectMake(0, 0, playImage.size.width, playImage.size.height);
-//        self.playButton = [[UIButton alloc] initWithFrame:playFrame];
-//        [self.playButton setBackgroundImage:playImage forState:UIControlStateNormal];
-//        [self.playButton addTarget:self action:@selector(playAudio) forControlEvents:UIControlEventTouchUpInside];
-//        UIBarButtonItem* playButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.playButton];
-//        [self.navigationItem setRightBarButtonItem:playButtonItem];        
-//    }
+    if ([[Reachability reachabilityForInternetConnection] isReachableViaWiFi]) {
+        UIImage* playImage = [VSUtils fetchImg:@"SoundButton"];
+        CGRect playFrame = CGRectMake(0, 0, playImage.size.width, playImage.size.height);
+        self.playButton = [[UIButton alloc] initWithFrame:playFrame];
+        [self.playButton setBackgroundImage:playImage forState:UIControlStateNormal];
+        [self.playButton addTarget:self action:@selector(playAudio) forControlEvents:UIControlEventTouchUpInside];
+        UIBarButtonItem* playButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.playButton];
+        [self.navigationItem setRightBarButtonItem:playButtonItem];        
+    }
     
     [self.view sendSubviewToBack:self.backgroundImage];
     [self.navigationItem setLeftBarButtonItem:[VSUIUtils makeBackButton:self selector:@selector(backToList)]];
@@ -203,7 +199,6 @@
     self.scrollView.scrollEnabled = YES;
     self.scrollView.contentSize = CGSizeMake(320, currentHeight + 20);
     
-    [ASIHTTPRequest setDefaultCache:[ASIDownloadCache sharedCache]];
     self.playButton.hidden = NO;
     
 }
@@ -222,7 +217,6 @@
     self.etymologyLabel = nil;
     self.playButton = nil;
     self.vocabulary = nil;
-    self.player = nil;
     self.imageLabel = nil;
     self.vocabularyImageView = nil;
     self.scrollView = nil;
@@ -236,18 +230,6 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (IBAction)play:(id)sender
-{
-    NSData *fetchedData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:vocabulary.audioLink]];
-    if (audioPlayer) {
-        [audioPlayer stop];
-        audioPlayer = nil;
-    }
-    audioPlayer = [[AVAudioPlayer alloc] initWithData:fetchedData error:nil];
-    audioPlayer.delegate = self;
-    [audioPlayer play];
-}
-
 - (void)backToList
 {
     [self.navigationController popViewControllerAnimated:YES];
@@ -255,39 +237,8 @@
 
 - (void)playAudio
 {
-    self.request = [ASIHTTPRequest requestWithURL:[self.vocabulary audioURL]];
-    [request setDownloadCache:[ASIDownloadCache sharedCache]];
-    [request setCachePolicy:ASIAskServerIfModifiedCachePolicy|ASIFallbackToCacheIfLoadFailsCachePolicy];
-    [request setSecondsToCache:60 * 60 * 24 * 30];
-    [request addRequestHeader:@"User-Agent" value:@"ASIHTTPRequest"];
-    [self.request setDelegate:self];
-    [request startAsynchronous];
-}
-
-
-- (void)requestFinished:(ASIHTTPRequest *)request
-{
-    NSData *responseData = [self.request responseData];
-    int statusCode = [self.request responseStatusCode];
-    
-    if (statusCode == 200 || statusCode == 301 || statusCode == 302 || statusCode == 307) {
-        NSError *error = [self.request error];
-        self.audioPlayer = [[AVAudioPlayer alloc] initWithData:responseData error:&error];
-        self.audioPlayer.numberOfLoops = 0;
-        self.audioPlayer.volume = 1.0f;
-        [self.audioPlayer prepareToPlay];
-        [self.audioPlayer play];
-    }
-    else {
-        [self requestFailed:self.request];
-    }
-}
-
-- (void)requestFailed:(ASIHTTPRequest *)request
-{
-    NSError *error = [self.request error];
-    NSLog(@"%@", [error localizedDescription]);
-    
+    __autoreleasing VSVocabularyPlayer *player = [VSVocabularyPlayer getPlayer];
+    [player play:self.vocabulary];
 }
 
 

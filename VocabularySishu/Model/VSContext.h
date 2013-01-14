@@ -19,6 +19,7 @@
 @property (nonatomic, retain) VSListVocabulary *currentListVocabulary;
 @property (nonatomic, retain) VSRepository *currentRepository;
 
+
 + (VSContext *)getContext;
 
 + (BOOL)isFirstTime;

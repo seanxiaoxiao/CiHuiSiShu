@@ -39,6 +39,8 @@
 
 - (VSVocabularyRecord *)getVocabularyRecord;
 
++ (NSArray *)allRecords;
+
 @end
 
 @interface VSVocabulary (CoreDataGeneratedAccessors)

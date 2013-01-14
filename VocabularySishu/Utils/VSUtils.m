@@ -113,6 +113,41 @@
     }
 }
 
++ (BOOL)addBarronAndSelectedGRE
+{
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"BarronAndSelectedGRE"]) {
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+        NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"VocabularySishu.sqlite"];
+        NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"VocabularySishu" ofType:@"sqlite"];
+        NSError *error = nil;
+        [[NSFileManager defaultManager] removeItemAtPath:filePath error:nil];
+        [[NSFileManager defaultManager] copyItemAtPath:resourcePath toPath:filePath error:&error];
+        if (error != nil) {
+            NSLog(@"%@", [error localizedDescription]);
+        }
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"BarronAndSelectedGRE"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        return YES;
+    }
+    return NO;
+}
+
++ (void)migrateNewLists
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"VocabularySishu.sqlite"];
+    NSString *urlString = [NSString stringWithFormat:@"file://%@", filePath];
+    NSURL* storeURL = [NSURL URLWithString:urlString];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:[storeURL path]]) {
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        NSError *error;
+        NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"VocabularySishu" ofType:@"sqlite"];
+        if ([[NSFileManager defaultManager] fileExistsAtPath:resourcePath]) {
+            [fileManager copyItemAtPath:resourcePath toPath:filePath error:&error];
+        }
+    }
+}
+
 
 + (void)toGivenList:(VSList *)list
 {
