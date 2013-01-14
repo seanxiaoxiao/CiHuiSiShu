@@ -329,11 +329,8 @@
 		002D4D95169CADDF009C4F8E /* VSListVocabularyRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 000FEA591650BA3A00644B63 /* VSListVocabularyRecord.m */; };
 		002D4D96169CADDF009C4F8E /* VSVocabularyRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 000FEA5F1650BA7400644B63 /* VSVocabularyRecord.m */; };
 		002D4D97169CADDF009C4F8E /* VSFloatPanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C8D4581687914B00CA3880 /* VSFloatPanelView.m */; };
-<<<<<<< HEAD
 		002D4D98169CADDF009C4F8E /* (null) in Sources */ = {isa = PBXBuildFile; };
-=======
 		002D4D98169CADDF009C4F8E /* VSVocabularyPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 009E784F168ADD6F00578392 /* VSVocabularyPlayer.m */; };
->>>>>>> social
 		002D4D9A169CADDF009C4F8E /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002D4C20169C08DD009C4F8E /* GameKit.framework */; };
 		002D4D9B169CADDF009C4F8E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A1AFAC1586192400310669 /* AVFoundation.framework */; };
 		002D4D9C169CADDF009C4F8E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009397D415D82B79009AE73E /* MessageUI.framework */; };
@@ -355,10 +352,6 @@
 		002D4DAF169CADDF009C4F8E /* VSMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0044C14E15D397630022154A /* VSMainViewController.xib */; };
 		002D4DB0169CADDF009C4F8E /* VSRepoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0044C15415D3B70F0022154A /* VSRepoListViewController.xib */; };
 		002D4DB1169CADDF009C4F8E /* VSGuideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006B4CDD15E3638B00711C64 /* VSGuideViewController.xib */; };
-<<<<<<< HEAD
-=======
-		002D4DB2169CADDF009C4F8E /* VSUIUtils.m in Resources */ = {isa = PBXBuildFile; fileRef = 00D86E4316339BF700BF530A /* VSUIUtils.m */; };
->>>>>>> social
 		002D4DB3169CADDF009C4F8E /* Menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 006B4CE415E3F3B100711C64 /* Menu@2x.png */; };
 		002D4DB4169CADDF009C4F8E /* SeparatorDots@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF1B0F15E407AC005B9E51 /* SeparatorDots@2x.png */; };
 		002D4DB5169CADDF009C4F8E /* BookBlack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E582F15E40C9900B7AB04 /* BookBlack@2x.png */; };
@@ -407,18 +400,13 @@
 		002D4DEC169CADDF009C4F8E /* FloatBarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0087E72C16881D0000B0E95F /* FloatBarButton@2x.png */; };
 		002D4DED169CADDF009C4F8E /* FloatBarButtonHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0087E72D16881D0000B0E95F /* FloatBarButtonHighLighted@2x.png */; };
 		002D4E01169CB0E3009C4F8E /* settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 002D4E00169CB0E3009C4F8E /* settings.plist */; };
-<<<<<<< HEAD
 		002D4E05169CB284009C4F8E /* VocabularySishu.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 002D4E04169CB284009C4F8E /* VocabularySishu.sqlite */; };
-=======
->>>>>>> social
 		002D4E0D169CB2CE009C4F8E /* GuidePage1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 002D4E07169CB2CE009C4F8E /* GuidePage1@2x.png */; };
 		002D4E0E169CB2CE009C4F8E /* GuidePage2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 002D4E08169CB2CE009C4F8E /* GuidePage2@2x.png */; };
 		002D4E0F169CB2CE009C4F8E /* GuidePage3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 002D4E09169CB2CE009C4F8E /* GuidePage3@2x.png */; };
 		002D4E10169CB2CE009C4F8E /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 002D4E0A169CB2CE009C4F8E /* icon.png */; };
 		002D4E11169CB2CE009C4F8E /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 002D4E0B169CB2CE009C4F8E /* icon@2x.png */; };
 		002D4E12169CB2CE009C4F8E /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 002D4E0C169CB2CE009C4F8E /* iTunesArtwork */; };
-<<<<<<< HEAD
-=======
 		002D4E41169CDAAF009C4F8E /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 002D4E1F169CDAAF009C4F8E /* AFHTTPClient.m */; };
 		002D4E42169CDAAF009C4F8E /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 002D4E1F169CDAAF009C4F8E /* AFHTTPClient.m */; };
 		002D4E43169CDAAF009C4F8E /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 002D4E1F169CDAAF009C4F8E /* AFHTTPClient.m */; };
@@ -517,7 +505,6 @@
 		002D4EA0169CDAAF009C4F8E /* UMSocialSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 002D4E40169CDAAF009C4F8E /* UMSocialSDKResources.bundle */; };
 		002D4EA1169CDAAF009C4F8E /* UMSocialSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 002D4E40169CDAAF009C4F8E /* UMSocialSDKResources.bundle */; };
 		002D4EA2169CDAAF009C4F8E /* UMSocialSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 002D4E40169CDAAF009C4F8E /* UMSocialSDKResources.bundle */; };
->>>>>>> social
 		002DBFA21618AB6E00E788EA /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF8F1618AB6E00E788EA /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		002DBFA31618AB6E00E788EA /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF8F1618AB6E00E788EA /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		002DBFA41618AB6E00E788EA /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF8F1618AB6E00E788EA /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -1248,18 +1235,13 @@
 		002D4C20169C08DD009C4F8E /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		002D4DF1169CADDF009C4F8E /* VocabularySishu IELTS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VocabularySishu IELTS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		002D4E00169CB0E3009C4F8E /* settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = settings.plist; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		002D4E04169CB284009C4F8E /* VocabularySishu.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = VocabularySishu.sqlite; sourceTree = "<group>"; };
-=======
->>>>>>> social
 		002D4E07169CB2CE009C4F8E /* GuidePage1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GuidePage1@2x.png"; sourceTree = "<group>"; };
 		002D4E08169CB2CE009C4F8E /* GuidePage2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GuidePage2@2x.png"; sourceTree = "<group>"; };
 		002D4E09169CB2CE009C4F8E /* GuidePage3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GuidePage3@2x.png"; sourceTree = "<group>"; };
 		002D4E0A169CB2CE009C4F8E /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		002D4E0B169CB2CE009C4F8E /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		002D4E0C169CB2CE009C4F8E /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
-=======
 		002D4E0C169CB2CE009C4F8E /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = text; path = iTunesArtwork; sourceTree = "<group>"; };
 		002D4E1E169CDAAF009C4F8E /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		002D4E1F169CDAAF009C4F8E /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
@@ -1293,7 +1275,6 @@
 		002D4E40169CDAAF009C4F8E /* UMSocialSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UMSocialSDKResources.bundle; sourceTree = "<group>"; };
 		002D4EA3169CDB3B009C4F8E /* UMSocialBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialBar.h; sourceTree = "<group>"; };
 		002D4EA4169CDB81009C4F8E /* UMSocialControllerServiceComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialControllerServiceComment.h; sourceTree = "<group>"; };
->>>>>>> social
 		002DBF8E1618AB6E00E788EA /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIAuthenticationDialog.h; path = Libs/ASIHTTPRequest/ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		002DBF8F1618AB6E00E788EA /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIAuthenticationDialog.m; path = Libs/ASIHTTPRequest/ASIAuthenticationDialog.m; sourceTree = "<group>"; };
 		002DBF901618AB6E00E788EA /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASICacheDelegate.h; path = Libs/ASIHTTPRequest/ASICacheDelegate.h; sourceTree = "<group>"; };
@@ -1771,11 +1752,8 @@
 		002D4E03169CB284009C4F8E /* IELTS */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				002D4E04169CB284009C4F8E /* VocabularySishu.sqlite */,
-=======
 				006F9A8D169F82070077A391 /* VocabularySishu.sqlite */,
->>>>>>> social
 			);
 			name = IELTS;
 			path = Resources/Data/IELTS;
@@ -1795,8 +1773,6 @@
 			path = Resources/Img/IELTS;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
-=======
 		002D4E1B169CDAAF009C4F8E /* UMSocial_Sdk_1.6.1 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1893,7 +1869,6 @@
 			path = SocialSDKXib;
 			sourceTree = "<group>";
 		};
->>>>>>> social
 		002DBF8C1618AB5E00E788EA /* ASIHTTPRequest */ = {
 			isa = PBXGroup;
 			children = (
@@ -4159,11 +4134,8 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/VocabularySishu/Libs/Statistics\"",
-<<<<<<< HEAD
-=======
 					"\"$(SRCROOT)/VocabularySishu/Libs/UMSocial_Sdk_1.6.1/frameworks/Wechat\"",
 					"\"$(SRCROOT)/VocabularySishu/Libs/UMSocial_Sdk_1.6.1\"",
->>>>>>> social
 				);
 				PRODUCT_NAME = "VocabularySishu IELTS";
 				PROVISIONING_PROFILE = "";
@@ -4178,13 +4150,10 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				BUNDLE_NAME = "VocabularySishu-GRE";
-<<<<<<< HEAD
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-=======
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
->>>>>>> social
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -4198,11 +4167,8 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/VocabularySishu/Libs/Statistics\"",
-<<<<<<< HEAD
-=======
 					"\"$(SRCROOT)/VocabularySishu/Libs/UMSocial_Sdk_1.6.1/frameworks/Wechat\"",
 					"\"$(SRCROOT)/VocabularySishu/Libs/UMSocial_Sdk_1.6.1\"",
->>>>>>> social
 				);
 				PRODUCT_NAME = "VocabularySishu IELTS";
 				PROVISIONING_PROFILE = "";

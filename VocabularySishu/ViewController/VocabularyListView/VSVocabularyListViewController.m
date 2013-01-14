@@ -137,6 +137,8 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(nextList) name:NEXT_LIST object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideScoreBoard) name:CLOSE_POPUP object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showPickerArea) name:SHOW_PICKER object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateAfterEnterForeground) name:UIApplicationWillEnterForegroundNotification object:nil];
+
 }
 
 - (void) initBubbles
@@ -605,6 +607,11 @@
 {
     [MobClick event:EVENT_NEXT_LIST];
     [VSUtils toNextList:self.currentList];
+}
+
+- (void)updateAfterEnterForeground
+{
+    [currentListRecord resetFinishPlanDate];
 }
 
 #pragma mark - Bubble Dismiss
