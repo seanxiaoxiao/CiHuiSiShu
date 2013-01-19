@@ -70,35 +70,6 @@
         }
     }
     
-    
-#ifdef TRIAL
-    for (int i = 0; i < 10; i++) {
-        UIImage *lockImage = [VSUtils fetchImg:@"LockList"];
-        UIImage *listImage = [VSUtils fetchImg:@"Unit"];
-        
-        UIImageView *lockImageView = [[UIImageView alloc] initWithImage:lockImage];
-        UIImageView *listImageView = [[UIImageView alloc] initWithImage:listImage];
-        lockImageView.frame = CGRectMake(width, height, lockImage.size.width, lockImage.size.height);
-        listImageView.frame = CGRectMake(width, height, listImage.size.width, listImage.size.height);
-        [self.scrollView addSubview:listImageView];
-        [self.scrollView addSubview:lockImageView];
-        
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:[VSUtils class] action:@selector(openSeries)];
-        [lockImageView addGestureRecognizer:tap];
-        lockImageView.userInteractionEnabled = YES;
-        
-        width += widthIncr;
-        horizontalCount++;
-        if (horizontalCount == countInRow) {
-            width = 27.2;
-            horizontalCount = 0;
-            height += 70;
-            if ([self.repo isCategoryRepo]) {
-                width = 21.15;
-            }
-        }
-    }
-#endif
     if (horizontalCount != 0) {
         height += 70;
     }
