@@ -16,8 +16,8 @@
 
 @property (nonatomic, assign) BOOL pageControlUsed;
 @property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, retain) UIView *lastView;
 @property (nonatomic, strong) UIPageControl *pageControl;
-@property (nonatomic, retain) UIButton *exitButton;
 
 - (void)exitGuide;
 

@@ -169,13 +169,13 @@
 
 - (void)share
 {
-    UMSocialData *socialData = [[UMSocialData alloc] initWithIdentifier:@"test"];
-    socialData.shareText = @"寡人正在使用 词汇私塾 背单词，众爱卿也来亲自试一下 https://itunes.apple.com/us/app/ci-hui-si-shu-gre-bei-dan/id558382812";
+    UMSocialData *socialData = [[UMSocialData alloc] initWithIdentifier:@"ShareTo"];
+    NSString *appLink = [NSString stringWithFormat:@"http://itunes.apple.com/app/id%@", [VSUtils getAppId]];
+    socialData.shareText = [NSString stringWithFormat:@"我正在使用 %@ 背单词，我觉得还用起来还不错，各位亲们也来试试吧 %@", [VSUtils getAppName], appLink];
     socialData.shareImage = [UIImage imageNamed:@"icon.png"];
     UMSocialControllerService *socialControllerService = [[UMSocialControllerService alloc] initWithUMSocialData:socialData];
     UINavigationController *shareListController = [socialControllerService getSocialShareListController];
     [self presentModalViewController:shareListController animated:YES];
-
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section

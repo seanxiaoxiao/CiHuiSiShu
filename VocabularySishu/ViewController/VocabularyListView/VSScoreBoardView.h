@@ -27,8 +27,12 @@
 @property (nonatomic, assign) double notRememberWellInList;
 @property (nonatomic, retain) NSNumberFormatter *numberFormatter;
 @property (nonatomic, retain) NSTimer *notRememberWellTimer;
+@property (nonatomic, retain) UIButton *shareButton;
+@property (nonatomic, assign) BOOL listFinished;
 
 
 - (void)initWithList:(VSList *)list;
+
+- (id)initWithFrame:(CGRect)frame finished:(BOOL)isFinish;
 
 @end

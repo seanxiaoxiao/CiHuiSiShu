@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Name</key>
+	<string>词汇私塾 雅思</string>
 	<key>ProductVersion</key>
 	<string>IELTS</string>
 	<key>UMengKey</key>
@@ -9,10 +11,6 @@
 	<key>BundleID</key>
 	<string>org.seanxiaoxiao.VocabularySishu-IELTS</string>
 	<key>AppID</key>
-<<<<<<< HEAD
 	<integer>593309202</integer>
-=======
-	<integer>558382812</integer>
->>>>>>> social
 </dict>
 </plist>

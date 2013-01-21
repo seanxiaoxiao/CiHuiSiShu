@@ -22,6 +22,7 @@
 #define CLOSE_POPUP @"close_popup"
 #define SET_PLAN_FINISH_DATE @"set_plan_finish_date"
 #define SHOW_PICKER @"show_picker"
+#define SHARE_AFTER_FINISH @"share_after_finish"
 
 #define SHORTTERM_REVIEW_INTERVAL 8 * 60 * 60;
 #define LONGTERM_REVIEW_INTERVAL 1 * 24 * 60 * 60;

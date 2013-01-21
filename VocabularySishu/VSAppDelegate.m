@@ -36,7 +36,7 @@
 
 - (NSArray *)shareToPlatforms
 {
-    NSArray *shareToArray = [NSArray arrayWithObjects: UMShareToSina, UMShareToDouban, UMShareToRenren, UMShareToTencent, nil];
+    NSArray *shareToArray = [NSArray arrayWithObjects: UMShareToSina, UMShareToDouban, UMShareToRenren, nil];
     return shareToArray;
 }
 

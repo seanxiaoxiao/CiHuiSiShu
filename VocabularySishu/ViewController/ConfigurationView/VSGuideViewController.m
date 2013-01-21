@@ -16,7 +16,7 @@
 @synthesize scrollView;
 @synthesize pageControl;
 @synthesize pageControlUsed;
-@synthesize exitButton;
+@synthesize lastView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,39 +34,31 @@
     UIView *guideView1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 460)];
     UIView *guideView2 = [[UIView alloc] initWithFrame:CGRectMake(320, 0, 320, 460)];
     UIView *guideView3 = [[UIView alloc] initWithFrame:CGRectMake(640, 0, 320, 460)];
+    UIView *guideView4 = [[UIView alloc] initWithFrame:CGRectMake(960, 0, 320, 460)];
+    lastView = [[UIView alloc] initWithFrame:CGRectMake(1280, 0, 320, 460)];
+    lastView.backgroundColor = [UIColor blackColor];
     
     UIImageView *guidePage1 = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"GuidePage1"]];
     UIImageView *guidePage2 = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"GuidePage2"]];
     UIImageView *guidePage3 = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"GuidePage3"]];
+    UIImageView *guidePage4 = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"GuidePage4"]];
     
     [guideView1 addSubview:guidePage1];
     [guideView2 addSubview:guidePage2];
     [guideView3 addSubview:guidePage3];
+    [guideView4 addSubview:guidePage4];
+   
     
-    self.scrollView.contentSize = CGSizeMake(320 * 3, 460);
+    self.scrollView.contentSize = CGSizeMake(320 * 5, 460);
     self.scrollView.delegate = self;
     
     [self.scrollView addSubview:guideView1];
     [self.scrollView addSubview:guideView2];
     [self.scrollView addSubview:guideView3];
-    
-    UIImage *normalButtonImage = [VSUtils fetchImg:@"ButtonBT"];
-    UIImage *highlightButtonImage = [VSUtils fetchImg:@"ButtonBTHighLighted"];
-    
-    self.exitButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 390, normalButtonImage.size.width, normalButtonImage.size.height)];
-    self.exitButton.center = CGPointMake(160, 400);
-    [self.exitButton setBackgroundImage:normalButtonImage forState:UIControlStateNormal];
-    [self.exitButton setBackgroundImage:highlightButtonImage forState:UIControlStateHighlighted];
-    [self.exitButton setTitle:@"开始" forState:UIControlStateNormal];
-    [self.exitButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [self.exitButton addTarget:self action:@selector(exitGuide) forControlEvents:UIControlEventTouchUpInside];
-    self.exitButton.titleLabel.font = [UIFont boldSystemFontOfSize:15];
-    self.exitButton.titleLabel.shadowOffset = CGSizeMake(0, -1);
-    self.exitButton.titleLabel.shadowColor = [UIColor blackColor];
-    
-    [guideView3 addSubview:self.exitButton];
-    
-    self.pageControl.numberOfPages = 3;
+    [self.scrollView addSubview:guideView4];
+    [self.scrollView addSubview:lastView];
+        
+    self.pageControl.numberOfPages = 5;
     self.pageControl.currentPage = 0;
 }
 
@@ -80,6 +72,7 @@
     [super viewDidUnload];
     self.scrollView = nil;
     self.pageControl = nil;
+    self.lastView = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -89,7 +82,7 @@
 
 -(void)exitGuide
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:NO];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)sender
@@ -101,6 +94,7 @@
     CGFloat pageWidth = scrollView.frame.size.width;
     int page = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
     pageControl.currentPage = page;
+    
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
@@ -112,6 +106,9 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     pageControlUsed = NO;
+    if (pageControl.currentPage == 4) {
+        [self exitGuide];
+    }
 }
 
 - (IBAction)changePage:(id)sender

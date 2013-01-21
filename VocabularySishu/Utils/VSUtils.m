@@ -286,4 +286,11 @@
     return [settings objectForKey:@"BundleID"];
 }
 
++ (NSString *)getAppName
+{
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"settings" ofType:@"plist"];
+    NSDictionary *settings = [[NSDictionary alloc] initWithContentsOfFile:path];
+    return [settings objectForKey:@"Name"];    
+}
+
 @end

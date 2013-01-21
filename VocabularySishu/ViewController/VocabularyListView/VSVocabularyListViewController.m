@@ -21,6 +21,8 @@
 #import "VSVocabularyRecord.h"
 #import "VSFloatPanelView.h"
 #import "VSVocabularyPlayer.h"
+#import "UMSocialData.h"
+#import "UMSocialControllerService.h"
 
 @interface VSVocabularyListViewController ()
 
@@ -138,7 +140,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideScoreBoard) name:CLOSE_POPUP object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showPickerArea) name:SHOW_PICKER object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateAfterEnterForeground) name:UIApplicationWillEnterForegroundNotification object:nil];
-
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(share) name:SHARE_AFTER_FINISH object:nil];
 }
 
 - (void) initBubbles
@@ -550,7 +552,7 @@
     [MobClick event:EVENT_SHOW_SCORE];
 
     CGRect modalRect = CGRectMake(50, 105, 200, 170);
-    scoreBoardView = [[VSScoreBoardView alloc] initWithFrame:modalRect];
+    scoreBoardView = [[VSScoreBoardView alloc] initWithFrame:modalRect finished:[vocabulariesToRecite count] == 0];
     CATransition *applicationLoadViewIn =[CATransition animation];
     [applicationLoadViewIn setDuration:0.2f];
     [applicationLoadViewIn setType:kCATransitionReveal];
@@ -646,6 +648,21 @@
     }
 }
 
+
+- (void)share
+{
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    [numberFormatter setPositiveFormat:@"0.0%;0.0%-0.0%"];
+    NSString *rememberRate = [numberFormatter stringFromNumber:[NSNumber numberWithDouble:[self.currentListRecord rememberRate]]];
+    UMSocialData *socialData = [[UMSocialData alloc] initWithIdentifier:@"ShareTo"];
+    NSString *appLink = [NSString stringWithFormat:@"http://itunes.apple.com/app/id%@", [VSUtils getAppId]];
+    socialData.shareText = [NSString stringWithFormat:@"我刚背诵完 %@ 这列单词，其中 %@ 的单词背得靠谱，你要不要来挑战一下我的记录啊 %@", self.currentListRecord.name , rememberRate, appLink];
+    socialData.shareImage = [UIImage imageNamed:@"icon.png"];
+    UMSocialControllerService *socialControllerService = [[UMSocialControllerService alloc] initWithUMSocialData:socialData];
+    UINavigationController *shareListController = [socialControllerService getSocialShareListController];
+    [self presentModalViewController:shareListController animated:YES];
+    
+}
 
 
 @end

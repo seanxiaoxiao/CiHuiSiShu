@@ -8,6 +8,7 @@
 
 #import "VSScoreBoardView.h"
 
+
 @implementation VSScoreBoardView
 
 @synthesize scoreBoardBackground;
@@ -22,13 +23,24 @@
 @synthesize numberFormatter;
 @synthesize notRememberWellTimer;
 @synthesize notRememberWellInList;
+@synthesize shareButton;
+@synthesize listFinished;
 
-- (id)initWithFrame:(CGRect)frame
+- (id)initWithFrame:(CGRect)frame finished:(BOOL)isFinish;
 {
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
-        self.scoreBoardBackground = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ScoreBoardPopup"]];
+        UIImage *popUpImage;
+        listFinished = isFinish;
+        if (isFinish) {
+            popUpImage = [VSUtils fetchImg:@"ScoreBoardFinishPopup"];
+        }
+        else {
+            popUpImage = [VSUtils fetchImg:@"ScoreBoardPopup"];
+        }
+        self.frame = CGRectMake(frame.origin.x, frame.origin.y, popUpImage.size.width, popUpImage.size.height);
+        self.scoreBoardBackground = [[UIImageView alloc] initWithImage:popUpImage];
         [self addSubview:scoreBoardBackground];
         [self sendSubviewToBack:scoreBoardBackground];
         
@@ -83,6 +95,8 @@
     [[NSNotificationCenter defaultCenter] postNotification:notification];
 }
 
+
+
 - (void)next
 {
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
@@ -119,12 +133,39 @@
     self.notRememberWellTimer = [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(updateNotRememberWell) userInfo:nil repeats:YES];
 }
 
+- (void)share
+{
+    NSNotification *notification = [NSNotification notificationWithName:SHARE_AFTER_FINISH object:nil userInfo:nil];
+    [[NSNotificationCenter defaultCenter] postNotification:notification];
+}
+
 - (void)showButtons
 {
+    if (listFinished == YES) {
+        UIImage *shareButtonImage = [VSUtils fetchImg:@"ScoreShareButton"];
+        UIImage *highlightShareButtonImage = [VSUtils fetchImg:@"ScoreShareButtonHighLighted"];
+        self.shareButton = [[UIButton alloc] initWithFrame:CGRectMake(25, 110, shareButtonImage.size.width, shareButtonImage.size.height)];
+        [self.shareButton setBackgroundImage:shareButtonImage forState:UIControlStateNormal];
+        [self.shareButton setBackgroundImage:highlightShareButtonImage forState:UIControlStateHighlighted];
+        [self.shareButton setTitle:@"分享到" forState:UIControlStateNormal];
+        [self.shareButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        self.shareButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+        self.shareButton.contentEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
+        [self.shareButton addTarget:self action:@selector(share) forControlEvents:UIControlEventTouchUpInside];
+        self.shareButton.titleLabel.font = [UIFont boldSystemFontOfSize:15];
+        self.shareButton.titleLabel.shadowOffset = CGSizeMake(0, -1);
+        self.shareButton.titleLabel.shadowColor = [UIColor blackColor];
+
+        [self addSubview:shareButton];
+
+    }
+    
+    CGFloat height = listFinished == YES ? 160 : 125;
+    
     UIImage *normalButtonImage = [VSUtils fetchImg:@"ButtonBT"];
     UIImage *highlightButtonImage = [VSUtils fetchImg:@"ButtonBTHighLighted"];
     
-    self.retryButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 125, normalButtonImage.size.width, normalButtonImage.size.height)];
+    self.retryButton = [[UIButton alloc] initWithFrame:CGRectMake(20, height, normalButtonImage.size.width, normalButtonImage.size.height)];
     [self.retryButton setBackgroundImage:normalButtonImage forState:UIControlStateNormal];
     [self.retryButton setBackgroundImage:highlightButtonImage forState:UIControlStateHighlighted];
     [self.retryButton setTitle:@"重新背诵" forState:UIControlStateNormal];
@@ -137,7 +178,7 @@
     [self addSubview:retryButton];
     
     if ([self._list isHistoryList]) {
-        self.backButton = [[UIButton alloc] initWithFrame:CGRectMake(120, 125, normalButtonImage.size.width, normalButtonImage.size.height)];
+        self.backButton = [[UIButton alloc] initWithFrame:CGRectMake(120, height, normalButtonImage.size.width, normalButtonImage.size.height)];
         [self.backButton setBackgroundImage:normalButtonImage forState:UIControlStateNormal];
         [self.backButton setBackgroundImage:highlightButtonImage forState:UIControlStateHighlighted];
         [self.backButton setTitle:@"返回" forState:UIControlStateNormal];
@@ -150,7 +191,7 @@
         [self addSubview:backButton];
     }
     else {
-        self.nextButton = [[UIButton alloc] initWithFrame:CGRectMake(120, 125, normalButtonImage.size.width, normalButtonImage.size.height)];
+        self.nextButton = [[UIButton alloc] initWithFrame:CGRectMake(120, height, normalButtonImage.size.width, normalButtonImage.size.height)];
         [self.nextButton setBackgroundImage:normalButtonImage forState:UIControlStateNormal];
         [self.nextButton setBackgroundImage:highlightButtonImage forState:UIControlStateHighlighted];
         [self.nextButton setTitle:@"下个列表" forState:UIControlStateNormal];
