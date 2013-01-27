@@ -196,6 +196,7 @@
     int daysToFinish = [self.pickerView selectedRowInComponent:0] + 1;
     [self.currentListRecord setPlanFinishDate:daysToFinish];
     [self.headerView startTimer];
+    [MobClick event:EVENT_SET_FINISH_PLAN];
     [self dismissPickerArea];
 }
 
@@ -358,9 +359,7 @@
 {
     if (self.scoreBoardView == nil) {
         [self.navigationController popViewControllerAnimated:YES];
-#ifdef TRIAL
         [[iRate sharedInstance] logEvent:NO];
-#endif
     }
 }
 
@@ -523,9 +522,6 @@
     if ([self.vocabulariesToRecite count] == 0) {
         [self.currentListRecord finish];
         [self toggleScoreBoard];
-#ifndef TRIAL
-        [[iRate sharedInstance] logEvent:NO];
-#endif
     }
 }
 
@@ -656,7 +652,7 @@
     NSString *rememberRate = [numberFormatter stringFromNumber:[NSNumber numberWithDouble:[self.currentListRecord rememberRate]]];
     UMSocialData *socialData = [[UMSocialData alloc] initWithIdentifier:@"ShareTo"];
     NSString *appLink = [NSString stringWithFormat:@"http://itunes.apple.com/app/id%@", [VSUtils getAppId]];
-    socialData.shareText = [NSString stringWithFormat:@"我刚背诵完 %@ 这列单词，其中 %@ 的单词背得靠谱，你要不要来挑战一下我的记录啊 %@", self.currentListRecord.name , rememberRate, appLink];
+    socialData.shareText = [NSString stringWithFormat:@"我刚用 %@ 背诵完 %@ 这列单词，其中 %@ 的单词背得靠谱，你要不要来挑战一下我的记录啊 %@", [VSUtils getAppName], self.currentListRecord.name , rememberRate, appLink];
     socialData.shareImage = [UIImage imageNamed:@"icon.png"];
     UMSocialControllerService *socialControllerService = [[UMSocialControllerService alloc] initWithUMSocialData:socialData];
     UINavigationController *shareListController = [socialControllerService getSocialShareListController];

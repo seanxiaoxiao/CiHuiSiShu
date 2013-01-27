@@ -35,7 +35,7 @@
 {
     [super viewDidLoad];
     self.title = @"设置";
-    contactContents = [NSArray arrayWithObjects:@"更多系列", @"给词汇私塾评分", @"意见反馈", nil];
+    contactContents = [NSArray arrayWithObjects:@"使用向导", @"更多系列", @"给词汇私塾评分", @"意见反馈", nil];
     shareContents = [NSArray arrayWithObjects:@"分享到", @"账号中心", nil];
     [self.navigationItem setLeftBarButtonItem:[VSUIUtils makeBackButton:self selector:@selector(goBack)]];
 }
@@ -65,18 +65,15 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 4;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (GUIDE_SECTION == section) {
-        return 1;
-    }
-    else if (SHARE_SECTION == section) {
+    if (SHARE_SECTION == section) {
         return [shareContents count];
     }
-    else if (CONTACT_SECTION == section) {
+    else if (MORE_SECTION == section) {
         return [contactContents count];
     }
     else if (SETTING_SECTION == section) {
@@ -86,9 +83,9 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
-	if ( section == CONTACT_SECTION ) {
+	if ( section == MORE_SECTION ) {
 		NSString* versionNum = [VSUtils getBundleVersion];
-		return [NSString stringWithFormat:@"词汇私塾\nVersion %@\nXiao Xiao -- Direct\nSu Shaowen -- Art\n©2012 GeFo Studio", versionNum];
+		return [NSString stringWithFormat:@"词汇私塾\nVersion %@\nXiao Xiao -- Direct\nSu Shaowen -- Art\n©2012 - 2013 GeFo Studio", versionNum];
 	}
     return nil;
 }
@@ -101,13 +98,10 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
         cell.textLabel.textAlignment = UITextAlignmentCenter;
     }
-    if (GUIDE_SECTION == indexPath.section) {
-        cell.textLabel.text = @"使用向导";
-    }
-    else if (SHARE_SECTION == indexPath.section) {
+    if (SHARE_SECTION == indexPath.section) {
         cell.textLabel.text = [shareContents objectAtIndex:indexPath.row];
     }
-    else if (CONTACT_SECTION == indexPath.section) {
+    else if (MORE_SECTION == indexPath.section) {
         cell.textLabel.text = [contactContents objectAtIndex:indexPath.row];
     }
     else if (SETTING_SECTION == indexPath.section) {
@@ -134,12 +128,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == GUIDE_SECTION) {
-        if (indexPath.row == GUIDE) {
-            [VSUtils showGuidPage];
-        }
-    }
-    else if (indexPath.section == SHARE_SECTION) {
+    if (indexPath.section == SHARE_SECTION) {
         if (indexPath.row == SHARE_TO) {
             [self share];
         }
@@ -147,8 +136,12 @@
             [self accountManage];
         }
     }
-    else if (indexPath.section == CONTACT_SECTION) {
-        if (indexPath.row == MORE) {
+    else if (indexPath.section == MORE_SECTION) {
+        if (indexPath.row == GUIDE) {
+            VSGuideViewController *guideViewController = [[VSGuideViewController alloc] initWithNibName:@"VSGuideViewController" bundle:nil];
+            [self presentModalViewController:guideViewController animated:YES];
+        }
+        else if (indexPath.row == MORE) {
             [VSUtils openSeries];
         }
         else if (indexPath.row == RATEUS) {
@@ -180,13 +173,10 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    if (section == GUIDE_SECTION) {
-        return @"用户指南";
-    }
-    else if (section == SHARE_SECTION) {
+    if (section == SHARE_SECTION) {
         return @"分享";
     }
-    else if (section == CONTACT_SECTION) {
+    else if (section == MORE_SECTION) {
         return @"更多";
     }
     else if (section == SETTING_SECTION) {

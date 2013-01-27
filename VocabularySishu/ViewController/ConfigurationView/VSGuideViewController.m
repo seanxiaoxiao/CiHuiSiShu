@@ -82,7 +82,7 @@
 
 -(void)exitGuide
 {
-    [self.navigationController popViewControllerAnimated:NO];
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)sender

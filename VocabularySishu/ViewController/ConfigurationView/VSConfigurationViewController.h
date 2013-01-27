@@ -12,16 +12,17 @@
 #import "VSList.h"
 #import "VSContext.h"
 
-#define CONTACT_SECTION 3
-#define GUIDE_SECTION 2
+#define MORE_SECTION 2
 #define SETTING_SECTION 0
 #define SHARE_SECTION 1
-#define GUIDE 0
+
 #define SHARE_TO 0
 #define ACCOUNT_MANAGE 1
-#define MORE 0
-#define RATEUS 1
-#define FEADBACK 2
+
+#define GUIDE 0
+#define MORE 1
+#define RATEUS 2
+#define FEADBACK 3
 #define EMAIL_SUPPORTING @"vss@gefostudio.com"
 
 #define IS_IOS5_AND_PLUS			( [ [ [ UIDevice currentDevice ] systemVersion ] compare: @"5.0" options: NSNumericSearch ] != NSOrderedAscending )
