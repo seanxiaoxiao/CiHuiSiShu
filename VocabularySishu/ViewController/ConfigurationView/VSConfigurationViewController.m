@@ -138,8 +138,7 @@
     }
     else if (indexPath.section == MORE_SECTION) {
         if (indexPath.row == GUIDE) {
-            VSGuideViewController *guideViewController = [[VSGuideViewController alloc] initWithNibName:@"VSGuideViewController" bundle:nil];
-            [self presentModalViewController:guideViewController animated:YES];
+            [VSUtils showGuidPage];
         }
         else if (indexPath.row == MORE) {
             [VSUtils openSeries];
