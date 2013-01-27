@@ -653,7 +653,7 @@
     UMSocialData *socialData = [[UMSocialData alloc] initWithIdentifier:@"ShareTo"];
     NSString *appLink = [NSString stringWithFormat:@"http://itunes.apple.com/app/id%@", [VSUtils getAppId]];
     socialData.shareText = [NSString stringWithFormat:@"我刚用 %@ 背诵完 %@ 这列单词，其中 %@ 的单词背得靠谱，你要不要来挑战一下我的记录啊 %@", [VSUtils getAppName], self.currentListRecord.name , rememberRate, appLink];
-    socialData.shareImage = [UIImage imageNamed:@"icon.png"];
+    socialData.shareImage = [UIImage imageNamed:@"icon512.png"];
     UMSocialControllerService *socialControllerService = [[UMSocialControllerService alloc] initWithUMSocialData:socialData];
     UINavigationController *shareListController = [socialControllerService getSocialShareListController];
     [self presentModalViewController:shareListController animated:YES];
