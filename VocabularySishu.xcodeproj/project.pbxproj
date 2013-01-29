@@ -236,6 +236,8 @@
 		000FEA631650BA7400644B63 /* VSVocabularyRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 000FEA5F1650BA7400644B63 /* VSVocabularyRecord.m */; };
 		0013FCA7162F0B1200E845E7 /* BookPromo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0013FCA6162F0B1200E845E7 /* BookPromo@2x.png */; };
 		0013FCAA162F115F00E845E7 /* List-Bottom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0013FCA9162F115F00E845E7 /* List-Bottom@2x.png */; };
+		0017174816B7B1EB00C49BE0 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 0017174716B7B1EB00C49BE0 /* iTunesArtwork */; };
+		0017174D16B7B2D000C49BE0 /* ListBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584015E40C9900B7AB04 /* ListBG@2x.png */; };
 		00201DDF15CFBAD30089B8FA /* VSNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0081185015BEFE220022B515 /* VSNavigationBar.m */; };
 		00201DE015CFBAD30089B8FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00701E3D1553CBCE00D30018 /* main.m */; };
 		00201DE115CFBAD30089B8FA /* VSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00701E411553CBCE00D30018 /* VSAppDelegate.m */; };
@@ -556,7 +558,6 @@
 		004EA5A4161AA8AA000E4B0E /* VocabularySishu.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 004EA5A3161AA8AA000E4B0E /* VocabularySishu.sqlite */; };
 		00533E3515F3DA81004777F1 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 00533E2F15F3DA81004777F1 /* icon.png */; };
 		00533E3615F3DA81004777F1 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00533E3015F3DA81004777F1 /* icon@2x.png */; };
-		00533E3715F3DA81004777F1 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 00533E3115F3DA81004777F1 /* iTunesArtwork */; };
 		00533E3A15F42915004777F1 /* TipsBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 00533E3915F42915004777F1 /* TipsBubble.m */; };
 		00533E3B15F42915004777F1 /* TipsBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 00533E3915F42915004777F1 /* TipsBubble.m */; };
 		00533E3C15F42915004777F1 /* TipsBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 00533E3915F42915004777F1 /* TipsBubble.m */; };
@@ -686,7 +687,6 @@
 		008243091671BF1400FF1631 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 00333FBE1631345900F7871C /* iTunesArtwork */; };
 		0082430A1671BF1400FF1631 /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00CA905E164F62F600876164 /* iRate.bundle */; };
 		008243141671C09700FF1631 /* settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 008243131671C09700FF1631 /* settings.plist */; };
-		00840AA8162D32920047DC7E /* ListBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00840AA7162D32920047DC7E /* ListBG@2x.png */; };
 		008570701650341D003861DB /* UserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0085706E1650341D003861DB /* UserModel.xcdatamodeld */; };
 		008570711650341D003861DB /* UserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0085706E1650341D003861DB /* UserModel.xcdatamodeld */; };
 		008570721650341D003861DB /* UserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0085706E1650341D003861DB /* UserModel.xcdatamodeld */; };
@@ -1099,7 +1099,6 @@
 		00D86E4616339E7800BF530A /* VSUIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D86E4316339BF700BF530A /* VSUIUtils.m */; };
 		00DBAAE31671C614009B572F /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 008243191671C1A000FF1631 /* icon.png */; };
 		00DBAAE41671C616009B572F /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0082431A1671C1A000FF1631 /* icon@2x.png */; };
-		00DBAAE51671C619009B572F /* ListBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0082431C1671C1A000FF1631 /* ListBG@2x.png */; };
 		00DBAAE71671C627009B572F /* LockList@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00333FBA1631227C00F7871C /* LockList@2x.png */; };
 		00DBAAE81671C629009B572F /* MainPromo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00333FBB1631227C00F7871C /* MainPromo@2x.png */; };
 		00DBAAE91671C62A009B572F /* BookPromo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0013FCA6162F0B1200E845E7 /* BookPromo@2x.png */; };
@@ -1253,6 +1252,7 @@
 		000FEA5F1650BA7400644B63 /* VSVocabularyRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSVocabularyRecord.m; path = Model/User/VSVocabularyRecord.m; sourceTree = "<group>"; };
 		0013FCA6162F0B1200E845E7 /* BookPromo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BookPromo@2x.png"; path = "Resources/Img/TRIAL/BookPromo@2x.png"; sourceTree = "<group>"; };
 		0013FCA9162F115F00E845E7 /* List-Bottom@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "List-Bottom@2x.png"; path = "Resources/Img/TRIAL/List-Bottom@2x.png"; sourceTree = "<group>"; };
+		0017174716B7B1EB00C49BE0 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; name = iTunesArtwork; path = Resources/Img/GRE/iTunesArtwork; sourceTree = "<group>"; };
 		00201E2F15CFBAD30089B8FA /* VocabularySishu GRE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VocabularySishu GRE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		002D4C20169C08DD009C4F8E /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		002D4DF1169CADDF009C4F8E /* VocabularySishu IELTS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VocabularySishu IELTS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1339,7 +1339,6 @@
 		004EA5A3161AA8AA000E4B0E /* VocabularySishu.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = VocabularySishu.sqlite; path = Resources/Data/TOEFL/VocabularySishu.sqlite; sourceTree = "<group>"; };
 		00533E2F15F3DA81004777F1 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Resources/Img/GRE/icon.png; sourceTree = "<group>"; };
 		00533E3015F3DA81004777F1 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "Resources/Img/GRE/icon@2x.png"; sourceTree = "<group>"; };
-		00533E3115F3DA81004777F1 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; name = iTunesArtwork; path = Resources/Img/GRE/iTunesArtwork; sourceTree = "<group>"; };
 		00533E3815F42915004777F1 /* TipsBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TipsBubble.h; path = Generic/TipsBubble.h; sourceTree = "<group>"; };
 		00533E3915F42915004777F1 /* TipsBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TipsBubble.m; path = Generic/TipsBubble.m; sourceTree = "<group>"; };
 		00596648162C7D5A0010C669 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMobClickLibrary.a; path = Libs/Statistics/libMobClickLibrary.a; sourceTree = "<group>"; };
@@ -1400,8 +1399,6 @@
 		008243191671C1A000FF1631 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		0082431A1671C1A000FF1631 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		0082431B1671C1A000FF1631 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
-		0082431C1671C1A000FF1631 /* ListBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ListBG@2x.png"; sourceTree = "<group>"; };
-		00840AA7162D32920047DC7E /* ListBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ListBG@2x.png"; path = "Resources/Img/TOEFL/ListBG@2x.png"; sourceTree = "<group>"; };
 		0085706F1650341D003861DB /* UserModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserModel.xcdatamodel; sourceTree = "<group>"; };
 		0085707416509112003861DB /* VSListRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSListRecord.h; path = Model/User/VSListRecord.h; sourceTree = "<group>"; };
 		0085707516509112003861DB /* VSListRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSListRecord.m; path = Model/User/VSListRecord.m; sourceTree = "<group>"; };
@@ -1932,10 +1929,10 @@
 		00533E2B15F3DA66004777F1 /* GRE */ = {
 			isa = PBXGroup;
 			children = (
+				0017174716B7B1EB00C49BE0 /* iTunesArtwork */,
 				000EEEE716B4F877006BB7F7 /* icon512.png */,
 				00533E2F15F3DA81004777F1 /* icon.png */,
 				00533E3015F3DA81004777F1 /* icon@2x.png */,
-				00533E3115F3DA81004777F1 /* iTunesArtwork */,
 			);
 			name = GRE;
 			sourceTree = "<group>";
@@ -1946,7 +1943,6 @@
 				000EEEE316B4F847006BB7F7 /* icon512.png */,
 				00C8D4551686F10A00CA3880 /* itunesArtWork */,
 				00627B16162D209800086C35 /* icon@2x.png */,
-				00840AA7162D32920047DC7E /* ListBG@2x.png */,
 				00627B17162D209800086C35 /* icon.png */,
 			);
 			name = TOEFL;
@@ -2201,7 +2197,6 @@
 				008243191671C1A000FF1631 /* icon.png */,
 				0082431A1671C1A000FF1631 /* icon@2x.png */,
 				0082431B1671C1A000FF1631 /* iTunesArtwork */,
-				0082431C1671C1A000FF1631 /* ListBG@2x.png */,
 			);
 			name = "TOEFL-TRIAL";
 			path = "Resources/Img/TOEFL-TRIAL";
@@ -2758,7 +2753,6 @@
 				00B491AF15EBDF9B004AFC6C /* ScoreUp@2x.png in Resources */,
 				00533E3515F3DA81004777F1 /* icon.png in Resources */,
 				00533E3615F3DA81004777F1 /* icon@2x.png in Resources */,
-				00533E3715F3DA81004777F1 /* iTunesArtwork in Resources */,
 				008D5DBA161814780046240B /* SoundButton@2x.png in Resources */,
 				00CA9063164F62F600876164 /* iRate.bundle in Resources */,
 				0087E71516881B7000B0E95F /* FloatBar@2x.png in Resources */,
@@ -2781,6 +2775,7 @@
 				00E111FE16ACFE060050E1F4 /* GuidePage3@2x.png in Resources */,
 				00E1120516ACFE060050E1F4 /* GuidePage4@2x.png in Resources */,
 				000EEEE816B4F877006BB7F7 /* icon512.png in Resources */,
+				0017174816B7B1EB00C49BE0 /* iTunesArtwork in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2993,7 +2988,6 @@
 				00DBAAE81671C629009B572F /* MainPromo@2x.png in Resources */,
 				00DBAAE31671C614009B572F /* icon.png in Resources */,
 				00DBAAE41671C616009B572F /* icon@2x.png in Resources */,
-				00DBAAE51671C619009B572F /* ListBG@2x.png in Resources */,
 				00DBAAE71671C627009B572F /* LockList@2x.png in Resources */,
 				00F7B02F1671D2E000F9FB14 /* List-Bottom@2x.png in Resources */,
 				00F7B02E1671D28100F9FB14 /* VocabularySishu.sqlite in Resources */,
@@ -3013,6 +3007,7 @@
 				0097F11616AA45FF00302284 /* ScoreShareButton@2x.png in Resources */,
 				0097F11D16AA45FF00302284 /* ScoreShareButtonHighLighted@2x.png in Resources */,
 				00E111F216ACFE060050E1F4 /* GuidePage1@2x.png in Resources */,
+				0017174D16B7B2D000C49BE0 /* ListBG@2x.png in Resources */,
 				00E111F916ACFE060050E1F4 /* GuidePage2@2x.png in Resources */,
 				00E1120016ACFE060050E1F4 /* GuidePage3@2x.png in Resources */,
 				00E1120716ACFE060050E1F4 /* GuidePage4@2x.png in Resources */,
@@ -3048,7 +3043,6 @@
 				00B2504B1628E19200311E52 /* DetailsBG@2x.png in Resources */,
 				00B2504C1628E19200311E52 /* DetailsHeader@2x.png in Resources */,
 				00B2504D1628E19200311E52 /* infoButton@2x.png in Resources */,
-				00B250521628E19200311E52 /* ListBG@2x.png in Resources */,
 				00B250541628E19200311E52 /* NavBackButton@2x.png in Resources */,
 				00B250551628E19200311E52 /* Navigation@2x.png in Resources */,
 				00B250561628E19200311E52 /* Next@2x.png in Resources */,
@@ -3079,6 +3073,7 @@
 				00757DF71628F44D00CED0E8 /* icon@2x.png in Resources */,
 				00757E021628F9D300CED0E8 /* VocabularySishu.sqlite in Resources */,
 				0013FCA7162F0B1200E845E7 /* BookPromo@2x.png in Resources */,
+				00B250521628E19200311E52 /* ListBG@2x.png in Resources */,
 				00333FBC1631227C00F7871C /* LockList@2x.png in Resources */,
 				00333FBD1631227C00F7871C /* MainPromo@2x.png in Resources */,
 				00333FBF1631345900F7871C /* iTunesArtwork in Resources */,
@@ -3141,7 +3136,6 @@
 				000E58A915E40C9900B7AB04 /* SeparatorLine@2x.png in Resources */,
 				000E58AC15E40C9900B7AB04 /* Star@2x.png in Resources */,
 				000E58AF15E40C9900B7AB04 /* StarNone@2x.png in Resources */,
-				00840AA8162D32920047DC7E /* ListBG@2x.png in Resources */,
 				000E58B215E40C9900B7AB04 /* StarSmall@2x.png in Resources */,
 				000E58B515E40C9900B7AB04 /* TapeBody@2x.png in Resources */,
 				000E58B815E40C9900B7AB04 /* TapeHead@2x.png in Resources */,
@@ -3875,7 +3869,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "CET4=1";
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/VocabularySishu/VocabularySishu-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/VocabularySishu/Libs/Statistics\"",
@@ -3906,7 +3900,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "CET4=1";
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/VocabularySishu/VocabularySishu-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/VocabularySishu/Libs/Statistics\"",
@@ -3937,7 +3931,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "GRE=1";
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/VocabularySishu/Libs/Statistics\"",
@@ -3968,7 +3962,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "GRE=1";
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/VocabularySishu/Libs/Statistics\"",
@@ -3999,7 +3993,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "GRE=1";
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/VocabularySishu/VocabularySishu-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/VocabularySishu/Libs/Statistics\"",
@@ -4030,7 +4024,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "GRE=1";
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/VocabularySishu/VocabularySishu-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/VocabularySishu/Libs/Statistics\"",
@@ -4213,7 +4207,7 @@
 				);
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/VocabularySishu/VocabularySishu-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/VocabularySishu/Libs/Statistics\"",
@@ -4247,7 +4241,7 @@
 				);
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/VocabularySishu/VocabularySishu-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/VocabularySishu/Libs/Statistics\"",
@@ -4278,7 +4272,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "TRIAL=1";
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/VocabularySishu/VocabularySishu-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/VocabularySishu/Libs/Statistics\"",
@@ -4309,7 +4303,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "TRIAL=1";
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/VocabularySishu/VocabularySishu-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/VocabularySishu/Libs/Statistics\"",
@@ -4340,7 +4334,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "TOEFL=1";
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/VocabularySishu/Libs/Statistics\"",
@@ -4372,7 +4366,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "TOEFL=1";
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "VocabularySishu/VocabularySishu-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/VocabularySishu/Libs/Statistics\"",
@@ -4404,7 +4398,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "CET4=1";
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/VocabularySishu/VocabularySishu-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/VocabularySishu/Libs/Statistics\"",
@@ -4435,7 +4429,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "CET4=1";
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/VocabularySishu/VocabularySishu-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/VocabularySishu/Libs/Statistics\"",

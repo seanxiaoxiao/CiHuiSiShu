@@ -193,10 +193,10 @@
 
 - (void)selectPlanFinishTime
 {
+    [MobClick event:EVENT_SET_FINISH_PLAN];
     int daysToFinish = [self.pickerView selectedRowInComponent:0] + 1;
     [self.currentListRecord setPlanFinishDate:daysToFinish];
     [self.headerView startTimer];
-    [MobClick event:EVENT_SET_FINISH_PLAN];
     [self dismissPickerArea];
 }
 
