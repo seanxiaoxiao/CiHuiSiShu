@@ -14,11 +14,6 @@
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
-		<key>VocabularySishu GRE copy.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>8</integer>
-		</dict>
 		<key>VocabularySishu GRE.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -28,6 +23,11 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>7</integer>
+		</dict>
+		<key>VocabularySishu SAT.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
 		</dict>
 		<key>VocabularySishu TOEFL Trial.xcscheme</key>
 		<dict>
