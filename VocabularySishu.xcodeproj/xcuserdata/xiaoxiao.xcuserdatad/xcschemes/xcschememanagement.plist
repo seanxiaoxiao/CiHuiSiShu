@@ -14,6 +14,11 @@
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
+		<key>VocabularySishu GRE copy.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
 		<key>VocabularySishu GRE.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -22,7 +27,7 @@
 		<key>VocabularySishu IELTS.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>9</integer>
+			<integer>7</integer>
 		</dict>
 		<key>VocabularySishu TOEFL Trial.xcscheme</key>
 		<dict>
@@ -53,6 +58,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>0008709F1675A0F600042A38</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0017174E16B7B61200C49BE0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
