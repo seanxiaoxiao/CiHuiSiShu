@@ -756,6 +756,7 @@
 		00763F291645A03200CF7216 /* VSCellStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 00763F271645A03200CF7216 /* VSCellStatus.m */; };
 		00763F2A1645A03200CF7216 /* VSCellStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 00763F271645A03200CF7216 /* VSCellStatus.m */; };
 		00763F2B1645A03200CF7216 /* VSCellStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 00763F271645A03200CF7216 /* VSCellStatus.m */; };
+		0076DB4716BDE7D500839FCC /* ListBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584015E40C9900B7AB04 /* ListBG@2x.png */; };
 		008242801671BF1400FF1631 /* VSNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0081185015BEFE220022B515 /* VSNavigationBar.m */; };
 		008242811671BF1400FF1631 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00701E3D1553CBCE00D30018 /* main.m */; };
 		008242821671BF1400FF1631 /* VSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00701E411553CBCE00D30018 /* VSAppDelegate.m */; };
@@ -3302,10 +3303,10 @@
 				0097F11616AA45FF00302284 /* ScoreShareButton@2x.png in Resources */,
 				0097F11D16AA45FF00302284 /* ScoreShareButtonHighLighted@2x.png in Resources */,
 				00E111F216ACFE060050E1F4 /* GuidePage1@2x.png in Resources */,
-				0017174D16B7B2D000C49BE0 /* ListBG@2x.png in Resources */,
 				00E111F916ACFE060050E1F4 /* GuidePage2@2x.png in Resources */,
 				00E1120016ACFE060050E1F4 /* GuidePage3@2x.png in Resources */,
 				00E1120716ACFE060050E1F4 /* GuidePage4@2x.png in Resources */,
+				0017174D16B7B2D000C49BE0 /* ListBG@2x.png in Resources */,
 				000EEEE616B4F861006BB7F7 /* icon512.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3473,6 +3474,7 @@
 				00E111EF16ACFE060050E1F4 /* GuidePage1@2x.png in Resources */,
 				00E111F616ACFE060050E1F4 /* GuidePage2@2x.png in Resources */,
 				00E111FD16ACFE060050E1F4 /* GuidePage3@2x.png in Resources */,
+				0076DB4716BDE7D500839FCC /* ListBG@2x.png in Resources */,
 				00E1120416ACFE060050E1F4 /* GuidePage4@2x.png in Resources */,
 				000EEEE416B4F847006BB7F7 /* icon512.png in Resources */,
 			);

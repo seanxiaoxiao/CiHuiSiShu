@@ -384,11 +384,11 @@
     }
     //Horizontal Gesture.
     if (fabsf(translation.x) > fabsf(translation.y)) {
+        [self.tableView removeGestureRecognizer:gestureRecognizer];
         return YES;
     }
     return NO;
 }
-
 
 - (void)handlePanning:(UIPanGestureRecognizer *)gestureRecognizer
 {
@@ -401,6 +401,7 @@
             [self doDrag:gestureRecognizer];
             break;
         case UIGestureRecognizerStateEnded:
+            [self.tableView setUserInteractionEnabled:YES];
             [self stopDragging:gestureRecognizer];
             break;
         case UIGestureRecognizerStateCancelled:
@@ -460,7 +461,7 @@
         
         if (draggedCell.clearShow && !draggedCell.curlUp && !draggedCell.clearing) {
             CGFloat margin = translation.x;
-            BOOL clear = fabs(margin) > 120;
+            BOOL clear = fabs(margin) > 80;
             [draggedCell clearVocabulry:clear];
             if (!clear) {
                 [self resetScroll];
@@ -479,6 +480,7 @@
             [draggedCell curlDown:point.x - 60];
         }
     }
+    
 }
 
 #pragma mark - Notification
