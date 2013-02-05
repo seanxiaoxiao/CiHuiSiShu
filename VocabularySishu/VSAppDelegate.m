@@ -77,15 +77,20 @@
     [UMSocialControllerService setSocialConfigDelegate:self];
     [MobClick startWithAppkey:[VSUtils getUMengKey]];
     
-    [VSUtils copySQLite];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"VocabularySishu.sqlite"];
+    NSString *urlString = [NSString stringWithFormat:@"file://%@", filePath];
+    NSURL* storeURL = [NSURL URLWithString:urlString];
+    bool existFile = [[NSFileManager defaultManager] fileExistsAtPath:[storeURL path]];
 
+    [VSUtils copySQLite];
     [self initEnv];
-    
+   
     if ([[VSAppRecord getAppRecord].migrated isEqualToNumber:[NSNumber numberWithBool:NO]]) {
         [VSDataUtil readWriteMigrate];
     }
     
-    if ([[VSUtils getBundleName] isEqualToString:@"VocabularySishu GRE"]) {
+    if ([[VSUtils getBundleName] isEqualToString:@"VocabularySishu GRE"] && existFile) {
         if ([VSUtils addBarronAndSelectedGRE]) {
             [self reloadSystemData];
         }
@@ -179,7 +184,6 @@
 
 - (void)saveContext
 {
-    NSLog(@"Save context");
     NSError *error = nil;
     NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
     if (managedObjectContext != nil) {
@@ -255,11 +259,11 @@
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
+    NSDate *time = [[NSDate alloc] init];
     if (![__persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:systemStoreURL options:options error:&error]) {
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
-    
     return __persistentStoreCoordinator;
 }
 

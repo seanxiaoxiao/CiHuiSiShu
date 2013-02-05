@@ -1093,6 +1093,14 @@
 		00BDE58315CF9B9400BC205C /* VSVocabularyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408115590E0B007E5FA9 /* VSVocabularyViewController.xib */; };
 		00BDE58415CF9B9400BC205C /* VSVocabularyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */; };
 		00BDE58915CF9B9400BC205C /* VSConfigurationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */; };
+		00BE921616C0EFF7003C2D0B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00BE921516C0EFF7003C2D0B /* Default@2x.png */; };
+		00BE921716C0EFF7003C2D0B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00BE921516C0EFF7003C2D0B /* Default@2x.png */; };
+		00BE921816C0EFF7003C2D0B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00BE921516C0EFF7003C2D0B /* Default@2x.png */; };
+		00BE921916C0EFF7003C2D0B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00BE921516C0EFF7003C2D0B /* Default@2x.png */; };
+		00BE921A16C0EFF7003C2D0B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00BE921516C0EFF7003C2D0B /* Default@2x.png */; };
+		00BE921B16C0EFF7003C2D0B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00BE921516C0EFF7003C2D0B /* Default@2x.png */; };
+		00BE921C16C0EFF7003C2D0B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00BE921516C0EFF7003C2D0B /* Default@2x.png */; };
+		00BE921D16C0EFF7003C2D0B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00BE921516C0EFF7003C2D0B /* Default@2x.png */; };
 		00C42FE915BB096F006FF95E /* VSSummaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C42FE815BB096F006FF95E /* VSSummaryView.m */; };
 		00C4300115BBFC44006FF95E /* VSVocabulary.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4300015BBFC44006FF95E /* VSVocabulary.m */; };
 		00C4FE3B15D3FAF6000B9849 /* VSSingleListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4FE3A15D3FAF6000B9849 /* VSSingleListView.m */; };
@@ -1606,6 +1614,7 @@
 		00B491A815EBDF9B004AFC6C /* ScoreDown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ScoreDown@2x.png"; path = "Resources/Img/ScoreDown@2x.png"; sourceTree = "<group>"; };
 		00B491A915EBDF9B004AFC6C /* ScoreUp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ScoreUp@2x.png"; path = "Resources/Img/ScoreUp@2x.png"; sourceTree = "<group>"; };
 		00BDE5A815CF9B9400BC205C /* VocabularySishu TOEFL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VocabularySishu TOEFL.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00BE921516C0EFF7003C2D0B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/Img/Default@2x.png"; sourceTree = "<group>"; };
 		00C09AA415E2B05800AD33C3 /* VocabularySishu 1.1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "VocabularySishu 1.1.xcdatamodel"; sourceTree = "<group>"; };
 		00C42FE715BB096F006FF95E /* VSSummaryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSSummaryView.h; path = ViewController/VocabularyListView/VSSummaryView.h; sourceTree = "<group>"; };
 		00C42FE815BB096F006FF95E /* VSSummaryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSSummaryView.m; path = ViewController/VocabularyListView/VSSummaryView.m; sourceTree = "<group>"; };
@@ -2419,6 +2428,7 @@
 		00B5A8BE1566886E00D20EB6 /* Img */ = {
 			isa = PBXGroup;
 			children = (
+				00BE921516C0EFF7003C2D0B /* Default@2x.png */,
 				00E111EB16ACFE060050E1F4 /* GuidePage1@2x.png */,
 				00E111EC16ACFE060050E1F4 /* GuidePage2@2x.png */,
 				00E111ED16ACFE060050E1F4 /* GuidePage3@2x.png */,
@@ -2906,6 +2916,7 @@
 				00E1120116ACFE060050E1F4 /* GuidePage3@2x.png in Resources */,
 				00E1120816ACFE060050E1F4 /* GuidePage4@2x.png in Resources */,
 				000EEEEC16B4F8BE006BB7F7 /* icon512.png in Resources */,
+				00BE921A16C0EFF7003C2D0B /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2989,6 +3000,7 @@
 				0017180716B7B94800C49BE0 /* icon512.png in Resources */,
 				0017180816B7B94800C49BE0 /* icon@2x.png in Resources */,
 				0017180916B7B94800C49BE0 /* iTunesArtwork in Resources */,
+				00BE921D16C0EFF7003C2D0B /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3072,6 +3084,7 @@
 				00E1120516ACFE060050E1F4 /* GuidePage4@2x.png in Resources */,
 				000EEEE816B4F877006BB7F7 /* icon512.png in Resources */,
 				0017174816B7B1EB00C49BE0 /* iTunesArtwork in Resources */,
+				00BE921716C0EFF7003C2D0B /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3147,6 +3160,7 @@
 				00E1120316ACFE060050E1F4 /* GuidePage3@2x.png in Resources */,
 				00E1120A16ACFE060050E1F4 /* GuidePage4@2x.png in Resources */,
 				000EEEEA16B4F8A7006BB7F7 /* icon512.png in Resources */,
+				00BE921C16C0EFF7003C2D0B /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3308,6 +3322,7 @@
 				00E1120716ACFE060050E1F4 /* GuidePage4@2x.png in Resources */,
 				0017174D16B7B2D000C49BE0 /* ListBG@2x.png in Resources */,
 				000EEEE616B4F861006BB7F7 /* icon512.png in Resources */,
+				00BE921916C0EFF7003C2D0B /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3394,6 +3409,7 @@
 				00E111FF16ACFE060050E1F4 /* GuidePage3@2x.png in Resources */,
 				00E1120616ACFE060050E1F4 /* GuidePage4@2x.png in Resources */,
 				000EEEE116B4F7FD006BB7F7 /* icon512.png in Resources */,
+				00BE921816C0EFF7003C2D0B /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3477,6 +3493,7 @@
 				0076DB4716BDE7D500839FCC /* ListBG@2x.png in Resources */,
 				00E1120416ACFE060050E1F4 /* GuidePage4@2x.png in Resources */,
 				000EEEE416B4F847006BB7F7 /* icon512.png in Resources */,
+				00BE921616C0EFF7003C2D0B /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3560,6 +3577,7 @@
 				00E1120216ACFE060050E1F4 /* GuidePage3@2x.png in Resources */,
 				00E1120916ACFE060050E1F4 /* GuidePage4@2x.png in Resources */,
 				000EEEEE16B4F8CE006BB7F7 /* icon512.png in Resources */,
+				00BE921B16C0EFF7003C2D0B /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
