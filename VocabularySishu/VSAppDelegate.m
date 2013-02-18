@@ -105,9 +105,9 @@
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"initialized"] ) {
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"initialized_1_4"] ) {
         [VSUtils showGuidPage];
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"initialized"];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"initialized_1_4"];
         [[NSUserDefaults standardUserDefaults] synchronize];
         return YES;
     }
@@ -123,7 +123,6 @@
         vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
         [navigationController pushViewController:vocabularyListViewController animated:NO];
         [application cancelLocalNotification:localNotif];
-        NSLog(@"Cancel one notification? In start");
     }
     
     return YES;
@@ -178,7 +177,6 @@
         vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
         [navigationController pushViewController:vocabularyListViewController animated:NO];
         [application cancelLocalNotification:notification];
-        NSLog(@"Cancel one notification?");
     }
 }
 

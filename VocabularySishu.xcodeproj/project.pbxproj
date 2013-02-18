@@ -884,6 +884,7 @@
 		009397D515D82B7A009AE73E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009397D415D82B79009AE73E /* MessageUI.framework */; };
 		009397D615D82C5E009AE73E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009397D415D82B79009AE73E /* MessageUI.framework */; };
 		009397D715D82C61009AE73E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009397D415D82B79009AE73E /* MessageUI.framework */; };
+		0094E42316D024A40064219C /* VocabularySishu.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0094E42216D024A40064219C /* VocabularySishu.sqlite */; };
 		0097F10A16AA45C200302284 /* ScoreBoardFinishPopup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0097F10916AA45C100302284 /* ScoreBoardFinishPopup@2x.png */; };
 		0097F10B16AA45C200302284 /* ScoreBoardFinishPopup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0097F10916AA45C100302284 /* ScoreBoardFinishPopup@2x.png */; };
 		0097F10C16AA45C200302284 /* ScoreBoardFinishPopup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0097F10916AA45C100302284 /* ScoreBoardFinishPopup@2x.png */; };
@@ -1575,6 +1576,7 @@
 		008D5DB7161814780046240B /* SoundButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "SoundButton@2x.png"; path = "Resources/Img/SoundButton@2x.png"; sourceTree = "<group>"; };
 		009397D115D7F6D3009AE73E /* VocabularySishu.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = VocabularySishu.sqlite; path = Resources/Data/FULL/VocabularySishu.sqlite; sourceTree = "<group>"; };
 		009397D415D82B79009AE73E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		0094E42216D024A40064219C /* VocabularySishu.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = VocabularySishu.sqlite; sourceTree = "<group>"; };
 		0097F10916AA45C100302284 /* ScoreBoardFinishPopup@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ScoreBoardFinishPopup@2x.png"; path = "Resources/Img/ScoreBoardFinishPopup@2x.png"; sourceTree = "<group>"; };
 		0097F11116AA45FF00302284 /* ScoreShareButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ScoreShareButton@2x.png"; path = "Resources/Img/ScoreShareButton@2x.png"; sourceTree = "<group>"; };
 		0097F11216AA45FF00302284 /* ScoreShareButtonHighLighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ScoreShareButtonHighLighted@2x.png"; path = "Resources/Img/ScoreShareButtonHighLighted@2x.png"; sourceTree = "<group>"; };
@@ -2291,6 +2293,7 @@
 		0073A68115689DA900B80422 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				0094E41916D020970064219C /* SAT */,
 				002D4E03169CB284009C4F8E /* IELTS */,
 				00C8D4321685894D00CA3880 /* CET6 */,
 				000871561676684A00042A38 /* CET4 */,
@@ -2402,6 +2405,15 @@
 			);
 			name = "TOEFL-TRIAL";
 			path = "Resources/Img/TOEFL-TRIAL";
+			sourceTree = "<group>";
+		};
+		0094E41916D020970064219C /* SAT */ = {
+			isa = PBXGroup;
+			children = (
+				0094E42216D024A40064219C /* VocabularySishu.sqlite */,
+			);
+			name = SAT;
+			path = Resources/Data/SAT;
 			sourceTree = "<group>";
 		};
 		00AE80EC158B12A9000CE7EA /* ConfigurationView */ = {
@@ -3001,6 +3013,7 @@
 				0017180816B7B94800C49BE0 /* icon@2x.png in Resources */,
 				0017180916B7B94800C49BE0 /* iTunesArtwork in Resources */,
 				00BE921D16C0EFF7003C2D0B /* Default@2x.png in Resources */,
+				0094E42316D024A40064219C /* VocabularySishu.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
