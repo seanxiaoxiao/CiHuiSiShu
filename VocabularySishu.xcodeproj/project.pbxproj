@@ -1395,7 +1395,6 @@
 		00D58C6016D86481005C1A7E /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 002D4E1F169CDAAF009C4F8E /* AFHTTPClient.m */; };
 		00D58C6116D86483005C1A7E /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 002D4E23169CDAAF009C4F8E /* AFURLConnectionOperation.m */; };
 		00D58C6316D86619005C1A7E /* VocabularySishu.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00D58C6216D86619005C1A7E /* VocabularySishu.sqlite */; };
-		00D58C7216D87102005C1A7E /* Icon in Resources */ = {isa = PBXBuildFile; fileRef = 00D58C6D16D87102005C1A7E /* Icon */; };
 		00D58C7316D87102005C1A7E /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 00D58C6E16D87102005C1A7E /* icon.png */; };
 		00D58C7416D87102005C1A7E /* icon512.png in Resources */ = {isa = PBXBuildFile; fileRef = 00D58C6F16D87102005C1A7E /* icon512.png */; };
 		00D58C7516D87102005C1A7E /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00D58C7016D87102005C1A7E /* icon@2x.png */; };
@@ -1791,7 +1790,6 @@
 		00D58C4A16D858DE005C1A7E /* VocabularySishu GMAT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VocabularySishu GMAT.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00D58C4D16D85ABD005C1A7E /* settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = settings.plist; sourceTree = "<group>"; };
 		00D58C6216D86619005C1A7E /* VocabularySishu.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = VocabularySishu.sqlite; path = VocabularySishu/Resources/Data/GMAT/VocabularySishu.sqlite; sourceTree = SOURCE_ROOT; };
-		00D58C6D16D87102005C1A7E /* Icon */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Icon"; sourceTree = "<group>"; };
 		00D58C6E16D87102005C1A7E /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		00D58C6F16D87102005C1A7E /* icon512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon512.png; sourceTree = "<group>"; };
 		00D58C7016D87102005C1A7E /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
@@ -2813,7 +2811,6 @@
 		00D58C6C16D87102005C1A7E /* GMAT */ = {
 			isa = PBXGroup;
 			children = (
-				00D58C6D16D87102005C1A7E /* Icon */,
 				00D58C6E16D87102005C1A7E /* icon.png */,
 				00D58C6F16D87102005C1A7E /* icon512.png */,
 				00D58C7016D87102005C1A7E /* icon@2x.png */,
@@ -3895,7 +3892,6 @@
 				00D58C4616D858DE005C1A7E /* Default@2x.png in Resources */,
 				00D58C5D16D86418005C1A7E /* UMSocialSDKResources.bundle in Resources */,
 				00D58C6316D86619005C1A7E /* VocabularySishu.sqlite in Resources */,
-				00D58C7216D87102005C1A7E /* Icon in Resources */,
 				00D58C7316D87102005C1A7E /* icon.png in Resources */,
 				00D58C7416D87102005C1A7E /* icon512.png in Resources */,
 				00D58C7516D87102005C1A7E /* icon@2x.png in Resources */,
@@ -5314,8 +5310,8 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				BUNDLE_NAME = "VocabularySishu-GRE";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
