@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Name</key>
+	<string>词汇私塾 GMAT</string>
+	<key>ProductVersion</key>
+	<string>GMAT</string>
+	<key>UMengKey</key>
+	<string>51281f5152701567f300003a</string>
+	<key>BundleID</key>
+	<string>org.seanxiaoxiao.VocabularySishu-GMAT</string>
+	<key>AppID</key>
+	<integer>597798701</integer>
+</dict>
+</plist>

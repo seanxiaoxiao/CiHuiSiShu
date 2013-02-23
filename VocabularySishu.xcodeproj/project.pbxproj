@@ -1252,6 +1252,145 @@
 		00CBF0D915E9F333001588A3 /* UnitHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00CBF0D815E9F333001588A3 /* UnitHighLighted@2x.png */; };
 		00CBF0DA15E9F333001588A3 /* UnitHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00CBF0D815E9F333001588A3 /* UnitHighLighted@2x.png */; };
 		00CBF0DB15E9F333001588A3 /* UnitHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00CBF0D815E9F333001588A3 /* UnitHighLighted@2x.png */; };
+		00D58BBB16D858DE005C1A7E /* VSNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0081185015BEFE220022B515 /* VSNavigationBar.m */; };
+		00D58BBC16D858DE005C1A7E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00701E3D1553CBCE00D30018 /* main.m */; };
+		00D58BBD16D858DE005C1A7E /* VSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00701E411553CBCE00D30018 /* VSAppDelegate.m */; };
+		00D58BBE16D858DE005C1A7E /* VocabularySishu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00701E431553CBCE00D30018 /* VocabularySishu.xcdatamodeld */; };
+		00D58BBF16D858DE005C1A7E /* VSVocabularyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046408015590E0B007E5FA9 /* VSVocabularyViewController.m */; };
+		00D58BC016D858DE005C1A7E /* VSHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046408B155916FA007E5FA9 /* VSHistoryViewController.m */; };
+		00D58BC116D858DE005C1A7E /* VSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046409015591DBD007E5FA9 /* VSUtils.m */; };
+		00D58BC216D858DE005C1A7E /* VSDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A67815688F2800B80422 /* VSDataUtil.m */; };
+		00D58BC316D858DE005C1A7E /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A68B1568A0B200B80422 /* NSObject+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		00D58BC416D858DE005C1A7E /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A68D1568A0B200B80422 /* NSString+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		00D58BC516D858DE005C1A7E /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A68F1568A0B200B80422 /* SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		00D58BC616D858DE005C1A7E /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6911568A0B200B80422 /* SBJsonBase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		00D58BC716D858DE005C1A7E /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6931568A0B200B80422 /* SBJsonParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		00D58BC816D858DE005C1A7E /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6951568A0B200B80422 /* SBJsonWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		00D58BC916D858DE005C1A7E /* VSVocabularyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0073A6BC156A5FF700B80422 /* VSVocabularyListViewController.m */; };
+		00D58BCA16D858DE005C1A7E /* VSConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A006FB156B3D6D00D24418 /* VSConstant.m */; };
+		00D58BCB16D858DE005C1A7E /* VSContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A0071C156E3A7B00D24418 /* VSContext.m */; };
+		00D58BCC16D858DE005C1A7E /* VSList.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A0071F156E3A8F00D24418 /* VSList.m */; };
+		00D58BCD16D858DE005C1A7E /* VSListVocabulary.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A00722156E3AF400D24418 /* VSListVocabulary.m */; };
+		00D58BCE16D858DE005C1A7E /* VSMeaning.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A00725156E3B0500D24418 /* VSMeaning.m */; };
+		00D58BCF16D858DE005C1A7E /* VSRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A00728156E3B9E00D24418 /* VSRepository.m */; };
+		00D58BD016D858DE005C1A7E /* VSWebsterMeaning.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A0072E156E3C4800D24418 /* VSWebsterMeaning.m */; };
+		00D58BD116D858DE005C1A7E /* VSVocabularyListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A00731156F7FEE00D24418 /* VSVocabularyListHeaderView.m */; };
+		00D58BD216D858DE005C1A7E /* VSConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AE80EF158B1318000CE7EA /* VSConfigurationViewController.m */; };
+		00D58BD316D858DE005C1A7E /* NSMutableArrayShuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = 009A86FF15A1A82900F7869D /* NSMutableArrayShuffling.m */; };
+		00D58BD416D858DE005C1A7E /* VSSummaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C42FE815BB096F006FF95E /* VSSummaryView.m */; };
+		00D58BD516D858DE005C1A7E /* VSVocabulary.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4300015BBFC44006FF95E /* VSVocabulary.m */; };
+		00D58BD616D858DE005C1A7E /* VSVocabularyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 009BB48515CAAFF2008E5B2B /* VSVocabularyCell.m */; };
+		00D58BD716D858DE005C1A7E /* VSScoreBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF6FF915D0BACB0043BA91 /* VSScoreBoardView.m */; };
+		00D58BD916D858DE005C1A7E /* VSHisotryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF701215D1676F0043BA91 /* VSHisotryListCell.m */; };
+		00D58BDA16D858DE005C1A7E /* VSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0044C13915D371E20022154A /* VSMainViewController.m */; };
+		00D58BDB16D858DE005C1A7E /* VSRepoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0044C14215D3723F0022154A /* VSRepoViewController.m */; };
+		00D58BDC16D858DE005C1A7E /* VSRepoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0044C15315D3B70F0022154A /* VSRepoListViewController.m */; };
+		00D58BDD16D858DE005C1A7E /* VSSingleListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4FE3A15D3FAF6000B9849 /* VSSingleListView.m */; };
+		00D58BDE16D858DE005C1A7E /* VSClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E83B2F15DAC42F005BE3AF /* VSClipView.m */; };
+		00D58BDF16D858DE005C1A7E /* VSGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 006B4CDC15E3638B00711C64 /* VSGuideViewController.m */; };
+		00D58BE016D858DE005C1A7E /* TipsBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 00533E3915F42915004777F1 /* TipsBubble.m */; };
+		00D58BE116D858DE005C1A7E /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 008D5DAA161810160046240B /* Reachability.m */; };
+		00D58BE216D858DE005C1A7E /* VSUIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D86E4316339BF700BF530A /* VSUIUtils.m */; };
+		00D58BE316D858DE005C1A7E /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF8F1618AB6E00E788EA /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		00D58BE416D858DE005C1A7E /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF921618AB6E00E788EA /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		00D58BE516D858DE005C1A7E /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF941618AB6E00E788EA /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		00D58BE616D858DE005C1A7E /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF961618AB6E00E788EA /* ASIDownloadCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		00D58BE716D858DE005C1A7E /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF981618AB6E00E788EA /* ASIFormDataRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		00D58BE816D858DE005C1A7E /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF9A1618AB6E00E788EA /* ASIHTTPRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		00D58BE916D858DE005C1A7E /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBF9E1618AB6E00E788EA /* ASIInputStream.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		00D58BEA16D858DE005C1A7E /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DBFA01618AB6E00E788EA /* ASINetworkQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		00D58BEB16D858DE005C1A7E /* VSCellStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 00763F271645A03200CF7216 /* VSCellStatus.m */; };
+		00D58BEC16D858DE005C1A7E /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CA9060164F62F600876164 /* iRate.m */; };
+		00D58BED16D858DE005C1A7E /* UserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0085706E1650341D003861DB /* UserModel.xcdatamodeld */; };
+		00D58BEE16D858DE005C1A7E /* VSListRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 0085707516509112003861DB /* VSListRecord.m */; };
+		00D58BEF16D858DE005C1A7E /* VSAppRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 000FEA531650B99E00644B63 /* VSAppRecord.m */; };
+		00D58BF016D858DE005C1A7E /* VSListVocabularyRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 000FEA591650BA3A00644B63 /* VSListVocabularyRecord.m */; };
+		00D58BF116D858DE005C1A7E /* VSVocabularyRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 000FEA5F1650BA7400644B63 /* VSVocabularyRecord.m */; };
+		00D58BF216D858DE005C1A7E /* VSFloatPanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C8D4581687914B00CA3880 /* VSFloatPanelView.m */; };
+		00D58BF316D858DE005C1A7E /* VSVocabularyPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 009E784F168ADD6F00578392 /* VSVocabularyPlayer.m */; };
+		00D58BF516D858DE005C1A7E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A1AFAC1586192400310669 /* AVFoundation.framework */; };
+		00D58BF616D858DE005C1A7E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009397D415D82B79009AE73E /* MessageUI.framework */; };
+		00D58BF716D858DE005C1A7E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002DBFBF1618B40500E788EA /* MobileCoreServices.framework */; };
+		00D58BF816D858DE005C1A7E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D5DB2161812140046240B /* SystemConfiguration.framework */; };
+		00D58BF916D858DE005C1A7E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A00702156D15F200D24418 /* QuartzCore.framework */; };
+		00D58BFA16D858DE005C1A7E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00701E2F1553CBCE00D30018 /* UIKit.framework */; };
+		00D58BFB16D858DE005C1A7E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002DBFBA1618B2DC00E788EA /* CFNetwork.framework */; };
+		00D58BFC16D858DE005C1A7E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00701E311553CBCE00D30018 /* Foundation.framework */; };
+		00D58BFD16D858DE005C1A7E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00701E331553CBCE00D30018 /* CoreGraphics.framework */; };
+		00D58BFE16D858DE005C1A7E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00701E351553CBCE00D30018 /* CoreData.framework */; };
+		00D58BFF16D858DE005C1A7E /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00596648162C7D5A0010C669 /* libMobClickLibrary.a */; };
+		00D58C0016D858DE005C1A7E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0059664E162C88E00010C669 /* libz.dylib */; };
+		00D58C0216D858DE005C1A7E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00701E3A1553CBCE00D30018 /* InfoPlist.strings */; };
+		00D58C0316D858DE005C1A7E /* VSHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408C155916FA007E5FA9 /* VSHistoryViewController.xib */; };
+		00D58C0416D858DE005C1A7E /* VSVocabularyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408115590E0B007E5FA9 /* VSVocabularyViewController.xib */; };
+		00D58C0516D858DE005C1A7E /* VSVocabularyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */; };
+		00D58C0616D858DE005C1A7E /* VSConfigurationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */; };
+		00D58C0716D858DE005C1A7E /* VSMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0044C14E15D397630022154A /* VSMainViewController.xib */; };
+		00D58C0816D858DE005C1A7E /* VSRepoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0044C15415D3B70F0022154A /* VSRepoListViewController.xib */; };
+		00D58C0916D858DE005C1A7E /* VSGuideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006B4CDD15E3638B00711C64 /* VSGuideViewController.xib */; };
+		00D58C0A16D858DE005C1A7E /* Menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 006B4CE415E3F3B100711C64 /* Menu@2x.png */; };
+		00D58C0B16D858DE005C1A7E /* SeparatorDots@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF1B0F15E407AC005B9E51 /* SeparatorDots@2x.png */; };
+		00D58C0C16D858DE005C1A7E /* BookBlack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E582F15E40C9900B7AB04 /* BookBlack@2x.png */; };
+		00D58C0D16D858DE005C1A7E /* BookLake@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583015E40C9900B7AB04 /* BookLake@2x.png */; };
+		00D58C0E16D858DE005C1A7E /* BookRed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583115E40C9900B7AB04 /* BookRed@2x.png */; };
+		00D58C0F16D858DE005C1A7E /* ButtonBT@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583215E40C9900B7AB04 /* ButtonBT@2x.png */; };
+		00D58C1016D858DE005C1A7E /* ButtonBTHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583315E40C9900B7AB04 /* ButtonBTHighLighted@2x.png */; };
+		00D58C1116D858DE005C1A7E /* CellAccessory@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583415E40C9900B7AB04 /* CellAccessory@2x.png */; };
+		00D58C1216D858DE005C1A7E /* CellBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583515E40C9900B7AB04 /* CellBG@2x.png */; };
+		00D58C1316D858DE005C1A7E /* CellClear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583615E40C9900B7AB04 /* CellClear@2x.png */; };
+		00D58C1416D858DE005C1A7E /* CellLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583715E40C9900B7AB04 /* CellLine@2x.png */; };
+		00D58C1516D858DE005C1A7E /* CellSummary@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583815E40C9900B7AB04 /* CellSummary@2x.png */; };
+		00D58C1616D858DE005C1A7E /* DetailsBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583915E40C9900B7AB04 /* DetailsBG@2x.png */; };
+		00D58C1716D858DE005C1A7E /* DetailsHeader@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583A15E40C9900B7AB04 /* DetailsHeader@2x.png */; };
+		00D58C1816D858DE005C1A7E /* infoButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E583B15E40C9900B7AB04 /* infoButton@2x.png */; };
+		00D58C1916D858DE005C1A7E /* ListBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584015E40C9900B7AB04 /* ListBG@2x.png */; };
+		00D58C1A16D858DE005C1A7E /* NavBackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584215E40C9900B7AB04 /* NavBackButton@2x.png */; };
+		00D58C1B16D858DE005C1A7E /* Navigation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584315E40C9900B7AB04 /* Navigation@2x.png */; };
+		00D58C1C16D858DE005C1A7E /* Next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584415E40C9900B7AB04 /* Next@2x.png */; };
+		00D58C1D16D858DE005C1A7E /* ScoreBoardButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584715E40C9900B7AB04 /* ScoreBoardButton@2x.png */; };
+		00D58C1E16D858DE005C1A7E /* ScoreBoardPopup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584815E40C9900B7AB04 /* ScoreBoardPopup@2x.png */; };
+		00D58C1F16D858DE005C1A7E /* SeparatorLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584A15E40C9900B7AB04 /* SeparatorLine@2x.png */; };
+		00D58C2016D858DE005C1A7E /* Star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584B15E40C9900B7AB04 /* Star@2x.png */; };
+		00D58C2116D858DE005C1A7E /* StarNone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584C15E40C9900B7AB04 /* StarNone@2x.png */; };
+		00D58C2216D858DE005C1A7E /* StarSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584D15E40C9900B7AB04 /* StarSmall@2x.png */; };
+		00D58C2316D858DE005C1A7E /* TapeBody@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584E15E40C9900B7AB04 /* TapeBody@2x.png */; };
+		00D58C2416D858DE005C1A7E /* TapeHead@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584F15E40C9900B7AB04 /* TapeHead@2x.png */; };
+		00D58C2516D858DE005C1A7E /* TapeTail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E585015E40C9900B7AB04 /* TapeTail@2x.png */; };
+		00D58C2616D858DE005C1A7E /* TimeLineCellDark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E585115E40C9900B7AB04 /* TimeLineCellDark@2x.png */; };
+		00D58C2716D858DE005C1A7E /* TimeLineCellLight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E585215E40C9900B7AB04 /* TimeLineCellLight@2x.png */; };
+		00D58C2816D858DE005C1A7E /* Unit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E585315E40C9900B7AB04 /* Unit@2x.png */; };
+		00D58C2916D858DE005C1A7E /* PopupClose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AC5E4915E4BBFB00150402 /* PopupClose@2x.png */; };
+		00D58C2A16D858DE005C1A7E /* PopupCloseHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AC5E4A15E4BBFB00150402 /* PopupCloseHighLighted@2x.png */; };
+		00D58C2B16D858DE005C1A7E /* Mark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0045250C15E750EA00935B34 /* Mark@2x.png */; };
+		00D58C2C16D858DE005C1A7E /* MenuButtonHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0045251015E7572000935B34 /* MenuButtonHighLighted@2x.png */; };
+		00D58C2D16D858DE005C1A7E /* UnitHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00CBF0D815E9F333001588A3 /* UnitHighLighted@2x.png */; };
+		00D58C2E16D858DE005C1A7E /* UnitSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B4919B15EB5610004AFC6C /* UnitSelected@2x.png */; };
+		00D58C2F16D858DE005C1A7E /* UnitC@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B491A015EBC3E0004AFC6C /* UnitC@2x.png */; };
+		00D58C3016D858DE005C1A7E /* UnitCHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B491A115EBC3E0004AFC6C /* UnitCHighLighted@2x.png */; };
+		00D58C3116D858DE005C1A7E /* ScoreDown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B491A815EBDF9B004AFC6C /* ScoreDown@2x.png */; };
+		00D58C3216D858DE005C1A7E /* ScoreUp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B491A915EBDF9B004AFC6C /* ScoreUp@2x.png */; };
+		00D58C3316D858DE005C1A7E /* SoundButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 008D5DB7161814780046240B /* SoundButton@2x.png */; };
+		00D58C3416D858DE005C1A7E /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00CA905E164F62F600876164 /* iRate.bundle */; };
+		00D58C3516D858DE005C1A7E /* FloatBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0087E71216881B7000B0E95F /* FloatBar@2x.png */; };
+		00D58C3616D858DE005C1A7E /* FloatBarTimer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0087E72B16881D0000B0E95F /* FloatBarTimer@2x.png */; };
+		00D58C3716D858DE005C1A7E /* FloatBarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0087E72C16881D0000B0E95F /* FloatBarButton@2x.png */; };
+		00D58C3816D858DE005C1A7E /* FloatBarButtonHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0087E72D16881D0000B0E95F /* FloatBarButtonHighLighted@2x.png */; };
+		00D58C3E16D858DE005C1A7E /* ScoreBoardFinishPopup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0097F10916AA45C100302284 /* ScoreBoardFinishPopup@2x.png */; };
+		00D58C3F16D858DE005C1A7E /* ScoreShareButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0097F11116AA45FF00302284 /* ScoreShareButton@2x.png */; };
+		00D58C4016D858DE005C1A7E /* ScoreShareButtonHighLighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0097F11216AA45FF00302284 /* ScoreShareButtonHighLighted@2x.png */; };
+		00D58C4116D858DE005C1A7E /* GuidePage1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00E111EB16ACFE060050E1F4 /* GuidePage1@2x.png */; };
+		00D58C4216D858DE005C1A7E /* GuidePage2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00E111EC16ACFE060050E1F4 /* GuidePage2@2x.png */; };
+		00D58C4316D858DE005C1A7E /* GuidePage3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00E111ED16ACFE060050E1F4 /* GuidePage3@2x.png */; };
+		00D58C4416D858DE005C1A7E /* GuidePage4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00E111EE16ACFE060050E1F4 /* GuidePage4@2x.png */; };
+		00D58C4616D858DE005C1A7E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00BE921516C0EFF7003C2D0B /* Default@2x.png */; };
+		00D58C4E16D85ABD005C1A7E /* settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00D58C4D16D85ABD005C1A7E /* settings.plist */; };
+		00D58C5A16D861F4005C1A7E /* UMSocial_Sdk_1.6.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 002D4E3F169CDAAF009C4F8E /* UMSocial_Sdk_1.6.1.a */; };
+		00D58C5C16D86342005C1A7E /* libWeChatSDK_armv7_armv7s.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 002D4E25169CDAAF009C4F8E /* libWeChatSDK_armv7_armv7s.a */; };
+		00D58C5D16D86418005C1A7E /* UMSocialSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 002D4E40169CDAAF009C4F8E /* UMSocialSDKResources.bundle */; };
+		00D58C5F16D86478005C1A7E /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 002D4E21169CDAAF009C4F8E /* AFHTTPRequestOperation.m */; };
+		00D58C6016D86481005C1A7E /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 002D4E1F169CDAAF009C4F8E /* AFHTTPClient.m */; };
+		00D58C6116D86483005C1A7E /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 002D4E23169CDAAF009C4F8E /* AFURLConnectionOperation.m */; };
+		00D58C6316D86619005C1A7E /* VocabularySishu.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00D58C6216D86619005C1A7E /* VocabularySishu.sqlite */; };
 		00D86E4416339BF700BF530A /* VSUIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D86E4316339BF700BF530A /* VSUIUtils.m */; };
 		00D86E4616339E7800BF530A /* VSUIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D86E4316339BF700BF530A /* VSUIUtils.m */; };
 		00DBAAE31671C614009B572F /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 008243191671C1A000FF1631 /* icon.png */; };
@@ -1640,6 +1779,9 @@
 		00CA9072164F6BD600876164 /* settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = settings.plist; sourceTree = "<group>"; };
 		00CA9074164F6BDF00876164 /* settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = settings.plist; sourceTree = "<group>"; };
 		00CBF0D815E9F333001588A3 /* UnitHighLighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UnitHighLighted@2x.png"; path = "Resources/Img/UnitHighLighted@2x.png"; sourceTree = "<group>"; };
+		00D58C4A16D858DE005C1A7E /* VocabularySishu GMAT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VocabularySishu GMAT.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00D58C4D16D85ABD005C1A7E /* settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = settings.plist; sourceTree = "<group>"; };
+		00D58C6216D86619005C1A7E /* VocabularySishu.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = VocabularySishu.sqlite; path = VocabularySishu/Resources/Data/GMAT/VocabularySishu.sqlite; sourceTree = SOURCE_ROOT; };
 		00D86E4216339BF700BF530A /* VSUIUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSUIUtils.h; path = Utils/VSUIUtils.h; sourceTree = "<group>"; };
 		00D86E4316339BF700BF530A /* VSUIUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSUIUtils.m; path = Utils/VSUIUtils.m; sourceTree = "<group>"; };
 		00E111EB16ACFE060050E1F4 /* GuidePage1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GuidePage1@2x.png"; path = "Resources/Img/GuidePage1@2x.png"; sourceTree = "<group>"; };
@@ -1851,6 +1993,27 @@
 				00C8D3E3168586CC00CA3880 /* libz.dylib in Frameworks */,
 				002D4E5B169CDAAF009C4F8E /* libWeChatSDK_armv7_armv7s.a in Frameworks */,
 				002D4E9A169CDAAF009C4F8E /* UMSocial_Sdk_1.6.1.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00D58BF416D858DE005C1A7E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00D58BF516D858DE005C1A7E /* AVFoundation.framework in Frameworks */,
+				00D58BF616D858DE005C1A7E /* MessageUI.framework in Frameworks */,
+				00D58BF716D858DE005C1A7E /* MobileCoreServices.framework in Frameworks */,
+				00D58BF816D858DE005C1A7E /* SystemConfiguration.framework in Frameworks */,
+				00D58BF916D858DE005C1A7E /* QuartzCore.framework in Frameworks */,
+				00D58BFA16D858DE005C1A7E /* UIKit.framework in Frameworks */,
+				00D58BFB16D858DE005C1A7E /* CFNetwork.framework in Frameworks */,
+				00D58BFC16D858DE005C1A7E /* Foundation.framework in Frameworks */,
+				00D58BFD16D858DE005C1A7E /* CoreGraphics.framework in Frameworks */,
+				00D58BFE16D858DE005C1A7E /* CoreData.framework in Frameworks */,
+				00D58BFF16D858DE005C1A7E /* libMobClickLibrary.a in Frameworks */,
+				00D58C5A16D861F4005C1A7E /* UMSocial_Sdk_1.6.1.a in Frameworks */,
+				00D58C0016D858DE005C1A7E /* libz.dylib in Frameworks */,
+				00D58C5C16D86342005C1A7E /* libWeChatSDK_armv7_armv7s.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2183,6 +2346,7 @@
 				00C8D42B168586CC00CA3880 /* VocabularySishu CET6.app */,
 				002D4DF1169CADDF009C4F8E /* VocabularySishu IELTS.app */,
 				001717EC16B7B61200C49BE0 /* VocabularySishu SAT.app */,
+				00D58C4A16D858DE005C1A7E /* VocabularySishu GMAT.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2293,6 +2457,7 @@
 		0073A68115689DA900B80422 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				00D58C4F16D85CB5005C1A7E /* GMAT */,
 				0094E41916D020970064219C /* SAT */,
 				002D4E03169CB284009C4F8E /* IELTS */,
 				00C8D4321685894D00CA3880 /* CET6 */,
@@ -2574,6 +2739,7 @@
 		00CA9069164F6A0400876164 /* Configure */ = {
 			isa = PBXGroup;
 			children = (
+				00D58C4C16D85ABD005C1A7E /* GMAT */,
 				001717FC16B7B74500C49BE0 /* SAT */,
 				002D4DFF169CB0E3009C4F8E /* IELTS */,
 				00C8D42F1685880D00CA3880 /* CET6 */,
@@ -2608,6 +2774,23 @@
 				00CA9074164F6BDF00876164 /* settings.plist */,
 			);
 			path = GRE;
+			sourceTree = "<group>";
+		};
+		00D58C4C16D85ABD005C1A7E /* GMAT */ = {
+			isa = PBXGroup;
+			children = (
+				00D58C4D16D85ABD005C1A7E /* settings.plist */,
+			);
+			path = GMAT;
+			sourceTree = "<group>";
+		};
+		00D58C4F16D85CB5005C1A7E /* GMAT */ = {
+			isa = PBXGroup;
+			children = (
+				00D58C6216D86619005C1A7E /* VocabularySishu.sqlite */,
+			);
+			name = GMAT;
+			path = Configure/GMAT;
 			sourceTree = "<group>";
 		};
 		00DBAB1A1671C973009B572F /* TOEFL-TRIAL */ = {
@@ -2794,6 +2977,23 @@
 			productReference = 00C8D42B168586CC00CA3880 /* VocabularySishu CET6.app */;
 			productType = "com.apple.product-type.application";
 		};
+		00D58BB916D858DE005C1A7E /* VocabularySishu GMAT */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00D58C4716D858DE005C1A7E /* Build configuration list for PBXNativeTarget "VocabularySishu GMAT" */;
+			buildPhases = (
+				00D58BBA16D858DE005C1A7E /* Sources */,
+				00D58BF416D858DE005C1A7E /* Frameworks */,
+				00D58C0116D858DE005C1A7E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "VocabularySishu GMAT";
+			productName = VocabularySishu;
+			productReference = 00D58C4A16D858DE005C1A7E /* VocabularySishu GMAT.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -2843,6 +3043,7 @@
 				00C8D39D168586CC00CA3880 /* VocabularySishu CET6 */,
 				002D4D5F169CADDF009C4F8E /* VocabularySishu IELTS */,
 				0017174E16B7B61200C49BE0 /* VocabularySishu SAT */,
+				00D58BB916D858DE005C1A7E /* VocabularySishu GMAT */,
 			);
 		};
 /* End PBXProject section */
@@ -3594,6 +3795,79 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		00D58C0116D858DE005C1A7E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00D58C0216D858DE005C1A7E /* InfoPlist.strings in Resources */,
+				00D58C0316D858DE005C1A7E /* VSHistoryViewController.xib in Resources */,
+				00D58C0416D858DE005C1A7E /* VSVocabularyViewController.xib in Resources */,
+				00D58C0516D858DE005C1A7E /* VSVocabularyListViewController.xib in Resources */,
+				00D58C0616D858DE005C1A7E /* VSConfigurationViewController.xib in Resources */,
+				00D58C0716D858DE005C1A7E /* VSMainViewController.xib in Resources */,
+				00D58C0816D858DE005C1A7E /* VSRepoListViewController.xib in Resources */,
+				00D58C0916D858DE005C1A7E /* VSGuideViewController.xib in Resources */,
+				00D58C0A16D858DE005C1A7E /* Menu@2x.png in Resources */,
+				00D58C0B16D858DE005C1A7E /* SeparatorDots@2x.png in Resources */,
+				00D58C0C16D858DE005C1A7E /* BookBlack@2x.png in Resources */,
+				00D58C0D16D858DE005C1A7E /* BookLake@2x.png in Resources */,
+				00D58C0E16D858DE005C1A7E /* BookRed@2x.png in Resources */,
+				00D58C0F16D858DE005C1A7E /* ButtonBT@2x.png in Resources */,
+				00D58C4E16D85ABD005C1A7E /* settings.plist in Resources */,
+				00D58C1016D858DE005C1A7E /* ButtonBTHighLighted@2x.png in Resources */,
+				00D58C1116D858DE005C1A7E /* CellAccessory@2x.png in Resources */,
+				00D58C1216D858DE005C1A7E /* CellBG@2x.png in Resources */,
+				00D58C1316D858DE005C1A7E /* CellClear@2x.png in Resources */,
+				00D58C1416D858DE005C1A7E /* CellLine@2x.png in Resources */,
+				00D58C1516D858DE005C1A7E /* CellSummary@2x.png in Resources */,
+				00D58C1616D858DE005C1A7E /* DetailsBG@2x.png in Resources */,
+				00D58C1716D858DE005C1A7E /* DetailsHeader@2x.png in Resources */,
+				00D58C1816D858DE005C1A7E /* infoButton@2x.png in Resources */,
+				00D58C1916D858DE005C1A7E /* ListBG@2x.png in Resources */,
+				00D58C1A16D858DE005C1A7E /* NavBackButton@2x.png in Resources */,
+				00D58C1B16D858DE005C1A7E /* Navigation@2x.png in Resources */,
+				00D58C1C16D858DE005C1A7E /* Next@2x.png in Resources */,
+				00D58C1D16D858DE005C1A7E /* ScoreBoardButton@2x.png in Resources */,
+				00D58C1E16D858DE005C1A7E /* ScoreBoardPopup@2x.png in Resources */,
+				00D58C1F16D858DE005C1A7E /* SeparatorLine@2x.png in Resources */,
+				00D58C2016D858DE005C1A7E /* Star@2x.png in Resources */,
+				00D58C2116D858DE005C1A7E /* StarNone@2x.png in Resources */,
+				00D58C2216D858DE005C1A7E /* StarSmall@2x.png in Resources */,
+				00D58C2316D858DE005C1A7E /* TapeBody@2x.png in Resources */,
+				00D58C2416D858DE005C1A7E /* TapeHead@2x.png in Resources */,
+				00D58C2516D858DE005C1A7E /* TapeTail@2x.png in Resources */,
+				00D58C2616D858DE005C1A7E /* TimeLineCellDark@2x.png in Resources */,
+				00D58C2716D858DE005C1A7E /* TimeLineCellLight@2x.png in Resources */,
+				00D58C2816D858DE005C1A7E /* Unit@2x.png in Resources */,
+				00D58C2916D858DE005C1A7E /* PopupClose@2x.png in Resources */,
+				00D58C2A16D858DE005C1A7E /* PopupCloseHighLighted@2x.png in Resources */,
+				00D58C2B16D858DE005C1A7E /* Mark@2x.png in Resources */,
+				00D58C2C16D858DE005C1A7E /* MenuButtonHighLighted@2x.png in Resources */,
+				00D58C2D16D858DE005C1A7E /* UnitHighLighted@2x.png in Resources */,
+				00D58C2E16D858DE005C1A7E /* UnitSelected@2x.png in Resources */,
+				00D58C2F16D858DE005C1A7E /* UnitC@2x.png in Resources */,
+				00D58C3016D858DE005C1A7E /* UnitCHighLighted@2x.png in Resources */,
+				00D58C3116D858DE005C1A7E /* ScoreDown@2x.png in Resources */,
+				00D58C3216D858DE005C1A7E /* ScoreUp@2x.png in Resources */,
+				00D58C3316D858DE005C1A7E /* SoundButton@2x.png in Resources */,
+				00D58C3416D858DE005C1A7E /* iRate.bundle in Resources */,
+				00D58C3516D858DE005C1A7E /* FloatBar@2x.png in Resources */,
+				00D58C3616D858DE005C1A7E /* FloatBarTimer@2x.png in Resources */,
+				00D58C3716D858DE005C1A7E /* FloatBarButton@2x.png in Resources */,
+				00D58C3816D858DE005C1A7E /* FloatBarButtonHighLighted@2x.png in Resources */,
+				00D58C3E16D858DE005C1A7E /* ScoreBoardFinishPopup@2x.png in Resources */,
+				00D58C3F16D858DE005C1A7E /* ScoreShareButton@2x.png in Resources */,
+				00D58C4016D858DE005C1A7E /* ScoreShareButtonHighLighted@2x.png in Resources */,
+				00D58C4116D858DE005C1A7E /* GuidePage1@2x.png in Resources */,
+				00D58C4216D858DE005C1A7E /* GuidePage2@2x.png in Resources */,
+				00D58C4316D858DE005C1A7E /* GuidePage3@2x.png in Resources */,
+				00D58C4416D858DE005C1A7E /* GuidePage4@2x.png in Resources */,
+				00D58C4616D858DE005C1A7E /* Default@2x.png in Resources */,
+				00D58C5D16D86418005C1A7E /* UMSocialSDKResources.bundle in Resources */,
+				00D58C6316D86619005C1A7E /* VocabularySishu.sqlite in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -4215,6 +4489,72 @@
 				002D4E4D169CDAAF009C4F8E /* AFHTTPRequestOperation.m in Sources */,
 				002D4E54169CDAAF009C4F8E /* AFURLConnectionOperation.m in Sources */,
 				002D4E62169CDAAF009C4F8E /* UMSocialBarView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00D58BBA16D858DE005C1A7E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00D58BBB16D858DE005C1A7E /* VSNavigationBar.m in Sources */,
+				00D58BBC16D858DE005C1A7E /* main.m in Sources */,
+				00D58BBD16D858DE005C1A7E /* VSAppDelegate.m in Sources */,
+				00D58BBE16D858DE005C1A7E /* VocabularySishu.xcdatamodeld in Sources */,
+				00D58BBF16D858DE005C1A7E /* VSVocabularyViewController.m in Sources */,
+				00D58BC016D858DE005C1A7E /* VSHistoryViewController.m in Sources */,
+				00D58BC116D858DE005C1A7E /* VSUtils.m in Sources */,
+				00D58BC216D858DE005C1A7E /* VSDataUtil.m in Sources */,
+				00D58BC316D858DE005C1A7E /* NSObject+SBJSON.m in Sources */,
+				00D58BC416D858DE005C1A7E /* NSString+SBJSON.m in Sources */,
+				00D58BC516D858DE005C1A7E /* SBJSON.m in Sources */,
+				00D58BC616D858DE005C1A7E /* SBJsonBase.m in Sources */,
+				00D58BC716D858DE005C1A7E /* SBJsonParser.m in Sources */,
+				00D58BC816D858DE005C1A7E /* SBJsonWriter.m in Sources */,
+				00D58BC916D858DE005C1A7E /* VSVocabularyListViewController.m in Sources */,
+				00D58BCA16D858DE005C1A7E /* VSConstant.m in Sources */,
+				00D58BCB16D858DE005C1A7E /* VSContext.m in Sources */,
+				00D58BCC16D858DE005C1A7E /* VSList.m in Sources */,
+				00D58BCD16D858DE005C1A7E /* VSListVocabulary.m in Sources */,
+				00D58BCE16D858DE005C1A7E /* VSMeaning.m in Sources */,
+				00D58BCF16D858DE005C1A7E /* VSRepository.m in Sources */,
+				00D58BD016D858DE005C1A7E /* VSWebsterMeaning.m in Sources */,
+				00D58BD116D858DE005C1A7E /* VSVocabularyListHeaderView.m in Sources */,
+				00D58BD216D858DE005C1A7E /* VSConfigurationViewController.m in Sources */,
+				00D58BD316D858DE005C1A7E /* NSMutableArrayShuffling.m in Sources */,
+				00D58BD416D858DE005C1A7E /* VSSummaryView.m in Sources */,
+				00D58BD516D858DE005C1A7E /* VSVocabulary.m in Sources */,
+				00D58BD616D858DE005C1A7E /* VSVocabularyCell.m in Sources */,
+				00D58BD716D858DE005C1A7E /* VSScoreBoardView.m in Sources */,
+				00D58BD916D858DE005C1A7E /* VSHisotryListCell.m in Sources */,
+				00D58BDA16D858DE005C1A7E /* VSMainViewController.m in Sources */,
+				00D58BDB16D858DE005C1A7E /* VSRepoViewController.m in Sources */,
+				00D58BDC16D858DE005C1A7E /* VSRepoListViewController.m in Sources */,
+				00D58BDD16D858DE005C1A7E /* VSSingleListView.m in Sources */,
+				00D58BDE16D858DE005C1A7E /* VSClipView.m in Sources */,
+				00D58BDF16D858DE005C1A7E /* VSGuideViewController.m in Sources */,
+				00D58BE016D858DE005C1A7E /* TipsBubble.m in Sources */,
+				00D58BE116D858DE005C1A7E /* Reachability.m in Sources */,
+				00D58BE216D858DE005C1A7E /* VSUIUtils.m in Sources */,
+				00D58BE316D858DE005C1A7E /* ASIAuthenticationDialog.m in Sources */,
+				00D58BE416D858DE005C1A7E /* ASIDataCompressor.m in Sources */,
+				00D58BE516D858DE005C1A7E /* ASIDataDecompressor.m in Sources */,
+				00D58BE616D858DE005C1A7E /* ASIDownloadCache.m in Sources */,
+				00D58BE716D858DE005C1A7E /* ASIFormDataRequest.m in Sources */,
+				00D58BE816D858DE005C1A7E /* ASIHTTPRequest.m in Sources */,
+				00D58BE916D858DE005C1A7E /* ASIInputStream.m in Sources */,
+				00D58BEA16D858DE005C1A7E /* ASINetworkQueue.m in Sources */,
+				00D58BEB16D858DE005C1A7E /* VSCellStatus.m in Sources */,
+				00D58BEC16D858DE005C1A7E /* iRate.m in Sources */,
+				00D58C6016D86481005C1A7E /* AFHTTPClient.m in Sources */,
+				00D58C5F16D86478005C1A7E /* AFHTTPRequestOperation.m in Sources */,
+				00D58C6116D86483005C1A7E /* AFURLConnectionOperation.m in Sources */,
+				00D58BED16D858DE005C1A7E /* UserModel.xcdatamodeld in Sources */,
+				00D58BEE16D858DE005C1A7E /* VSListRecord.m in Sources */,
+				00D58BEF16D858DE005C1A7E /* VSAppRecord.m in Sources */,
+				00D58BF016D858DE005C1A7E /* VSListVocabularyRecord.m in Sources */,
+				00D58BF116D858DE005C1A7E /* VSVocabularyRecord.m in Sources */,
+				00D58BF216D858DE005C1A7E /* VSFloatPanelView.m in Sources */,
+				00D58BF316D858DE005C1A7E /* VSVocabularyPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4901,6 +5241,68 @@
 			};
 			name = Release;
 		};
+		00D58C4816D858DE005C1A7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUNDLE_NAME = "VocabularySishu-GRE";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "GRE=1";
+				GCC_THUMB_SUPPORT = NO;
+				INFOPLIST_FILE = "$(SRCROOT)/VocabularySishu/VocabularySishu-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/VocabularySishu/Libs/Statistics\"",
+					"\"$(SRCROOT)/VocabularySishu/Libs/UMSocial_Sdk_1.6.1/frameworks/Wechat\"",
+					"\"$(SRCROOT)/VocabularySishu/Libs/UMSocial_Sdk_1.6.1\"",
+				);
+				PRODUCT_NAME = "VocabularySishu GMAT";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		00D58C4916D858DE005C1A7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUNDLE_NAME = "VocabularySishu-GRE";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "GRE=1";
+				GCC_THUMB_SUPPORT = NO;
+				INFOPLIST_FILE = "$(SRCROOT)/VocabularySishu/VocabularySishu-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/VocabularySishu/Libs/Statistics\"",
+					"\"$(SRCROOT)/VocabularySishu/Libs/UMSocial_Sdk_1.6.1/frameworks/Wechat\"",
+					"\"$(SRCROOT)/VocabularySishu/Libs/UMSocial_Sdk_1.6.1\"",
+				);
+				PRODUCT_NAME = "VocabularySishu GMAT";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -4999,6 +5401,15 @@
 			buildConfigurations = (
 				00C8D429168586CC00CA3880 /* Debug */,
 				00C8D42A168586CC00CA3880 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00D58C4716D858DE005C1A7E /* Build configuration list for PBXNativeTarget "VocabularySishu GMAT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00D58C4816D858DE005C1A7E /* Debug */,
+				00D58C4916D858DE005C1A7E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

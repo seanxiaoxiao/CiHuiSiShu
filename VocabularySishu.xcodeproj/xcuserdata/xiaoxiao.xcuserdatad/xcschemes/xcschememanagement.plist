@@ -14,6 +14,11 @@
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
+		<key>VocabularySishu GMAT.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
 		<key>VocabularySishu GRE.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -113,6 +118,11 @@
 			<true/>
 		</dict>
 		<key>00C8D39D168586CC00CA3880</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>00D58BB916D858DE005C1A7E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
