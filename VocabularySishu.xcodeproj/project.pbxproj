@@ -701,13 +701,17 @@
 		0046409115591DBD007E5FA9 /* VSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046409015591DBD007E5FA9 /* VSUtils.m */; };
 		0046409215591DBD007E5FA9 /* VSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0046409015591DBD007E5FA9 /* VSUtils.m */; };
 		0046409315591FD1007E5FA9 /* VSVocabularyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408115590E0B007E5FA9 /* VSVocabularyViewController.xib */; };
-		004CE32516A26AB3004ABA63 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		004EA5A4161AA8AA000E4B0E /* VocabularySishu.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 004EA5A3161AA8AA000E4B0E /* VocabularySishu.sqlite */; };
 		00533E3515F3DA81004777F1 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 00533E2F15F3DA81004777F1 /* icon.png */; };
 		00533E3615F3DA81004777F1 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00533E3015F3DA81004777F1 /* icon@2x.png */; };
 		00533E3A15F42915004777F1 /* TipsBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 00533E3915F42915004777F1 /* TipsBubble.m */; };
 		00533E3B15F42915004777F1 /* TipsBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 00533E3915F42915004777F1 /* TipsBubble.m */; };
 		00533E3C15F42915004777F1 /* TipsBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 00533E3915F42915004777F1 /* TipsBubble.m */; };
+		0058246916D8A35A0017E197 /* UMSocial_Sdk_1.6.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 002D4E3F169CDAAF009C4F8E /* UMSocial_Sdk_1.6.1.a */; };
+		0058246A16D8A3610017E197 /* libWeChatSDK_armv7_armv7s.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 002D4E25169CDAAF009C4F8E /* libWeChatSDK_armv7_armv7s.a */; };
+		0058246B16D8A3670017E197 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 002D4E21169CDAAF009C4F8E /* AFHTTPRequestOperation.m */; };
+		0058246C16D8A36C0017E197 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 002D4E23169CDAAF009C4F8E /* AFURLConnectionOperation.m */; };
+		0058246D16D8A3700017E197 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 002D4E1F169CDAAF009C4F8E /* AFHTTPClient.m */; };
 		0059664A162C7D5A0010C669 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00596648162C7D5A0010C669 /* libMobClickLibrary.a */; };
 		0059664B162C7D5A0010C669 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00596648162C7D5A0010C669 /* libMobClickLibrary.a */; };
 		0059664C162C7D5A0010C669 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00596648162C7D5A0010C669 /* libMobClickLibrary.a */; };
@@ -1888,6 +1892,8 @@
 				002D4DA3169CADDF009C4F8E /* CoreGraphics.framework in Frameworks */,
 				002D4DA4169CADDF009C4F8E /* CoreData.framework in Frameworks */,
 				002D4DA5169CADDF009C4F8E /* libMobClickLibrary.a in Frameworks */,
+				0058246916D8A35A0017E197 /* UMSocial_Sdk_1.6.1.a in Frameworks */,
+				0058246A16D8A3610017E197 /* libWeChatSDK_armv7_armv7s.a in Frameworks */,
 				002D4DA6169CADDF009C4F8E /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4147,10 +4153,12 @@
 				002D4D78169CADDF009C4F8E /* VSConfigurationViewController.m in Sources */,
 				002D4D79169CADDF009C4F8E /* NSMutableArrayShuffling.m in Sources */,
 				002D4D7A169CADDF009C4F8E /* VSSummaryView.m in Sources */,
+				0058246D16D8A3700017E197 /* AFHTTPClient.m in Sources */,
 				002D4D7B169CADDF009C4F8E /* VSVocabulary.m in Sources */,
 				002D4D7C169CADDF009C4F8E /* VSVocabularyCell.m in Sources */,
 				002D4D7D169CADDF009C4F8E /* VSScoreBoardView.m in Sources */,
-				004CE32516A26AB3004ABA63 /* (null) in Sources */,
+				0058246C16D8A36C0017E197 /* AFURLConnectionOperation.m in Sources */,
+				0058246B16D8A3670017E197 /* AFHTTPRequestOperation.m in Sources */,
 				002D4D7E169CADDF009C4F8E /* VSHisotryListCell.m in Sources */,
 				002D4D7F169CADDF009C4F8E /* VSMainViewController.m in Sources */,
 				002D4D80169CADDF009C4F8E /* VSRepoViewController.m in Sources */,
