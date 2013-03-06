@@ -23,6 +23,8 @@
 
 + (UIImage *)fetchImg:(NSString *)imageName;
 
++ (UIImage *)fetchImgByScreen:(NSString *)imageName;
+
 + (NSManagedObject *)get:(NSManagedObjectID *)moID;
 
 + (NSDate *)getToday;
@@ -47,7 +49,7 @@
 
 + (void)toGivenList:(VSList *)list;
 
-+ (void)reloadCurrentList:(VSListRecord *)currentListRecord;
++ (void)reloadCurrentList:(VSListRecord *)currentListRecord showBad:(BOOL)showBad;
 
 + (void)showGuidPage;
 

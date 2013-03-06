@@ -40,5 +40,8 @@
 @property (nonatomic, retain) UIPickerView *pickerView;
 @property (nonatomic, retain) UIView *pickerAreaView;
 @property (nonatomic, retain) UILabel *promptLabel;
+@property (nonatomic, assign) BOOL showBad;
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil showBad:(BOOL)showBad;
 
 @end

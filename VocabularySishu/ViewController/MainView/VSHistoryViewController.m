@@ -41,13 +41,21 @@
 
     activator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     activator.center = CGPointMake(160, 30);
+    UIImageView *menuImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImgByScreen:@"Menu"]];
+    [self.view addSubview:menuImageView];
+    [self.view sendSubviewToBack:menuImageView];
     
-    UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
+    UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImgByScreen:@"ListBG"]];
     [backgroundImageView setFrame:self.view.frame];
     [self.view addSubview:backgroundImageView];
     [self.view sendSubviewToBack:backgroundImageView];
     
-    
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone && screenSize.height > 480.0f) {
+        CGRect tableFrame = self.historyTable.frame;
+        self.historyTable.frame = CGRectMake(tableFrame.origin.x, tableFrame.origin.y, tableFrame.size.width, tableFrame.size.height + 20);
+    }
+   
 #ifdef TRIAL
     UIImage *promoImage = [VSUtils fetchImg:@"MainPromo"];
     UIImageView *promo = [[UIImageView alloc] initWithImage:promoImage];
@@ -61,7 +69,6 @@
     CGRect tableFrame = self.historyTable.frame;
     self.historyTable.frame = CGRectMake(tableFrame.origin.x, tableFrame.origin.y + 50, tableFrame.size.width, tableFrame.size.height - 50);
 #endif
-
 }
 
 - (void)viewDidUnload
@@ -111,7 +118,7 @@
     [list initListRecord];
     vocabularyListViewController.currentList = list;
     vocabularyListViewController.currentListRecord = list.listRecord;
-    vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
+    vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil showBad:NO];
     [self.navigationController pushViewController:vocabularyListViewController animated:YES];
 }
 
@@ -128,7 +135,7 @@
     VSVocabularyListViewController *vocabularyListViewController = [VSVocabularyListViewController alloc];
     VSListRecord *selectedList = [historyLists objectAtIndex:indexPath.row];
     vocabularyListViewController.currentListRecord = selectedList;
-    vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
+    vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil showBad:NO];
     [self.navigationController pushViewController:vocabularyListViewController animated:YES];
 }
 

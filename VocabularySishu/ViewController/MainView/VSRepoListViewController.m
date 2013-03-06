@@ -35,7 +35,7 @@
     
     [self.navigationItem setLeftBarButtonItem:[VSUIUtils makeBackButton:self selector:@selector(goBack)]];
 
-    UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
+    UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImgByScreen:@"ListBG"]];
     [backgroundImageView setFrame:self.view.frame];
     [self.view addSubview:backgroundImageView];
     [self.view sendSubviewToBack:backgroundImageView];
@@ -78,14 +78,14 @@
     #ifdef TRIAL
         UIImage *listBottomImage = [VSUtils fetchImg:@"List-Bottom"];
         UIImageView *listBottomImageView = [[UIImageView alloc] initWithImage:listBottomImage];
-        listBottomImageView.frame = CGRectMake(0, 416 - listBottomImage.size.height, listBottomImage.size.width, listBottomImage.size.height);
+        listBottomImageView.frame = CGRectMake(0, [[UIScreen mainScreen] bounds].size.height - 64 - listBottomImage.size.height, listBottomImage.size.width, listBottomImage.size.height);
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:[VSUtils class] action:@selector(openSeries)];
         [listBottomImageView addGestureRecognizer:tap];
         listBottomImageView.userInteractionEnabled = YES;
     
         [self.view addSubview:listBottomImageView];
         [self.view bringSubviewToFront:listBottomImageView];
-        UILabel *promoLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 379, 200, 16)];
+        UILabel *promoLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, [[UIScreen mainScreen] bounds].size.height - 101, 200, 16)];
         promoLabel.text = @"Buy It NOW!";
         promoLabel.font = [UIFont boldSystemFontOfSize:16];
         promoLabel.backgroundColor = [UIColor clearColor];
@@ -94,7 +94,7 @@
         [self.view addSubview:promoLabel];
         [self.view bringSubviewToFront:promoLabel];
     
-        UILabel *promoLabelSecnd = [[UILabel alloc] initWithFrame:CGRectMake(15, 394, 200, 20)];
+        UILabel *promoLabelSecnd = [[UILabel alloc] initWithFrame:CGRectMake(15, [[UIScreen mainScreen] bounds].size.height - 86, 200, 20)];
         promoLabelSecnd.text = @"Seeking for C to Z，立即购买完整版";
         promoLabelSecnd.font = [UIFont boldSystemFontOfSize:12];
         promoLabelSecnd.backgroundColor = [UIColor clearColor];
@@ -120,7 +120,6 @@
         }
     }
 }
-
 
 - (void)viewWillDisappear:(BOOL)animated
 {

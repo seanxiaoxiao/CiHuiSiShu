@@ -37,8 +37,8 @@
 @property (nonatomic, retain) UIImageView *scoreDownImage;
 @property (nonatomic, retain) UIImageView *scoreUpImage;
 @property (nonatomic, retain) NSDictionary *statusDictionary;
+@property (nonatomic, retain) UIImageView *markerView;
 @property (nonatomic, retain) VSVocabularyRecord *vocabularyRecord;
-
 
 - (void) clearVocabulry:(BOOL)clear;
 

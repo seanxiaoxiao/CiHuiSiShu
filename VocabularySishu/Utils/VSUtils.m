@@ -36,10 +36,21 @@
 
 + (UIImage *)fetchImg:(NSString *)imageName
 {
-    UIImage *image = [UIImage imageNamed:imageName];
-    return image;
+    return [UIImage imageNamed:imageName];
 }
 
++ (UIImage *)fetchImgByScreen:(NSString *)imageName
+{
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    NSString *longScreenImage = [NSString stringWithFormat:@"%@-568h", imageName];
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone && screenSize.height > 480.0f) {
+        return [UIImage imageNamed:longScreenImage];
+    }
+    else {
+        return [UIImage imageNamed:imageName];
+    }
+}
 
 + (NSDate *)getToday
 {
@@ -163,7 +174,6 @@
         vocabularyListViewController.currentList = list;
         vocabularyListViewController.currentListRecord = list.listRecord;
         vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
-
         [navigationController pushViewController:vocabularyListViewController animated:YES];
     }
 }
@@ -226,7 +236,7 @@
     }
 }
 
-+ (void)reloadCurrentList:(VSListRecord *)currentListRecord
++ (void)reloadCurrentList:(VSListRecord *)currentListRecord showBad:(BOOL)showBad
 {
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     UINavigationController *navigationController = (UINavigationController *)window.rootViewController;
@@ -235,7 +245,7 @@
         VSVocabularyListViewController *vocabularyListViewController = [VSVocabularyListViewController alloc];
         vocabularyListViewController.currentList = [currentListRecord getList];
         vocabularyListViewController.currentListRecord = currentListRecord;
-        vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
+        vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil showBad:showBad];
         
         [UIView beginAnimations:nil context:NULL];
         [UIView setAnimationDelay:0.4];

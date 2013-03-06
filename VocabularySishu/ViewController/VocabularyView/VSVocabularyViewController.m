@@ -28,7 +28,6 @@
 @synthesize vocabularyImageView;
 @synthesize scrollView;
 @synthesize mwLabel;
-@synthesize backgroundImage;
 @synthesize playButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -43,7 +42,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self.view sendSubviewToBack:self.backgroundImage];
+    
+    UIImageView *backgroundImage = [[UIImageView alloc] initWithImage:[VSUtils fetchImgByScreen:@"DetailsBG"]];
+    [self.view addSubview:backgroundImage];
+    [self.view sendSubviewToBack:backgroundImage];
     UIImage* backImage= [VSUtils fetchImg:@"NavBackButton"];
     CGRect frame = CGRectMake(0, 0, backImage.size.width, backImage.size.height); 
     UIButton* backButton = [[UIButton alloc] initWithFrame:frame]; 
@@ -51,6 +53,7 @@
     [backButton addTarget:self action:@selector(backToList) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem* backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
     [self.navigationItem setLeftBarButtonItem:backButtonItem];
+    self.scrollView.frame = CGRectMake(0, self.scrollView.frame.origin.y, 320, [[UIScreen mainScreen] bounds].size.height - 98);
     
     if ([[Reachability reachabilityForInternetConnection] isReachableViaWiFi]) {
         UIImage* playImage = [VSUtils fetchImg:@"SoundButton"];
@@ -61,8 +64,6 @@
         UIBarButtonItem* playButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.playButton];
         [self.navigationItem setRightBarButtonItem:playButtonItem];        
     }
-    
-    [self.view sendSubviewToBack:self.backgroundImage];
     [self.navigationItem setLeftBarButtonItem:[VSUIUtils makeBackButton:self selector:@selector(backToList)]];
 
     self.vocabularyLabel.text = self.vocabulary.spell;
@@ -197,7 +198,7 @@
     }
     
     self.scrollView.scrollEnabled = YES;
-    self.scrollView.contentSize = CGSizeMake(320, currentHeight + 20);
+    self.scrollView.contentSize = CGSizeMake(320, currentHeight + 50);
     
     self.playButton.hidden = NO;
     
@@ -222,7 +223,6 @@
     self.scrollView = nil;
     self.etymologyContentLabel = nil;
     self.mwLabel = nil;
-    self.backgroundImage = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

@@ -33,6 +33,7 @@
 @synthesize scoreDownImage;
 @synthesize scoreUpImage;
 @synthesize statusDictionary;
+@synthesize markerView;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -73,7 +74,6 @@
         self.summaryLabel.adjustsFontSizeToFitWidth = YES;
         self.summaryLabel.backgroundColor = [UIColor clearColor];
         [self.summaryLabel setTextAlignment:UITextAlignmentCenter];
-
         self.summaryLabel.bounds = CGRectMake(0, 0, 300, VOCAVULARY_CELL_HEIGHT);
 
         self.summaryContainerView.clipsToBounds = YES;
@@ -106,7 +106,6 @@
         tapeTailImage.hidden = YES;
         tapeHeadImage.hidden = YES;
         tapeBodyImage.hidden = YES;
-
     }
     return self;
 }
@@ -364,6 +363,16 @@
         [self dragSummary:-180];
     }
     else {
+        if (self.markerView != nil) {
+            [self.markerView removeFromSuperview];
+        }
+        if ([self.vocabularyRecord.remember doubleValue] < 30) {
+            self.markerView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"CellRedMark"]];
+        }
+        else if ([self.vocabularyRecord.remember doubleValue] < 60) {
+            self.markerView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"CellYellowMark"]];
+        }
+        [self.vocabularyContainerView addSubview:self.markerView];
         tapeTailImage.hidden = YES;
         tapeHeadImage.hidden = YES;
         tapeBodyImage.hidden = YES;

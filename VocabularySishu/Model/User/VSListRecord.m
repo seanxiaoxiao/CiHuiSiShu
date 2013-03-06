@@ -53,7 +53,7 @@
         NSDate *rightNow = [[NSDate alloc] init];
         NSCalendar *nowCalendar = [NSCalendar currentCalendar];
         NSDateComponents *nowComponents = [nowCalendar components:(NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:rightNow];
-        listForToday.name = [NSString stringWithFormat:@"%d月%d日", [nowComponents month], [nowComponents day ]];
+        listForToday.name = [NSString stringWithFormat:@"%d月%d日", [nowComponents month], [nowComponents day]];
         listForToday.type = [VSConstant LIST_TYPE_HISTORY];
         listForToday.createdDate = today;
         listForToday.status = [VSConstant LIST_STATUS_NEW];
@@ -78,7 +78,7 @@
         if ([list.listVocabularies count] > 0) {
             [result addObject:list];
         }
-        if ([result count] == 4) {
+        if ([result count] == 6) {
             break;
         }
     }
@@ -102,7 +102,7 @@
         if ([list.listVocabularies count] > 0) {
             [result addObject:list];
         }
-        if ([result count] == 4) {
+        if ([result count] == 6) {
             break;
         }
     }
@@ -182,6 +182,35 @@
     results = [NSMutableArray arrayWithArray:[[VSUtils currentMOContext] executeFetchRequest:request error:&error]];
     [results shuffle];
     return results;
+}
+
+
+
+- (NSMutableArray *)vocabulariesNotWell
+{
+    NSError *error = nil;
+    NSMutableArray *results = nil;
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"VSListVocabularyRecord" inManagedObjectContext:[VSUtils currentMOContext]];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(listRecord = %@ AND vocabularyRecord.remember < 80 AND lastStatus != 1)", self];
+    [request setPredicate:predicate];
+    [request setRelationshipKeyPathsForPrefetching:[NSArray arrayWithObject:@"vocabularyRecord"]];
+    [request setEntity:entityDescription];
+    results = [NSMutableArray arrayWithArray:[[VSUtils currentMOContext] executeFetchRequest:request error:&error]];
+    [results shuffle];
+    return results;
+}
+
+- (int)vocabulariesNotWellCount
+{
+    NSError *error = nil;
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"VSListVocabularyRecord" inManagedObjectContext:[VSUtils currentMOContext]];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(listRecord = %@ AND vocabularyRecord.remember < 80)", self];
+    [request setPredicate:predicate];
+    [request setRelationshipKeyPathsForPrefetching:[NSArray arrayWithObject:@"vocabularyRecord"]];
+    [request setEntity:entityDescription];
+    return [[NSMutableArray arrayWithArray:[[VSUtils currentMOContext] executeFetchRequest:request error:&error]] count];
 }
 
 - (int)wordsTotal

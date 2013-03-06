@@ -45,7 +45,7 @@
 
     [self.navigationItem setLeftBarButtonItem:[VSUIUtils makeBackButton:self selector:@selector(goBack)]];
     
-    UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
+    UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImgByScreen:@"ListBG"]];
     [backgroundImageView setFrame:self.view.frame];
     [self.view addSubview:backgroundImageView];
     [self.view sendSubviewToBack:backgroundImageView];
@@ -55,6 +55,8 @@
     #ifdef TRIAL
         count++;
     #endif
+
+    scrollView.frame = CGRectMake(0, 0, scrollView.frame.size.width, [[UIScreen mainScreen] bounds].size.height - 89);
     scrollView.pagingEnabled = YES;
     scrollView.contentSize = CGSizeMake(205 * count, scrollView.frame.size.height);
     scrollView.showsHorizontalScrollIndicator = NO;
@@ -71,8 +73,18 @@
     int selected = -1;
     VSRepository *repo = [VSContext getContext].currentRepository;
 
+    CGFloat bookYOffset = 0;
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone && screenSize.height > 480.0f) {
+        bookYOffset = 78;
+    }
+    else {
+        bookYOffset = 108;
+    }
+    
     for (int i = 0; i < [allRepos count]; i++) {
-        CGRect frame = CGRectMake(i * 205, 0, 205, 416);
+        CGRect frame = CGRectMake(i * 205, bookYOffset, 205, [[UIScreen mainScreen] bounds].size.height - 64);
         VSRepoViewController *controller = [[VSRepoViewController alloc] initWithNibName:nil bundle:nil];
         [controllers addObject:controller];
         VSRepository *currentRepo = [allRepos objectAtIndex:i];
@@ -85,7 +97,7 @@
     }
     
     #ifdef TRIAL
-        CGRect moreFrame = CGRectMake([allRepos count] * 205, 0, 205, 416);
+        CGRect moreFrame = CGRectMake([allRepos count] * 205, bookYOffset, 205, [[UIScreen mainScreen] bounds].size.height - 64);
         VSRepoViewController *controller = [[VSRepoViewController alloc] initWithNibName:nil bundle:nil];
         [controllers addObject:controller];
         VSRepository *currentRepo = nil;
@@ -94,7 +106,8 @@
         [self.scrollView addSubview:controller.view];
     #endif
 
-
+    CGRect pageControlFrame = CGRectMake(0, [[UIScreen mainScreen] bounds].size.height - 89, 320, 20);
+    pageControl.frame = pageControlFrame;
     pageControl.numberOfPages = count;
     pageControl.currentPage = 0;
     

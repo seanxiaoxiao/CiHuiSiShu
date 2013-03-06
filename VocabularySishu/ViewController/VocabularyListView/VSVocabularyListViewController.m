@@ -49,11 +49,13 @@
 @synthesize pickerView;
 @synthesize pickerAreaView;
 @synthesize promptLabel;
+@synthesize showBad;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil showBad:(BOOL)_showBad
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        self.showBad = _showBad;
         if (![currentListRecord isHistoryList]) {
             self.listToday = [VSList createAndGetHistoryList];
         }
@@ -62,7 +64,12 @@
 
         self.clearingCount = 0;
         
-        self.vocabulariesToRecite = [self.currentListRecord vocabulariesToRecite];;
+        if (self.showBad) {
+            self.vocabulariesToRecite = [self.currentListRecord vocabulariesNotWell];;
+        }
+        else {
+            self.vocabulariesToRecite = [self.currentListRecord vocabulariesToRecite];;
+        }
         self.cellStatus = [[NSMutableDictionary alloc] init];
         for (int i = 0; i < [self.vocabulariesToRecite count]; i++) {
             VSListVocabularyRecord *listVocabulary = [self.vocabulariesToRecite objectAtIndex:i];
@@ -120,14 +127,28 @@
 
 - (void) initRightButton
 {
-    UIView *rightView = [[UIView alloc] initWithFrame:CGRectMake(1, 0, 43, 44.01)];
+    UIView *rightView = [[UIView alloc] initWithFrame:CGRectMake(1, 0, 90, 44.01)];
     rightView.backgroundColor = [UIColor clearColor];
     UIImage *scoreBoardImage = [VSUtils fetchImg:@"ScoreBoardButton"];
-    CGRect scoreBoardFrame = CGRectMake(0, 0, scoreBoardImage.size.width, scoreBoardImage.size.height);
+    CGRect scoreBoardFrame = CGRectMake(45, 0, scoreBoardImage.size.width, scoreBoardImage.size.height);
     UIButton *scoreBoardButton = [[UIButton alloc] initWithFrame:scoreBoardFrame];
     [scoreBoardButton setBackgroundImage:scoreBoardImage forState:UIControlStateNormal];
     [scoreBoardButton addTarget:self action:@selector(toggleScoreBoard) forControlEvents:UIControlEventTouchUpInside];
     [rightView addSubview:scoreBoardButton];
+    
+    UIImage *badSwitchButtonImage = nil;
+    if (self.showBad) {
+        badSwitchButtonImage = [VSUtils fetchImg:@"ButtonBad"];
+    }
+    else {
+        badSwitchButtonImage = [VSUtils fetchImg:@"ButtonAll"];
+    }
+    CGRect badSwitchButtonFrame = CGRectMake(0, 0, badSwitchButtonImage.size.width, badSwitchButtonImage.size.height);
+    UIButton *badSwitchButton = [[UIButton alloc] initWithFrame:badSwitchButtonFrame];
+    [badSwitchButton setBackgroundImage:badSwitchButtonImage forState:UIControlStateNormal];
+    [badSwitchButton addTarget:self action:@selector(toggleBadSwitch) forControlEvents:UIControlEventTouchUpInside];
+    [rightView addSubview:badSwitchButton];
+
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightView];
 }
 
@@ -161,7 +182,7 @@
 
 - (void) initPickerView
 {
-    pickerAreaView = [[UIView alloc] initWithFrame:CGRectMake(0, 420, 320, 204)];
+    pickerAreaView = [[UIView alloc] initWithFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height, 320, 204)];
     pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 44, 320, 160)];
     pickerView.delegate = self;
     pickerView.dataSource = self;
@@ -182,11 +203,9 @@
     
     UIToolbar *toolBar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 44)];
     toolBar.barStyle = UIBarStyleBlackTranslucent;
-    
     UIBarButtonItem *btnConfirm = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonSystemItemEdit target:self action:@selector(selectPlanFinishTime)];
     UIBarButtonItem *btnCancel = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonSystemItemCancel target:self action:@selector(dismissPickerArea)];
     [toolBar setItems:[NSArray arrayWithObjects:btnCancel, prompt, btnConfirm, nil]];
-    
     [pickerAreaView addSubview:toolBar];
 
 }
@@ -203,14 +222,14 @@
 - (void)dismissPickerArea
 {
     [UIView animateWithDuration:0.3 animations:^() {
-        pickerAreaView.frame = CGRectMake(0, 420, 320, 204);
+        pickerAreaView.frame = CGRectMake(0, [[UIScreen mainScreen] bounds].size.height, 320, 204);
     }];
 }
 
 - (void)showPickerArea
 {
     [UIView animateWithDuration:0.3 animations:^() {
-        pickerAreaView.frame = CGRectMake(0, 212, 320, 204);
+        pickerAreaView.frame = CGRectMake(0, [[UIScreen mainScreen] bounds].size.height - 270, 320, 204);
     }];
 }
 
@@ -220,13 +239,13 @@
 
     [self initTitle];
     
-    self.headerView = [[VSFloatPanelView alloc] initWithFrame:CGRectMake(0, 0, 320, 80) withListRecord:self.currentListRecord];
+    self.headerView = [[VSFloatPanelView alloc] initWithFrame:CGRectMake(0, 0, 320, 80) withListRecord:self.currentListRecord showBad:self.showBad];
     self.headerView.wordsRemain = [vocabulariesToRecite count];
     [self.headerView updateWordsCount];
     self.headerView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:self.headerView];
 
-    UIImageView *containerBackgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"ListBG"]];
+    UIImageView *containerBackgroundImageView = [[UIImageView alloc] initWithImage:[VSUtils fetchImgByScreen:@"ListBG"]];
     [containerBackgroundImageView setFrame:self.view.frame];
     [self.view addSubview:containerBackgroundImageView];
     [self.view sendSubviewToBack:containerBackgroundImageView];
@@ -545,6 +564,16 @@
     }
 }
 
+- (void)toggleBadSwitch
+{
+    if (self.showBad) {
+        [VSUtils reloadCurrentList:self.currentListRecord showBad:NO];
+    }
+    else {
+        [VSUtils reloadCurrentList:self.currentListRecord showBad:YES];
+    }
+}
+
 - (void)showScroeBoard
 {
     [MobClick event:EVENT_SHOW_SCORE];
@@ -595,7 +624,7 @@
 {
     [MobClick event:EVENT_RETRY];
     [self.currentListRecord clearVocabularyStatus];
-    [VSUtils reloadCurrentList:self.currentListRecord];
+    [VSUtils reloadCurrentList:self.currentListRecord showBad:NO];
 }
 
 - (void)nextList
@@ -645,7 +674,6 @@
         [player play:[vocabularyRecord getVocabulary]];
     }
 }
-
 
 - (void)share
 {

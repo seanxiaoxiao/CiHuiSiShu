@@ -30,34 +30,37 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    CGFloat viewHeight = 0;
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone && screenSize.height > 480.0f) {
+        viewHeight = 548;
+    }
+    else {
+        viewHeight = 460;
+    }
 
-    UIView *guideView1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 460)];
-    UIView *guideView2 = [[UIView alloc] initWithFrame:CGRectMake(320, 0, 320, 460)];
-    UIView *guideView3 = [[UIView alloc] initWithFrame:CGRectMake(640, 0, 320, 460)];
-    UIView *guideView4 = [[UIView alloc] initWithFrame:CGRectMake(960, 0, 320, 460)];
-    lastView = [[UIView alloc] initWithFrame:CGRectMake(1280, 0, 320, 460)];
+    lastView = [[UIView alloc] initWithFrame:CGRectMake(1280, 0, 320, viewHeight)];
     lastView.backgroundColor = [UIColor blackColor];
     
-    UIImageView *guidePage1 = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"GuidePage1"]];
-    UIImageView *guidePage2 = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"GuidePage2"]];
-    UIImageView *guidePage3 = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"GuidePage3"]];
-    UIImageView *guidePage4 = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"GuidePage4"]];
+    UIImageView *guidePage1 = [[UIImageView alloc] initWithImage:[VSUtils fetchImgByScreen:@"GuidePage1"]];
+    UIImageView *guidePage2 = [[UIImageView alloc] initWithImage:[VSUtils fetchImgByScreen:@"GuidePage2"]];
+    guidePage2.frame = CGRectMake(320, guidePage2.frame.origin.y, guidePage2.frame.size.width, guidePage2.frame.size.height);
+    UIImageView *guidePage3 = [[UIImageView alloc] initWithImage:[VSUtils fetchImgByScreen:@"GuidePage3"]];
+    guidePage3.frame = CGRectMake(640, guidePage3.frame.origin.y, guidePage3.frame.size.width, guidePage3.frame.size.height);
+    UIImageView *guidePage4 = [[UIImageView alloc] initWithImage:[VSUtils fetchImgByScreen:@"GuidePage4"]];
+    guidePage4.frame = CGRectMake(960, guidePage4.frame.origin.y, guidePage4.frame.size.width, guidePage4.frame.size.height);
     
-    [guideView1 addSubview:guidePage1];
-    [guideView2 addSubview:guidePage2];
-    [guideView3 addSubview:guidePage3];
-    [guideView4 addSubview:guidePage4];
-   
-    
-    self.scrollView.contentSize = CGSizeMake(320 * 5, 460);
+    self.scrollView.contentSize = CGSizeMake(320 * 5, viewHeight);
     self.scrollView.delegate = self;
-    
-    [self.scrollView addSubview:guideView1];
-    [self.scrollView addSubview:guideView2];
-    [self.scrollView addSubview:guideView3];
-    [self.scrollView addSubview:guideView4];
+    [self.scrollView addSubview:guidePage1];
+    [self.scrollView addSubview:guidePage2];
+    [self.scrollView addSubview:guidePage3];
+    [self.scrollView addSubview:guidePage4];
     [self.scrollView addSubview:lastView];
-        
+    
+    CGRect pageControlFrame = CGRectMake(0, [[UIScreen mainScreen] bounds].size.height - 50, 320, 20);
+    pageControl.frame = pageControlFrame;
     self.pageControl.numberOfPages = 5;
     self.pageControl.currentPage = 0;
 }

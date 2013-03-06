@@ -23,7 +23,6 @@
     IBOutlet UIImageView *vocabularyImageView;
     IBOutlet UILabel *mwLabel;
     IBOutlet UIScrollView *scrollView;
-    IBOutlet UIImageView *backgroundImage;
 }
 
 @property (nonatomic, strong) UILabel *vocabularyLabel;
@@ -36,6 +35,5 @@
 @property (nonatomic, strong) UIImageView *vocabularyImageView;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UILabel *mwLabel;
-@property (nonatomic, strong) UIImageView *backgroundImage;
 
 @end

@@ -22,7 +22,7 @@
 @property (nonatomic, retain) VSListRecord *record;
 @property (nonatomic, retain) NSTimer* countDownTimer;
 
-- (id)initWithFrame:(CGRect)frame withListRecord:(VSListRecord *)listRecord;
+- (id)initWithFrame:(CGRect)frame withListRecord:(VSListRecord *)listRecord showBad:(BOOL)showBad;
 
 - (void)clearWord;
 

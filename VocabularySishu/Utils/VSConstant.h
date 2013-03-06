@@ -45,6 +45,7 @@
 #define EVENT_REVERT_TOKEN @"REVERT_TOKEN"
 #define EVENT_WANT_TO_BUY @"WANT_TO_BUY"
 
+
 #ifdef TRIAL
     #define HISTORY_ITEM_COUNT 3
 #else
