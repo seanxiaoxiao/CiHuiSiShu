@@ -201,16 +201,19 @@
         self.curling = NO;
         self.curlUp = YES;
         self.cellAccessoryImage.hidden = NO;
-        self.hadCurlUp = YES;
-        record.curlUp = YES;
-        [self.vocabularyRecord forgot];
-        [self.vocabularyRecord seeSummaryStart];
+        
         [MobClick event:EVENT_FORGET];
         NSMutableDictionary *orientationData = [[NSMutableDictionary alloc] init];
         [orientationData setValue:self.vocabularyRecord forKey:@"vocabulary"];
         NSNotification *notification = [NSNotification notificationWithName:PLAY_VOCABULARY object:nil userInfo:orientationData];
         [[NSNotificationCenter defaultCenter] postNotification:notification];
-        [self scoreDown];
+        if (!hadCurlUp) {
+            [self scoreDown];
+            [self.vocabularyRecord forgot];
+            [self.vocabularyRecord seeSummaryStart];
+        }
+        self.hadCurlUp = YES;
+        record.curlUp = YES;
     }
     if (lastGestureX > 260) {
         [curlUpTimer invalidate];
@@ -369,7 +372,7 @@
         if ([self.vocabularyRecord.remember doubleValue] < 30) {
             self.markerView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"CellRedMark"]];
         }
-        else if ([self.vocabularyRecord.remember doubleValue] < 60) {
+        else if ([self.vocabularyRecord.remember doubleValue] < 80) {
             self.markerView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"CellYellowMark"]];
         }
         [self.vocabularyContainerView addSubview:self.markerView];

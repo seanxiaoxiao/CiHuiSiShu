@@ -220,7 +220,7 @@
         else if (self.notRememberWell < 0.4) {
             starCount = 1;
         }
-        else if (self.notRememberWell < 0.9) {
+        else if (self.notRememberWell < 0.8) {
             starCount = 2;
         }
         else {

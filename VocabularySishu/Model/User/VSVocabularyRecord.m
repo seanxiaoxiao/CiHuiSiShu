@@ -43,11 +43,10 @@
 
 - (void)remembered
 {
-    double meet = [self.meet doubleValue];
-    double incr = 12 * pow(M_E, meet / (meet + 6));
-    self.remember = [NSNumber numberWithDouble:[self.remember doubleValue] + incr];
-    if ([self.remember doubleValue] > 100) {
-        self.remember = [NSNumber numberWithDouble:100];
+    int incr = 10;
+    self.remember = [NSNumber numberWithInt:[self.remember intValue] + incr];
+    if ([self.remember intValue] > 100) {
+        self.remember = [NSNumber numberWithInt:100];
     }
     self.meet = [NSNumber numberWithInt:[self.meet intValue] + 1];
     [VSUtils saveEntity];
@@ -55,11 +54,21 @@
 
 - (void)forgot
 {
-    double meet = [self.meet doubleValue];
-    double decr = 40 * pow(M_E, (-3 * meet) / (meet + 1) - 3 * self.seeSummaryTimes);
+    int meet = [self.meet intValue];
+    int decr = 0;
+    if (meet < 2) {
+        decr = 40;
+    }
+    else if (meet < 5) {
+        decr = 30;
+    }
+    else {
+        decr = 10;
+    }
+
     self.remember = [NSNumber numberWithDouble:[self.remember doubleValue] - decr];
-    if ([self.remember doubleValue] < 0) {
-        self.remember = [NSNumber numberWithDouble:0];
+    if ([self.remember intValue] < 0) {
+        self.remember = [NSNumber numberWithInt:0];
     }
     [VSUtils saveEntity];
     self.seeSummaryTimes += 1;
@@ -68,13 +77,6 @@
 
 - (void)finishSummary
 {
-    NSTimeInterval elapse = -[self.seeSummaryStart timeIntervalSinceNow];
-    double decr = 4 / self.seeSummaryTimes * pow(M_E, elapse / 10);
-    self.remember = [NSNumber numberWithDouble:[self.remember doubleValue] - decr];
-    if ([self.remember doubleValue] < 0) {
-        self.remember = [NSNumber numberWithDouble:0];
-    }
-    [VSUtils saveEntity];
 }
 
 - (void)seeSummary
@@ -84,7 +86,7 @@
 
 - (BOOL)rememberWell
 {
-    return [self.remember intValue] > 60;
+    return [self.remember intValue] > 80;
 }
 
 

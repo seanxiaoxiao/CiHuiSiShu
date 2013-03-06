@@ -228,9 +228,14 @@
 
 - (void)showPickerArea
 {
-    [UIView animateWithDuration:0.3 animations:^() {
-        pickerAreaView.frame = CGRectMake(0, [[UIScreen mainScreen] bounds].size.height - 270, 320, 204);
-    }];
+    if (pickerAreaView.frame.origin.y == [[UIScreen mainScreen] bounds].size.height) {
+        [UIView animateWithDuration:0.3 animations:^() {
+            pickerAreaView.frame = CGRectMake(0, [[UIScreen mainScreen] bounds].size.height - 270, 320, 204);
+        }];
+    }
+    else {
+        [self dismissPickerArea];
+    }
 }
 
 - (void)viewDidLoad
