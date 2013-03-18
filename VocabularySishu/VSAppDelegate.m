@@ -120,7 +120,7 @@
         VSVocabularyListViewController *vocabularyListViewController = [VSVocabularyListViewController alloc];
         vocabularyListViewController.currentList = [listRecord getList];
         vocabularyListViewController.currentListRecord = listRecord;
-        vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
+        vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil showBad:NO];
         [navigationController pushViewController:vocabularyListViewController animated:NO];
         [application cancelLocalNotification:localNotif];
     }
@@ -174,7 +174,7 @@
         VSVocabularyListViewController *vocabularyListViewController = [VSVocabularyListViewController alloc];
         vocabularyListViewController.currentList = [listRecord getList];
         vocabularyListViewController.currentListRecord = listRecord;
-        vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
+        vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil showBad:NO];
         [navigationController pushViewController:vocabularyListViewController animated:NO];
         [application cancelLocalNotification:notification];
     }

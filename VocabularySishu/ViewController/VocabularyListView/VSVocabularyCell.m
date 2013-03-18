@@ -369,10 +369,10 @@
         if (self.markerView != nil) {
             [self.markerView removeFromSuperview];
         }
-        if ([self.vocabularyRecord.remember doubleValue] < 30) {
+        if ([self.vocabularyRecord rememberBad]) {
             self.markerView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"CellRedMark"]];
         }
-        else if ([self.vocabularyRecord.remember doubleValue] < 80) {
+        else if ([self.vocabularyRecord rememberNotWell]) {
             self.markerView = [[UIImageView alloc] initWithImage:[VSUtils fetchImg:@"CellYellowMark"]];
         }
         [self.vocabularyContainerView addSubview:self.markerView];

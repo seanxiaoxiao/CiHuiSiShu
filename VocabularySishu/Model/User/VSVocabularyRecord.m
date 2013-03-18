@@ -79,6 +79,16 @@
 {
 }
 
+- (BOOL)rememberNotWell
+{
+    return [self.meet integerValue] > 0 && [self.remember doubleValue] >= 30 && [self.remember doubleValue] < 80;
+}
+
+- (BOOL)rememberBad
+{
+    return [self.meet integerValue] > 0 && [self.remember doubleValue] <= 30;
+}
+
 - (void)seeSummary
 {
     self.seeSummaryStart = [[NSDate alloc] init];

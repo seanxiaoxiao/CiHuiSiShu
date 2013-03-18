@@ -35,4 +35,8 @@
 
 - (BOOL)rememberWell;
 
+- (BOOL)rememberNotWell;
+
+- (BOOL)rememberBad;
+
 @end
