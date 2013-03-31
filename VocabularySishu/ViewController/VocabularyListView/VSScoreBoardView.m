@@ -217,10 +217,10 @@
         if (self.notRememberWellInList < 0.2) {
             starCount = 0;
         }
-        else if (self.notRememberWell < 0.4) {
+        else if (self.notRememberWellInList < 0.4) {
             starCount = 1;
         }
-        else if (self.notRememberWell < 0.8) {
+        else if (self.notRememberWellInList < 0.8) {
             starCount = 2;
         }
         else {

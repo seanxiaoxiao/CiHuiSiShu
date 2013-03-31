@@ -96,7 +96,7 @@
 
 - (BOOL)rememberWell
 {
-    return [self.remember intValue] > 80;
+    return [self.remember intValue] >= 80;
 }
 
 

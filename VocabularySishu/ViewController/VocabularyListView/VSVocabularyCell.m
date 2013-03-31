@@ -395,4 +395,5 @@
     return [self.statusDictionary objectForKey:self.vocabularyRecord.spell];
 }
 
+
 @end

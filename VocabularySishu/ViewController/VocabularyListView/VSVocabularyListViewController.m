@@ -115,13 +115,23 @@
     [headerLabels addSubview:subLabel];
     self.navigationItem.titleView = headerLabels;
     
+    NSMutableString *subLabelText = nil;
     if (currentList != nil) {
         label.text = [currentList repoCategory];
-        subLabel.text = [currentList subName];
+        subLabelText = [[currentList subName] mutableCopy];
+        if (self.showBad) {
+            [subLabelText appendString:@" (不靠谱)"];
+        }
+        subLabel.text = subLabelText;
+        
     }
     else {
         label.text = @"复习";
-        subLabel.text = currentListRecord.name;
+        subLabelText = [currentListRecord.name mutableCopy];
+        if (self.showBad) {
+            [subLabelText appendString:@" (不靠谱)"];
+        }
+        subLabel.text = subLabelText;
     }
 }
 
@@ -136,18 +146,18 @@
     [scoreBoardButton addTarget:self action:@selector(toggleScoreBoard) forControlEvents:UIControlEventTouchUpInside];
     [rightView addSubview:scoreBoardButton];
     
-    UIImage *badSwitchButtonImage = nil;
-    if (self.showBad) {
-        badSwitchButtonImage = [VSUtils fetchImg:@"ButtonBad"];
-    }
-    else {
-        badSwitchButtonImage = [VSUtils fetchImg:@"ButtonAll"];
-    }
-    CGRect badSwitchButtonFrame = CGRectMake(0, 0, badSwitchButtonImage.size.width, badSwitchButtonImage.size.height);
-    UIButton *badSwitchButton = [[UIButton alloc] initWithFrame:badSwitchButtonFrame];
-    [badSwitchButton setBackgroundImage:badSwitchButtonImage forState:UIControlStateNormal];
-    [badSwitchButton addTarget:self action:@selector(toggleBadSwitch) forControlEvents:UIControlEventTouchUpInside];
-    [rightView addSubview:badSwitchButton];
+//    UIImage *badSwitchButtonImage = nil;
+//    if (self.showBad) {
+//        badSwitchButtonImage = [VSUtils fetchImg:@"ButtonBad"];
+//    }
+//    else {
+//        badSwitchButtonImage = [VSUtils fetchImg:@"ButtonAll"];
+//    }
+//    CGRect badSwitchButtonFrame = CGRectMake(0, 0, badSwitchButtonImage.size.width, badSwitchButtonImage.size.height);
+//    UIButton *badSwitchButton = [[UIButton alloc] initWithFrame:badSwitchButtonFrame];
+//    [badSwitchButton setBackgroundImage:badSwitchButtonImage forState:UIControlStateNormal];
+//    [badSwitchButton addTarget:self action:@selector(toggleBadSwitch) forControlEvents:UIControlEventTouchUpInside];
+//    [rightView addSubview:badSwitchButton];
 
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightView];
 }
@@ -583,7 +593,7 @@
 {
     [MobClick event:EVENT_SHOW_SCORE];
 
-    CGRect modalRect = CGRectMake(50, 105, 200, 170);
+    CGRect modalRect = CGRectMake(50, [[UIScreen mainScreen] bounds].size.height / 2 - 125, 200, 170);
     scoreBoardView = [[VSScoreBoardView alloc] initWithFrame:modalRect finished:[vocabulariesToRecite count] == 0];
     CATransition *applicationLoadViewIn =[CATransition animation];
     [applicationLoadViewIn setDuration:0.2f];
