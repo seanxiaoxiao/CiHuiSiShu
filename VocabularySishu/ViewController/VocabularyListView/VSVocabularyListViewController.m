@@ -550,7 +550,7 @@
 {
     [MobClick event:EVENT_SHOW_SCORE];
 
-    CGRect modalRect = CGRectMake(50, 105, 200, 170);
+    CGRect modalRect = CGRectMake(50, [[UIScreen mainScreen] bounds].size.height / 2 - 125, 200, 170);
     scoreBoardView = [[VSScoreBoardView alloc] initWithFrame:modalRect finished:[vocabulariesToRecite count] == 0];
     CATransition *applicationLoadViewIn =[CATransition animation];
     [applicationLoadViewIn setDuration:0.2f];

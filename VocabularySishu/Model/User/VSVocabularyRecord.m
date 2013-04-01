@@ -81,12 +81,12 @@
 
 - (BOOL)rememberNotWell
 {
-    return [self.meet integerValue] > 0 && [self.remember doubleValue] >= 30 && [self.remember doubleValue] < 65;
+    return [self.meet integerValue] > 0 && [self.remember doubleValue] >= 20 && [self.remember doubleValue] < 65;
 }
 
 - (BOOL)rememberBad
 {
-    return [self.meet integerValue] > 0 && [self.remember doubleValue] <= 30;
+    return [self.meet integerValue] > 0 && [self.remember doubleValue] <= 20;
 }
 
 - (void)seeSummary
