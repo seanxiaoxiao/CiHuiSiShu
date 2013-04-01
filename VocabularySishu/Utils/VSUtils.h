@@ -49,7 +49,7 @@
 
 + (void)toGivenList:(VSList *)list;
 
-+ (void)reloadCurrentList:(VSListRecord *)currentListRecord showBad:(BOOL)showBad;
++ (void)reloadCurrentList:(VSListRecord *)currentListRecord;
 
 + (void)showGuidPage;
 

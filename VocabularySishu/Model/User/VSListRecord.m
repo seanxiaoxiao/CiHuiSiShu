@@ -192,7 +192,7 @@
     NSMutableArray *results = nil;
     NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"VSListVocabularyRecord" inManagedObjectContext:[VSUtils currentMOContext]];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(listRecord = %@ AND vocabularyRecord.remember < 80 AND lastStatus != 1)", self];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(listRecord = %@ AND vocabularyRecord.remember < 65 AND lastStatus != 1)", self];
     [request setPredicate:predicate];
     [request setRelationshipKeyPathsForPrefetching:[NSArray arrayWithObject:@"vocabularyRecord"]];
     [request setEntity:entityDescription];
@@ -206,7 +206,7 @@
     NSError *error = nil;
     NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"VSListVocabularyRecord" inManagedObjectContext:[VSUtils currentMOContext]];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(listRecord = %@ AND vocabularyRecord.remember < 80)", self];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(listRecord = %@ AND vocabularyRecord.remember < 65)", self];
     [request setPredicate:predicate];
     [request setRelationshipKeyPathsForPrefetching:[NSArray arrayWithObject:@"vocabularyRecord"]];
     [request setEntity:entityDescription];

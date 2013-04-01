@@ -23,7 +23,7 @@
 @synthesize countDownTimer;
 
 
-- (id)initWithFrame:(CGRect)frame withListRecord:(VSListRecord *)listRecord showBad:(BOOL)showBad
+- (id)initWithFrame:(CGRect)frame withListRecord:(VSListRecord *)listRecord
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -69,12 +69,7 @@
         self.countDownTimeLabel.font = [UIFont boldSystemFontOfSize:15];
         [self addSubview:self.countDownTimeLabel];
         
-        if (showBad) {
-            self.wordsTotal = [self.record vocabulariesNotWellCount];
-        }
-        else {
-            self.wordsTotal = [self.record wordsTotal];
-        }
+        self.wordsTotal = [self.record wordsTotal];
         
         if (self.record.finishPlanDate != nil) {
             [self startTimer];

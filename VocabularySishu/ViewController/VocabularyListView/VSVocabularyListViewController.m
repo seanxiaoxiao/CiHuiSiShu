@@ -49,13 +49,11 @@
 @synthesize pickerView;
 @synthesize pickerAreaView;
 @synthesize promptLabel;
-@synthesize showBad;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil showBad:(BOOL)_showBad
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.showBad = _showBad;
         if (![currentListRecord isHistoryList]) {
             self.listToday = [VSList createAndGetHistoryList];
         }
@@ -63,13 +61,8 @@
         [currentListRecord resetFinishPlanDate];
 
         self.clearingCount = 0;
-        
-        if (self.showBad) {
-            self.vocabulariesToRecite = [self.currentListRecord vocabulariesNotWell];;
-        }
-        else {
-            self.vocabulariesToRecite = [self.currentListRecord vocabulariesToRecite];;
-        }
+
+        self.vocabulariesToRecite = [self.currentListRecord vocabulariesToRecite];;
         self.cellStatus = [[NSMutableDictionary alloc] init];
         for (int i = 0; i < [self.vocabulariesToRecite count]; i++) {
             VSListVocabularyRecord *listVocabulary = [self.vocabulariesToRecite objectAtIndex:i];
@@ -115,23 +108,13 @@
     [headerLabels addSubview:subLabel];
     self.navigationItem.titleView = headerLabels;
     
-    NSMutableString *subLabelText = nil;
     if (currentList != nil) {
         label.text = [currentList repoCategory];
-        subLabelText = [[currentList subName] mutableCopy];
-        if (self.showBad) {
-            [subLabelText appendString:@" (不靠谱)"];
-        }
-        subLabel.text = subLabelText;
-        
+        subLabel.text = [currentList subName];
     }
     else {
         label.text = @"复习";
-        subLabelText = [currentListRecord.name mutableCopy];
-        if (self.showBad) {
-            [subLabelText appendString:@" (不靠谱)"];
-        }
-        subLabel.text = subLabelText;
+        subLabel.text = currentListRecord.name;
     }
 }
 
@@ -146,19 +129,6 @@
     [scoreBoardButton addTarget:self action:@selector(toggleScoreBoard) forControlEvents:UIControlEventTouchUpInside];
     [rightView addSubview:scoreBoardButton];
     
-//    UIImage *badSwitchButtonImage = nil;
-//    if (self.showBad) {
-//        badSwitchButtonImage = [VSUtils fetchImg:@"ButtonBad"];
-//    }
-//    else {
-//        badSwitchButtonImage = [VSUtils fetchImg:@"ButtonAll"];
-//    }
-//    CGRect badSwitchButtonFrame = CGRectMake(0, 0, badSwitchButtonImage.size.width, badSwitchButtonImage.size.height);
-//    UIButton *badSwitchButton = [[UIButton alloc] initWithFrame:badSwitchButtonFrame];
-//    [badSwitchButton setBackgroundImage:badSwitchButtonImage forState:UIControlStateNormal];
-//    [badSwitchButton addTarget:self action:@selector(toggleBadSwitch) forControlEvents:UIControlEventTouchUpInside];
-//    [rightView addSubview:badSwitchButton];
-
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightView];
 }
 
@@ -188,6 +158,8 @@
     __autoreleasing UIGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanning:)];
     panGesture.delegate = self;
     [self.view addGestureRecognizer:panGesture];
+    
+
 }
 
 - (void) initPickerView
@@ -254,7 +226,7 @@
 
     [self initTitle];
     
-    self.headerView = [[VSFloatPanelView alloc] initWithFrame:CGRectMake(0, 0, 320, 80) withListRecord:self.currentListRecord showBad:self.showBad];
+    self.headerView = [[VSFloatPanelView alloc] initWithFrame:CGRectMake(0, 0, 320, 80) withListRecord:self.currentListRecord ];
     self.headerView.wordsRemain = [vocabulariesToRecite count];
     [self.headerView updateWordsCount];
     self.headerView.backgroundColor = [UIColor clearColor];
@@ -400,6 +372,12 @@
 
 #pragma mark - Gesture Related
 
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    return YES;
+}
+
+
 - (BOOL)gestureRecognizerShouldBegin:(UIPanGestureRecognizer *)gestureRecognizer
 {
     if (scoreBoardView != nil) {
@@ -418,7 +396,6 @@
     }
     //Horizontal Gesture.
     if (fabsf(translation.x) > fabsf(translation.y)) {
-        [self.tableView removeGestureRecognizer:gestureRecognizer];
         return YES;
     }
     return NO;
@@ -430,15 +407,17 @@
     switch ([gestureRecognizer state]) {
         case UIGestureRecognizerStateBegan:
             [self startDragging:gestureRecognizer];
+            self.tableView.scrollEnabled = NO;
             break;
         case UIGestureRecognizerStateChanged:
             [self doDrag:gestureRecognizer];
             break;
         case UIGestureRecognizerStateEnded:
-            [self.tableView setUserInteractionEnabled:YES];
+            self.tableView.scrollEnabled = YES;
             [self stopDragging:gestureRecognizer];
             break;
         case UIGestureRecognizerStateCancelled:
+            self.tableView.scrollEnabled = YES;
             [self stopDragging:gestureRecognizer];
             break;
         default:
@@ -451,6 +430,7 @@
     CGPoint point = [gestureRecognizer locationInView:self.tableView];
     self.touchPoint = point;
     if ([self.tableView pointInside:point withEvent:nil]) {
+
         NSIndexPath* indexPath = [self.tableView indexPathForRowAtPoint:point];
         VSVocabularyCell* cell = (VSVocabularyCell *)[self.tableView cellForRowAtIndexPath:indexPath];
         if(cell != nil) {
@@ -460,7 +440,6 @@
         CGPoint translation = [gestureRecognizer translationInView:draggedCell];
         if (!cell.curlUp && !draggedCell.curling && translation.x > 0 && !draggedCell.clearing) {
             self.clearingCount++;
-            self.tableView.scrollEnabled = NO;
             [cell showClearView];
         }
     }
@@ -489,7 +468,7 @@
     if (draggedCell != nil) {
         [self dismissActionBubble];
         [self dismissDetailBubble];
-        
+        self.tableView.scrollEnabled = YES;
         CGPoint point = [gestureRecognizer locationInView:self.tableView];
         CGPoint translation = [gestureRecognizer translationInView:draggedCell];
         
@@ -497,9 +476,6 @@
             CGFloat margin = translation.x;
             BOOL clear = fabs(margin) > 80;
             [draggedCell clearVocabulry:clear];
-            if (!clear) {
-                [self resetScroll];
-            }
         }
         else if (!draggedCell.curlUp && !draggedCell.clearing && translation.x < 0) {
             [draggedCell curlUp:point.x];
@@ -540,7 +516,6 @@
         [self.headerView clearWord];
         [vocabulariesToRecite removeObjectAtIndex:index];
         [self updateVocabularyTable:index];
-        [self resetScroll];
         [self processAfterSwipe];
     }
 }
@@ -561,14 +536,6 @@
     }
 }
 
-- (void)resetScroll
-{
-    self.clearingCount--;
-    if (self.clearingCount == 0) {
-        self.tableView.scrollEnabled = YES;
-    }
-}
-
 - (void)toggleScoreBoard
 {
     if (scoreBoardView == nil) {
@@ -579,21 +546,11 @@
     }
 }
 
-- (void)toggleBadSwitch
-{
-    if (self.showBad) {
-        [VSUtils reloadCurrentList:self.currentListRecord showBad:NO];
-    }
-    else {
-        [VSUtils reloadCurrentList:self.currentListRecord showBad:YES];
-    }
-}
-
 - (void)showScroeBoard
 {
     [MobClick event:EVENT_SHOW_SCORE];
 
-    CGRect modalRect = CGRectMake(50, [[UIScreen mainScreen] bounds].size.height / 2 - 125, 200, 170);
+    CGRect modalRect = CGRectMake(50, 105, 200, 170);
     scoreBoardView = [[VSScoreBoardView alloc] initWithFrame:modalRect finished:[vocabulariesToRecite count] == 0];
     CATransition *applicationLoadViewIn =[CATransition animation];
     [applicationLoadViewIn setDuration:0.2f];
@@ -639,7 +596,7 @@
 {
     [MobClick event:EVENT_RETRY];
     [self.currentListRecord clearVocabularyStatus];
-    [VSUtils reloadCurrentList:self.currentListRecord showBad:NO];
+    [VSUtils reloadCurrentList:self.currentListRecord];
 }
 
 - (void)nextList

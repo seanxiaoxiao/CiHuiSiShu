@@ -23,6 +23,9 @@
 #define SET_PLAN_FINISH_DATE @"set_plan_finish_date"
 #define SHOW_PICKER @"show_picker"
 #define SHARE_AFTER_FINISH @"share_after_finish"
+#define DONE_CURL_UP @"done_curl_up"
+#define DONE_CURL_DOWN @"done_curl_down"
+#define DONE_CLEAR @"done_clear"
 
 #define SHORTTERM_REVIEW_INTERVAL 8 * 60 * 60;
 #define LONGTERM_REVIEW_INTERVAL 1 * 24 * 60 * 60;

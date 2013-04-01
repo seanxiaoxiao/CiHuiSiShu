@@ -43,7 +43,7 @@
 
 - (void)remembered
 {
-    int incr = 10;
+    int incr = 15;
     self.remember = [NSNumber numberWithInt:[self.remember intValue] + incr];
     if ([self.remember intValue] > 100) {
         self.remember = [NSNumber numberWithInt:100];
@@ -81,7 +81,7 @@
 
 - (BOOL)rememberNotWell
 {
-    return [self.meet integerValue] > 0 && [self.remember doubleValue] >= 30 && [self.remember doubleValue] < 80;
+    return [self.meet integerValue] > 0 && [self.remember doubleValue] >= 30 && [self.remember doubleValue] < 65;
 }
 
 - (BOOL)rememberBad
@@ -96,7 +96,7 @@
 
 - (BOOL)rememberWell
 {
-    return [self.remember intValue] >= 80;
+    return [self.remember intValue] >= 65;
 }
 
 

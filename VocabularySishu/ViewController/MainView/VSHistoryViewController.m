@@ -118,7 +118,7 @@
     [list initListRecord];
     vocabularyListViewController.currentList = list;
     vocabularyListViewController.currentListRecord = list.listRecord;
-    vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil showBad:NO];
+    vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
     [self.navigationController pushViewController:vocabularyListViewController animated:YES];
 }
 
@@ -135,7 +135,7 @@
     VSVocabularyListViewController *vocabularyListViewController = [VSVocabularyListViewController alloc];
     VSListRecord *selectedList = [historyLists objectAtIndex:indexPath.row];
     vocabularyListViewController.currentListRecord = selectedList;
-    vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil showBad:NO];
+    vocabularyListViewController = [vocabularyListViewController initWithNibName:@"VSVocabularyListViewController" bundle:nil];
     [self.navigationController pushViewController:vocabularyListViewController animated:YES];
 }
 

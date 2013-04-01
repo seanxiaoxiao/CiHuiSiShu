@@ -395,5 +395,23 @@
     return [self.statusDictionary objectForKey:self.vocabularyRecord.spell];
 }
 
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    
+    UITouch *touch = [touches anyObject];
+    
+    NSUInteger tapCount = [touch tapCount];
+    CGPoint location = [touch locationInView:touch.view];
+    [self initBeforeCurlup];
+    
+    if (location.x < 50 && tapCount == 1 && !self.curlUp) {
+        [self clearVocabulry:YES];
+    }
+    else if (location.x > 280 && tapCount == 1 && !self.curlUp) {
+        [self curlUp:169];
+    }
+    [super touchesEnded:touches withEvent:event];
+}
+
 
 @end
