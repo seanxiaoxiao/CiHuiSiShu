@@ -395,17 +395,35 @@
     return [self.statusDictionary objectForKey:self.vocabularyRecord.spell];
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [touches anyObject];
+    
+    CGPoint location = [touch locationInView:self];
+    NSUInteger tapCount = [touch tapCount];
+
+    if (location.x < 50 && tapCount == 1 && self.curlUp) {
+        return;
+    }
+    else {
+        [super touchesBegan:touches withEvent:event];
+    }
+}
+
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     
     UITouch *touch = [touches anyObject];
     
     NSUInteger tapCount = [touch tapCount];
-    CGPoint location = [touch locationInView:touch.view];
+    CGPoint location = [touch locationInView:self];
     [self initBeforeCurlup];
-    
+
     if (location.x < 50 && tapCount == 1 && !self.curlUp) {
         [self clearVocabulry:YES];
+    }
+    else if (location.x < 50 && tapCount == 1 && self.curlUp) {
+        [self curlDown:60];
     }
     else if (location.x > 280 && tapCount == 1 && !self.curlUp) {
         [self curlUp:169];
