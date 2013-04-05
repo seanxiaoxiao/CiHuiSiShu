@@ -838,6 +838,15 @@
 		008243091671BF1400FF1631 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 00333FBE1631345900F7871C /* iTunesArtwork */; };
 		0082430A1671BF1400FF1631 /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00CA905E164F62F600876164 /* iRate.bundle */; };
 		008243141671C09700FF1631 /* settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 008243131671C09700FF1631 /* settings.plist */; };
+		0082DF00170F56FC0006BD83 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0082DEFF170F56FC0006BD83 /* MediaPlayer.framework */; };
+		0082DF01170F57630006BD83 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0082DEFF170F56FC0006BD83 /* MediaPlayer.framework */; };
+		0082DF02170F57660006BD83 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0082DEFF170F56FC0006BD83 /* MediaPlayer.framework */; };
+		0082DF03170F576C0006BD83 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0082DEFF170F56FC0006BD83 /* MediaPlayer.framework */; };
+		0082DF04170F57740006BD83 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0082DEFF170F56FC0006BD83 /* MediaPlayer.framework */; };
+		0082DF05170F577A0006BD83 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0082DEFF170F56FC0006BD83 /* MediaPlayer.framework */; };
+		0082DF06170F577D0006BD83 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0082DEFF170F56FC0006BD83 /* MediaPlayer.framework */; };
+		0082DF07170F57800006BD83 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0082DEFF170F56FC0006BD83 /* MediaPlayer.framework */; };
+		0082DF08170F57840006BD83 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0082DEFF170F56FC0006BD83 /* MediaPlayer.framework */; };
 		008570701650341D003861DB /* UserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0085706E1650341D003861DB /* UserModel.xcdatamodeld */; };
 		008570711650341D003861DB /* UserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0085706E1650341D003861DB /* UserModel.xcdatamodeld */; };
 		008570721650341D003861DB /* UserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0085706E1650341D003861DB /* UserModel.xcdatamodeld */; };
@@ -1816,6 +1825,7 @@
 		008243191671C1A000FF1631 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		0082431A1671C1A000FF1631 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		0082431B1671C1A000FF1631 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
+		0082DEFF170F56FC0006BD83 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		0085706F1650341D003861DB /* UserModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserModel.xcdatamodel; sourceTree = "<group>"; };
 		0085707416509112003861DB /* VSListRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSListRecord.h; path = Model/User/VSListRecord.h; sourceTree = "<group>"; };
 		0085707516509112003861DB /* VSListRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSListRecord.m; path = Model/User/VSListRecord.m; sourceTree = "<group>"; };
@@ -1935,6 +1945,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0082DF03170F576C0006BD83 /* MediaPlayer.framework in Frameworks */,
 				000870DA1675A0F600042A38 /* AVFoundation.framework in Frameworks */,
 				000870DB1675A0F600042A38 /* MessageUI.framework in Frameworks */,
 				000870DC1675A0F600042A38 /* MobileCoreServices.framework in Frameworks */,
@@ -1956,6 +1967,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0082DF07170F57800006BD83 /* MediaPlayer.framework in Frameworks */,
 				0017178E16B7B61200C49BE0 /* AVFoundation.framework in Frameworks */,
 				0017178F16B7B61200C49BE0 /* MessageUI.framework in Frameworks */,
 				0017179016B7B61200C49BE0 /* MobileCoreServices.framework in Frameworks */,
@@ -1979,6 +1991,7 @@
 			files = (
 				00201E0015CFBAD30089B8FA /* AVFoundation.framework in Frameworks */,
 				009397D515D82B7A009AE73E /* MessageUI.framework in Frameworks */,
+				0082DF00170F56FC0006BD83 /* MediaPlayer.framework in Frameworks */,
 				002DBFC11618B41300E788EA /* MobileCoreServices.framework in Frameworks */,
 				008D5DB61618122B0046240B /* SystemConfiguration.framework in Frameworks */,
 				00201E0115CFBAD30089B8FA /* QuartzCore.framework in Frameworks */,
@@ -1998,6 +2011,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0082DF06170F577D0006BD83 /* MediaPlayer.framework in Frameworks */,
 				002D4D9B169CADDF009C4F8E /* AVFoundation.framework in Frameworks */,
 				002D4D9C169CADDF009C4F8E /* MessageUI.framework in Frameworks */,
 				002D4D9D169CADDF009C4F8E /* MobileCoreServices.framework in Frameworks */,
@@ -2048,6 +2062,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0082DF04170F57740006BD83 /* MediaPlayer.framework in Frameworks */,
 				008242B91671BF1400FF1631 /* MobileCoreServices.framework in Frameworks */,
 				008242BA1671BF1400FF1631 /* SystemConfiguration.framework in Frameworks */,
 				008242BB1671BF1400FF1631 /* CFNetwork.framework in Frameworks */,
@@ -2069,6 +2084,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0082DF02170F57660006BD83 /* MediaPlayer.framework in Frameworks */,
 				00A4CF4C1643A47300A94ADD /* MobileCoreServices.framework in Frameworks */,
 				00A4CF4A1643A43200A94ADD /* SystemConfiguration.framework in Frameworks */,
 				00A4CF491643A42900A94ADD /* CFNetwork.framework in Frameworks */,
@@ -2091,6 +2107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0082DF01170F57630006BD83 /* MediaPlayer.framework in Frameworks */,
 				00BDE57915CF9B9400BC205C /* AVFoundation.framework in Frameworks */,
 				009397D615D82C5E009AE73E /* MessageUI.framework in Frameworks */,
 				008D5DB5161812290046240B /* SystemConfiguration.framework in Frameworks */,
@@ -2112,6 +2129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0082DF05170F577A0006BD83 /* MediaPlayer.framework in Frameworks */,
 				00C8D3D8168586CC00CA3880 /* AVFoundation.framework in Frameworks */,
 				00C8D3D9168586CC00CA3880 /* MessageUI.framework in Frameworks */,
 				00C8D3DA168586CC00CA3880 /* MobileCoreServices.framework in Frameworks */,
@@ -2133,6 +2151,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0082DF08170F57840006BD83 /* MediaPlayer.framework in Frameworks */,
 				00D58BF516D858DE005C1A7E /* AVFoundation.framework in Frameworks */,
 				00D58BF616D858DE005C1A7E /* MessageUI.framework in Frameworks */,
 				00D58BF716D858DE005C1A7E /* MobileCoreServices.framework in Frameworks */,
@@ -2487,6 +2506,7 @@
 		00701E2E1553CBCE00D30018 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0082DEFF170F56FC0006BD83 /* MediaPlayer.framework */,
 				002D4C20169C08DD009C4F8E /* GameKit.framework */,
 				002DBFBF1618B40500E788EA /* MobileCoreServices.framework */,
 				002DBFBA1618B2DC00E788EA /* CFNetwork.framework */,

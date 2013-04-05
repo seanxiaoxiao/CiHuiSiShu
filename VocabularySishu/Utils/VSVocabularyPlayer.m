@@ -12,6 +12,7 @@
 #import "ASIHTTPRequest.h"
 #import "ASIDownloadCache.h"
 #import <AVFoundation/AVAudioPlayer.h>
+#import <MediaPlayer/MPMusicPlayerController.h>
 
 static VSVocabularyPlayer *player = nil;
 
@@ -49,9 +50,10 @@ static VSVocabularyPlayer *player = nil;
     
     if (statusCode == 200 || statusCode == 301 || statusCode == 302 || statusCode == 307) {
         NSError *error = [self.request error];
+
         self.audioPlayer = [[AVAudioPlayer alloc] initWithData:responseData error:&error];
         self.audioPlayer.numberOfLoops = 0;
-        self.audioPlayer.volume = 1.0f;
+        self.audioPlayer.volume = [MPMusicPlayerController iPodMusicPlayer].volume;
         [self.audioPlayer prepareToPlay];
         [self.audioPlayer play];
     }
