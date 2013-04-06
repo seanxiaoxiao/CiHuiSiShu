@@ -84,6 +84,7 @@
     bool existFile = [[NSFileManager defaultManager] fileExistsAtPath:[storeURL path]];
 
     [VSUtils copySQLite];
+    [VSDataUtil fixData];
     [self initEnv];
    
     if ([[VSAppRecord getAppRecord].migrated isEqualToNumber:[NSNumber numberWithBool:NO]]) {
