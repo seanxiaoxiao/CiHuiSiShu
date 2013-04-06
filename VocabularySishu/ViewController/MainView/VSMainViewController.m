@@ -88,6 +88,9 @@
         VSRepoViewController *controller = [[VSRepoViewController alloc] initWithNibName:nil bundle:nil];
         [controllers addObject:controller];
         VSRepository *currentRepo = [allRepos objectAtIndex:i];
+        if ([currentRepo.wordsTotal intValue] == 0) {
+            [VSDataUtil fixData];
+        }
         [controller initWithCurrentRepo:currentRepo];
         controller.view.frame = frame;
         [self.scrollView addSubview:controller.view];
