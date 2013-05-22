@@ -32,7 +32,7 @@ static VSVocabularyPlayer *player = nil;
 
 - (void)play:(VSVocabulary *)vocabulary
 {
-    if ([[Reachability reachabilityForInternetConnection] isReachableViaWiFi]) {
+    if ([[Reachability reachabilityForInternetConnection] isReachable]) {
         self.request = [ASIHTTPRequest requestWithURL:[vocabulary audioURL]];
         [request setDownloadCache:[ASIDownloadCache sharedCache]];
         [request setCachePolicy:ASIAskServerIfModifiedCachePolicy|ASIFallbackToCacheIfLoadFailsCachePolicy];

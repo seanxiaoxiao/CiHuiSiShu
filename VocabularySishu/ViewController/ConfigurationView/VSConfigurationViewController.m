@@ -105,7 +105,7 @@
         cell.textLabel.text = [contactContents objectAtIndex:indexPath.row];
     }
     else if (SETTING_SECTION == indexPath.section) {
-        cell.textLabel.text = @"翻开后发音（Wifi）";
+        cell.textLabel.text = @"翻开后发音";
         cell.textLabel.textAlignment = UITextAlignmentLeft;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         toggleSwitch = [[UISwitch alloc] init];

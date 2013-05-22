@@ -55,7 +55,7 @@
     [self.navigationItem setLeftBarButtonItem:backButtonItem];
     self.scrollView.frame = CGRectMake(0, self.scrollView.frame.origin.y, 320, [[UIScreen mainScreen] bounds].size.height - 98);
     
-    if ([[Reachability reachabilityForInternetConnection] isReachableViaWiFi]) {
+    if ([[Reachability reachabilityForInternetConnection] isReachable]) {
         UIImage* playImage = [VSUtils fetchImg:@"SoundButton"];
         CGRect playFrame = CGRectMake(0, 0, playImage.size.width, playImage.size.height);
         self.playButton = [[UIButton alloc] initWithFrame:playFrame];
