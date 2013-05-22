@@ -11,6 +11,7 @@
 #import "Reachability.h"
 #import "ASIHTTPRequest.h"
 #import "ASIDownloadCache.h"
+#import <AVFoundation/AVAudioSession.h>
 #import <AVFoundation/AVAudioPlayer.h>
 #import <MediaPlayer/MPMusicPlayerController.h>
 
@@ -25,6 +26,9 @@ static VSVocabularyPlayer *player = nil;
         [ASIHTTPRequest setShouldUpdateNetworkActivityIndicator:NO];
         [ASIHTTPRequest setDefaultCache:[ASIDownloadCache sharedCache]];
         player = [[VSVocabularyPlayer alloc] init];
+        [[AVAudioSession sharedInstance] setDelegate: self];
+        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error: nil];
+
     }
     return player;
 }
