@@ -34,4 +34,8 @@
 
 + (void)readWriteMigrate;
 
++ (void)clearEtymology;
+
++ (void)initSentence;
+
 @end

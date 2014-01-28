@@ -41,6 +41,8 @@
 
 + (NSArray *)allRecords;
 
+- (NSArray *)sentences;
+
 @end
 
 @interface VSVocabulary (CoreDataGeneratedAccessors)

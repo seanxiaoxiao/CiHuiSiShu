@@ -17,8 +17,7 @@
 @interface VSVocabularyViewController : UIViewController {
     IBOutlet UILabel *vocabularyLabel;
     IBOutlet UILabel *phoneticLabel;
-    IBOutlet UILabel *etymologyLabel;
-    IBOutlet UILabel *etymologyContentLabel;
+    IBOutlet UILabel *sentenceLabel;
     IBOutlet UILabel *imageLabel;
     IBOutlet UIImageView *vocabularyImageView;
     IBOutlet UILabel *mwLabel;
@@ -27,8 +26,7 @@
 
 @property (nonatomic, strong) UILabel *vocabularyLabel;
 @property (nonatomic, strong) UILabel *phoneticLabel;
-@property (nonatomic, strong) UILabel *etymologyLabel;
-@property (nonatomic, strong) UILabel *etymologyContentLabel;
+@property (nonatomic, strong) UILabel *sentenceLabel;
 @property (nonatomic, strong) UIButton *playButton;
 @property (nonatomic, strong) VSVocabulary *vocabulary;
 @property (nonatomic, strong) UILabel *imageLabel;

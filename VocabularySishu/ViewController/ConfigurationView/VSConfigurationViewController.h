@@ -19,10 +19,11 @@
 #define SHARE_TO 0
 #define ACCOUNT_MANAGE 1
 
-#define GUIDE 0
-#define MORE 1
-#define RATEUS 2
-#define FEADBACK 3
+#define IAP 0
+#define GUIDE 1
+#define MORE 2
+#define RATEUS 3
+#define FEEDBACK 4
 #define EMAIL_SUPPORTING @"vss@gefostudio.com"
 
 #define IS_IOS5_AND_PLUS			( [ [ [ UIDevice currentDevice ] systemVersion ] compare: @"5.0" options: NSNumericSearch ] != NSOrderedAscending )
@@ -33,7 +34,7 @@
 
 @interface VSConfigurationViewController : UITableViewController<MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate>
 
-@property (nonatomic, retain) NSArray *contactContents;
+@property (nonatomic, retain) NSArray *moreContents;
 @property (nonatomic, retain) NSArray *shareContents;
 @property (nonatomic, retain) UILabel *infoLabel;
 @property (nonatomic, retain) UISwitch *toggleSwitch;

@@ -8,6 +8,7 @@
 
 #import "VSVocabulary.h"
 #import "VSMeaning.h"
+#import "SBJsonParser.h"
 #import <math.h>
 
 @implementation VSVocabulary
@@ -78,5 +79,10 @@
     return self.record;
 }
 
+- (NSArray *)sentences
+{
+    SBJsonParser *parser = [[SBJsonParser alloc] init];
+    return [parser objectWithString:self.etymology];
+}
 
 @end

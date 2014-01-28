@@ -15,9 +15,14 @@
 #import "VSVocabularyCell.h"
 #import "VSScoreBoardView.h"
 #import "TipsBubble.h"
+#import "GADInterstitialDelegate.h"
 
-@interface VSVocabularyListViewController : UIViewController<UIGestureRecognizerDelegate, UIPickerViewDataSource, UIPickerViewDelegate> {
+@class GADInterstitial;
+@class GADBannerView;
+
+@interface VSVocabularyListViewController : UIViewController<UIGestureRecognizerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, GADInterstitialDelegate> {
     IBOutlet UITableView *tableView;
+    int countOnStart;
 }
 
 @property (nonatomic, retain) NSMutableArray *vocabulariesToRecite;
@@ -40,6 +45,7 @@
 @property (nonatomic, retain) UIPickerView *pickerView;
 @property (nonatomic, retain) UIView *pickerAreaView;
 @property (nonatomic, retain) UILabel *promptLabel;
-
+@property (nonatomic, retain) GADInterstitial *interstitial;
+@property (nonatomic, retain) GADBannerView *bannerView;
 
 @end

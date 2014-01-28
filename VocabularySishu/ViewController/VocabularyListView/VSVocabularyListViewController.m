@@ -23,6 +23,8 @@
 #import "VSVocabularyPlayer.h"
 #import "UMSocialData.h"
 #import "UMSocialControllerService.h"
+#import "GADInterstitial.h"
+#import "GADBannerView.h"
 
 @interface VSVocabularyListViewController ()
 
@@ -62,7 +64,8 @@
 
         self.clearingCount = 0;
 
-        self.vocabulariesToRecite = [self.currentListRecord vocabulariesToRecite];;
+        self.vocabulariesToRecite = [self.currentListRecord vocabulariesToRecite];
+        countOnStart = [self.vocabulariesToRecite count];
         self.cellStatus = [[NSMutableDictionary alloc] init];
         for (int i = 0; i < [self.vocabulariesToRecite count]; i++) {
             VSListVocabularyRecord *listVocabulary = [self.vocabulariesToRecite objectAtIndex:i];
@@ -239,11 +242,25 @@
     
     UIView *tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 63)];
     self.tableView.tableHeaderView = tableHeaderView;
+    
+    if (![VSUtils shouldHideAd]) {
+        _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
+        _bannerView.adUnitID = @"ca-app-pub-3320312069359444/9451773612";
+        _bannerView.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 50 - 64, 320, 50);
+        _bannerView.rootViewController = self;
+        [self.view addSubview:_bannerView];
+        [self.view bringSubviewToFront:_bannerView];
+        GADRequest *request = [GADRequest request];
+        [_bannerView loadRequest:request];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    if (![VSUtils shouldHideAd]) {
+        [self loadInterstitial];
+    }
 }
 
 - (void)viewDidUnload
@@ -533,6 +550,10 @@
     if ([self.vocabulariesToRecite count] == 0) {
         [self.currentListRecord finish];
         [self toggleScoreBoard];
+        [self showAdInstitial];
+    }
+    else if ((countOnStart - [self.vocabulariesToRecite count]) % 30 == 0) {
+        [self showAdInstitial];
     }
 }
 
@@ -662,5 +683,38 @@
     
 }
 
+- (void)showAdInstitial
+{
+    if (![VSUtils shouldHideAd]) {
+        if (self.interstitial.isReady) {
+            [self.interstitial presentFromRootViewController:self];
+        }
+    }
+}
+
+- (void)interstitialDidReceiveAd:(GADInterstitial *)ad
+{
+
+}
+
+- (void)interstitialDidDismissScreen:(GADInterstitial *)interstitial
+{
+    [self reloadInterstitial];
+}
+
+- (void)reloadInterstitial
+{
+    self.interstitial = nil;
+    [self loadInterstitial];
+}
+
+- (void)loadInterstitial
+{
+    self.interstitial = [[GADInterstitial alloc] init];
+    self.interstitial.adUnitID = @"ca-app-pub-3320312069359444/7975040410";
+    self.interstitial.delegate = self;
+    GADRequest *request = [GADRequest request];
+    [self.interstitial loadRequest:request];
+}
 
 @end

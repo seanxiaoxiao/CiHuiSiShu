@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C100A47C-4655-4BE9-91C7-BF70C3B3901A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>VocabularySishu</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>91C36379-7228-4E2C-A2DE-4FD97177CC91</key>
+		<string>ssh://git.gefostudio.com/~/VocabularySishu.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>VocabularySishu.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>91C36379-7228-4E2C-A2DE-4FD97177CC91</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://git.gefostudio.com/~/VocabularySishu.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>91C36379-7228-4E2C-A2DE-4FD97177CC91</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>91C36379-7228-4E2C-A2DE-4FD97177CC91</string>
+			<key>IDESourceControlWCCName</key>
+			<string>VocabularySishu</string>
+		</dict>
+	</array>
+</dict>
+</plist>

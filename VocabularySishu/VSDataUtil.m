@@ -31,6 +31,16 @@ NSMutableDictionary *vocabularyMap;
     }
 }
 
++ (void)clearEtymology
+{
+    NSArray *allVocabularies = [VSVocabulary allRecords];
+    for (VSVocabulary *v in allVocabularies) {
+        NSLog(@"%@", v.etymology);
+        v.etymology = nil;
+    }
+    [VSUtils saveEntity];
+}
+
 + (void)updateRepoData
 {
     repoMap = [[NSMutableDictionary alloc] init];
@@ -255,8 +265,6 @@ NSMutableDictionary *vocabularyMap;
         vocabulary.spell = [vocabularyInfo objectForKey:@"spell"];
         vocabulary.phonetic = [vocabularyInfo objectForKey:@"phonetic"];        
         vocabulary.etymology = [vocabularyInfo objectForKey:@"etymology"];
-//        vocabulary.type = [vocabularyInfo objectForKey:@"type"];
-//        vocabulary.audioLink = [vocabularyInfo objectForKey:@"audioLink"];
         vocabulary.summary = [vocabularyInfo objectForKey:@"summary"];
         vocabulary.meet = [NSNumber numberWithInt:0];
         vocabulary.remember = [NSNumber numberWithInt:50];
@@ -628,6 +636,44 @@ NSMutableDictionary *vocabularyMap;
     }
     VSAppRecord *appRecord = [NSEntityDescription insertNewObjectForEntityForName:@"VSAppRecord" inManagedObjectContext:[VSUtils currentMOContext]];
     appRecord.migrated = [NSNumber numberWithBool:YES];
+    [VSUtils saveEntity];
+}
+
++ (void)initSentence
+{
+    vocabularyMap = [[NSMutableDictionary alloc] init];
+    NSArray *vocs = [VSVocabulary allRecords];
+    for (VSVocabulary *voc in vocs) {
+        [vocabularyMap setObject:voc forKey:voc.spell];
+    }
+    
+    NSBundle *bundle = [NSBundle mainBundle];
+    NSString *sentenceData = [bundle pathForResource:@"sentence" ofType:@"txt"];
+    NSFileHandle* file = [NSFileHandle fileHandleForReadingAtPath:sentenceData];
+    NSData* data = [file readDataToEndOfFile];
+    [file closeFile];
+    
+    SBJsonParser *parser = [[SBJsonParser alloc] init];
+    NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    
+    NSArray *sentences = [jsonString componentsSeparatedByString:@"\n"];
+    for (int i = 0; i < [sentences count]; i++) {
+        NSArray *sentenceInfos = [parser objectWithString:[sentences objectAtIndex:i]];
+        NSMutableArray *results = [[NSMutableArray alloc] init];
+        NSString *spell = nil;
+        for (int j = 0; j < [sentenceInfos count]; j++) {
+            NSDictionary *sentenceInfo = [sentenceInfos objectAtIndex:j];
+            spell = [sentenceInfo objectForKey:@"vocabulary"];
+            NSMutableDictionary *sentence = [[NSMutableDictionary alloc] init];
+            [sentence setObject:[sentenceInfo objectForKey:@"sentence"] forKey:@"sentence"];
+            [sentence setObject:[sentenceInfo objectForKey:@"meaning"] forKey:@"meaning"];
+            [results addObject:sentence];
+        }
+        if (spell != nil) {
+            VSVocabulary *v = [vocabularyMap objectForKey:spell];
+            v.etymology = [results JSONRepresentation];
+        }
+    }
     [VSUtils saveEntity];
 }
 

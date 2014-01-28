@@ -36,7 +36,7 @@ static VSVocabularyPlayer *player = nil;
 
 - (void)play:(VSVocabulary *)vocabulary
 {
-    if ([[Reachability reachabilityForInternetConnection] isReachable]) {
+    if ([[Reachability reachabilityForInternetConnection] isReachable] || [[Reachability reachabilityForLocalWiFi] isReachable]) {
         self.request = [ASIHTTPRequest requestWithURL:[vocabulary audioURL]];
         [request setDownloadCache:[ASIDownloadCache sharedCache]];
         [request setCachePolicy:ASIAskServerIfModifiedCachePolicy|ASIFallbackToCacheIfLoadFailsCachePolicy];
@@ -68,8 +68,6 @@ static VSVocabularyPlayer *player = nil;
 
 - (void)requestFailed:(ASIHTTPRequest *)request
 {
-//    NSError *error = [self.request error];
-//    NSLog(@"%@", [error localizedDescription]);
 }
 
 

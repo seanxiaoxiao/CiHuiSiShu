@@ -77,12 +77,6 @@
     [UMSocialControllerService setSocialConfigDelegate:self];
     [MobClick startWithAppkey:[VSUtils getUMengKey]];
     
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-    NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"VocabularySishu.sqlite"];
-    NSString *urlString = [NSString stringWithFormat:@"file://%@", filePath];
-    NSURL* storeURL = [NSURL URLWithString:urlString];
-    bool existFile = [[NSFileManager defaultManager] fileExistsAtPath:[storeURL path]];
-
     [VSUtils copySQLite];
     [self initEnv];
    
@@ -90,12 +84,6 @@
         [VSDataUtil readWriteMigrate];
     }
     
-    if ([[VSUtils getBundleName] isEqualToString:@"VocabularySishu GRE"] && existFile) {
-        if ([VSUtils addBarronAndSelectedGRE]) {
-            [self reloadSystemData];
-        }
-    }
-
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     // Override point for customization after application launch.
@@ -105,12 +93,6 @@
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"initialized_1_4"] ) {
-        [VSUtils showGuidPage];
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"initialized_1_4"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        return YES;
-    }
     
     UILocalNotification *localNotif = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
     if (localNotif && [localNotif.userInfo valueForKey:@"ListRecordName"] != nil) {
@@ -124,6 +106,8 @@
         [navigationController pushViewController:vocabularyListViewController animated:NO];
         [application cancelLocalNotification:localNotif];
     }
+    
+//    [VSDataUtil initSentence];
     
     return YES;
 }
@@ -224,7 +208,7 @@
 
     NSURL *systemModelURL = [[NSBundle mainBundle] URLForResource:@"VocabularySishu" withExtension:@"momd"];
     NSManagedObjectModel *systemModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:systemModelURL];
-
+    
     __managedObjectModel = [NSManagedObjectModel modelByMergingModels:[NSArray arrayWithObjects:userModel, systemModel, nil]];
     return __managedObjectModel;
 }
@@ -239,9 +223,8 @@
     
     NSArray *cachePaths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
     NSString *systemFilePath = [[cachePaths objectAtIndex:0] stringByAppendingPathComponent:@"VocabularySishu.sqlite"];
-
     NSURL* systemStoreURL = [NSURL fileURLWithPath:systemFilePath];
-
+    
     NSArray *docPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *userFilePath = [[docPaths objectAtIndex:0] stringByAppendingPathComponent:@"UserModel.sqlite"];
     NSURL* userStoreURL = [NSURL fileURLWithPath:userFilePath];
@@ -257,6 +240,7 @@
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
+    
     if (![__persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:systemStoreURL options:options error:&error]) {
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();

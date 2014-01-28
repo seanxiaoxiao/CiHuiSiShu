@@ -122,6 +122,18 @@
             [fileManager copyItemAtPath:resourcePath toPath:filePath error:&error];
         }
     }
+    
+    NSString *sentencePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"Sentence.sqlite"];
+    NSString *sentenceUrlString = [NSString stringWithFormat:@"file://%@", sentencePath];
+    NSURL* sentenceStoreURL = [NSURL URLWithString:sentenceUrlString];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:[sentenceStoreURL path]]) {
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        NSError *error;
+        NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"Sentence" ofType:@"sqlite"];
+        if ([[NSFileManager defaultManager] fileExistsAtPath:resourcePath]) {
+            [fileManager copyItemAtPath:resourcePath toPath:sentencePath error:&error];
+        }
+    }
 }
 
 + (BOOL)addBarronAndSelectedGRE
@@ -301,6 +313,11 @@
     NSString *path = [[NSBundle mainBundle] pathForResource:@"settings" ofType:@"plist"];
     NSDictionary *settings = [[NSDictionary alloc] initWithContentsOfFile:path];
     return [settings objectForKey:@"Name"];    
+}
+
++ (BOOL)shouldHideAd
+{
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"shouldHideAd"];
 }
 
 @end

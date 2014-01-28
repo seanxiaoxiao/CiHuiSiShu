@@ -12,13 +12,14 @@
 #import "VSContext.h"
 #import "UMSocialData.h"
 #import "UMSocialControllerService.h"
+#import "InAppPurchase.h"
 
 @interface VSConfigurationViewController ()
 
 @end
 
 @implementation VSConfigurationViewController
-@synthesize contactContents;
+@synthesize moreContents;
 @synthesize infoLabel;
 @synthesize toggleSwitch;
 @synthesize shareContents;
@@ -35,9 +36,23 @@
 {
     [super viewDidLoad];
     self.title = @"设置";
-    contactContents = [NSArray arrayWithObjects:@"使用向导", @"更多系列", @"给词汇私塾评分", @"意见反馈", nil];
+    moreContents = [NSArray arrayWithObjects:@"广告退散", @"使用向导", @"更多系列", @"给词汇私塾评分", @"意见反馈", nil];
     shareContents = [NSArray arrayWithObjects:@"分享到", @"账号中心", nil];
     [self.navigationItem setLeftBarButtonItem:[VSUIUtils makeBackButton:self selector:@selector(goBack)]];
+    
+    // Load store
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    [nc addObserver:self selector:@selector(productsDidLoad) name:kProductDataReadyEvent object:nil];
+    [nc addObserver:self selector:@selector(productsDidLoadFailed) name:kProductDataMissedEvent object:nil];
+    [nc addObserver:self selector:@selector(productPurchaseDidCancel) name:kProductPurchaseCancelled object:nil];
+    [nc addObserver:self selector:@selector(productPurchaseDidSuccess:) name:kProductPurchaseSucceeded object:nil];
+    [nc addObserver:self selector:@selector(productPurchaseDidFailed) name:kProductPurchaseFailed object:nil];
+    
+    if (![InAppPurchase canMakePurchase]) {
+        [self productsDidLoadFailed];
+    } else {
+        [InAppPurchase requestProductsData];
+    }
 }
 
 - (void)goBack
@@ -74,7 +89,7 @@
         return [shareContents count];
     }
     else if (MORE_SECTION == section) {
-        return [contactContents count];
+        return [moreContents count];
     }
     else if (SETTING_SECTION == section) {
         return 1;
@@ -85,14 +100,20 @@
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
 	if ( section == MORE_SECTION ) {
 		NSString* versionNum = [VSUtils getBundleVersion];
-		return [NSString stringWithFormat:@"词汇私塾\nVersion %@\nXiao Xiao -- Direct\nSu Shaowen -- Art\n©2012 - 2013 GeFo Studio", versionNum];
+		return [NSString stringWithFormat:@"新词汇私塾\nVersion %@\nXiao Xiao -- Direct\nSu Shaowen -- Art\n©2012 - 2014 Innorz", versionNum];
 	}
     return nil;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *cellIdentifier = @"Contact";
+    NSString *cellIdentifier = nil;
+    if (SETTING_SECTION == indexPath.section) {
+        cellIdentifier = @"Settings";
+    }
+    else {
+        cellIdentifier = @"Text";        
+    }
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
@@ -102,7 +123,7 @@
         cell.textLabel.text = [shareContents objectAtIndex:indexPath.row];
     }
     else if (MORE_SECTION == indexPath.section) {
-        cell.textLabel.text = [contactContents objectAtIndex:indexPath.row];
+        cell.textLabel.text = [moreContents objectAtIndex:indexPath.row];
     }
     else if (SETTING_SECTION == indexPath.section) {
         cell.textLabel.text = @"翻开后发音";
@@ -137,7 +158,10 @@
         }
     }
     else if (indexPath.section == MORE_SECTION) {
-        if (indexPath.row == GUIDE) {
+        if (indexPath.row == IAP) {
+            [InAppPurchase purchaseProductWithIdentifier:IAPProductIdentifierNoAd];
+        }
+        else if (indexPath.row == GUIDE) {
             [VSUtils showGuidPage];
         }
         else if (indexPath.row == MORE) {
@@ -146,7 +170,7 @@
         else if (indexPath.row == RATEUS) {
             [self voteOnAppStore];
         }
-        else if (indexPath.row == FEADBACK) {
+        else if (indexPath.row == FEEDBACK) {
             [self sendFeedbackFrom:self];
         }
     }
@@ -228,6 +252,31 @@
 		[ [ [ UIAlertView alloc ] initWithTitle: @"邮件发送失败" message: nil delegate: nil cancelButtonTitle: @"嗯，知道了" otherButtonTitles: nil ] show ];
 	}
 	[ controller dismissModalViewControllerAnimated: YES ];
+}
+
+#pragma mark - IAP
+
+- (void)productsDidLoad
+{
+}
+
+- (void)productsDidLoadFailed
+{
+    [[[UIAlertView alloc] initWithTitle: @"意外！" message: @"广告依然在" delegate: nil cancelButtonTitle: @"嗯，知道了" otherButtonTitles: nil] show];    
+}
+
+- (void)productPurchaseDidSuccess:(NSNotification *)notification
+{
+    [[[UIAlertView alloc] initWithTitle: @"耶！" message: @"广告消失了" delegate: nil cancelButtonTitle: @"嗯，知道了" otherButtonTitles: nil] show];
+}
+
+- (void)productPurchaseDidFailed
+{
+    [[[UIAlertView alloc] initWithTitle: @"意外！" message: @"广告依然在" delegate: nil cancelButtonTitle: @"嗯，知道了" otherButtonTitles: nil] show];
+}
+
+- (void)productPurchaseDidCancel
+{
 }
 
 @end

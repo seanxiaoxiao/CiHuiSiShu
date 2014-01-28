@@ -65,4 +65,6 @@
 
 + (BOOL)addBarronAndSelectedGRE;
 
++ (BOOL)shouldHideAd;
+
 @end
