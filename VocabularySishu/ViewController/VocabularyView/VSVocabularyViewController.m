@@ -129,8 +129,52 @@
             countInAttr++;
         }
     }
-    
-    currentHeight = currentHeight;
+        
+    NSArray *sentences = [self.vocabulary sentences];
+    int countInSentence = 1;
+    if ([sentences count] > 0) {
+        self.sentenceLabel.hidden = NO;
+        frame = self.sentenceLabel.frame;
+        frame.origin.y = currentHeight;
+        self.sentenceLabel.frame = frame;
+        currentHeight = currentHeight + frame.size.height + 5;
+        
+        for (NSDictionary *sentenceInfo in sentences) {
+            UILabel *countLabel = [[UILabel alloc] initWithFrame:CGRectMake(1, currentHeight, 30, 30)];
+            countLabel.font = [UIFont fontWithName:@"Arial-BoldMT" size:18];
+            countLabel.text = [NSString stringWithFormat:@"%d", countInSentence++];
+            countLabel.backgroundColor = [UIColor clearColor];
+            countLabel.textAlignment = UITextAlignmentRight;
+            countLabel.alpha = 0.8;
+            countLabel.shadowOffset = CGSizeMake(0, 1);
+            countLabel.shadowColor = [UIColor colorWithWhite:1 alpha:0.6];
+            [self.scrollView addSubview:countLabel];
+            
+            UILabel *sentenceContentLabel = [[UILabel alloc] initWithFrame:CGRectMake(38, currentHeight, 262, 30)];
+            NSString *sentence = [NSString stringWithFormat:@"%@\n%@", [sentenceInfo objectForKey:@"sentence"], [sentenceInfo objectForKey:@"meaning"]];
+            NSRange keyWordRange = [sentence rangeOfString:self.vocabulary.spell
+                                                   options:(NSCaseInsensitiveSearch | NSRegularExpressionSearch)
+                                                     range:NSMakeRange(0, sentence.length -1)];
+            if (keyWordRange.location != NSNotFound) {
+                NSMutableAttributedString *attributedSentence = [[NSMutableAttributedString alloc] initWithString:sentence];
+                [attributedSentence addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:keyWordRange];
+                sentenceContentLabel.attributedText = attributedSentence;
+            } else {
+                sentenceContentLabel.text = sentence;
+            }
+            
+            
+            sentenceContentLabel.numberOfLines = 0;
+            sentenceContentLabel.lineBreakMode = UILineBreakModeCharacterWrap;
+            [sentenceContentLabel sizeToFit];
+            sentenceContentLabel.backgroundColor = [UIColor clearColor];
+            sentenceContentLabel.lineBreakMode = UILineBreakModeWordWrap;
+            sentenceContentLabel.shadowOffset = CGSizeMake(0, 1);
+            sentenceContentLabel.shadowColor = [UIColor colorWithWhite:1 alpha:0.6];
+            [self.scrollView addSubview:sentenceContentLabel];
+            currentHeight = currentHeight + sentenceContentLabel.frame.size.height + 10;
+        }
+    }
     
     if ([self.vocabulary.websterMeanings count] > 0) {
         self.mwLabel.hidden = NO;
@@ -175,52 +219,6 @@
             [self.scrollView addSubview:meaningLabel];
             currentHeight = currentHeight + meaningLabel.frame.size.height + 10;
             countInAttr++;
-        }
-    }
-    
-    NSArray *sentences = [self.vocabulary sentences];
-    int countInSentence = 1;
-    if ([sentences count] > 0) {
-        self.sentenceLabel.hidden = NO;
-        frame = self.sentenceLabel.frame;
-        frame.origin.y = currentHeight;
-        self.sentenceLabel.frame = frame;
-        currentHeight = currentHeight + frame.size.height + 5;
-        
-        for (NSDictionary *sentenceInfo in sentences) {
-            UILabel *countLabel = [[UILabel alloc] initWithFrame:CGRectMake(1, currentHeight, 30, 30)];
-            countLabel.font = [UIFont fontWithName:@"Arial-BoldMT" size:18];
-            countLabel.text = [NSString stringWithFormat:@"%d", countInSentence++];
-            countLabel.backgroundColor = [UIColor clearColor];
-            countLabel.textAlignment = UITextAlignmentRight;
-            countLabel.alpha = 0.8;
-            countLabel.shadowOffset = CGSizeMake(0, 1);
-            countLabel.shadowColor = [UIColor colorWithWhite:1 alpha:0.6];
-            [self.scrollView addSubview:countLabel];
-
-            UILabel *sentenceContentLabel = [[UILabel alloc] initWithFrame:CGRectMake(38, currentHeight, 262, 30)];
-            NSString *sentence = [NSString stringWithFormat:@"%@\n%@", [sentenceInfo objectForKey:@"sentence"], [sentenceInfo objectForKey:@"meaning"]];
-            NSRange keyWordRange = [sentence rangeOfString:self.vocabulary.spell
-                                                        options:(NSCaseInsensitiveSearch | NSRegularExpressionSearch)
-                                                          range:NSMakeRange(0, sentence.length -1)];
-            if (keyWordRange.location != NSNotFound) {
-                NSMutableAttributedString *attributedSentence = [[NSMutableAttributedString alloc] initWithString:sentence];
-                [attributedSentence addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:keyWordRange];
-                sentenceContentLabel.attributedText = attributedSentence;
-            } else {
-                sentenceContentLabel.text = sentence;
-            }
-        
-    
-            sentenceContentLabel.numberOfLines = 0;
-            sentenceContentLabel.lineBreakMode = UILineBreakModeCharacterWrap;
-            [sentenceContentLabel sizeToFit];
-            sentenceContentLabel.backgroundColor = [UIColor clearColor];
-            sentenceContentLabel.lineBreakMode = UILineBreakModeWordWrap;
-            sentenceContentLabel.shadowOffset = CGSizeMake(0, 1);
-            sentenceContentLabel.shadowColor = [UIColor colorWithWhite:1 alpha:0.6];
-            [self.scrollView addSubview:sentenceContentLabel];
-            currentHeight = currentHeight + sentenceContentLabel.frame.size.height + 10;
         }
     }
     

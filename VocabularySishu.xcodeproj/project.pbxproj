@@ -718,8 +718,6 @@
 		0059664D162C7D5A0010C669 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00596648162C7D5A0010C669 /* libMobClickLibrary.a */; };
 		0059664F162C88E00010C669 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0059664E162C88E00010C669 /* libz.dylib */; };
 		00596650162CB0F80010C669 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0059664E162C88E00010C669 /* libz.dylib */; };
-		00627B19162D209800086C35 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00627B16162D209800086C35 /* icon@2x.png */; };
-		00627B1A162D209800086C35 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 00627B17162D209800086C35 /* icon.png */; };
 		00627B1D162D20D100086C35 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0059664E162C88E00010C669 /* libz.dylib */; };
 		006B4CDE15E3638C00711C64 /* VSGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 006B4CDC15E3638B00711C64 /* VSGuideViewController.m */; };
 		006B4CDF15E3638C00711C64 /* VSGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 006B4CDC15E3638B00711C64 /* VSGuideViewController.m */; };
@@ -1185,6 +1183,9 @@
 		00B491AD15EBDF9B004AFC6C /* ScoreUp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B491A915EBDF9B004AFC6C /* ScoreUp@2x.png */; };
 		00B491AE15EBDF9B004AFC6C /* ScoreUp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B491A915EBDF9B004AFC6C /* ScoreUp@2x.png */; };
 		00B491AF15EBDF9B004AFC6C /* ScoreUp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B491A915EBDF9B004AFC6C /* ScoreUp@2x.png */; };
+		00B6415B18974EBB008F029B /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00843CD7189627A4003C3DD6 /* CoreTelephony.framework */; };
+		00B6415C18974F29008F029B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00CD22D91894027600D90004 /* StoreKit.framework */; };
+		00B6415D18974F48008F029B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00843CDD18962814003C3DD6 /* AudioToolbox.framework */; };
 		00BDE55815CF9B9400BC205C /* VSNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0081185015BEFE220022B515 /* VSNavigationBar.m */; };
 		00BDE55915CF9B9400BC205C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00701E3D1553CBCE00D30018 /* main.m */; };
 		00BDE55A15CF9B9400BC205C /* VSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00701E411553CBCE00D30018 /* VSAppDelegate.m */; };
@@ -1232,6 +1233,8 @@
 		00BE921B16C0EFF7003C2D0B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00BE921516C0EFF7003C2D0B /* Default@2x.png */; };
 		00BE921C16C0EFF7003C2D0B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00BE921516C0EFF7003C2D0B /* Default@2x.png */; };
 		00BE921D16C0EFF7003C2D0B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00BE921516C0EFF7003C2D0B /* Default@2x.png */; };
+		00C3A8BE1898DA44001379CB /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C3A8BD1898DA44001379CB /* icon.png */; };
+		00C3A8C01898DA56001379CB /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C3A8BF1898DA56001379CB /* icon@2x.png */; };
 		00C42FE915BB096F006FF95E /* VSSummaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C42FE815BB096F006FF95E /* VSSummaryView.m */; };
 		00C4300115BBFC44006FF95E /* VSVocabulary.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4300015BBFC44006FF95E /* VSVocabulary.m */; };
 		00C4FE3B15D3FAF6000B9849 /* VSSingleListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C4FE3A15D3FAF6000B9849 /* VSSingleListView.m */; };
@@ -1811,8 +1814,6 @@
 		00596648162C7D5A0010C669 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMobClickLibrary.a; path = Libs/Statistics/libMobClickLibrary.a; sourceTree = "<group>"; };
 		00596649162C7D5A0010C669 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MobClick.h; path = Libs/Statistics/MobClick.h; sourceTree = "<group>"; };
 		0059664E162C88E00010C669 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		00627B16162D209800086C35 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "Resources/Img/TOEFL/icon@2x.png"; sourceTree = "<group>"; };
-		00627B17162D209800086C35 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Resources/Img/TOEFL/icon.png; sourceTree = "<group>"; };
 		006B4CDB15E3638B00711C64 /* VSGuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSGuideViewController.h; path = ViewController/ConfigurationView/VSGuideViewController.h; sourceTree = "<group>"; };
 		006B4CDC15E3638B00711C64 /* VSGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSGuideViewController.m; path = ViewController/ConfigurationView/VSGuideViewController.m; sourceTree = "<group>"; };
 		006B4CDD15E3638B00711C64 /* VSGuideViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VSGuideViewController.xib; path = ViewController/ConfigurationView/VSGuideViewController.xib; sourceTree = "<group>"; };
@@ -1939,6 +1940,8 @@
 		00BDE5A815CF9B9400BC205C /* VocabularySishu TOEFL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VocabularySishu TOEFL.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00BE921516C0EFF7003C2D0B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/Img/Default@2x.png"; sourceTree = "<group>"; };
 		00C09AA415E2B05800AD33C3 /* VocabularySishu 1.1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "VocabularySishu 1.1.xcdatamodel"; sourceTree = "<group>"; };
+		00C3A8BD1898DA44001379CB /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../../VocabularySishu/VocabularySishu/Resources/Img/TOEFL/icon.png; sourceTree = "<group>"; };
+		00C3A8BF1898DA56001379CB /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../../VocabularySishu/VocabularySishu/Resources/Img/TOEFL/icon@2x.png"; sourceTree = "<group>"; };
 		00C42FE715BB096F006FF95E /* VSSummaryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSSummaryView.h; path = ViewController/VocabularyListView/VSSummaryView.h; sourceTree = "<group>"; };
 		00C42FE815BB096F006FF95E /* VSSummaryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSSummaryView.m; path = ViewController/VocabularyListView/VSSummaryView.m; sourceTree = "<group>"; };
 		00C4300015BBFC44006FF95E /* VSVocabulary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSVocabulary.m; path = Model/VSVocabulary.m; sourceTree = "<group>"; };
@@ -2179,6 +2182,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00B6415D18974F48008F029B /* AudioToolbox.framework in Frameworks */,
+				00B6415C18974F29008F029B /* StoreKit.framework in Frameworks */,
+				00B6415B18974EBB008F029B /* CoreTelephony.framework in Frameworks */,
 				0082DF01170F57630006BD83 /* MediaPlayer.framework in Frameworks */,
 				00DEDC4418961F3A00D30766 /* libGoogleAdMobAds.a in Frameworks */,
 				00BDE57915CF9B9400BC205C /* AVFoundation.framework in Frameworks */,
@@ -2539,10 +2545,10 @@
 		00533E3D15F43668004777F1 /* TOEFL */ = {
 			isa = PBXGroup;
 			children = (
+				00C3A8BF1898DA56001379CB /* icon@2x.png */,
 				000EEEE316B4F847006BB7F7 /* icon512.png */,
 				00C8D4551686F10A00CA3880 /* itunesArtWork */,
-				00627B16162D209800086C35 /* icon@2x.png */,
-				00627B17162D209800086C35 /* icon.png */,
+				00C3A8BD1898DA44001379CB /* icon.png */,
 			);
 			name = TOEFL;
 			sourceTree = "<group>";
@@ -4037,8 +4043,6 @@
 				00B491AB15EBDF9B004AFC6C /* ScoreDown@2x.png in Resources */,
 				00B491AE15EBDF9B004AFC6C /* ScoreUp@2x.png in Resources */,
 				008D5DB9161814780046240B /* SoundButton@2x.png in Resources */,
-				00627B19162D209800086C35 /* icon@2x.png in Resources */,
-				00627B1A162D209800086C35 /* icon.png in Resources */,
 				00CA9062164F62F600876164 /* iRate.bundle in Resources */,
 				004EA5A4161AA8AA000E4B0E /* VocabularySishu.sqlite in Resources */,
 				00C8D4561686F10A00CA3880 /* itunesArtWork in Resources */,
@@ -4078,6 +4082,8 @@
 				00ADD7C716E700E700ACB602 /* GuidePage4-568h@2x.png in Resources */,
 				00ADD7D116E709A400ACB602 /* DetailsBG-568h@2x.png in Resources */,
 				00F23D351896546E00460C70 /* sentence.txt in Resources */,
+				00C3A8BE1898DA44001379CB /* icon.png in Resources */,
+				00C3A8C01898DA56001379CB /* icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5567,10 +5573,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\"$(SRCROOT)/VocabularySishu/Libs/Statistics\\\"",
-					"\\\"$(SRCROOT)/VocabularySishu/Libs/UMSocial_Sdk_1.6.1/frameworks/Wechat\\\"",
-					"\\\"$(SRCROOT)/VocabularySishu/Libs/UMSocial_Sdk_1.6.1\\\"",
-					/Users/xiaoxiao/workspace/innorz/Rich/VocabularySishu/Libs/Admob,
+					"$(SRCROOT)/VocabularySishu/Libs/Statistics",
+					"$(SRCROOT)/VocabularySishu/Libs/UMSocial_Sdk_1.6.1/frameworks/Wechat",
+					"$(SRCROOT)/VocabularySishu/Libs/UMSocial_Sdk_1.6.1",
+					"$(SRCROOT)/VocabularySishu/Libs/Admob",
 				);
 				New_Setting = "";
 				OTHER_LDFLAGS = "-ObjC";
@@ -5601,10 +5607,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\"$(SRCROOT)/VocabularySishu/Libs/Statistics\\\"",
-					"\\\"$(SRCROOT)/VocabularySishu/Libs/UMSocial_Sdk_1.6.1/frameworks/Wechat\\\"",
-					"\\\"$(SRCROOT)/VocabularySishu/Libs/UMSocial_Sdk_1.6.1\\\"",
-					/Users/xiaoxiao/workspace/innorz/Rich/VocabularySishu/Libs/Admob,
+					"$(SRCROOT)/VocabularySishu/Libs/Statistics",
+					"$(SRCROOT)/VocabularySishu/Libs/UMSocial_Sdk_1.6.1/frameworks/Wechat",
+					"$(SRCROOT)/VocabularySishu/Libs/UMSocial_Sdk_1.6.1",
+					"$(SRCROOT)/VocabularySishu/Libs/Admob",
 				);
 				New_Setting = "";
 				OTHER_LDFLAGS = "-ObjC";

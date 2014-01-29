@@ -36,7 +36,7 @@
 {
     [super viewDidLoad];
     self.title = @"设置";
-    moreContents = [NSArray arrayWithObjects:@"广告退散", @"使用向导", @"更多系列", @"给词汇私塾评分", @"意见反馈", nil];
+    moreContents = [NSArray arrayWithObjects:@"广告退散", @"恢复购买", @"使用向导", @"更多系列", @"给词汇私塾评分", @"意见反馈", nil];
     shareContents = [NSArray arrayWithObjects:@"分享到", @"账号中心", nil];
     [self.navigationItem setLeftBarButtonItem:[VSUIUtils makeBackButton:self selector:@selector(goBack)]];
     
@@ -134,7 +134,6 @@
         [cell.accessoryView addSubview:toggleSwitch];
         toggleSwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"playAfterOpen"];
         [toggleSwitch addTarget:self action:@selector(playAfterOpenPushed) forControlEvents:UIControlEventValueChanged];
-
     }
     return cell;
 }
@@ -159,7 +158,20 @@
     }
     else if (indexPath.section == MORE_SECTION) {
         if (indexPath.row == IAP) {
-            [InAppPurchase purchaseProductWithIdentifier:IAPProductIdentifierNoAd];
+            if (![VSUtils shouldHideAd]) {
+                [InAppPurchase purchaseProductWithIdentifier:IAPProductIdentifierNoAd];
+            }
+            else {
+                [[[UIAlertView alloc] initWithTitle: @"不用了" message: @"广告已经不见了" delegate: nil cancelButtonTitle: @"嗯，知道了" otherButtonTitles: nil] show];
+            }
+        }
+        else if (indexPath.row == RESTORE) {
+            if (![VSUtils shouldHideAd]) {
+                [InAppPurchase restorePurchases];
+            }
+            else {
+                [[[UIAlertView alloc] initWithTitle: @"不用了" message: @"广告已经不见了" delegate: nil cancelButtonTitle: @"嗯，知道了" otherButtonTitles: nil] show];
+            }
         }
         else if (indexPath.row == GUIDE) {
             [VSUtils showGuidPage];
@@ -187,7 +199,7 @@
 {
     UMSocialData *socialData = [[UMSocialData alloc] initWithIdentifier:@"ShareTo"];
     NSString *appLink = [NSString stringWithFormat:@"http://itunes.apple.com/app/id%@", [VSUtils getAppId]];
-    socialData.shareText = [NSString stringWithFormat:@"我正在使用 %@ 背单词，我觉得还用起来还不错，各位亲们也来试试吧 %@", [VSUtils getAppName], appLink];
+    socialData.shareText = [NSString stringWithFormat:@"我正在使用 %@ 背单词，此应用低调奢华有内涵，各位亲你们怎么看 %@", [VSUtils getAppName], appLink];
     socialData.shareImage = [UIImage imageNamed:@"icon512.png"];
     UMSocialControllerService *socialControllerService = [[UMSocialControllerService alloc] initWithUMSocialData:socialData];
     UINavigationController *shareListController = [socialControllerService getSocialShareListController];
@@ -262,7 +274,7 @@
 
 - (void)productsDidLoadFailed
 {
-    [[[UIAlertView alloc] initWithTitle: @"意外！" message: @"广告依然在" delegate: nil cancelButtonTitle: @"嗯，知道了" otherButtonTitles: nil] show];    
+    [[[UIAlertView alloc] initWithTitle: @"意外！" message: @"广告依然还在" delegate: nil cancelButtonTitle: @"嗯，知道了" otherButtonTitles: nil] show];
 }
 
 - (void)productPurchaseDidSuccess:(NSNotification *)notification
@@ -272,7 +284,7 @@
 
 - (void)productPurchaseDidFailed
 {
-    [[[UIAlertView alloc] initWithTitle: @"意外！" message: @"广告依然在" delegate: nil cancelButtonTitle: @"嗯，知道了" otherButtonTitles: nil] show];
+    [[[UIAlertView alloc] initWithTitle: @"意外！" message: @"广告依然还在" delegate: nil cancelButtonTitle: @"嗯，知道了" otherButtonTitles: nil] show];
 }
 
 - (void)productPurchaseDidCancel

@@ -13,6 +13,7 @@
 #import "VSAppRecord.h"
 #import "VSListRecord.h"
 #import "UMSocialControllerService.h"
+#import "InAppPurchase.h"
 
 @implementation VSAppDelegate
 
@@ -106,8 +107,8 @@
         [navigationController pushViewController:vocabularyListViewController animated:NO];
         [application cancelLocalNotification:localNotif];
     }
-    
-//    [VSDataUtil initSentence];
+
+    [InAppPurchase loadStore];
     
     return YES;
 }

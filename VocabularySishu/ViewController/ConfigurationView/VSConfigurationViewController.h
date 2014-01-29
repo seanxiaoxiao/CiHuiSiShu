@@ -20,10 +20,11 @@
 #define ACCOUNT_MANAGE 1
 
 #define IAP 0
-#define GUIDE 1
-#define MORE 2
-#define RATEUS 3
-#define FEEDBACK 4
+#define RESTORE 1
+#define GUIDE 2
+#define MORE 3
+#define RATEUS 4
+#define FEEDBACK 5
 #define EMAIL_SUPPORTING @"vss@gefostudio.com"
 
 #define IS_IOS5_AND_PLUS			( [ [ [ UIDevice currentDevice ] systemVersion ] compare: @"5.0" options: NSNumericSearch ] != NSOrderedAscending )

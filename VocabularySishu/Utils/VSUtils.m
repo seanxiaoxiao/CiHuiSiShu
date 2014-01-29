@@ -284,7 +284,7 @@
 + (void)openSeries
 {
     [MobClick event:EVENT_WANT_TO_BUY];
-    [ [ UIApplication sharedApplication ] openURL: [ NSURL URLWithString: [NSString stringWithFormat:@"itms-apps://phobos.apple.com/WebObjects/MZSearch.woa/wa/search?lang=1&output=lm&term=%@&media=software", [@"词汇私塾" stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] ] ];
+    [ [ UIApplication sharedApplication ] openURL: [ NSURL URLWithString: [NSString stringWithFormat:@"itms-apps://phobos.apple.com/WebObjects/MZSearch.woa/wa/search?lang=1&output=lm&term=%@&media=software", [@"新词汇私塾" stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] ] ];
 }
 
 + (NSString *)getUMengKey
