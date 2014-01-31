@@ -1636,6 +1636,7 @@
 		00FF701315D1676F0043BA91 /* VSHisotryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF701215D1676F0043BA91 /* VSHisotryListCell.m */; };
 		00FF701415D1676F0043BA91 /* VSHisotryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF701215D1676F0043BA91 /* VSHisotryListCell.m */; };
 		00FF701515D1676F0043BA91 /* VSHisotryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF701215D1676F0043BA91 /* VSHisotryListCell.m */; };
+		64DA9655189BD786006909EC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64DA9654189BD786006909EC /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1986,6 +1987,7 @@
 		00FF6FF915D0BACB0043BA91 /* VSScoreBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSScoreBoardView.m; path = ViewController/VocabularyListView/VSScoreBoardView.m; sourceTree = "<group>"; };
 		00FF701115D1676F0043BA91 /* VSHisotryListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSHisotryListCell.h; path = ViewController/MainView/VSHisotryListCell.h; sourceTree = "<group>"; };
 		00FF701215D1676F0043BA91 /* VSHisotryListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSHisotryListCell.m; path = ViewController/MainView/VSHisotryListCell.m; sourceTree = "<group>"; };
+		64DA9654189BD786006909EC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2549,6 +2551,7 @@
 		00701E201553CBCE00D30018 = {
 			isa = PBXGroup;
 			children = (
+				64DA9654189BD786006909EC /* Default-568h@2x.png */,
 				00701E371553CBCE00D30018 /* VocabularySishu */,
 				00701E531553CBCE00D30018 /* VocabularySishuTests */,
 				00701E2E1553CBCE00D30018 /* Frameworks */,
@@ -3275,6 +3278,14 @@
 				CLASSPREFIX = VS;
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = douban;
+				TargetAttributes = {
+					00701E2A1553CBCE00D30018 = {
+						DevelopmentTeam = D6H3GD33L8;
+					};
+					00BDE55615CF9B9400BC205C = {
+						DevelopmentTeam = D6H3GD33L8;
+					};
+				};
 			};
 			buildConfigurationList = 00701E251553CBCE00D30018 /* Build configuration list for PBXProject "VocabularySishu" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -3737,6 +3748,7 @@
 				000E58AE15E40C9900B7AB04 /* StarNone@2x.png in Resources */,
 				000E58B115E40C9900B7AB04 /* StarSmall@2x.png in Resources */,
 				000E58B415E40C9900B7AB04 /* TapeBody@2x.png in Resources */,
+				64DA9655189BD786006909EC /* Default-568h@2x.png in Resources */,
 				000E58B715E40C9900B7AB04 /* TapeHead@2x.png in Resources */,
 				000E58BA15E40C9900B7AB04 /* TapeTail@2x.png in Resources */,
 				000E58BD15E40C9900B7AB04 /* TimeLineCellDark@2x.png in Resources */,
@@ -5561,8 +5573,8 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				BUNDLE_NAME = "VocabularySishu-TOEFL";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Xiao Xiao (VC9P4N67HM)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xiao Xiao (VC9P4N67HM)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
