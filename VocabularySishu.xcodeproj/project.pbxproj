@@ -971,7 +971,7 @@
 		00AAE647189B8E5000E21A23 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AAE643189B8E5000E21A23 /* icon.png */; };
 		00AAE648189B8E5000E21A23 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AAE644189B8E5000E21A23 /* icon@2x.png */; };
 		00AAE649189B8E5000E21A23 /* icon512.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AAE645189B8E5000E21A23 /* icon512.png */; };
-		00AAE64A189B8E5000E21A23 /* itunesArtWork in Resources */ = {isa = PBXBuildFile; fileRef = 00AAE646189B8E5000E21A23 /* itunesArtWork */; };
+		00AAE67C189BEB0500E21A23 /* iTunesArtWork in Resources */ = {isa = PBXBuildFile; fileRef = 00AAE67B189BEB0500E21A23 /* iTunesArtWork */; };
 		00AC5E4B15E4BBFC00150402 /* PopupClose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AC5E4915E4BBFB00150402 /* PopupClose@2x.png */; };
 		00AC5E4C15E4BBFC00150402 /* PopupClose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AC5E4915E4BBFB00150402 /* PopupClose@2x.png */; };
 		00AC5E4D15E4BBFC00150402 /* PopupClose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AC5E4915E4BBFB00150402 /* PopupClose@2x.png */; };
@@ -1905,7 +1905,7 @@
 		00AAE643189B8E5000E21A23 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Resources/Img/TOEFL/icon.png; sourceTree = "<group>"; };
 		00AAE644189B8E5000E21A23 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "Resources/Img/TOEFL/icon@2x.png"; sourceTree = "<group>"; };
 		00AAE645189B8E5000E21A23 /* icon512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon512.png; path = Resources/Img/TOEFL/icon512.png; sourceTree = "<group>"; };
-		00AAE646189B8E5000E21A23 /* itunesArtWork */ = {isa = PBXFileReference; lastKnownFileType = file; name = itunesArtWork; path = Resources/Img/TOEFL/itunesArtWork; sourceTree = "<group>"; };
+		00AAE67B189BEB0500E21A23 /* iTunesArtWork */ = {isa = PBXFileReference; lastKnownFileType = file; name = iTunesArtWork; path = Resources/Img/TOEFL/iTunesArtWork; sourceTree = "<group>"; };
 		00AC5E4915E4BBFB00150402 /* PopupClose@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "PopupClose@2x.png"; path = "Resources/Img/PopupClose@2x.png"; sourceTree = "<group>"; };
 		00AC5E4A15E4BBFB00150402 /* PopupCloseHighLighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "PopupCloseHighLighted@2x.png"; path = "Resources/Img/PopupCloseHighLighted@2x.png"; sourceTree = "<group>"; };
 		00ADD76016E6972000ACB602 /* ButtonAll@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ButtonAll@2x.png"; path = "Resources/Img/ButtonAll@2x.png"; sourceTree = "<group>"; };
@@ -2532,7 +2532,7 @@
 				00AAE643189B8E5000E21A23 /* icon.png */,
 				00AAE644189B8E5000E21A23 /* icon@2x.png */,
 				00AAE645189B8E5000E21A23 /* icon512.png */,
-				00AAE646189B8E5000E21A23 /* itunesArtWork */,
+				00AAE67B189BEB0500E21A23 /* iTunesArtWork */,
 			);
 			name = TOEFL;
 			sourceTree = "<group>";
@@ -4062,7 +4062,7 @@
 				00AAE647189B8E5000E21A23 /* icon.png in Resources */,
 				00AAE648189B8E5000E21A23 /* icon@2x.png in Resources */,
 				00AAE649189B8E5000E21A23 /* icon512.png in Resources */,
-				00AAE64A189B8E5000E21A23 /* itunesArtWork in Resources */,
+				00AAE67C189BEB0500E21A23 /* iTunesArtWork in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5561,8 +5561,8 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				BUNDLE_NAME = "VocabularySishu-TOEFL";
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xiao Xiao (VC9P4N67HM)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xiao Xiao (VC9P4N67HM)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -5583,8 +5583,8 @@
 				New_Setting = "";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "VocabularySishu TOEFL";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "388C93AC-163F-49F3-8DAC-F3B035DF90A5";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "388C93AC-163F-49F3-8DAC-F3B035DF90A5";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
