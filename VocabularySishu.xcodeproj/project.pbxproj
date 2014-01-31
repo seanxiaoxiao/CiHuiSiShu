@@ -1624,11 +1624,6 @@
 		00E83B3015DAC42F005BE3AF /* VSClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E83B2F15DAC42F005BE3AF /* VSClipView.m */; };
 		00E83B3115DAC42F005BE3AF /* VSClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E83B2F15DAC42F005BE3AF /* VSClipView.m */; };
 		00E83B3215DAC42F005BE3AF /* VSClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E83B2F15DAC42F005BE3AF /* VSClipView.m */; };
-		00F23D351896546E00460C70 /* sentence.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00F23D341896546E00460C70 /* sentence.txt */; };
-		00F23D361896546E00460C70 /* sentence.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00F23D341896546E00460C70 /* sentence.txt */; };
-		00F23D371896546E00460C70 /* sentence.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00F23D341896546E00460C70 /* sentence.txt */; };
-		00F23D381896546E00460C70 /* sentence.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00F23D341896546E00460C70 /* sentence.txt */; };
-		00F23D391896546E00460C70 /* sentence.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00F23D341896546E00460C70 /* sentence.txt */; };
 		00F7B02E1671D28100F9FB14 /* VocabularySishu.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00F7B02D1671D28100F9FB14 /* VocabularySishu.sqlite */; };
 		00F7B02F1671D2E000F9FB14 /* List-Bottom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0013FCA9162F115F00E845E7 /* List-Bottom@2x.png */; };
 		00FF1B1015E407AC005B9E51 /* SeparatorDots@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FF1B0F15E407AC005B9E51 /* SeparatorDots@2x.png */; };
@@ -1984,7 +1979,6 @@
 		00E111EE16ACFE060050E1F4 /* GuidePage4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GuidePage4@2x.png"; path = "Resources/Img/GuidePage4@2x.png"; sourceTree = "<group>"; };
 		00E83B2E15DAC42F005BE3AF /* VSClipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSClipView.h; path = ViewController/MainView/VSClipView.h; sourceTree = "<group>"; };
 		00E83B2F15DAC42F005BE3AF /* VSClipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSClipView.m; path = ViewController/MainView/VSClipView.m; sourceTree = "<group>"; };
-		00F23D341896546E00460C70 /* sentence.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = sentence.txt; path = ../../vsresource/sentence.txt; sourceTree = "<group>"; };
 		00F7B02D1671D28100F9FB14 /* VocabularySishu.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = VocabularySishu.sqlite; sourceTree = "<group>"; };
 		00FF1B0F15E407AC005B9E51 /* SeparatorDots@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "SeparatorDots@2x.png"; path = "Resources/Img/SeparatorDots@2x.png"; sourceTree = "<group>"; };
 		00FF6FE815D0AC940043BA91 /* VocabularySishu.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = VocabularySishu.sqlite; path = Resources/Data/GRE/VocabularySishu.sqlite; sourceTree = "<group>"; };
@@ -2692,7 +2686,6 @@
 		0073A68115689DA900B80422 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				00F23D341896546E00460C70 /* sentence.txt */,
 				00D58C4F16D85CB5005C1A7E /* GMAT */,
 				0094E41916D020970064219C /* SAT */,
 				002D4E03169CB284009C4F8E /* IELTS */,
@@ -3518,7 +3511,6 @@
 				00ADD7C516E700E700ACB602 /* GuidePage3-568h@2x.png in Resources */,
 				00ADD7CE16E700E700ACB602 /* GuidePage4-568h@2x.png in Resources */,
 				00ADD7D816E709A400ACB602 /* DetailsBG-568h@2x.png in Resources */,
-				00F23D381896546E00460C70 /* sentence.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3615,7 +3607,6 @@
 				00ADD7BF16E700E700ACB602 /* GuidePage3-568h@2x.png in Resources */,
 				00ADD7C816E700E700ACB602 /* GuidePage4-568h@2x.png in Resources */,
 				00ADD7D216E709A400ACB602 /* DetailsBG-568h@2x.png in Resources */,
-				00F23D361896546E00460C70 /* sentence.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3704,7 +3695,6 @@
 				00ADD7C416E700E700ACB602 /* GuidePage3-568h@2x.png in Resources */,
 				00ADD7CD16E700E700ACB602 /* GuidePage4-568h@2x.png in Resources */,
 				00ADD7D716E709A400ACB602 /* DetailsBG-568h@2x.png in Resources */,
-				00F23D371896546E00460C70 /* sentence.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4069,7 +4059,6 @@
 				00ADD7BE16E700E700ACB602 /* GuidePage3-568h@2x.png in Resources */,
 				00ADD7C716E700E700ACB602 /* GuidePage4-568h@2x.png in Resources */,
 				00ADD7D116E709A400ACB602 /* DetailsBG-568h@2x.png in Resources */,
-				00F23D351896546E00460C70 /* sentence.txt in Resources */,
 				00AAE647189B8E5000E21A23 /* icon.png in Resources */,
 				00AAE648189B8E5000E21A23 /* icon@2x.png in Resources */,
 				00AAE649189B8E5000E21A23 /* icon512.png in Resources */,
@@ -4259,7 +4248,6 @@
 				00ADD7C616E700E700ACB602 /* GuidePage3-568h@2x.png in Resources */,
 				00ADD7CF16E700E700ACB602 /* GuidePage4-568h@2x.png in Resources */,
 				00ADD7D916E709A400ACB602 /* DetailsBG-568h@2x.png in Resources */,
-				00F23D391896546E00460C70 /* sentence.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
