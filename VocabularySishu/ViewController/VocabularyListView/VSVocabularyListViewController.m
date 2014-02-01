@@ -552,7 +552,7 @@
         [self toggleScoreBoard];
         [self showAdInstitial];
     }
-    else if ((countOnStart - [self.vocabulariesToRecite count]) % 30 == 0) {
+    else if ((countOnStart - [self.vocabulariesToRecite count]) % 39 == 0) {
         [self showAdInstitial];
     }
 }
