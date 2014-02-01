@@ -5517,8 +5517,8 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				BUNDLE_NAME = "VocabularySishu-TOEFL";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: SHAO WEN SU (Z843NA8L6Y)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: SHAO WEN SU (Z843NA8L6Y)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -5541,8 +5541,8 @@
 				New_Setting = "";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "VocabularySishu TOEFL";
-				PROVISIONING_PROFILE = "388C93AC-163F-49F3-8DAC-F3B035DF90A5";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "388C93AC-163F-49F3-8DAC-F3B035DF90A5";
+				PROVISIONING_PROFILE = "F3538E03-4809-4E2D-8AA6-29B283AD67C2";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F3538E03-4809-4E2D-8AA6-29B283AD67C2";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
