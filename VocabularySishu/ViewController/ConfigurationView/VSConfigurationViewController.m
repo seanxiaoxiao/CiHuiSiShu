@@ -11,7 +11,8 @@
 #import "VSUtils.h"
 #import "VSContext.h"
 #import "UMSocialData.h"
-#import "UMSocialControllerService.h"
+#import "UMSocial.h"
+#import "UMSocialSnsService.h"
 #import "InAppPurchase.h"
 
 @interface VSConfigurationViewController ()
@@ -37,7 +38,7 @@
     [super viewDidLoad];
     self.title = @"设置";
     moreContents = [NSArray arrayWithObjects:@"广告退散", @"恢复购买", @"使用向导", @"更多系列", @"给词汇私塾评分", @"意见反馈", nil];
-    shareContents = [NSArray arrayWithObjects:@"分享到", @"账号中心", nil];
+    shareContents = [NSArray arrayWithObjects:@"分享到", nil];
     [self.navigationItem setLeftBarButtonItem:[VSUIUtils makeBackButton:self selector:@selector(goBack)]];
     
     // Load store
@@ -191,19 +192,19 @@
 - (void)accountManage
 {
     UMSocialControllerService *socialControllerService = [[UMSocialControllerService alloc] initWithUMSocialData:[UMSocialData defaultData]];
-    UINavigationController *accountViewController =[socialControllerService getSocialAccountController];
+    UINavigationController *accountViewController = [socialControllerService getSocialAccountController];
     [self presentModalViewController:accountViewController animated:YES];
 }
 
 - (void)share
 {
-    UMSocialData *socialData = [[UMSocialData alloc] initWithIdentifier:@"ShareTo"];
     NSString *appLink = [NSString stringWithFormat:@"http://itunes.apple.com/app/id%@", [VSUtils getAppId]];
-    socialData.shareText = [NSString stringWithFormat:@"我正在使用 %@ 背单词，此应用低调奢华有内涵，各位亲你们怎么看 %@", [VSUtils getAppName], appLink];
-    socialData.shareImage = [UIImage imageNamed:@"icon512.png"];
-    UMSocialControllerService *socialControllerService = [[UMSocialControllerService alloc] initWithUMSocialData:socialData];
-    UINavigationController *shareListController = [socialControllerService getSocialShareListController];
-    [self presentModalViewController:shareListController animated:YES];
+    NSString *shareText = [NSString stringWithFormat:@"我正在使用 %@ 背单词，此应用低调奢华有内涵，各位亲你们怎么看 %@", [VSUtils getAppName], appLink];
+    [UMSocialSnsService presentSnsIconSheetView:self
+                                         appKey:[UMSocialData appKey]
+                                      shareText:shareText
+                                     shareImage:[UIImage imageNamed:@"icon512.png"]
+                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina, UMShareToDouban, UMShareToRenren, nil] delegate:nil];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section

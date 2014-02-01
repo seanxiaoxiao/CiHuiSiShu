@@ -12,7 +12,7 @@
 #import "iRate.h"
 #import "VSAppRecord.h"
 #import "VSListRecord.h"
-#import "UMSocialControllerService.h"
+#import "UMSocial.h"
 #import "InAppPurchase.h"
 
 @implementation VSAppDelegate
@@ -33,12 +33,6 @@
     [iRate sharedInstance].usesUntilPrompt = -1;
     [iRate sharedInstance].eventsUntilPrompt = 1;
     [iRate sharedInstance].remindPeriod = 5;
-}
-
-- (NSArray *)shareToPlatforms
-{
-    NSArray *shareToArray = [NSArray arrayWithObjects: UMShareToSina, UMShareToDouban, UMShareToRenren, nil];
-    return shareToArray;
 }
 
 - (void)initEnv
@@ -75,7 +69,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [UMSocialData setAppKey:[VSUtils getUMengKey]];
-    [UMSocialControllerService setSocialConfigDelegate:self];
     [MobClick startWithAppkey:[VSUtils getUMengKey]];
     
     [VSUtils copySQLite];

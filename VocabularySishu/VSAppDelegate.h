@@ -10,9 +10,8 @@
 #import "VSUtils.h"
 #import "VSMainViewController.h"
 #import "VSVocabularyListViewController.h"
-#import "UMSocialConfigDelegate.h"
 
-@interface VSAppDelegate : UIResponder <UIApplicationDelegate, UMSocialConfigDelegate>
+@interface VSAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
