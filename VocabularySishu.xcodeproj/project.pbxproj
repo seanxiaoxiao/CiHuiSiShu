@@ -868,7 +868,6 @@
 		00AAE647189B8E5000E21A23 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AAE643189B8E5000E21A23 /* icon.png */; };
 		00AAE648189B8E5000E21A23 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AAE644189B8E5000E21A23 /* icon@2x.png */; };
 		00AAE649189B8E5000E21A23 /* icon512.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AAE645189B8E5000E21A23 /* icon512.png */; };
-		00AAE67C189BEB0500E21A23 /* iTunesArtWork in Resources */ = {isa = PBXBuildFile; fileRef = 00AAE67B189BEB0500E21A23 /* iTunesArtWork */; };
 		00AC5E4B15E4BBFC00150402 /* PopupClose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AC5E4915E4BBFB00150402 /* PopupClose@2x.png */; };
 		00AC5E4C15E4BBFC00150402 /* PopupClose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AC5E4915E4BBFB00150402 /* PopupClose@2x.png */; };
 		00AC5E4D15E4BBFC00150402 /* PopupClose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AC5E4915E4BBFB00150402 /* PopupClose@2x.png */; };
@@ -1587,6 +1586,9 @@
 		00FF701315D1676F0043BA91 /* VSHisotryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF701215D1676F0043BA91 /* VSHisotryListCell.m */; };
 		00FF701415D1676F0043BA91 /* VSHisotryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF701215D1676F0043BA91 /* VSHisotryListCell.m */; };
 		00FF701515D1676F0043BA91 /* VSHisotryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF701215D1676F0043BA91 /* VSHisotryListCell.m */; };
+		6484B56D18A5F7320057A3E5 /* icon120.png in Resources */ = {isa = PBXBuildFile; fileRef = 644AEEED18A5F4920042B629 /* icon120.png */; };
+		6484B57018A5F8020057A3E5 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 6484B56F18A5F8020057A3E5 /* iTunesArtwork */; };
+		6484B57118A5F8160057A3E5 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 6484B56F18A5F8020057A3E5 /* iTunesArtwork */; };
 		64DA9655189BD786006909EC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64DA9654189BD786006909EC /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
@@ -1825,7 +1827,6 @@
 		00AAE643189B8E5000E21A23 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Resources/Img/TOEFL/icon.png; sourceTree = "<group>"; };
 		00AAE644189B8E5000E21A23 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "Resources/Img/TOEFL/icon@2x.png"; sourceTree = "<group>"; };
 		00AAE645189B8E5000E21A23 /* icon512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon512.png; path = Resources/Img/TOEFL/icon512.png; sourceTree = "<group>"; };
-		00AAE67B189BEB0500E21A23 /* iTunesArtWork */ = {isa = PBXFileReference; lastKnownFileType = file; name = iTunesArtWork; path = Resources/Img/TOEFL/iTunesArtWork; sourceTree = "<group>"; };
 		00AC5E4915E4BBFB00150402 /* PopupClose@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "PopupClose@2x.png"; path = "Resources/Img/PopupClose@2x.png"; sourceTree = "<group>"; };
 		00AC5E4A15E4BBFB00150402 /* PopupCloseHighLighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "PopupCloseHighLighted@2x.png"; path = "Resources/Img/PopupCloseHighLighted@2x.png"; sourceTree = "<group>"; };
 		00ADD76016E6972000ACB602 /* ButtonAll@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ButtonAll@2x.png"; path = "Resources/Img/ButtonAll@2x.png"; sourceTree = "<group>"; };
@@ -1933,6 +1934,7 @@
 		00FF701115D1676F0043BA91 /* VSHisotryListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSHisotryListCell.h; path = ViewController/MainView/VSHisotryListCell.h; sourceTree = "<group>"; };
 		00FF701215D1676F0043BA91 /* VSHisotryListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSHisotryListCell.m; path = ViewController/MainView/VSHisotryListCell.m; sourceTree = "<group>"; };
 		644AEEED18A5F4920042B629 /* icon120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon120.png; path = VocabularySishu/Resources/Img/TOEFL/icon120.png; sourceTree = "<group>"; };
+		6484B56F18A5F8020057A3E5 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; name = iTunesArtwork; path = Resources/Img/TOEFL/iTunesArtwork; sourceTree = "<group>"; };
 		64DA9654189BD786006909EC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -2373,10 +2375,10 @@
 		00533E3D15F43668004777F1 /* TOEFL */ = {
 			isa = PBXGroup;
 			children = (
+				6484B56F18A5F8020057A3E5 /* iTunesArtwork */,
 				00AAE643189B8E5000E21A23 /* icon.png */,
 				00AAE644189B8E5000E21A23 /* icon@2x.png */,
 				00AAE645189B8E5000E21A23 /* icon512.png */,
-				00AAE67B189BEB0500E21A23 /* iTunesArtWork */,
 			);
 			name = TOEFL;
 			sourceTree = "<group>";
@@ -3685,6 +3687,7 @@
 				0087E72E16881D0000B0E95F /* FloatBarTimer@2x.png in Resources */,
 				0087E73516881D0000B0E95F /* FloatBarButton@2x.png in Resources */,
 				0087E73C16881D0000B0E95F /* FloatBarButtonHighLighted@2x.png in Resources */,
+				6484B57018A5F8020057A3E5 /* iTunesArtwork in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3884,6 +3887,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6484B57118A5F8160057A3E5 /* iTunesArtwork in Resources */,
+				6484B56D18A5F7320057A3E5 /* icon120.png in Resources */,
 				00BDE58115CF9B9400BC205C /* InfoPlist.strings in Resources */,
 				00BDE58215CF9B9400BC205C /* VSHistoryViewController.xib in Resources */,
 				00BDE58315CF9B9400BC205C /* VSVocabularyViewController.xib in Resources */,
@@ -3964,7 +3969,6 @@
 				00AAE647189B8E5000E21A23 /* icon.png in Resources */,
 				00AAE648189B8E5000E21A23 /* icon@2x.png in Resources */,
 				00AAE649189B8E5000E21A23 /* icon512.png in Resources */,
-				00AAE67C189BEB0500E21A23 /* iTunesArtWork in Resources */,
 				00DDD35D189D569C00306B66 /* UMSocialLocalizable.strings in Resources */,
 				00DDD36C189D569D00306B66 /* UMSCommentDetailController.xib in Resources */,
 				00DDD371189D569D00306B66 /* UMSCommentInputController.xib in Resources */,
