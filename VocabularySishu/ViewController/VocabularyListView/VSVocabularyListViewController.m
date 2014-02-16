@@ -169,10 +169,10 @@
 - (void) initPickerView
 {
     pickerAreaView = [[UIView alloc] initWithFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height, 320, 204)];
-    pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 44, 320, 160)];
+    pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 44, 320, 1)];
     pickerView.delegate = self;
     pickerView.dataSource = self;
-    pickerView.backgroundColor = [UIColor clearColor];
+    pickerView.backgroundColor = [UIColor whiteColor];
     pickerView.showsSelectionIndicator = YES;
     
     [pickerAreaView addSubview:pickerView];

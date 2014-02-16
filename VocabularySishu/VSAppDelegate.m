@@ -102,6 +102,7 @@
     }
 
     [InAppPurchase loadStore];
+//    [VSDataUtil initSentence];
     
     return YES;
 }
@@ -253,27 +254,12 @@
 - (UINavigationController *)customizedNavigationController
 {
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:self.viewController];    
-    // Ensure the UINavigationBar is created so that it can be archived. If we do not access the
-    // navigation bar then it will not be allocated, and thus, it will not be archived by the
-    // NSKeyedArchvier.
-    [navController navigationBar];
-    
-    // Archive the navigation controller.
-    NSMutableData *data = [NSMutableData data];
-    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
-    [archiver encodeObject:navController forKey:@"root"];
-    [archiver finishEncoding];
-    
-    // Unarchive the navigation controller and ensure that our UINavigationBar subclass is used.
-    NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
-    [unarchiver setClass:[VSNavigationBar class] forClassName:@"UINavigationBar"];
-    UINavigationController *customizedNavController = [unarchiver decodeObjectForKey:@"root"];
-    [unarchiver finishDecoding];
-
-    VSNavigationBar *navBar = (VSNavigationBar *)[customizedNavController navigationBar];
-    [navBar updateBackgroundImage];
-    
-    return customizedNavController;
+    if ([navController.navigationBar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)] ) {
+        UIImage *image = [UIImage imageNamed:@"Navigation.png"];
+        [navController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
+        navController.navigationBar.translucent = NO;
+    }
+    return navController;
 }
 
 

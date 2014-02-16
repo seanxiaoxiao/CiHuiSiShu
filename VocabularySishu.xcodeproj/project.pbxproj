@@ -310,7 +310,6 @@
 		0017179F16B7B61200C49BE0 /* VSVocabularyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408115590E0B007E5FA9 /* VSVocabularyViewController.xib */; };
 		001717A016B7B61200C49BE0 /* VSVocabularyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */; };
 		001717A116B7B61200C49BE0 /* VSConfigurationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */; };
-		001717A216B7B61200C49BE0 /* VocabularySishu.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00FF6FE815D0AC940043BA91 /* VocabularySishu.sqlite */; };
 		001717A316B7B61200C49BE0 /* VSMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0044C14E15D397630022154A /* VSMainViewController.xib */; };
 		001717A416B7B61200C49BE0 /* VSRepoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0044C15415D3B70F0022154A /* VSRepoListViewController.xib */; };
 		001717A516B7B61200C49BE0 /* VSGuideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006B4CDD15E3638B00711C64 /* VSGuideViewController.xib */; };
@@ -655,6 +654,10 @@
 		00763F2A1645A03200CF7216 /* VSCellStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 00763F271645A03200CF7216 /* VSCellStatus.m */; };
 		00763F2B1645A03200CF7216 /* VSCellStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 00763F271645A03200CF7216 /* VSCellStatus.m */; };
 		0076DB4716BDE7D500839FCC /* ListBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584015E40C9900B7AB04 /* ListBG@2x.png */; };
+		0080C9FC18A5BC6C00E8EDCB /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00843CD7189627A4003C3DD6 /* CoreTelephony.framework */; };
+		0080C9FD18A5BDCB00E8EDCB /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00CD22D91894027600D90004 /* StoreKit.framework */; };
+		0080CA0118A5BE5800E8EDCB /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00843CDD18962814003C3DD6 /* AudioToolbox.framework */; };
+		0080CA0318A5C63D00E8EDCB /* sentence.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0080CA0218A5C63D00E8EDCB /* sentence.txt */; };
 		008242801671BF1400FF1631 /* VSNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0081185015BEFE220022B515 /* VSNavigationBar.m */; };
 		008242811671BF1400FF1631 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00701E3D1553CBCE00D30018 /* main.m */; };
 		008242821671BF1400FF1631 /* VSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00701E411553CBCE00D30018 /* VSAppDelegate.m */; };
@@ -1764,6 +1767,8 @@
 		00757E011628F9D300CED0E8 /* VocabularySishu.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = VocabularySishu.sqlite; path = Resources/Data/TRIAL/VocabularySishu.sqlite; sourceTree = "<group>"; };
 		00763F261645A03200CF7216 /* VSCellStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSCellStatus.h; path = ViewController/VocabularyListView/VSCellStatus.h; sourceTree = "<group>"; };
 		00763F271645A03200CF7216 /* VSCellStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSCellStatus.m; path = ViewController/VocabularyListView/VSCellStatus.m; sourceTree = "<group>"; };
+		0080C9FF18A5BDE700E8EDCB /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		0080CA0218A5C63D00E8EDCB /* sentence.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = sentence.txt; path = ../../vsresource/sentence.txt; sourceTree = "<group>"; };
 		0081184F15BEFE220022B515 /* VSNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSNavigationBar.h; path = Generic/VSNavigationBar.h; sourceTree = "<group>"; };
 		0081185015BEFE220022B515 /* VSNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSNavigationBar.m; path = Generic/VSNavigationBar.m; sourceTree = "<group>"; };
 		0082430E1671BF1400FF1631 /* VocabularySishu TOEFL Trial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VocabularySishu TOEFL Trial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1961,6 +1966,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0080CA0118A5BE5800E8EDCB /* AudioToolbox.framework in Frameworks */,
+				0080C9FD18A5BDCB00E8EDCB /* StoreKit.framework in Frameworks */,
+				0080C9FC18A5BC6C00E8EDCB /* CoreTelephony.framework in Frameworks */,
 				0082DF07170F57800006BD83 /* MediaPlayer.framework in Frameworks */,
 				00DEDC4718961F3B00D30766 /* libGoogleAdMobAds.a in Frameworks */,
 				0017178E16B7B61200C49BE0 /* AVFoundation.framework in Frameworks */,
@@ -2421,6 +2429,7 @@
 		00701E2E1553CBCE00D30018 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0080C9FF18A5BDE700E8EDCB /* AudioUnit.framework */,
 				00843CDD18962814003C3DD6 /* AudioToolbox.framework */,
 				00843CDA189627DD003C3DD6 /* CoreAudio.framework */,
 				00843CD7189627A4003C3DD6 /* CoreTelephony.framework */,
@@ -2530,6 +2539,7 @@
 		0073A68115689DA900B80422 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				0080CA0218A5C63D00E8EDCB /* sentence.txt */,
 				00D58C4F16D85CB5005C1A7E /* GMAT */,
 				0094E41916D020970064219C /* SAT */,
 				002D4E03169CB284009C4F8E /* IELTS */,
@@ -3335,7 +3345,6 @@
 				0017179F16B7B61200C49BE0 /* VSVocabularyViewController.xib in Resources */,
 				001717A016B7B61200C49BE0 /* VSVocabularyListViewController.xib in Resources */,
 				001717A116B7B61200C49BE0 /* VSConfigurationViewController.xib in Resources */,
-				001717A216B7B61200C49BE0 /* VocabularySishu.sqlite in Resources */,
 				001717A316B7B61200C49BE0 /* VSMainViewController.xib in Resources */,
 				001717A416B7B61200C49BE0 /* VSRepoListViewController.xib in Resources */,
 				001717A516B7B61200C49BE0 /* VSGuideViewController.xib in Resources */,
@@ -3363,6 +3372,7 @@
 				001717BB16B7B61200C49BE0 /* SeparatorLine@2x.png in Resources */,
 				001717BC16B7B61200C49BE0 /* Star@2x.png in Resources */,
 				001717BD16B7B61200C49BE0 /* StarNone@2x.png in Resources */,
+				0094E42316D024A40064219C /* VocabularySishu.sqlite in Resources */,
 				001717BE16B7B61200C49BE0 /* StarSmall@2x.png in Resources */,
 				001717BF16B7B61200C49BE0 /* TapeBody@2x.png in Resources */,
 				001717C016B7B61200C49BE0 /* TapeHead@2x.png in Resources */,
@@ -3399,7 +3409,6 @@
 				0017180816B7B94800C49BE0 /* icon@2x.png in Resources */,
 				0017180916B7B94800C49BE0 /* iTunesArtwork in Resources */,
 				00BE921D16C0EFF7003C2D0B /* Default@2x.png in Resources */,
-				0094E42316D024A40064219C /* VocabularySishu.sqlite in Resources */,
 				00ADD76916E6972000ACB602 /* ButtonAll@2x.png in Resources */,
 				00ADD77216E6972000ACB602 /* ButtonBad@2x.png in Resources */,
 				00ADD77D16E6A8A300ACB602 /* CellRedMark@2x.png in Resources */,
@@ -3422,6 +3431,7 @@
 				00DDD38D189D569D00306B66 /* UMSnsAccountViewController.xib in Resources */,
 				00DDD392189D569D00306B66 /* UMSShareListController.xib in Resources */,
 				00DDD397189D569D00306B66 /* UMSocialSDKResourcesNew.bundle in Resources */,
+				0080CA0318A5C63D00E8EDCB /* sentence.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4937,7 +4947,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				BUNDLE_NAME = "VocabularySishu-GRE";
+				BUNDLE_NAME = "VocabularySishu-SAT-New";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -4946,23 +4956,23 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = "GRE=1";
+				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/VocabularySishu/VocabularySishu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\"$(SRCROOT)/VocabularySishu/Libs/Statistics\\\"",
-					"\\\"$(SRCROOT)/VocabularySishu/Libs/UMSocial_Sdk_1.6.1/frameworks/Wechat\\\"",
-					"\\\"$(SRCROOT)/VocabularySishu/Libs/UMSocial_Sdk_1.6.1\\\"",
-					/Users/xiaoxiao/workspace/innorz/Rich/VocabularySishu/Libs/Admob,
+					"\"$(SRCROOT)/VocabularySishu/Libs/Statistics\"",
+					"\"$(SRCROOT)/VocabularySishu/Libs/UMSocial_Sdk_1.6.1/frameworks/Wechat\"",
+					"\"$(SRCROOT)/VocabularySishu/Libs/UMSocial_Sdk_1.6.1\"",
+					"\"$(SRCROOT)/VocabularySishu/Libs/Admob\"",
 					"\"$(SRCROOT)/../../../Downloads/umeng_ios_social_sdk_3.3.4_custom/UMSocial_Sdk_3.3.4/frameworks/Wechat\"",
-					"\"$(SRCROOT)/../../../Downloads/umeng_ios_social_sdk_3.3.4_custom/UMSocial_Sdk_3.3.4\"",
 					"\"$(SRCROOT)/VocabularySishu/Libs/UMSocial_Sdk_1.6.1/frameworks/Wechat\"",
 					"\"$(SRCROOT)/VocabularySishu/Libs/UMSocial_Sdk_1.6.1\"",
 					"\"$(SRCROOT)/VocabularySishu/Libs/UMSocial_Sdk_3.3.4/frameworks/Wechat\"",
 					"\"$(SRCROOT)/VocabularySishu/Libs/UMSocial_Sdk_3.3.4\"",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "VocabularySishu SAT";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -4975,7 +4985,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				BUNDLE_NAME = "VocabularySishu-GRE";
+				BUNDLE_NAME = "VocabularySishu-SAT-New";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -4984,23 +4994,23 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VocabularySishu/VocabularySishu-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = "GRE=1";
+				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/VocabularySishu/VocabularySishu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\"$(SRCROOT)/VocabularySishu/Libs/Statistics\\\"",
-					"\\\"$(SRCROOT)/VocabularySishu/Libs/UMSocial_Sdk_1.6.1/frameworks/Wechat\\\"",
-					"\\\"$(SRCROOT)/VocabularySishu/Libs/UMSocial_Sdk_1.6.1\\\"",
-					/Users/xiaoxiao/workspace/innorz/Rich/VocabularySishu/Libs/Admob,
+					"\"$(SRCROOT)/VocabularySishu/Libs/Statistics\"",
+					"\"$(SRCROOT)/VocabularySishu/Libs/UMSocial_Sdk_1.6.1/frameworks/Wechat\"",
+					"\"$(SRCROOT)/VocabularySishu/Libs/UMSocial_Sdk_1.6.1\"",
+					"\"$(SRCROOT)/VocabularySishu/Libs/Admob\"",
 					"\"$(SRCROOT)/../../../Downloads/umeng_ios_social_sdk_3.3.4_custom/UMSocial_Sdk_3.3.4/frameworks/Wechat\"",
-					"\"$(SRCROOT)/../../../Downloads/umeng_ios_social_sdk_3.3.4_custom/UMSocial_Sdk_3.3.4\"",
 					"\"$(SRCROOT)/VocabularySishu/Libs/UMSocial_Sdk_1.6.1/frameworks/Wechat\"",
 					"\"$(SRCROOT)/VocabularySishu/Libs/UMSocial_Sdk_1.6.1\"",
 					"\"$(SRCROOT)/VocabularySishu/Libs/UMSocial_Sdk_3.3.4/frameworks/Wechat\"",
 					"\"$(SRCROOT)/VocabularySishu/Libs/UMSocial_Sdk_3.3.4\"",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "VocabularySishu SAT";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -5013,7 +5023,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				BUNDLE_NAME = "VocabularySishu-GRE";
+				BUNDLE_NAME = "VocabularySishu-GRE-New";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -5029,12 +5039,8 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/VocabularySishu/Libs/Statistics",
-					"$(SRCROOT)/VocabularySishu/Libs/UMSocial_Sdk_1.6.1/frameworks/Wechat",
-					"$(SRCROOT)/VocabularySishu/Libs/UMSocial_Sdk_1.6.1",
 					"$(SRCROOT)/VocabularySishu/Libs/Admob",
 					"$(SRCROOT)/VocabularySishu/Libs/Statistics",
-					"\"$(SRCROOT)/../../../Downloads/umeng_ios_social_sdk_3.3.4_custom/UMSocial_Sdk_3.3.4/frameworks/Wechat\"",
-					"\"$(SRCROOT)/../../../Downloads/umeng_ios_social_sdk_3.3.4_custom/UMSocial_Sdk_3.3.4\"",
 					"\"$(SRCROOT)/VocabularySishu/Libs/UMSocial_Sdk_3.3.4/frameworks/Wechat\"",
 					"\"$(SRCROOT)/VocabularySishu/Libs/UMSocial_Sdk_3.3.4\"",
 				);
@@ -5051,7 +5057,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				BUNDLE_NAME = "VocabularySishu-GRE";
+				BUNDLE_NAME = "VocabularySishu-GRE-New";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -5067,12 +5073,8 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/VocabularySishu/Libs/Statistics",
-					"$(SRCROOT)/VocabularySishu/Libs/UMSocial_Sdk_1.6.1/frameworks/Wechat",
-					"$(SRCROOT)/VocabularySishu/Libs/UMSocial_Sdk_1.6.1",
 					"$(SRCROOT)/VocabularySishu/Libs/Admob",
 					"$(SRCROOT)/VocabularySishu/Libs/Statistics",
-					"\"$(SRCROOT)/../../../Downloads/umeng_ios_social_sdk_3.3.4_custom/UMSocial_Sdk_3.3.4/frameworks/Wechat\"",
-					"\"$(SRCROOT)/../../../Downloads/umeng_ios_social_sdk_3.3.4_custom/UMSocial_Sdk_3.3.4\"",
 					"\"$(SRCROOT)/VocabularySishu/Libs/UMSocial_Sdk_3.3.4/frameworks/Wechat\"",
 					"\"$(SRCROOT)/VocabularySishu/Libs/UMSocial_Sdk_3.3.4\"",
 				);

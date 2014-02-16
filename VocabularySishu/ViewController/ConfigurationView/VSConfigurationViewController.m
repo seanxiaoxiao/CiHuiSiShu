@@ -56,6 +56,14 @@
     }
 }
 
+-(void)viewDidLayoutSubviews {
+    
+    for (int section = 0; section < [self.tableView numberOfSections]; section++)
+    {
+        [self.tableView footerViewForSection:section].textLabel.textAlignment = NSTextAlignmentCenter;
+    }
+}
+
 - (void)goBack
 {
     [self.navigationController popViewControllerAnimated:YES];
@@ -275,7 +283,6 @@
 
 - (void)productsDidLoadFailed
 {
-    [[[UIAlertView alloc] initWithTitle: @"意外！" message: @"广告依然还在" delegate: nil cancelButtonTitle: @"嗯，知道了" otherButtonTitles: nil] show];
 }
 
 - (void)productPurchaseDidSuccess:(NSNotification *)notification

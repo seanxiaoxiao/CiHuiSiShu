@@ -50,11 +50,13 @@
     [self.view addSubview:backgroundImageView];
     [self.view sendSubviewToBack:backgroundImageView];
     
+
     CGSize screenSize = [[UIScreen mainScreen] bounds].size;
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone && screenSize.height > 480.0f) {
         CGRect tableFrame = self.historyTable.frame;
         self.historyTable.frame = CGRectMake(tableFrame.origin.x, tableFrame.origin.y, tableFrame.size.width, tableFrame.size.height + 20);
     }
+
    
 #ifdef TRIAL
     UIImage *promoImage = [VSUtils fetchImg:@"MainPromo"];
@@ -69,6 +71,7 @@
     CGRect tableFrame = self.historyTable.frame;
     self.historyTable.frame = CGRectMake(tableFrame.origin.x, tableFrame.origin.y + 50, tableFrame.size.width, tableFrame.size.height - 50);
 #endif
+    
 }
 
 - (void)viewDidUnload
@@ -162,6 +165,9 @@
         VSListRecord *list = [historyLists objectAtIndex:indexPath.row];
         if (cell == nil) {
             cell = [[VSHisotryListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+            cell.backgroundColor = [UIColor clearColor];
+            cell.backgroundView = [UIView new];
+            cell.selectedBackgroundView = [UIView new];
         }
         [((VSHisotryListCell *)(cell)) initWithList:list andRow:indexPath.row];
         return cell;
@@ -171,6 +177,9 @@
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         if (cell == nil) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+            cell.backgroundColor = [UIColor clearColor];
+            cell.backgroundView = [UIView new];
+            cell.selectedBackgroundView = [UIView new];
             [cell.contentView addSubview:self.activator];
         }
         return cell;

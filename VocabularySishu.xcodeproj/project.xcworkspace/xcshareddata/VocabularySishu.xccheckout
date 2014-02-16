@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>365A1C4D-BE12-4AC9-A495-7210C1F9B4DD</string>
+	<key>IDESourceControlProjectName</key>
+	<string>VocabularySishu</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>EC39E327-7BFB-47C5-9155-8311122D12DD</key>
+		<string>ssh://git.gefostudio.com/~/Rich.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>VocabularySishu.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>EC39E327-7BFB-47C5-9155-8311122D12DD</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://git.gefostudio.com/~/Rich.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EC39E327-7BFB-47C5-9155-8311122D12DD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EC39E327-7BFB-47C5-9155-8311122D12DD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Rich</string>
+		</dict>
+	</array>
+</dict>
+</plist>
