@@ -256,8 +256,13 @@
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:self.viewController];    
     if ([navController.navigationBar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)] ) {
         UIImage *image = [UIImage imageNamed:@"Navigation.png"];
+        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+            image = [UIImage imageNamed:@"Navigation-ios7.png"];
+        }
+        
         [navController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
         navController.navigationBar.translucent = NO;
+        navController.navigationBar.titleTextAttributes = @{UITextAttributeTextColor : [UIColor whiteColor]};
     }
     return navController;
 }
