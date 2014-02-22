@@ -87,6 +87,19 @@
         if ([self.vocabulariesToRecite count] == 0) {
             [self toggleScoreBoard];
         }
+        
+        if (![VSUtils shouldHideAd]) {
+            _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
+            _bannerView.adUnitID = @"ca-app-pub-3320312069359444/9451773612";
+            _bannerView.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 50 - 64, 320, 50);
+            _bannerView.rootViewController = self;
+            [self.view addSubview:_bannerView];
+            [self.view bringSubviewToFront:_bannerView];
+            GADRequest *request = [GADRequest request];
+            [_bannerView loadRequest:request];
+
+            [self loadInterstitial];
+        }
     }
     return self;
 }
@@ -109,6 +122,9 @@
     subLabel.textColor = [UIColor colorWithHue:0 saturation:0 brightness:0.7 alpha:1];
     subLabel.shadowOffset = CGSizeMake(0, -1);
     [headerLabels addSubview:label];
+    if  ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+        subLabel.frame = CGRectMake(0, 20, 200, 18);
+    }
     [headerLabels addSubview:subLabel];
     self.navigationItem.titleView = headerLabels;
     
@@ -243,25 +259,11 @@
     
     UIView *tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 63)];
     self.tableView.tableHeaderView = tableHeaderView;
-    
-    if (![VSUtils shouldHideAd]) {
-        _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
-        _bannerView.adUnitID = @"ca-app-pub-3320312069359444/9451773612";
-        _bannerView.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 50 - 64, 320, 50);
-        _bannerView.rootViewController = self;
-        [self.view addSubview:_bannerView];
-        [self.view bringSubviewToFront:_bannerView];
-        GADRequest *request = [GADRequest request];
-        [_bannerView loadRequest:request];
-    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if (![VSUtils shouldHideAd]) {
-        [self loadInterstitial];
-    }
 }
 
 - (void)viewDidUnload
@@ -551,10 +553,6 @@
     if ([self.vocabulariesToRecite count] == 0) {
         [self.currentListRecord finish];
         [self toggleScoreBoard];
-        [self showAdInstitial];
-    }
-    else if ((countOnStart - [self.vocabulariesToRecite count]) % 39 == 0) {
-        [self showAdInstitial];
     }
 }
 
@@ -694,18 +692,12 @@
 
 - (void)interstitialDidReceiveAd:(GADInterstitial *)ad
 {
-
+    [self showAdInstitial];
 }
 
 - (void)interstitialDidDismissScreen:(GADInterstitial *)interstitial
 {
-    [self reloadInterstitial];
-}
 
-- (void)reloadInterstitial
-{
-    self.interstitial = nil;
-    [self loadInterstitial];
 }
 
 - (void)loadInterstitial

@@ -411,6 +411,7 @@
 		00201E0A15CFBAD30089B8FA /* VSVocabularyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408115590E0B007E5FA9 /* VSVocabularyViewController.xib */; };
 		00201E0B15CFBAD30089B8FA /* VSVocabularyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */; };
 		00201E1015CFBAD30089B8FA /* VSConfigurationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */; };
+		002B4BA218B90735000CFA5C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C444F618B0956E00D7D2DE /* StoreKit.framework */; };
 		002D4C21169C08DD009C4F8E /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002D4C20169C08DD009C4F8E /* GameKit.framework */; };
 		002D4D61169CADDF009C4F8E /* VSNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0081185015BEFE220022B515 /* VSNavigationBar.m */; };
 		002D4D62169CADDF009C4F8E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00701E3D1553CBCE00D30018 /* main.m */; };
@@ -1996,6 +1997,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				002B4BA218B90735000CFA5C /* StoreKit.framework in Frameworks */,
 				00843CDF18962819003C3DD6 /* AudioToolbox.framework in Frameworks */,
 				00843CD9189627AD003C3DD6 /* CoreTelephony.framework in Frameworks */,
 				00843CD61896279E003C3DD6 /* AdSupport.framework in Frameworks */,

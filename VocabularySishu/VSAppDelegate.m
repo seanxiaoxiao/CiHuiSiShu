@@ -71,6 +71,8 @@
     [UMSocialData setAppKey:[VSUtils getUMengKey]];
     [MobClick startWithAppkey:[VSUtils getUMengKey]];
     
+    [application setStatusBarStyle:UIStatusBarStyleLightContent];
+    
     [VSUtils copySQLite];
     [self initEnv];
    
