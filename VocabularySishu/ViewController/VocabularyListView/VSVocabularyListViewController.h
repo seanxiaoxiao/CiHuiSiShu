@@ -16,13 +16,15 @@
 #import "VSScoreBoardView.h"
 #import "TipsBubble.h"
 #import "GADInterstitialDelegate.h"
+#import "GADBannerViewDelegate.h"
 
 @class GADInterstitial;
 @class GADBannerView;
 
-@interface VSVocabularyListViewController : UIViewController<UIGestureRecognizerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, GADInterstitialDelegate> {
+@interface VSVocabularyListViewController : UIViewController<UIGestureRecognizerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, GADInterstitialDelegate, GADBannerViewDelegate> {
     IBOutlet UITableView *tableView;
     int countOnStart;
+    bool resized;
 }
 
 @property (nonatomic, retain) NSMutableArray *vocabulariesToRecite;

@@ -157,12 +157,11 @@
                                                      range:NSMakeRange(0, sentence.length -1)];
             if (keyWordRange.location != NSNotFound) {
                 NSMutableAttributedString *attributedSentence = [[NSMutableAttributedString alloc] initWithString:sentence];
-                [attributedSentence addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:keyWordRange];
+                [attributedSentence addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithHue:0.f saturation:1.f brightness:0.7f alpha:1.f] range:keyWordRange];
                 sentenceContentLabel.attributedText = attributedSentence;
             } else {
                 sentenceContentLabel.text = sentence;
             }
-            
             
             sentenceContentLabel.numberOfLines = 0;
             sentenceContentLabel.lineBreakMode = UILineBreakModeCharacterWrap;

@@ -70,8 +70,10 @@
 {
     [UMSocialData setAppKey:[VSUtils getUMengKey]];
     [MobClick startWithAppkey:[VSUtils getUMengKey]];
-    
-    [application setStatusBarStyle:UIStatusBarStyleLightContent];
+
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+        [application setStatusBarStyle:UIStatusBarStyleLightContent];
+    }
     
     [VSUtils copySQLite];
     [self initEnv];

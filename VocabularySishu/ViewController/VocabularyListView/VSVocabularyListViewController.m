@@ -97,9 +97,10 @@
             [self.view bringSubviewToFront:_bannerView];
             GADRequest *request = [GADRequest request];
             [_bannerView loadRequest:request];
-
+            _bannerView.delegate = self;
             [self loadInterstitial];
         }
+        resized = false;
     }
     return self;
 }
@@ -178,8 +179,6 @@
     __autoreleasing UIGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanning:)];
     panGesture.delegate = self;
     [self.view addGestureRecognizer:panGesture];
-    
-
 }
 
 - (void) initPickerView
@@ -232,7 +231,11 @@
 {
     if (pickerAreaView.frame.origin.y == [[UIScreen mainScreen] bounds].size.height) {
         [UIView animateWithDuration:0.3 animations:^() {
-            pickerAreaView.frame = CGRectMake(0, [[UIScreen mainScreen] bounds].size.height - 270, 320, 204);
+            int originY = [[UIScreen mainScreen] bounds].size.height - 270;
+            if (![VSUtils shouldHideAd]) {
+                originY -= 50;
+            }
+            pickerAreaView.frame = CGRectMake(0, originY, 320, 204);
         }];
     }
     else {
@@ -527,12 +530,16 @@
                 break;
             }
         }
+        if (index == -1) {
+            return;
+        }
         VSListVocabularyRecord *rememberedVocabulary = [vocabulariesToRecite objectAtIndex:index];
         [rememberedVocabulary.vocabularyRecord remembered];
         [rememberedVocabulary remembered];
         if (![self.currentListRecord isHistoryList]) {
             [self.listToday addVocabulary:rememberedVocabulary.vocabularyRecord];
         }
+
         [self.headerView clearWord];
         [vocabulariesToRecite removeObjectAtIndex:index];
         [self updateVocabularyTable:index];
@@ -683,9 +690,11 @@
 
 - (void)showAdInstitial
 {
-    if (![VSUtils shouldHideAd]) {
-        if (self.interstitial.isReady) {
-            [self.interstitial presentFromRootViewController:self];
+    @synchronized(self) {
+        if (![VSUtils shouldHideAd]) {
+            if (self.interstitial.isReady) {
+                [self.interstitial presentFromRootViewController:self];
+            }
         }
     }
 }
@@ -698,6 +707,14 @@
 - (void)interstitialDidDismissScreen:(GADInterstitial *)interstitial
 {
 
+}
+
+- (void)adViewDidReceiveAd:(GADBannerView *)view
+{
+    if (![VSUtils shouldHideAd] && !resized) {
+        resized = YES;
+        self.tableView.frame = CGRectMake(self.tableView.frame.origin.x, self.tableView.frame.origin.y, self.tableView.frame.size.width, self.tableView.frame.size.height - 50);
+    }
 }
 
 - (void)loadInterstitial
