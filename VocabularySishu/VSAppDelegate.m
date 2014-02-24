@@ -73,7 +73,6 @@
     [MobClick startWithAppkey:[VSUtils getUMengKey]];
     [UMSocialConfig setWXAppId:@"wxc94c96ef1461f297" url:[VSUtils getAppUrl]];
     [UMSocialData defaultData].extConfig.wxMessageType = UMSocialWXMessageTypeApp;
-    [UMSocialData defaultData].extConfig.title = @"词汇私塾，值得拥有！";
     [UMSocialData defaultData].extConfig.wechatSessionData.url = [VSUtils getAppUrl];
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {

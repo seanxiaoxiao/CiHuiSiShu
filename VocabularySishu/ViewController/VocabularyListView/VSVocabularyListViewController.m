@@ -681,7 +681,8 @@
     [numberFormatter setPositiveFormat:@"0.0%;0.0%-0.0%"];
 
     NSString *appLink = [VSUtils getAppUrl];
-    NSString *shareText = [NSString stringWithFormat:@"刚背诵完 %@ 这列单词，Feeling Awesome! %@", self.currentListRecord.name, appLink];
+    NSString *shareText = [NSString stringWithFormat:@"我刚用 %@ 背诵完 %@ 这列单词，Feeling Awesome! %@", [VSUtils getAppName], self.currentListRecord.name, appLink];
+    [UMSocialData defaultData].extConfig.title = [NSString stringWithFormat:@"刚背完 %@，Feeling Awesome!", self.currentListRecord.name];
     [UMSocialSnsService presentSnsIconSheetView:self
                                          appKey:[UMSocialData appKey]
                                       shareText:shareText

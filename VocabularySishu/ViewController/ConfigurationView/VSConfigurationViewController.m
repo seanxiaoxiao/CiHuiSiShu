@@ -208,6 +208,7 @@
 {
     NSString *appLink = [VSUtils getAppUrl];
     NSString *shareText = [NSString stringWithFormat:@"%@，低调奢华有内涵。赞一个！ %@", [VSUtils getAppName], appLink];
+    [UMSocialData defaultData].extConfig.title = @"词汇私塾，值得拥有！";
     [UMSocialSnsService presentSnsIconSheetView:self
                                          appKey:[UMSocialData appKey]
                                       shareText:shareText
