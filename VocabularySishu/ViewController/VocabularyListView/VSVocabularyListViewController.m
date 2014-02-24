@@ -87,6 +87,21 @@
         if ([self.vocabulariesToRecite count] == 0) {
             [self toggleScoreBoard];
         }
+        
+        if (![VSUtils shouldHideAd]) {
+            _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
+            _bannerView.adUnitID = @"ca-app-pub-3320312069359444/9451773612";
+            _bannerView.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 50 - 64, 320, 50);
+            _bannerView.rootViewController = self;
+            [self.view addSubview:_bannerView];
+            [self.view bringSubviewToFront:_bannerView];
+            GADRequest *request = [GADRequest request];
+            [_bannerView loadRequest:request];
+            _bannerView.delegate = self;
+            [self loadInterstitial];
+        }
+        pickerViewOffset = 0;
+        resized = false;
     }
     return self;
 }
@@ -109,6 +124,9 @@
     subLabel.textColor = [UIColor colorWithHue:0 saturation:0 brightness:0.7 alpha:1];
     subLabel.shadowOffset = CGSizeMake(0, -1);
     [headerLabels addSubview:label];
+    if  ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+        subLabel.frame = CGRectMake(0, 20, 200, 18);
+    }
     [headerLabels addSubview:subLabel];
     self.navigationItem.titleView = headerLabels;
     
@@ -162,17 +180,15 @@
     __autoreleasing UIGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanning:)];
     panGesture.delegate = self;
     [self.view addGestureRecognizer:panGesture];
-    
-
 }
 
 - (void) initPickerView
 {
     pickerAreaView = [[UIView alloc] initWithFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height, 320, 204)];
-    pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 44, 320, 160)];
+    pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 44, 320, 1)];
     pickerView.delegate = self;
     pickerView.dataSource = self;
-    pickerView.backgroundColor = [UIColor clearColor];
+    pickerView.backgroundColor = [UIColor whiteColor];
     pickerView.showsSelectionIndicator = YES;
     
     [pickerAreaView addSubview:pickerView];
@@ -216,7 +232,11 @@
 {
     if (pickerAreaView.frame.origin.y == [[UIScreen mainScreen] bounds].size.height) {
         [UIView animateWithDuration:0.3 animations:^() {
-            pickerAreaView.frame = CGRectMake(0, [[UIScreen mainScreen] bounds].size.height - 270, 320, 204);
+            int originY = [[UIScreen mainScreen] bounds].size.height - 270;
+            if (![VSUtils shouldHideAd]) {
+                originY -= pickerViewOffset;
+            }
+            pickerAreaView.frame = CGRectMake(0, originY, 320, 204);
         }];
     }
     else {
@@ -243,25 +263,11 @@
     
     UIView *tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 63)];
     self.tableView.tableHeaderView = tableHeaderView;
-    
-    if (![VSUtils shouldHideAd]) {
-        _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
-        _bannerView.adUnitID = @"ca-app-pub-3320312069359444/9451773612";
-        _bannerView.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 50 - 64, 320, 50);
-        _bannerView.rootViewController = self;
-        [self.view addSubview:_bannerView];
-        [self.view bringSubviewToFront:_bannerView];
-        GADRequest *request = [GADRequest request];
-        [_bannerView loadRequest:request];
-    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if (![VSUtils shouldHideAd]) {
-        [self loadInterstitial];
-    }
 }
 
 - (void)viewDidUnload
@@ -525,12 +531,16 @@
                 break;
             }
         }
+        if (index == -1) {
+            return;
+        }
         VSListVocabularyRecord *rememberedVocabulary = [vocabulariesToRecite objectAtIndex:index];
         [rememberedVocabulary.vocabularyRecord remembered];
         [rememberedVocabulary remembered];
         if (![self.currentListRecord isHistoryList]) {
             [self.listToday addVocabulary:rememberedVocabulary.vocabularyRecord];
         }
+
         [self.headerView clearWord];
         [vocabulariesToRecite removeObjectAtIndex:index];
         [self updateVocabularyTable:index];
@@ -551,10 +561,6 @@
     if ([self.vocabulariesToRecite count] == 0) {
         [self.currentListRecord finish];
         [self toggleScoreBoard];
-        [self showAdInstitial];
-    }
-    else if ((countOnStart - [self.vocabulariesToRecite count]) % 39 == 0) {
-        [self showAdInstitial];
     }
 }
 
@@ -673,39 +679,44 @@
 {
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
     [numberFormatter setPositiveFormat:@"0.0%;0.0%-0.0%"];
-    NSString *rememberRate = [numberFormatter stringFromNumber:[NSNumber numberWithDouble:[self.currentListRecord rememberRate]]];
-    NSString *appLink = [NSString stringWithFormat:@"http://itunes.apple.com/app/id%@", [VSUtils getAppId]];
-    NSString *shareText = [NSString stringWithFormat:@"我刚用 %@ 背诵完 %@ 这列单词，其中 %@ 的单词背得靠谱，你要不要来挑战一下我的记录啊 %@", [VSUtils getAppName], self.currentListRecord.name , rememberRate, appLink];
+
+    NSString *appLink = [VSUtils getAppUrl];
+    NSString *shareText = [NSString stringWithFormat:@"我刚用 %@ 背诵完 %@ 这列单词，Feeling Awesome! %@", [VSUtils getAppName], self.currentListRecord.name, appLink];
     [UMSocialSnsService presentSnsIconSheetView:self
                                          appKey:[UMSocialData appKey]
                                       shareText:shareText
                                      shareImage:[UIImage imageNamed:@"icon512.png"]
-                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina, UMShareToDouban, UMShareToRenren, nil] delegate:nil];
+                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina, UMShareToDouban, UMShareToRenren, UMShareToWechatTimeline, nil] delegate:nil];
 }
 
 - (void)showAdInstitial
 {
-    if (![VSUtils shouldHideAd]) {
-        if (self.interstitial.isReady) {
-            [self.interstitial presentFromRootViewController:self];
+    @synchronized(self) {
+        if (![VSUtils shouldHideAd]) {
+            if (self.interstitial.isReady) {
+                [self.interstitial presentFromRootViewController:self];
+            }
         }
     }
 }
 
 - (void)interstitialDidReceiveAd:(GADInterstitial *)ad
 {
-
+    [self showAdInstitial];
 }
 
 - (void)interstitialDidDismissScreen:(GADInterstitial *)interstitial
 {
-    [self reloadInterstitial];
+
 }
 
-- (void)reloadInterstitial
+- (void)adViewDidReceiveAd:(GADBannerView *)view
 {
-    self.interstitial = nil;
-    [self loadInterstitial];
+    if (![VSUtils shouldHideAd] && !resized) {
+        resized = YES;
+        self.tableView.frame = CGRectMake(self.tableView.frame.origin.x, self.tableView.frame.origin.y, self.tableView.frame.size.width, self.tableView.frame.size.height - 50);
+        pickerViewOffset = 50;
+    }
 }
 
 - (void)loadInterstitial

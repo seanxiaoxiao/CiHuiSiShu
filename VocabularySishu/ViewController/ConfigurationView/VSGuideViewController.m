@@ -31,6 +31,7 @@
 {
     [super viewDidLoad];
     
+    offset = 0;
     CGFloat viewHeight = 0;
     CGSize screenSize = [[UIScreen mainScreen] bounds].size;
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone && screenSize.height > 480.0f) {
@@ -39,17 +40,21 @@
     else {
         viewHeight = 460;
     }
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+        offset = 20;
+    }
 
-    lastView = [[UIView alloc] initWithFrame:CGRectMake(1280, 0, 320, viewHeight)];
+    lastView = [[UIView alloc] initWithFrame:CGRectMake(1280, offset, 320, viewHeight)];
     lastView.backgroundColor = [UIColor blackColor];
     
     UIImageView *guidePage1 = [[UIImageView alloc] initWithImage:[VSUtils fetchImgByScreen:@"GuidePage1"]];
+    guidePage1.frame = CGRectMake(0, guidePage1.frame.origin.y + offset, guidePage1.frame.size.width, guidePage1.frame.size.height);
     UIImageView *guidePage2 = [[UIImageView alloc] initWithImage:[VSUtils fetchImgByScreen:@"GuidePage2"]];
-    guidePage2.frame = CGRectMake(320, guidePage2.frame.origin.y, guidePage2.frame.size.width, guidePage2.frame.size.height);
+    guidePage2.frame = CGRectMake(320, guidePage2.frame.origin.y + offset, guidePage2.frame.size.width, guidePage2.frame.size.height);
     UIImageView *guidePage3 = [[UIImageView alloc] initWithImage:[VSUtils fetchImgByScreen:@"GuidePage3"]];
-    guidePage3.frame = CGRectMake(640, guidePage3.frame.origin.y, guidePage3.frame.size.width, guidePage3.frame.size.height);
+    guidePage3.frame = CGRectMake(640, guidePage3.frame.origin.y + offset, guidePage3.frame.size.width, guidePage3.frame.size.height);
     UIImageView *guidePage4 = [[UIImageView alloc] initWithImage:[VSUtils fetchImgByScreen:@"GuidePage4"]];
-    guidePage4.frame = CGRectMake(960, guidePage4.frame.origin.y, guidePage4.frame.size.width, guidePage4.frame.size.height);
+    guidePage4.frame = CGRectMake(960, guidePage4.frame.origin.y + offset, guidePage4.frame.size.width, guidePage4.frame.size.height);
     
     self.scrollView.contentSize = CGSizeMake(320 * 5, viewHeight);
     self.scrollView.delegate = self;
@@ -59,7 +64,7 @@
     [self.scrollView addSubview:guidePage4];
     [self.scrollView addSubview:lastView];
     
-    CGRect pageControlFrame = CGRectMake(0, [[UIScreen mainScreen] bounds].size.height - 50, 320, 20);
+    CGRect pageControlFrame = CGRectMake(0, [[UIScreen mainScreen] bounds].size.height - 50 + offset, 320, 20);
     pageControl.frame = pageControlFrame;
     self.pageControl.numberOfPages = 5;
     self.pageControl.currentPage = 0;

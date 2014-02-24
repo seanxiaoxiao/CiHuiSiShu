@@ -3,14 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>Name</key>
-	<string>词汇私塾 SAT</string>
+	<string>新词汇私塾 SAT</string>
 	<key>ProductVersion</key>
 	<string>SAT</string>
 	<key>UMengKey</key>
-	<string>51077dfc52701516e500000b</string>
+	<string>52f5905556240b76b203bffb</string>
 	<key>BundleID</key>
-	<string>org.seanxiaoxiao.VocabularySishu-SAT</string>
+	<string>org.seanxiaoxiao.VocabularySishu-SAT-New</string>
 	<key>AppID</key>
-	<integer>597798701</integer>
+	<integer>816728275</integer>
 </dict>
 </plist>

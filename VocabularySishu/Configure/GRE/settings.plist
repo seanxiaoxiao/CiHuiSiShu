@@ -3,14 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>Name</key>
-	<string>词汇私塾 GRE</string>
+	<string>新词汇私塾 GRE</string>
 	<key>ProductVersion</key>
 	<string>GRE</string>
 	<key>UMengKey</key>
-	<string>50935a65527015075d000007</string>
+	<string>52f5087a56240b4c3a06a0d2</string>
 	<key>BundleID</key>
-	<string>org.seanxiaoxiao.VocabularySishu-GRE</string>
+	<string>org.seanxiaoxiao.VocabularySishu-GRE-New</string>
 	<key>AppID</key>
-	<integer>558382812</integer>
+	<integer>816335920</integer>
 </dict>
 </plist>

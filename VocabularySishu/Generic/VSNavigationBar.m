@@ -24,17 +24,8 @@
 - (void)updateBackgroundImage
 {
     UIImage *image = [VSUtils fetchImg:@"Navigation"];
-
-    if ([UINavigationBar instancesRespondToSelector:@selector(setBackgroundImage:forBarMetrics:)])
-    {
-        [super setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
-    }
-    else
-    {
-        [[self backgroundImageView] setImage:image];
-        [self sendSubviewToBack:_backgroundImageView];
-    }
-
+    [[self backgroundImageView] setImage:image];
+    [self sendSubviewToBack:_backgroundImageView];
 }
 
 - (UIImageView *)backgroundImageView
