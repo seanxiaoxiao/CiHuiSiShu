@@ -3206,7 +3206,7 @@
 						DevelopmentTeam = D6H3GD33L8;
 					};
 					00BDE55615CF9B9400BC205C = {
-						DevelopmentTeam = BVTD9RV57V;
+						DevelopmentTeam = D6H3GD33L8;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
 								enabled = 0;
