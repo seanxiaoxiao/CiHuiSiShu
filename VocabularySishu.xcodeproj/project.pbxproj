@@ -3202,6 +3202,9 @@
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = douban;
 				TargetAttributes = {
+					00201DDD15CFBAD30089B8FA = {
+						DevelopmentTeam = D6H3GD33L8;
+					};
 					00701E2A1553CBCE00D30018 = {
 						DevelopmentTeam = D6H3GD33L8;
 					};
@@ -5504,8 +5507,8 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				BUNDLE_NAME = "VocabularySishu-TOEFL";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
