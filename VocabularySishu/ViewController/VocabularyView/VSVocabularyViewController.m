@@ -157,7 +157,9 @@
                                                      range:NSMakeRange(0, sentence.length -1)];
             if (keyWordRange.location != NSNotFound) {
                 NSMutableAttributedString *attributedSentence = [[NSMutableAttributedString alloc] initWithString:sentence];
-                [attributedSentence addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithHue:0.f saturation:1.f brightness:0.7f alpha:1.f] range:keyWordRange];
+                [attributedSentence addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithHue:0.f saturation:1.f brightness:0.8f alpha:1.f] range:keyWordRange];
+                [attributedSentence addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Arial-BoldMT" size:18.0]range:keyWordRange];
+
                 sentenceContentLabel.attributedText = attributedSentence;
             } else {
                 sentenceContentLabel.text = sentence;
