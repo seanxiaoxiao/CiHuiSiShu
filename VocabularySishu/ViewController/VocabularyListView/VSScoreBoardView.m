@@ -147,7 +147,7 @@
         self.shareButton = [[UIButton alloc] initWithFrame:CGRectMake(25, 110, shareButtonImage.size.width, shareButtonImage.size.height)];
         [self.shareButton setBackgroundImage:shareButtonImage forState:UIControlStateNormal];
         [self.shareButton setBackgroundImage:highlightShareButtonImage forState:UIControlStateHighlighted];
-        [self.shareButton setTitle:@"分享到" forState:UIControlStateNormal];
+        [self.shareButton setTitle:@"分享" forState:UIControlStateNormal];
         [self.shareButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         self.shareButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
         self.shareButton.contentEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
