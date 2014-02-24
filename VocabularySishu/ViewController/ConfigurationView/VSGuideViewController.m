@@ -56,7 +56,7 @@
     UIImageView *guidePage4 = [[UIImageView alloc] initWithImage:[VSUtils fetchImgByScreen:@"GuidePage4"]];
     guidePage4.frame = CGRectMake(960, guidePage4.frame.origin.y + offset, guidePage4.frame.size.width, guidePage4.frame.size.height);
     
-    self.scrollView.contentSize = CGSizeMake(320 * 5, viewHeight);
+    self.scrollView.contentSize = CGSizeMake(320 * 5, viewHeight + offset);
     self.scrollView.delegate = self;
     [self.scrollView addSubview:guidePage1];
     [self.scrollView addSubview:guidePage2];
