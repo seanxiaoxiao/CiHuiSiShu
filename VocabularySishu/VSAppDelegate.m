@@ -14,6 +14,7 @@
 #import "VSListRecord.h"
 #import "UMSocial.h"
 #import "InAppPurchase.h"
+#import "UMSocialConfig.h"
 
 @implementation VSAppDelegate
 
@@ -70,7 +71,11 @@
 {
     [UMSocialData setAppKey:[VSUtils getUMengKey]];
     [MobClick startWithAppkey:[VSUtils getUMengKey]];
-
+    [UMSocialConfig setWXAppId:@"wxc94c96ef1461f297" url:[VSUtils getAppUrl]];
+    [UMSocialData defaultData].extConfig.wxMessageType = UMSocialWXMessageTypeApp;
+    [UMSocialData defaultData].extConfig.title = @"词汇私塾，值得拥有！";
+    [UMSocialData defaultData].extConfig.wechatSessionData.url = [VSUtils getAppUrl];
+    
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
         [application setStatusBarStyle:UIStatusBarStyleLightContent];
     }
@@ -91,6 +96,13 @@
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
+    
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"launched"] ) {
+        [VSUtils showGuidPage];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"launched"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        return YES;
+    }
     
     UILocalNotification *localNotif = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
     if (localNotif && [localNotif.userInfo valueForKey:@"ListRecordName"] != nil) {

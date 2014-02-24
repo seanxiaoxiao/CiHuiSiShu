@@ -67,4 +67,6 @@
 
 + (BOOL)shouldHideAd;
 
++ (NSString *)getAppUrl;
+
 @end

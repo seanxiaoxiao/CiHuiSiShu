@@ -206,13 +206,13 @@
 
 - (void)share
 {
-    NSString *appLink = [NSString stringWithFormat:@"http://itunes.apple.com/app/id%@", [VSUtils getAppId]];
-    NSString *shareText = [NSString stringWithFormat:@"我正在使用 %@ 背单词，此应用低调奢华有内涵，各位亲你们怎么看 %@", [VSUtils getAppName], appLink];
+    NSString *appLink = [VSUtils getAppUrl];
+    NSString *shareText = [NSString stringWithFormat:@"%@，低调奢华有内涵。赞一个！ %@", [VSUtils getAppName], appLink];
     [UMSocialSnsService presentSnsIconSheetView:self
                                          appKey:[UMSocialData appKey]
                                       shareText:shareText
                                      shareImage:[UIImage imageNamed:@"icon512.png"]
-                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina, UMShareToDouban, UMShareToRenren, nil] delegate:nil];
+                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina, UMShareToDouban, UMShareToRenren, UMShareToWechatTimeline, nil] delegate:nil];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section

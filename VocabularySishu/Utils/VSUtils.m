@@ -320,4 +320,9 @@
     return [[NSUserDefaults standardUserDefaults] boolForKey:@"shouldHideAd"];
 }
 
++ (NSString *)getAppUrl
+{
+    return [NSString stringWithFormat:@"http://itunes.apple.com/app/id%@", [VSUtils getAppId]];
+}
+
 @end

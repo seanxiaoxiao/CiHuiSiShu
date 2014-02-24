@@ -100,6 +100,7 @@
             _bannerView.delegate = self;
             [self loadInterstitial];
         }
+        pickerViewOffset = 0;
         resized = false;
     }
     return self;
@@ -233,7 +234,7 @@
         [UIView animateWithDuration:0.3 animations:^() {
             int originY = [[UIScreen mainScreen] bounds].size.height - 270;
             if (![VSUtils shouldHideAd]) {
-                originY -= 50;
+                originY -= pickerViewOffset;
             }
             pickerAreaView.frame = CGRectMake(0, originY, 320, 204);
         }];
@@ -678,14 +679,14 @@
 {
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
     [numberFormatter setPositiveFormat:@"0.0%;0.0%-0.0%"];
-    NSString *rememberRate = [numberFormatter stringFromNumber:[NSNumber numberWithDouble:[self.currentListRecord rememberRate]]];
-    NSString *appLink = [NSString stringWithFormat:@"http://itunes.apple.com/app/id%@", [VSUtils getAppId]];
-    NSString *shareText = [NSString stringWithFormat:@"我刚用 %@ 背诵完 %@ 这列单词，其中 %@ 的单词背得靠谱，你要不要来挑战一下我的记录啊 %@", [VSUtils getAppName], self.currentListRecord.name , rememberRate, appLink];
+
+    NSString *appLink = [VSUtils getAppUrl];
+    NSString *shareText = [NSString stringWithFormat:@"刚背诵完 %@ 这列单词，Feeling Awesome! %@", self.currentListRecord.name, appLink];
     [UMSocialSnsService presentSnsIconSheetView:self
                                          appKey:[UMSocialData appKey]
                                       shareText:shareText
                                      shareImage:[UIImage imageNamed:@"icon512.png"]
-                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina, UMShareToDouban, UMShareToRenren, nil] delegate:nil];
+                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina, UMShareToDouban, UMShareToRenren, UMShareToWechatTimeline, nil] delegate:nil];
 }
 
 - (void)showAdInstitial
@@ -714,6 +715,7 @@
     if (![VSUtils shouldHideAd] && !resized) {
         resized = YES;
         self.tableView.frame = CGRectMake(self.tableView.frame.origin.x, self.tableView.frame.origin.y, self.tableView.frame.size.width, self.tableView.frame.size.height - 50);
+        pickerViewOffset = 50;
     }
 }
 

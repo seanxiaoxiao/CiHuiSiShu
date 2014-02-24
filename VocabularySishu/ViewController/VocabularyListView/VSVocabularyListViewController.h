@@ -24,7 +24,8 @@
 @interface VSVocabularyListViewController : UIViewController<UIGestureRecognizerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, GADInterstitialDelegate, GADBannerViewDelegate> {
     IBOutlet UITableView *tableView;
     int countOnStart;
-    bool resized;
+    int resized;
+    float pickerViewOffset;
 }
 
 @property (nonatomic, retain) NSMutableArray *vocabulariesToRecite;

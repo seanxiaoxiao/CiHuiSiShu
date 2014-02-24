@@ -12,6 +12,7 @@
 @interface VSGuideViewController : UIViewController<UIScrollViewDelegate> {
     IBOutlet UIPageControl *pageControl;
     IBOutlet UIScrollView *scrollView;
+    float offset;
 }
 
 @property (nonatomic, assign) BOOL pageControlUsed;
