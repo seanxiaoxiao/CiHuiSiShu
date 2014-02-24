@@ -411,6 +411,8 @@
 		00201E0A15CFBAD30089B8FA /* VSVocabularyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408115590E0B007E5FA9 /* VSVocabularyViewController.xib */; };
 		00201E0B15CFBAD30089B8FA /* VSVocabularyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */; };
 		00201E1015CFBAD30089B8FA /* VSConfigurationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */; };
+		0029DA9E18BBC00400A1CA06 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C444F618B0956E00D7D2DE /* StoreKit.framework */; };
+		0029DAA018BBC21900A1CA06 /* icon120.png in Resources */ = {isa = PBXBuildFile; fileRef = 0029DA9F18BBC21900A1CA06 /* icon120.png */; };
 		002B4BA218B90735000CFA5C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C444F618B0956E00D7D2DE /* StoreKit.framework */; };
 		002D4C21169C08DD009C4F8E /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002D4C20169C08DD009C4F8E /* GameKit.framework */; };
 		002D4D61169CADDF009C4F8E /* VSNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0081185015BEFE220022B515 /* VSNavigationBar.m */; };
@@ -1666,6 +1668,7 @@
 		0017180316B7B94800C49BE0 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		0017180416B7B94800C49BE0 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		00201E2F15CFBAD30089B8FA /* VocabularySishu GRE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VocabularySishu GRE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0029DA9F18BBC21900A1CA06 /* icon120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon120.png; path = Resources/Img/GRE/icon120.png; sourceTree = "<group>"; };
 		002D4C20169C08DD009C4F8E /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		002D4DF1169CADDF009C4F8E /* VocabularySishu IELTS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VocabularySishu IELTS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		002D4E00169CB0E3009C4F8E /* settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = settings.plist; sourceTree = "<group>"; };
@@ -1971,6 +1974,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0029DA9E18BBC00400A1CA06 /* StoreKit.framework in Frameworks */,
 				0080CA0118A5BE5800E8EDCB /* AudioToolbox.framework in Frameworks */,
 				0080C9FC18A5BC6C00E8EDCB /* CoreTelephony.framework in Frameworks */,
 				0082DF07170F57800006BD83 /* MediaPlayer.framework in Frameworks */,
@@ -2374,6 +2378,7 @@
 			children = (
 				0017174716B7B1EB00C49BE0 /* iTunesArtwork */,
 				000EEEE716B4F877006BB7F7 /* icon512.png */,
+				0029DA9F18BBC21900A1CA06 /* icon120.png */,
 				00533E2F15F3DA81004777F1 /* icon.png */,
 				00533E3015F3DA81004777F1 /* icon@2x.png */,
 			);
@@ -3461,6 +3466,7 @@
 				006B4CE315E3638C00711C64 /* VSGuideViewController.xib in Resources */,
 				006B4CE715E3F3B100711C64 /* Menu@2x.png in Resources */,
 				00FF1B1215E407AC005B9E51 /* SeparatorDots@2x.png in Resources */,
+				0029DAA018BBC21900A1CA06 /* icon120.png in Resources */,
 				000E585915E40C9900B7AB04 /* BookBlack@2x.png in Resources */,
 				000E585C15E40C9900B7AB04 /* BookLake@2x.png in Resources */,
 				000E585F15E40C9900B7AB04 /* BookRed@2x.png in Resources */,
