@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>Name</key>
-	<string>词汇私塾 TOEFL</string>
+	<string>新词汇私塾 TOEFL</string>
 	<key>ProductVersion</key>
 	<string>TOEFL</string>
 	<key>UMengKey</key>
 	<string>52e89d5a56240ba07d080339</string>
 	<key>BundleID</key>
-	<string>org.seanxiaoxiao.VocabularySishu-TOEFL</string>
+	<string>org.seanxiaoxiao.VocabularySishu-TOEFL-New</string>
 	<key>AppID</key>
 	<integer>807824461</integer>
 </dict>

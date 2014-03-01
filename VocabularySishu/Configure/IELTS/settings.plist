@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>Name</key>
-	<string>词汇私塾 雅思</string>
+	<string>新词汇私塾 雅思</string>
 	<key>ProductVersion</key>
 	<string>IELTS</string>
 	<key>UMengKey</key>
-	<string>50ec79c85270155804000088</string>
+	<string>531174ce56240b7a8a086903</string>
 	<key>BundleID</key>
-	<string>org.seanxiaoxiao.VocabularySishu-IELTS</string>
+	<string>org.seanxiaoxiao.VocabularySishu-IELTS-New</string>
 	<key>AppID</key>
 	<integer>593309202</integer>
 </dict>
