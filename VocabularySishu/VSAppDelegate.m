@@ -118,7 +118,6 @@
     }
 
     [InAppPurchase loadStore];
-//    [VSDataUtil initSentence];
     
     return YES;
 }

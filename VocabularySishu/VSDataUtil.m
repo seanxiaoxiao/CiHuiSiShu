@@ -672,6 +672,7 @@ NSMutableDictionary *vocabularyMap;
         if (spell != nil) {
             VSVocabulary *v = [vocabularyMap objectForKey:spell];
             v.etymology = [results JSONRepresentation];
+            NSLog(@"?");
         }
     }
     [VSUtils saveEntity];
