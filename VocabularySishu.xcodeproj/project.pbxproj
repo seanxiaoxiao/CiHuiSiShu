@@ -411,6 +411,8 @@
 		00201E0A15CFBAD30089B8FA /* VSVocabularyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0046408115590E0B007E5FA9 /* VSVocabularyViewController.xib */; };
 		00201E0B15CFBAD30089B8FA /* VSVocabularyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0073A6BD156A5FF700B80422 /* VSVocabularyListViewController.xib */; };
 		00201E1015CFBAD30089B8FA /* VSConfigurationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AE80F0158B1318000CE7EA /* VSConfigurationViewController.xib */; };
+		002381DB18C70F6D00421DD1 /* icon120.png in Resources */ = {isa = PBXBuildFile; fileRef = 002381DA18C70F6D00421DD1 /* icon120.png */; };
+		002381DD18C70FE300421DD1 /* icon120.png in Resources */ = {isa = PBXBuildFile; fileRef = 002381DC18C70FE300421DD1 /* icon120.png */; };
 		0029DA9E18BBC00400A1CA06 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C444F618B0956E00D7D2DE /* StoreKit.framework */; };
 		0029DAA018BBC21900A1CA06 /* icon120.png in Resources */ = {isa = PBXBuildFile; fileRef = 0029DA9F18BBC21900A1CA06 /* icon120.png */; };
 		002B4BA218B90735000CFA5C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C444F618B0956E00D7D2DE /* StoreKit.framework */; };
@@ -1672,6 +1674,8 @@
 		0017180316B7B94800C49BE0 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		0017180416B7B94800C49BE0 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		00201E2F15CFBAD30089B8FA /* VocabularySishu GRE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VocabularySishu GRE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		002381DA18C70F6D00421DD1 /* icon120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon120.png; sourceTree = "<group>"; };
+		002381DC18C70FE300421DD1 /* icon120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon120.png; sourceTree = "<group>"; };
 		0029DA9F18BBC21900A1CA06 /* icon120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon120.png; path = Resources/Img/GRE/icon120.png; sourceTree = "<group>"; };
 		002D4C20169C08DD009C4F8E /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		002D4DF1169CADDF009C4F8E /* VocabularySishu IELTS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VocabularySishu IELTS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1947,7 +1951,7 @@
 		00FF6FF915D0BACB0043BA91 /* VSScoreBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSScoreBoardView.m; path = ViewController/VocabularyListView/VSScoreBoardView.m; sourceTree = "<group>"; };
 		00FF701115D1676F0043BA91 /* VSHisotryListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSHisotryListCell.h; path = ViewController/MainView/VSHisotryListCell.h; sourceTree = "<group>"; };
 		00FF701215D1676F0043BA91 /* VSHisotryListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSHisotryListCell.m; path = ViewController/MainView/VSHisotryListCell.m; sourceTree = "<group>"; };
-		644AEEED18A5F4920042B629 /* icon120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon120.png; path = VocabularySishu/Resources/Img/TOEFL/icon120.png; sourceTree = "<group>"; };
+		644AEEED18A5F4920042B629 /* icon120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon120.png; path = Resources/Img/TOEFL/icon120.png; sourceTree = "<group>"; };
 		64DA9654189BD786006909EC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -2265,6 +2269,7 @@
 		001717FF16B7B94800C49BE0 /* SAT */ = {
 			isa = PBXGroup;
 			children = (
+				002381DA18C70F6D00421DD1 /* icon120.png */,
 				0017180116B7B94800C49BE0 /* icon.png */,
 				0017180216B7B94800C49BE0 /* icon512.png */,
 				0017180316B7B94800C49BE0 /* icon@2x.png */,
@@ -2295,6 +2300,7 @@
 			isa = PBXGroup;
 			children = (
 				000EEEE916B4F8A7006BB7F7 /* icon512.png */,
+				002381DC18C70FE300421DD1 /* icon120.png */,
 				002D4E0A169CB2CE009C4F8E /* icon.png */,
 				002D4E0B169CB2CE009C4F8E /* icon@2x.png */,
 				002D4E0C169CB2CE009C4F8E /* iTunesArtwork */,
@@ -2398,6 +2404,7 @@
 				00AAE644189B8E5000E21A23 /* icon@2x.png */,
 				00AAE645189B8E5000E21A23 /* icon512.png */,
 				00AAE67B189BEB0500E21A23 /* iTunesArtWork */,
+				644AEEED18A5F4920042B629 /* icon120.png */,
 			);
 			name = TOEFL;
 			sourceTree = "<group>";
@@ -2414,7 +2421,6 @@
 		00701E201553CBCE00D30018 = {
 			isa = PBXGroup;
 			children = (
-				644AEEED18A5F4920042B629 /* icon120.png */,
 				64DA9654189BD786006909EC /* Default-568h@2x.png */,
 				00701E371553CBCE00D30018 /* VocabularySishu */,
 				00701E531553CBCE00D30018 /* VocabularySishuTests */,
@@ -3211,6 +3217,9 @@
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = douban;
 				TargetAttributes = {
+					00201DDD15CFBAD30089B8FA = {
+						DevelopmentTeam = BVTD9RV57V;
+					};
 					00701E2A1553CBCE00D30018 = {
 						DevelopmentTeam = D6H3GD33L8;
 					};
@@ -3383,6 +3392,7 @@
 				001717B016B7B61200C49BE0 /* CellLine@2x.png in Resources */,
 				001717B116B7B61200C49BE0 /* CellSummary@2x.png in Resources */,
 				001717B216B7B61200C49BE0 /* DetailsBG@2x.png in Resources */,
+				002381DB18C70F6D00421DD1 /* icon120.png in Resources */,
 				001717B316B7B61200C49BE0 /* DetailsHeader@2x.png in Resources */,
 				001717B416B7B61200C49BE0 /* infoButton@2x.png in Resources */,
 				001717B516B7B61200C49BE0 /* ListBG@2x.png in Resources */,
@@ -3572,6 +3582,7 @@
 				002D4DB3169CADDF009C4F8E /* Menu@2x.png in Resources */,
 				002D4DB4169CADDF009C4F8E /* SeparatorDots@2x.png in Resources */,
 				002D4DB5169CADDF009C4F8E /* BookBlack@2x.png in Resources */,
+				002381DD18C70FE300421DD1 /* icon120.png in Resources */,
 				002D4DB6169CADDF009C4F8E /* BookLake@2x.png in Resources */,
 				002D4DB7169CADDF009C4F8E /* BookRed@2x.png in Resources */,
 				0075660518C1B566008DFD41 /* VocabularySishu.sqlite in Resources */,
@@ -5085,8 +5096,8 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				BUNDLE_NAME = "VocabularySishu-GRE-New";
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -5152,8 +5163,8 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				BUNDLE_NAME = "VocabularySishu-GRE";
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
