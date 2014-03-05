@@ -235,13 +235,13 @@
             CGRect originalFrame = starImage.frame;
             CGRect enlargedFrame = CGRectMake(originalFrame.origin.x - 5, originalFrame.origin.y - 5, originalFrame.size.width + 10, originalFrame.size.height + 10);
             [self addSubview:starImage];
-            [UIView animateWithDuration:0.15f delay:0.0f options:UIViewAnimationCurveLinear
+            [UIView animateWithDuration:0.15f delay:0.0f options:UIViewAnimationOptionCurveLinear
                              animations:^{
                                  starImage.frame = enlargedFrame;
                              }
                              completion:^(BOOL finished) {
                                  if (finished == YES) {
-                                     [UIView animateWithDuration:0.15f delay:0.0f options:UIViewAnimationCurveLinear
+                                     [UIView animateWithDuration:0.15f delay:0.0f options:UIViewAnimationOptionCurveLinear
                                                       animations:^{
                                                           starImage.frame = originalFrame;
                                                       }

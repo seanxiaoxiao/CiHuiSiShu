@@ -78,7 +78,7 @@
     else {
         self.listNameLabel.text = [theList displayName];
     }
-    [self.listNameLabel setTextAlignment:UITextAlignmentCenter];
+    [self.listNameLabel setTextAlignment:NSTextAlignmentCenter];
     [self addSubview:listNameLabel];
     
     self.indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];

@@ -27,7 +27,7 @@
         CGRect summaryFrame = CGRectMake(30, 3, 260, self.frame.size.height);
         summaryLabel = [[UILabel alloc] initWithFrame:summaryFrame];
         
-        [summaryLabel setTextAlignment:UITextAlignmentCenter];
+        [summaryLabel setTextAlignment:NSTextAlignmentCenter];
         summaryLabel.text = vocabulary.summary;
         summaryLabel.backgroundColor = [UIColor clearColor];
         summaryLabel.textColor = [UIColor blackColor];

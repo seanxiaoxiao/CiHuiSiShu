@@ -199,14 +199,14 @@
     [promptLabel setBackgroundColor:[UIColor clearColor]];
     [promptLabel setTextColor:[UIColor colorWithHue:0 saturation:0 brightness:0.8 alpha:1]];
     promptLabel.text = @"一天内背诵完列表中剩余单词";
-    [promptLabel setTextAlignment:UITextAlignmentCenter];
+    [promptLabel setTextAlignment:NSTextAlignmentCenter];
     [promptLabel setFont:[UIFont systemFontOfSize:12]];
     UIBarButtonItem *prompt = [[UIBarButtonItem alloc] initWithCustomView:promptLabel];
     
     UIToolbar *toolBar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 44)];
     toolBar.barStyle = UIBarStyleBlackTranslucent;
-    UIBarButtonItem *btnConfirm = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonSystemItemEdit target:self action:@selector(selectPlanFinishTime)];
-    UIBarButtonItem *btnCancel = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonSystemItemCancel target:self action:@selector(dismissPickerArea)];
+    UIBarButtonItem *btnConfirm = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(selectPlanFinishTime)];
+    UIBarButtonItem *btnCancel = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(dismissPickerArea)];
     [toolBar setItems:[NSArray arrayWithObjects:btnCancel, prompt, btnConfirm, nil]];
     [pickerAreaView addSubview:toolBar];
 

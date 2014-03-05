@@ -76,7 +76,7 @@
 - (void) updateProgress:(double)progress
 {
     double margin = progress * 160;
-    [UIView animateWithDuration:0.1f delay:0.0f options:UIViewAnimationCurveLinear 
+    [UIView animateWithDuration:0.1f delay:0.0f options:UIViewAnimationOptionCurveLinear
         animations:^{
             self.inkNeck.frame = CGRectMake(inkHeadImage.size.width, 20, inkNeckImage.size.width + margin, inkNeckImage.size.height);
             self.inkBody.frame = CGRectMake(inkNeckImage.size.width + inkHeadImage.size.width + margin, 20, inkBodyImage.size.width, inkBodyImage.size.height);

@@ -66,7 +66,7 @@
     [self.navigationItem setLeftBarButtonItem:[VSUIUtils makeBackButton:self selector:@selector(backToList)]];
 
     self.vocabularyLabel.text = self.vocabulary.spell;
-    [self.vocabularyLabel setTextAlignment:UITextAlignmentCenter];
+    [self.vocabularyLabel setTextAlignment:NSTextAlignmentCenter];
     self.vocabularyLabel.backgroundColor = [UIColor clearColor];
     self.vocabularyLabel.textColor = [UIColor blackColor];
     self.vocabularyLabel.alpha = 0.7f;
@@ -81,7 +81,7 @@
     }
     else {
         self.phoneticLabel.text = [NSString stringWithFormat:@"[%@]", self.vocabulary.phonetic];
-        [self.phoneticLabel setTextAlignment:UITextAlignmentCenter];
+        [self.phoneticLabel setTextAlignment:NSTextAlignmentCenter];
         self.phoneticLabel.backgroundColor = [UIColor clearColor];
         self.phoneticLabel.textColor = [UIColor blackColor];
         self.phoneticLabel.alpha = 0.7f;

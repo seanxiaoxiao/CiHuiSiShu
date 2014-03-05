@@ -50,7 +50,7 @@
         [self.clearContainer addSubview:self.clearImage];
 
         self.vocabularyLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 6.5, 300, self.frame.size.height)];
-        [self.vocabularyLabel setTextAlignment:UITextAlignmentCenter];
+        [self.vocabularyLabel setTextAlignment:NSTextAlignmentCenter];
         self.vocabularyLabel.backgroundColor = [UIColor clearColor];
         self.vocabularyLabel.textColor = [UIColor blackColor];
         self.vocabularyLabel.alpha = 0.7f;
@@ -73,7 +73,7 @@
         self.summaryLabel.minimumFontSize = 12;
         self.summaryLabel.adjustsFontSizeToFitWidth = YES;
         self.summaryLabel.backgroundColor = [UIColor clearColor];
-        [self.summaryLabel setTextAlignment:UITextAlignmentCenter];
+        [self.summaryLabel setTextAlignment:NSTextAlignmentCenter];
         self.summaryLabel.bounds = CGRectMake(0, 0, 300, VOCAVULARY_CELL_HEIGHT);
 
         self.summaryContainerView.clipsToBounds = YES;
@@ -129,14 +129,14 @@
     if (clear && !hadCurlUp) {
         [self scoreUp];
     }
-    [UIView animateWithDuration:0.25f delay:0.0f options:UIViewAnimationCurveLinear
+    [UIView animateWithDuration:0.25f delay:0.0f options:UIViewAnimationOptionCurveLinear
         animations:^{
             CGFloat width = clear ? 320 : 0;
             self.clearContainer.frame = CGRectMake(0, 0, width, VOCAVULARY_CELL_HEIGHT);
         }
         completion:^(BOOL finished) {
             if (finished == YES && clear) {
-                [UIView animateWithDuration:0.1f delay:0.0f options:UIViewAnimationCurveEaseIn
+                [UIView animateWithDuration:0.1f delay:0.0f options:UIViewAnimationOptionCurveEaseIn
                     animations:^{
                         self.vocabularyContainerView.alpha = 0;
                         self.clearContainer.alpha = 0;
@@ -145,7 +145,7 @@
                         self.summaryContainerView.alpha = 0;
                         self.summaryContainerView.frame = CGRectMake(0, 0, 320, VOCAVULARY_CELL_HEIGHT);
                         self.summaryLabel.frame = CGRectMake(35, 0, 250, VOCAVULARY_CELL_HEIGHT);
-                        [UIView animateWithDuration:0.3f delay:0.0f options:UIViewAnimationCurveEaseIn
+                        [UIView animateWithDuration:0.3f delay:0.0f options:UIViewAnimationOptionCurveEaseIn
                             animations:^{
                                 self.summaryContainerView.alpha = 1;
                             }
@@ -231,7 +231,7 @@
     frame.origin.y = 8;
     self.scoreDownImage.frame = frame;
     frame.origin.y = 28;
-    [UIView animateWithDuration:0.8f delay:0.0f options:UIViewAnimationCurveEaseIn
+    [UIView animateWithDuration:0.8f delay:0.0f options:UIViewAnimationOptionCurveEaseIn
         animations:^{
             self.scoreDownImage.frame = frame;
             self.scoreDownImage.alpha = 0;
@@ -252,7 +252,7 @@
     frame.origin.y = 20;
     self.scoreUpImage.frame = frame;
     frame.origin.y = 0;
-    [UIView animateWithDuration:0.8f delay:0.0f options:UIViewAnimationCurveEaseIn
+    [UIView animateWithDuration:0.8f delay:0.0f options:UIViewAnimationOptionCurveEaseIn
         animations:^{
             self.scoreUpImage.frame = frame;
             self.scoreUpImage.alpha = 0;
