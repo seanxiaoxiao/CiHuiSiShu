@@ -37,7 +37,8 @@ static InAppPurchaseManager *_instance;
 
 - (void)purchaseProductWithIdentifier:(NSString *)identifier
 {
-    SKPayment *payment = [SKPayment paymentWithProductIdentifier:identifier];
+    SKProduct *prodcut = [_products objectForKey:identifier];
+    SKPayment *payment = [SKPayment paymentWithProduct:prodcut];
     [[SKPaymentQueue defaultQueue] addPayment:payment];
 }
 
@@ -123,7 +124,6 @@ static InAppPurchaseManager *_instance;
             case SKPaymentTransactionStateRestored:
                 [self restoreTransaction:transaction];
                 break;
-                
             default:
                 break;
         }

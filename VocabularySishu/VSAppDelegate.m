@@ -97,13 +97,6 @@
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
     
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"launched"] ) {
-        [VSUtils showGuidPage];
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"launched"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        return YES;
-    }
-    
     UILocalNotification *localNotif = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
     if (localNotif && [localNotif.userInfo valueForKey:@"ListRecordName"] != nil) {
         NSString *name = [localNotif.userInfo objectForKey:@"ListRecordName"];
@@ -118,6 +111,13 @@
     }
 
     [InAppPurchase loadStore];
+    
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"launched"] ) {
+        [VSUtils showGuidPage];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"launched"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        return YES;
+    }
     
     return YES;
 }
