@@ -665,7 +665,6 @@
 		0076DB4716BDE7D500839FCC /* ListBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000E584015E40C9900B7AB04 /* ListBG@2x.png */; };
 		0080C9FC18A5BC6C00E8EDCB /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00843CD7189627A4003C3DD6 /* CoreTelephony.framework */; };
 		0080CA0118A5BE5800E8EDCB /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00843CDD18962814003C3DD6 /* AudioToolbox.framework */; };
-		0080CA0318A5C63D00E8EDCB /* sentence.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0080CA0218A5C63D00E8EDCB /* sentence.txt */; };
 		008242801671BF1400FF1631 /* VSNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0081185015BEFE220022B515 /* VSNavigationBar.m */; };
 		008242811671BF1400FF1631 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00701E3D1553CBCE00D30018 /* main.m */; };
 		008242821671BF1400FF1631 /* VSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00701E411553CBCE00D30018 /* VSAppDelegate.m */; };
@@ -1600,6 +1599,7 @@
 		00FF701315D1676F0043BA91 /* VSHisotryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF701215D1676F0043BA91 /* VSHisotryListCell.m */; };
 		00FF701415D1676F0043BA91 /* VSHisotryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF701215D1676F0043BA91 /* VSHisotryListCell.m */; };
 		00FF701515D1676F0043BA91 /* VSHisotryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF701215D1676F0043BA91 /* VSHisotryListCell.m */; };
+		6484913618C854680047FF4A /* sentence.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0080CA0218A5C63D00E8EDCB /* sentence.txt */; };
 		6484B56D18A5F7320057A3E5 /* icon120.png in Resources */ = {isa = PBXBuildFile; fileRef = 644AEEED18A5F4920042B629 /* icon120.png */; };
 		6484B57018A5F8020057A3E5 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 6484B56F18A5F8020057A3E5 /* iTunesArtwork */; };
 		6484B57118A5F8160057A3E5 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 6484B56F18A5F8020057A3E5 /* iTunesArtwork */; };
@@ -1783,7 +1783,7 @@
 		00763F261645A03200CF7216 /* VSCellStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSCellStatus.h; path = ViewController/VocabularyListView/VSCellStatus.h; sourceTree = "<group>"; };
 		00763F271645A03200CF7216 /* VSCellStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSCellStatus.m; path = ViewController/VocabularyListView/VSCellStatus.m; sourceTree = "<group>"; };
 		0080C9FF18A5BDE700E8EDCB /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
-		0080CA0218A5C63D00E8EDCB /* sentence.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = sentence.txt; path = ../../vsresource/sentence.txt; sourceTree = "<group>"; };
+		0080CA0218A5C63D00E8EDCB /* sentence.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = sentence.txt; path = Resources/sentence.txt; sourceTree = "<group>"; };
 		0081184F15BEFE220022B515 /* VSNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSNavigationBar.h; path = Generic/VSNavigationBar.h; sourceTree = "<group>"; };
 		0081185015BEFE220022B515 /* VSNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSNavigationBar.m; path = Generic/VSNavigationBar.m; sourceTree = "<group>"; };
 		0082430E1671BF1400FF1631 /* VocabularySishu TOEFL Trial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VocabularySishu TOEFL Trial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -3219,6 +3219,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = douban;
 				TargetAttributes = {
+					0017174E16B7B61200C49BE0 = {
+						DevelopmentTeam = D6H3GD33L8;
+					};
 					00201DDD15CFBAD30089B8FA = {
 						DevelopmentTeam = D6H3GD33L8;
 					};
@@ -3372,6 +3375,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6484913618C854680047FF4A /* sentence.txt in Resources */,
 				0017179D16B7B61200C49BE0 /* InfoPlist.strings in Resources */,
 				0017179E16B7B61200C49BE0 /* VSHistoryViewController.xib in Resources */,
 				0017179F16B7B61200C49BE0 /* VSVocabularyViewController.xib in Resources */,
@@ -3465,7 +3469,6 @@
 				00DDD38D189D569D00306B66 /* UMSnsAccountViewController.xib in Resources */,
 				00DDD392189D569D00306B66 /* UMSShareListController.xib in Resources */,
 				00DDD397189D569D00306B66 /* UMSocialSDKResourcesNew.bundle in Resources */,
-				0080CA0318A5C63D00E8EDCB /* sentence.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5024,8 +5027,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_NAME = "VocabularySishu-SAT-New";
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
