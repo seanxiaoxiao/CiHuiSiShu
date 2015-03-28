@@ -10,29 +10,29 @@
 	<string>VocabularySishu</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>EC39E327-7BFB-47C5-9155-8311122D12DD</key>
-		<string>ssh://git.gefostudio.com/~/Rich.git</string>
+		<key>79185E175683EAC809F7CDC3FF02E4A8F2CBACC8</key>
+		<string>git.gefostudio.com:~/Rich.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>VocabularySishu.xcodeproj/project.xcworkspace</string>
+	<string>VocabularySishu.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>EC39E327-7BFB-47C5-9155-8311122D12DD</key>
+		<key>79185E175683EAC809F7CDC3FF02E4A8F2CBACC8</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://git.gefostudio.com/~/Rich.git</string>
+	<string>git.gefostudio.com:~/Rich.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>EC39E327-7BFB-47C5-9155-8311122D12DD</string>
+	<string>79185E175683EAC809F7CDC3FF02E4A8F2CBACC8</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>EC39E327-7BFB-47C5-9155-8311122D12DD</string>
+			<string>79185E175683EAC809F7CDC3FF02E4A8F2CBACC8</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Rich</string>
 		</dict>
