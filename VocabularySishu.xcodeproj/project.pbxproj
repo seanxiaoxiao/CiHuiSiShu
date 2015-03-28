@@ -3216,6 +3216,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = VS;
+				LastTestingUpgradeCheck = 0510;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = douban;
 				TargetAttributes = {
@@ -3223,6 +3224,9 @@
 						DevelopmentTeam = D6H3GD33L8;
 					};
 					00201DDD15CFBAD30089B8FA = {
+						DevelopmentTeam = D6H3GD33L8;
+					};
+					002D4D5F169CADDF009C4F8E = {
 						DevelopmentTeam = D6H3GD33L8;
 					};
 					00701E2A1553CBCE00D30018 = {
@@ -5019,6 +5023,7 @@
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -5027,7 +5032,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_NAME = "VocabularySishu-SAT-New";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5054,8 +5059,9 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "VocabularySishu SAT";
 				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "25D35423-6913-451C-A0B5-87119F3B65C4";
 				SDKROOT = iphoneos;
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -5119,8 +5125,8 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "VocabularySishu GRE";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "619F0CDF-E53D-430C-A005-8A9F4C87E58B";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "619F0CDF-E53D-430C-A005-8A9F4C87E58B";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
@@ -5154,6 +5160,7 @@
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -5162,8 +5169,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_NAME = "VocabularySishu-GRE";
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -5186,6 +5193,7 @@
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -5224,6 +5232,7 @@
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -5238,8 +5247,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: SHAO WEN SU (D6H3GD33L8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -5251,10 +5260,11 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "619F0CDF-E53D-430C-A005-8A9F4C87E58B";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "619F0CDF-E53D-430C-A005-8A9F4C87E58B";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -5515,8 +5525,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_NAME = "VocabularySishu-TOEFL";
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: SHAO WEN SU (D6H3GD33L8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SHAO WEN SU (D6H3GD33L8)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -5541,8 +5551,8 @@
 				New_Setting = "";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "VocabularySishu TOEFL";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "536DB330-22A0-4C55-BA41-48B6E1E3054C";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "536DB330-22A0-4C55-BA41-48B6E1E3054C";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
